@@ -1,0 +1,71 @@
+# MARTIALDEX 웹 빌드 → GitHub Pages (https://eunsoo0229.github.io/)
+#
+# main 에 push 하면(또는 Actions 탭에서 수동 실행) Vite 로 웹 앱을 빌드해 Pages 에 배포한다.
+# 빌드에 쓰는 값은 저장소 Actions 변수(Settings → Secrets and variables → Actions → Variables):
+#   VITE_SUPABASE_URL, VITE_SUPABASE_PUBLISHABLE_KEY, VITE_TOSS_CLIENT_KEY
+# 셋 다 원래 공개되는 클라이언트용 값이다(앱 번들에 그대로 들어감). Gemini·Tavily·결제 시크릿 키 같은
+# 서버 비밀값은 여기에 넣지 않는다 — 웹 앱은 그 기능을 Supabase Edge Function 으로만 쓴다.
+# 배포 전에 번들에 비밀키 이름·키 형태가 들어 있으면 실패시킨다.
+name: Deploy web build to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+        env:
+          # 웹 빌드에는 데스크톱·브라우저 바이너리가 필요 없다
+          ELECTRON_SKIP_BINARY_DOWNLOAD: '1'
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+
+      - name: Build (Vite → dist/renderer)
+        run: npm run build
+        env:
+          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
+          VITE_TOSS_CLIENT_KEY: ${{ vars.VITE_TOSS_CLIENT_KEY }}
+
+      - name: Check the bundle has no server secrets
+        run: |
+          npm run check:apk-secrets
+          if grep -rEl 'AIza[0-9A-Za-z_-]{30,}|tvly-[0-9A-Za-z]{20,}|(test|live)_sk_[0-9A-Za-z]{10,}|service_role' dist/renderer; then
+            echo "::error::server secret found in the web bundle"; exit 1
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/renderer
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
