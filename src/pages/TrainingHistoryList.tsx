@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { deleteTrainingHistoryEntry } from '../lib/trainingHistory/service';
@@ -48,7 +49,7 @@ export default function TrainingHistoryList() {
         </div>
 
         <div className="section-title">
-          <h2>📜 전체 훈련 기록</h2>
+          <h2><Icon name="list" /> 전체 훈련 기록</h2>
         </div>
 
         <div className="chip-row">

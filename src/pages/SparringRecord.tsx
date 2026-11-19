@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import type { PluginListenerHandle } from '@capacitor/core';
@@ -441,7 +442,7 @@ export default function SparringRecord() {
           <span>스파링 촬영</span>
         </div>
         <div className="section-title">
-          <h2>🎥 스파링 촬영</h2>
+          <h2><Icon name="video" /> 스파링 촬영</h2>
         </div>
 
         {phase === 'checking' && <p className="video-status-message">카메라 지원 여부를 확인하는 중...</p>}
@@ -460,14 +461,14 @@ export default function SparringRecord() {
             <label className="field-label">촬영 카메라</label>
             <div className="chip-row" style={{ marginTop: 6, marginBottom: 10 }}>
               <button type="button" className={`chip ${cameraChoice === 'environment' ? 'active' : ''}`} onClick={() => setCameraChoice('environment')}>
-                📷 후면
+                <Icon name="camera" /> 후면
               </button>
               <button type="button" className={`chip ${cameraChoice === 'user' ? 'active' : ''}`} onClick={() => setCameraChoice('user')}>
-                🤳 전면
+                <Icon name="user" /> 전면
               </button>
               {dualSupported && (
                 <button type="button" className={`chip ${cameraChoice === 'dual' ? 'active' : ''}`} onClick={() => setCameraChoice('dual')}>
-                  🎬 전면+후면 동시
+                  <Icon name="video" /> 전면+후면 동시
                 </button>
               )}
             </div>
@@ -493,7 +494,7 @@ export default function SparringRecord() {
                 촬영 시작
               </button>
               <Link className="btn btn-secondary" to="/sparring/videos">
-                📼 촬영 목록
+                <Icon name="list" /> 촬영 목록
               </Link>
             </div>
             {error && <p className="video-status-message" style={{ color: 'var(--accent)' }}>{error}</p>}
@@ -508,11 +509,11 @@ export default function SparringRecord() {
                   ● REC {formatElapsed(elapsedMs)}
                 </span>
               )}
-              {phase === 'paused' && <span className="chip">⏸ 일시정지 {formatElapsed(elapsedMs)}</span>}
+              {phase === 'paused' && <span className="chip"><Icon name="pause" /> 일시정지 {formatElapsed(elapsedMs)}</span>}
             </div>
             {nativeMode ? (
               <div className="card info-card text-center">
-                <p style={{ fontSize: 40, margin: '4px 0' }}>🎥</p>
+                <p style={{ fontSize: 40, margin: '4px 0' }}><Icon name="video" /></p>
                 <p className="video-status-message">카메라가 백그라운드에서도 계속 녹화 중입니다. 미리보기는 지원되지 않습니다.</p>
               </div>
             ) : (
@@ -549,7 +550,7 @@ export default function SparringRecord() {
 
         {phase === 'saved' && (
           <div className="card info-card">
-            <p className="video-status-message">✓ 자동으로 저장되었습니다. 촬영 시간: {formatElapsed(elapsedMs)}</p>
+            <p className="video-status-message"><Icon name="check" /> 자동으로 저장되었습니다. 촬영 시간: {formatElapsed(elapsedMs)}</p>
             <div className="sparring-record-grid">
               {nativeMode
                 ? nativeSavedVideo && (

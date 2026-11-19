@@ -5,7 +5,8 @@
 // Inputs: data/audit/judgements/*.json — one object per judged pair
 //   { id, art?, decision: add|none|review, confidence: A|B|C, reason, evidence }
 //   (mma-*.json judge MMA for every technique not yet linked to it;
-//    cross.json judges pairs where another art's own data mentions a technique)
+//    cross.json judges pairs where another art's own data mentions a technique;
+//    sibling-*.json judge single-art techniques against their sibling arts)
 // These are AI judgements made against written criteria
 // (data/audit/judgement-criteria/*.md) with MARTIALDEX data + cited external
 // sources (data/audit/external-sources.json). They are kept as they were made;
@@ -82,7 +83,9 @@ for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.json')).sort()) {
     const key = `${t.id}|${art}`;
     const o = OVERRIDES[key];
     const decision = o?.decision ?? j.decision;
-    const placed = decision === 'add' ? categoryIn(t, art) : null;
+    // A judge may name the target art's category (sibling-*.json); used only when it is one of that art's own categories.
+    const judgedCategory = !o && j.category && cat.officialCategoriesOf(art).includes(j.category) ? { category: j.category, how: 'judged category (target art catalog)' } : null;
+    const placed = decision === 'add' ? judgedCategory ?? categoryIn(t, art) : null;
     decisions.push({
       techniqueId: t.id,
       name: t.name,
@@ -92,6 +95,7 @@ for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.json')).sort()) {
       reason: o?.reason ?? j.reason,
       evidence: j.evidence,
       judgedBy: o ? 'reviewer override' : `AI judgement (${source})`,
+      ...(j.duplicateOf ? { duplicateOf: j.duplicateOf } : {}),
       ...(placed ? { category: placed.category, categoryBy: placed.how } : {}),
     });
   }

@@ -1,8 +1,10 @@
+import { EmptyArtSvg } from './EmptyState';
+
 // Shared error display — same reasoning as LoadingState.tsx.
 export default function ErrorState({ text, onRetry }: { text: string; onRetry?: () => void }) {
   return (
-    <div className="empty-state">
-      <div className="empty-state__icon">⚠️</div>
+    <div className="empty-state empty-state--error" role="alert">
+      <EmptyArtSvg art="load-failed" />
       <p>{text}</p>
       {onRetry && (
         <button type="button" className="btn btn-secondary btn-sm" onClick={onRetry}>

@@ -1,80 +1,41 @@
-import type { Technique } from '../../types';
-import { listDbCombos, listVisualizableTechniques, singleCombo, type MittCombo } from './combos';
-import { motionForTechnique } from './archetypes';
-import { calloutFor, comboCallout, reactionPool } from './reaction';
+import { wrestlingChains } from './wrestlingChains';
+import { listDbCombos, type MittCombo } from './combos';
+import { attackSingles, combosFor, defenseSingles, type DrillOptions, type DrillProfile } from './artDrills';
+import { calloutFor, comboCallout } from './reaction';
 import { kickExtraMs, restMsFor, tempoLabel, type MittTempo } from './tempo';
 import { recordTrainingSession } from '../trainingHistory/service';
 
 // 공격 지시 (pad-holder calls) — the mitt holder shouts what to throw ("잽!",
 // "원투!", "훅!") at random moments and presents the mitt for it; the user
-// throws on the call. Calls are real MARTIALDEX techniques (one basic attack)
-// or real DB combos made only of basic attacks (the same pool as 반응 훈련).
+// throws on the call. Calls are real MARTIALDEX techniques or real combos (DB
+// records, 사용자 공유 콤보) made only of the motions of the art picked — see artDrills.ts.
 // Nothing watches the user — what was called and for how long is recorded.
 
 export type CommandLevel = 'single' | 'mixed' | 'combo';
 export const COMMAND_LEVEL_LABEL: Record<CommandLevel, string> = { single: '단타', mixed: '단타 + 콤보', combo: '콤보' };
 
-const PUNCH_KEYS = ['jab', 'cross', 'leadHook', 'rearHook', 'leadUppercut', 'rearUppercut'];
-const KICK_KEYS = ['lowKick', 'roundKick', 'highKick', 'teep'];
-// Where a technique of each kind is most likely recorded under its plain name.
-const PREFERRED_ART: Record<string, string[]> = { hand: ['boxing', 'kickboxing', 'muay-thai'], foot: ['kickboxing', 'muay-thai', 'mixed-martial-arts'] };
-
 const DEFENSE_EXTRA_MS = 600;
 
-/** One real technique per basic attack (head height for punches, plus body jab / body hook when the DB has them). */
-export function singleCalls(withKicks: boolean, techniques: Technique[] = listVisualizableTechniques()): MittCombo[] {
-  const keys = withKicks ? [...PUNCH_KEYS, ...KICK_KEYS] : PUNCH_KEYS;
-  const out: MittCombo[] = [];
-  const pick = (key: string, target: 'default' | 'body') => {
-    const hits = techniques.filter((t) => {
-      const m = motionForTechnique(t);
-      return m?.archetype.key === key && (target === 'body' ? m.target === 'body' : m.target === m.archetype.target);
-    });
-    if (!hits.length) return;
-    const limb = motionForTechnique(hits[0])!.archetype.limb;
-    const rank = (t: Technique) => {
-      const i = (PREFERRED_ART[limb] ?? []).indexOf(t.martialArt);
-      return i < 0 ? 99 : i;
-    };
-    const best = [...hits].sort((a, b) => rank(a) - rank(b) || a.name.length - b.name.length)[0];
-    const c = singleCombo(best.id);
-    if (c) out.push(c);
-  };
-  for (const k of keys) pick(k, 'default');
-  for (const k of ['jab', 'leadHook', 'rearHook']) pick(k, 'body');
-  return out;
+export interface CommandPoolOptions extends DrillOptions {
+  profile: DrillProfile;
+  /** 사용자 공유 콤보 the mitt can play as written (added to the DB combos). */
+  extra?: MittCombo[];
 }
 
-// 방어 포함: the holder throws and you answer — one real technique per defense, and the DB's
-// own defense → counter records ("Slip → Cross", "Parry → Jab", "Roll → Hook" …).
-const DEFENSE_KEYS = ['slip', 'slipInside', 'duck', 'roll', 'leanBack', 'parry', 'catchPunch', 'block', 'cover'];
-const KICK_DEFENSE_KEYS = ['check', 'kickCatch'];
-export function defenseCalls(withKicks: boolean, techniques: Technique[] = listVisualizableTechniques()): MittCombo[] {
-  const out: MittCombo[] = [];
-  for (const k of withKicks ? [...DEFENSE_KEYS, ...KICK_DEFENSE_KEYS] : DEFENSE_KEYS) {
-    const hit = techniques.filter((t) => motionForTechnique(t)?.archetype.key === k).sort((a, b) => a.name.length - b.name.length)[0];
-    const c = hit ? singleCombo(hit.id) : null;
-    if (c) out.push(c);
-  }
-  return out;
-}
-export function counterCombos(withKicks: boolean, db: MittCombo[] = listDbCombos()): MittCombo[] {
-  return db.filter(
-    (c) =>
-      c.steps.length >= 2 &&
-      c.steps.length <= 4 &&
-      c.steps[0].motion.archetype.kind === 'defense' &&
-      c.steps.slice(1).every((s) => s.motion.archetype.kind === 'strike') &&
-      (withKicks || c.steps.every((s) => s.motion.archetype.limb !== 'foot' && s.motion.archetype.limb !== 'knee')),
-  );
-}
-
-/** Everything that may be called at this level (combos: the reaction-drill DB pool, punches only unless kicks are on; defenses when asked). */
-export function commandPool(level: CommandLevel, withKicks: boolean, combos: MittCombo[] = reactionPool(), singles?: MittCombo[], withDefense = false): MittCombo[] {
-  const s = level === 'combo' ? [] : (singles ?? singleCalls(withKicks));
-  const c = level === 'single' ? [] : combos.filter((x) => withKicks || x.steps.every((st) => st.motion.archetype.limb === 'hand'));
-  const d = !withDefense ? [] : [...(level === 'combo' ? [] : defenseCalls(withKicks)), ...(level === 'single' ? [] : counterCombos(withKicks))];
-  return [...s, ...c, ...d];
+/**
+ * Everything that may be called at this level, for the art picked (종목별 형식): single attacks of that art,
+ * real combos made only of its allowed motions, and — with 방어 포함 — its defenses and defense → counter combos.
+ */
+export function commandPool(level: CommandLevel, o: CommandPoolOptions): MittCombo[] {
+  const all = [...listDbCombos(), ...(o.extra ?? [])];
+  const singles = level === 'combo' ? [] : attackSingles(o.profile, o);
+  const combos = level === 'single' ? [] : combosFor(o.profile, { ...o, withDefense: false }, all, 2, 5);
+  const defense = !o.withDefense
+    ? []
+    : [...(level === 'combo' ? [] : defenseSingles(o.profile, o)), ...(level === 'single' ? [] : combosFor(o.profile, o, all, 2, 4).filter((c) => c.steps.some((s) => s.motion.archetype.kind === 'defense' || s.motion.archetype.kind === 'trap')))];
+  // 레슬링: long chains of shots and answers to the holder's shot (wrestlingChains.ts)
+  const chains = level === 'single' ? [] : wrestlingChains(o.profile, o);
+  return [...singles, ...combos, ...defense, ...chains];
 }
 
 const isHead = (c: MittCombo) => c.steps.every((s) => s.motion.target === 'head');

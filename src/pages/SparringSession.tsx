@@ -1,8 +1,8 @@
+import Icon from '../components/Icon';
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { martialArtSummaries } from '../lib/loadData';
 import { getUnifiedMartialArtSummaries, searchAllTechniques, resolveTechniquesByIds } from '../lib/userTechniques/service';
-import { useCustomMartialArtLibraryVersion } from '../lib/customMartialArt/useCustomMartialArtLibrary';
 import {
   EQUIPMENT_OPTIONS,
   INTENSITY_LABEL,
@@ -78,7 +78,7 @@ function TechniqueChipPicker({ martialArt, ids, onAdd, onRemove, label, testId }
               onClick={() => onRemove(t.id)}
               style={{ marginLeft: 6, background: 'none', border: 'none', color: 'inherit', cursor: 'pointer' }}
             >
-              ✕
+              <Icon name="close" />
             </button>
           </span>
         ))}
@@ -108,7 +108,6 @@ function TechniqueChipPicker({ martialArt, ids, onAdd, onRemove, label, testId }
 }
 
 function RuleFields({ rules, setRules, roundsLabel }: { rules: SparringRules; setRules: (fn: (r: SparringRules) => SparringRules) => void; roundsLabel: string }) {
-  useCustomMartialArtLibraryVersion();
   const availableMartialArts = getUnifiedMartialArtSummaries();
   const [customRound, setCustomRound] = useState('');
   const [customRest, setCustomRest] = useState('');
@@ -295,10 +294,10 @@ function SparringModeTabs({ mode, onChange }: { mode: 'log' | 'timer'; onChange:
   return (
     <div className="chip-row" style={{ marginBottom: 12 }} role="tablist">
       <button type="button" role="tab" aria-selected={mode === 'log'} className={`chip${mode === 'log' ? ' active' : ''}`} onClick={() => onChange('log')} data-testid="sparring-mode-log">
-        📝 한 스파링 기록하기
+        <Icon name="note" /> 한 스파링 기록하기
       </button>
       <button type="button" role="tab" aria-selected={mode === 'timer'} className={`chip${mode === 'timer' ? ' active' : ''}`} onClick={() => onChange('timer')} data-testid="sparring-mode-timer">
-        ⏱ 타이머로 진행하기
+        <Icon name="timer" /> 타이머로 진행하기
       </button>
     </div>
   );
@@ -486,7 +485,16 @@ function SparringLogForm({ onSaved }: { onSaved: (recordId: string) => void }) {
 }
 
 function SparringTimerSetup({ onStart }: { onStart: (rules: SparringRules) => void }) {
-  const [rules, setRulesState] = useState<SparringRules>(defaultRules);
+  // ?round=<초>&rest=<초>&rounds=<횟수> — preset by the 자체 AI 코치 ("3분 훈련하고 1분 쉬고 싶어"); out-of-range values are ignored.
+  const [params] = useSearchParams();
+  const [rules, setRulesState] = useState<SparringRules>(() => {
+    const r = defaultRules();
+    const num = (k: string, min: number, max: number) => {
+      const v = Number(params.get(k));
+      return params.has(k) && Number.isInteger(v) && v >= min && v <= max ? v : null;
+    };
+    return { ...r, roundDurationSeconds: num('round', 10, 1800) ?? r.roundDurationSeconds, restDurationSeconds: num('rest', 0, 600) ?? r.restDurationSeconds, plannedRounds: num('rounds', 1, 20) ?? r.plannedRounds };
+  });
   const setRules = (fn: (r: SparringRules) => SparringRules) => setRulesState(fn);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const hasLastRules = useMemo(() => loadLastSparringRules() !== null, []);
@@ -551,7 +559,7 @@ function SparringSetup({ onStart, onSaved }: { onStart: (rules: SparringRules) =
           <span>스파링 기록</span>
         </div>
         <div className="section-title">
-          <h2>🤼 스파링 기록</h2>
+          <h2><Icon name="grapple" /> 스파링 기록</h2>
         </div>
         <SparringModeTabs mode={mode} onChange={(m) => setParams(m === 'timer' ? { mode: 'timer' } : {}, { replace: true })} />
         {mode === 'log' ? <SparringLogForm onSaved={onSaved} /> : <SparringTimerSetup onStart={onStart} />}
@@ -569,7 +577,7 @@ function SparringSavedScreen({ recordId, onDone, onAnother }: { recordId: string
       <div className="container">
         <BackButton />
         <div className="section-title">
-          <h2>✅ 스파링 기록 저장 완료</h2>
+          <h2><Icon name="check" /> 스파링 기록 저장 완료</h2>
         </div>
         {record && (
           <p className="video-status-message" data-testid="sparring-saved-summary">
@@ -595,7 +603,7 @@ function SparringSavedScreen({ recordId, onDone, onAnother }: { recordId: string
             strengths/weaknesses without inventing them — point to the video
             analysis, which works from measured data. */}
         <p className="technique-row__sub" style={{ marginTop: 12 }}>
-          잘한 점·개선할 점 AI 분석은 스파링 영상이 있어야 합니다. <Link to="/sparring">🎥 스파링 영상 AI 분석하기 →</Link>
+          잘한 점·개선할 점 AI 분석은 스파링 영상이 있어야 합니다. <Link to="/sparring"><Icon name="video" /> 스파링 영상 AI 분석하기 →</Link>
         </p>
       </div>
     </div>
@@ -643,7 +651,7 @@ function SparringEndScreen({ actualSeconds, plannedSeconds, rounds, plannedRound
           <span>스파링 완료</span>
         </div>
         <div className="section-title">
-          <h2>🎉 스파링 완료</h2>
+          <h2><Icon name="celebrate" /> 스파링 완료</h2>
         </div>
         <div className="card info-card text-center">
           <p className="video-status-message">
@@ -752,10 +760,10 @@ export default function SparringSession() {
           </span>
           <span className="chip">{run.phase === 'round' ? '스파링 중' : '휴식'}</span>
           <button className="btn btn-ghost btn-sm" onClick={() => (run.paused ? resume() : pause())} style={{ marginLeft: 'auto' }}>
-            {run.paused ? '▶ 재개' : '⏸ 일시정지'}
+            {run.paused ? <><Icon name="play" /> 재개</> : <><Icon name="pause" /> 일시정지</>}
           </button>
           <button className="btn btn-ghost btn-sm" onClick={() => endNow()}>
-            ■ 종료
+            <Icon name="stop" /> 종료
           </button>
         </div>
 
@@ -765,7 +773,7 @@ export default function SparringSession() {
             <p>진행 상황은 그대로 저장되어 있습니다. 준비되면 재개하세요.</p>
             <div className="modal-actions" style={{ justifyContent: 'center' }}>
               <button className="btn btn-primary" onClick={resume}>
-                ▶ 재개
+                <Icon name="play" /> 재개
               </button>
             </div>
           </div>

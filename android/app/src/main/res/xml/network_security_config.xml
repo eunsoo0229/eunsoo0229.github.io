@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Plain HTTP is allowed ONLY to this device's loopback: the MARTIALDEX self-AI server reached
+  through `adb reverse tcp:8787 tcp:8787` (a USB-connected phone or the emulator). Every other
+  host keeps Android's default (HTTPS only) — a self-AI server on the network must be served
+  over HTTPS (docs/self-ai/SERVER.md).
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false" />
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="false">localhost</domain>
+        <domain includeSubdomains="false">127.0.0.1</domain>
+    </domain-config>
+</network-security-config>

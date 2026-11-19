@@ -1,0 +1,57 @@
+/* 수익화 화면 (멤버십 · 지갑 · 코인 스토어 · 콘텐츠 마켓 · 크리에이터 · 사업자) — brand tokens only.
+   Layout primitives (eco-card / eco-metrics / eco-table …) come from ecosystem.css; this adds the pieces they lack. */
+
+.mono-coins { display: inline-flex; align-items: baseline; gap: 4px; font-family: var(--mx-font-num); color: var(--mx-fg); }
+.mono-coins svg { align-self: center; color: var(--mx-accent); }
+.mono-coins small { font-size: var(--mx-fs-micro); color: var(--mx-fg-3); letter-spacing: var(--mx-track-label); }
+.mono-coins--lg strong { font-size: clamp(28px, 5vw, 44px); line-height: 1; }
+
+.mono-plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.mono-plan { display: flex; flex-direction: column; gap: 14px; padding: 20px; border: 1px solid var(--mx-line); background: var(--mx-surface); border-radius: var(--mx-r1); }
+.mono-plan--featured { border-color: var(--mx-hair-gold); box-shadow: inset 0 2px 0 var(--mx-accent); }
+.mono-plan h3 { margin: 0; font-family: var(--mx-font-display); font-size: var(--mx-fs-h2); letter-spacing: var(--mx-track-display); }
+.mono-plan header p { margin: 4px 0 0; color: var(--mx-fg-2); }
+.mono-plan__price { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.mono-plan__price strong { font-family: var(--mx-font-num); font-size: 28px; }
+.mono-plan__features { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; flex: 1; align-content: start; }
+.mono-plan__features li { display: flex; gap: 8px; align-items: center; color: var(--mx-fg-2); font-size: var(--mx-fs-small); }
+.mono-plan__features svg { color: var(--mx-accent); flex: none; }
+
+.mono-wallet { display: grid; gap: 18px; padding: 22px; border: 1px solid var(--mx-hair-gold); background: linear-gradient(135deg, var(--mx-surface-2), var(--mx-surface)); border-radius: var(--mx-r1); }
+.mono-wallet__balance { display: grid; gap: 8px; justify-items: start; }
+.mono-pos { color: var(--mx-moss, #6fa66f); font-family: var(--mx-font-num); }
+.mono-neg { color: var(--mx-signal, #c0392b); font-family: var(--mx-font-num); }
+
+.mono-packs { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
+.mono-pack { display: grid; gap: 10px; align-content: start; padding: 18px; border: 1px solid var(--mx-line); background: var(--mx-surface); border-radius: var(--mx-r1); }
+.mono-pack h3 { margin: 0; font-family: var(--mx-font-cond); letter-spacing: var(--mx-track-label); text-transform: uppercase; }
+.mono-pack__price { font-family: var(--mx-font-num); font-size: 20px; }
+
+.mono-products { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; }
+.mono-product { display: grid; grid-template-rows: auto 1fr; border: 1px solid var(--mx-line); background: var(--mx-surface); color: var(--mx-fg); text-decoration: none; border-radius: var(--mx-r1); overflow: hidden; transition: border-color var(--mx-dur-2) var(--mx-ease); }
+.mono-product:hover { border-color: var(--mx-hair-gold); }
+.mono-product__thumb { aspect-ratio: 16 / 9; display: flex; gap: 6px; align-items: flex-start; padding: 10px; background: var(--mx-graphite, var(--mx-surface-3)) center / cover no-repeat; }
+.mono-product__body { display: grid; gap: 6px; padding: 12px 14px 14px; align-content: start; }
+.mono-product__body strong { line-height: 1.3; }
+
+.mono-detail { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 320px); gap: 20px; align-items: start; }
+.mono-outline { margin: 0; padding-left: 20px; display: grid; gap: 4px; color: var(--mx-fg-2); }
+.mono-content { display: grid; gap: 12px; }
+.mono-content h4 { margin: 0; }
+
+.mono-receipt { margin-top: 6px; padding: 14px; max-width: min(360px, calc(100vw - 32px)); text-align: left; border: 1px solid var(--mx-line-2); background: var(--mx-surface-2); border-radius: var(--mx-r1); box-shadow: var(--mx-shadow-plate); }
+.mono-receipt dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 8px 0 0; font-size: var(--mx-fs-small); }
+.mono-receipt dt { color: var(--mx-fg-3); }
+.mono-receipt dd { margin: 0; word-break: break-all; }
+
+.mono-partner { display: grid; gap: 10px; margin: 12px 0; }
+.mono-partner__item { display: flex; gap: 12px; align-items: center; padding: 10px 12px; border: 1px dashed var(--mx-line-2); color: var(--mx-fg); text-decoration: none; border-radius: var(--mx-r1); }
+.mono-partner__item img { width: 64px; height: 64px; object-fit: cover; border-radius: var(--mx-r0); flex: none; }
+.mono-partner__text { display: grid; gap: 2px; min-width: 0; }
+.mono-partner__text span, .mono-partner__text small { color: var(--mx-fg-2); font-size: var(--mx-fs-small); }
+
+@media (max-width: 760px) {
+  .mono-detail { grid-template-columns: 1fr; }
+  .mono-detail > aside { order: -1; }
+  .mono-plan, .mono-pack, .mono-wallet { padding: 16px; }
+}

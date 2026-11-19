@@ -1,3 +1,4 @@
+import Icon from '../Icon';
 import { memo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { CommunityFeedItem, CommunityPost } from '../../lib/communityPost/types';
@@ -5,6 +6,11 @@ import { deletePost, likePost, repost, savePost, unlikePost, unrepost, unsavePos
 import { openInApp } from '../../lib/externalLink';
 import CommentsSheet from './CommentsSheet';
 import LearnSheet from '../shorts/LearnSheet';
+import Avatar from '../Avatar';
+import { EvaluationPreview, EvaluationSheet, usePostEvaluation } from '../techniqueEvaluation/EvaluationPreview';
+import EvaluationAction from '../techniqueEvaluation/EvaluationAction';
+import ShareButton from '../social/ShareButton';
+import { postShareTitle } from '../../lib/social/shareTitle';
 import type { PostTag } from '../../lib/communityPost/types';
 
 function timeAgo(iso: string): string {
@@ -30,7 +36,7 @@ function LazyVideo({ url, thumbnailUrl }: { url: string; thumbnailUrl: string | 
   return (
     <button type="button" className="community-post-media__video-poster" onClick={() => setPlaying(true)} aria-label="영상 재생">
       {thumbnailUrl ? <img src={thumbnailUrl} alt="" loading="lazy" /> : <div className="community-post-media__video-poster-fallback" />}
-      <span className="community-post-media__play">▶</span>
+      <span className="community-post-media__play"><Icon name="play" /></span>
     </button>
   );
 }
@@ -86,9 +92,10 @@ interface PostBodyProps {
   onDeleted: (postId: string) => void;
   showRepostAction: boolean;
   onHashtagClick: (tag: string) => void;
+  hideEvaluation?: boolean;
 }
 
-function PostBody({ post: initialPost, currentUserId, currentUserNickname, onDeleted, showRepostAction, onHashtagClick }: PostBodyProps) {
+function PostBody({ post: initialPost, currentUserId, currentUserNickname, onDeleted, showRepostAction, onHashtagClick, hideEvaluation }: PostBodyProps) {
   const [post, setPost] = useState(initialPost);
   const [busy, setBusy] = useState(false);
   const [commentsOpen, setCommentsOpen] = useState(false);
@@ -96,6 +103,9 @@ function PostBody({ post: initialPost, currentUserId, currentUserNickname, onDel
   const [editing, setEditing] = useState(false);
   const [editText, setEditText] = useState(initialPost.content);
   const isOwn = !!currentUserId && post.authorId === currentUserId;
+  // 기술 평가 (0056) — 좋아요와 별개. 평가가 붙은 게시물·숏폼에만 나타난다.
+  const evaluation = usePostEvaluation(post.id);
+  const [evalOpen, setEvalOpen] = useState(false);
 
   async function handleToggleLike() {
     if (!currentUserId || busy) return;
@@ -146,11 +156,11 @@ function PostBody({ post: initialPost, currentUserId, currentUserNickname, onDel
     <>
       <div className="community-post-card__header">
         <div className="community-post-card__author">
-          <span className="community-post-card__avatar" aria-hidden="true">
-            {post.authorNickname.slice(0, 1)}
-          </span>
+          <Link to={`/u/${post.authorId}`}>
+            <Avatar className="community-post-card__avatar" seed={post.authorId} nickname={post.authorNickname} />
+          </Link>
           <div>
-            <div className="community-post-card__name">{post.authorNickname}</div>
+            <Link to={`/u/${post.authorId}`} className="community-post-card__name">{post.authorNickname}</Link>
             <Link to={`/community/post/${post.id}`} className="video-status-message" style={{ margin: 0 }}>
               {timeAgo(post.createdAt)}
             </Link>
@@ -190,15 +200,15 @@ function PostBody({ post: initialPost, currentUserId, currentUserNickname, onDel
         <div className="chip-row community-post-card__tags" data-testid="post-tags">
           {post.tags.map((t) => (
             <button key={`${t.type}:${t.id}`} type="button" className="chip" onClick={() => setLearn({ tag: t })}>
-              {t.type === 'technique' ? '🥋' : t.kind === 'setup' ? '🧩' : '🔗'} {t.name}
+              <Icon name={t.type === 'technique' ? 'gi' : t.kind === 'setup' ? 'puzzle' : 'link'} /> {t.name}
             </button>
           ))}
           <button type="button" className="btn btn-secondary btn-sm" onClick={() => setLearn({})} data-testid="post-learn">
-            🎓 영상에 나온 내용 배우기
+            <Icon name="grad" /> 영상에 나온 내용 배우기
           </button>
           {post.media.some((m) => m.type === 'video') && (
             <Link to={`/shorts?post=${encodeURIComponent(post.id)}`} className="btn btn-ghost btn-sm">
-              ▶ 숏폼으로 보기
+              <Icon name="play" /> 숏폼으로 보기
             </Link>
           )}
         </div>
@@ -206,30 +216,43 @@ function PostBody({ post: initialPost, currentUserId, currentUserNickname, onDel
 
       {post.curriculumSnapshot && (
         <Link to={`/learning/${post.curriculumSnapshot.martialArt}/${post.curriculumSnapshot.curriculumId}`} className="community-post-card__curriculum-chip">
-          🧠 {post.curriculumSnapshot.title} · {post.curriculumSnapshot.totalDays}일 · 기술 {post.curriculumSnapshot.techniqueCount}개
+          <Icon name="brain" /> {post.curriculumSnapshot.title} · {post.curriculumSnapshot.totalDays}일 · 기술 {post.curriculumSnapshot.techniqueCount}개
         </Link>
       )}
 
-      {post.gymName && <div className="community-post-card__gym">📍 {post.gymName}</div>}
+      {post.gymName && <div className="community-post-card__gym"><Icon name="pin" /> {post.gymName}</div>}
+
+      {evaluation && !hideEvaluation && <EvaluationPreview evaluation={evaluation} onOpen={() => setEvalOpen(true)} />}
 
       <div className="community-post-card__actions">
         <button type="button" className={`community-post-card__action-btn ${post.viewerHasLiked ? 'is-active' : ''}`} onClick={handleToggleLike} disabled={!currentUserId}>
-          {post.viewerHasLiked ? '♥' : '♡'} <span>{post.likeCount}</span>
+          <Icon name={post.viewerHasLiked ? 'heart-filled' : 'heart'} label="좋아요" /> <span>{post.likeCount}</span>
         </button>
         <button type="button" className="community-post-card__action-btn" onClick={() => setCommentsOpen(true)}>
-          💬 <span>{post.commentCount}</span>
+          <Icon name="comment" label="댓글" /> <span>{post.commentCount}</span>
         </button>
         <button type="button" className={`community-post-card__action-btn ${post.viewerHasSaved ? 'is-active' : ''}`} onClick={handleToggleSave} disabled={!currentUserId}>
-          {post.viewerHasSaved ? '🔖' : '🔗'} <span>{post.saveCount}</span>
+          <Icon name={post.viewerHasSaved ? 'bookmark-filled' : 'bookmark'} label="저장" /> <span>{post.saveCount}</span>
         </button>
+        <EvaluationAction
+          postId={post.id}
+          authorId={post.authorId}
+          currentUserId={currentUserId}
+          hasVideo={post.media.some((m) => m.type === 'video')}
+          tags={post.tags}
+          evaluation={evaluation}
+          variant="action"
+        />
+        <ShareButton variant="action" attachment={() => ({ kind: 'post', id: post.id, title: postShareTitle(post) })} />
         {showRepostAction && (
           <button type="button" className={`community-post-card__action-btn ${post.viewerHasReposted ? 'is-active' : ''}`} onClick={handleToggleRepost} disabled={!currentUserId}>
-            🔁 <span>{post.repostCount}</span>
+            <Icon name="repost" label="리포스트" /> <span>{post.repostCount}</span>
           </button>
         )}
       </div>
 
       {learn && <LearnSheet tags={post.tags} initial={learn.tag} onClose={() => setLearn(null)} />}
+      {evalOpen && evaluation && <EvaluationSheet evaluation={evaluation} onClose={() => setEvalOpen(false)} />}
       {commentsOpen && (
         <CommentsSheet
           post={post}
@@ -249,13 +272,15 @@ interface PostCardProps {
   currentUserNickname: string | null;
   onDeleted: (postId: string) => void;
   onHashtagClick: (tag: string) => void;
+  /** PostDetail shows the full evaluation panel itself */
+  hideEvaluation?: boolean;
 }
 
-function PostCardInner({ item, currentUserId, currentUserNickname, onDeleted, onHashtagClick }: PostCardProps) {
+function PostCardInner({ item, currentUserId, currentUserNickname, onDeleted, onHashtagClick, hideEvaluation }: PostCardProps) {
   if (item.kind === 'repost') {
     return (
       <div className="card info-card community-post-card">
-        <div className="community-post-card__repost-banner">🔁 {item.repost.reposterNickname}님이 리포스트</div>
+        <div className="community-post-card__repost-banner"><Icon name="repost" /> {item.repost.reposterNickname}님이 리포스트</div>
         {item.originalPost ? (
           <PostBody post={item.originalPost} currentUserId={currentUserId} currentUserNickname={currentUserNickname} onDeleted={onDeleted} showRepostAction={false} onHashtagClick={onHashtagClick} />
         ) : (
@@ -268,7 +293,7 @@ function PostCardInner({ item, currentUserId, currentUserNickname, onDeleted, on
   }
   return (
     <div className="card info-card community-post-card">
-      <PostBody post={item.post} currentUserId={currentUserId} currentUserNickname={currentUserNickname} onDeleted={onDeleted} showRepostAction onHashtagClick={onHashtagClick} />
+      <PostBody post={item.post} currentUserId={currentUserId} currentUserNickname={currentUserNickname} onDeleted={onDeleted} showRepostAction onHashtagClick={onHashtagClick} hideEvaluation={hideEvaluation} />
     </div>
   );
 }

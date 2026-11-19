@@ -6,6 +6,7 @@
 // never the full Day/technique content.
 
 export type CommunityPostType = 'text' | 'media' | 'curriculum' | 'mixed';
+export type PostVisibility = 'public' | 'followers' | 'private';
 export type CommunityMediaType = 'image' | 'video';
 
 export interface CommunityPostMedia {
@@ -45,6 +46,8 @@ export interface CommunityPost {
   /** Derived from `content` (see hashtags.ts's extractHashtags) — never a separate stored field, so it can never drift out of sync with the text itself. */
   hashtags: string[];
   postType: CommunityPostType;
+  /** 전체 공개 / 팔로워 공개 / 비공개 — 실제 접근 통제는 0045의 RLS가 한다. */
+  visibility: PostVisibility;
   media: CommunityPostMedia[];
   gymId: string | null;
   gymName: string | null;

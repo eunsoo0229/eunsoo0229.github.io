@@ -132,7 +132,8 @@ const doubleLeg = technique('wrestling', 'wrestling__basic-double-leg');
   const why = K.needsOf('암바에서 고관절은 왜 들어요?').map((n) => n.id);
   const whyArm = K.judgeAnswerability(K.buildEvidence(armbar), K.needsOf('암바에서 고관절은 왜 들어요?'));
   check('[3h] "고관절은 왜 들어요?"는 고관절 근거로 답함 (사용 상황 목록으로 답하지 않음 — 실측 오답 수정)', JSON.stringify(why) === '["body.hips"]' && whyArm.status === 'answerable' && /고관절/.test(K.evidenceAnswerText(K.buildEvidence(armbar), whyArm)), { why, text: K.evidenceAnswerText(K.buildEvidence(armbar), whyArm) });
-  check('[3i] 신체 부위가 있어도 "언제/상황" 질문은 사용 상황으로', K.needsOf('발로 차는 건 언제 써요?').some((n) => n.id === 'purpose'));
+  // (2026-10-25: the usage need was split into 'purpose' (목적) and 'situation' (언제/상황) — this question is a 'situation' one.)
+  check('[3i] 신체 부위가 있어도 "언제/상황" 질문은 사용 상황으로', K.needsOf('발로 차는 건 언제 써요?').some((n) => n.id === 'situation'));
 }
 
 // =============================================================== 4/5. grading

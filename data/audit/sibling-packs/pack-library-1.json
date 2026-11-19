@@ -1,0 +1,1234 @@
+[
+ {
+  "id": "wrestling__jump-sprawl",
+  "name": "Jump Sprawl",
+  "koreanName": "점프 스프롤",
+  "art": "wrestling",
+  "currentArts": [
+   "wrestling"
+  ],
+  "category": "리샷 / 카운터",
+  "positions": [],
+  "description": "스프롤로 다리를 뒤로 빼 골반을 매트 쪽에 붙여 슛을 끊은 뒤, 곧바로 손으로 밀며 다리를 당겨 점프하듯 일어나 다시 자세를 잡는 반응·체력 드릴 변형이다. 정식 경기 기술이라기보다 스프롤과 빠른 복귀를 반복해 익히는 훈련 동작이다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__buggy-choke",
+  "name": "Buggy Choke",
+  "koreanName": "버기 초크",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "사이드 컨트롤 (Side Control)",
+  "positions": [],
+  "description": "상대에게 사이드 컨트롤을 허용한 상태에서 상체를 측면으로 틀고, 상대의 목을 감싼 팔과 자신의 다리 오금을 잠가 강력한 폐쇄형 조르기를 형성하는 자세입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__레그-엑스트리케이션-leg-extrication",
+  "name": "레그 엑스트리케이션 (Leg Extrication)",
+  "koreanName": "레그 엑스트리케이션",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "탈출 기술 모음",
+  "positions": [],
+  "description": "상대의 다리 제압을 풀기 위해 엉덩이를 움직여 공간을 만들고 다리를 회수하는 동작입니다. 상대의 압박을 견디며 다리의 각도를 바꾸는 것이 핵심입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "kickboxing__미들킥-middle-kick",
+  "name": "미들킥 Middle kick",
+  "koreanName": "미들킥",
+  "art": "kickboxing",
+  "currentArts": [
+   "kickboxing"
+  ],
+  "category": "킥",
+  "positions": [],
+  "description": "기본 스탠스에서 골반을 회전시키며 다리를 수평으로 휘두르는 동작이다. 타격 시 지지하는 발을 바깥쪽으로 회전시켜 체중 이동을 극대화한다.",
+  "candidates": [
+   "boxing",
+   "muay-thai",
+   "karate",
+   "taekwondo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__백-포지션-이스케이프",
+  "name": "백 포지션 이스케이프",
+  "koreanName": "백 포지션 이스케이프",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "탈출 기술 모음",
+  "positions": [],
+  "description": "상대방의 백 컨트롤에 대항하여 서브미션 그립을 방어하면서 몸을 회전시켜 매트에 어깨를 대고 탈출하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__belly-down-escape",
+  "name": "Belly Down Escape",
+  "koreanName": "벨리 다운 이스케이프",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "탈출 기술 모음",
+  "positions": [],
+  "description": "서브미션에 걸린 상태에서 매트 쪽으로 몸을 돌려 배를 대고 엎드림으로써 관절에 걸리는 가동 범위를 바꾸고 방어 공간을 확보하는 자세입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__코요테-가드-롤오버-스윕",
+  "name": "코요테 가드 롤오버 스윕",
+  "koreanName": "코요테 가드 롤오버 스윕",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "스윕 기술 모음",
+  "positions": [],
+  "description": "상대의 다리를 안쪽에서 감싸 안고 자신의 몸을 회전시켜 상대의 균형을 깨뜨리는 자세입니다. 하프 가드에서 상대의 무게를 분산시키고 안정적인 스윕 경로를 확보하는 것이 핵심입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__ankle-lock-counter-to-closed-guard",
+  "name": "Ankle-lock Counter to Closed Guard",
+  "koreanName": "앵클락 카운터 클로즈드 가드 복귀",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "레그락 계열",
+  "positions": [],
+  "description": "상대의 앵클락 공격에 맞서 잡힌 발의 끝을 당겨 발목 관절을 보호하고, 상체를を起こ해 상대에게 접근합니다. 상대의 라펠이나 팔을 잡아 당기면서 엉덩이를 가까이 붙여 상대의 꺾기 레버리지를 없앤 뒤 다리를 다시 상대 허리에 잠급니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__ankle-lock-to-break-closed-guard",
+  "name": "Ankle Lock to Break Closed Guard",
+  "koreanName": "클로즈드 가드 브레이크 앵클락",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "레그락 계열",
+  "positions": [],
+  "description": "상대의 클로즈드 가드 내부에서 한쪽 발목을 그립하여 아킬레스건을 단단히 고정한 뒤, 몸을 뒤로 젖히고 엉덩이를 집어넣어 서브미션 압박을 가하는 자세입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__back-choke-escape",
+  "name": "Back Choke Escape",
+  "koreanName": "백 초크 탈출",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "탈출 기술 모음",
+  "positions": [],
+  "description": "상대의 조이는 팔을 손으로 잡아 고정하고, 상대의 다리가 없는 쪽으로 몸을 틀어 탈출하는 자세입니다. 상대의 컨트롤을 무력화하기 위해 엉덩이를 움직여 상대의 훅을 제거하는 과정이 포함됩니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__back-mount-armbar",
+  "name": "Back Mount -> Armbar",
+  "koreanName": "백 마운트 암바",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "암바 계열",
+  "positions": [],
+  "description": "백 포지션(리어 백 컨트롤)에서 상대의 한쪽 팔을 제압한 뒤, 몸을 측면으로 회전시키며 다리를 상대의 얼굴과 가슴 위로 넘겨 암바를 완성하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__body-triangle-escape",
+  "name": "Body Triangle Escape",
+  "koreanName": "바디 트라이앵글 탈출",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "탈출 기술 모음",
+  "positions": [],
+  "description": "상대의 바디 트라이앵글이 잠긴 방향의 반대쪽으로 몸을 기울여 잠금 장치의 텐션을 약화시킵니다. 이후 상대의 발목을 손으로 밀어내거나 다리를 펴게 만들어 잠금을 해제합니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__bottom-arm-triangle",
+  "name": "Bottom Arm Triangle",
+  "koreanName": "바텀 암 트라이앵글",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "트라이앵글 계열",
+  "positions": [],
+  "description": "가드 포지션에서 상대방의 팔을 끌어당겨 자신의 목 옆으로 넘어오게 한 뒤, 팔과 목을 함께 감싸쥐고 체중과 각도를 활용해 목을 압박하는 기술입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__bottom-crucifix",
+  "name": "Bottom Crucifix",
+  "koreanName": "바텀 크루시픽스",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "크루시픽스 (Crucifix)",
+  "positions": [],
+  "description": "하위 포지션에서 상대의 양팔을 각각 다리와 팔로 고정하여 십자가 형태로 제압하는 구조입니다. 상대의 자유로운 상체 움직임을 제한하여 하위에서도 주도권을 가져옵니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__closed-guard-posture-and-base",
+  "name": "Closed Guard Posture and Base",
+  "koreanName": "클로즈드 가드 포스처와 베이스",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "클로즈드 가드 (Closed Guard)",
+  "positions": [],
+  "description": "상대의 클로즈드 가드 내부에서 무릎을 넓게 벌리고 앉아 상체를 곧게 세우는 방어적 기본 자세입니다. 상대의 상체 끌어당기기 시도를 프레임과 무게중심으로 무력화합니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__deep-de-la-riva-sweep",
+  "name": "Deep De La Riva Sweep",
+  "koreanName": "딥 드라리바 스위프",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "데 라 히바 (De La Riva Guard)",
+  "positions": [],
+  "description": "딥 드라리바 가드 포지션에서 상대의 다리 깊숙이 후크를 걸고 엉덩이를 상대 밑으로 넣어 중심을 무너뜨린 후 회전력이나 다리 밀기를 통해 상대를 넘어뜨리는 자세입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__double-lapel-grips",
+  "name": "Double lapel grips",
+  "koreanName": "더블 라펠 그립",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "기(Gi)에서 특히 중요한 기술",
+  "positions": [],
+  "description": "양손으로 상대의 깃을 잡고 자신의 팔꿈치를 몸쪽으로 당겨 상대의 상체를 고정합니다. 상대가 뒤로 물러나거나 자세를 바로잡지 못하도록 지속적인 압박을 가하는 것이 중요합니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__estima-lock",
+  "name": "Estima Lock",
+  "koreanName": "에스티마 락",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "레그락 계열",
+  "positions": [],
+  "description": "상대의 발목을 자신의 가슴과 그립 사이에 가두고 체중을 실어 발목 관절을 과도하게 굴곡 및 회전시켜 압박하는 기술입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__ghost-escape",
+  "name": "Ghost escape",
+  "koreanName": "고스트 이스케이프",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "탈출 기술 모음",
+  "positions": [],
+  "description": "사이드 컨트롤 하단에서 상대의 목/머리 통제를 이용해 상대의 몸 밑으로 머리를 밀어 넣으며 반대 방향으로 회전해 빠져나오는 움직임입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__hip-heist-sweep",
+  "name": "Hip Heist Sweep",
+  "koreanName": "힙 하이스트 스윕",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "스윕 기술 모음",
+  "positions": [],
+  "description": "가드 상태에서 상체를 일으켜 한쪽 손으로 바닥을 짚고, 엉덩이를 크게 들어 올리며 상대의 체중을 대각선 방향으로 밀어 넘기는 자세입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__inverted-guard",
+  "name": "Inverted Guard",
+  "koreanName": "인버티드 가드",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "오픈 가드 (Open Guard)",
+  "positions": [],
+  "description": "상대를 바라본 상태에서 몸을 뒤집어 목과 어깨로 바닥을 지지하고 다리를 공중에 띄워 상대의 상체나 팔을 견제하는 자세입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__inverted-guard-deep-de-la-riva-guard",
+  "name": "Inverted Guard -> Deep De La Riva (Guard)",
+  "koreanName": "인버티드 가드에서 딥 데라리바 전환",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "데 라 히바 (De La Riva Guard)",
+  "positions": [],
+  "description": "인버티드 가드 자세에서 몸을 구부려 상대 다리 사이 공간으로 회전해 들어간 후, 발목과 허벅지 깊숙이 다리를 감아 딥 데라리바 포지션을 세팅하는 과정입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__kani-basami",
+  "name": "Kani Basami",
+  "koreanName": "카니 바사미",
+  "art": "judo",
+  "currentArts": [
+   "judo"
+  ],
+  "category": "옆으로 누우며 던지기 --- Yoko Sutemi Waza",
+  "positions": [],
+  "description": "상대의 측면으로 빠르게 이동하며 양다리를 벌려 상대의 하체를 가위 모양으로 감싸는 자세입니다. 체중을 뒤로 실으며 회전력을 발생시켜 상대를 뒤로 넘어뜨립니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__leg-lift",
+  "name": "Leg lift",
+  "koreanName": "레그 리프트",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "스탠딩 / 테이크다운",
+  "positions": [],
+  "description": "상대에게 백을 잡힌 스탠딩 또는 서브미션 위기 상황에서, 상대의 한쪽 다리를 내 다리 사이로 들어 올려 중심을 무너뜨리고 테이크다운으로 연결하는 자세입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__mothers-milk-choke",
+  "name": "Mother's Milk Choke",
+  "koreanName": "마더스 밀크 초크",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "기(Gi)에서 특히 중요한 기술",
+  "positions": [],
+  "description": "마운트 포지션에서 상체를 낮추어 자신의 가슴으로 상대의 코와 입을 덮어누르며, Head Control이나 그립을 통해 상대 머리의 이동을 제한한 채 체중을 싣는 자세입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__standing-closed-guard-pass",
+  "name": "Standing Closed Guard Pass",
+  "koreanName": "스탠딩 클로즈드 가드 패스",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "패스 가드 (Guard Passing)",
+  "positions": [],
+  "description": "상대의 클로즈드 가드 내부에서 상체를 세운 뒤, 한쪽 소매와 칼라(또는 양쪽 소매)를 제어하고 일어서서 상대의 다리 잠금을 풀고 패스를 시도하는 자세입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__triangle-kimura",
+  "name": "Triangle -> Kimura",
+  "koreanName": "트라이앵글 암바 -> 기무라",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "트라이앵글 계열",
+  "positions": [],
+  "description": "트라이앵글 셋업 상태에서 상대의 팔을 제압하고 기무라 그립을 완성하는 과정입니다. 다리의 삼각형 구조를 유지하거나 해제하면서 상체 회전을 통해 관절을 압박합니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__twister",
+  "name": "Twister",
+  "koreanName": "트위스터",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "백 컨트롤 (Back Control)",
+  "positions": [],
+  "description": "상대의 한쪽 다리를 자신의 다리로 감싸 고정(크로치 라이드/트럭)한 후, 상대의 머리 뒤쪽과 팔을 감싸안아 몸통을 역방향으로 비트는 자세입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__victor-roll",
+  "name": "Victor roll",
+  "koreanName": "빅터 롤",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "탈출 기술 모음",
+  "positions": [],
+  "description": "스탠딩에서 상대에게 백 포지션을 잡혔을 때, 몸을 구부려 상대 다리 사이로 굴러 들어가며 상대의 다리를 수집하고 바닥으로 떨어뜨리는 고급 반격 자세입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__von-flue-choke",
+  "name": "Von Flue Choke",
+  "koreanName": "본 플루 초크",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "사이드 컨트롤 (Side Control)",
+  "positions": [],
+  "description": "상대가 내 목을 감싼 길로틴 그립을 유지한 채 사이드 컨트롤에 깔려 있을 때, 상대의 목 뒤로 손을 넣고 머리 쪽 어깨에 체중을 실어 압박을 가하는 자세입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__이마나리-롤",
+  "name": "이마나리 롤",
+  "koreanName": "이마나리 롤",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "레그락 계열",
+  "positions": [],
+  "description": "상대의 다리 쪽으로 몸을 던지며 전방으로 회전하여 상대의 다리를 감싸 안는 자세입니다. 회전 후 상대의 다리 사이에 자신의 몸을 위치시켜 하체 관절기 공방을 준비합니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "mixed-martial-arts__body-lock-inside-trip",
+  "name": "Body Lock Inside Trip",
+  "koreanName": "바디락 인사이드 트립",
+  "art": "mixed-martial-arts",
+  "currentArts": [
+   "mixed-martial-arts"
+  ],
+  "category": "테이크다운 (Takedown)",
+  "positions": [],
+  "description": "상대와 밀착하여 바디락을 완성한 후, 자신의 다리를 상대의 다리 안쪽으로 깊숙이 넣어 중심을 파괴합니다. 상체로는 상대를 자신의 몸쪽으로 당기고 하체로는 상대의 다리를 차단하여 넘어뜨립니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__posture-control",
+  "name": "Posture control",
+  "koreanName": "포스처 컨트롤",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "기본 움직임과 연결 기술",
+  "positions": [],
+  "description": "상대방의 가드 내에서 엉덩이를 뒤로 빼고 등을 곧게 펴서 상대가 나를 끌어당기지 못하게 하는 자세입니다. 시선은 정면을 향하며 무게 중심을 낮게 유지하여 균형을 잡습니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "mixed-martial-arts__hold",
+  "name": "Hold",
+  "koreanName": "홀드",
+  "art": "mixed-martial-arts",
+  "currentArts": [
+   "mixed-martial-arts"
+  ],
+  "category": "그라운드 컨트롤 (Ground Control)",
+  "positions": [],
+  "description": "상대방과의 유격을 최소화하면서 목, 언더훅(겨드랑이), 골반 등 신체의 주요 제어점을 그립과 신체 밀착을 통해 고정하는 자세입니다. 불필요한 공간을 주지 않고 체중을 실어 상대를 압박하는 것이 핵심입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "mixed-martial-arts__lead-kick-back-step-double-leg",
+  "name": "Lead Kick - Back Step - Double Leg",
+  "koreanName": "리드 킥 - 백스텝 - 더블레그",
+  "art": "mixed-martial-arts",
+  "currentArts": [
+   "mixed-martial-arts"
+  ],
+  "category": "테이크다운 (Takedown)",
+  "positions": [],
+  "description": "기본 스탠스에서 셋업 킥을 시도한 후 백스텝으로 무게중심을 뒤로 옮겼다가, 순간적으로 상체를 낮추며 상대의 양다리를 파고드는 연속 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "mixed-martial-arts__overhand-right-to-level-change",
+  "name": "Overhand Right to Level Change",
+  "koreanName": "오버핸드 라이트 - 레벨체인지 연계",
+  "art": "mixed-martial-arts",
+  "currentArts": [
+   "mixed-martial-arts"
+  ],
+  "category": "테이크다운 (Takedown)",
+  "positions": [],
+  "description": "오버핸드 훅 모션으로 상대의 가드를 끌어올린 뒤, 상체를 숙이며 엉덩이를 낮춰 곧바로 상대의 골반이나 다리 쪽으로 폭발적으로 진입하는 자세입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "mixed-martial-arts__overhand-to-double-leg-takedown",
+  "name": "Overhand to Double Leg Takedown",
+  "koreanName": "오버핸드 - 더블레그 테이크다운",
+  "art": "mixed-martial-arts",
+  "currentArts": [
+   "mixed-martial-arts"
+  ],
+  "category": "테이크다운 (Takedown)",
+  "positions": [],
+  "description": "오버핸드 펀치를 크게 던지는 척하면서 무게중심과 시선을 낮춰 상대의 하체로 진입하는 콤비네이션 자세입니다. 타격 모션과 레벨 체인지가 끊김 없이 하나의 흐름으로 연결되어야 합니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "mixed-martial-arts__passing-the-guard",
+  "name": "Passing the Guard",
+  "koreanName": "가드 패스",
+  "art": "mixed-martial-arts",
+  "currentArts": [
+   "mixed-martial-arts"
+  ],
+  "category": "그라운드 컨트롤 (Ground Control)",
+  "positions": [],
+  "description": "상대의 가드 안에서 안정적인 무게 중심을 유지하며 다리를 통과하는 과정이다. 상대의 다리 프레임을 제거하고 자신의 체중을 실어 압박하는 것이 중요하다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "mixed-martial-arts__takedown-setup",
+  "name": "Takedown Setup",
+  "koreanName": "테이크다운 셋업",
+  "art": "mixed-martial-arts",
+  "currentArts": [
+   "mixed-martial-arts"
+  ],
+  "category": "테이크다운 (Takedown)",
+  "positions": [],
+  "description": "상대에게 펀치나 킥 등의 타격 위협을 주어 시선을 상단에 고정시킨 후, 순간적으로 자세를 낮추어 테이크다운으로 연결하는 연계 자세입니다. 타격 모션과 레벨 체인지 모션의 시작 부분이 상대 입장에서 구별하기 어렵게 연출하는 것이 핵심입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "mixed-martial-arts__wrist-choke",
+  "name": "Wrist choke",
+  "koreanName": "리스트 초크",
+  "art": "mixed-martial-arts",
+  "currentArts": [
+   "mixed-martial-arts"
+  ],
+  "category": "서브미션 (Submission)",
+  "positions": [],
+  "description": "상대방의 목 부위에 손목을 깊게 밀어 넣고, 반대 손으로 이를 받쳐 단단한 체인을 형성하여 경동맥을 압박하는 자세입니다. 몸 전체의 체중과 팔의 회전력을 함께 이용하여 압박력을 극대화합니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "mixed-martial-arts__탑-포지션-제어",
+  "name": "탑 포지션 제어",
+  "koreanName": "탑 포지션 제어",
+  "art": "mixed-martial-arts",
+  "currentArts": [
+   "mixed-martial-arts"
+  ],
+  "category": "그라운드 컨트롤 (Ground Control)",
+  "positions": [],
+  "description": "상대 상체 위에 무게중심을 낮게 두고 베이스를 넓게 잡아 상대의 탈출 시도를 봉쇄하는 자세입니다. 머리와 상체, 무릎을 활용해 상대의 중심축을 제어하며 파운딩 공간을 확보합니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "mma__mount-pass",
+  "name": "Mount Pass",
+  "koreanName": "마운트 패스",
+  "art": "mixed-martial-arts",
+  "currentArts": [
+   "mixed-martial-arts"
+  ],
+  "category": "그라운드 컨트롤 (Ground Control)",
+  "positions": [],
+  "description": "상대의 다리 제어를 해제하면서 다리 사이 공간이나 외곽을 이용해 골반을 넘어 마운트 자세로 진입하는 정밀한 체중 이동 과정입니다. 상대의 반격을 차단하기 위해 상체 압박과 다리 제어가 동시에 이루어져야 합니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__ankle-ride-escape",
+  "name": "Ankle Ride Escape",
+  "koreanName": "앵클 라이드 이스케이프",
+  "art": "wrestling",
+  "currentArts": [
+   "wrestling"
+  ],
+  "category": "탈출 (Escape)",
+  "positions": [],
+  "description": "상대의 손을 떼어내기 위해 발목을 안쪽으로 회전시키거나 손으로 상대의 손목을 제어합니다. 이후 즉시 베이스를 세워 상대의 압박에서 벗어나는 것이 핵심입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "wrestling__grapevine",
+  "name": "Grapevine",
+  "koreanName": "그레이프바인",
+  "art": "wrestling",
+  "currentArts": [
+   "wrestling"
+  ],
+  "category": "탑 포지션",
+  "positions": [],
+  "description": "상대의 후방이나 탑 포지션에서 다리를 상대의 다리 안쪽으로 넣은 뒤 발목과 종아리 부위를 감싸서 다리를 꼬아 묶어 제어하는 자세입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "wrestling__short-sit-out-hip-heist",
+  "name": "Short Sit-Out -> Hip Heist",
+  "koreanName": "숏 싯아웃 히프 하이스트",
+  "art": "wrestling",
+  "currentArts": [
+   "wrestling"
+  ],
+  "category": "리버설 (Reversal)",
+  "positions": [],
+  "description": "터틀 또는 매트 밑 자세에서 상체를 세우며 다리를 앞으로 뻗는 숏 싯아웃을 수행한 후, 지지하는 손과 발을 축으로 골반을 폭발적으로 회전시켜 상대 쪽으로 몸을 돌려 세우는 연계 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "wrestling__그립-브레이킹",
+  "name": "그립 브레이킹",
+  "koreanName": "그립 브레이킹",
+  "art": "wrestling",
+  "currentArts": [
+   "wrestling"
+  ],
+  "category": "스탠딩 포지션 / 그립",
+  "positions": [],
+  "description": "상대방의 잡기 부위를 파악하고, 상대의 엄지손가락이 열린 방향을 향해 지렛대 원리와 체중을 이용해 순간적으로 털어내거나 떼어냅니다. 방어에 그치지 않고 그립을 깬 직후 자신의 공격적인 제어 자세로 전환하는 것이 핵심입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "wrestling__백-브릿지",
+  "name": "백 브릿지",
+  "koreanName": "백 브릿지",
+  "art": "wrestling",
+  "currentArts": [
+   "wrestling"
+  ],
+  "category": "기본 자세와 움직임",
+  "positions": [],
+  "description": "매트에 누운 상태에서 무릎을 굽히고 발바닥과 정수리(또는 머리 뒷부분)만을 매트에 대고 골반을 하늘 방향으로 높이 들어 올리는 자세입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "wrestling__short-sit-out",
+  "name": "Short Sit-Out",
+  "koreanName": "숏 싯아웃",
+  "art": "wrestling",
+  "currentArts": [
+   "wrestling"
+  ],
+  "category": "탈출 (Escape)",
+  "positions": [],
+  "description": "상대에게 제압당한 상태에서 엉덩이를 앞쪽으로 빠르게 밀어내어 상대의 그립을 끊어내는 동작입니다. 이후 즉시 베이스를 구축하여 일어서거나 다음 동작으로 연결합니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "wrestling__tripod-headstand",
+  "name": "Tripod Headstand",
+  "koreanName": "트라이포드 헤드스탠드",
+  "art": "wrestling",
+  "currentArts": [
+   "wrestling"
+  ],
+  "category": "기본 자세와 움직임",
+  "positions": [],
+  "description": "머리의 정수리 부위와 두 손을 매트에 대어 안정적인 삼각형 기반을 만든 뒤, 골반을 올리고 무릎을 팔꿈치 위에 얹거나 다리를 들어 올려 균형을 잡는 자세입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "wrestling__안오금-당기기",
+  "name": "안오금 당기기",
+  "koreanName": "안오금 당기기",
+  "art": "wrestling",
+  "currentArts": [
+   "wrestling"
+  ],
+  "category": "발목·무릎 공격",
+  "positions": [],
+  "description": "상대와의 거리와 중심을 조절한 뒤, 순간적으로 레벨 체인지를 하여 상대의 다리 안쪽 오금을 잡아당기며 테이크다운을 완성하는 자세입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "wrestling__프론트-롤",
+  "name": "프론트 롤",
+  "koreanName": "프론트 롤",
+  "art": "wrestling",
+  "currentArts": [
+   "wrestling"
+  ],
+  "category": "기본 자세와 움직임",
+  "positions": [],
+  "description": "몸을 구형으로 만들어 전방으로 회전하며 안전하게 충격을 흡수하고 구르는 기본 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "wrestling__핸드-스탠드",
+  "name": "핸드 스탠드",
+  "koreanName": "핸드 스탠드",
+  "art": "wrestling",
+  "currentArts": [
+   "wrestling"
+  ],
+  "category": "기본 자세와 움직임",
+  "positions": [],
+  "description": "양손을 어깨너비로 지면에 대고 보폭을 조절하여 몸을 거꾸로 세우는 자세입니다. 머리부터 골반, 발끝까지 일직선을 이루며 코어와 어깨의 힘으로 균형을 유지해야 합니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "boxing__lead-hand-trap",
+  "name": "Lead Hand Trap",
+  "koreanName": "앞손 트랩",
+  "art": "boxing",
+  "currentArts": [
+   "boxing"
+  ],
+  "category": "가드 조작",
+  "positions": [],
+  "description": "앞손으로 상대의 앞손(잽 손)을 짧게 눌러 잡거나 아래로 당겨 순간적으로 묶는 기술이다. 상대 앞손 바깥쪽 45도로 스텝인하면서 앞손으로 상대 앞손을 체크·트랩하고, 동시에 뒷손 크로스를 가드 정중앙으로 꽂는다.",
+  "candidates": [
+   "kickboxing",
+   "muay-thai",
+   "karate",
+   "taekwondo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__overhook-pummel",
+  "name": "Overhook pummel",
+  "koreanName": "오버훅 퍼멜",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "스탠딩 / 테이크다운",
+  "positions": [],
+  "description": "상대의 팔을 감싼 상태에서 자신의 팔꿈치를 상대의 겨드랑이 안쪽으로 깊숙이 파고드는 동작입니다. 상대의 움직임에 반응하여 팔을 안쪽으로 돌리며 공간을 확보하고 제어권을 유지합니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "boxing__rear-hand-trap",
+  "name": "Rear Hand Trap",
+  "koreanName": "뒷손 트랩",
+  "art": "boxing",
+  "currentArts": [
+   "boxing"
+  ],
+  "category": "가드 조작",
+  "positions": [],
+  "description": "뒷손으로 상대의 뒷손 가드(턱을 지키는 손)를 밀어내거나 아래로 당겨 턱 옆을 비우는 기술이다. 같은 스탠스(오소독스 대 오소독스)에서 상대 뒷손과 내 뒷손이 마주 보는 위치를 이용해, 가드를 한 번에 치워낸 직후 리드 훅을 턱에 꽂는다.",
+  "candidates": [
+   "kickboxing",
+   "muay-thai",
+   "karate",
+   "taekwondo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "bjj__그립-브레이킹-턴-아웃",
+  "name": "그립 브레이킹 & 턴 아웃",
+  "koreanName": "그립 브레이킹 & 턴 아웃",
+  "art": "bjj",
+  "currentArts": [
+   "bjj"
+  ],
+  "category": "탈출 기술 모음",
+  "positions": [],
+  "description": "상대방의 백 마운트 제압을 무력화하기 위해 시트벨트 그립을 먼저 깨트린 후, 몸을 상대방을 향해 돌려 가드로 복귀하는 백 탈출 자세입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "boxing__paw",
+  "name": "Paw",
+  "koreanName": "포잉 잽",
+  "art": "boxing",
+  "currentArts": [
+   "boxing"
+  ],
+  "category": "가드 조작",
+  "positions": [],
+  "description": "앞손을 힘 없이 천천히 뻗어 상대의 앞손 가드를 톡 건드리거나 얼굴 앞 공간을 가리는 탐색용 잽이다. 골반 회전이나 앞발 피벗 없이 팔만 뻗어 거리를 재고 시야를 가린 뒤, 상대 반응에 맞춰 크로스·훅·어퍼컷으로 이어간다.",
+  "candidates": [
+   "kickboxing",
+   "muay-thai",
+   "karate",
+   "taekwondo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "boxing__sway-jab",
+  "name": "Sway -> Jab",
+  "koreanName": "스웨이 -> 잽",
+  "art": "boxing",
+  "currentArts": [
+   "boxing"
+  ],
+  "category": "카운터",
+  "positions": [],
+  "description": "상체를 뒤로 기울여 상대의 주먹을 턱 끝 차이로 피한 뒤, 즉시 앞손을 뻗어 반격합니다. 체중이 뒷발에 실려야 하며, 공격 후에는 즉시 원래 자세로 복귀해야 합니다.",
+  "candidates": [
+   "kickboxing",
+   "muay-thai",
+   "karate",
+   "taekwondo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "mma__jab-cross-setup",
+  "name": "Jab Cross Setup",
+  "koreanName": "잽 크로스 셋업",
+  "art": "mixed-martial-arts",
+  "currentArts": [
+   "mixed-martial-arts"
+  ],
+  "category": "MMA 복싱",
+  "positions": [],
+  "description": "기본 타격 자세에서 시작하여 앞손 잽으로 상대를 기만하고, 곧바로 뒷손 크로스를 직진으로 뻗어 넣는 콤비네이션 자세입니다. 몸의 회전축과 체중 이동을 정확히 활용하는 것이 핵심입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "mma__sprawl-counter",
+  "name": "Sprawl Counter",
+  "koreanName": "스프롤 카운터",
+  "art": "mixed-martial-arts",
+  "currentArts": [
+   "mixed-martial-arts"
+  ],
+  "category": "방어 (Defense)",
+  "positions": [],
+  "description": "상대의 테이크다운 시도 시 엉덩이를 낮추고 다리를 뒤로 빼며 상체로 상대를 눌러 방어한 후, 즉시 상위 포지션을 잡거나 반격을 시도하는 자세입니다. 상대의 머리와 어깨 위에 자신의 체중을 완전히 실어 상대의 움직임을 제한합니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "mixed-martial-arts__cartwheel-kick",
+  "name": "Cartwheel kick",
+  "koreanName": "카트휠 킥",
+  "art": "mixed-martial-arts",
+  "currentArts": [
+   "mixed-martial-arts"
+  ],
+  "category": "MMA 킥복싱",
+  "positions": [],
+  "description": "양손을 지면에 짚어 상체를 낮추고, 하체를 공중으로 회전시키며 발 뒤꿈치나 발날로 타격합니다. 회전하는 동안 시선을 타격 지점에 고정하여 정확도를 높입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "mixed-martial-arts__double-leg-to-rear-naked-choke",
+  "name": "Double Leg to Rear Naked Choke",
+  "koreanName": "더블 레그 투 리어 네이키드 초크",
+  "art": "mixed-martial-arts",
+  "currentArts": [
+   "mixed-martial-arts"
+  ],
+  "category": "MMA 전환 동작 (Transitions)",
+  "positions": [],
+  "description": "상대를 넘어뜨린 직후 상대가 일어나려 할 때 등을 점유하는 것이 중요합니다. 상대의 골반을 제어하며 양 다리로 훅을 걸어 포지션을 고정합니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "mixed-martial-arts__single-leg-to-ankle-lock",
+  "name": "Single Leg to Ankle Lock",
+  "koreanName": "싱글 레그 투 앵클 락",
+  "art": "mixed-martial-arts",
+  "currentArts": [
+   "mixed-martial-arts"
+  ],
+  "category": "MMA 전환 동작 (Transitions)",
+  "positions": [],
+  "description": "상대의 한쪽 다리를 잡은 상태에서 자신의 몸을 상대 다리 안쪽으로 밀착시켜 발목을 고립시키는 자세입니다. 이후 자신의 몸을 뒤로 눕히며 상대의 발목에 압박을 가하는 형태로 전환합니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "mixed-martial-arts__body-lock-to-arm-triangle-choke",
+  "name": "Body Lock to Arm Triangle Choke",
+  "koreanName": "바디락 투 암 트라이앵글 초크",
+  "art": "mixed-martial-arts",
+  "currentArts": [
+   "mixed-martial-arts"
+  ],
+  "category": "MMA 전환 동작 (Transitions)",
+  "positions": [],
+  "description": "바디락으로 상대의 상체를 고정한 뒤, 한쪽 팔을 상대의 목과 어깨 사이로 깊숙이 넣어 암 트라이앵글 그립을 완성한다. 이후 체중을 실어 상대의 움직임을 봉쇄하고 경동맥을 압박한다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "mixed-martial-arts__uchi-mata-to-armbar",
+  "name": "Uchi Mata to Armbar",
+  "koreanName": "우치마타 투 암바",
+  "art": "mixed-martial-arts",
+  "currentArts": [
+   "mixed-martial-arts"
+  ],
+  "category": "MMA 전환 동작 (Transitions)",
+  "positions": [],
+  "description": "상대와 클린치 상태에서 우치마타를 시도하며 상대의 한쪽 팔을 깊숙이 제압합니다. 착지 시 상대의 팔을 놓지 않고 즉시 다리를 상대의 머리 위로 넘겨 암바 자세를 완성합니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "muay-thai__cross-elbow",
+  "name": "Cross Elbow",
+  "koreanName": "크로스 엘보",
+  "art": "muay-thai",
+  "currentArts": [
+   "muay-thai"
+  ],
+  "category": "엘보 (Sok, ศอก)",
+  "positions": [],
+  "description": "후속 스트레이트(Cross)처럼 후방 축 다리와 골반을 회전시키며 팔꿈치를 수평에 가깝게 휘둘러 타격하는 자세입니다. 근접전에서 시야를 확보하면서 상대의 방어를 뚫고 들어갑니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "karate",
+   "taekwondo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "wrestling__cross-ankle-pick",
+  "name": "Cross Ankle Pick",
+  "koreanName": "크로스 앵클 픽",
+  "art": "wrestling",
+  "currentArts": [
+   "wrestling"
+  ],
+  "category": "발목·무릎 공격",
+  "positions": [],
+  "description": "상대와의 타이 싸움에서 머리와 상체를 아래 및 대각선 방향으로 강하게 끌어당겨 체중을 앞발에 쏠리게 만듭니다. 이후 낮은 레벨 체인지를 통해 대각선 위치의 발목 뒤쪽을 감싸쥐고, 상체 밀기 및 끌어당김을 동시에 수행하여 상대를 넘어뜨립니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo",
+   "mixed-martial-arts"
+  ]
+ },
+ {
+  "id": "muay-thai__guard-pull-down",
+  "name": "Guard Pull-Down",
+  "koreanName": "가드 끌어내리기",
+  "art": "muay-thai",
+  "currentArts": [
+   "muay-thai"
+  ],
+  "category": "가드 조작",
+  "positions": [],
+  "description": "한 손으로 상대 전완(가드 팔)을 걸어 잡고 자기 쪽 아래로 끌어당겨 가드를 벗겨내는 기술이다. 콤비네이션의 마지막 펀치를 일부러 빗나가게 던진 뒤 손을 펴서 상대 전완을 잡아당기면, 상대 머리가 끌려 들어오며 팔꿈치나 스트레이트가 들어갈 길이 열린다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "karate",
+   "taekwondo",
+   "mixed-martial-arts"
+  ]
+ }
+]

@@ -3,6 +3,7 @@ import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { createCombo, getCombo, updateCombo, validateCombo } from '../lib/combo/service';
 import { resolveTechniquesByIds, searchAllTechniques } from '../lib/userTechniques/service';
 import BackButton from '../components/BackButton';
+import Icon from '../components/Icon';
 
 // Same fix as SearchBar.tsx: searchAllTechniques over the ~1,310-technique
 // corpus (Fuse fuzzy pass) measured at 40-220ms per call — unmemoized and
@@ -155,7 +156,7 @@ export default function ComboBuilder() {
 
         <div className="card info-card">
           <h3>기술 순서 (Timeline)</h3>
-          <p className="video-status-message">기술을 드래그하거나 ◀ ▶ 버튼으로 순서를 바꿀 수 있습니다.</p>
+          <p className="video-status-message">기술을 드래그하거나 <Icon name="prev" /> <Icon name="next" /> 버튼으로 순서를 바꿀 수 있습니다.</p>
           {techniques.length === 0 ? (
             <p className="video-status-message">아직 추가된 기술이 없습니다.</p>
           ) : (
@@ -181,7 +182,7 @@ export default function ComboBuilder() {
                       onClick={() => moveTechnique(i, -1)}
                       style={{ marginLeft: 6, background: 'none', border: 'none', color: 'inherit', cursor: 'pointer' }}
                     >
-                      ◀
+                      <Icon name="prev" />
                     </button>
                     <button
                       aria-label="오른쪽으로 이동"
@@ -189,14 +190,14 @@ export default function ComboBuilder() {
                       onClick={() => moveTechnique(i, 1)}
                       style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer' }}
                     >
-                      ▶
+                      <Icon name="next" />
                     </button>
                     <button
                       aria-label="삭제"
                       onClick={() => removeTechnique(i)}
                       style={{ marginLeft: 2, background: 'none', border: 'none', color: 'inherit', cursor: 'pointer' }}
                     >
-                      ×
+                      <Icon name="close" />
                     </button>
                   </span>
                 </span>

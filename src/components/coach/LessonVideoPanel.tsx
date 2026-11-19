@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import Icon from '../Icon';
+import { useState, type ReactNode } from 'react';
 import { openExternal } from '../../lib/externalLink';
 import type { LessonVideoResult } from '../../lib/coachLesson/lessonVideos';
 import OtherPlatformVideos from './OtherPlatformVideos';
@@ -10,7 +11,7 @@ const IFRAME_ALLOW = 'accelerometer; autoplay; clipboard-write; encrypted-media;
  * searching / none / failed honestly; plays inside the app (YouTube embed)
  * with a link to the original as a fallback.
  */
-export default function LessonVideoPanel(props: { result: LessonVideoResult | null; progress: string | null; highlight?: boolean; onRetry: () => void; title?: string; testId?: string; subject?: string }) {
+export default function LessonVideoPanel(props: { result: LessonVideoResult | null; progress: string | null; highlight?: boolean; onRetry: () => void; title?: ReactNode; testId?: string; subject?: string }) {
   const subject = props.subject ?? '수업 주제';
   const { result } = props;
   const [active, setActive] = useState<string | null>(null);
@@ -20,7 +21,7 @@ export default function LessonVideoPanel(props: { result: LessonVideoResult | nu
 
   return (
     <div className={`card info-card lesson-videos${props.highlight ? ' lesson-videos--now' : ''}`} data-testid={props.testId ?? 'lesson-videos'} data-status={status} data-count={videos.length + (result?.otherVideos?.length ?? 0)}>
-      <h3 style={{ marginTop: 0 }}>{props.title ?? '▶ 수업 영상'}</h3>
+      <h3 style={{ marginTop: 0 }}>{props.title ?? <><Icon name="play" /> 수업 영상</>}</h3>
       {status === 'searching' && (
         <p className="video-status-message" data-testid="lesson-videos-searching">
           <span className="spinner" /> {props.progress ?? `${subject}에 맞는 영상을 찾는 중입니다…`}

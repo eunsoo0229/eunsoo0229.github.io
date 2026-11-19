@@ -1,11 +1,11 @@
-import { defineConfig } from 'vite';
+import { defineConfig, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import { readFileSync } from 'node:fs';
 
 const pkg = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8')) as { version: string };
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), selfAiServerCsp()],
   // Shown in backup metadata ("앱 버전").
   define: { __APP_VERSION__: JSON.stringify(pkg.version) },
   base: './',
@@ -32,3 +32,18 @@ export default defineConfig({
     strictPort: true,
   },
 });
+
+/**
+ * The MARTIALDEX self-AI server (server/self-ai) in the page's CSP connect-src: the loopback
+ * default port (the same computer, or an Android emulator / phone through `adb reverse`), and
+ * the HTTPS origin a deployment sets with VITE_SELF_AI_SERVER_ORIGIN. Nothing else is opened.
+ */
+function selfAiServerCsp(): Plugin {
+  const origin = (process.env.VITE_SELF_AI_SERVER_ORIGIN ?? '').trim();
+  const extra = ['http://localhost:8787', 'http://127.0.0.1:8787', ...(/^https:\/\/[\w.-]+(:\d+)?$/.test(origin) ? [origin] : [])].join(' ');
+  return {
+    name: 'martialdex-self-ai-server-csp',
+    transformIndexHtml: (html) => html.replace("connect-src 'self'", `connect-src 'self' ${extra}`),
+  };
+}
+

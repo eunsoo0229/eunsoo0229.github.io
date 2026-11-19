@@ -1,5 +1,7 @@
+import { wrestlingChains } from './wrestlingChains';
 import type { MittCombo, MittStep } from './combos';
 import { listDbCombos } from './combos';
+import { attackSingles, combosFor, defenseSingles, type DrillOptions, type DrillProfile } from './artDrills';
 import { recordTrainingSession } from '../trainingHistory/service';
 import { kickExtraMs, tempoLabel } from './tempo';
 
@@ -25,6 +27,19 @@ const DEFENSE_CALL: Record<string, string> = {
   parry: '패리', leadParry: '앞손 패리', downParry: '아래 패리', catchPunch: '캐치', block: '블록', cover: '커버', elbowBlock: '엘보 블록', shoulderRoll: '숄더 롤',
   check: '체크', kickCatch: '킥 캐치', teepCatch: '팁 캐치', kickParry: '킥 패리',
   leadHandTrap: '앞손 트랩', rearHandTrap: '뒷손 트랩', paw: '포', guardPullDown: '가드 내려',
+  sprawl: '스프롤', downBlock: '다운블락', jumpSprawl: '점프 스프롤', whizzer: '위저',
+};
+
+/** Coach words for the wider range of attacks (the holder shouts these on pads). */
+const ATTACK_CALL: Record<string, string> = {
+  overhand: '오버핸드', leadOverhand: '앞손 오버핸드', superman: '슈퍼맨', backfist: '백피스트', spinBackfist: '스피닝 백피스트', checkHook: '체크 훅', bolo: '볼로', corkscrew: '코크스크루', gazelle: '가젤 펀치',
+  frontKick: '앞차기', leadRoundKick: '앞발 미들', switchKick: '스위치 킥', stepUpKick: '스텝업 킥', questionMark: '퀘스천 마크', sideKick: '사이드킥', backKick: '백킥', axeKick: '내려차기', obliqueKick: '오블리크',
+  hookKick: '훅킥', spinHookKick: '스피닝 훅킥', crescentKick: '반달차기',
+  rearKnee: '니', leadKnee: '앞 니', flyingKnee: '플라잉 니', sideKnee: '옆 니', spinKnee: '스피닝 니',
+  hElbow: '엘보', upElbow: '올려 엘보', downElbow: '내려 엘보', spinElbow: '스피닝 엘보', spearElbow: '찌르는 엘보',
+  handFeint: '페인트', kickFeint: '킥 페인트',
+  highCrotch: '하이 크로치', snapDown: '스냅 다운', kneeTap: '니 탭', anklePick: '앵클 픽', duckUnder: '덕 언더', armDrag: '암 드래그', goBehind: '고 비하인드',
+  bodyLock: '바디락', outsideTrip: '아웃사이드 트립', insideTrip: '인사이드 트립', lateralDrop: '래터럴 드롭', firemansCarry: '파이어맨 캐리', kosotoGari: '아웃사이드 트립',
 };
 
 export function calloutFor(s: MittStep): string {
@@ -44,9 +59,10 @@ export function calloutFor(s: MittStep): string {
     case 'highKick': return '하이킥';
     case 'teep': return '앞발 팁';
     case 'rearTeep': return '뒷발 팁';
-    case 'doubleLeg': return '더블렉';
+    case 'doubleLeg': return /penetration|tackle|태클/i.test(s.technique.name) ? '태클' : /blast/i.test(s.technique.name) ? '블래스트 더블' : '더블렉';
     case 'singleLeg': return '싱글렉';
-    default: return s.technique.name;
+    case 'levelFeint': return /fake shot/i.test(s.technique.name) ? '페이크 슛' : '레벨 체인지';
+    default: return ATTACK_CALL[s.motion.archetype.key] ?? s.technique.koreanName ?? s.technique.name;
   }
 }
 
@@ -57,6 +73,18 @@ export function comboCallout(c: MittCombo): string {
 /** Every real combo the reaction drill may call: DB combos of basic attacks only, 2–5 steps. */
 export function reactionPool(): MittCombo[] {
   return listDbCombos().filter((c) => c.steps.length >= 2 && c.steps.length <= 5 && c.steps.every((s) => BASIC_ATTACKS.has(s.motion.archetype.key)));
+}
+
+/**
+ * The reaction drill's pool for the art picked (종목별): real combos (DB records + 사용자 공유 콤보
+ * passed in `extra`) made only of that art's allowed motions — and, for arts where reacting to
+ * ONE move is the drill (레슬링: the holder shoots → sprawl), single moves too.
+ */
+export function reactionPoolFor(profile: DrillProfile, o: DrillOptions, extra: MittCombo[] = []): MittCombo[] {
+  const combos = combosFor(profile, o, [...listDbCombos(), ...extra]);
+  if (!profile.reactionSingles) return combos;
+  // 레슬링: long call-and-move chains too (태클 → 스프롤 → 다운블락 → 태클) — wrestlingChains.ts
+  return [...attackSingles(profile, o), ...(o.withDefense ? defenseSingles(profile, o) : []), ...combos, ...wrestlingChains(profile, o)];
 }
 
 export type ReactionPace = 'slow' | 'normal' | 'fast';

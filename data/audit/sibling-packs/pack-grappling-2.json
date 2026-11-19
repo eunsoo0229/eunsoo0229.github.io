@@ -1,0 +1,1200 @@
+[
+ {
+  "id": "wrestling__sit-out-to-single",
+  "name": "Sit-Out to Single",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "바텀 포지션",
+  "positions": [
+   "바텀 포지션"
+  ],
+  "description": "싯아웃 투 싱글은 싯아웃 동작 후 상대의 다리를 잡아 싱글 레그로 연결하는 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__quadpod-escape",
+  "name": "Quadpod Escape",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탈출 (Escape)",
+  "positions": [
+   "탈출 (Escape)"
+  ],
+  "description": "쿼드포드 이스케이프는 손과 발 네 지점으로 지지하는 쿼드포드 자세에서 상대의 압박을 벗어나는 탈출 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__sit-out-to-reversal",
+  "name": "Sit-Out to Reversal",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "리버설 (Reversal)",
+  "positions": [
+   "리버설 (Reversal)"
+  ],
+  "description": "싯아웃 투 리버설은 싯아웃 자세에서 상대를 잡아 굴려 자세를 완전히 역전시키는 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__granby-roll-to-reversal",
+  "name": "Granby Roll to Reversal",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "리버설 (Reversal)",
+  "positions": [
+   "리버설 (Reversal)"
+  ],
+  "description": "그랜비 롤 투 리버설은 그랜비 롤 동작을 리버설(자세 역전)로 완성하는 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__peterson-roll-to-reversal",
+  "name": "Peterson Roll to Reversal",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "리버설 (Reversal)",
+  "positions": [
+   "리버설 (Reversal)"
+  ],
+  "description": "피터슨 롤 투 리버설은 피터슨 롤 동작을 완전한 리버설로 완성하는 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__waist-lock-reversal",
+  "name": "Waist Lock Reversal",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "리버설 (Reversal)",
+  "positions": [
+   "리버설 (Reversal)"
+  ],
+  "description": "웨이스트 락 리버설은 상대의 허리를 잡아 굴려 자세를 역전시키는 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__duck-under-reversal",
+  "name": "Duck-Under Reversal",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "리버설 (Reversal)",
+  "positions": [
+   "리버설 (Reversal)"
+  ],
+  "description": "덕언더 리버설은 덕언더로 상대의 팔 아래를 빠져나가며 자세를 역전시키는 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__roll-through",
+  "name": "Roll-Through",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "리버설 (Reversal)",
+  "positions": [
+   "리버설 (Reversal)"
+  ],
+  "description": "롤 스루는 몸을 완전히 굴려 상대를 등에 태우거나 자세를 역전시키는 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__near-wrist-roll",
+  "name": "Near Wrist Roll",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "리버설 (Reversal)",
+  "positions": [
+   "리버설 (Reversal)"
+  ],
+  "description": "니어 리스트 롤은 가까운 쪽 손목을 잡아 굴려 자세를 역전시키는 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__re-single",
+  "name": "Re-Single",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "리샷 / 카운터",
+  "positions": [
+   "리샷 / 카운터"
+  ],
+  "description": "리싱글은 첫 싱글 레그 시도가 막혔을 때 즉시 다시 시도하는 재진입 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__re-double",
+  "name": "Re-Double",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "리샷 / 카운터",
+  "positions": [
+   "리샷 / 카운터"
+  ],
+  "description": "리더블은 첫 더블 레그 시도가 막혔을 때 즉시 다시 시도하는 재진입 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__crackdown-counter",
+  "name": "Crackdown Counter",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "리샷 / 카운터",
+  "positions": [
+   "리샷 / 카운터"
+  ],
+  "description": "크랙다운 카운터는 상대의 다리 공격을 크랙다운(다리 접어 누르기)으로 역이용해 제압하는 카운터 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__hip-heist-counter",
+  "name": "Hip Heist Counter",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "리샷 / 카운터",
+  "positions": [
+   "리샷 / 카운터"
+  ],
+  "description": "힙 하이스트 카운터는 힙 하이스트 동작을 이용해 상대의 공격을 피하며 반격 기회를 만드는 카운터 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__head-hands",
+  "name": "Head Hands",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "방어",
+  "positions": [
+   "방어"
+  ],
+  "description": "헤드 핸즈는 손으로 자신의 머리/얼굴을 보호하며 상대의 그립 시도를 막는 기본 방어 원칙입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "sambo__스탠스",
+  "name": "스탠스",
+  "koreanName": "스탠스",
+  "art": "sambo",
+  "category": "기본 자세와 거리(Дистанция)",
+  "positions": [
+   "기본 자세와 거리(Дистанция)"
+  ],
+  "description": "삼보 스탠스는 무릎을 살짝 굽히고 발을 어깨너비로 벌려 그립 다툼과 테이크다운 모두에 대응할 수 있는 기본 자세입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__거리-구분",
+  "name": "거리 구분",
+  "koreanName": "거리 구분",
+  "art": "sambo",
+  "category": "기본 자세와 거리(Дистанция)",
+  "positions": [
+   "기본 자세와 거리(Дистанция)"
+  ],
+  "description": "거리 구분은 그립 거리, 타격 거리(컴뱃 삼보), 클린치 거리를 상황에 맞게 인식하고 전환하는 기본 원리입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__footwork",
+  "name": "Footwork",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "기본 자세와 거리(Дистанция)",
+  "positions": [
+   "기본 자세와 거리(Дистанция)"
+  ],
+  "description": "",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__break-step",
+  "name": "Break Step",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "기본 자세와 거리(Дистанция)",
+  "positions": [
+   "기본 자세와 거리(Дистанция)"
+  ],
+  "description": "",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__захват-за-рукав-куртки-зацеп-изнутри",
+  "name": "Захват за рукав куртки, зацеп изнутри",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "그립 파이팅(Захват) --- 재킷·벨트 중심",
+  "positions": [
+   "그립 파이팅(Захват) --- 재킷·벨트 중심"
+  ],
+  "description": "захват за рукав куртки, зацеп изнутри는 소매를 잡은 상태에서 안쪽 다리 걸기(자쳅)로 연결하는 그립-기술 조합입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__leg-grip",
+  "name": "Leg Grip",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "그립 파이팅(Захват) --- 재킷·벨트 중심",
+  "positions": [
+   "그립 파이팅(Захват) --- 재킷·벨트 중심"
+  ],
+  "description": "",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__소매-옷깃-그립",
+  "name": "소매+옷깃 그립",
+  "koreanName": "소매+옷깃 그립",
+  "art": "sambo",
+  "category": "그립 파이팅(Захват) --- 재킷·벨트 중심",
+  "positions": [
+   "그립 파이팅(Захват) --- 재킷·벨트 중심"
+  ],
+  "description": "소매+옷깃 그립은 한 손으로 소매를, 반대 손으로 옷깃을 잡는 삼보의 가장 표준적인 그립 조합입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__손목-팔꿈치-제어",
+  "name": "손목/팔꿈치 제어",
+  "koreanName": "손목/팔꿈치 제어",
+  "art": "sambo",
+  "category": "그립 파이팅(Захват) --- 재킷·벨트 중심",
+  "positions": [
+   "그립 파이팅(Захват) --- 재킷·벨트 중심"
+  ],
+  "description": "손목/팔꿈치 제어는 상대의 팔을 손목과 팔꿈치 두 지점에서 동시에 통제해 움직임을 완전히 제한하는 그립입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__당겨서-무너뜨리기",
+  "name": "당겨서 무너뜨리기",
+  "koreanName": "당겨서 무너뜨리기",
+  "art": "sambo",
+  "category": "균형 무너뜨리기(Выведение из равновесия)",
+  "positions": [
+   "균형 무너뜨리기(Выведение из равновесия)"
+  ],
+  "description": "당겨서 무너뜨리기는 그립을 이용해 상대를 앞으로 강하게 당겨 무게중심을 무너뜨리는 오프밸런싱 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__밀어서-무너뜨리기",
+  "name": "밀어서 무너뜨리기",
+  "koreanName": "밀어서 무너뜨리기",
+  "art": "sambo",
+  "category": "균형 무너뜨리기(Выведение из равновесия)",
+  "positions": [
+   "균형 무너뜨리기(Выведение из равновесия)"
+  ],
+  "description": "밀어서 무너뜨리기는 그립을 이용해 상대를 뒤로 강하게 밀어 무게중심을 무너뜨리는 오프밸런싱 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__비틀어서-무너뜨리기",
+  "name": "비틀어서 무너뜨리기",
+  "koreanName": "비틀어서 무너뜨리기",
+  "art": "sambo",
+  "category": "균형 무너뜨리기(Выведение из равновесия)",
+  "positions": [
+   "균형 무너뜨리기(Выведение из равновесия)"
+  ],
+  "description": "비틀어서 무너뜨리기는 그립으로 상대의 상체를 회전시켜 균형을 옆으로 무너뜨리는 오프밸런싱 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__передняя-подсечка",
+  "name": "передняя подсечка",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "다리 기술 --- 포드쎗카(Подсечка) 계열: 발쓸기(Sweep)",
+  "positions": [
+   "다리 기술 --- 포드쎗카(Подсечка) 계열: 발쓸기(Sweep)"
+  ],
+  "description": "передняя подсечка(전방 후리기)는 상대가 앞으로 내딛는 발을 쓸어 넘어뜨리는 발기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__задняя-подсечка",
+  "name": "задняя подсечка",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "다리 기술 --- 포드쎗카(Подсечка) 계열: 발쓸기(Sweep)",
+  "positions": [
+   "다리 기술 --- 포드쎗카(Подсечка) 계열: 발쓸기(Sweep)"
+  ],
+  "description": "задняя подсечка(후방 후리기)는 상대의 뒤로 이동하는 발이나 뒷다리를 쓸어 넘어뜨리는 발기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__подсечка-изнутри",
+  "name": "подсечка изнутри",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "다리 기술 --- 포드쎗카(Подсечка) 계열: 발쓸기(Sweep)",
+  "positions": [
+   "다리 기술 --- 포드쎗카(Подсечка) 계열: 발쓸기(Sweep)"
+  ],
+  "description": "подсечка изнутри(안쪽 후리기)는 상대의 다리 안쪽을 발로 쓸어 넘어뜨리는 발기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__подсечка-с-заведением",
+  "name": "подсечка с заведением",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "다리 기술 --- 포드쎗카(Подсечка) 계열: 발쓸기(Sweep)",
+  "positions": [
+   "다리 기술 --- 포드쎗카(Подсечка) 계열: 발쓸기(Sweep)"
+  ],
+  "description": "подсечка с заведением(회전 유도 후리기)은 그립으로 상대를 회전시키며 동시에 다리를 쓸어 넘어뜨리는 발기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__подхват",
+  "name": "Подхват",
+  "koreanName": "포드핫",
+  "art": "sambo",
+  "category": "다리 기술 --- 자쳅(Зацеп)·오트하바트(Отхват)·포드핫(Подхват)· 포드사드(Подсад)",
+  "positions": [
+   "다리 기술 --- 자쳅(Зацеп)·오트하바트(Отхват)·포드핫(Подхват)· 포드사드(Подсад)"
+  ],
+  "description": "포드핫은 자신의 다리를 상대의 다리 뒤에 대고 몸통 회전으로 넘기는 기술로, 유도의 하라이고시와 유사합니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__подсад",
+  "name": "Подсад",
+  "koreanName": "포드사드",
+  "art": "sambo",
+  "category": "다리 기술 --- 자쳅(Зацеп)·오트하바트(Отхват)·포드핫(Подхват)· 포드사드(Подсад)",
+  "positions": [
+   "다리 기술 --- 자쳅(Зацеп)·오트하바트(Отхват)·포드핫(Подхват)· 포드사드(Подсад)"
+  ],
+  "description": "포드사드는 다리를 이용해 상대를 위로 살짝 띄운 뒤 반대 방향으로 넘기는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__боковой",
+  "name": "боковой",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "허리/몸통 던지기 --- 브로속 체레즈 베드로(Бросок через бедро)",
+  "positions": [
+   "허리/몸통 던지기 --- 브로속 체레즈 베드로(Бросок через бедро)"
+  ],
+  "description": "боковой(측면 허리 던지기)는 상대의 측면에서 엉덩이를 걸어 옆 방향으로 회전시켜 넘기는 허리기술 변형입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__с-захватом-пояса",
+  "name": "с захватом пояса",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "허리/몸통 던지기 --- 브로속 체레즈 베드로(Бросок через бедро)",
+  "positions": [
+   "허리/몸통 던지기 --- 브로속 체레즈 베드로(Бросок через бедро)"
+  ],
+  "description": "с захватом пояса(벨트 그립 허리 던지기)는 상대의 벨트를 잡고 엉덩이에 걸어 강하게 들어 올려 넘기는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__захватом-руки-на-плечо",
+  "name": "захватом руки на плечо",
+  "koreanName": "팔을 어깨 위로 잡고",
+  "art": "sambo",
+  "category": "등으로 던지기 --- 브로속 체레즈 스피누(Бросок через спину)",
+  "positions": [
+   "등으로 던지기 --- 브로속 체레즈 스피누(Бросок через спину)"
+  ],
+  "description": "захватом руки на плечо(팔을 어깨 위로 잡고 던지기)는 상대의 팔을 자신의 어깨 위에 걸어 등에 태워 넘기는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__захватом-руки-под-плечо",
+  "name": "захватом руки под плечо",
+  "koreanName": "팔을 어깨 아래로 잡고",
+  "art": "sambo",
+  "category": "등으로 던지기 --- 브로속 체레즈 스피누(Бросок через спину)",
+  "positions": [
+   "등으로 던지기 --- 브로속 체레즈 스피누(Бросок через спину)"
+  ],
+  "description": "захватом руки под плечо(팔을 어깨 아래로 잡고 던지기)는 상대의 팔을 어깨보다 낮은 위치에 걸어 넘기는 등 던지기 변형입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__захватом-рукавов",
+  "name": "захватом рукавов",
+  "koreanName": "양 소매를 잡고",
+  "art": "sambo",
+  "category": "등으로 던지기 --- 브로속 체레즈 스피누(Бросок через спину)",
+  "positions": [
+   "등으로 던지기 --- 브로속 체레즈 스피누(Бросок через спину)"
+  ],
+  "description": "захватом рукавов(양 소매를 잡고 던지기)는 양손 모두로 상대의 소매를 잡고 등에 태워 넘기는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__захватом-отворотов",
+  "name": "захватом отворотов",
+  "koreanName": "양 옷깃을 잡고",
+  "art": "sambo",
+  "category": "등으로 던지기 --- 브로속 체레즈 스피누(Бросок через спину)",
+  "positions": [
+   "등으로 던지기 --- 브로속 체레즈 스피누(Бросок через спину)"
+  ],
+  "description": "захватом отворотов(양 옷깃을 잡고 던지기)는 양손 모두로 상대의 옷깃을 잡고 등에 태워 넘기는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__скрестным-захватом-рук",
+  "name": "скрестным захватом рук",
+  "koreanName": "팔을 교차로 잡고",
+  "art": "sambo",
+  "category": "등으로 던지기 --- 브로속 체레즈 스피누(Бросок через спину)",
+  "positions": [
+   "등으로 던지기 --- 브로속 체레즈 스피누(Бросок через спину)"
+  ],
+  "description": "скрестным захватом рук(팔을 교차로 잡고 던지기)는 상대의 양팔을 교차시켜 잡은 상태에서 등에 태워 넘기는 등 던지기 변형입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__обратный",
+  "name": "обратный",
+  "koreanName": "역방향",
+  "art": "sambo",
+  "category": "등으로 던지기 --- 브로속 체레즈 스피누(Бросок через спину)",
+  "positions": [
+   "등으로 던지기 --- 브로속 체레즈 스피누(Бросок через спину)"
+  ],
+  "description": "обратный(역방향 등 던지기)는 일반적인 방향과 반대로 회전해 상대를 넘기는 등 던지기 변형입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__вертушка",
+  "name": "Вертушка",
+  "koreanName": "베르투쉬카",
+  "art": "sambo",
+  "category": "어깨·팔로 던지기 --- 멜니차(Мельница)와 베르투쉬카(Вертушка)",
+  "positions": [
+   "어깨·팔로 던지기 --- 멜니차(Мельница)와 베르투쉬카(Вертушка)"
+  ],
+  "description": "베르투쉬카는 몸을 팽이처럼 회전시키며 상대를 어깨나 등에 걸어 넘기는 고난도 회전 던지기입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__drop-seoi",
+  "name": "Drop Seoi",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "어깨·팔로 던지기 --- 멜니차(Мельница)와 베르투쉬카(Вертушка)",
+  "positions": [
+   "어깨·팔로 던지기 --- 멜니차(Мельница)와 베르투쉬카(Вертушка)"
+  ],
+  "description": "",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__arm-drag-to-throw",
+  "name": "Arm Drag to Throw",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "어깨·팔로 던지기 --- 멜니차(Мельница)와 베르투쉬카(Вертушка)",
+  "positions": [
+   "어깨·팔로 던지기 --- 멜니차(Мельница)와 베르투쉬카(Вертушка)"
+  ],
+  "description": "",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__shoulder-entry",
+  "name": "Shoulder Entry",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "어깨·팔로 던지기 --- 멜니차(Мельница)와 베르투쉬카(Вертушка)",
+  "positions": [
+   "어깨·팔로 던지기 --- 멜니차(Мельница)와 베르투쉬카(Вертушка)"
+  ],
+  "description": "",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__flying-entry",
+  "name": "Flying Entry",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "어깨·팔로 던지기 --- 멜니차(Мельница)와 베르투쉬카(Вертушка)",
+  "positions": [
+   "어깨·팔로 던지기 --- 멜니차(Мельница)와 베르투쉬카(Вертушка)"
+  ],
+  "description": "",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__отхват-подсечка-counter",
+  "name": "Отхват/Подсечка Counter",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "카운터(Контрприем)",
+  "positions": [
+   "카운터(Контрприем)"
+  ],
+  "description": "Отхват/Подсечка Counter는 상대의 다리 기술(오트하바트, 후리기) 시도를 역으로 이용해 넘기는 카운터 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__бросок-через-спину-counter",
+  "name": "Бросок через спину Counter",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "카운터(Контрприем)",
+  "positions": [
+   "카운터(Контрприем)"
+  ],
+  "description": "Бросок через спину Counter는 상대의 등 던지기 시도를 역으로 이용해 넘기는 카운터 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__허리기술-counter",
+  "name": "허리기술 Counter",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "카운터(Контрприем)",
+  "positions": [
+   "카운터(Контрприем)"
+  ],
+  "description": "",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__다리걸기-counter",
+  "name": "다리걸기 Counter",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "카운터(Контрприем)",
+  "positions": [
+   "카운터(Контрприем)"
+  ],
+  "description": "",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__희생기술-counter",
+  "name": "희생기술 Counter",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "카운터(Контрприем)",
+  "positions": [
+   "카운터(Контрприем)"
+  ],
+  "description": "희생기술 Counter는 상대가 희생 던지기(눕는 기술)를 시도할 때 함께 눕지 않고 위에서 눌러 역으로 제압하는 카운터 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__бросок-через-голову",
+  "name": "Бросок через голову",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "희생 기술 --- 브로속 체레즈 골로부(Бросок через голову)· 체레즈 그루지(Бросок через грудь)",
+  "positions": [
+   "희생 기술 --- 브로속 체레즈 골로부(Бросок через голову)· 체레즈 그루지(Бросок через грудь)"
+  ],
+  "description": "브로속 체레즈 골로부(머리 위로 던지기)는 뒤로 누우며 발로 상대의 복부를 받쳐 머리 위로 넘기는 희생 던지기입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__бросок-через-грудь",
+  "name": "Бросок через грудь",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "희생 기술 --- 브로속 체레즈 골로부(Бросок через голову)· 체레즈 그루지(Бросок через грудь)",
+  "positions": [
+   "희생 기술 --- 브로속 체레즈 골로부(Бросок через голову)· 체레즈 그루지(Бросок через грудь)"
+  ],
+  "description": "브로속 체레즈 그루지(가슴 위로 던지기)는 상대를 가슴 앞에 안은 채 뒤로 크게 젖혀 넘기는 강한 희생 던지기입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__удержание-со-стороны-ног",
+  "name": "Удержание со стороны ног",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "탑 포지션과 홀드다운 --- 우제르자니예(Удержание)",
+  "positions": [
+   "탑 포지션과 홀드다운 --- 우제르자니예(Удержание)"
+  ],
+  "description": "Удержание со стороны ног(다리 쪽 홀드다운)는 상대의 다리 쪽에서 하체를 감싸 눌러 고정하는 홀드다운 자세입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__удержание-спиной-поперек",
+  "name": "Удержание спиной поперек",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "탑 포지션과 홀드다운 --- 우제르자니예(Удержание)",
+  "positions": [
+   "탑 포지션과 홀드다운 --- 우제르자니예(Удержание)"
+  ],
+  "description": "Удержание спиной поперек(등을 대고 가로 홀드다운)는 자신의 등을 상대 쪽으로 향한 채 가로로 눌러 고정하는 변형 홀드다운입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__추가-탑-컨트롤",
+  "name": "추가 탑 컨트롤",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "탑 포지션과 홀드다운 --- 우제르자니예(Удержание)",
+  "positions": [
+   "탑 포지션과 홀드다운 --- 우제르자니예(Удержание)"
+  ],
+  "description": "추가 탑 컨트롤은 기본 홀드다운 자세에서 팔이나 다리 위치를 조정해 통제력을 강화하거나 서브미션을 준비하는 응용 자세입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__defensive-shell",
+  "name": "Defensive Shell",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "바텀 포지션과 탈출",
+  "positions": [
+   "바텀 포지션과 탈출"
+  ],
+  "description": "",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__reversal",
+  "name": "Reversal",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "스윕 / 전환",
+  "positions": [
+   "스윕 / 전환"
+  ],
+  "description": "",
+  "candidates": [
+   "bjj",
+   "judo"
+  ]
+ },
+ {
+  "id": "sambo__single-leg-from-guard",
+  "name": "Single Leg from Guard",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "스윕 / 전환",
+  "positions": [
+   "스윕 / 전환"
+  ],
+  "description": "",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__заваливание",
+  "name": "Заваливание",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "스윕 / 전환",
+  "positions": [
+   "스윕 / 전환"
+  ],
+  "description": "Заваливание(눌러 넘어뜨리기)는 하위 포지션에서 상체 압박으로 상대를 옆이나 뒤로 넘어뜨려 자세를 역전시키는 스윕 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__рычаг-плеча",
+  "name": "рычаг плеча",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "상체 관절기 --- 뤄착(Рычаг)과 우젤(Узел)",
+  "positions": [
+   "상체 관절기 --- 뤄착(Рычаг)과 우젤(Узел)"
+  ],
+  "description": "рычаг плеча(어깨 지렛대)는 상대의 팔을 특정 각도로 고정해 어깨 관절을 펴거나 비트는 관절기입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__рычаг-кисти",
+  "name": "рычаг кисти",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "상체 관절기 --- 뤄착(Рычаг)과 우젤(Узел)",
+  "positions": [
+   "상체 관절기 --- 뤄착(Рычаг)과 우젤(Узел)"
+  ],
+  "description": "рычаг кисти(손목 지렛대)는 상대의 손목을 꺾어 압박하는 관절기입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__узел-плеча-ногой",
+  "name": "узел плеча ногой",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "상체 관절기 --- 뤄착(Рычаг)과 우젤(Узел)",
+  "positions": [
+   "상체 관절기 --- 뤄착(Рычаг)과 우젤(Узел)"
+  ],
+  "description": "узел плеча ногой(다리를 이용한 어깨 매듭)는 팔이 아닌 다리로 상대의 팔을 구부려 압박하는 변형 어깨 관절기입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__узел-плеча-обратный",
+  "name": "узел плеча обратный",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "상체 관절기 --- 뤄착(Рычаг)과 우젤(Узел)",
+  "positions": [
+   "상체 관절기 --- 뤄착(Рычаг)과 우젤(Узел)"
+  ],
+  "description": "узел плеча обратный(역방향 어깨 매듭)는 일반적인 방향과 반대로 팔을 비틀어 어깨를 공격하는 관절기 변형입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__ущемление-двуглавой-мышцы-плеча",
+  "name": "ущемление двуглавой мышцы плеча",
+  "koreanName": "상완 이두근 압박",
+  "art": "sambo",
+  "category": "상체 관절기 --- 뤄착(Рычаг)과 우젤(Узел)",
+  "positions": [
+   "상체 관절기 --- 뤄착(Рычаг)과 우젤(Узел)"
+  ],
+  "description": "ущемление двуглавой мышцы плеча(상완 이두근 압박)는 상대의 팔을 접어 이두근을 뼈 사이에 끼워 압박하는 근육 압박 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__ущемление-трехглавой-мышцы-плеча",
+  "name": "ущемление трехглавой мышцы плеча",
+  "koreanName": "상완 삼두근 압박",
+  "art": "sambo",
+  "category": "상체 관절기 --- 뤄착(Рычаг)과 우젤(Узел)",
+  "positions": [
+   "상체 관절기 --- 뤄착(Рычаг)과 우젤(Узел)"
+  ],
+  "description": "ущемление трехглавой мышцы плеча(상완 삼두근 압박)는 상대의 팔을 특정 각도로 고정해 삼두근을 압박하는 근육 압박 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__ущемление-икроножной-мышцы",
+  "name": "ущемление икроножной мышцы",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "하체 관절기 --- 삼보의 전통적 강점",
+  "positions": [
+   "하체 관절기 --- 삼보의 전통적 강점"
+  ],
+  "description": "ущемление икроножной мышцы(종아리 근육 압박)는 상대의 종아리 근육을 뼈 사이에 끼워 압박하는 근육 압박 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__двойной-зацеп",
+  "name": "двойной зацеп",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "하체 관절기 --- 삼보의 전통적 강점",
+  "positions": [
+   "하체 관절기 --- 삼보의 전통적 강점"
+  ],
+  "description": "двойной зацеп(이중 다리 걸기)는 양다리 모두로 상대의 다리를 얽어 고정한 뒤 관절기를 시도하는 하체 통제 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__удушающий-прием-удушающий-захват",
+  "name": "Удушающий прием / Удушающий захват",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "목/조르기 계열 --- 컴뱃 삼보 한정",
+  "positions": [
+   "목/조르기 계열 --- 컴뱃 삼보 한정"
+  ],
+  "description": "Удушающий прием / Удушающий захват(조르기 기술/조르기 그립)은 컴뱃 삼보에서 허용되는 목 조르기의 총칭으로, 스포츠 삼보에서는 금지되어 있습니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "sambo__collar-choke",
+  "name": "Collar Choke",
+  "koreanName": null,
+  "art": "sambo",
+  "category": "목/조르기 계열 --- 컴뱃 삼보 한정",
+  "positions": [
+   "목/조르기 계열 --- 컴뱃 삼보 한정"
+  ],
+  "description": "",
+  "candidates": [
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "judo__shizen-hontai",
+  "name": "Shizen Hontai",
+  "koreanName": "자연 본체",
+  "art": "judo",
+  "category": "기본 자세와 이동",
+  "positions": [
+   "기본 자세와 이동"
+  ],
+  "description": "자연 본체는 유도의 가장 기본적인 자연스러운 선 자세로, 발을 어깨너비로 벌리고 무릎을 살짝 굽혀 사방으로 대응할 수 있는 균형 잡힌 자세입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__jigo-hontai",
+  "name": "Jigo Hontai",
+  "koreanName": "자유 본체",
+  "art": "judo",
+  "category": "기본 자세와 이동",
+  "positions": [
+   "기본 자세와 이동"
+  ],
+  "description": "자유 본체(방어 자세)는 무게중심을 더 낮추고 다리를 넓게 벌려 안정성을 극대화한 방어적 기본 자세입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__migi-shizentai-hidari-shizentai",
+  "name": "Migi Shizentai / Hidari Shizentai",
+  "koreanName": "우/좌 자연 자세",
+  "art": "judo",
+  "category": "기본 자세와 이동",
+  "positions": [
+   "기본 자세와 이동"
+  ],
+  "description": "우/좌 자연 자세는 자연 본체에서 오른발 또는 왼발을 반보 앞으로 내밀어 특정 방향 공격에 대비하는 변형 자세입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__kuzushi-mae",
+  "name": "앞 (Mae)",
+  "koreanName": null,
+  "art": "judo",
+  "category": "유도의 핵심 원리 --- Kuzushi · Tsukuri · Kake",
+  "positions": [
+   "유도의 핵심 원리 --- Kuzushi · Tsukuri · Kake"
+  ],
+  "description": "",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__kuzushi-ushiro",
+  "name": "뒤 (Ushiro)",
+  "koreanName": null,
+  "art": "judo",
+  "category": "유도의 핵심 원리 --- Kuzushi · Tsukuri · Kake",
+  "positions": [
+   "유도의 핵심 원리 --- Kuzushi · Tsukuri · Kake"
+  ],
+  "description": "",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__kuzushi-migi",
+  "name": "오른쪽 (Migi)",
+  "koreanName": null,
+  "art": "judo",
+  "category": "유도의 핵심 원리 --- Kuzushi · Tsukuri · Kake",
+  "positions": [
+   "유도의 핵심 원리 --- Kuzushi · Tsukuri · Kake"
+  ],
+  "description": "",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__kuzushi-hidari",
+  "name": "왼쪽 (Hidari)",
+  "koreanName": null,
+  "art": "judo",
+  "category": "유도의 핵심 원리 --- Kuzushi · Tsukuri · Kake",
+  "positions": [
+   "유도의 핵심 원리 --- Kuzushi · Tsukuri · Kake"
+  ],
+  "description": "",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ }
+]

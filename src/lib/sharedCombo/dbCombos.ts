@@ -133,3 +133,13 @@ export function listDbCombosForSharing(): { combos: DbComboCandidate[]; skipped:
   }
   return { combos, skipped };
 }
+
+/**
+ * Resolve one step name ("Jab", "Lead Hook", "Single", Korean name, alias) to a
+ * real technique with the same rules the combo publisher uses — prefers a
+ * record in `art`. Null when nothing matches; never guesses a near name.
+ */
+export function resolveTechniqueName(name: string, art: string, pool?: Technique[]): Technique | null {
+  const idx = buildIndex(pool ?? [...allTechniques, ...libraryTechniques().addTeq]);
+  return resolvePart(name, art, idx);
+}

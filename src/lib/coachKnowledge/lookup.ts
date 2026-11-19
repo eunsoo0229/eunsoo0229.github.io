@@ -2,7 +2,7 @@ import type { Technique } from '../../types';
 import { getTechniqueConnections } from '../techniqueGraph/buildGraph';
 import { getUnifiedAllTechniques, normalizeTechniqueName, resolveTechnique, resolveTechniquesByIds, searchAllTechniques } from '../userTechniques/service';
 import { buildEvidence, genericKey, type RelatedTechniqueRef, type TechniqueEvidence } from './evidence';
-import { dataKoreanNames, soundsLike } from './koreanNames';
+import { dataKoreanNames, hangulSkeleton, latinSkeleton, soundsLike } from './koreanNames';
 
 // Technique lookup for the coach — by id (exact) or by what the student
 // typed. A query only RESOLVES when a technique's own name / Korean name /
@@ -130,6 +130,20 @@ export function lookupTechnique(input: { id?: string | null; query?: string | nu
   const exact = (index.byName.get(target) ?? []).filter((t) => inArt(t, input.martialArt));
   if (exact.length === 1) return { status: 'found', technique: exact[0], evidence: evidenceFor(exact[0]), matchedBy: 'exact_name' };
   if (exact.length > 1) return { status: 'ambiguous', candidates: exact.map(brief), message: `"${q}"라는 이름의 기술이 ${exact.length}개 있습니다. 어떤 것인지 골라 주세요.` };
+  // A Hangul spelling of a registered romanized name ("더블렉" = "Double Leg"): exact consonant skeleton of a
+  // whole registered name, 4+ consonants (short skeletons collide). One technique → it; several → the student picks.
+  // Single words only: a whole sentence's skeleton can collide with a combination's name ("잽 어떻게 해" ~ "Jab Body Kick").
+  // Not a word ending like a verb/adjective ("괜찮아" ~ "Go no Sen"), and only names of 2+ real words
+  // (one-word skeletons collide: "컨트롤" ~ "Counter").
+  if (/^[가-힣]{3,}$/.test(q) && !/(아|어|요|다|지|고|면|해|네|죠|까|데|서|게|며|니|냐|래|자|야|와|워|봐|줘|쇼|함|임|음|됨)$/.test(q)) {
+    // strict (no merging of repeated consonants): "컨트롤" must not equal "Hook Counter"
+    const sk = hangulSkeleton(q, false);
+    if (sk.length >= 4) {
+      const hits = [...new Map(getUnifiedAllTechniques().filter((t) => inArt(t, input.martialArt) && registeredNames(t).some((n) => /[a-z]/i.test(n) && n.split(/[\s-]+/).length >= 2 && n.split(/[\s-]+/).every((w) => w.length >= 3) && latinSkeleton(n, false) === sk)).map((t) => [t.id, t])).values()];
+      if (hits.length === 1) return { status: 'found', technique: hits[0], evidence: evidenceFor(hits[0]), matchedBy: 'exact_name' };
+      if (hits.length > 1) return { status: 'ambiguous', candidates: hits.slice(0, 6).map(brief), message: `"${q}"에 해당하는 기술이 ${hits.length}개 있습니다. 어떤 것인지 골라 주세요.` };
+    }
+  }
   // Candidates must really contain what was typed (fuzzy search also returns unrelated techniques).
   const seen = new Set<string>();
   const containing: Technique[] = [];
@@ -167,7 +181,37 @@ export interface TextTechniques {
  * looked up again on their own ("리어" alone is another record). Particles are
  * stripped. Nothing fuzzy: a word that is no technique's name matches nothing.
  */
-export function exactTechniquesInText(text: string, martialArt: string | null = null): TextTechniques {
+/** Registered / data names of 2+ words or 5+ letters that appear WHOLE in the text ("잡은 다리를 밀어 넘어뜨리기", "Back Mount Hooks Control"). */
+function longNamesIn(text: string, martialArt: string | null): { names: string[]; techniques: Technique[] } {
+  const flat = normalizeTechniqueName(text);
+  const index = nameIndex();
+  const hits: { key: string; ts: Technique[] }[] = [];
+  for (const [key, ts] of index.byName) {
+    if (key.length < 5 || !flat.includes(key)) continue;
+    const inScope = ts.filter((t) => inArt(t, martialArt));
+    if (inScope.length) hits.push({ key, ts: inScope });
+  }
+  // longest first, and a name inside a longer matched name does not count on its own
+  hits.sort((a, b) => b.key.length - a.key.length);
+  const kept: typeof hits = [];
+  for (const h of hits) if (!kept.some((k) => k.key.includes(h.key))) kept.push(h);
+  return { names: kept.map((k) => k.key), techniques: kept.flatMap((k) => (k.ts.length === 1 ? k.ts : [])) };
+}
+
+export function exactTechniquesInText(rawText: string, martialArt: string | null = null): TextTechniques {
+  // stray single jamo from fast typing ("스프롤ㄹ", "암바ㅏ") are not part of a name
+  const text = rawText.replace(/[ㄱ-ㅎㅏ-ㅣ]+/g, '');
+  const long = longNamesIn(text, martialArt);
+  if (long.techniques.length) {
+    // the whole name was typed: it wins over the words inside it ("Back Mount Hooks Control" ≠ "Hooks")
+    const rest = exactTechniquesInTextWords(long.names.reduce((acc, key) => acc.replace(new RegExp(key.split('').map((ch) => ch.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('[\\s\\-_./·]*'), 'i'), ' '), text.normalize('NFKC')), martialArt);
+    const seen = new Set(long.techniques.map((t) => t.id));
+    return { matches: [...long.techniques, ...rest.matches.filter((t) => !seen.has(t.id))], ambiguous: rest.ambiguous, words: rest.words };
+  }
+  return exactTechniquesInTextWords(text, martialArt);
+}
+
+function exactTechniquesInTextWords(text: string, martialArt: string | null): TextTechniques {
   const raw = text.normalize('NFKC').split(/[\s,.!?·/]+/).filter(Boolean);
   const bare = raw.map((w) => w.replace(PARTICLE, '') || w);
   const used = new Array(raw.length).fill(false);
@@ -189,4 +233,43 @@ export function exactTechniquesInText(text: string, martialArt: string | null = 
     }
   }
   return { matches: [...found.values()], ambiguous, words: [...new Set([...raw, ...bare])] };
+}
+
+// ---------------------------------------------------------------- similar spellings (suggestions only)
+
+const CHO = ['ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
+/** Plain / tense / aspirated variants of one consonant are the same sound class (기무라 ~ 키무라, 쨉 ~ 잽). */
+const PLAIN: Record<number, number> = { 1: 0, 15: 0, 4: 3, 16: 3, 8: 7, 17: 7, 13: 12, 14: 12, 10: 9 };
+// ㅐ/ㅔ and ㅒ/ㅖ are written interchangeably in loanwords
+const VOWEL: Record<number, number> = { 5: 1, 7: 3 };
+function soundKey(word: string): string {
+  let out = '';
+  for (const ch of word.replace(/\s+/g, '')) {
+    const c = ch.charCodeAt(0) - 0xac00;
+    if (c < 0 || c > 11171) {
+      out += ch.toLowerCase();
+      continue;
+    }
+    const i = Math.floor(c / 588);
+    const v = Math.floor((c % 588) / 28);
+    out += `${PLAIN[i] ?? i}.${VOWEL[v] ?? v}.${c % 28}|`;
+  }
+  return out;
+}
+void CHO;
+
+/**
+ * Techniques whose Korean name is the same word in another spelling of the same sounds
+ * (plain / tense / aspirated consonant, ㅐ/ㅔ). Only offered as "혹시 …?", never chosen.
+ */
+export function similarlySpelled(word: string): { techniqueId: string; name: string; martialArt: string }[] {
+  const w = word.trim();
+  if (!/^[가-힣\s]{2,}$/.test(w)) return [];
+  const key = soundKey(w);
+  const out = new Map<string, Technique>();
+  for (const [name, list] of nameIndex().byName) {
+    if (!/^[가-힣]+$/.test(name) || name === normalizeTechniqueName(w)) continue;
+    if (soundKey(name) === key) for (const t of list) out.set(t.id, t);
+  }
+  return [...out.values()].slice(0, 3).map(brief);
 }

@@ -1,3 +1,4 @@
+import Icon from './Icon';
 import { useEffect, useState } from 'react';
 import { isKoreanVoice, isTtsSupported, listVoices, speak, stopSpeaking } from '../lib/voice/tts';
 import {
@@ -33,10 +34,12 @@ export default function TutorVoiceSettingsPanel({ autoSave = false, onApplied }:
       if (active) setVoices(v);
     });
     const onChange = () => void listVoices().then((v) => active && setVoices(v));
-    if (supported) window.speechSynthesis.addEventListener('voiceschanged', onChange);
+    // Android uses the native engine (no speechSynthesis object) — nothing to listen to there
+    const web = supported && typeof window.speechSynthesis !== 'undefined';
+    if (web) window.speechSynthesis.addEventListener('voiceschanged', onChange);
     return () => {
       active = false;
-      if (supported) window.speechSynthesis.removeEventListener('voiceschanged', onChange);
+      if (web) window.speechSynthesis.removeEventListener('voiceschanged', onChange);
     };
   }, [supported]);
 
@@ -104,7 +107,7 @@ export default function TutorVoiceSettingsPanel({ autoSave = false, onApplied }:
           )}
         </select>
         <button type="button" className="btn btn-secondary btn-sm" data-testid="tutor-voice-preview" onClick={preview}>
-          ▶ 미리듣기
+          <Icon name="play" /> 미리듣기
         </button>
       </div>
       <p className="video-status-message" data-testid="tutor-voice-count">

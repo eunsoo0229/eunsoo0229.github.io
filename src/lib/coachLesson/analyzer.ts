@@ -69,6 +69,8 @@ export interface AnalyzeInput {
   level: LessonLevel;
   /** Explanations already given on this concept — the re-explanation must say it differently. */
   alreadyExplained: string[];
+  /** The user's explicit engine pick for this lesson (Gemini coach) — omitted = 설정 > AI 엔진. */
+  engine?: 'local' | 'gemini';
   /** Extra place/plan context (coachPlaceContext). */
   place?: string;
 }
@@ -128,6 +130,7 @@ export async function analyzeAnswer(input: AnalyzeInput): Promise<AnswerAnalysis
       question: `코치 질문: ${input.pending.text}\n학생 답: ${input.answer}`,
       useSearchGrounding: false,
       validate: isRaw,
+      engine: input.engine,
     });
     if (!r.ok) {
       // Not signed in / no network: don't retry, fall back right away.
@@ -154,7 +157,7 @@ export async function analyzeAnswer(input: AnalyzeInput): Promise<AnswerAnalysis
 }
 
 /** Which of the day's core points the student named in the recap (AI by meaning, keyword fallback). */
-export async function gradeRecap(technique: Technique | null, plan: RecapPlan, answer: string): Promise<string[]> {
+export async function gradeRecap(technique: Technique | null, plan: RecapPlan, answer: string, engine?: 'local' | 'gemini'): Promise<string[]> {
   const labels = plan.points.map((p) => p.label);
   const r = await askGeminiForJsonWithGrounding<{ hits: string[] }>({
     systemInstruction: [
@@ -167,6 +170,7 @@ export async function gradeRecap(technique: Technique | null, plan: RecapPlan, a
     question: `학생 답: ${answer}`,
     useSearchGrounding: false,
     validate: (v: unknown): v is { hits: string[] } => !!v && typeof v === 'object' && Array.isArray((v as { hits?: unknown }).hits),
+    engine,
   });
   if (r.ok) return r.data.hits.filter((h) => labels.includes(h));
   const ans = contentTokens(answer);

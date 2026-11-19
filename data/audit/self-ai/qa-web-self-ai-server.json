@@ -1,0 +1,80 @@
+{
+  "at": "2026-11-01T06:22:13.331Z",
+  "results": [
+    {
+      "name": "[W1] 웹(서버 미연결): 로컬 AI·검색 미지원 표시 + 서버 연결 설정 표시",
+      "pass": true
+    },
+    {
+      "name": "[W2] 틀린 토큰 → 연결 거부 안내",
+      "pass": true
+    },
+    {
+      "name": "[W3] 올바른 토큰 → 서버 연결, 상태: 자체 AI 서버 · 로컬 AI 실행 중 · 자체 검색 사용 가능",
+      "pass": true
+    },
+    {
+      "name": "[W4] 웹에서 영상 검색(서버의 SearXNG) → 카드",
+      "pass": true
+    },
+    {
+      "name": "[W5] 웹에서 앱 내 재생(YouTube 플레이어 video 요소, 오류 없음)",
+      "pass": true
+    },
+    {
+      "name": "[W6] 기술 질문 → 같은 코드 답변(구역별)",
+      "pass": true
+    },
+    {
+      "name": "[W7] 모델 답변이 서버의 qwen2.5:3b로",
+      "pass": true
+    },
+    {
+      "name": "[W8] 서버 종료 → 검색 실패를 그대로 안내(지어낸 영상 없음), 상태 갱신",
+      "pass": true
+    },
+    {
+      "name": "[W9] 서버 재시작 → 같은 화면에서 바로 복구",
+      "pass": true
+    },
+    {
+      "name": "[W10] 다른 사용자(별도 브라우저·토큰)는 서버에서 다른 사용자로 구분, 대화 기록 분리, 모바일 폭 가로 스크롤 없음",
+      "pass": true
+    },
+    {
+      "name": "[W11] 진행 중 페이지 에러 없음",
+      "pass": true
+    }
+  ],
+  "timings": {
+    "web_video": 3659,
+    "web_technique": 5540,
+    "web_model": 15531,
+    "web_down": 556,
+    "web_up": 2171
+  },
+  "serverLog": [
+    "MARTIALDEX self-AI server on http://127.0.0.1:8787 (runner: ollama, tokens: /var/folders/rx/b1qqscmj2_x0wk_5swwks3pr0000gn/T/selfai-web-iZQYSu/tokens.json)",
+    "2026-11-01T06:21:41.465Z - OPTIONS /v1/status 204 5ms",
+    "2026-11-01T06:21:41.470Z - GET /v1/status 401 4ms",
+    "2026-11-01T06:21:41.669Z web-user-a GET /v1/status 200 98ms",
+    "2026-11-01T06:21:41.688Z web-user-a GET /v1/status 200 15ms",
+    "2026-11-01T06:21:41.722Z web-user-a GET /v1/status 200 32ms",
+    "2026-11-01T06:21:43.663Z - OPTIONS /v1/research/search 204 1ms",
+    "2026-11-01T06:21:45.401Z web-user-a POST /v1/research/search 200 1738ms",
+    "2026-11-01T06:21:45.418Z web-user-a GET /v1/status 200 13ms",
+    "2026-11-01T06:21:45.445Z web-user-a GET /v1/status 200 13ms",
+    "2026-11-01T06:21:51.710Z web-user-a GET /v1/status 200 52ms",
+    "2026-11-01T06:21:51.723Z web-user-a GET /v1/status 200 12ms",
+    "2026-11-01T06:21:51.935Z - OPTIONS /v1/chat 204 0ms",
+    "2026-11-01T06:22:07.243Z web-user-a POST /v1/chat 200 15306ms",
+    "MARTIALDEX self-AI server on http://127.0.0.1:8787 (runner: ollama, tokens: /var/folders/rx/b1qqscmj2_x0wk_5swwks3pr0000gn/T/selfai-web-iZQYSu/tokens.json)",
+    "2026-11-01T06:22:10.106Z web-user-a POST /v1/research/search 200 1628ms",
+    "2026-11-01T06:22:10.138Z web-user-a GET /v1/status 200 30ms",
+    "2026-11-01T06:22:10.154Z web-user-a GET /v1/status 200 14ms",
+    "2026-11-01T06:22:12.582Z - OPTIONS /v1/status 204 0ms",
+    "2026-11-01T06:22:12.600Z web-user-b GET /v1/status 200 17ms",
+    "2026-11-01T06:22:12.615Z web-user-b GET /v1/status 200 12ms",
+    "2026-11-01T06:22:12.628Z web-user-b GET /v1/status 200 11ms"
+  ]
+}

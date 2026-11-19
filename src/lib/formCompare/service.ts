@@ -6,18 +6,24 @@ import { classifyScore } from '../poseAnalysis/scoring';
 import type { PoseAnalysisRecord } from '../poseAnalysis/types';
 import { buildReferenceProfile, frameParts, judgeAttempt, referenceMediaParts } from './ai';
 import { compositePair, cropToPerson, poseAt, sampleVideoBlob } from './clipCapture';
-import { alignTimes, alignTimesFromUser, blockingIssues, extremeMs, linearTimes, pickFrames, poseDifferences, VIEW_LABEL, viewWarning } from './motion';
+import { alignTimes, alignTimesFromUser, blockingIssues, extremeMs, linearTimes, pickFrames, poseDifferences, VIEW_LABEL } from './motion';
+import { ANGLE_NAME, combineViewCheck, localViewRelation, referenceAngle } from './captureAngle';
+import { motionClipsFor } from '../motion3d/catalog';
+import type { ClipSignals } from './types';
 import type { AiMediaPart } from '../ai/types';
 import { getMedia, getReference, MAX_STORED_FILE_BYTES, newId, putMedia, saveCompareRecord, saveReference } from './referenceStore';
 import { scoreComparison } from './scoring';
-import type { AlignmentInfo, CameraView, CaptureIssue, ClipFrame, ComparisonJudgement, FormCompareRecord, PreparedClip, ReferenceProfile, ReferenceVideo } from './types';
+import { hasLocalMedia, type AlignmentInfo, type CameraView, type CaptureIssue, type ClipFrame, type ComparisonJudgement, type FormCompareRecord, type PreparedClip, type ReferenceProfile, type ReferenceVideo } from './types';
 import { CAPTURE_ISSUE_LABEL } from './types';
+import { MAX_SINGLE_TECHNIQUE_SEC } from '../timedCapture/reference';
 
 // 기준 영상 비교 자세 평가 — orchestration.
 //   register (YouTube URL → checked playable, or a video file) → profile
 //   (auto criteria) → capture → align → AI judgement → score → records.
 
-export const MAX_REFERENCE_SECONDS = 30;
+// one repetition of one technique: the camera capture records exactly this long (timedCapture/reference.ts), so a
+// lecture or a combination segment cannot be a reference
+export const MAX_REFERENCE_SECONDS = MAX_SINGLE_TECHNIQUE_SEC;
 
 type Fail = { ok: false; message: string };
 
@@ -36,7 +42,7 @@ function checkRange(start: number, end: number, length: number): string | null {
   if (!(start >= 0) || !(end > start)) return '기술이 나오는 구간의 시작·끝 시간을 확인해 주세요 (끝이 시작보다 뒤여야 합니다).';
   if (length > 0 && end > length + 0.5) return `영상 길이(${Math.round(length)}초)보다 긴 구간입니다.`;
   if (end - start < 1) return '구간이 너무 짧습니다 (1초 이상).';
-  if (end - start > MAX_REFERENCE_SECONDS) return `구간은 ${MAX_REFERENCE_SECONDS}초 이하로 지정해 주세요 — 기술 한 번이 보이는 부분만 고르면 분석이 정확하고 비용도 줄어듭니다.`;
+  if (end - start > MAX_REFERENCE_SECONDS) return `구간은 ${MAX_REFERENCE_SECONDS}초 이하로 지정해 주세요 — 강의나 여러 기술이 이어지는 구간이 아니라 기술 한 번이 보이는 부분만 골라 주세요. 카메라 촬영은 이 구간과 같은 길이로 진행됩니다.`;
   return null;
 }
 
@@ -99,6 +105,107 @@ export async function registerFileReference(
   return { ok: true, reference: saveReference(ref) };
 }
 
+/**
+ * Registers a recording of the app's own 3D preview as a reference video.
+ *
+ * It deliberately goes through the SAME body as registerFileReference() —
+ * sampleVideoBlob → frames/poses/signals → putMedia → saveReference — so the
+ * comparison afterwards is the ordinary video pipeline, not a second scoring
+ * path. The only difference is the stored `source`, which keeps the clip id and
+ * camera angle so the reference can be regenerated and told apart in the UI.
+ */
+/**
+ * Where the motion sits inside a 3D-preview recording, when pose estimation could not find it.
+ *
+ * MediaPipe often finds no movement on the rendered mannequin (measured, Phase 6: 3 of 3
+ * diagonal recordings → no segment). The keyframes for the criteria are then spread evenly
+ * over the whole file, and the ~0.25s in which the arm is extended was sometimes not among
+ * them at all — Gemini then saw only a guard stance ("not a jab"), depending on chance.
+ *
+ * For a 3D recording the position is known instead: the recorder holds the first frame until
+ * the encoder runs and then plays the clip once in real time, so the file is the idle lead-in
+ * followed by exactly the clip (measured: lead-in ≈ file length − clip length, e.g.
+ * 1636 − 1200 = 436ms, matching where the extension appears). The peak is the end of the
+ * clip's "execute" phase. Returns null when the file length is unknown.
+ */
+export function motion3dSegment(fileSeconds: number, clipSeconds: number, phases: { name: string; startSec: number; endSec: number }[] = []): { startMs: number; endMs: number; peakMs: number } | null {
+  if (!(fileSeconds > 0) || !(clipSeconds > 0)) return null;
+  const leadMs = Math.max(0, (fileSeconds - clipSeconds) * 1000);
+  const clipMs = clipSeconds * 1000;
+  const execute = phases.find((p) => p.name === 'execute');
+  const peakInClip = execute ? execute.endSec * 1000 : clipMs / 2;
+  return { startMs: Math.round(leadMs), endMs: Math.round(Math.min(fileSeconds * 1000, leadMs + clipMs)), peakMs: Math.round(leadMs + Math.min(peakInClip, clipMs)) };
+}
+
+export async function registerMotion3dReference(
+  t: Technique,
+  input: {
+    file: File;
+    clipId: string;
+    angle: string;
+    cameraView: CameraView;
+    /** Length the engine played, for the record (the file's own length is measured here). */
+    clipDurationSeconds: number;
+    replaceId?: string | null;
+    onProgress?: (done: number, total: number) => void;
+  },
+): Promise<{ ok: true; reference: ReferenceVideo } | Fail> {
+  let sampled: Awaited<ReturnType<typeof sampleVideoBlob>>;
+  try {
+    sampled = await sampleVideoBlob(input.file, { fps: 12, startSeconds: 0, endSeconds: Number.POSITIVE_INFINITY, onProgress: input.onProgress });
+  } catch (e) {
+    return { ok: false, message: e instanceof Error ? e.message : '녹화한 3D 영상을 분석하지 못했습니다.' };
+  }
+  if (!sampled.frames.length) return { ok: false, message: '녹화한 3D 영상에서 프레임을 읽지 못했습니다. 다시 녹화해 주세요.' };
+  // The 3D preview is a rendered character, so the capture checks that exist for
+  // a filmed reference (lighting, framing) are not applied; a blocking issue here
+  // would mean the render itself is unusable.
+  const now = new Date().toISOString();
+  const prev = input.replaceId ? getReference(input.replaceId) : null;
+  const id = prev?.id ?? newId('ref');
+  const durationSeconds = sampled.durationSeconds || input.clipDurationSeconds;
+  // Pose estimation found no motion segment on the rendered character → use the known one.
+  let signals: ClipSignals = sampled.signals;
+  if (!signals.segment) {
+    const clip = motionClipsFor(t.id).find((c) => c.clipId === input.clipId);
+    const seg = motion3dSegment(sampled.durationSeconds, input.clipDurationSeconds, clip?.phases ?? []);
+    if (seg) signals = { ...signals, segment: seg, issues: signals.issues.filter((i) => i !== 'no_movement') };
+  }
+  await putMedia({
+    id,
+    frames: sampled.frames,
+    poses: sampled.poses,
+    signals,
+    // Always keep the recording itself: it is small, and without it the reference
+    // cannot be replayed or re-profiled after a reload.
+    file: input.file.size <= MAX_STORED_FILE_BYTES ? input.file : null,
+  });
+  const ref: ReferenceVideo = {
+    id,
+    techniqueId: t.id,
+    martialArt: t.martialArt,
+    source: {
+      kind: 'motion3d',
+      clipId: input.clipId,
+      angle: input.angle,
+      fileName: input.file.name,
+      mimeType: input.file.type || 'video/webm',
+      sizeBytes: input.file.size,
+      durationSeconds,
+      clipDurationSeconds: input.clipDurationSeconds,
+      recordedAt: now,
+    },
+    startSeconds: 0,
+    endSeconds: durationSeconds,
+    cameraView: input.cameraView,
+    createdAt: prev?.createdAt ?? now,
+    updatedAt: now,
+    profile: null,
+    hasLocalMedia: true,
+  };
+  return { ok: true, reference: saveReference(ref) };
+}
+
 /** Keyframes of a file reference used to build its criteria: the start posture + evenly through the performed segment + the finish. */
 function profileFrames(frames: ClipFrame[], seg: { startMs: number; endMs: number } | null): ClipFrame[] {
   if (!frames.length) return [];
@@ -111,7 +218,7 @@ function profileFrames(frames: ClipFrame[], seg: { startMs: number; endMs: numbe
 export async function ensureProfile(t: Technique, ref: ReferenceVideo, force = false): Promise<{ ok: true; reference: ReferenceVideo } | Fail> {
   if (ref.profile && !force) return { ok: true, reference: ref };
   let frames: ClipFrame[] | null = null;
-  if (ref.source.kind === 'file') {
+  if (hasLocalMedia(ref.source)) {
     const media = await getMedia(ref.id);
     if (!media) return { ok: false, message: '이 기기에 기준 영상 데이터가 없습니다. 영상 파일을 다시 등록해 주세요.' };
     frames = await cropToPerson(profileFrames(media.frames, media.signals.segment), media.poses, media.signals.segment);
@@ -158,7 +265,7 @@ export async function prepareComparison(ref: ReferenceVideo, profile: ReferenceP
   const clipLenMs = (ref.endSeconds - ref.startSeconds) * 1000;
 
   // --- time alignment: reference phase starts → user times
-  const media = ref.source.kind === 'file' ? await getMedia(ref.id) : null;
+  const media = hasLocalMedia(ref.source) ? await getMedia(ref.id) : null;
   const phases = profile.phases.map((p, i) => ({ id: p.id, f: p.startFraction ?? i / Math.max(1, profile.phases.length) }));
   let alignment: AlignmentInfo;
   const dtw = media?.signals.segment ? alignTimes(media.poses, media.signals.segment, clip.poses, seg, phases.map((p) => p.f * clipLenMs)) : null;
@@ -238,23 +345,35 @@ export async function prepareComparison(ref: ReferenceVideo, profile: ReferenceP
     mediaParts = [...referenceMediaParts(ref, null), { kind: 'text', text: '[사용자 프레임 U — 시간은 사용자 영상 시작부터, 괄호 안은 시간 정렬로 추정한 기준 단계]' }, ...frameParts('U', userFrames)];
   }
 
-  const vw = viewWarning(profile.cameraView !== 'unknown' ? profile.cameraView : ref.cameraView, clip.signals.cameraView);
+  // Phase 6: the reference angle (exact for a 3D recording) and the local direction check.
+  // The local estimate is compared with the same estimator's reading of the reference when
+  // the reference has local media (same bias on both sides), else with the reference angle.
+  const refAngle = referenceAngle(ref);
+  const refEstimate = media?.signals.cameraView && media.signals.cameraView !== 'unknown' ? media.signals.cameraView : refAngle.view;
+  const localView = { referenceView: refAngle.view, referenceViewSource: refAngle.source, local: localViewRelation(refEstimate, clip.signals.cameraView), userViewLocal: clip.signals.cameraView };
   const qualityNote = [
     `사람 인식 프레임 ${Math.round(clip.signals.visibleRatio * 100)}%, 전신 인식 ${Math.round(clip.signals.fullBodyRatio * 100)}%`,
-    `사용자 촬영 방향(자세 추정): ${VIEW_LABEL[clip.signals.cameraView]} / 기준 영상: ${VIEW_LABEL[profile.cameraView]}`,
+    refAngle.source === 'motion3d'
+      ? `기준 영상 촬영 방향: ${ANGLE_NAME[refAngle.view]} (사용자가 3D 미리보기에서 직접 고른 각도 — 확정값). 사용자는 이 각도에 맞춰 촬영하도록 안내받았다.`
+      : `기준 영상 촬영 방향: ${ANGLE_NAME[refAngle.view]}${refAngle.source === 'profile' ? ' (기준 영상 분석 결과)' : ' (사용자 입력)'}`,
+    `사용자 촬영 방향(로컬 자세 추정, 몸을 비스듬히 세운 스탠스에서는 틀릴 수 있음): ${VIEW_LABEL[clip.signals.cameraView]} — 기준 영상 대비 ${{ consistent: '비슷함', unclear: '판단 어려움', mismatch: '다를 가능성', unknown: '확인 불가' }[localView.local]}`,
     alignment.speedRatio ? `수행 시간은 기준 영상의 ${alignment.speedRatio}배 (속도 차이는 감점 이유가 아님)` : '',
     clip.signals.issues.length ? `촬영 문제: ${clip.signals.issues.map((i) => CAPTURE_ISSUE_LABEL[i]).join(' ')}` : '',
   ]
     .filter(Boolean)
     .join('\n');
 
-  return { alignment, userFrames, refFrames, mediaParts, poseHints, vw, qualityNote };
+  return { alignment, userFrames, refFrames, mediaParts, poseHints, localView, qualityNote };
 }
 
 function finishComparison(t: Technique, ref: ReferenceVideo, profile: ReferenceProfile, clip: PreparedClip, judgement: ComparisonJudgement, input: Awaited<ReturnType<typeof prepareComparison>>): { ok: true; outcome: CompareOutcome } {
-  const { alignment, userFrames, refFrames, poseHints, vw } = input;
+  const { alignment, userFrames, refFrames, poseHints, localView } = input;
   const judged = { judgement };
-  const breakdown = scoreComparison({ criteria: profile.criteria, phases: profile.phases, judgement: judged.judgement, signals: clip.signals, viewMatches: !vw });
+  const viewCheck = combineViewCheck({ ...localView, ai: judgement.viewCheck?.relation ?? null, userViewAi: judgement.viewCheck?.userView ?? null, aiNote: judgement.viewCheck?.note || null });
+  // The score formula is unchanged. Only a CONFIRMED same direction counts as "view matches"
+  // (its existing input); a suspected mismatch or an unconfirmable direction keeps the
+  // reliability below "high", as the existing rule does for a different direction.
+  const breakdown = scoreComparison({ criteria: profile.criteria, phases: profile.phases, judgement: judged.judgement, signals: clip.signals, viewMatches: viewCheck.status === 'match' });
 
   // --- records: the detailed comparison + (when scored) the existing pose-analysis history
   let poseRecordId: string | null = null;
@@ -286,7 +405,8 @@ function finishComparison(t: Technique, ref: ReferenceVideo, profile: ReferenceP
     criteria: profile.criteria,
     signals: clip.signals,
     alignment,
-    viewWarning: vw,
+    viewWarning: viewCheck.status === 'mismatch' ? viewCheck.message : null,
+    viewCheck,
     poseHints,
     poseRecordId,
   };

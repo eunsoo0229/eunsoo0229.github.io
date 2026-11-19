@@ -1,3 +1,4 @@
+import { parseAiViewCheck } from './captureAngle';
 import type { Technique } from '../../types';
 import type { AiMediaPart } from '../ai/types';
 import { askGeminiForJson } from '../fighterStyle/geminiJson';
@@ -174,7 +175,8 @@ interface RawJudgement {
   hintChecks?: { hint: string; confirmed: boolean; criterionId: string | null }[];
   sameTechnique: boolean;
   techniquePerformed: boolean;
-  criteria: { criterionId: string; verdict: string; confidence: string; observation: string; referenceObservation: string }[];
+  criteria: { criterionId: string; verdict: string; confidence: string; observation: string; referenceObservation: string; viewLimited?: boolean }[];
+  viewCheck?: unknown;
   phases: { phaseId: string; summary: string }[];
   strengths: string[];
   differences: { criterionId: string | null; what: string; why: string }[];
@@ -216,9 +218,11 @@ export async function judgeAttempt(input: {
       '- 프레임 사이 시간 간격이 기준 영상과 달라도(빠르거나 느리게 수행) 속도 자체는 감점 이유가 아니다. 단계 순서와 동작 모양을 본다.',
       '- sameTechnique: 사용자가 기준 영상과 같은 기술을 시도했는가. techniquePerformed: 사용자 프레임에 기술 수행 동작이 있는가(가만히 서 있기만 하면 false).',
       '- strengths: 잘한 점(구체적으로). differences: 기준과 다른 주요 부분 {criterionId, what(무엇이 다른가), why(왜 고쳐야 하는가 — 효과·안전·방어)}. focus: 다음 수행에서 집중할 1~3가지. drills: 고치기 위한 구체적 연습 1~3가지. limitations: 이번 평가의 한계(가려진 부분, 각도, 화질).',
+      '- 촬영 방향: 먼저 [기준 영상] 프레임과 [사용자 프레임]의 카메라 방향(정면·45° 대각선·측면·후면)을 비교해 viewCheck에 답한다. relation: same(같은 방향) | different(분명히 다른 방향) | uncertain(프레임만으로 판단하기 어려움). 확실하지 않으면 uncertain. userView: 사용자 프레임의 방향 front|diagonal|side|back|unknown. note: 판단 근거 한 문장.',
+      '- 방향이 달라(또는 방향 때문에) 사용자 프레임에서 그 기준을 확인할 수 없으면 mismatch로 단정하지 말고 verdict를 not_observable로, viewLimited를 true로 둔다. 실제로 다르게 수행한 것이 보일 때만 mismatch다.',
       '- 모든 문장은 한국어 존댓말, 짧고 구체적으로.',
       '- hintChecks: 보조 신호 H1, H2 … 마다 {"hint": "H1", "confirmed": 프레임에서 실제로 그 차이가 보이면 true, "criterionId": 그 차이가 해당하는 기준 id 또는 null}. 보조 신호가 없으면 [].',
-      '출력: {"sameTechnique": boolean, "techniquePerformed": boolean, "hintChecks": [{"hint": string, "confirmed": boolean, "criterionId": string|null}], "criteria": [{"criterionId": string, "verdict": string, "confidence": string, "observation": string, "referenceObservation": string}], "phases": [{"phaseId": string, "summary": string}], "strengths": string[], "differences": [{"criterionId": string|null, "what": string, "why": string}], "focus": string[], "drills": string[], "limitations": string[]}',
+      '출력: {"viewCheck": {"relation": string, "userView": string, "note": string}, "sameTechnique": boolean, "techniquePerformed": boolean, "hintChecks": [{"hint": string, "confirmed": boolean, "criterionId": string|null}], "criteria": [{"criterionId": string, "verdict": string, "confidence": string, "observation": string, "referenceObservation": string, "viewLimited": boolean}], "phases": [{"phaseId": string, "summary": string}], "strengths": string[], "differences": [{"criterionId": string|null, "what": string, "why": string}], "focus": string[], "drills": string[], "limitations": string[]}',
     ].join('\n'),
     contextText: [
       `[기술]\n${techniqueBrief(input.technique)}`,
@@ -255,15 +259,24 @@ export async function judgeAttempt(input: {
 function parseJudgement(d: RawJudgement, profile: ReferenceProfile): ComparisonJudgement {
   const ids = new Set(profile.criteria.map((c) => c.id));
   const got = new Map<string, ComparisonJudgement['criteria'][number]>();
+  const viewLimitedCriteria: string[] = [];
   for (const c of d.criteria) {
     if (!c || !ids.has(c.criterionId) || got.has(c.criterionId)) continue;
-    got.set(c.criterionId, {
-      criterionId: c.criterionId,
-      verdict: VERDICTS.includes(c.verdict as Verdict) ? (c.verdict as Verdict) : 'not_observable',
-      confidence: CONFIDENCES.includes(c.confidence as Confidence) ? (c.confidence as Confidence) : 'low',
-      observation: String(c.observation ?? '').trim(),
-      referenceObservation: String(c.referenceObservation ?? '').trim(),
-    });
+    let verdict: Verdict = VERDICTS.includes(c.verdict as Verdict) ? (c.verdict as Verdict) : 'not_observable';
+    let confidence: Confidence = CONFIDENCES.includes(c.confidence as Confidence) ? (c.confidence as Confidence) : 'low';
+    let observation = String(c.observation ?? '').trim();
+    // Phase 6: what the camera direction hid is not a wrong movement. The AI flags it; a
+    // flagged "different / partly different" becomes "cannot judge" (it then simply does not
+    // count — the scoring itself is unchanged), and a flagged "same" keeps only low confidence.
+    if (c.viewLimited === true) {
+      viewLimitedCriteria.push(c.criterionId);
+      if (verdict === 'mismatch' || verdict === 'partial') {
+        observation = `${observation} (촬영 방향 때문에 확인할 수 없어 판단 불가로 처리)`.trim();
+        verdict = 'not_observable';
+      }
+      confidence = 'low';
+    }
+    got.set(c.criterionId, { criterionId: c.criterionId, verdict, confidence, observation, referenceObservation: String(c.referenceObservation ?? '').trim() });
   }
   // A criterion the model skipped is NOT assumed correct.
   for (const c of profile.criteria) if (!got.has(c.id)) got.set(c.id, { criterionId: c.id, verdict: 'not_observable', confidence: 'low', observation: 'AI가 이 기준을 판정하지 않았습니다.', referenceObservation: '' });
@@ -278,6 +291,8 @@ function parseJudgement(d: RawJudgement, profile: ReferenceProfile): ComparisonJ
   }
   return {
     confirmedHints,
+    viewCheck: parseAiViewCheck(d.viewCheck),
+    viewLimitedCriteria,
     sameTechnique: d.sameTechnique !== false,
     techniquePerformed: d.techniquePerformed !== false,
     criteria: profile.criteria.map((c) => got.get(c.id)!),
@@ -321,8 +336,12 @@ export function mergeJudgements(js: ComparisonJudgement[], profile: ReferencePro
   });
   const dist = (j: ComparisonJudgement) => j.criteria.reduce((sum, x, i) => sum + (x.verdict === criteria[i].verdict ? 0 : 1), 0);
   const base = [...js].sort((a, b) => dist(a) - dist(b))[0];
+  // A "different direction" from either sample is kept — a suspicion is enough to warn.
+  const viewCheck = js.map((j) => j.viewCheck).find((v) => v?.relation === 'different') ?? base.viewCheck ?? null;
   return {
     ...base,
+    viewCheck,
+    viewLimitedCriteria: [...new Set(js.flatMap((j) => j.viewLimitedCriteria ?? []))],
     sameTechnique: js.filter((j) => j.sameTechnique).length * 2 >= js.length,
     techniquePerformed: js.some((j) => j.techniquePerformed),
     criteria,
@@ -330,3 +349,6 @@ export function mergeJudgements(js: ComparisonJudgement[], profile: ReferencePro
     samples: js.length,
   };
 }
+
+/** Exposed for .devtools/test-form-judgement-robustness.mjs only — the response checks the live call uses. */
+export const __judgementParsingForTests = { isRawJudgement, parseJudgement };

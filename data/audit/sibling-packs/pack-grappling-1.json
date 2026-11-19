@@ -1,0 +1,1202 @@
+[
+ {
+  "id": "wrestling__motion-circle",
+  "name": "Motion / Circle",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "기본 자세와 움직임",
+  "positions": [
+   "기본 자세와 움직임"
+  ],
+  "description": "모션/서클은 제자리에 멈추지 않고 지속적으로 원을 그리듯 움직여 상대가 타이밍을 잡지 못하게 하는 기본 이동 원리입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__shuffle-step",
+  "name": "Shuffle Step",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "기본 자세와 움직임",
+  "positions": [
+   "기본 자세와 움직임"
+  ],
+  "description": "셔플 스텝은 발을 바닥에서 크게 떼지 않고 잔걸음으로 거리를 조절하는 풋워크입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__switch",
+  "name": "Switch",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "기본 자세와 움직임",
+  "positions": [
+   "기본 자세와 움직임",
+   "바텀 포지션",
+   "탈출 (Escape)",
+   "리버설 (Reversal)"
+  ],
+  "description": "스위치는 바텀 포지션에서 몸을 돌려 상대의 팔을 감싸며 자세를 역전시키는 탈출/리버설 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__neutral",
+  "name": "Neutral",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "스탠딩 포지션 / 그립",
+  "positions": [
+   "스탠딩 포지션 / 그립"
+  ],
+  "description": "뉴트럴은 양 선수가 서서 대치하며 아직 어느 쪽도 우위를 점하지 않은 기본 스탠딩 포지션입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__square-stance",
+  "name": "Square Stance",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "스탠딩 포지션 / 그립",
+  "positions": [
+   "스탠딩 포지션 / 그립"
+  ],
+  "description": "스퀘어 스탠스는 양발을 나란히 정렬한 스탠스로, 좌우 대칭적인 힘과 방어를 제공합니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__staggered-stance",
+  "name": "Staggered Stance",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "스탠딩 포지션 / 그립",
+  "positions": [
+   "스탠딩 포지션 / 그립"
+  ],
+  "description": "스태거드 스탠스는 한 발을 다른 발보다 앞에 두는 스탠스로, 전후 방향의 힘과 안정성을 제공합니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__low-stance",
+  "name": "Low Stance",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "스탠딩 포지션 / 그립",
+  "positions": [
+   "스탠딩 포지션 / 그립"
+  ],
+  "description": "로우 스탠스는 무게중심을 매우 낮춘 스탠스로, 테이크다운 방어와 레벨체인지에 유리합니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__shuck-by",
+  "name": "Shuck By",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "공격 진입 (셋업 / 페이크 / 피더링)",
+  "positions": [
+   "공격 진입 (셋업 / 페이크 / 피더링)"
+  ],
+  "description": "셔크 바이는 상대의 팔을 옆으로 밀어내며 그 반대쪽으로 이동하는 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__throw-by",
+  "name": "Throw-By",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "공격 진입 (셋업 / 페이크 / 피더링)",
+  "positions": [
+   "공격 진입 (셋업 / 페이크 / 피더링)"
+  ],
+  "description": "스로우 바이는 상대의 팔을 잡아 옆으로 던지듯 넘기며 그 반대쪽으로 빠져나가는 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__near-ankle",
+  "name": "Near Ankle",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "싱글 레그",
+  "positions": [
+   "싱글 레그"
+  ],
+  "description": "니어 앵클은 싱글 레그 상태에서 가까운 쪽 발목을 추가로 잡아 통제를 강화하는 그립입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__far-ankle",
+  "name": "Far Ankle",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "싱글 레그",
+  "positions": [
+   "싱글 레그"
+  ],
+  "description": "파 앵클은 싱글 레그 상태에서 먼 쪽 발목을 잡아 통제를 강화하는 그립입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__crackdown-position",
+  "name": "Crackdown Position",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "싱글 레그",
+  "positions": [
+   "싱글 레그"
+  ],
+  "description": "크랙다운 포지션은 싱글 레그에서 상대의 다리를 접어 몸 아래에 눌러 고정하는 통제 자세입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__cutback",
+  "name": "Cutback",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "싱글 레그",
+  "positions": [
+   "싱글 레그"
+  ],
+  "description": "컷백은 싱글 레그 상태에서 방향을 반대로 바꿔 상대의 균형을 무너뜨리는 마무리 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__switch-off",
+  "name": "Switch-Off",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "싱글 레그",
+  "positions": [
+   "싱글 레그"
+  ],
+  "description": "스위치 오프는 싱글 레그 시도가 막혔을 때 반대쪽 다리로 전환하거나 다른 공격으로 바꾸는 연결 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__snatch-double",
+  "name": "Snatch Double",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "더블 레그",
+  "positions": [
+   "더블 레그"
+  ],
+  "description": "스내치 더블은 순간적으로 빠르게 양다리를 낚아채듯 잡아 넘어뜨리는 더블 레그 변형입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__low-double",
+  "name": "Low Double",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "더블 레그",
+  "positions": [
+   "더블 레그"
+  ],
+  "description": "로우 더블은 낮은 자세로 상대의 다리 아래쪽(무릎 근처)을 잡는 더블 레그 변형입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__cutback-finish",
+  "name": "Cutback Finish",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "더블 레그",
+  "positions": [
+   "더블 레그"
+  ],
+  "description": "컷백 피니시는 더블 레그 확보 후 방향을 반대로 바꿔 균형을 무너뜨리는 마무리 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__reshot-double",
+  "name": "Reshot Double",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "더블 레그",
+  "positions": [
+   "더블 레그"
+  ],
+  "description": "리샷 더블은 첫 더블 레그 시도가 막혔을 때 즉시 다시 시도하는 재진입 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__locking-hands-position",
+  "name": "Locking Hands Position",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "바디락 / 클린치",
+  "positions": [
+   "바디락 / 클린치"
+  ],
+  "description": "락킹 핸즈 포지션은 상대의 몸을 감싼 양손을 깍지 껴 단단히 고정하는 바디락의 기본 손 자세입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__bear-hug-style-control",
+  "name": "Bear-Hug Style Control",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "바디락 / 클린치",
+  "positions": [
+   "바디락 / 클린치"
+  ],
+  "description": "베어허그 스타일 컨트롤은 곰이 껴안듯 양팔로 상대의 몸통 전체를 강하게 감싸 조이는 통제 방식입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__double-ankle-pick",
+  "name": "Double Ankle Pick",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "발목·무릎 공격",
+  "positions": [
+   "발목·무릎 공격"
+  ],
+  "description": "더블 앵클 픽은 양손으로 상대의 발목을 잡아 넘어뜨리는 앵클 픽 변형입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__head-and-arm-throw",
+  "name": "Head-and-Arm Throw",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "던지기 / 투사 (상체 던지기 포함)",
+  "positions": [
+   "던지기 / 투사 (상체 던지기 포함)"
+  ],
+  "description": "헤드앤암 스로우는 상대의 머리와 팔을 함께 감싸 몸을 회전시켜 넘기는 던지기입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__headlock-throw",
+  "name": "Headlock Throw",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "던지기 / 투사 (상체 던지기 포함)",
+  "positions": [
+   "던지기 / 투사 (상체 던지기 포함)"
+  ],
+  "description": "헤드락 스로우는 상대의 목을 팔로 감싸 잠근 뒤 몸을 회전시켜 넘기는 던지기입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__arm-spin",
+  "name": "Arm Spin",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "던지기 / 투사 (상체 던지기 포함)",
+  "positions": [
+   "던지기 / 투사 (상체 던지기 포함)"
+  ],
+  "description": "암 스핀은 상대의 팔을 잡고 몸을 회전시켜 상대의 등 뒤로 이동하며 넘기는 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__arm-throw",
+  "name": "Arm Throw",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "던지기 / 투사 (상체 던지기 포함)",
+  "positions": [
+   "던지기 / 투사 (상체 던지기 포함)"
+  ],
+  "description": "암 스로우는 상대의 팔을 잡아 어깨 너머로 넘기는 던지기입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__hip-toss",
+  "name": "Hip Toss",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "던지기 / 투사 (상체 던지기 포함)",
+  "positions": [
+   "던지기 / 투사 (상체 던지기 포함)"
+  ],
+  "description": "힙 토스는 상대를 자신의 엉덩이 위로 걸쳐 회전시켜 넘기는 허리 던지기입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__lateral-drop",
+  "name": "Lateral Drop",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "던지기 / 투사 (상체 던지기 포함)",
+  "positions": [
+   "던지기 / 투사 (상체 던지기 포함)"
+  ],
+  "description": "래터럴 드롭은 상대를 옆으로 당기며 함께 쓰러지듯 넘기는 던지기입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__head-and-arm-spin",
+  "name": "Head-and-Arm Spin",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "던지기 / 투사 (상체 던지기 포함)",
+  "positions": [
+   "던지기 / 투사 (상체 던지기 포함)"
+  ],
+  "description": "헤드앤암 스핀은 상대의 머리와 팔을 감싼 채 몸을 회전시켜 넘기는 던지기입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__duckunder-to-throw",
+  "name": "Duckunder to Throw",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "던지기 / 투사 (상체 던지기 포함)",
+  "positions": [
+   "던지기 / 투사 (상체 던지기 포함)"
+  ],
+  "description": "덕언더 투 스로우는 덕언더로 진입한 뒤 상대의 팔을 잡아 던지기로 연결하는 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__body-lock-throw",
+  "name": "Body Lock Throw",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "던지기 / 투사 (상체 던지기 포함)",
+  "positions": [
+   "던지기 / 투사 (상체 던지기 포함)"
+  ],
+  "description": "바디락 스로우는 바디락 그립을 확보한 상태에서 몸을 회전시켜 상대를 넘기는 던지기입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__gut-wrench",
+  "name": "Gut Wrench",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "던지기 / 투사 (상체 던지기 포함)",
+  "positions": [
+   "던지기 / 투사 (상체 던지기 포함)"
+  ],
+  "description": "거트 렌치는 상대의 몸통을 팔로 감싸 비틀듯 회전시켜 넘기는 던지기입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__suplex",
+  "name": "Suplex",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "던지기 / 투사 (상체 던지기 포함)",
+  "positions": [
+   "던지기 / 투사 (상체 던지기 포함)"
+  ],
+  "description": "수플렉스는 상대의 몸통을 감싸 뒤로 젖히며 자신의 머리 위로 넘겨 던지는 고난도 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__headlock",
+  "name": "Headlock",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "던지기 / 투사 (상체 던지기 포함)",
+  "positions": [
+   "던지기 / 투사 (상체 던지기 포함)"
+  ],
+  "description": "헤드락은 팔로 상대의 목과 머리를 감싸 잠그는 통제 그립입니다.",
+  "candidates": [
+   "judo"
+  ]
+ },
+ {
+  "id": "wrestling__lift",
+  "name": "Lift",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "던지기 / 투사 (상체 던지기 포함)",
+  "positions": [
+   "던지기 / 투사 (상체 던지기 포함)"
+  ],
+  "description": "리프트는 클린치나 바디락 상태에서 다리 힘으로 상대의 몸을 지면에서 들어 올리는 기본 동작입니다.",
+  "candidates": [
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__front-headlock-exposure",
+  "name": "Front Headlock Exposure",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "던지기 / 투사 (상체 던지기 포함)",
+  "positions": [
+   "던지기 / 투사 (상체 던지기 포함)"
+  ],
+  "description": "프론트 헤드락 익스포저는 프론트 헤드락 상태에서 상대의 등이나 옆을 노출시켜 다음 공격을 준비하는 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__near-side-crank-position",
+  "name": "Near-Side Crank Position",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "프론트 헤드락",
+  "positions": [
+   "프론트 헤드락"
+  ],
+  "description": "니어사이드 크랭크 포지션은 프론트 헤드락에서 가까운 쪽으로 상대의 목/머리를 비틀어 압박하는 통제 자세입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__front-headlock-to-ankle",
+  "name": "Front Headlock to Ankle",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "프론트 헤드락",
+  "positions": [
+   "프론트 헤드락"
+  ],
+  "description": "프론트 헤드락에서 앵클로의 전환은 헤드락 통제 중 상대의 발목을 잡아 앵클 픽/레그 공격으로 이어가는 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__tight-waist",
+  "name": "Tight Waist",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "타이트 웨이스트는 팔로 상대의 허리를 단단히 감싸 밀착시키는 탑 포지션 통제 그립입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__wrist-ride",
+  "name": "Wrist Ride",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "리스트 라이드는 상대의 손목을 잡아 몸통에 고정해 움직임을 봉쇄하는 탑 포지션 통제 그립입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__claw-ride",
+  "name": "Claw Ride",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "클로 라이드는 손가락을 갈고리처럼 이용해 상대의 팔이나 다리를 걸어 통제하는 탑 포지션 그립입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__chop",
+  "name": "Chop",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "찹은 상대의 팔을 손으로 쳐 내려 균형이나 자세를 무너뜨리는 탑 포지션 공격 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__ankle-ride",
+  "name": "Ankle Ride",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "앵클 라이드는 상대의 발목을 잡아 다리 움직임을 봉쇄하는 탑 포지션 통제 그립입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__leg-ride",
+  "name": "Leg Ride",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "레그 라이드는 다리로 상대의 다리를 감싸 눌러 하체 움직임을 봉쇄하는 탑 포지션 통제 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__half-nelson",
+  "name": "Half Nelson",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "하프 넬슨은 한 팔을 상대의 겨드랑이 아래로 넣어 목 뒤로 감아 누르는 대표적인 탑 포지션 통제/핀 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__power-half-nelson",
+  "name": "Power Half Nelson",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "파워 하프 넬슨은 반대 손으로 그립을 보강해 하프 넬슨의 압박력을 강화한 변형입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__bar-arm",
+  "name": "Bar Arm",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "바 암은 팔을 막대처럼 상대의 팔 아래 대어 반대쪽으로 넘기지 못하게 막는 탑 포지션 통제 그립입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__cross-wrist",
+  "name": "Cross Wrist",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "크로스 리스트는 상대의 손목을 반대편으로 교차시켜 잡아 통제하는 탑 포지션 그립입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__wrist-tilt",
+  "name": "Wrist Tilt",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "리스트 틸트는 손목 그립을 이용해 상대를 옆으로 기울여 어깨를 노출시키는 틸트(득점) 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__two-on-one-tilt",
+  "name": "Two-on-One Tilt",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "투온원 틸트는 양손으로 상대의 한쪽 팔을 잡아 옆으로 기울여 어깨를 노출시키는 틸트 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__near-wrist-tilt",
+  "name": "Near Wrist Tilt",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "니어 리스트 틸트는 가까운 쪽 손목을 잡아 상대를 기울이는 틸트 변형입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__far-wrist-tilt",
+  "name": "Far Wrist Tilt",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "파 리스트 틸트는 먼 쪽 손목을 잡아 상대를 기울이는 틸트 변형입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__guillotine-tilt",
+  "name": "Guillotine Tilt",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "길로틴 틸트는 팔로 상대의 목을 감싸 조르듯 압박하며 옆으로 기울이는 틸트 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__tight-waist-tilt",
+  "name": "Tight Waist Tilt",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "타이트 웨이스트 틸트는 허리를 감싼 타이트 웨이스트 그립을 이용해 상대를 옆으로 기울이는 틸트 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__turk-tilt",
+  "name": "Turk Tilt",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "터크 틸트는 다리로 상대의 다리를 감아 걸어 옆으로 기울이는 틸트 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__ankle-tilt",
+  "name": "Ankle Tilt",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "앵클 틸트는 발목 그립을 이용해 상대를 옆으로 기울이는 틸트 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__navy-ride-tilt",
+  "name": "Navy Ride Tilt",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "네이비 라이드 틸트는 네이비 라이드(양쪽 팔과 다리를 동시에 통제하는 그립)를 이용해 상대를 기울이는 틸트 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__near-side-cradle",
+  "name": "Near-Side Cradle",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "니어사이드 크래들은 상대의 가까운 쪽 머리와 다리를 팔로 감싸 모아 압박하는 핀 자세입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__far-side-cradle",
+  "name": "Far-Side Cradle",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "파사이드 크래들은 상대의 먼 쪽 머리와 다리를 팔로 감싸 모아 압박하는 핀 자세입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__guillotine-cradle",
+  "name": "Guillotine Cradle",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "길로틴 크래들은 목을 감싸는 길로틴 그립과 다리를 결합한 크래들 변형입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__cross-face-cradle",
+  "name": "Cross-Face Cradle",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "크로스페이스 크래들은 팔뚝으로 상대의 얼굴을 가로질러 대며 다리를 모아 압박하는 크래들 변형입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__reverse-cradle",
+  "name": "Reverse Cradle",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "리버스 크래들은 반대 방향에서 머리와 다리를 감싸 모으는 크래들 변형입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__half-nelson-to-cradle",
+  "name": "Half Nelson to Cradle",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "하프 넬슨 투 크래들은 하프 넬슨 그립에서 반대쪽 다리를 잡아 크래들로 전환하는 연결 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__half-nelson-to-bar-arm",
+  "name": "Half Nelson to Bar Arm",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "하프 넬슨 투 바 암은 하프 넬슨 그립에서 바 암으로 전환하는 연결 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__double-half-nelson",
+  "name": "Double Half Nelson",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "더블 하프 넬슨은 양팔을 모두 상대의 겨드랑이 아래로 넣어 목 뒤에서 맞잡는 강화된 넬슨 그립입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__turk-to-half-nelson",
+  "name": "Turk to Half Nelson",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "터크 투 하프 넬슨은 터크(다리 걸기) 그립에서 하프 넬슨으로 전환하는 연결 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__chicken-wing",
+  "name": "Chicken Wing",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "치킨 윙은 상대의 팔을 등 뒤로 꺾어 접어 올리는 어깨 관절 통제 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__guillotine-pin-combination",
+  "name": "Guillotine Pin Combination",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "길로틴 핀 콤비네이션은 길로틴 그립과 다른 통제를 결합해 양어깨를 바닥에 붙이는 핀을 완성하는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__tight-waist-and-half-nelson",
+  "name": "Tight Waist and Half Nelson",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "탑 포지션",
+  "positions": [
+   "탑 포지션"
+  ],
+  "description": "타이트 웨이스트 앤 하프 넬슨은 허리 그립과 하프 넬슨을 함께 사용해 상대를 굴려 핀으로 연결하는 조합 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__base",
+  "name": "Base",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "바텀 포지션",
+  "positions": [
+   "바텀 포지션"
+  ],
+  "description": "베이스는 손과 무릎으로 만드는 안정적인 지지 자세로, 바텀 포지션의 기본 방어 자세입니다.",
+  "candidates": [
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__peterson-roll",
+  "name": "Peterson Roll",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "바텀 포지션",
+  "positions": [
+   "바텀 포지션",
+   "탈출 (Escape)"
+  ],
+  "description": "피터슨 롤은 상대의 팔과 다리를 함께 잡고 굴러 자세를 역전시키는 바텀 포지션 기술입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__quadpod",
+  "name": "Quadpod",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "바텀 포지션",
+  "positions": [
+   "바텀 포지션"
+  ],
+  "description": "쿼드포드는 손과 발 네 지점으로 지지하는 안정적인 바텀 포지션 자세입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__tripod",
+  "name": "Tripod",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "바텀 포지션",
+  "positions": [
+   "바텀 포지션"
+  ],
+  "description": "트라이포드는 손과 한쪽 발 등 세 지점으로 지지하며 일어설 준비를 하는 바텀 포지션 자세입니다.",
+  "candidates": [
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__peek-out",
+  "name": "Peek-Out",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "바텀 포지션",
+  "positions": [
+   "바텀 포지션",
+   "탈출 (Escape)"
+  ],
+  "description": "피크아웃은 팔꿈치 사이로 고개를 내밀어 상대의 위치를 확인하며 탈출 타이밍을 잡는 바텀 포지션 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__switch-to-attack",
+  "name": "Switch to Attack",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "바텀 포지션",
+  "positions": [
+   "바텀 포지션"
+  ],
+  "description": "스위치 투 어택은 스위치 동작을 방어가 아닌 공격 전환의 기회로 사용하는 동작입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "wrestling__knee-slide",
+  "name": "Knee Slide",
+  "koreanName": null,
+  "art": "wrestling",
+  "category": "바텀 포지션",
+  "positions": [
+   "바텀 포지션"
+  ],
+  "description": "니 슬라이드는 무릎을 미끄러지듯 이동시켜 자세를 재조정하는 바텀 포지션 움직임입니다.",
+  "candidates": [
+   "bjj",
+   "judo",
+   "sambo"
+  ]
+ }
+]

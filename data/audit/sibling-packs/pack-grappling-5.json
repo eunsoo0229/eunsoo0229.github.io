@@ -1,0 +1,998 @@
+[
+ {
+  "id": "bjj__backdoor-escape",
+  "name": "Backdoor Escape",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "딥 하프 가드 (Deep Half Guard)",
+  "positions": [
+   "딥 하프 가드 (Deep Half Guard)",
+   "마운트 (Mount)",
+   "터틀 (Turtle)",
+   "탈출 기술 모음"
+  ],
+  "description": "백도어 이스케이프는 딥 하프 가드에서 상대의 등 뒤로 돌아 나가듯 이동해 백 테이크나 유리한 포지션으로 전환하는 움직임입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__deep-half-sweep",
+  "name": "Deep Half Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "딥 하프 가드 (Deep Half Guard)",
+  "positions": [
+   "딥 하프 가드 (Deep Half Guard)"
+  ],
+  "description": "딥 하프 스윕은 딥 하프 가드에서 상대의 다리를 들어 올리며 몸을 회전시켜 상대를 넘기는 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__long-step",
+  "name": "Long Step",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "패스 가드 (Guard Passing)",
+  "positions": [
+   "패스 가드 (Guard Passing)",
+   "가드 패스 기술 모음"
+  ],
+  "description": "롱 스텝은 니 컷이나 토레안도 도중 다리를 크게 뻗어 상대의 반대편으로 넘어가는 마무리 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__x-pass",
+  "name": "X-Pass",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "패스 가드 (Guard Passing)",
+  "positions": [
+   "패스 가드 (Guard Passing)",
+   "가드 패스 기술 모음"
+  ],
+  "description": "X-패스는 다리를 X자로 교차시켜 딛으며 빠르게 상대의 가드를 넘어가는 패스 기술입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__headquarters-pass",
+  "name": "Headquarters Pass",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "패스 가드 (Guard Passing)",
+  "positions": [
+   "패스 가드 (Guard Passing)",
+   "가드 패스 기술 모음"
+  ],
+  "description": "헤드쿼터스 패스는 상대의 오픈 가드(주로 데라히바/레그탱글) 사이에서 무릎으로 압박하며 안정적으로 자세를 잡는 패스 포지션입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__folding-pass",
+  "name": "Folding Pass",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "패스 가드 (Guard Passing)",
+  "positions": [
+   "패스 가드 (Guard Passing)",
+   "가드 패스 기술 모음"
+  ],
+  "description": "폴딩 패스는 상대의 다리를 접어 몸쪽으로 눌러 움직임을 제한한 뒤 옆으로 패스하는 기술입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__leg-weave-pass",
+  "name": "Leg Weave Pass",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "패스 가드 (Guard Passing)",
+  "positions": [
+   "패스 가드 (Guard Passing)",
+   "가드 패스 기술 모음"
+  ],
+  "description": "레그 위브 패스는 다리를 상대의 다리 사이로 교차시켜 엮듯 통과해 패스하는 기술입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__leg-control",
+  "name": "Leg Control",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "패스 가드 (Guard Passing)",
+  "positions": [
+   "패스 가드 (Guard Passing)"
+  ],
+  "description": "레그 컨트롤은 손이나 다리로 상대의 다리를 눌러 고정해 가드 재구성을 막는 패스 과정의 통제 기술입니다.",
+  "candidates": [
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "bjj__reverse-kesa-gatame",
+  "name": "Reverse Kesa Gatame",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "사이드 컨트롤 (Side Control)",
+  "positions": [
+   "사이드 컨트롤 (Side Control)"
+  ],
+  "description": "리버스 케사 가타메는 반대 방향을 보고 앉아 상대의 머리를 팔로 감싸 누르는 케사 가타메의 변형입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__paper-cutter-choke",
+  "name": "Paper Cutter Choke",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "사이드 컨트롤 (Side Control)",
+  "positions": [
+   "사이드 컨트롤 (Side Control)",
+   "상체 서브미션"
+  ],
+  "description": "페이퍼 커터 초크는 사이드 컨트롤에서 옷깃으로 대각선 방향의 압박을 만들어 조르는 초크입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__baseball-bat-choke",
+  "name": "Baseball Bat Choke",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "사이드 컨트롤 (Side Control)",
+  "positions": [
+   "사이드 컨트롤 (Side Control)",
+   "니 온 벨리 (Knee on Belly)",
+   "상체 서브미션",
+   "기(Gi)에서 특히 중요한 기술"
+  ],
+  "description": "베이스볼 배트 초크는 양손으로 야구 방망이를 쥐듯 옷깃을 잡아 사이드 컨트롤에서 조르는 초크입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__backstep",
+  "name": "Backstep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "노스 사우스 (North-South)",
+  "positions": [
+   "노스 사우스 (North-South)",
+   "가드 패스 기술 모음"
+  ],
+  "description": "노스사우스에서의 백스텝은 발을 크게 돌려 반대쪽으로 이동해 포지션을 개선하거나 백을 노리는 스텝 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__double-armbar",
+  "name": "Double Armbar",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "마운트 (Mount)",
+  "positions": [
+   "마운트 (Mount)"
+  ],
+  "description": "클로즈드 가드 위치에서 상대방의 두 팔을 동시에 제압하여 관절을 공격하는 브라질리언 주짓수의 서브미션 자세이다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__trap-and-roll-prevention",
+  "name": "Trap and Roll Prevention",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "백 컨트롤 (Back Control)",
+  "positions": [
+   "백 컨트롤 (Back Control)"
+  ],
+  "description": "트랩 앤 롤 방지는 상대가 백에서 벗어나려 몸을 굴리는 것을 그립과 후크로 막는 방어 원칙입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__hand-fighting",
+  "name": "Hand Fighting",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "백 컨트롤 (Back Control)",
+  "positions": [
+   "백 컨트롤 (Back Control)",
+   "탈출 기술 모음"
+  ],
+  "description": "핸드 파이팅은 백 컨트롤에서 상대가 그립을 풀거나 후크를 제거하려는 손을 막는 그립 다툼입니다.",
+  "candidates": [
+   "judo",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__chair-sit",
+  "name": "Chair Sit",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "백 컨트롤 (Back Control)",
+  "positions": [
+   "백 컨트롤 (Back Control)",
+   "백 테이크 기술 모음"
+  ],
+  "description": "체어 싯은 백 컨트롤에서 엉덩이를 낮춰 의자에 앉듯 자세를 취해 안정성을 높이는 자세입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__crucifix-back",
+  "name": "Crucifix → Back",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "백 컨트롤 (Back Control)",
+  "positions": [
+   "백 컨트롤 (Back Control)",
+   "백 테이크 기술 모음"
+  ],
+  "description": "크루시픽스에서 백으로의 전환은 팔을 봉쇄한 상태에서 다리 후크를 걸어 백 컨트롤로 넘어가는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__truck-back",
+  "name": "Truck → Back",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "백 컨트롤 (Back Control)",
+  "positions": [
+   "백 컨트롤 (Back Control)",
+   "백 테이크 기술 모음"
+  ],
+  "description": "트럭에서 백으로의 전환은 상대의 다리를 감싼 트럭 포지션에서 몸을 돌려 백이나 레그락으로 연결하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__short-choke",
+  "name": "Short Choke",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "백 컨트롤 (Back Control)",
+  "positions": [
+   "백 컨트롤 (Back Control)"
+  ],
+  "description": "숏 초크는 리어 네이키드 초크의 팔이 완전히 넘어가지 못했을 때 짧게 잡은 상태로도 목을 압박하는 조르기 변형입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__bow-and-arrow-choke",
+  "name": "Bow and Arrow Choke",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "백 컨트롤 (Back Control)",
+  "positions": [
+   "백 컨트롤 (Back Control)",
+   "상체 서브미션",
+   "기(Gi)에서 특히 중요한 기술"
+  ],
+  "description": "보우 앤 애로우 초크는 옷깃을 잡고 다리로 상대의 몸을 활처럼 당겨 조르는 백 컨트롤 초크입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__collar-choke",
+  "name": "Collar Choke",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "백 컨트롤 (Back Control)",
+  "positions": [
+   "백 컨트롤 (Back Control)"
+  ],
+  "description": "백에서의 칼라 초크는 양손으로 옷깃을 교차로 잡아 목을 조르는 백 컨트롤 초크입니다.",
+  "candidates": [
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "bjj__clock-choke",
+  "name": "Clock Choke",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "터틀 (Turtle)",
+  "positions": [
+   "터틀 (Turtle)",
+   "상체 서브미션"
+  ],
+  "description": "클락 초크는 터틀 자세의 상대 뒤에서 옷깃을 잡고 시계 방향으로 돌듯 이동하며 조르는 초크입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__bow-and-arrow-entry",
+  "name": "Bow and Arrow Entry",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "터틀 (Turtle)",
+  "positions": [
+   "터틀 (Turtle)"
+  ],
+  "description": "터틀에서의 보우 앤 애로우 엔트리는 웅크린 상대를 넘겨 보우 앤 애로우 초크 자세로 진입하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__armbar-entry",
+  "name": "Armbar Entry",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "터틀 (Turtle)",
+  "positions": [
+   "터틀 (Turtle)"
+  ],
+  "description": "터틀에서의 암바 엔트리는 웅크린 상대의 팔을 잡아 넘기며 암바로 진입하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__japanese-necktie",
+  "name": "Japanese Necktie",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "프론트 헤드락 (Front Headlock)",
+  "positions": [
+   "프론트 헤드락 (Front Headlock)",
+   "상체 서브미션"
+  ],
+  "description": "재패니즈 넥타이는 팔로 목과 어깨를 함께 감싸 몸을 회전시키며 조르는 프론트 헤드락 기반 초크입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__peruvian-necktie",
+  "name": "Peruvian Necktie",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "프론트 헤드락 (Front Headlock)",
+  "positions": [
+   "프론트 헤드락 (Front Headlock)",
+   "상체 서브미션"
+  ],
+  "description": "페루비안 넥타이는 다리로 상대의 목과 팔을 함께 감싸 조르는 프론트 헤드락 기반 초크입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__side-control-crucifix",
+  "name": "Side Control → Crucifix",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "크루시픽스 (Crucifix)",
+  "positions": [
+   "크루시픽스 (Crucifix)"
+  ],
+  "description": "사이드 컨트롤에서 크루시픽스로의 전환은 상대의 팔을 다리로 감싸며 크루시픽스 포지션으로 이동하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__back-control-crucifix",
+  "name": "Back Control → Crucifix",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "크루시픽스 (Crucifix)",
+  "positions": [
+   "크루시픽스 (Crucifix)"
+  ],
+  "description": "백 컨트롤에서 크루시픽스로의 전환은 상대의 양팔을 봉쇄하며 크루시픽스로 이동하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__crucifix-choke",
+  "name": "Crucifix Choke",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "크루시픽스 (Crucifix)",
+  "positions": [
+   "크루시픽스 (Crucifix)"
+  ],
+  "description": "크루시픽스 초크는 크루시픽스로 팔을 봉쇄한 상태에서 팔이나 다리로 목을 감아 조르는 초크입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__transition-to-back",
+  "name": "Transition to Back",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "크루시픽스 (Crucifix)",
+  "positions": [
+   "크루시픽스 (Crucifix)"
+  ],
+  "description": "크루시픽스에서 백으로의 전환은 팔 봉쇄를 유지한 채 후크를 걸어 백 컨트롤로 넘어가는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__outside-ashi",
+  "name": "Outside Ashi",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "아시 가라미 (Ashi Garami)",
+  "positions": [
+   "아시 가라미 (Ashi Garami)"
+  ],
+  "description": "아웃사이드 애시는 상대의 다리 바깥쪽에서 다리를 끼워 통제하는 애시 가라미 변형입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__inside-ashi",
+  "name": "Inside Ashi",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "아시 가라미 (Ashi Garami)",
+  "positions": [
+   "아시 가라미 (Ashi Garami)"
+  ],
+  "description": "인사이드 애시는 상대의 다리 안쪽에서 다리를 끼워 통제하는 애시 가라미 변형입니다.",
+  "candidates": [
+   "judo",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "bjj__50-50",
+  "name": "50/50",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "아시 가라미 (Ashi Garami)",
+  "positions": [
+   "아시 가라미 (Ashi Garami)"
+  ],
+  "description": "50/50은 서로의 다리가 얽힌 대칭적인 레그 포지션으로, 양쪽 모두 레그락을 노릴 수 있는 상태입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__outside-sankaku",
+  "name": "Outside Sankaku",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "아시 가라미 (Ashi Garami)",
+  "positions": [
+   "아시 가라미 (Ashi Garami)"
+  ],
+  "description": "아웃사이드 산카쿠는 상대의 다리 바깥쪽에서 삼각형으로 감싸 잠그는 애시 가라미 변형입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__50-50-sweep",
+  "name": "50/50 Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "50/50 가드",
+  "positions": [
+   "50/50 가드",
+   "스윕 기술 모음"
+  ],
+  "description": "50/50 스윕은 50/50 포지션에서 그립과 다리 힘을 이용해 상대를 넘기는 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__backside-50-50",
+  "name": "Backside 50/50",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "50/50 가드",
+  "positions": [
+   "50/50 가드"
+  ],
+  "description": "백사이드 50/50은 상대의 등 쪽에서 50/50 다리 얽힘을 만들어 통제를 강화하는 변형입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__transition-to-slx",
+  "name": "Transition to SLX",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "50/50 가드",
+  "positions": [
+   "50/50 가드"
+  ],
+  "description": "50/50에서 SLX로의 전환은 얽힌 다리를 풀어 싱글 레그 X 형태로 재배치하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__transition-to-x-guard",
+  "name": "Transition to X Guard",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "50/50 가드",
+  "positions": [
+   "50/50 가드"
+  ],
+  "description": "50/50에서 X 가드로의 전환은 얽힌 다리를 풀어 X자 다리 형태로 재배치하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__outside-ankle-lock",
+  "name": "Outside Ankle Lock",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "레그락 계열",
+  "positions": [
+   "레그락 계열"
+  ],
+  "description": "아웃사이드 앵클락은 다리 바깥쪽에서 발목을 감싸 압박하는 앵클락 변형입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__inside-ankle-lock",
+  "name": "Inside Ankle Lock",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "레그락 계열",
+  "positions": [
+   "레그락 계열"
+  ],
+  "description": "인사이드 앵클락은 다리 안쪽에서 발목을 감싸 압박하는 앵클락 변형입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__toe-hold",
+  "name": "Toe Hold",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "레그락 계열",
+  "positions": [
+   "레그락 계열"
+  ],
+  "description": "토홀드는 상대의 발을 손으로 잡아 발목을 안쪽으로 비틀어 압박하는 레그락입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__calf-slicer",
+  "name": "Calf Slicer",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "레그락 계열",
+  "positions": [
+   "레그락 계열"
+  ],
+  "description": "카프 슬라이서는 정강이나 무릎을 상대의 종아리에 눌러 압박하는 레그락입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__kimura-armbar",
+  "name": "Kimura → Armbar",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "암바 계열",
+  "positions": [
+   "암바 계열",
+   "김우라 계열"
+  ],
+  "description": "키무라에서 암바로의 전환은 키무라 그립이 풀리거나 각도가 나오지 않을 때 팔을 다리 사이에 고정해 암바로 전환하는 연결 기술입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__omoplata-armbar",
+  "name": "Omoplata → Armbar",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "암바 계열",
+  "positions": [
+   "암바 계열"
+  ],
+  "description": "오모플라타에서 암바로의 전환은 오모플라타 완성이 어려울 때 다리를 풀어 암바 자세로 전환하는 연결 기술입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__reverse-triangle",
+  "name": "Reverse Triangle",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "트라이앵글 계열",
+  "positions": [
+   "트라이앵글 계열"
+  ],
+  "description": "리버스 트라이앵글은 일반 트라이앵글과 반대 방향에서 다리를 감아 조르는 변형입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__side-triangle",
+  "name": "Side Triangle",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "트라이앵글 계열",
+  "positions": [
+   "트라이앵글 계열"
+  ],
+  "description": "사이드 트라이앵글은 사이드 컨트롤 포지션에서 다리로 목과 팔을 감싸 조르는 트라이앵글 변형입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__inverted-triangle",
+  "name": "Inverted Triangle",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "트라이앵글 계열",
+  "positions": [
+   "트라이앵글 계열"
+  ],
+  "description": "인버티드 트라이앵글은 몸을 뒤집은 상태에서 다리로 삼각형을 만들어 조르는 트라이앵글 변형입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__kimura-back-take",
+  "name": "Kimura Back Take",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "김우라 계열",
+  "positions": [
+   "김우라 계열"
+  ],
+  "description": "키무라 백 테이크는 키무라 그립으로 상대의 움직임을 봉쇄한 채 등 뒤로 이동하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__kimura-triangle",
+  "name": "Kimura → Triangle",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "김우라 계열",
+  "positions": [
+   "김우라 계열"
+  ],
+  "description": "키무라에서 트라이앵글로의 전환은 키무라 그립이 막혔을 때 다리를 이용해 트라이앵글로 전환하는 연결 기술입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__arm-drag-butterfly-sweep",
+  "name": "Arm Drag → Butterfly Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "암 드래그 (Arm Drag)",
+  "positions": [
+   "암 드래그 (Arm Drag)"
+  ],
+  "description": "암 드래그에서 버터플라이 스윕으로의 연결은 팔을 당긴 뒤 버터플라이 후크로 넘기는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__arm-drag-closed-guard",
+  "name": "Arm Drag → Closed Guard",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "암 드래그 (Arm Drag)",
+  "positions": [
+   "암 드래그 (Arm Drag)"
+  ],
+  "description": "암 드래그에서 클로즈드 가드로의 연결은 팔을 당겨 상대를 끌어들이며 다리로 허리를 감싸 가드를 잠그는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__arm-drag-turtle-attack",
+  "name": "Arm Drag → Turtle Attack",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "암 드래그 (Arm Drag)",
+  "positions": [
+   "암 드래그 (Arm Drag)"
+  ],
+  "description": "암 드래그에서 터틀 공격으로의 연결은 팔을 당겨 상대가 웅크리게 만든 뒤 터틀 상태를 공략하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__technical-stand-up-back-take",
+  "name": "Technical Stand-Up Back Take",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "백 테이크 기술 모음",
+  "positions": [
+   "백 테이크 기술 모음"
+  ],
+  "description": "테크니컬 스탠드업 백 테이크는 상대가 스탠드업으로 일어서려 할 때 훅과 그립으로 등 뒤를 잡는 백 테이크입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__granby-counter",
+  "name": "Granby Counter",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "백 테이크 기술 모음",
+  "positions": [
+   "백 테이크 기술 모음"
+  ],
+  "description": "그랜비 카운터는 상대의 백 테이크 시도에 대해 그랜비 롤로 회전하며 반격해 포지션을 벗어나는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__kimura-trap-back",
+  "name": "Kimura Trap → Back",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "백 테이크 기술 모음",
+  "positions": [
+   "백 테이크 기술 모음"
+  ],
+  "description": "키무라 트랩에서 백으로의 전환은 팔을 봉쇄한 채 몸을 회전시켜 등 뒤 포지션으로 이동하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__dlr-sweep",
+  "name": "DLR Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "스윕 기술 모음",
+  "positions": [
+   "스윕 기술 모음"
+  ],
+  "description": "DLR 스윕은 데 라 히바 훅을 이용한 대표적인 스윕들을 통칭하며, 훅으로 다리를 통제한 상태에서 그립과 함께 상대를 넘기는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__loop-choke",
+  "name": "Loop Choke",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "기(Gi)에서 특히 중요한 기술",
+  "positions": [
+   "기(Gi)에서 특히 중요한 기술"
+  ],
+  "description": "루프 초크는 옷깃을 고리처럼 만들어 팔 아래로 통과시켜 목을 조르는 기 전용 초크입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__worm-guard",
+  "name": "Worm Guard",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "기(Gi)에서 특히 중요한 기술",
+  "positions": [
+   "기(Gi)에서 특히 중요한 기술"
+  ],
+  "description": "웜 가드는 벨트와 바지단을 이용해 상대의 다리를 옷감으로 얽어매는 기 전용 오픈 가드입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__collar-drag",
+  "name": "Collar Drag",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "기(Gi)에서 특히 중요한 기술",
+  "positions": [
+   "기(Gi)에서 특히 중요한 기술"
+  ],
+  "description": "칼라 드래그는 옷깃을 잡아 상대를 대각선으로 끌어당겨 백이나 가드로 연결하는 기 기반 그립 기술입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__sleeve-drag",
+  "name": "Sleeve Drag",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "기(Gi)에서 특히 중요한 기술",
+  "positions": [
+   "기(Gi)에서 특히 중요한 기술"
+  ],
+  "description": "슬리브 드래그는 소매를 잡아 상대를 대각선으로 끌어당겨 자세를 여는 기 기반 그립 기술입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__collar-sleeve-sweep",
+  "name": "Collar & Sleeve Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "기(Gi)에서 특히 중요한 기술",
+  "positions": [
+   "기(Gi)에서 특히 중요한 기술"
+  ],
+  "description": "칼라 앤 슬리브 스윕은 옷깃과 소매 그립을 함께 이용해 상대를 넘기는 기 기반 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ }
+]

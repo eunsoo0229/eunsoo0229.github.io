@@ -1,3 +1,4 @@
+import { announceStorageReplaced } from '../storageEvents';
 import { supabase } from '../supabase/client';
 import { toKoreanAuthMessage } from '../auth/authErrors';
 import type { AuthResult } from '../auth/authService';
@@ -155,6 +156,7 @@ export async function restoreLocalDataFromCloud(userId: string): Promise<AuthRes
       window.localStorage.setItem(key, value);
       keyCount++;
     }
+    announceStorageReplaced();
     return { ok: true, data: { keyCount } };
   } catch (e) {
     return { ok: false, message: toKoreanAuthMessage(e) };

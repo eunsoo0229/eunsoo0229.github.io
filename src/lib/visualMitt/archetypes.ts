@@ -18,10 +18,11 @@ export type MotionKind = 'strike' | 'feint' | 'entry' | 'defense' | 'trap';
 /** The holder's attack a defense answers (the holder's own lead/rear side — they mirror your stance). */
 export interface IncomingAttack {
   side: Side;
-  path: 'straight' | 'hook' | 'uppercut' | 'kick' | 'teep';
+  /** shot = the holder changes level and shoots at your legs (wrestling / MMA takedown defense). */
+  path: 'straight' | 'hook' | 'uppercut' | 'kick' | 'teep' | 'shot';
   target: Target;
 }
-export type GuardKind = 'parry' | 'catch' | 'block' | 'cover' | 'elbowBlock' | 'shoulderRoll' | 'check' | 'kickCatch' | 'kickParry';
+export type GuardKind = 'parry' | 'catch' | 'block' | 'cover' | 'elbowBlock' | 'shoulderRoll' | 'check' | 'kickCatch' | 'kickParry' | 'sprawl' | 'downBlock' | 'jumpSprawl' | 'whizzer';
 export type Side = 'lead' | 'rear';
 export type Limb = 'hand' | 'foot' | 'knee' | 'elbow' | 'body';
 export type PathShape =
@@ -225,6 +226,11 @@ export const ARCHETYPES: Record<string, MotionArchetype> = {
   kickCatch: A({ key: 'kickCatch', label: '킥 캐치', kind: 'defense', side: 'lead', limb: 'hand', path: 'feint', target: 'body', incoming: { side: 'rear', path: 'kick', target: 'body' }, guard: 'kickCatch', cue: '몸통으로 오는 킥을 옆구리로 받으며 같은 쪽 팔로 다리를 감싸 잡습니다. 반대손은 얼굴을 지킵니다.', footwork: [] }),
   teepCatch: A({ key: 'teepCatch', label: '팁 캐치', kind: 'defense', side: 'rear', limb: 'hand', path: 'feint', target: 'body', incoming: { side: 'lead', path: 'teep', target: 'body' }, guard: 'kickCatch', cue: '배로 오는 팁을 한 손으로 아래에서 받쳐 잡습니다. 몸은 살짝 비켜 충격을 줄입니다.', footwork: [] }),
   kickParry: A({ key: 'kickParry', label: '킥 패리', kind: 'defense', side: 'rear', limb: 'hand', path: 'feint', target: 'body', incoming: { side: 'lead', path: 'teep', target: 'body' }, guard: 'kickParry', cue: '오는 팁·킥을 손바닥으로 옆으로 쳐내 상대 균형을 무너뜨립니다.', footwork: [] }),
+  // ---- takedown defense: the holder shoots at your legs ----
+  sprawl: A({ key: 'sprawl', label: '스프롤', kind: 'defense', side: 'lead', limb: 'body', path: 'feint', target: 'hips', incoming: { side: 'lead', path: 'shot', target: 'leg' }, guard: 'sprawl', cue: '상대가 다리로 파고드는 순간 두 다리를 뒤로 쭉 빼고 골반을 매트 쪽으로 떨어뜨려, 가슴과 체중으로 상대 머리·어깨를 눌러 슛을 끊습니다. 손은 상대 머리와 어깨를 아래로 누릅니다.', footwork: [{ foot: 'lead', dx: 0, dy: 70, label: '앞발 뒤로 쭉' }, { foot: 'rear', dx: 10, dy: 80, label: '뒷발도 뒤로 — 골반은 아래로' }], levelChange: true }),
+  downBlock: A({ key: 'downBlock', label: '다운 블락', kind: 'defense', side: 'lead', limb: 'hand', path: 'feint', target: 'hips', incoming: { side: 'lead', path: 'shot', target: 'leg' }, guard: 'downBlock', cue: '상대가 슛을 들어오면 무릎을 굽혀 자세를 낮추며 두 손(손바닥·전완)으로 상대 머리와 어깨를 아래로 찍어 눌러 다리에 닿기 전에 막습니다. 상대 머리를 내려 바로 스냅 다운·고 비하인드로 이어 갈 수 있습니다.', footwork: [{ foot: 'lead', dx: 0, dy: 15, label: '반 걸음 뒤로 빼며 자세 낮추기' }], levelChange: true }),
+  jumpSprawl: A({ key: 'jumpSprawl', label: '점프 스프롤', kind: 'defense', side: 'lead', limb: 'body', path: 'feint', target: 'hips', incoming: { side: 'lead', path: 'shot', target: 'leg' }, guard: 'jumpSprawl', cue: '슛이 오면 두 다리를 뒤로 빼 스프롤로 골반을 매트 쪽에 붙여 슛을 끊고, 곧바로 손으로 밀며 다리를 당겨 점프하듯 일어나 다시 자세를 잡습니다. 스프롤 뒤 빠르게 일어나는 반응·체력 드릴 변형입니다.', footwork: [{ foot: 'lead', dx: 0, dy: 70, label: '두 다리 뒤로 — 스프롤' }, { foot: 'rear', dx: 10, dy: 80, label: '골반은 매트로' }, { foot: 'lead', dx: 0, dy: 0, label: '점프하며 다리 당겨 자세로' }], levelChange: true, jump: true }),
+  whizzer: A({ key: 'whizzer', label: '위저(오버훅)', kind: 'defense', side: 'lead', limb: 'hand', path: 'feint', target: 'hips', incoming: { side: 'lead', path: 'shot', target: 'leg' }, guard: 'whizzer', cue: '상대가 한쪽 다리(싱글)에 붙으면 그쪽 팔로 상대 팔을 위에서 감아(오버훅) 겨드랑이를 잡아채고, 골반을 상대 쪽으로 밀어 넣으며 체중을 실어 상대를 아래로 눌러 떼어 냅니다.', footwork: [{ foot: 'lead', dx: -10, dy: 30, label: '잡힌 다리를 뒤로 빼기' }, { foot: 'rear', dx: 0, dy: 0, pivot: 30, label: '골반을 상대 쪽으로 밀어 넣기' }], levelChange: true }),
   // ---- guard control: hit / pull the holder's guard hand to open a line ----
   leadHandTrap: A({ key: 'leadHandTrap', label: '앞손 트랩', kind: 'trap', side: 'lead', limb: 'hand', path: 'feint', target: 'head', trap: { hand: 'lead', how: 'pull' }, cue: '앞손으로 상대 앞손을 덮어 아래로 눌러 내리며, 가드가 내려간 라인으로 바로 뒷손을 보냅니다.', footwork: [{ foot: 'lead', dx: 0, dy: -10, label: '반 걸음 붙기' }] }),
   rearHandTrap: A({ key: 'rearHandTrap', label: '뒷손 트랩', kind: 'trap', side: 'rear', limb: 'hand', path: 'feint', target: 'head', trap: { hand: 'rear', how: 'pull' }, cue: '뒷손으로 상대 뒷손 장갑을 턱에서 끌어내리거나 밀어 고정하고, 그쪽 얼굴이 빈 순간 리드 훅으로 이어 갑니다.', footwork: [{ foot: 'lead', dx: 0, dy: -10, label: '반 걸음 붙기' }] }),
@@ -323,7 +329,7 @@ const RULES: [RegExp, string][] = [
   [/high[- ]crotch|하이 크로치/i, 'highCrotch'],
   [/(low|outside|inside|sweep|high|snatch)\s?single|^single leg$|싱글 레그/i, 'singleLeg'],
   [/ankle pick|앵클 픽/i, 'anklePick'],
-  [/level change feint/i, 'levelFeint'],
+  [/level change feint|^level change$/i, 'levelFeint'],
   [/kick feint|foot feint/i, 'kickFeint'],
   [/jab feint|hand feint|shoulder feint|pump feint|^feint$/i, 'handFeint'],
   [/check hook/i, 'checkHook'],
@@ -390,6 +396,10 @@ const DEFENSE_RULES: [RegExp, string | ((art?: string) => string)][] = [
   [/^lead hand trap$|^hand trap$/i, 'leadHandTrap'],
   [/^rear hand trap$/i, 'rearHandTrap'],
   [/^paw$|^lead hand paw$|^pawing jab$/i, 'paw'],
+  [/^sprawl$/i, 'sprawl'],
+  [/^down block$|^downblock$|^다운 ?블락$/i, 'downBlock'],
+  [/^jump sprawl$|^점프 스프롤$/i, 'jumpSprawl'],
+  [/^whizzer$|^위저$/i, 'whizzer'],
   [/^guard pull-?down$|^pull down$|^slap down$|^guard slap$/i, 'guardPullDown'],
 ];
 

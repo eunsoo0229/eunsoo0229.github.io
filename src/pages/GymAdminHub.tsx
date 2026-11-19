@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../lib/auth/AuthProvider';
@@ -69,7 +70,7 @@ export default function GymAdminHub() {
           <span>관리</span>
         </div>
         <div className="section-title">
-          <h2>🏛 체육관 관리</h2>
+          <h2><Icon name="building" /> 체육관 관리</h2>
         </div>
 
         <div className="card info-card">

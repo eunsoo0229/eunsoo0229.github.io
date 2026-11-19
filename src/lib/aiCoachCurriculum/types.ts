@@ -8,6 +8,14 @@
 /** home = 집, gym = 체육관, limited = 기타 장소 (사무실·야외·숙소처럼 공간·장비가 제한된 곳). */
 export type CoachLocation = 'home' | 'gym' | 'limited';
 
+/**
+ * 수업 방향 — chosen before the class is generated:
+ *   mixed  = 복습 + 새 기술 (the original behaviour)
+ *   review = 배운 기술만 복습 (no new technique is introduced)
+ *   new    = 새 기술 기준 — a technique learned even once is never planned, linked or mentioned
+ */
+export type CoachClassFocus = 'mixed' | 'review' | 'new';
+
 /** What each step of a coach Day is for — ordered review → connection → application → new, wrapped by warm-up/conditioning drills. */
 export type CoachPlanRole = 'warmup' | 'review' | 'connection' | 'application' | 'new' | 'conditioning';
 
@@ -38,6 +46,8 @@ export interface AiCoachCurriculumMeta {
   summary: string;
   /** Things the coach still needs the user to confirm (e.g. "샌드백을 쓸 수 있나요?"). */
   equipmentQuestions: string[];
+  /** 수업 방향 (absent on classes made before the choice existed = mixed). */
+  focus?: CoachClassFocus;
   /** Mastery of each learned technique the plan was built from — lets the UI show what the plan was based on. */
   learnedSnapshot: { techniqueId: string; status: string }[];
 }

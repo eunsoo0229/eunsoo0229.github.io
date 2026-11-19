@@ -70,7 +70,7 @@ const result = await page.evaluate(
       const technique = {
         id, martialArt: nt.art, name: nt.name, koreanName: nt.koreanName ?? null, aliases: [], category: nt.category, positions: [],
         description: nt.description, purpose: nt.purpose ?? null, principles: [], variations: [], counters: [], defenses: [], transitions: [],
-        relatedTechniques: [], relatedMartialArts: [], difficulty: '중급', tags: ['가드 조작'], youtubeSearchQuery: `${nt.name} boxing`, videos: [],
+        relatedTechniques: [], relatedMartialArts: [], difficulty: nt.difficulty ?? '중급', tags: nt.tags ?? ['가드 조작'], youtubeSearchQuery: nt.youtubeQuery ?? `${nt.name} boxing`, videos: [],
         posture: { overview: nt.description, keyPoints: nt.keyPoints, commonMistakes: nt.commonMistakes },
         source: 'ai_web_research',
       };
@@ -149,7 +149,7 @@ const result = await page.evaluate(
       let name = e.label ? `${stepNames} (${e.label})` : stepNames;
       if (name.length > 80) name = e.label && e.label.length <= 80 ? e.label : stepNames.slice(0, 80);
       const srcLines = e.src.map((k) => (SOURCES[k].url ? `${SOURCES[k].label} — ${SOURCES[k].url}` : SOURCES[k].label));
-      const description = `${e.desc}\n\n참고: ${srcLines.join(' / ')}\n등록: MARTIALDEX 운영자 큐레이션 ${TAG} (2026-10-18)`.slice(0, 2000);
+      const description = `${e.desc}\n\n참고: ${srcLines.join(' / ')}\n등록: MARTIALDEX 운영자 큐레이션 ${TAG} (${new Date().toISOString().slice(0, 10)})`.slice(0, 2000);
       const errors = svc.validateShare({ name, purpose: e.purpose, steps });
       if (errors.length) {
         rejected.push({ art: e.art, steps: raws, reason: errors.join(' ') });

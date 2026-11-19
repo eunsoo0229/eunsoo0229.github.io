@@ -1,3 +1,5 @@
+import Icon from '../components/Icon';
+import ArtIcon from '../components/ArtIcon';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../lib/auth/AuthProvider';
@@ -19,7 +21,7 @@ function RelatedLink({ entry }: { entry: AiQuestionHistoryEntry }) {
     if (technique) {
       return (
         <Link to={`/arts/${technique.martialArt}/techniques/${technique.id}`} className="chip">
-          🥋 {technique.name}
+          <ArtIcon art={technique.martialArt} size={16} /> {technique.name}
         </Link>
       );
     }
@@ -29,7 +31,7 @@ function RelatedLink({ entry }: { entry: AiQuestionHistoryEntry }) {
     if (curriculum) {
       return (
         <Link to={`/learning/${curriculum.martialArt}/${curriculum.id}`} className="chip">
-          📘 {curriculum.title}
+          <Icon name="book" /> {curriculum.title}
         </Link>
       );
     }
@@ -75,7 +77,7 @@ export default function AiHistory() {
           <span>AI 질문 기록</span>
         </div>
         <div className="section-title">
-          <h2>🕑 AI 질문 기록</h2>
+          <h2><Icon name="timer" /> AI 질문 기록</h2>
         </div>
         <p className="video-status-message" style={{ marginTop: -8 }}>
           기술 상세/자세 분석/커리큘럼/선수 스타일/AI 코치 화면에서 "AI에게 질문하기"로 나눈 대화 기록입니다. 로그인 계정에

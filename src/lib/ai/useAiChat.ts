@@ -1,7 +1,11 @@
 import { useCallback, useRef, useState } from 'react';
 import { aiProvider } from './provider';
+import { askMartialdexWithWeb } from './martialdexAsk';
+import type { CoachDialogContext } from '../coachKnowledge/questions';
+import type { Technique } from '../../types';
 import { trimHistoryForRequest, useChatSession } from './chatStore';
 import type { AiErrorCode, ChatMessage } from './types';
+import type { CoachChatMessage } from '../selfAi/types';
 import { recordAiQuestion } from '../aiHistory/service';
 import type { AiHistoryFeature } from '../aiHistory/types';
 
@@ -15,7 +19,13 @@ export interface UseAiChatOptions {
     relatedTechniqueId?: string | null;
     relatedCurriculumId?: string | null;
   };
+  /** 'gemini' (default) or 'martialdex' — MARTIALDEX 자체 AI 코치 (selfAi/coachAgent via martialdexAsk.ts; self-hosted search, no Tavily). */
+  engine?: AiEngine;
+  /** The technique the question is about — the own AI's focus ('martialdex' engine only). */
+  technique?: Technique | null;
 }
+
+export type AiEngine = 'gemini' | 'martialdex';
 
 export interface AiChatError {
   code: AiErrorCode;
@@ -36,8 +46,10 @@ function findCachedAnswer(messages: ChatMessage[], question: string): string | n
   return null;
 }
 
-export function useAiChat({ sessionKey, systemInstruction, contextText, historyMeta }: UseAiChatOptions) {
+export function useAiChat({ sessionKey, systemInstruction, contextText, historyMeta, engine, technique = null }: UseAiChatOptions) {
   const { messages, mutate, clear } = useChatSession(sessionKey);
+  // the own AI's dialog context ("그거" → the last named technique), per chat session
+  const dialogRef = useRef<{ key: string; context: CoachDialogContext | undefined }>({ key: sessionKey, context: undefined });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<AiChatError | null>(null);
   const inFlightRef = useRef(false);
@@ -60,7 +72,27 @@ export function useAiChat({ sessionKey, systemInstruction, contextText, historyM
       const history = trimHistoryForRequest(messages);
       mutate((prev) => [...prev, { role: 'user', text: question }]);
 
-      const result = await aiProvider.ask({ systemInstruction, contextText, history, question });
+      if (engine === 'martialdex') {
+        if (dialogRef.current.key !== sessionKey) dialogRef.current = { key: sessionKey, context: undefined };
+        try {
+          // the conversation so far, as the coach's memory sees it (topics, offers) — this modal used to send none
+          const past: CoachChatMessage[] = messages.map((m, i) => ({ id: `m${i}`, createdAt: '', role: m.role === 'model' ? 'assistant' : 'user', text: m.text, ...(m.coach?.techniqueIds ? { techniqueIds: m.coach.techniqueIds } : {}), ...(m.coach?.turn ? { turn: m.coach.turn } : {}), ...(m.coach?.lessonProposal ? { lessonProposal: m.coach.lessonProposal } : {}), ...(m.coach?.research ? { research: m.coach.research } : {}) }));
+          const r = await askMartialdexWithWeb({ technique, question, context: dialogRef.current.context, history: past });
+          dialogRef.current.context = r.context;
+          mutate((prev) => [...prev, { role: 'model', text: r.text, sources: r.sources, webNote: r.webNote, coach: r.coach }]);
+          if (historyMeta) {
+            void recordAiQuestion({ feature: historyMeta.feature, question, answer: r.text, relatedTechniqueId: historyMeta.relatedTechniqueId, relatedCurriculumId: historyMeta.relatedCurriculumId });
+          }
+        } catch {
+          setError({ code: 'UNKNOWN', message: 'MARTIALDEX AI 답변을 만들지 못했습니다.' });
+        }
+        setLoading(false);
+        inFlightRef.current = false;
+        return;
+      }
+
+      // 'gemini' here is the user's explicit pick in the modal; no engine → 설정 > AI 엔진 (local by default)
+      const result = await aiProvider.ask({ systemInstruction, contextText, history, question, engine: engine === 'gemini' ? 'gemini' : undefined });
 
       if (result.ok) {
         mutate((prev) => [...prev, { role: 'model', text: result.text }]);
@@ -79,13 +111,14 @@ export function useAiChat({ sessionKey, systemInstruction, contextText, historyM
       setLoading(false);
       inFlightRef.current = false;
     },
-    [messages, mutate, systemInstruction, contextText, historyMeta]
+    [messages, mutate, systemInstruction, contextText, historyMeta, engine, technique, sessionKey]
   );
 
   const clearAll = useCallback(() => {
     setError(null);
+    dialogRef.current = { key: sessionKey, context: undefined };
     clear();
-  }, [clear]);
+  }, [clear, sessionKey]);
 
   return { messages, loading, error, ask, clear: clearAll };
 }

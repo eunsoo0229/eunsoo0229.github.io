@@ -37,6 +37,7 @@ export const SOURCE_TYPE_LABEL: Record<string, string> = {
   gym_class: '체육관 수업',
   sparring_session: '스파링',
   visual_mitt: 'Visualizing Mitt',
+  program: '개인 훈련 프로그램',
   shadow: '섀도복싱(이전 기능)',
   ground_battle: '그라운드 배틀(이전 기능)',
 };

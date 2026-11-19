@@ -1,10 +1,13 @@
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { lazy, Suspense, useEffect } from 'react';
-import Header from './components/Header';
+import AppShell, { BrandFooter } from './components/brand/AppShell';
+import { MatMark } from './components/brand/BrandMarks';
+import AuthFrame from './components/brand/AuthFrame';
 import AppErrorBoundary from './components/AppErrorBoundary';
 import Home from './pages/Home';
 import { AuthProvider } from './lib/auth/AuthProvider';
 import LocalDataMigrationPrompt from './components/auth/LocalDataMigrationPrompt';
+import LocalAiSetupPrompt from './components/LocalAiSetupPrompt';
 import GymLiveWatcher from './components/GymLiveWatcher';
 
 // Every OTHER page used to be a static top-of-file import, which meant
@@ -23,7 +26,6 @@ import GymLiveWatcher from './components/GymLiveWatcher';
 // stays a normal eager import since it's needed on first paint regardless.
 // No page's own behavior changes; this only changes WHEN its code loads.
 const MartialArtsList = lazy(() => import('./pages/MartialArtsList'));
-const AddMartialArt = lazy(() => import('./pages/AddMartialArt'));
 const MartialArtDetail = lazy(() => import('./pages/MartialArtDetail'));
 const TechniqueList = lazy(() => import('./pages/TechniqueList'));
 const TechniqueDetail = lazy(() => import('./pages/TechniqueDetail'));
@@ -44,6 +46,10 @@ const HomeTraining = lazy(() => import('./pages/HomeTraining'));
 const RequestHomeExercise = lazy(() => import('./pages/RequestHomeExercise'));
 const TrainingHub = lazy(() => import('./pages/TrainingHub'));
 const GymRoutineManager = lazy(() => import('./pages/GymRoutineManager'));
+const GymTrainerPlanner = lazy(() => import('./pages/GymTrainerPlanner'));
+const FighterProfile = lazy(() => import('./pages/FighterProfile'));
+const TrainingGoals = lazy(() => import('./pages/TrainingGoals'));
+const CategoryManager = lazy(() => import('./pages/CategoryManager'));
 const GymRoutineActivation = lazy(() => import('./pages/GymRoutineActivation'));
 const GymExerciseBrowser = lazy(() => import('./pages/GymExerciseBrowser'));
 const RequestGymExercise = lazy(() => import('./pages/RequestGymExercise'));
@@ -79,8 +85,44 @@ const MarketplacePublish = lazy(() => import('./pages/MarketplacePublish'));
 const MarketplacePaymentResult = lazy(() => import('./pages/MarketplacePaymentResult'));
 const AiCoach = lazy(() => import('./pages/AiCoach'));
 const AiCoachClass = lazy(() => import('./pages/AiCoachClass'));
+const CoachChat = lazy(() => import('./pages/CoachChat'));
+const PoseCheck = lazy(() => import('./pages/PoseCheck'));
 const VisualMitt = lazy(() => import('./pages/VisualMitt'));
 const LearnedTechniques = lazy(() => import('./pages/LearnedTechniques'));
+// 통합 플랫폼 (체육관 검색·운영 / 장비 거래 / 기술 평가 / 성과·프로그램)
+const MyEvaluations = lazy(() => import('./pages/MyEvaluations'));
+const TrainingProgress = lazy(() => import('./pages/TrainingProgress'));
+const MyCurriculum = lazy(() => import('./pages/MyCurriculum'));
+const PerformanceDashboard = lazy(() => import('./pages/PerformanceDashboard'));
+const TrainingProgram = lazy(() => import('./pages/TrainingProgram'));
+const GearMarket = lazy(() => import('./pages/gear/GearMarket'));
+const GearDetail = lazy(() => import('./pages/gear/GearDetail'));
+const GearEditor = lazy(() => import('./pages/gear/GearEditor'));
+const MyGear = lazy(() => import('./pages/gear/MyGear'));
+const GearOrders = lazy(() => import('./pages/gear/GearOrders'));
+const GearPaymentResult = lazy(() => import('./pages/gear/GearPaymentResult'));
+// 수익화 (0061–0064)
+const Membership = lazy(() => import('./pages/monetization/Membership'));
+const WalletPage = lazy(() => import('./pages/monetization/Wallet'));
+const CoinStore = lazy(() => import('./pages/monetization/CoinStore'));
+const BillingResult = lazy(() => import('./pages/monetization/BillingResult'));
+const ContentMarket = lazy(() => import('./pages/monetization/ContentMarket'));
+const ContentDetail = lazy(() => import('./pages/monetization/ContentDetail'));
+const Library = lazy(() => import('./pages/monetization/Library'));
+const CreatorStudio = lazy(() => import('./pages/monetization/CreatorStudio'));
+const CreatorProductEditor = lazy(() => import('./pages/monetization/CreatorProductEditor'));
+const CreatorRevenue = lazy(() => import('./pages/monetization/CreatorRevenue'));
+const BusinessSubscription = lazy(() => import('./pages/monetization/BusinessSubscription'));
+const GymDirectory = lazy(() => import('./pages/gyms/GymDirectory'));
+const GymListingDetail = lazy(() => import('./pages/gyms/GymListingDetail'));
+const GymCompare = lazy(() => import('./pages/gyms/GymCompare'));
+const GymDeals = lazy(() => import('./pages/gyms/GymDeals'));
+const MyGymCoupons = lazy(() => import('./pages/gyms/MyGymCoupons'));
+const GymManage = lazy(() => import('./pages/gyms/GymManage'));
+const GymManageListing = lazy(() => import('./pages/gyms/GymManageListing'));
+const GymAdminMember = lazy(() => import('./pages/GymAdminMember'));
+const PlatformAdmin = lazy(() => import('./pages/PlatformAdmin'));
+const CredentialApply = lazy(() => import('./pages/CredentialApply'));
 const TodayTraining = lazy(() => import('./pages/TodayTraining'));
 const SparringAnalysis = lazy(() => import('./pages/SparringAnalysis'));
 const SparringSessionDetail = lazy(() => import('./pages/SparringSessionDetail'));
@@ -98,6 +140,13 @@ const ReviewGym = lazy(() => import('./pages/ReviewModes').then((m) => ({ defaul
 const ReviewWeak = lazy(() => import('./pages/ReviewModes').then((m) => ({ default: m.ReviewWeak })));
 const ReviewSession = lazy(() => import('./pages/ReviewModes').then((m) => ({ default: m.ReviewSession })));
 const MyStyle = lazy(() => import('./pages/MyStyle'));
+const UserProfile = lazy(() => import('./pages/social/UserProfile'));
+const FollowList = lazy(() => import('./pages/social/FollowList'));
+const Messages = lazy(() => import('./pages/social/Messages'));
+const Conversation = lazy(() => import('./pages/social/Conversation'));
+const Clans = lazy(() => import('./pages/social/Clans'));
+const ClanDetail = lazy(() => import('./pages/social/ClanDetail'));
+const Notifications = lazy(() => import('./pages/social/Notifications'));
 const Profile = lazy(() => import('./pages/Profile'));
 const Login = lazy(() => import('./pages/Login'));
 const Signup = lazy(() => import('./pages/Signup'));
@@ -123,8 +172,9 @@ function ScrollToTop() {
 function RouteLoadingFallback() {
   return (
     <div className="page">
-      <div className="container" style={{ textAlign: 'center', paddingTop: 60 }}>
-        <span className="spinner" /> 불러오는 중...
+      <div className="container mx-route-loading" role="status" aria-label="불러오는 중">
+        <MatMark size={34} className="mx-route-loading__mark" />
+        <span>LOADING</span>
       </div>
     </div>
   );
@@ -134,16 +184,18 @@ export default function App() {
   return (
     <AuthProvider>
       <div className="app-shell">
-        <Header />
+        <AppShell />
         <ScrollToTop />
         <LocalDataMigrationPrompt />
+        <LocalAiSetupPrompt />
         <GymLiveWatcher />
         <Suspense fallback={<RouteLoadingFallback />}>
           <AppErrorBoundary>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/arts" element={<MartialArtsList />} />
-            <Route path="/arts/add" element={<AddMartialArt />} />
+            {/* 무술 추가 기능은 제거됨 — 옛 링크는 무술 목록으로 */}
+            <Route path="/arts/add" element={<Navigate to="/arts" replace />} />
             <Route path="/arts/:martialArtId" element={<MartialArtDetail />} />
             <Route path="/arts/:martialArtId/techniques" element={<TechniqueList />} />
             <Route path="/arts/:martialArtId/techniques/:techniqueId" element={<TechniqueDetail />} />
@@ -193,6 +245,10 @@ export default function App() {
             <Route path="/home-training/request" element={<RequestHomeExercise />} />
             <Route path="/training" element={<TrainingHub />} />
             <Route path="/training/routines" element={<GymRoutineManager />} />
+            <Route path="/training/trainer" element={<GymTrainerPlanner />} />
+            <Route path="/fighter-profile" element={<FighterProfile />} />
+            <Route path="/goals" element={<TrainingGoals />} />
+            <Route path="/categories" element={<CategoryManager />} />
             <Route path="/training/routines/manage" element={<GymRoutineActivation />} />
             <Route path="/training/exercises" element={<GymExerciseBrowser />} />
             <Route path="/training/exercises/request" element={<RequestGymExercise />} />
@@ -202,12 +258,15 @@ export default function App() {
             <Route path="/gym/admin" element={<GymAdminHub />} />
             <Route path="/gym/admin/:gymId" element={<GymAdminDetail />} />
             <Route path="/gym/admin/session/:sessionId" element={<GymAdminSessionRoster />} />
+            <Route path="/gym/admin/:gymId/member/:userId" element={<GymAdminMember />} />
             <Route path="/gym/admin/live/:sessionId" element={<GymLiveControl />} />
             <Route path="/gym/live/:sessionId" element={<GymLiveSession />} />
             <Route path="/nutrition" element={<Nutrition />} />
             <Route path="/nutrition/goals" element={<NutritionGoals />} />
             <Route path="/coach" element={<AiCoach />} />
             <Route path="/coach/class" element={<AiCoachClass />} />
+            <Route path="/coach/chat" element={<CoachChat />} />
+            <Route path="/pose-check/:techniqueId" element={<PoseCheck />} />
             <Route path="/coach/lesson" element={<OneOffCoachLesson />} />
             <Route path="/coach/mitt" element={<VisualMitt />} />
             <Route path="/today-training" element={<TodayTraining />} />
@@ -227,15 +286,57 @@ export default function App() {
             <Route path="/review/weak" element={<ReviewWeak />} />
             <Route path="/review/session" element={<ReviewSession />} />
             <Route path="/my-style" element={<MyStyle />} />
+            <Route path="/u/:userId" element={<UserProfile />} />
+            <Route path="/u/:userId/followers" element={<FollowList />} />
+            <Route path="/u/:userId/following" element={<FollowList />} />
+            <Route path="/messages" element={<Messages />} />
+            <Route path="/messages/:conversationId" element={<Conversation />} />
+            <Route path="/clans" element={<Clans />} />
+            <Route path="/clans/:clanId" element={<ClanDetail />} />
+            <Route path="/notifications" element={<Notifications />} />
+            <Route path="/evaluations" element={<MyEvaluations />} />
+            <Route path="/admin/platform" element={<PlatformAdmin />} />
+            <Route path="/verification" element={<CredentialApply />} />
+            <Route path="/progress" element={<TrainingProgress />} />
+            <Route path="/my-curriculum" element={<MyCurriculum />} />
+            <Route path="/performance" element={<PerformanceDashboard />} />
+            <Route path="/program" element={<TrainingProgram />} />
+            <Route path="/gyms" element={<GymDirectory />} />
+            <Route path="/gyms/compare" element={<GymCompare />} />
+            <Route path="/gyms/deals" element={<GymDeals />} />
+            <Route path="/gyms/coupons" element={<MyGymCoupons />} />
+            <Route path="/gyms/manage" element={<GymManage />} />
+            <Route path="/gyms/manage/:listingId" element={<GymManageListing />} />
+            <Route path="/gyms/:listingId" element={<GymListingDetail />} />
+            <Route path="/membership" element={<Membership />} />
+            <Route path="/wallet" element={<WalletPage />} />
+            <Route path="/wallet/history" element={<WalletPage />} />
+            <Route path="/wallet/store" element={<CoinStore />} />
+            <Route path="/billing/result" element={<BillingResult />} />
+            <Route path="/content" element={<ContentMarket />} />
+            <Route path="/content/:id" element={<ContentDetail />} />
+            <Route path="/library" element={<Library />} />
+            <Route path="/creator" element={<CreatorStudio />} />
+            <Route path="/creator/products/new" element={<CreatorProductEditor />} />
+            <Route path="/creator/products/:id" element={<CreatorProductEditor />} />
+            <Route path="/creator/revenue" element={<CreatorRevenue />} />
+            <Route path="/business" element={<BusinessSubscription />} />
+            <Route path="/gear" element={<GearMarket />} />
+            <Route path="/gear/new" element={<GearEditor />} />
+            <Route path="/gear/mine" element={<MyGear />} />
+            <Route path="/gear/orders" element={<GearOrders />} />
+            <Route path="/gear/payment/result" element={<GearPaymentResult />} />
+            <Route path="/gear/:id" element={<GearDetail />} />
+            <Route path="/gear/:id/edit" element={<GearEditor />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/reset-password" element={<ResetPassword />} />
+            <Route path="/login" element={<AuthFrame><Login /></AuthFrame>} />
+            <Route path="/signup" element={<AuthFrame><Signup /></AuthFrame>} />
+            <Route path="/reset-password" element={<AuthFrame><ResetPassword /></AuthFrame>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           </AppErrorBoundary>
         </Suspense>
-        <footer className="site-footer">MARTIALDEX — 무술 기술 백과사전 (참고용 데이터, 실전 적용은 지도자 감독 하에)</footer>
+        <BrandFooter />
       </div>
     </AuthProvider>
   );

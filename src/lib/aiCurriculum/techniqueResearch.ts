@@ -6,7 +6,11 @@ import { significantNameTokens } from './diversity';
 import { MMA_MARTIAL_ART_ID, MMA_SOURCE_MARTIAL_ARTS } from '../mmaCurriculum/types';
 import { getMartialArt } from '../loadData';
 import { webSearchProvider } from '../webSearch/provider';
-import type { SearchResult } from '../webSearch/types';
+import { aiProvider } from '../ai/provider';
+import { resolveSubGoals, type SubGoal } from './subGoals';
+import { MAX_QUERIES_PER_WAVE, queriesForPart, runWebEvidenceResearch, type ReviewItem, type WebEvidenceDeps } from './webEvidenceResearch';
+import type { ResearchDiagnostics, SourceKind } from './evidenceLedger';
+import { findDbEvidence, type DbEvidenceTechnique } from './dbEvidence';
 
 const DEBUG = typeof import.meta !== 'undefined' && !!import.meta.env?.DEV;
 function log(...args: unknown[]) {
@@ -40,6 +44,9 @@ export interface ResearchedTechnique {
   evidence?: string;
   /** 0-100, Gemini's own confidence that this is a real, correctly-named technique given the evidence available. Candidates below CONFIDENCE_UNCERTAIN_THRESHOLD are marked 'uncertain' and excluded from auto-merge (spec section 13/14). */
   confidence?: number;
+  /** web_search only: the learning part (SubGoal id) this technique is evidence for. */
+  partId?: string;
+  sourceKinds?: SourceKind[];
 }
 
 export interface ExcludedResearchTechnique {
@@ -77,6 +84,16 @@ export interface TechniqueResearchOutcome {
   analyzedSourceCount: number;
   /** How many search waves actually ran (1 = initial only, up to 1 + MAX_EXPANSION_WAVES) — spec section 9/26's expansion-search accounting. 0 for non-web_search/insufficient_web_evidence modes. */
   wavesRun: number;
+  /** The request's learning parts (subGoals.ts) — set whenever web search was attempted. */
+  subGoals?: SubGoal[];
+  /** Per-stage numbers and per-part coverage of the web search (evidenceLedger.ts). */
+  diagnostics?: ResearchDiagnostics;
+  /** Candidates whose relevance could not be confirmed — shown for review, never counted or merged. */
+  review?: ReviewItem[];
+  /** Every core part has evidence but some follow-up parts do not: the curriculum may be built from the covered parts only, after the user confirms. */
+  partial?: { includedIds: string[]; excluded: { id: string; label: string; reason: string }[] } | null;
+  /** Grade-B candidates: MARTIALDEX DB techniques whose own posture data matches a learning part (dbEvidence.ts). */
+  dbEvidence?: DbEvidenceTechnique[];
 }
 
 // A topic phrase containing any Hangul syllable is exactly the "Korean text
@@ -151,56 +168,6 @@ export function buildResearchAngles(analysis: GoalAnalysis, diversityRequested: 
   return [...new Set(angles)].slice(0, diversityRequested ? 9 : 6);
 }
 
-/**
- * Same topic basis as buildResearchAngles (never a second, parallel
- * topic-derivation scheme), reused for expansion-search waves once the
- * initial wave came up short — spec section 6's "기존 Tavily 검색 시스템을
- * 재사용한다... buildResearchAngles() 구조가 있다면 이를 재사용한다". Falls back
- * to a bare martial-art term (never empty) so expansion templates always
- * have something to work with even when the initial wave's own topics were
- * empty (a rare case, since buildResearchAngles already has its own
- * deterministic floor for the initial wave).
- */
-function coreSearchTopicsForExpansion(analysis: GoalAnalysis): string[] {
-  const topics = extractCleanOrLegacyTopics(analysis);
-  if (topics.length > 0) return topics;
-  const artTerm = analysis.martialArt === MMA_MARTIAL_ART_ID ? 'mixed martial arts (MMA)' : analysis.martialArt.replace(/-/g, ' ');
-  return [artTerm];
-}
-
-/**
- * Spec section 8's "동일한 검색어를 반복하지 않는다 — 검색 각도를 변경한다": each
- * expansion wave reframes the SAME goal-derived topics with different search
- * intent (tutorial/coaching-angle first, then setup/entry-chain angle),
- * never the literal wave-1 query text again, and never a hardcoded
- * per-goal string — the topics themselves still come from the user's own
- * goal via coreSearchTopicsForExpansion.
- */
-function buildExpansionAngles(analysis: GoalAnalysis, waveIndex: number): string[] {
-  const topics = coreSearchTopicsForExpansion(analysis);
-  const templatesByWave: ((t: string) => string)[][] = [
-    [(t) => `${t} tutorial`, (t) => `${t} coaching breakdown`, (t) => `how to do ${t}`],
-    [(t) => `${t} setups and combinations`, (t) => `${t} entries and chains`, (t) => `${t} against defense`],
-  ];
-  const templates = templatesByWave[Math.min(waveIndex - 1, templatesByWave.length - 1)];
-  const angles = topics.flatMap((t) => templates.map((tpl) => tpl(t)));
-  return [...new Set(angles)].slice(0, MAX_WEB_SEARCH_QUERIES);
-}
-
-// spec section 5: a duration-scaled MINIMUM to accept web_search evidence as
-// "sufficient" — deliberately much gentler than service.ts's
-// estimateNeededPoolSize (that one sizes the FULL curriculum pool; real
-// web-search evidence density per topic is far lower than the whole
-// technique DB, so requiring a full pool's worth of evidence would make
-// insufficient_web_evidence fire on almost every real search). A shortfall
-// between this floor and the full pool size is still honestly reported via
-// insufficientContent/qualityWarning downstream — this floor only decides
-// "is there enough REAL evidence to build a web_search curriculum AT ALL".
-const MIN_EVIDENCE_CANDIDATES_FLOOR = 3;
-function computeMinimumEvidenceCandidates(totalDays: number): number {
-  return Math.max(MIN_EVIDENCE_CANDIDATES_FLOOR, Math.ceil(totalDays / 7) + 2);
-}
-
 const VALID_GOAL_INTENTS = new Set<string>(['attack', 'defense', 'escape', 'counter', 'connection', 'fundamentals']);
 const VALID_INTENT_GUESS = new Set<string>([...VALID_GOAL_INTENTS, 'unknown']);
 
@@ -223,47 +190,9 @@ function isResearchArray(v: unknown): v is ResearchedTechnique[] {
   );
 }
 
-// Bounded so a diversity-heavy goal (up to 9 planned angles) never fires
-// more than this many real Tavily calls per research pass — keeps usage
-// well inside the free tier (1,000/month) even under heavy testing.
-const MAX_WEB_SEARCH_QUERIES = 3;
-// Caps how many distinct retrieved pages get pasted into the extraction
-// prompt — bounds token usage regardless of how many raw results came back.
-const MAX_SOURCES_FOR_EXTRACTION = 8;
 // Below this, a web_search-mode candidate is excluded outright (spec section
 // 14's "uncertain은 자동 포함하지 않는다") rather than merely flagged low.
 const CONFIDENCE_UNCERTAIN_THRESHOLD = 50;
-
-/**
- * Stricter than isResearchArray — a web_search candidate must carry REAL
- * evidence (non-empty sourceUrls + evidence text) to type-check at all, so
- * a malformed/evidence-less item is rejected as a parse failure rather than
- * silently accepted and only caught later by the confidence filter.
- */
-function isWebSearchResearchArray(v: unknown): v is ResearchedTechnique[] {
-  return (
-    Array.isArray(v) &&
-    v.every((x) => {
-      if (!x || typeof x !== 'object') return false;
-      const o = x as Record<string, unknown>;
-      return (
-        typeof o.name === 'string' &&
-        o.name.trim().length > 0 &&
-        typeof o.martialArtGuess === 'string' &&
-        typeof o.purpose === 'string' &&
-        typeof o.intentGuess === 'string' &&
-        VALID_INTENT_GUESS.has(o.intentGuess) &&
-        Array.isArray(o.sourceUrls) &&
-        o.sourceUrls.length > 0 &&
-        o.sourceUrls.every((u) => typeof u === 'string') &&
-        (o.sourceTitles === undefined || (Array.isArray(o.sourceTitles) && o.sourceTitles.every((t) => typeof t === 'string'))) &&
-        typeof o.evidence === 'string' &&
-        o.evidence.trim().length > 0 &&
-        typeof o.confidence === 'number'
-      );
-    })
-  );
-}
 
 // Codes that mean search couldn't even be ATTEMPTED (config/auth problem),
 // as opposed to an attempt that ran and failed — see SearchStatus's doc
@@ -342,7 +271,13 @@ export function deriveSearchStatus(params: {
  * (service.ts) surfaces that status to the user instead of the old blanket
  * "AI 기존 지식만으로 진행 (품질 영향 없음)" claim.
  */
-export async function researchTechniquesForGoal(analysis: GoalAnalysis, martialArt: string, totalDays: number = 14): Promise<TechniqueResearchOutcome> {
+export async function researchTechniquesForGoal(
+  analysis: GoalAnalysis,
+  martialArt: string,
+  // kept for callers; evidence sufficiency no longer depends on the day count (per-part coverage instead)
+  _totalDays: number = 14,
+  opts: { freeText?: string; deps?: Partial<WebEvidenceDeps> } = {}
+): Promise<TechniqueResearchOutcome> {
   const artScope =
     martialArt === MMA_MARTIAL_ART_ID
       ? `MMA(다음 실제 무술들의 조합 — ${MMA_SOURCE_MARTIAL_ARTS.join(', ')})`
@@ -350,7 +285,6 @@ export async function researchTechniquesForGoal(analysis: GoalAnalysis, martialA
 
   const diversityRequested = analysis.diversityRequested === true;
   const plannedQueries = buildResearchAngles(analysis, diversityRequested);
-  const minimumRequiredCandidates = computeMinimumEvidenceCandidates(totalDays);
 
   /**
    * The SAME intent + confidence + near-duplicate filtering the final
@@ -492,42 +426,6 @@ export async function researchTechniquesForGoal(analysis: GoalAnalysis, martialA
   const systemInstruction = buildSystemInstruction(true);
   const fallbackSystemInstruction = buildSystemInstruction(false);
 
-  /**
-   * The extraction prompt for real web-search mode — deliberately distinct
-   * wording from both buildSystemInstruction() variants: this one is never
-   * asked to "search" (grounded) or "recall" (knowledge fallback) — it is
-   * handed ACTUAL retrieved page content in contextText and told to extract
-   * only what's genuinely present in it, with mandatory evidence/sourceUrls
-   * (enforced by isWebSearchResearchArray's stricter type guard).
-   */
-  function buildWebSearchExtractionInstruction(): string {
-    return [
-      '아래 contextText에 실제 웹 검색으로 얻은 자료(제목/URL/본문 발췌)가 여러 개 주어진다.',
-      '이 자료 안에 실제로 등장하는 무술 기술만 추출한다 — 자료에 언급되지 않은 기술을 지어내면 절대 안 된다.',
-      `조사 대상 무술: ${artScope}`,
-      intentLine,
-      diversityLine,
-      '',
-      '각 기술에 대해 다음을 담는다:',
-      '- name: 표준 영문 또는 로마자 기술명',
-      '- martialArtGuess: 그 기술이 실제로 속한 무술(위 조사 대상 무술 범위 내에서만)',
-      '- purpose: 이 기술이 왜 이 목적에 도움이 되는지 설명하는 한국어 1문장',
-      '- intentGuess: "attack"|"defense"|"escape"|"counter"|"connection"|"fundamentals"|"unknown" 중 이 기술의 실제 성격',
-      '- sourceUrls: 이 기술이 실제로 언급된 자료의 URL 배열(반드시 제공된 자료의 url 중에서만 고른다, 최소 1개)',
-      '- sourceTitles: 위 URL들의 제목 배열(제공된 자료의 title을 그대로 사용)',
-      '- evidence: 그 자료의 내용 중 실제로 이 기술을 언급하는 부분을 짧게 인용하거나 요약(지어내지 않는다)',
-      '- confidence: 0-100, 제공된 자료만으로 이 기술이 실존한다고 얼마나 확신하는지(막연하게 스치듯 언급됐으면 낮게 준다)',
-      '',
-      '다음은 절대 포함하지 않는다: 제공된 자료에 실제로 등장하지 않는 기술, 목적과 무관한 기술, 조사 대상 무술 범위 밖의 기술,',
-      '기술이 아닌 것(개념/전략 설명), 중복, 목적과 반대되는 의도의 기술. 자료에 근거가 없으면 억지로 채우지 말고 빼라.',
-      '최소 0개, 최대 12개의 기술을 담은 JSON 배열만 출력한다.',
-      '',
-      '출력 형식: [{ "name": string, "martialArtGuess": string, "purpose": string, "intentGuess": string, "sourceUrls": string[], "sourceTitles": string[], "evidence": string, "confidence": number }, ...]',
-    ]
-      .filter(Boolean)
-      .join('\n');
-  }
-
   const contextParts = [
     `목표 요약: ${analysis.summary}`,
     analysis.goals.length > 0 ? `훈련 목표: ${analysis.goals.join(', ')}` : '',
@@ -553,253 +451,80 @@ export async function researchTechniquesForGoal(analysis: GoalAnalysis, martialA
     });
   }
 
-  // ===== Priority 1: real external web search (webSearchProvider, Tavily
-  // by default) — spec sections 2-3: "Grounding을 유일한 검색 수단으로 쓰지
-  //마라... 실제 외부 검색을 반드시 수행할 수 있는 독립적인 검색 계층을 추가".
-  // Attempted BEFORE Google Search grounding, which is billing-gated (see
-  // buildSystemInstruction's doc comment).
-  //
-  // One real Tavily call for a set of queries, deduping against URLs already
-  // seen in EARLIER waves (the `seenUrls` set is shared across the whole
-  // expansion loop below, not just within one wave) — spec section 10's
-  // "중복 검색 결과 제거".
-  async function runSearchWave(
-    queries: string[],
-    seenUrls: Set<string>
-  ): Promise<{ collected: SearchResult[]; executedQueries: string[]; attemptedAny: boolean; anySuccess: boolean; notConfigured: boolean; lastError: string | null }> {
-    const collected: SearchResult[] = [];
-    const executedQueries: string[] = [];
-    let attemptedAny = false;
-    let anySuccess = false;
-    let notConfigured = false;
-    let lastError: string | null = null;
+  // ===== Priority 1: real external web search (webSearchProvider, Tavily by
+  // default), attempted BEFORE Google Search grounding (billing-gated — see
+  // buildSystemInstruction's doc comment). Searched and judged per learning
+  // part (subGoals.ts / webEvidenceResearch.ts): one shared 9-call budget
+  // handed to the parts still lacking evidence, one canonical-URL ledger,
+  // per-part relevance (position + technique family + purpose + the
+  // extractor's own fit), and extraction failures kept apart from "not
+  // enough evidence". Not configured / every call failed → falls through to
+  // the existing grounded → knowledge_fallback chain below, unchanged.
+  const parts = resolveSubGoals(analysis, opts.freeText ?? analysis.summary);
+  log('learning parts', parts.map((p) => ({ id: p.id, role: p.role, label: p.label, topics: p.searchTopics, positions: p.positions, actions: p.actions, intents: p.intents })));
+  // grade-B (MARTIALDEX DB) confirmation per part — local data only, computed before searching so a part the
+  // DB already supports needs fewer web searches
+  const dbEvidence = findDbEvidence(parts, martialArt);
+  log('db evidence', parts.map((p) => ({ id: p.id, db: dbEvidence.filter((d) => d.partId === p.id).map((d) => d.name) })));
+  const web = await runWebEvidenceResearch({
+    parts,
+    artScope,
+    contextLines: contextParts,
+    dbEvidence,
+    firstWaveQueries: plannedQueries.slice(0, MAX_QUERIES_PER_WAVE),
+    deps: { search: opts.deps?.search ?? ((q) => webSearchProvider.search(q)), ask: opts.deps?.ask ?? ((r) => aiProvider.ask(r)) },
+    log: structuredLog,
+  });
+  const plannedForReport = parts.length === 1 ? plannedQueries : parts.flatMap((p) => queriesForPart(p, 0, null));
 
-    for (const q of queries) {
-      const outcome = await webSearchProvider.search(q);
-      attemptedAny = true;
-      if (!outcome.ok) {
-        structuredLog('CURRICULUM_RESEARCH', { provider: 'tavily', query: q, results: 0, status: outcome.code === 'NO_API_KEY' ? 'not_configured' : 'failed' });
-        if (outcome.code === 'NO_API_KEY') {
-          notConfigured = true;
-          break; // feature isn't set up at all — stop immediately, don't burn the other planned queries
-        }
-        lastError = outcome.message;
-        continue; // one query failing never aborts the others (spec section 5's "개별 실패는 skip, 전체 실패와 구분")
-      }
-      anySuccess = true;
-      structuredLog('CURRICULUM_RESEARCH', { provider: 'tavily', query: q, results: outcome.results.length, status: 'success' });
-      executedQueries.push(q);
-      for (const r of outcome.results) {
-        if (seenUrls.has(r.url)) continue;
-        seenUrls.add(r.url);
-        collected.push(r);
-      }
-    }
-    return { collected, executedQueries, attemptedAny, anySuccess, notConfigured, lastError };
-  }
-
-  /** Same Gemini extraction prompt/validation/retry as before, parameterized on a source slice so each expansion wave can extract from just its OWN newly-collected (already URL-deduped) pages. */
-  async function extractTechniquesFromSources(sources: SearchResult[]) {
-    const sourcesBlock = sources
-      .map((r, i) => `[${i + 1}] title: ${r.title}\nurl: ${r.url}\ncontent: ${(r.content ?? r.snippet ?? '(내용 없음)').slice(0, 1500)}`)
-      .join('\n\n');
-    const extractionContext = `${contextParts.join('\n')}\n\n=== 실제 검색 결과 자료 (아래 자료에 실제로 등장하는 기술만 추출할 것) ===\n${sourcesBlock}`;
-    async function attemptExtraction() {
-      return askGeminiForJsonWithGrounding<ResearchedTechnique[]>({
-        systemInstruction: buildWebSearchExtractionInstruction(),
-        contextText: extractionContext,
-        question: '위 실제 검색 결과 자료에서 실제로 언급된 기술만 추출해줘. 자료에 없는 기술은 지어내지 마라.',
-        useSearchGrounding: false, // real content is already in hand — grounding here would just add a (billing-gated) call for no benefit
-        validate: isWebSearchResearchArray,
-      });
-    }
-    let extraction = await attemptExtraction();
-    // Same bounded single retry as the grounded attempt()'s RETRYABLE_CODES
-    // handling — a large sources block occasionally trips a transient
-    // format issue (observed: PARSE_ERROR) unrelated to the content itself.
-    if (!extraction.ok && RETRYABLE_CODES.has(extraction.code)) {
-      log('web search extraction failed, retrying once', { code: extraction.code });
-      extraction = await attemptExtraction();
-    }
-    return extraction;
-  }
-
-  // Bounded so this can never search indefinitely — spec section 9's
-  // "무한 검색하지 않는다": at most 1 initial wave + this many EXPANSION
-  // waves, each capped at MAX_WEB_SEARCH_QUERIES real Tavily calls.
-  const MAX_EXPANSION_WAVES = 2;
-
-  /**
-   * Spec section 1/8/9/12's core new behavior: if the initial wave's
-   * validated (evidence+intent+dedup-passing) candidate count doesn't clear
-   * `minimumRequiredCandidates`, tries up to MAX_EXPANSION_WAVES more waves
-   * with DIFFERENTLY-FRAMED queries (never repeating the same query text),
-   * re-checking the CUMULATIVE validated count after every wave using the
-   * exact same filterResearchedTechniques() rules the final result is judged
-   * by. Returns null only when Tavily was never actually configured/reached
-   * at all (unchanged "fall through silently" behavior). Returns
-   * `insufficientAfterExpansion: true` when real search genuinely ran (at
-   * least one HTTP-level success) but still came up short even after
-   * expansion — spec section 15-B's 'insufficient_web_evidence', distinct
-   * from an outright API failure (`ok: false` below, which still falls
-   * through to the existing grounded/knowledge_fallback chain unchanged,
-   * per spec section 15-A/35's "이 정책은 변경하지 않는다").
-   */
-  async function attemptWebSearchWithExpansion(): Promise<{
-    ok: boolean;
-    techniques: ResearchedTechnique[];
-    rawCount: number;
-    searchResultCount: number;
-    analyzedSourceCount: number;
-    executedQueries: string[];
-    wavesRun: number;
-    insufficientAfterExpansion: boolean;
-    errorMessage?: string;
-  } | null> {
-    const initialQueries = plannedQueries.slice(0, MAX_WEB_SEARCH_QUERIES);
-    if (initialQueries.length === 0) return null; // shouldn't happen now that buildResearchAngles has a deterministic floor, but keep the guard
-
-    const seenUrls = new Set<string>();
-    const allExecutedQueries: string[] = [];
-    const rawTechniquesAcc: ResearchedTechnique[] = [];
-    let totalRawResultCount = 0;
-    let totalAnalyzedSourceCount = 0;
-    let anyAttempted = false;
-    let anySuccessOverall = false;
-    let notConfigured = false;
-    let lastError: string | null = null;
-    let wavesRun = 0;
-
-    for (let waveIndex = 0; waveIndex <= MAX_EXPANSION_WAVES; waveIndex++) {
-      const rawWaveQueries = waveIndex === 0 ? initialQueries : buildExpansionAngles(analysis, waveIndex);
-      const waveQueries = rawWaveQueries.filter((q) => !allExecutedQueries.includes(q));
-      if (waveQueries.length === 0) continue;
-
-      const wave = await runSearchWave(waveQueries, seenUrls);
-      anyAttempted = anyAttempted || wave.attemptedAny;
-      anySuccessOverall = anySuccessOverall || wave.anySuccess;
-      if (wave.lastError) lastError = wave.lastError;
-      if (wave.notConfigured) {
-        notConfigured = true;
-        break;
-      }
-      allExecutedQueries.push(...wave.executedQueries);
-      totalRawResultCount += wave.collected.length;
-      wavesRun++;
-
-      if (wave.collected.length > 0) {
-        const sourcesForExtraction = wave.collected.slice(0, MAX_SOURCES_FOR_EXTRACTION);
-        totalAnalyzedSourceCount += sourcesForExtraction.length;
-        const extraction = await extractTechniquesFromSources(sourcesForExtraction);
-        if (extraction.ok) {
-          structuredLog('CURRICULUM_CANDIDATES', { phase: waveIndex === 0 ? 'initial' : 'expansion', candidateCount: extraction.data.length, analyzedSources: sourcesForExtraction.length });
-          rawTechniquesAcc.push(...extraction.data);
-        } else {
-          log('web search extraction failed', { wave: waveIndex, code: extraction.code, message: extraction.message });
-        }
-      }
-
-      // Cumulative sufficiency check, using the SAME filter the final return
-      // value will be judged by (spec section 12's "다시 계산").
-      const filtered = filterResearchedTechniques(rawTechniquesAcc, 'web_search');
-      structuredLog('CURRICULUM_RESEARCH', {
-        phase: waveIndex === 0 ? 'initial' : 'expansion',
-        provider: 'tavily',
-        queries: waveQueries.length,
-        results: wave.collected.length,
-        validatedCandidates: filtered.techniques.length,
-        minimumRequired: minimumRequiredCandidates,
-      });
-      if (filtered.techniques.length >= minimumRequiredCandidates) {
-        return {
-          ok: true,
-          techniques: rawTechniquesAcc,
-          rawCount: rawTechniquesAcc.length,
-          searchResultCount: totalRawResultCount,
-          analyzedSourceCount: totalAnalyzedSourceCount,
-          executedQueries: allExecutedQueries,
-          wavesRun,
-          insufficientAfterExpansion: false,
-        };
-      }
-    }
-
-    if (!anyAttempted || notConfigured) return null; // never even reached Tavily — caller falls through to grounded/knowledge_fallback, unchanged
-
-    if (!anySuccessOverall) {
-      // EVERY real Tavily call across every wave failed at the HTTP/API
-      // level (invalid key, rate limit, network, server error, ...) — this
-      // is Tavily itself failing (spec section 15-A), not "search succeeded
-      // but evidence is thin" (15-B). Falls through to the existing
-      // grounded/knowledge_fallback chain, unchanged per spec section 35.
-      return {
-        ok: false,
-        techniques: [],
-        rawCount: 0,
-        searchResultCount: 0,
-        analyzedSourceCount: 0,
-        executedQueries: allExecutedQueries,
-        wavesRun,
-        insufficientAfterExpansion: false,
-        errorMessage: lastError ?? '검색 결과가 없습니다.',
-      };
-    }
-
-    // At least one real Tavily call succeeded at the HTTP level across the
-    // initial + expansion waves, but the validated candidate count never
-    // cleared minimumRequiredCandidates even after exhausting the bounded
-    // expansion budget — spec section 15-B/16's 'insufficient_web_evidence'.
+  if (web.kind === 'done') {
+    const techniques: ResearchedTechnique[] = web.techniques.map((t) => ({
+      name: t.name,
+      martialArtGuess: t.martialArtGuess,
+      purpose: t.purpose,
+      intentGuess: t.intentGuess,
+      source: t.sourceUrls[0] ?? '',
+      sourceUrls: t.sourceUrls,
+      sourceTitles: t.sourceTitles,
+      sourceKinds: t.sourceKinds,
+      evidence: t.evidence,
+      confidence: t.confidence,
+      partId: t.partId,
+    }));
+    const status = bucketByCount(web.rawCount, techniques.length);
+    log('web evidence research', { mode: web.mode, stopReason: web.diagnostics.stopReason, partial: !!web.partial, techniques: techniques.map((t) => `${t.partId}:${t.name}`) });
     return {
-      ok: true,
-      techniques: rawTechniquesAcc,
-      rawCount: rawTechniquesAcc.length,
-      searchResultCount: totalRawResultCount,
-      analyzedSourceCount: totalAnalyzedSourceCount,
-      executedQueries: allExecutedQueries,
-      wavesRun,
-      insufficientAfterExpansion: true,
+      ok: status === 'SEARCH_SUCCESS' || status === 'SEARCH_PARTIAL',
+      status,
+      techniques,
+      excluded: web.excluded,
+      rawCount: web.rawCount,
+      excludedOppositeCampCount: web.excluded.filter((e) => e.reason.includes('목적이 반대')).length,
+      usedSearchGrounding: false,
+      groundingSources: [],
+      plannedQueries: plannedForReport,
+      actualSearchQueries: [],
+      researchMode: web.mode,
+      usedExternalWebSearch: true,
+      executedQueries: web.executedQueries,
+      wavesRun: web.wavesRun,
+      searchResultCount: web.diagnostics.uniqueSourceCount,
+      analyzedSourceCount: web.diagnostics.analyzedSourceCount,
+      subGoals: web.parts,
+      diagnostics: web.diagnostics,
+      review: web.review,
+      partial: web.partial,
+      dbEvidence,
     };
   }
-
-  const webSearchAttempt = await attemptWebSearchWithExpansion();
 
   let researchMode: ResearchMode = 'grounded';
   let rawTechniques: ResearchedTechnique[] = [];
   let usedSearchGroundingFinal = false;
   let groundingSourcesFinal: GroundingSource[] = [];
   let actualSearchQueriesFinal: string[] = [];
-  let usedExternalWebSearch = false;
-  let executedQueriesFinal: string[] = [];
-  let searchResultCountFinal = 0;
-  let analyzedSourceCountFinal = 0;
-  let wavesRunFinal = 0;
 
-  if (webSearchAttempt && webSearchAttempt.ok && !webSearchAttempt.insufficientAfterExpansion && webSearchAttempt.techniques.length > 0) {
-    log('web search research ok', { results: webSearchAttempt.techniques.length, wavesRun: webSearchAttempt.wavesRun });
-    researchMode = 'web_search';
-    rawTechniques = webSearchAttempt.techniques;
-    usedExternalWebSearch = true;
-    executedQueriesFinal = webSearchAttempt.executedQueries;
-    searchResultCountFinal = webSearchAttempt.searchResultCount;
-    analyzedSourceCountFinal = webSearchAttempt.analyzedSourceCount;
-    wavesRunFinal = webSearchAttempt.wavesRun;
-  } else if (webSearchAttempt && webSearchAttempt.ok && webSearchAttempt.insufficientAfterExpansion) {
-    // Tavily genuinely executed — real HTTP-level success across the
-    // initial + expansion waves — but never produced enough validated,
-    // evidence-backed candidates. Spec section 15-B/16's
-    // 'insufficient_web_evidence': explicitly distinct from Tavily itself
-    // failing (the else-branch below). The caller (service.ts) must stop
-    // generation here rather than let fallbackTechniquePool or the
-    // knowledge_fallback chain quietly stand in (spec section 4/13/20).
-    log('web search ran but evidence stayed insufficient after expansion', { results: webSearchAttempt.techniques.length, wavesRun: webSearchAttempt.wavesRun });
-    researchMode = 'insufficient_web_evidence';
-    rawTechniques = webSearchAttempt.techniques;
-    usedExternalWebSearch = true;
-    executedQueriesFinal = webSearchAttempt.executedQueries;
-    searchResultCountFinal = webSearchAttempt.searchResultCount;
-    analyzedSourceCountFinal = webSearchAttempt.analyzedSourceCount;
-    wavesRunFinal = webSearchAttempt.wavesRun;
-  } else {
+  {
     // Web search wasn't configured, found nothing, or extraction failed —
     // fall through to the existing grounded -> knowledge_fallback chain
     // (unchanged behavior from before this addition).
@@ -874,10 +599,12 @@ export async function researchTechniquesForGoal(analysis: GoalAnalysis, martialA
         errorMessage: result.message,
         researchMode,
         usedExternalWebSearch: false,
-        executedQueries: webSearchAttempt?.executedQueries ?? [],
-        searchResultCount: webSearchAttempt?.searchResultCount ?? 0,
-        analyzedSourceCount: webSearchAttempt?.analyzedSourceCount ?? 0,
-        wavesRun: webSearchAttempt?.wavesRun ?? 0,
+        executedQueries: web.diagnostics.queries.filter((q) => q.ok).map((q) => q.query),
+        searchResultCount: web.diagnostics.uniqueSourceCount,
+        analyzedSourceCount: web.diagnostics.analyzedSourceCount,
+        wavesRun: 0,
+        subGoals: parts,
+        diagnostics: web.diagnostics,
       };
     }
 
@@ -894,8 +621,7 @@ export async function researchTechniquesForGoal(analysis: GoalAnalysis, martialA
   // 'insufficient_web_evidence' (both are real-evidence-sourced; only the
   // sufficiency verdict differs), so confidence filtering never gets
   // silently skipped for the insufficient case.
-  const filterMode: ResearchMode = usedExternalWebSearch ? 'web_search' : researchMode;
-  const { techniques, excluded, excludedOppositeCampCount } = filterResearchedTechniques(rawTechniques, filterMode);
+  const { techniques, excluded, excludedOppositeCampCount } = filterResearchedTechniques(rawTechniques, researchMode);
 
   // The knowledge-fallback attempt is deliberately ungrounded, and the
   // web-search extraction call is deliberately ungrounded too (real content
@@ -908,7 +634,7 @@ export async function researchTechniquesForGoal(analysis: GoalAnalysis, martialA
   // from the thin count, which is honest; researchMode (not status) is what
   // service.ts gates the hard "stop generation" decision on.
   const status =
-    researchMode === 'knowledge_fallback' || researchMode === 'web_search' || researchMode === 'insufficient_web_evidence'
+    researchMode === 'knowledge_fallback'
       ? bucketByCount(rawTechniques.length, techniques.length)
       : deriveSearchStatus({
           ok: true,
@@ -938,11 +664,13 @@ export async function researchTechniquesForGoal(analysis: GoalAnalysis, martialA
     plannedQueries,
     actualSearchQueries: actualSearchQueriesFinal,
     researchMode,
-    usedExternalWebSearch,
-    executedQueries: executedQueriesFinal,
-    wavesRun: wavesRunFinal,
-    searchResultCount: searchResultCountFinal,
-    analyzedSourceCount: analyzedSourceCountFinal,
+    usedExternalWebSearch: false,
+    executedQueries: web.diagnostics.queries.filter((q) => q.ok).map((q) => q.query),
+    wavesRun: 0,
+    searchResultCount: web.diagnostics.uniqueSourceCount,
+    analyzedSourceCount: web.diagnostics.analyzedSourceCount,
+    subGoals: parts,
+    diagnostics: web.diagnostics,
   };
 }
 

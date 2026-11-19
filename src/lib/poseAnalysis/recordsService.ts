@@ -10,7 +10,7 @@ function newRecordId(): string {
     : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
 }
 
-export function saveAnalysisResult(martialArtId: string, result: PoseAnalysisResult): PoseAnalysisRecord {
+export function saveAnalysisResult(martialArtId: string, result: PoseAnalysisResult, meta: Pick<PoseAnalysisRecord, 'method' | 'referenceId' | 'reliability' | 'capture'> = {}): PoseAnalysisRecord {
   const record: PoseAnalysisRecord = {
     recordId: newRecordId(),
     techniqueId: result.techniqueId,
@@ -19,6 +19,7 @@ export function saveAnalysisResult(martialArtId: string, result: PoseAnalysisRes
     status: result.status,
     metricScores: Object.fromEntries(result.metricScores.map((m) => [m.id, m.score])),
     analyzedAt: new Date().toISOString(),
+    ...Object.fromEntries(Object.entries(meta).filter(([, v]) => v !== undefined)),
   };
   poseRecordsRepository.add(record);
   return record;

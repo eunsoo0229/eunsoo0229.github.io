@@ -1,0 +1,112 @@
+{
+ "publish": false,
+ "links": [],
+ "skipped": [
+  {
+   "id": "kickboxing__미들킥-middle-kick",
+   "art": "mixed-martial-arts",
+   "why": "already in art"
+  },
+  {
+   "id": "bjj__백-포지션-이스케이프",
+   "art": "mixed-martial-arts",
+   "why": "already in art"
+  },
+  {
+   "id": "bjj__back-choke-escape",
+   "art": "mixed-martial-arts",
+   "why": "already in art"
+  },
+  {
+   "id": "bjj__back-mount-armbar",
+   "art": "mixed-martial-arts",
+   "why": "already in art"
+  },
+  {
+   "id": "bjj__body-triangle-escape",
+   "art": "mixed-martial-arts",
+   "why": "already in art"
+  },
+  {
+   "id": "bjj__closed-guard-posture-and-base",
+   "art": "mixed-martial-arts",
+   "why": "already in art"
+  },
+  {
+   "id": "bjj__hip-heist-sweep",
+   "art": "mixed-martial-arts",
+   "why": "already in art"
+  },
+  {
+   "id": "bjj__twister",
+   "art": "mixed-martial-arts",
+   "why": "already in art"
+  },
+  {
+   "id": "bjj__von-flue-choke",
+   "art": "mixed-martial-arts",
+   "why": "already in art"
+  },
+  {
+   "id": "bjj__이마나리-롤",
+   "art": "mixed-martial-arts",
+   "why": "already in art"
+  },
+  {
+   "id": "wrestling__그립-브레이킹",
+   "art": "mixed-martial-arts",
+   "why": "already in art"
+  },
+  {
+   "id": "wrestling__프론트-롤",
+   "art": "judo",
+   "why": "already in art"
+  },
+  {
+   "id": "boxing__lead-hand-trap",
+   "art": "mixed-martial-arts",
+   "why": "already in art"
+  },
+  {
+   "id": "bjj__overhook-pummel",
+   "art": "mixed-martial-arts",
+   "why": "already in art"
+  },
+  {
+   "id": "bjj__그립-브레이킹-턴-아웃",
+   "art": "mixed-martial-arts",
+   "why": "already in art"
+  },
+  {
+   "id": "boxing__paw",
+   "art": "kickboxing",
+   "why": "already in art"
+  },
+  {
+   "id": "boxing__paw",
+   "art": "mixed-martial-arts",
+   "why": "already in art"
+  },
+  {
+   "id": "boxing__sway-jab",
+   "art": "kickboxing",
+   "why": "already in art"
+  },
+  {
+   "id": "boxing__sway-jab",
+   "art": "mixed-martial-arts",
+   "why": "already in art"
+  },
+  {
+   "id": "muay-thai__cross-elbow",
+   "art": "mixed-martial-arts",
+   "why": "already in art"
+  },
+  {
+   "id": "muay-thai__guard-pull-down",
+   "art": "mixed-martial-arts",
+   "why": "already in art"
+  }
+ ],
+ "errors": []
+}

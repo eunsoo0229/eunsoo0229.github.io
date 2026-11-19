@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useMemo, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { getMartialArt, martialArtSummaries } from '../lib/loadData';
@@ -104,7 +105,7 @@ export default function Community() {
         <div className="section-title">
           <h2>커뮤니티</h2>
           <Link to="/shorts" className="btn btn-primary btn-sm" data-testid="open-shorts">
-            ▶ 숏폼으로 보기
+            <Icon name="play" /> 숏폼으로 보기
           </Link>
         </div>
 
@@ -128,7 +129,7 @@ export default function Community() {
             </p>
 
             <div className="card info-card">
-          <h3>📥 공유 코드로 가져오기</h3>
+          <h3><Icon name="download" /> 공유 코드로 가져오기</h3>
           <textarea
             style={{ width: '100%', minHeight: 60 }}
             placeholder="MDCUR1. 로 시작하는 공유 코드를 붙여넣으세요"
@@ -203,7 +204,7 @@ export default function Community() {
         </div>
 
         {filtered.length === 0 ? (
-          <EmptyState icon="🌐" text="공개된 커리큘럼이 없습니다. 내 커리큘럼을 공개로 설정하거나 공유 코드를 가져와보세요." />
+          <EmptyState icon="🌐" art="no-curriculum" text="공개된 커리큘럼이 없습니다. 내 커리큘럼을 공개로 설정하거나 공유 코드를 가져와보세요." />
         ) : (
           <div className="stack gap-2">
             {filtered.map((c) => (
@@ -223,7 +224,7 @@ export default function Community() {
                 </div>
                 <div className="modal-actions" style={{ justifyContent: 'flex-start', marginTop: 10 }}>
                   <button className="btn btn-secondary btn-sm" onClick={() => handleCopyShareCode(c)}>
-                    {copiedId === c.id ? '복사됨 ✓' : '공유 코드 복사'}
+                    {copiedId === c.id ? <>복사됨 <Icon name="check" /></> : '공유 코드 복사'}
                   </button>
                 </div>
                 {manualCopy?.id === c.id && (

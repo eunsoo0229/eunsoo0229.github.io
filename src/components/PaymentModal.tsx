@@ -1,3 +1,4 @@
+import Icon from './Icon';
 import type { PaymentOutcome, PendingOrder } from '../lib/payments/types';
 
 // The test-mode "결제창" — visually distinct and explicitly labeled so no
@@ -8,7 +9,7 @@ export default function PaymentModal({ order, onResult }: { order: PendingOrder;
   return (
     <div className="modal-overlay">
       <div className="modal-panel" onClick={(e) => e.stopPropagation()}>
-        <h3>🧪 테스트 결제</h3>
+        <h3><Icon name="flask" /> 테스트 결제</h3>
         <p className="video-status-message">
           실제 결제 서비스가 연결되기 전까지는 실제 돈이 빠져나가지 않는 테스트 결제만 진행됩니다.
         </p>

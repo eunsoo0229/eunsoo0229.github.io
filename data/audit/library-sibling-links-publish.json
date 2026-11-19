@@ -1,0 +1,193 @@
+{
+ "publish": true,
+ "links": [
+  {
+   "id": "link__mixed-martial-arts__bjj__백-포지션-이스케이프",
+   "technique": "bjj__백-포지션-이스케이프",
+   "name": "백 포지션 이스케이프",
+   "art": "mixed-martial-arts",
+   "category": "방어 (Defense)",
+   "confidence": "B",
+   "reason": "백 컨트롤 탈출은 MMA 그라운드 방어의 기본 기술이다."
+  },
+  {
+   "id": "link__mixed-martial-arts__bjj__back-choke-escape",
+   "technique": "bjj__back-choke-escape",
+   "name": "Back Choke Escape",
+   "art": "mixed-martial-arts",
+   "category": "방어 (Defense)",
+   "confidence": "A",
+   "reason": "리어 네이키드 초크 방어·탈출은 MMA 핵심 방어 기술이다."
+  },
+  {
+   "id": "link__mixed-martial-arts__bjj__back-mount-armbar",
+   "technique": "bjj__back-mount-armbar",
+   "name": "Back Mount -> Armbar",
+   "art": "mixed-martial-arts",
+   "category": "서브미션 (Submission)",
+   "confidence": "B",
+   "reason": "백 포지션에서 암바 전환은 MMA에서 쓰이는 서브미션이다."
+  },
+  {
+   "id": "link__mixed-martial-arts__bjj__body-triangle-escape",
+   "technique": "bjj__body-triangle-escape",
+   "name": "Body Triangle Escape",
+   "art": "mixed-martial-arts",
+   "category": "방어 (Defense)",
+   "confidence": "B",
+   "reason": "바디 트라이앵글 탈출은 MMA 백 방어에서 쓰인다."
+  },
+  {
+   "id": "link__mixed-martial-arts__bjj__closed-guard-posture-and-base",
+   "technique": "bjj__closed-guard-posture-and-base",
+   "name": "Closed Guard Posture and Base",
+   "art": "mixed-martial-arts",
+   "category": "그라운드 컨트롤 (Ground Control)",
+   "confidence": "B",
+   "reason": "가드 안 포스처 유지는 MMA 탑 게임의 기본이다."
+  },
+  {
+   "id": "link__mixed-martial-arts__bjj__hip-heist-sweep",
+   "technique": "bjj__hip-heist-sweep",
+   "name": "Hip Heist Sweep",
+   "art": "mixed-martial-arts",
+   "category": "MMA 전환 동작 (Transitions)",
+   "confidence": "B",
+   "reason": "힙 범프(힙 하이스트) 스윕은 MMA 가드에서 쓰이는 스윕이다."
+  },
+  {
+   "id": "link__mixed-martial-arts__bjj__twister",
+   "technique": "bjj__twister",
+   "name": "Twister",
+   "art": "mixed-martial-arts",
+   "category": "서브미션 (Submission)",
+   "confidence": "B",
+   "reason": "트위스터는 UFC에서 실제 피니시가 나온 MMA 서브미션이다."
+  },
+  {
+   "id": "link__mixed-martial-arts__bjj__von-flue-choke",
+   "technique": "bjj__von-flue-choke",
+   "name": "Von Flue Choke",
+   "art": "mixed-martial-arts",
+   "category": "서브미션 (Submission)",
+   "confidence": "B",
+   "reason": "본 플루 초크는 MMA 경기에서 유래·사용된 길로틴 카운터 조르기다."
+  },
+  {
+   "id": "link__mixed-martial-arts__bjj__이마나리-롤",
+   "technique": "bjj__이마나리-롤",
+   "name": "이마나리 롤",
+   "art": "mixed-martial-arts",
+   "category": "서브미션 (Submission)",
+   "confidence": "B",
+   "reason": "이마나리 롤은 MMA(이마나리 마사카즈)에서 유래한 레그락 진입이다."
+  },
+  {
+   "id": "link__mixed-martial-arts__wrestling__그립-브레이킹",
+   "technique": "wrestling__그립-브레이킹",
+   "name": "그립 브레이킹",
+   "art": "mixed-martial-arts",
+   "category": "클린치 (Clinch)",
+   "confidence": "B",
+   "reason": "스탠딩 그립 끊기는 MMA 클린치·핸드파이팅에서 쓰인다."
+  },
+  {
+   "id": "link__judo__wrestling__프론트-롤",
+   "technique": "wrestling__프론트-롤",
+   "name": "프론트 롤",
+   "art": "judo",
+   "category": "기본 자세와 이동",
+   "confidence": "B",
+   "reason": "앞구르기 낙법(젠포 카이텐 우케미)은 유도 기본 커리큘럼이다."
+  },
+  {
+   "id": "link__mixed-martial-arts__boxing__lead-hand-trap",
+   "technique": "boxing__lead-hand-trap",
+   "name": "Lead Hand Trap",
+   "art": "mixed-martial-arts",
+   "category": "MMA 복싱",
+   "confidence": "B",
+   "reason": "앞손 트랩 후 크로스는 MMA 핸드파이팅에서 쓰이는 기술이다."
+  },
+  {
+   "id": "link__mixed-martial-arts__bjj__overhook-pummel",
+   "technique": "bjj__overhook-pummel",
+   "name": "Overhook pummel",
+   "art": "mixed-martial-arts",
+   "category": "클린치 (Clinch)",
+   "confidence": "B",
+   "reason": "오버훅 퍼멜링은 MMA 클린치 공방의 기본이다."
+  },
+  {
+   "id": "link__mixed-martial-arts__bjj__그립-브레이킹-턴-아웃",
+   "technique": "bjj__그립-브레이킹-턴-아웃",
+   "name": "그립 브레이킹 & 턴 아웃",
+   "art": "mixed-martial-arts",
+   "category": "방어 (Defense)",
+   "confidence": "B",
+   "reason": "시트벨트 그립 해제 후 돌아나오는 백 탈출은 MMA에서 쓰인다."
+  },
+  {
+   "id": "link__kickboxing__boxing__paw",
+   "technique": "boxing__paw",
+   "name": "Paw",
+   "art": "kickboxing",
+   "category": "페인트 (Feint)",
+   "confidence": "B",
+   "reason": "포잉 잽은 킥복싱에서 거리 측정·시야 가리기에 쓰인다."
+  },
+  {
+   "id": "link__mixed-martial-arts__boxing__paw",
+   "technique": "boxing__paw",
+   "name": "Paw",
+   "art": "mixed-martial-arts",
+   "category": "MMA 복싱",
+   "confidence": "B",
+   "reason": "포잉 잽은 MMA 거리 측정에 쓰이는 타격 기술이다."
+  },
+  {
+   "id": "link__kickboxing__boxing__sway-jab",
+   "technique": "boxing__sway-jab",
+   "name": "Sway -> Jab",
+   "art": "kickboxing",
+   "category": "카운터",
+   "confidence": "B",
+   "reason": "스웨이(린백) 후 잽 반격은 킥복싱 카운터로 쓰인다."
+  },
+  {
+   "id": "link__mixed-martial-arts__boxing__sway-jab",
+   "technique": "boxing__sway-jab",
+   "name": "Sway -> Jab",
+   "art": "mixed-martial-arts",
+   "category": "MMA 복싱",
+   "confidence": "B",
+   "reason": "스웨이 후 잽 카운터는 MMA 타격에서 쓰인다."
+  },
+  {
+   "id": "link__mixed-martial-arts__muay-thai__cross-elbow",
+   "technique": "muay-thai__cross-elbow",
+   "name": "Cross Elbow",
+   "art": "mixed-martial-arts",
+   "category": "스트라이킹 (Striking)",
+   "confidence": "B",
+   "reason": "뒷손 수평 엘보는 MMA에서 쓰이는 팔꿈치 타격이다."
+  },
+  {
+   "id": "link__mixed-martial-arts__muay-thai__guard-pull-down",
+   "technique": "muay-thai__guard-pull-down",
+   "name": "Guard Pull-Down",
+   "art": "mixed-martial-arts",
+   "category": "스트라이킹 (Striking)",
+   "confidence": "B",
+   "reason": "가드 끌어내린 뒤 엘보·스트레이트는 MMA에서 쓰이는 기술이다."
+  }
+ ],
+ "skipped": [
+  {
+   "id": "kickboxing__미들킥-middle-kick",
+   "art": "mixed-martial-arts",
+   "why": "already in art"
+  }
+ ],
+ "errors": []
+}

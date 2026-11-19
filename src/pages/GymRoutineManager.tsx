@@ -1,3 +1,4 @@
+import Icon, { Glyph } from '../components/Icon';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { GymRoutine, GymRoutineExerciseTarget, Weekday } from '../lib/gymRoutine/types';
@@ -103,7 +104,7 @@ export default function GymRoutineManager() {
           <span>요일별 루틴</span>
         </div>
         <div className="section-title">
-          <h2>📅 요일별 웨이트 루틴</h2>
+          <h2><Icon name="calendar" /> 요일별 웨이트 루틴</h2>
           <Link to="/training/routines/manage" className="see-all">
             루틴 관리 →
           </Link>
@@ -179,7 +180,7 @@ export default function GymRoutineManager() {
 
                     <div className="chip-row" style={{ marginTop: 8 }}>
                       <button type="button" className="btn btn-secondary btn-sm" onClick={handleCopyDay} disabled={!day || day.exercises.length === 0} data-testid="routine-copy-day">
-                        📋 이 요일 복사
+                        <Icon name="list" /> 이 요일 복사
                       </button>
                     </div>
 
@@ -198,14 +199,14 @@ export default function GymRoutineManager() {
                               onClick={() => togglePasteTarget(w.value)}
                               data-testid="routine-paste-target"
                             >
-                              {pasteTargets.includes(w.value) ? '✓ ' : ''}
+                              {pasteTargets.includes(w.value) && <><Icon name="check" />{' '}</>}
                               {w.label}
                             </button>
                           ))}
                         </div>
                         <div className="chip-row">
                           <button type="button" className="btn btn-primary btn-sm" onClick={handlePaste} disabled={pasteTargets.length === 0} data-testid="routine-paste">
-                            📥 {pasteTargets.length > 0 ? `${pasteTargets.length}개 요일에 ` : ''}붙여넣기
+                            <Icon name="download" /> {pasteTargets.length > 0 ? `${pasteTargets.length}개 요일에 ` : ''}붙여넣기
                           </button>
                           <button
                             type="button"
@@ -321,7 +322,7 @@ export default function GymRoutineManager() {
                                   disabled={idx === 0}
                                   onClick={() => reorderExercise(r, activeWeekday, idx, idx - 1)}
                                 >
-                                  ▲
+                                  <Glyph set="ui" name="chevron-up" />
                                 </button>
                                 <button
                                   className="icon-action-btn"
@@ -329,10 +330,10 @@ export default function GymRoutineManager() {
                                   disabled={idx === day.exercises.length - 1}
                                   onClick={() => reorderExercise(r, activeWeekday, idx, idx + 1)}
                                 >
-                                  ▼
+                                  <Icon name="chevron-down" />
                                 </button>
                                 <button className="icon-action-btn" aria-label="삭제" onClick={() => removeExerciseFromDay(r, activeWeekday, idx)}>
-                                  ✕
+                                  <Icon name="close" />
                                 </button>
                               </div>
                             </div>

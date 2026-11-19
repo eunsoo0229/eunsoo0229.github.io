@@ -1,3 +1,4 @@
+import Icon from './Icon';
 import { useEffect, useState } from 'react';
 import type { Technique } from '../types';
 import { getMartialArt } from '../lib/loadData';
@@ -76,7 +77,7 @@ export default function VideoPickerModal({ technique, existingVideoIds = [], rem
   return (
     <div className="card info-card">
       <h3>
-        <span aria-hidden="true">🔎</span> 관련 영상 찾기
+        <Icon name="search" /> 관련 영상 찾기
       </h3>
       <div className="chip-row" style={{ marginBottom: 8 }} role="tablist">
         <button type="button" role="tab" aria-selected={method === 'search'} className={`chip${method === 'search' ? ' active' : ''}`} onClick={() => setMethod('search')}>
@@ -143,7 +144,7 @@ export default function VideoPickerModal({ technique, existingVideoIds = [], rem
                 <div className="video-search-result__thumb-wrap">
                   <img src={v.thumbnailUrl} alt={v.title} className="video-search-result__thumb" loading="lazy" />
                   <span className="video-search-result__play" aria-hidden="true">
-                    ▶
+                    <Icon name="play" />
                   </span>
                 </div>
                 <div className="video-embed__title">{v.title}</div>
@@ -222,9 +223,9 @@ function UrlVerifyPanel({
               <strong>{result.info.title}</strong> <span className="video-status-message">· {result.info.channel}</span>
             </p>
           )}
-          {result.verdict === 'VERIFIED' && <p style={{ margin: 0 }}>✅ 이 영상은 현재 기술과 관련된 영상으로 확인되었습니다.</p>}
-          {result.verdict === 'NOT_MATCHED' && <p style={{ margin: 0 }}>❌ 현재 기술과 일치하는 영상으로 확인되지 않았습니다.</p>}
-          {result.verdict === 'INSUFFICIENT_EVIDENCE' && <p style={{ margin: 0 }}>⚠️ 영상 내용을 충분히 확인할 수 없어 자동 등록할 수 없습니다.</p>}
+          {result.verdict === 'VERIFIED' && <p style={{ margin: 0 }}><Icon name="success-circle" /> 이 영상은 현재 기술과 관련된 영상으로 확인되었습니다.</p>}
+          {result.verdict === 'NOT_MATCHED' && <p style={{ margin: 0 }}><Icon name="error-circle" /> 현재 기술과 일치하는 영상으로 확인되지 않았습니다.</p>}
+          {result.verdict === 'INSUFFICIENT_EVIDENCE' && <p style={{ margin: 0 }}><Icon name="warn" /> 영상 내용을 충분히 확인할 수 없어 자동 등록할 수 없습니다.</p>}
           {result.reason && <p className="video-status-message" style={{ margin: '4px 0 0' }}>{result.reason}</p>}
           {result.verdict === 'VERIFIED' && result.videoId && result.info && (
             duplicate ? (

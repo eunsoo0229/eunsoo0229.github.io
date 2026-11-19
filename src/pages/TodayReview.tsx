@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { Technique } from '../types';
@@ -160,7 +161,7 @@ export default function TodayReview() {
         <div className="container">
           {breadcrumb}
           <div className="section-title">
-            <h2>🔁 오늘의 복습</h2>
+            <h2><Icon name="repeat" /> 오늘의 복습</h2>
           </div>
           <p className="video-status-message" style={{ marginTop: -8 }}>
             학습 기록, AI 자세 분석 점수, 스파링 사용 이력을 바탕으로 계산한 복습 우선순위입니다. 참고용
@@ -221,7 +222,7 @@ export default function TodayReview() {
           )}
 
           <div className="card info-card">
-            <h3>🤖 AI 주간 복습 계획</h3>
+            <h3><Icon name="bot" /> AI 주간 복습 계획</h3>
             <p className="video-status-message">"이번 주에 무엇을 복습해야 할까?" — 위 목록을 바탕으로 AI가 안내합니다.</p>
             {!aiPlan && (
               <div className="modal-actions modal-actions--start">
@@ -252,7 +253,7 @@ export default function TodayReview() {
         <div className="container">
           {breadcrumb}
           <div className="section-title">
-            <h2>🎉 오늘의 복습 완료</h2>
+            <h2><Icon name="celebrate" /> 오늘의 복습 완료</h2>
           </div>
           <div className="curriculum-stat-row">
             <div>
@@ -281,7 +282,7 @@ export default function TodayReview() {
             <div className="chip-row">
               {reviewedTechniques.filter((t) => isPoseAnalysisSupported(t.id)).map((t) => (
                 <button key={t.id} className="btn btn-secondary btn-sm" onClick={() => setPoseTechnique(t)}>
-                  📷 {t.name}
+                  <Icon name="camera" /> {t.name}
                 </button>
               ))}
             </div>
@@ -348,7 +349,7 @@ export default function TodayReview() {
         </div>
 
         <div className="card info-card">
-          <h3>📈 이전 분석 결과</h3>
+          <h3><Icon name="trend" /> 이전 분석 결과</h3>
           {skillSummary.analysisCount > 0 ? (
             <>
               <div className="chip-row">
@@ -376,7 +377,7 @@ export default function TodayReview() {
           </Link>
           {isPoseAnalysisSupported(currentTechnique.id) && (
             <button className="btn btn-secondary" onClick={() => setPoseTechnique(currentTechnique)}>
-              📷 자세 분석
+              <Icon name="camera" /> 자세 분석
             </button>
           )}
           <button className="btn btn-primary" onClick={() => completeTechnique(currentTechnique.id)}>
@@ -388,7 +389,7 @@ export default function TodayReview() {
 
         {connections && hasAnyConnections(connections) && (
           <div className="card info-card">
-            <h3>🔗 연결 기술</h3>
+            <h3><Icon name="link" /> 연결 기술</h3>
             {CONNECTION_SECTIONS.map((kind) => {
               const items = connections[kind];
               if (items.length === 0) return null;

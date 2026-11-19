@@ -1,3 +1,4 @@
+import Icon from '../Icon';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { resolveTechnique } from '../../lib/userTechniques/service';
@@ -72,7 +73,7 @@ export default function WeaknessScenes({
 
   return (
     <div className="card info-card" data-testid="weakness-scenes">
-      <h3>🎬 약점 장면 (본인 기준)</h3>
+      <h3><Icon name="video" /> 약점 장면 (본인 기준)</h3>
       {idn && (
         <p className="technique-row__sub" data-testid="identification-summary">
           선수 식별: {idn.method === 'manual+attire' ? `직접 지정 + 복장 비교 (${idn.attire ? describeAttire(idn.attire.me) : ''})` : '직접 지정 + 위치 추적 (복장 정보 없음)'}
@@ -83,7 +84,7 @@ export default function WeaknessScenes({
       )}
       {(session.weaknessNotes ?? []).map((n) => (
         <p key={n} className="technique-row__sub">
-          ℹ️ {n}
+          <Icon name="info" /> {n}
         </p>
       ))}
       {weaknesses.length === 0 && <p>반복해서 확인되는 약점 장면이 없습니다.</p>}

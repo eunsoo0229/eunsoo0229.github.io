@@ -1,3 +1,4 @@
+import Icon from './Icon';
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { Technique } from '../types';
@@ -118,7 +119,7 @@ export default function GymExercisePicker({ onSelect, excludeIds = [] }: { onSel
       )}
       {filterActive && (
         <p className="video-status-message" style={{ marginTop: 8 }}>
-          찾는 운동이 없나요? <Link to="/training/exercises/request">➕ 새 운동 추가 요청하기</Link>
+          찾는 운동이 없나요? <Link to="/training/exercises/request"><Icon name="plus" /> 새 운동 추가 요청하기</Link>
         </p>
       )}
     </div>

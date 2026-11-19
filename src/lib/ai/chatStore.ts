@@ -19,6 +19,12 @@ export function trimHistoryForRequest(messages: ChatMessage[]): ChatMessage[] {
 
 export function useChatSession(sessionKey: string) {
   const [messages, setMessages] = useState<ChatMessage[]>(() => sessions.get(sessionKey) ?? []);
+  // the key can change while mounted (AiAskModal's Gemini ⇄ MARTIALDEX AI switch) — show that session's messages
+  const [shownKey, setShownKey] = useState(sessionKey);
+  if (shownKey !== sessionKey) {
+    setShownKey(sessionKey);
+    setMessages(sessions.get(sessionKey) ?? []);
+  }
 
   const mutate = useCallback(
     (updater: (prev: ChatMessage[]) => ChatMessage[]) => {

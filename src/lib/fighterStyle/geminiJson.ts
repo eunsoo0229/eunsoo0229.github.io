@@ -28,6 +28,8 @@ export async function askGeminiForJson<T>(params: {
   contextText: string;
   question: string;
   validate?: (data: unknown) => data is T;
+  /** Only where the user explicitly picked an engine for this feature (a lesson's Gemini coach); otherwise 설정 > AI 엔진. */
+  engine?: 'local' | 'gemini';
   /** 음식 사진 분석(nutrition/aiPhotoAnalysis.ts) 전용 — undefined인 다른 모든 호출부는 그대로 텍스트 전용. */
   imageParts?: AiImagePart[];
   /** Ordered labelled media (기준 영상 비교 자세 평가) — see ai/types.ts. */
@@ -41,6 +43,8 @@ export async function askGeminiForJson<T>(params: {
     contextText: params.contextText,
     history: [],
     question: params.question,
+    responseFormat: 'json',
+    engine: params.engine,
     imageParts: params.imageParts,
     mediaParts: params.mediaParts,
     temperature: params.temperature,

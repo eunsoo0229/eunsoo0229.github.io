@@ -1,0 +1,95 @@
+/* AI 개인 맞춤 훈련 생태계 — 나의 학습 커리큘럼 · 성과 분석 · 근거 패널 · 안전 가이드.
+   Built on the 2026-11 brand tokens (--mx-*, src/styles/brand/tokens.css); loaded before brand/* so the brand
+   component skin (cards, chips, buttons) still applies on top. */
+
+.eco-page .section-title { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.eco-kicker { font-family: var(--mx-font-cond, inherit); letter-spacing: var(--mx-track-label, 0.18em); text-transform: uppercase; font-size: var(--mx-fs-micro, 11px); color: var(--mx-gold, #c4ad7c); }
+.eco-hero h2 { margin: 4px 0 2px; font-family: var(--mx-font-display, inherit); font-size: var(--mx-fs-h2, 30px); letter-spacing: var(--mx-track-display, 0.01em); }
+
+.eco-kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 14px 0; }
+.eco-kpis--grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.eco-kpis > div { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; }
+.eco-kpi__n { font-family: var(--mx-font-num, inherit); font-size: 30px; line-height: 1.05; color: var(--mx-ivory, #f4f1ea); }
+.eco-kpi__l { font-size: var(--mx-fs-small, 13px); color: var(--mx-ash, #8c8f96); }
+
+.eco-bar { height: 6px; background: var(--mx-graphite-2, #242529); overflow: hidden; margin: 6px 0 10px; }
+.eco-bar > span { display: block; height: 100%; background: linear-gradient(90deg, var(--mx-gold-deep, #9c8659), var(--mx-gold, #c4ad7c)); transition: width 0.4s ease; }
+.eco-stagebars { display: grid; gap: 6px; }
+
+.eco-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 8px; }
+.eco-num { width: 64px; display: inline-block; }
+
+.eco-goal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin: 12px 0; }
+.eco-goal { display: flex; flex-direction: column; gap: 4px; text-align: left; padding: 14px; background: var(--mx-carbon, #141416); border: var(--mx-hair, 1px solid rgba(244, 241, 234, 0.1)); color: var(--mx-ivory, #f4f1ea); cursor: pointer; transition: border-color 0.2s ease, transform 0.2s ease; }
+.eco-goal:hover, .eco-goal:focus-visible { border-color: var(--mx-gold, #c4ad7c); transform: translateY(-1px); }
+.eco-goal-focus { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.eco-goal-focus .input { flex: 1 1 220px; }
+
+.eco-tasks, .eco-items, .eco-suggestions, .eco-list, .eco-facts { margin: 8px 0; padding-left: 18px; }
+.eco-task, .eco-item { margin: 8px 0; }
+.eco-task__links { display: flex; flex-wrap: wrap; gap: 10px; font-size: var(--mx-fs-small, 13px); margin-top: 2px; }
+.eco-task__kind--review { border-color: var(--mx-signal, #b5473c); }
+.eco-task__kind--evaluate { border-color: var(--mx-gold, #c4ad7c); }
+.linklike { background: none; border: 0; padding: 0; color: var(--mx-gold, #c4ad7c); cursor: pointer; font: inherit; text-decoration: underline; }
+
+.eco-stage { border-left: 2px solid var(--mx-steel, #3a3c41); padding: 6px 0 6px 12px; margin: 12px 0; }
+.eco-stage--current { border-left-color: var(--mx-gold, #c4ad7c); }
+.eco-stage--passed { border-left-color: var(--mx-moss, #7f9a7a); }
+.eco-stage__head { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.eco-item { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; }
+.eco-item > .muted { grid-column: 1; }
+.eco-item__edit { grid-column: 2; grid-row: 1 / span 2; display: flex; gap: 2px; align-items: start; }
+.eco-state--verified { color: var(--mx-gold-bright, #d9c399); border-color: var(--mx-gold, #c4ad7c); }
+.eco-state--completed { color: var(--mx-bone, #e8e3d8); }
+.eco-state--needs_repeat { color: var(--mx-signal, #b5473c); border-color: var(--mx-signal, #b5473c); }
+.eco-state--needs_evaluation { color: var(--mx-ash, #8c8f96); }
+.eco-add { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.eco-suggestion__actions { display: inline-flex; gap: 6px; margin-left: 8px; }
+
+.eco-grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 14px 0; }
+.eco-page section.card { margin: 14px 0; padding: 16px 18px; }
+.eco-grid2 > section.card { margin: 0; }
+.eco-page h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; }
+.eco-hbars { display: grid; gap: 8px; margin: 6px 0 10px; }
+.eco-hbar { display: grid; grid-template-columns: 120px 1fr 48px; gap: 10px; align-items: center; font-size: var(--mx-fs-small, 13px); }
+.eco-hbar__track { height: 8px; background: var(--mx-graphite-2, #242529); overflow: hidden; }
+.eco-hbar__track > span { display: block; height: 100%; }
+.eco-hbar__n { text-align: right; font-family: var(--mx-font-num, inherit); }
+.eco-empty span { display: block; font-size: var(--mx-fs-small, 13px); }
+.eco-report h4 { margin: 12px 0 4px; color: var(--mx-gold, #c4ad7c); }
+
+/* evidence panel (AI coach answers) */
+.eco-evidence__status { padding: 6px 8px; border-left: 2px solid var(--mx-steel, #3a3c41); margin: 6px 0; font-size: var(--mx-fs-small, 13px); }
+.eco-evidence__status--sufficient { border-left-color: var(--mx-moss, #7f9a7a); }
+.eco-evidence__status--partial, .eco-evidence__status--internal { border-left-color: var(--mx-gold, #c4ad7c); }
+.eco-evidence__status--conflict, .eco-evidence__status--undecidable, .eco-evidence__status--none { border-left-color: var(--mx-signal, #b5473c); }
+.eco-evidence__conflict { border: var(--mx-hair, 1px solid rgba(244, 241, 234, 0.1)); padding: 6px 8px; margin: 4px 0; display: grid; gap: 4px; font-size: var(--mx-fs-small, 13px); }
+.eco-evidence__source { margin: 4px 0; }
+.eco-evidence__why summary { cursor: pointer; font-size: var(--mx-fs-micro, 11px); color: var(--mx-ash, #8c8f96); }
+.eco-evidence__related { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 6px; }
+
+/* safety */
+.eco-safety__source { font-size: var(--mx-fs-small, 13px); }
+.eco-safety__part h4 { margin: 10px 0 4px; font-size: 14px; color: var(--mx-bone, #e8e3d8); }
+.eco-safety__part ul { margin: 0; padding-left: 18px; }
+.eco-safety__advice p { margin: 4px 0; padding-left: 8px; border-left: 2px solid var(--mx-gold, #c4ad7c); }
+.eco-safety__stop { margin-top: 10px; font-size: var(--mx-fs-small, 13px); color: var(--mx-bone, #e8e3d8); }
+.eco-checklist { margin: 10px 0; }
+.eco-checklist--compact { padding: 10px 12px; }
+.eco-checklist__row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 6px 0; }
+.eco-checklist__row--important { font-weight: 600; }
+
+@media (max-width: 720px) {
+  .eco-kpis, .eco-kpis--grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .eco-grid2 { grid-template-columns: 1fr; }
+  .eco-kpi__n { font-size: 24px; }
+}
+
+/* PDF 저장 (인쇄): only the report */
+@media print {
+  body.eco-printing * { visibility: hidden !important; }
+  body.eco-printing .eco-print-area, body.eco-printing .eco-print-area * { visibility: visible !important; }
+  body.eco-printing .eco-print-area { position: absolute; left: 0; top: 0; width: 100%; background: #fff !important; color: #111 !important; border: 0 !important; }
+  body.eco-printing .eco-print-area .muted { color: #555 !important; }
+  body.eco-printing .eco-noprint, body.eco-printing .eco-print-area button { display: none !important; }
+}

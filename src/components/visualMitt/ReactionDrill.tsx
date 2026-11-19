@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { MittCombo } from '../../lib/visualMitt/combos';
-import { calloutFor, comboCallout, pickNext, REACTION_PACE, reactionPool, reactionSlotMs, recordReactionSession, type ReactionPace } from '../../lib/visualMitt/reaction';
+import { calloutFor, comboCallout, pickNext, REACTION_PACE, reactionPoolFor, reactionSlotMs, recordReactionSession, type ReactionPace } from '../../lib/visualMitt/reaction';
+import DrillScopeControls, { useDrillScope } from './DrillScopeControls';
 import { restMsFor } from '../../lib/visualMitt/tempo';
 import { HitSound } from '../../lib/visualMitt/hitSound';
 import { useMittTempo } from '../../lib/visualMitt/tempo';
@@ -32,6 +33,7 @@ export default function ReactionDrill({
   voice = true,
   record = true,
   stance = 'orthodox',
+  art = '',
   onDone,
 }: {
   pool?: MittCombo[];
@@ -42,9 +44,15 @@ export default function ReactionDrill({
   /** Save the round to training history (off when an AI coach lesson records it itself). */
   record?: boolean;
   stance?: Stance;
+  /** The art picked in Visualizing Mitt — decides what kind of combos are called (종목별 형식). */
+  art?: string;
   onDone?: (r: ReactionResult) => void;
 }) {
-  const pool = useMemo(() => poolProp ?? reactionPool(), [poolProp]);
+  const scope = useDrillScope(art);
+  const pool = useMemo(
+    () => poolProp ?? reactionPoolFor(scope.profile, { range: scope.range, withKicks: scope.withKicks, withDefense: scope.withDefense }, scope.shared),
+    [poolProp, scope.profile, scope.range, scope.withKicks, scope.withDefense, scope.shared],
+  );
   // `pace` (a lesson's suggested speed) applies until the user has moved the speed slider.
   const [tempo, setTempo] = useMittTempo(REACTION_PACE[initialPace].perStep * 1000);
   const tempoRef = useRef(tempo);
@@ -148,7 +156,7 @@ export default function ReactionDrill({
             if (local >= POV_IMPACT_MS && impactKey.current !== key) {
               impactKey.current = key;
               const a = st.motion.archetype;
-              if (soundOn.current && a.kind === 'strike') soundRef.current?.play(a.path === 'hook' || a.path === 'round' || a.path === 'overhand' ? 'hook' : a.side === 'rear' ? 'straight' : 'jab');
+              if (soundOn.current && (a.kind === 'strike' || a.kind === 'entry' || a.incoming?.path === 'shot')) soundRef.current?.play(a.path === 'hook' || a.path === 'round' || a.path === 'overhand' ? 'hook' : a.side === 'rear' ? 'straight' : 'jab');
             }
             break;
           }
@@ -195,14 +203,17 @@ export default function ReactionDrill({
     const last = current.steps[current.steps.length - 1];
     return last ? { step: last, p: 1, back: 1 } : null;
   })();
-  if (!pool.length) {
-    return <p className="video-status-message" data-testid="reaction-empty">반응 훈련에 쓸 수 있는 기본 공격 콤보가 없습니다.</p>;
-  }
   return (
     <div className="card info-card reaction-drill" data-testid="reaction-drill" data-running={running} data-called={called.length} data-done={done}>
       <p className="video-status-message" style={{ marginTop: 0 }}>
-        코치가 MARTIALDEX에 실제로 있는 콤보 {pool.length}개 중 하나를 무작위로 불러 줍니다. 들리는 대로 바로 쳐 주세요. (기본 공격만: 잽·크로스·훅·어퍼·바디·카프킥·로우킥·미들킥·하이킥·팁·더블렉·싱글렉)
+        코치가 MARTIALDEX에 실제로 있는 {scope.profile.reactionSingles && !poolProp ? '동작·콤보' : '콤보'} <strong data-testid="reaction-pool-size">{pool.length}</strong>개 중 하나를 무작위로 불러 줍니다. 들리는 대로 바로 반응해 주세요.
       </p>
+      {!poolProp && <DrillScopeControls scope={scope} disabled={running} testIdPrefix="reaction" />}
+      {!pool.length && (
+        <p className="ai-inline-warning" data-testid="reaction-empty">
+          이 설정으로 부를 수 있는 콤보가 없습니다. 기술 범위나 방어·사용자 콤보 포함 여부를 바꿔 보세요.
+        </p>
+      )}
       <TempoControls tempo={tempo} onChange={setTempo} testIdPrefix="reaction-pace" />
       <div className="chip-row" style={{ marginBottom: 8 }}>
         <label className="chip" style={{ cursor: 'pointer' }}>
@@ -236,7 +247,7 @@ export default function ReactionDrill({
         <span data-testid="reaction-remaining">남은 시간 {Math.floor(remaining / 60)}:{String(remaining % 60).padStart(2, '0')} · 콤보 {called.length}개</span>
         <span className="chip-row">
           {!running ? (
-            <button className="btn btn-primary btn-sm" onClick={start} data-testid="reaction-start">
+            <button className="btn btn-primary btn-sm" onClick={start} disabled={!pool.length} data-testid="reaction-start">
               {done ? '다시 시작' : '시작'}
             </button>
           ) : (

@@ -1,5 +1,6 @@
+import Icon, { type IconName } from '../components/Icon';
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { martialArtSummaries } from '../lib/loadData';
 import { useAuth } from '../lib/auth/AuthProvider';
 import {
@@ -15,24 +16,46 @@ import type { DuplicateCheckResult, UserTechniqueRecord } from '../lib/userTechn
 import { videoSearchProvider } from '../lib/videoSearch/provider';
 import type { VideoSearchItem } from '../lib/videoSearch/types';
 import BackButton from '../components/BackButton';
+import RegistrationClassification, { initialClassification, type ClassificationState } from '../components/categoryRegistry/RegistrationClassification';
+import { registerWithCategory } from '../lib/categoryRegistry/register';
+import { findPickerNode } from '../lib/categoryRegistry/service';
+import '../lib/categoryRegistry/taxonomy';
 
 // 'link': the technique already exists but not in this art → offer to link it (no new copy).
 type Step = 'input' | 'checking' | 'duplicate' | 'link' | 'linked' | 'rejected' | 'preview' | 'saved' | 'error';
 
 const VERDICT_LABEL: Record<string, string> = {
-  confirmed: '✅ 실제 무술 기술로 확인되었습니다.',
-  alias_of_existing: '⚠️ 기술명은 확인되지만 공식적인 명칭이 아닌 별칭으로 보입니다.',
-  uncertain: '❌ 실제 기술로 확인하기 어렵습니다.',
-  fictional: '❌ 실제 기술로 확인하기 어렵습니다.',
-  insufficient_evidence: '⚠️ 검증할 수 있는 자료가 부족합니다.',
+  confirmed: '실제 무술 기술로 확인되었습니다.',
+  alias_of_existing: '기술명은 확인되지만 공식적인 명칭이 아닌 별칭으로 보입니다.',
+  uncertain: '실제 기술로 확인하기 어렵습니다.',
+  fictional: '실제 기술로 확인하기 어렵습니다.',
+  insufficient_evidence: '검증할 수 있는 자료가 부족합니다.',
 };
+const VERDICT_ICON: Record<string, IconName> = {
+  confirmed: 'check',
+  alias_of_existing: 'warn',
+  uncertain: 'close',
+  fictional: 'close',
+  insufficient_evidence: 'warn',
+};
+function VerdictIcon({ verdict }: { verdict: string }) {
+  const name = VERDICT_ICON[verdict];
+  return name ? <><Icon name={name} /> </> : null;
+}
 
 export default function RequestTechnique() {
   const navigate = useNavigate();
   const { user } = useAuth();
   const [step, setStep] = useState<Step>('input');
   const [name, setName] = useState('');
-  const [martialArt, setMartialArt] = useState(martialArtSummaries[0]?.id ?? 'boxing');
+  // ?art=&node= — opened from the AI coach / category screens with a category already chosen
+  const [params] = useSearchParams();
+  const presetArt = martialArtSummaries.some((a) => a.id === params.get('art')) ? params.get('art')! : null;
+  const [martialArt, setMartialArt] = useState(presetArt ?? martialArtSummaries[0]?.id ?? 'boxing');
+  const presetNode = params.get('node');
+  const [classification, setClassification] = useState<ClassificationState | null>(null);
+  const [saveError, setSaveError] = useState<string | null>(null);
+  const [savedPath, setSavedPath] = useState<string | null>(null);
   const [description, setDescription] = useState('');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [duplicate, setDuplicate] = useState<DuplicateCheckResult | null>(null);
@@ -105,6 +128,8 @@ export default function RequestTechnique() {
     }
 
     setRecord(verification.record);
+    setClassification(initialClassification(verification.record.technique, presetNode && presetNode.startsWith(`${martialArt}/`) && findPickerNode(martialArt, presetNode) ? presetNode : null));
+    setSaveError(null);
     setStep('preview');
 
     // Lazy live video search (spec section 13/14) — new technique never has
@@ -134,8 +159,17 @@ export default function RequestTechnique() {
       // Logged in -> shared Supabase add_teq library (every other user can
       // then resolve this same techniqueId); logged out -> the existing
       // local-only user_techniques path, unchanged (spec section 6/16).
-      await registerDiscoveredTechnique(withVideo, user?.id ?? null);
-      setRecord(withVideo);
+      // Filed under the chosen category (a drafted new one is created first and rolled back on failure).
+      const c = classification;
+      const r = await registerWithCategory(withVideo, { nodeId: c?.picker.nodeId ?? null, draft: c?.picker.draft ?? null, tags: c?.tags ?? [], edits: c?.edits }, user?.id ?? null, registerDiscoveredTechnique);
+      if (!r.ok) {
+        setSaveError(r.message);
+        return;
+      }
+      setRecord({ ...withVideo, technique: r.saved.technique });
+      const node = r.saved.technique.taxonomyNodeId ? findPickerNode(martialArt, r.saved.technique.taxonomyNodeId) : undefined;
+      setSavedPath(node?.path ?? r.saved.technique.category);
+      if (r.warning) setSaveError(r.warning);
       setStep('saved');
     } finally {
       setSaving(false);
@@ -154,6 +188,9 @@ export default function RequestTechnique() {
     setArtLink(null);
     setLinkResult(null);
     setLinkError(null);
+    setClassification(null);
+    setSaveError(null);
+    setSavedPath(null);
   }
 
   return (
@@ -168,7 +205,7 @@ export default function RequestTechnique() {
           <span>기술 추가 요청</span>
         </div>
         <div className="section-title">
-          <h2>➕ 새로운 기술 추가</h2>
+          <h2><Icon name="plus" /> 새로운 기술 추가</h2>
         </div>
 
         {step === 'input' && (
@@ -237,7 +274,7 @@ export default function RequestTechnique() {
 
         {step === 'linked' && artLink?.kind === 'link_available' && linkResult && (
           <div className="card info-card" data-testid="request-linked">
-            <h3>✅ {getUnifiedMartialArt(martialArt)?.nameKo ?? martialArt}에 연결했습니다.</h3>
+            <h3><Icon name="check" /> {getUnifiedMartialArt(martialArt)?.nameKo ?? martialArt}에 연결했습니다.</h3>
             <p>
               "{artLink.technique.name}"은(는) 이제 {getUnifiedMartialArt(martialArt)?.nameKo ?? martialArt} 기술 목록에도 표시됩니다 (분류: {linkResult.category}).
               {linkResult.shared ? ' 모든 사용자에게 공유됩니다.' : ' 로그인하지 않아 이 기기에만 저장했습니다.'}
@@ -274,7 +311,7 @@ export default function RequestTechnique() {
           <div className="card info-card">
             <h3>"{name}"</h3>
             <p>
-              <strong>검증 결과:</strong> {VERDICT_LABEL[verificationOutcome.verification.verdict] ?? verificationOutcome.message}
+              <strong>검증 결과:</strong> <VerdictIcon verdict={verificationOutcome.verification.verdict} />{VERDICT_LABEL[verificationOutcome.verification.verdict] ?? verificationOutcome.message}
             </p>
             <p className="video-status-message">{verificationOutcome.message}</p>
             {verificationOutcome.verification.reason && <p className="video-status-message">{verificationOutcome.verification.reason}</p>}
@@ -303,7 +340,7 @@ export default function RequestTechnique() {
             <div className="card info-card">
               <h3>"{name}"</h3>
               <p>
-                <strong>검증 결과:</strong> {VERDICT_LABEL[record.verification.verdict]}
+                <strong>검증 결과:</strong> <VerdictIcon verdict={record.verification.verdict} />{VERDICT_LABEL[record.verification.verdict]}
               </p>
               <div className="curriculum-stat-row">
                 <div>
@@ -340,6 +377,8 @@ export default function RequestTechnique() {
                 <p className="video-status-message">※ 실시간 검색 자료 없이 AI 자체 지식으로만 검증되었습니다.</p>
               )}
             </div>
+
+            {classification && <RegistrationClassification art={martialArt} technique={record.technique} value={classification} onChange={setClassification} />}
 
             <div className="card info-card">
               <h3>새로운 기술 등록 미리보기</h3>
@@ -389,7 +428,7 @@ export default function RequestTechnique() {
             </div>
 
             <div className="card info-card">
-              <h3>🎥 참고 영상</h3>
+              <h3><Icon name="video" /> 참고 영상</h3>
               {videoResults === null && <p className="video-status-message">영상을 검색하는 중...</p>}
               {videoResults?.length === 0 && <p className="video-status-message">관련 영상을 찾지 못했습니다.</p>}
               {videoResults && videoResults.length > 0 && (
@@ -416,8 +455,13 @@ export default function RequestTechnique() {
               {videoResults && videoResults.length > 0 && <p className="video-status-message">등록 시 선택한 영상을 함께 저장합니다 (선택 안 해도 등록 가능).</p>}
             </div>
 
+            {saveError && (
+              <p className="ai-error" role="alert" data-testid="request-save-error">
+                {saveError}
+              </p>
+            )}
             <div className="modal-actions modal-actions--start">
-              <button className="btn btn-primary" onClick={handleSave} disabled={saving}>
+              <button className="btn btn-primary" onClick={handleSave} disabled={saving || !classification || (!classification.picker.nodeId && !classification.picker.draft)} data-testid="request-save">
                 {saving ? '등록 중... (그래플링 기술은 Gi·No-Gi 조사 포함)' : '등록하기'}
               </button>
               <button className="btn btn-ghost" onClick={reset} disabled={saving}>
@@ -429,12 +473,39 @@ export default function RequestTechnique() {
 
         {step === 'saved' && record && (
           <div className="card info-card">
-            <h3>✅ 기술이 등록되었습니다.</h3>
+            <h3><Icon name="check" /> 기술이 등록되었습니다.</h3>
+            {savedPath && (
+              <p className="video-status-message" data-testid="request-saved-path">
+                분류: <strong>{savedPath}</strong>
+              </p>
+            )}
+            {saveError && <p className="video-status-message">{saveError}</p>}
             <p className="video-status-message">
               {user
                 ? '실제 존재 여부 검증을 통과해 공용 기술 라이브러리에 즉시 등록되었습니다. 다른 사용자도 검색·사용할 수 있습니다.'
                 : '로그인하지 않은 상태라 이 기기에만 저장되었습니다. 로그인하면 공용 기술 라이브러리에 등록되어 모든 사용자가 사용할 수 있습니다.'}
             </p>
+            {(() => {
+              const others = record.technique.otherArtsResearch?.arts ?? [];
+              const artName = (id: string) => martialArtSummaries.find((a) => a.id === id)?.nameKo ?? id;
+              return others.length ? (
+                <div className="video-status-message" data-testid="other-arts-added">
+                  <p style={{ margin: '0 0 4px' }}>
+                    <Icon name="link" /> 이 기술은 <strong>{artName(record.technique.martialArt)}</strong> 외에 다음 무술에서도 쓰이는 것으로 확인되어 함께 등록했습니다.
+                  </p>
+                  <ul style={{ margin: 0 }}>
+                    {others.map((a) => (
+                      <li key={a.martialArt}>
+                        <strong>{artName(a.martialArt)}</strong> · {a.category}
+                        {a.reason ? ` — ${a.reason}` : ''}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : record.technique.otherArtsResearch?.reason ? (
+                <p className="video-status-message">다른 무술: {record.technique.otherArtsResearch.reason}</p>
+              ) : null;
+            })()}
             <div className="modal-actions modal-actions--start">
               <Link to={`/arts/${record.technique.martialArt}/techniques/${record.id}`} className="btn btn-primary">
                 기술 상세 보기

@@ -1,9 +1,10 @@
+import Icon from './Icon';
+import { SkillStatusGlyph } from './StatusGlyph';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { getMartialArt } from '../lib/loadData';
 import { searchTechniques } from '../lib/search';
 import { resolveTechnique } from '../lib/userTechniques/service';
-import { STATUS_ICON } from '../lib/poseAnalysis/scoring';
 import { formatDuration } from '../lib/sparringAnalysis/videoMeta';
 import { addSavedMoment } from '../lib/sparringAnalysis/sparringSessionService';
 import { STYLE_CURRICULUM_MARTIAL_ART } from '../lib/fighterStyle/styleCurriculumService';
@@ -130,7 +131,7 @@ export default function SparringResultView({
   return (
     <div className="stack gap-2">
       <div className="card info-card">
-        <h3>🥊 스파링 분석 결과</h3>
+        <h3><Icon name="glove" /> 스파링 분석 결과</h3>
         <div className="chip-row">
           <span className="chip active">{martialArtLabel}</span>
           <span className="chip">분석 영상 {formatDuration(session.videoDurationSec)}</span>
@@ -185,7 +186,7 @@ export default function SparringResultView({
 
       {session.coachingSynthesis && (
         <div className="card info-card">
-          <h3>🧠 AI 코칭 종합 평가</h3>
+          <h3><Icon name="brain" /> AI 코칭 종합 평가</h3>
           <p className="video-status-message">
             아래 항목은 실제 감지된 패턴/동작 데이터를 근거로 AI가 종합한 평가이며, 근거가 부족한 항목은 점수 대신
             "분석 데이터 부족"으로 표시됩니다.
@@ -207,7 +208,7 @@ export default function SparringResultView({
 
       {((session.sequenceAnalysis?.patterns.length ?? 0) > 0 || (session.coachingSynthesis?.patternDiagnoses.length ?? 0) > 0) && (
         <div className="card info-card">
-          <h3>🔍 발견된 패턴</h3>
+          <h3><Icon name="search" /> 발견된 패턴</h3>
           <p className="video-status-message">기술 사용 시각을 실제로 비교해 찾아낸 연결/반복 패턴입니다(추정이 아닌 실측 횟수).</p>
           <div className="stack gap-2">
             {(session.sequenceAnalysis?.patterns ?? []).slice(0, 8).map((p, i) => {
@@ -244,7 +245,7 @@ export default function SparringResultView({
               return (
                 <div key={g.techniqueId} className="technique-row">
                   <div className="technique-row__main">
-                    <div className="technique-row__name">✓ {g.techniqueName} (추정)</div>
+                    <div className="technique-row__name"><Icon name="check" /> {g.techniqueName} (추정)</div>
                     <div className="technique-row__sub">
                       사용 {g.occurrences.length}회 · 관련 장면: {g.occurrences.map((t) => formatDuration(t)).join(', ')}
                     </div>
@@ -323,7 +324,7 @@ export default function SparringResultView({
                   </span>
                 </button>
                 <button className="btn btn-ghost btn-sm" onClick={() => handleSaveMoment(e.timestampSec, e.label)}>
-                  ⭐ 저장
+                  <Icon name="star-filled" /> 저장
                 </button>
               </div>
             ))}
@@ -341,7 +342,7 @@ export default function SparringResultView({
                 <div className="chip-row">
                   {seg.metrics.map((m) => (
                     <span key={m.id} className="chip">
-                      {STATUS_ICON[m.status]} {m.label} {POSTURE_STATUS_TEXT[m.status]}
+                      <SkillStatusGlyph status={m.status} /> {m.label} {POSTURE_STATUS_TEXT[m.status]}
                     </span>
                   ))}
                 </div>
@@ -367,7 +368,7 @@ export default function SparringResultView({
       {session.styleComparison && (
         <div className="card info-card info-card--muted">
           <h3>선수 스타일과 비교 — {session.styleComparison.targetFighterName}</h3>
-          {session.styleComparison.matchedFeatures.length > 0 && <p>✓ 관찰된 공통 특징: {session.styleComparison.matchedFeatures.join(', ')}</p>}
+          {session.styleComparison.matchedFeatures.length > 0 && <p><Icon name="check" /> 관찰된 공통 특징: {session.styleComparison.matchedFeatures.join(', ')}</p>}
           {session.styleComparison.improvementAreas.length > 0 && <p>개선 방향: {session.styleComparison.improvementAreas.join(', ')}</p>}
           <p className="video-status-message">
             실제 선수와의 실력이나 신체 능력을 비교한 것이 아니라, 기술적/전술적 특징의 차이만을 설명합니다.
@@ -377,7 +378,7 @@ export default function SparringResultView({
 
       {session.savedMoments.length > 0 && (
         <div className="card info-card">
-          <h3>⭐ 중요 장면</h3>
+          <h3><Icon name="check" /> 중요 장면</h3>
           <div className="stack gap-1">
             {session.savedMoments.map((m, i) => (
               <button key={i} className="pose-history-row__main" onClick={() => handleSeek(m.timestampSec)} disabled={!onSeek}>
@@ -418,10 +419,10 @@ export default function SparringResultView({
           </div>
           <div className="modal-actions modal-actions--start">
             <button className="btn btn-primary" onClick={() => setCurriculumSheetOpen(true)}>
-              🎯 맞춤 커리큘럼 생성
+              <Icon name="target" /> 맞춤 커리큘럼 생성
             </button>
             <button className="btn btn-secondary" onClick={handleGenerateSetups} disabled={generatingSetups}>
-              {generatingSetups ? '셋업 생성 중…' : '🧠 셋업 생성'}
+              {generatingSetups ? '셋업 생성 중…' : <><Icon name="brain" /> 셋업 생성</>}
             </button>
           </div>
           {setupError && (
@@ -434,7 +435,7 @@ export default function SparringResultView({
 
       {generatedSetups && generatedSetups.length > 0 && (
         <div className="card info-card">
-          <h3>🧠 추천 셋업</h3>
+          <h3><Icon name="brain" /> 추천 셋업</h3>
           <p className="video-status-message">스파링에서 발견된 패턴/약점을 바탕으로 생성되었습니다. 목록에서 훈련하거나 콤보 목록에서 다시 볼 수 있습니다.</p>
           <div className="stack gap-2">
             {generatedSetups.map(({ combo, reasonLabel }, i) => (
@@ -463,7 +464,7 @@ export default function SparringResultView({
 
       <div className="modal-actions modal-actions--start">
         <button className="btn btn-secondary" onClick={() => setAiOpen(true)}>
-          ✦ AI 개인 코치에게 물어보기
+          <Icon name="spark" /> AI 개인 코치에게 물어보기
         </button>
         <Link to="/coach" className="btn btn-ghost">
           AI 개인 코치로 이동
@@ -510,10 +511,10 @@ function SparringCoachingCard({
   const legacyDirections = next.length === 0 ? coaching.improvementDirections : [];
   return (
     <div className="card info-card sparring-coaching">
-      <h3>🧠 AI 스파링 코칭</h3>
+      <h3><Icon name="brain" /> AI 스파링 코칭</h3>
       <p className="video-status-message">영상에서 실제로 측정·계산된 데이터만 근거로 작성되었습니다. 근거를 누르면 어떤 데이터인지 볼 수 있습니다.</p>
 
-      <h4>👍 잘한 점</h4>
+      <h4><Icon name="check" /> 잘한 점</h4>
       {coaching.strengths.length > 0 ? (
         <ul className="sparring-coaching__list">
           {coaching.strengths.map((s, i) => (
@@ -529,7 +530,7 @@ function SparringCoachingCard({
         <p className="technique-row__sub">이번 데이터만으로 근거 있는 잘한 점을 찾지 못했습니다.</p>
       )}
 
-      <h4>⚠️ 개선할 점</h4>
+      <h4><Icon name="warn" /> 개선할 점</h4>
       {coaching.weaknesses.length > 0 ? (
         <ul className="sparring-coaching__list">
           {coaching.weaknesses.map((w, i) => (
@@ -547,7 +548,7 @@ function SparringCoachingCard({
 
       {(next.length > 0 || legacyDirections.length > 0) && (
         <>
-          <h4>🎯 다음 훈련 추천</h4>
+          <h4><Icon name="target" /> 다음 훈련 추천</h4>
           <ol className="sparring-coaching__list sparring-coaching__drills">
             {next.map((n, i) => (
               <li key={`n-${i}`}>
@@ -584,7 +585,7 @@ function SparringCoachingCard({
 
       {coaching.overallFeedback && (
         <>
-          <h4>📝 종합 평가</h4>
+          <h4><Icon name="note" /> 종합 평가</h4>
           <p>{coaching.overallFeedback}</p>
         </>
       )}
@@ -592,7 +593,7 @@ function SparringCoachingCard({
       <div className="modal-actions modal-actions--start">
         {canCreateCurriculum && (
           <button className="btn btn-primary" onClick={onCreateCurriculum}>
-            🎯 개선점으로 맞춤 커리큘럼 만들기
+            <Icon name="target" /> 개선점으로 맞춤 커리큘럼 만들기
           </button>
         )}
         <button className="btn btn-secondary" onClick={onAskCoach}>
@@ -605,7 +606,7 @@ function SparringCoachingCard({
 
       {(coaching.dataLimits?.length ?? 0) > 0 && (
         <details className="sparring-coaching__limits">
-          <summary>ℹ️ 이 분석으로 알 수 없는 것</summary>
+          <summary><Icon name="info" /> 이 분석으로 알 수 없는 것</summary>
           <ul>
             {coaching.dataLimits!.map((l, i) => (
               <li key={i}>{l}</li>

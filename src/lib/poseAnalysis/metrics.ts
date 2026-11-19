@@ -89,7 +89,7 @@ function fmt(n: number): string {
 export const METRIC_CALCULATORS: Record<string, (frames: PoseFrame[], params: MetricParams) => Omit<MetricResult, 'id'>> = {
   basicStance(frames, params) {
     const angles = frames.flatMap((f) => [kneeAngle(f, 'left'), kneeAngle(f, 'right')]).filter((v): v is number => v !== null);
-    if (angles.length === 0) return { score: 50, detail: '무릎 위치를 카메라에서 충분히 인식하지 못했습니다.' };
+    if (angles.length === 0) return { score: 50, measured: false, detail: '무릎 위치를 카메라에서 충분히 인식하지 못했습니다.' };
     const avg = angles.reduce((a, b) => a + b, 0) / angles.length;
     const target = params.targetAngle ?? 155;
     const tolerance = params.tolerance ?? 35;
@@ -110,7 +110,7 @@ export const METRIC_CALCULATORS: Record<string, (frames: PoseFrame[], params: Me
         if (lw) devs.push(Math.max(0, lw.y - nose.y));
         if (rw) devs.push(Math.max(0, rw.y - nose.y));
       }
-      if (devs.length === 0) return { score: 50, detail: '손 위치를 카메라에서 충분히 인식하지 못했습니다.' };
+      if (devs.length === 0) return { score: 50, measured: false, detail: '손 위치를 카메라에서 충분히 인식하지 못했습니다.' };
       const avgDrop = devs.reduce((a, b) => a + b, 0) / devs.length;
       return {
         score: scoreFromDeviation(avgDrop, 0, params.tolerance ?? 0.18),
@@ -118,9 +118,9 @@ export const METRIC_CALCULATORS: Record<string, (frames: PoseFrame[], params: Me
       };
     }
     const peak = findPunchPeak(frames);
-    if (!peak) return { score: 50, detail: '팔 동작을 카메라에서 충분히 인식하지 못했습니다.' };
+    if (!peak) return { score: 50, measured: false, detail: '팔 동작을 카메라에서 충분히 인식하지 못했습니다.' };
     const angle = elbowAngle(frames[peak.peakIndex], peak.side);
-    if (angle === null) return { score: 50, detail: '팔꿈치 각도를 계산할 수 없었습니다.' };
+    if (angle === null) return { score: 50, measured: false, detail: '팔꿈치 각도를 계산할 수 없었습니다.' };
     const target = params.targetAngle ?? 165;
     const tolerance = params.tolerance ?? 45;
     return {
@@ -131,14 +131,14 @@ export const METRIC_CALCULATORS: Record<string, (frames: PoseFrame[], params: Me
 
   rotation(frames, params) {
     const peak = findPunchPeak(frames);
-    if (!peak) return { score: 50, detail: '몸통 회전을 계산할 수 없었습니다.' };
+    if (!peak) return { score: 50, measured: false, detail: '몸통 회전을 계산할 수 없었습니다.' };
     const start = frames[0];
     const peakFrame = frames[peak.peakIndex];
     const ls0 = point(start, 'leftShoulder');
     const rs0 = point(start, 'rightShoulder');
     const ls1 = point(peakFrame, 'leftShoulder');
     const rs1 = point(peakFrame, 'rightShoulder');
-    if (!ls0 || !rs0 || !ls1 || !rs1) return { score: 50, detail: '어깨 위치를 충분히 인식하지 못했습니다.' };
+    if (!ls0 || !rs0 || !ls1 || !rs1) return { score: 50, measured: false, detail: '어깨 위치를 충분히 인식하지 못했습니다.' };
     const delta = Math.abs(lineAngle(ls1, rs1) - lineAngle(ls0, rs0));
     const target = params.targetRotation ?? 25;
     const tolerance = params.tolerance ?? 35;
@@ -150,14 +150,14 @@ export const METRIC_CALCULATORS: Record<string, (frames: PoseFrame[], params: Me
 
   hipRotation(frames, params) {
     const kick = findKickPeak(frames);
-    if (!kick) return { score: 50, detail: '골반 회전을 계산할 수 없었습니다.' };
+    if (!kick) return { score: 50, measured: false, detail: '골반 회전을 계산할 수 없었습니다.' };
     const start = frames[0];
     const peakFrame = frames[kick.peakIndex];
     const lh0 = point(start, 'leftHip');
     const rh0 = point(start, 'rightHip');
     const lh1 = point(peakFrame, 'leftHip');
     const rh1 = point(peakFrame, 'rightHip');
-    if (!lh0 || !rh0 || !lh1 || !rh1) return { score: 50, detail: '골반 위치를 충분히 인식하지 못했습니다.' };
+    if (!lh0 || !rh0 || !lh1 || !rh1) return { score: 50, measured: false, detail: '골반 위치를 충분히 인식하지 못했습니다.' };
     const delta = Math.abs(lineAngle(lh1, rh1) - lineAngle(lh0, rh0));
     const target = params.targetRotation ?? 40;
     const tolerance = params.tolerance ?? 40;
@@ -169,7 +169,7 @@ export const METRIC_CALCULATORS: Record<string, (frames: PoseFrame[], params: Me
 
   balance(frames) {
     const xs = frames.map((f) => hipMid(f)).filter((p): p is PoseLandmarkPoint => p !== null).map((p) => p.x);
-    if (xs.length < 3) return { score: 50, detail: '골반 위치를 충분히 인식하지 못했습니다.' };
+    if (xs.length < 3) return { score: 50, measured: false, detail: '골반 위치를 충분히 인식하지 못했습니다.' };
     return {
       score: scoreFromStability(xs, 0.07),
       detail: '동작 동안 골반 중심의 좌우 흔들림을 측정했습니다.',
@@ -184,7 +184,7 @@ export const METRIC_CALCULATORS: Record<string, (frames: PoseFrame[], params: Me
       if (!nose || !hm) continue;
       deviations.push(Math.abs(nose.x - hm.x));
     }
-    if (deviations.length === 0) return { score: 50, detail: '머리 위치를 충분히 인식하지 못했습니다.' };
+    if (deviations.length === 0) return { score: 50, measured: false, detail: '머리 위치를 충분히 인식하지 못했습니다.' };
     const avg = deviations.reduce((a, b) => a + b, 0) / deviations.length;
     return {
       score: scoreFromDeviation(avg, 0, 0.1),
@@ -194,12 +194,12 @@ export const METRIC_CALCULATORS: Record<string, (frames: PoseFrame[], params: Me
 
   supportLegStability(frames) {
     const kick = findKickPeak(frames);
-    if (!kick) return { score: 50, detail: '지지 다리를 식별하지 못했습니다.' };
+    if (!kick) return { score: 50, measured: false, detail: '지지 다리를 식별하지 못했습니다.' };
     const supportSide: Side = kick.side === 'left' ? 'right' : 'left';
     const points = frames
       .map((f) => point(f, supportSide === 'left' ? 'leftAnkle' : 'rightAnkle'))
       .filter((p): p is PoseLandmarkPoint => p !== null);
-    if (points.length < 3) return { score: 50, detail: '지지 다리를 충분히 인식하지 못했습니다.' };
+    if (points.length < 3) return { score: 50, measured: false, detail: '지지 다리를 충분히 인식하지 못했습니다.' };
     const xs = points.map((p) => p.x);
     const ys = points.map((p) => p.y);
     const combined = Math.hypot(
@@ -211,13 +211,13 @@ export const METRIC_CALCULATORS: Record<string, (frames: PoseFrame[], params: Me
 
   kneePosition(frames, params) {
     const kick = findKickPeak(frames);
-    if (!kick) return { score: 50, detail: '무릎 위치를 계산할 수 없었습니다.' };
+    if (!kick) return { score: 50, measured: false, detail: '무릎 위치를 계산할 수 없었습니다.' };
     const start = frames[0];
     const peakFrame = frames[kick.peakIndex];
     const hipStart = point(start, kick.side === 'left' ? 'leftHip' : 'rightHip');
     const kneeStart = point(start, kick.side === 'left' ? 'leftKnee' : 'rightKnee');
     const kneePeak = point(peakFrame, kick.side === 'left' ? 'leftKnee' : 'rightKnee');
-    if (!hipStart || !kneeStart || !kneePeak) return { score: 50, detail: '무릎 위치를 충분히 인식하지 못했습니다.' };
+    if (!hipStart || !kneeStart || !kneePeak) return { score: 50, measured: false, detail: '무릎 위치를 충분히 인식하지 못했습니다.' };
     const unit = bodyScaleUnit(start, kick.side);
     const rise = (kneeStart.y - kneePeak.y) / unit;
     const target = params.targetRise ?? 0.6;
@@ -230,12 +230,12 @@ export const METRIC_CALCULATORS: Record<string, (frames: PoseFrame[], params: Me
 
   legMovement(frames, params) {
     const kick = findKickPeak(frames);
-    if (!kick) return { score: 50, detail: '다리 움직임을 계산할 수 없었습니다.' };
+    if (!kick) return { score: 50, measured: false, detail: '다리 움직임을 계산할 수 없었습니다.' };
     const start = frames[0];
     const peakFrame = frames[kick.peakIndex];
     const ankleStart = point(start, kick.side === 'left' ? 'leftAnkle' : 'rightAnkle');
     const anklePeak = point(peakFrame, kick.side === 'left' ? 'leftAnkle' : 'rightAnkle');
-    if (!ankleStart || !anklePeak) return { score: 50, detail: '다리 움직임을 충분히 인식하지 못했습니다.' };
+    if (!ankleStart || !anklePeak) return { score: 50, measured: false, detail: '다리 움직임을 충분히 인식하지 못했습니다.' };
     const unit = bodyScaleUnit(start, kick.side);
     const displacement = distance(ankleStart, anklePeak) / unit;
     const target = params.targetDisplacement ?? 1.2;
@@ -248,7 +248,7 @@ export const METRIC_CALCULATORS: Record<string, (frames: PoseFrame[], params: Me
 
   levelChange(frames, params) {
     const hips = frames.map((f) => hipMid(f)).filter((p): p is PoseLandmarkPoint => p !== null);
-    if (hips.length < 3) return { score: 50, detail: '골반 높이를 충분히 인식하지 못했습니다.' };
+    if (hips.length < 3) return { score: 50, measured: false, detail: '골반 높이를 충분히 인식하지 못했습니다.' };
     const startY = hips[0].y;
     const maxY = Math.max(...hips.map((p) => p.y));
     const unit = bodyScaleUnit(frames[0], 'left');

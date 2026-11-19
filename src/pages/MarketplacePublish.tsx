@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useState } from 'react';
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { useAuth } from '../lib/auth/AuthProvider';
@@ -5,8 +6,11 @@ import { getCurriculum, saveCustomCurriculum } from '../lib/curriculum/curriculu
 import { publishCurriculumToMarketplace } from '../lib/marketplace/service';
 import type { MarketplaceListing } from '../lib/marketplace/types';
 import BackButton from '../components/BackButton';
+import { StoredIcon } from '../components/icons/BrandAssets';
 
 const COVER_ICON_PRESETS = ['🥋', '🥊', '🧠', '🔥', '⭐', '🏆', '🛡️', '⚔️'];
+/** Accessible names for the icon-only preset buttons (the stored value stays the emoji). */
+const COVER_ICON_LABEL: Record<string, string> = { '🥋': '도복', '🥊': '글러브', '🧠': '두뇌', '🔥': '불꽃', '⭐': '별', '🏆': '트로피', '🛡️': '방패', '⚔️': '검' };
 
 export default function MarketplacePublish() {
   const { curriculumId = '' } = useParams();
@@ -90,7 +94,7 @@ export default function MarketplacePublish() {
         </div>
 
         <div className="section-title">
-          <h2>🛒 커리큘럼 마켓에 게시</h2>
+          <h2><Icon name="cart" /> 커리큘럼 마켓에 게시</h2>
         </div>
         <p className="video-status-message" style={{ marginTop: -8 }}>
           "{curriculum.title}"의 Day/기술 내용을 그대로 사용해 마켓에 게시합니다. 원본 커리큘럼은 그대로 유지됩니다.
@@ -133,8 +137,8 @@ export default function MarketplacePublish() {
           </label>
           <div className="chip-row">
             {COVER_ICON_PRESETS.map((icon) => (
-              <button key={icon} type="button" className={`chip ${coverIcon === icon ? 'active' : ''}`} onClick={() => setCoverIcon(icon)}>
-                {icon}
+              <button key={icon} type="button" className={`chip ${coverIcon === icon ? 'active' : ''}`} onClick={() => setCoverIcon(icon)} aria-label={COVER_ICON_LABEL[icon]} aria-pressed={coverIcon === icon}>
+                <StoredIcon value={icon} />
               </button>
             ))}
           </div>

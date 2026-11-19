@@ -2,12 +2,11 @@ import { Link } from 'react-router-dom';
 import MartialArtCard from '../components/MartialArtCard';
 import { getUnifiedMartialArtSummaries, getUnifiedTechniqueCount } from '../lib/userTechniques/service';
 import { useAddTeqLibraryVersion } from '../lib/addTeq/useAddTeqLibrary';
-import { useCustomMartialArtLibraryVersion } from '../lib/customMartialArt/useCustomMartialArtLibrary';
 import BackButton from '../components/BackButton';
 
+/** Disciplines — the catalogue cover for every art, as image plates. */
 export default function MartialArtsList() {
   useAddTeqLibraryVersion();
-  useCustomMartialArtLibraryVersion();
   const martialArtSummaries = getUnifiedMartialArtSummaries();
   const totalTechniqueCount = getUnifiedTechniqueCount();
   return (
@@ -19,19 +18,21 @@ export default function MartialArtsList() {
           <span>/</span>
           <span>무술 목록</span>
         </div>
-        <div className="section-title">
-          <h2>전체 무술 ({martialArtSummaries.length})</h2>
-          <span className="result-count">총 {totalTechniqueCount}개 기술</span>
-        </div>
-        <div className="card-grid">
-          {martialArtSummaries.map((art) => (
-            <MartialArtCard key={art.id} art={art} />
+        <header className="mx-page-masthead">
+          <div>
+            <span className="mx-eyebrow">CHAPTER 01 · DISCIPLINES</span>
+            <h1>THE DISCIPLINES</h1>
+            <p>전체 무술 {martialArtSummaries.length}개. 무술을 고르면 포지션·카테고리별로 정리된 기술 색인이 열립니다.</p>
+          </div>
+          <div className="mx-page-masthead__figure">
+            <strong>{totalTechniqueCount}</strong>
+            <span>TECHNIQUES INDEXED</span>
+          </div>
+        </header>
+        <div className="mx-art-rail">
+          {martialArtSummaries.map((art, i) => (
+            <MartialArtCard key={art.id} art={art} index={i} />
           ))}
-        </div>
-        <div className="modal-actions modal-actions--start" style={{ marginTop: 12 }}>
-          <Link to="/arts/add" className="btn btn-secondary">
-            + 무술 추가
-          </Link>
         </div>
       </div>
     </div>

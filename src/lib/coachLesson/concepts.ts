@@ -1,6 +1,8 @@
 import type { Technique } from '../../types';
 import { politeData } from '../aiCoachDay/politeSpeech';
 import type { ChoiceQuestion, LessonConcept } from './types';
+import { genericKey } from '../coachKnowledge/evidence';
+import { addsNothing, isMeaningless } from './lessonQuality';
 import { contentTokens, firstSentence, josa, nounPhrase, OPTION_LETTERS, overlap, seededOrder, sentence, stripStepPrefix } from './text';
 
 // Splits a technique into a few teachable concepts, using ONLY the
@@ -58,17 +60,28 @@ export function choiceText(c: ChoiceQuestion): string {
   return `${c.question} ${c.options.map((o, i) => `${OPTION_LETTERS[i]}. ${short(o, 60)}`).join(' / ')}`;
 }
 
-function purposeConcept(t: Technique, distractors: string[]): LessonConcept {
+export function cleanPosition(p: string): string {
+  return p.replace(/\s*-{2,}\s*/g, ' · ').trim();
+}
+
+function purposeConcept(t: Technique, distractors: string[], generic: Set<string>): LessonConcept {
   const name = lessonName(t);
   const drill = isDrill(t);
-  // posture.overview is hand-curated per technique; `purpose` in the parsed
-  // data is sometimes the category's purpose, so it is only the fallback.
-  const what = firstSentence(t.posture?.overview) || firstSentence(t.purpose) || firstSentence(t.description) || `${josa(name, '은/는')} ${t.category} 분류의 ${drill ? '동작' : '기술'}입니다.`;
-  const where = t.positions.filter((p) => !/자주 등장|노기/.test(p)).slice(0, 2);
+  // posture.overview is hand-curated per technique; `purpose` / `description` in the
+  // parsed data are sometimes a category paragraph shared by many techniques (or a
+  // bare alias like "양손 베기") — those say nothing about THIS technique and are skipped.
+  const own = (s: string | null | undefined) => {
+    const f = firstSentence(s);
+    return f && !generic.has(genericKey(s ?? '')) && !isMeaningless(f) && contentTokens(f).length >= 3 ? f : '';
+  };
+  const ownPurpose = own(t.purpose);
+  const what = firstSentence(t.posture?.overview) || ownPurpose || own(t.description) || `${josa(name, '은/는')} ${t.category} 분류의 ${drill ? '동작' : '기술'}입니다.`;
+  // "쿠미테 --- 판정 규칙과 타이밍": the data's heading separator is not something to say aloud
+  const where = t.positions.filter((p) => !/자주 등장|노기/.test(p)).map(cleanPosition).slice(0, 2);
   const variants: string[] = [];
   if (where.length) variants.push(`쉽게 말하면, 주로 ${where.join(', ')} 같은 상황에서 쓰는 ${drill ? '동작' : '기술'}입니다.`);
   if (t.posture?.startingPosition) variants.push(`시작하는 모습으로 생각해 보겠습니다. ${politeData(sentence(t.posture.startingPosition))}`);
-  if (t.purpose && firstSentence(t.purpose) !== what) variants.push(`목적으로 보면, ${politeData(sentence(firstSentence(t.purpose)))}`);
+  if (ownPurpose && ownPurpose !== what) variants.push(`목적으로 보면, ${politeData(sentence(ownPurpose))}`);
   if (variants.length === 0) variants.push(`한 문장으로 다시 말씀드리면, ${what}`);
   const reference = [what, where.length ? `사용 상황: ${where.join(', ')}` : ''].filter(Boolean).join(' / ');
   return {
@@ -99,8 +112,8 @@ function keyPointConcept(t: Technique, kp: string, index: number): LessonConcept
   const bodyKey = body ? bodyEntries.find(([, v]) => v === body)?.[0] : undefined;
 
   const variants: string[] = [];
-  if (step) variants.push(`동작 순서로 보면 이 부분입니다. ${politeData(sentence(stripStepPrefix(step)))}`);
-  if (mistake) variants.push(`반대로 생각해 보겠습니다. 흔한 실수는 "${mistake.replace(/[.。]$/, '')}"입니다. 이 실수를 막아 주는 것이 바로 이 포인트입니다.`);
+  if (step) variants.push(`동작 순서로 보면, ${politeData(sentence(stripStepPrefix(step)))}`);
+  if (mistake) variants.push(`반대로, 흔한 실수인 "${mistake.replace(/[.。]$/, '')}"을(를) 막아 주는 것이 바로 이 포인트입니다.`);
   if (body && bodyKey) variants.push(`${BODY_LABEL[bodyKey] ?? '몸'}의 위치로 말씀드리면, ${politeData(sentence(body))}`);
   variants.push(`한 문장으로 정리하면, 핵심은 ${nounPhrase(kp)}입니다.`);
 
@@ -125,6 +138,13 @@ function keyPointConcept(t: Technique, kp: string, index: number): LessonConcept
   };
 }
 
+export interface ConceptOptions {
+  maxKeyPoints?: number;
+  distractors?: string[];
+  /** Category paragraphs repeated across many records (coachKnowledge/lookup genericTexts) — never taught as this technique's purpose. */
+  genericTexts?: Set<string>;
+}
+
 /**
  * Concepts for one technique, most important first.
  *  - purpose: what it is / when it is used
@@ -132,8 +152,27 @@ function keyPointConcept(t: Technique, kp: string, index: number): LessonConcept
  *  - a principle when there is no posture data at all
  * `distractors` are short descriptions of OTHER real techniques (for an easy 선택형 question).
  */
-export function buildConcepts(t: Technique, opts: { maxKeyPoints?: number; distractors?: string[] } = {}): LessonConcept[] {
-  const out: LessonConcept[] = [purposeConcept(t, opts.distractors ?? [])];
+export function buildConcepts(t: Technique, opts: ConceptOptions = {}): LessonConcept[] {
+  return withoutRepeats(rawConcepts(t, opts));
+}
+
+/**
+ * A re-explanation must say something the learner has not heard yet: variants that
+ * repeat (or nearly repeat) the concept's explanation, an earlier variant or an
+ * earlier concept are dropped. Fewer variants is fine — the engine moves on.
+ */
+function withoutRepeats(concepts: LessonConcept[]): LessonConcept[] {
+  const said: string[] = [];
+  return concepts.map((c) => {
+    const variants: string[] = [];
+    for (const v of c.variants) if (!addsNothing(v, [...said, c.explain, ...variants])) variants.push(v);
+    said.push(c.explain, ...variants);
+    return { ...c, variants };
+  });
+}
+
+function rawConcepts(t: Technique, opts: ConceptOptions): LessonConcept[] {
+  const out: LessonConcept[] = [purposeConcept(t, opts.distractors ?? [], opts.genericTexts ?? new Set())];
   const kps = t.posture?.keyPoints ?? [];
   const max = opts.maxKeyPoints ?? (isDrill(t) ? 1 : 2);
   kps.slice(0, max).forEach((kp, i) => out.push(keyPointConcept(t, kp, i)));

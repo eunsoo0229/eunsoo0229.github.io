@@ -1,0 +1,1562 @@
+[
+  {
+    "id": "taekwondo__뒷발-돌려차기의-완전-회전형",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱 규칙상 발차기는 금지되어 복싱 기술이 아니다.",
+    "evidence": "AIBA/프로 복싱 규칙: 펀치(주먹)만 허용, 킥 금지"
+  },
+  {
+    "id": "taekwondo__뒷발-돌려차기의-완전-회전형",
+    "art": "kickboxing",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "360도 회전 돌려차기 변형은 킥복싱에서 드물고 정체성이 불분명하다.",
+    "evidence": "kickboxing 카탈로그에 해당 회전형 없음(Wheel Kick/Spinning Back Kick만 존재)"
+  },
+  {
+    "id": "taekwondo__뒷발-돌려차기의-완전-회전형",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "무에타이 커리큘럼에 없는 태권도식 완전 회전 돌려차기 변형이다.",
+    "evidence": "muay-thai 카탈로그 스피닝 기술 모음에 없음"
+  },
+  {
+    "id": "taekwondo__뒷발-돌려차기의-완전-회전형",
+    "art": "karate",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "완전 회전 돌려차기는 일부 가라테 쿠미테에서만 드물게 쓰인다.",
+    "evidence": "karate 카탈로그에 해당 기술 없음"
+  },
+  {
+    "id": "taekwondo__회전-내려차기",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱 규칙상 발차기는 금지되어 복싱 기술이 아니다.",
+    "evidence": "AIBA/프로 복싱 규칙: 펀치(주먹)만 허용, 킥 금지"
+  },
+  {
+    "id": "taekwondo__회전-내려차기",
+    "art": "kickboxing",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "회전 내려차기는 킥복싱에서 드물게 쓰이는 화려한 변형이다.",
+    "evidence": "kickboxing 카탈로그: Axe Kick만 존재"
+  },
+  {
+    "id": "taekwondo__회전-내려차기",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "무에타이 커리큘럼에 회전 내려차기는 없다.",
+    "evidence": "muay-thai 카탈로그 스피닝 기술 모음에 없음"
+  },
+  {
+    "id": "taekwondo__회전-내려차기",
+    "art": "karate",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "회전 내려차기(우시로 가카토)는 일부 유파에서만 쓰인다.",
+    "evidence": "karate 카탈로그: Axe Kick만 존재"
+  },
+  {
+    "id": "taekwondo__회전-옆차기",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱 규칙상 발차기는 금지되어 복싱 기술이 아니다.",
+    "evidence": "AIBA/프로 복싱 규칙: 펀치(주먹)만 허용, 킥 금지"
+  },
+  {
+    "id": "taekwondo__회전-옆차기",
+    "art": "kickboxing",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "회전 옆차기는 스피닝 백킥과 정체가 겹쳐 구분이 불분명하다.",
+    "evidence": "kickboxing 카탈로그 muay-thai__spinning-back-kick, kickboxing__back-kick"
+  },
+  {
+    "id": "taekwondo__회전-옆차기",
+    "art": "muay-thai",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "회전 옆차기는 무에타이 스피닝 백킥과 겹치는지 불분명하다.",
+    "evidence": "muay-thai 카탈로그 muay-thai__spinning-back-kick"
+  },
+  {
+    "id": "taekwondo__회전-옆차기",
+    "art": "karate",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "회전 옆차기는 가라테 우시로 게리와 겹치는지 불분명하다.",
+    "evidence": "karate 카탈로그 kickboxing__back-kick (Ushiro Geri)"
+  },
+  {
+    "id": "taekwondo__뒤돌아차기-계열",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱 규칙상 발차기는 금지되어 복싱 기술이 아니다.",
+    "evidence": "AIBA/프로 복싱 규칙: 펀치(주먹)만 허용, 킥 금지"
+  },
+  {
+    "id": "taekwondo__뒤돌아차기-계열",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "여러 회전 킥을 묶은 계열 제목으로 단일 기술이 아니다.",
+    "evidence": "기준: heading/non-technique는 none"
+  },
+  {
+    "id": "taekwondo__뒤돌아차기-계열",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "여러 회전 킥을 묶은 계열 제목으로 단일 기술이 아니다.",
+    "evidence": "기준: heading/non-technique는 none"
+  },
+  {
+    "id": "taekwondo__뒤돌아차기-계열",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "여러 회전 킥을 묶은 계열 제목으로 단일 기술이 아니다.",
+    "evidence": "기준: heading/non-technique는 none"
+  },
+  {
+    "id": "taekwondo__뛰어앞차기",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱 규칙상 발차기는 금지되어 복싱 기술이 아니다.",
+    "evidence": "AIBA/프로 복싱 규칙: 펀치(주먹)만 허용, 킥 금지"
+  },
+  {
+    "id": "taekwondo__뛰어앞차기",
+    "art": "kickboxing",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "점프 앞차기는 킥복싱에서 드물며 일반 Jumping Kick 항목과의 관계가 불분명하다.",
+    "evidence": "kickboxing 카탈로그 kickboxing__jumping-kick"
+  },
+  {
+    "id": "taekwondo__뛰어앞차기",
+    "art": "muay-thai",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "무에타이 점핑 티프와 유사하나 스냅 앞차기와 밀어차기는 다르다.",
+    "evidence": "muay-thai 카탈로그 muay-thai__jumping-teep"
+  },
+  {
+    "id": "taekwondo__뛰어앞차기",
+    "art": "karate",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "가라테 토비 마에게리에 해당하나 카탈로그의 일반 Tobi Geri와 중복 여부가 불분명하다.",
+    "evidence": "karate 카탈로그 karate__tobi-geri (Tobi Geri / 뛰어차기)"
+  },
+  {
+    "id": "taekwondo__뛰어돌려차기",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱 규칙상 발차기는 금지되어 복싱 기술이 아니다.",
+    "evidence": "AIBA/프로 복싱 규칙: 펀치(주먹)만 허용, 킥 금지"
+  },
+  {
+    "id": "taekwondo__뛰어돌려차기",
+    "art": "kickboxing",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "점프 돌려차기는 킥복싱에서 가끔 쓰이나 일반 Jumping Kick과 관계가 불분명하다.",
+    "evidence": "kickboxing 카탈로그 kickboxing__jumping-kick"
+  },
+  {
+    "id": "taekwondo__뛰어돌려차기",
+    "art": "muay-thai",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "무에타이 크라돗 계열 점프킥과 같은지 불분명하다.",
+    "evidence": "Muay Thai \"Kradot Te\"(jumping kick); 카탈로그에 없음"
+  },
+  {
+    "id": "taekwondo__뛰어돌려차기",
+    "art": "karate",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "토비 마와시게리는 일부 쿠미테에서 쓰이나 Tobi Geri 항목과 관계가 불분명하다.",
+    "evidence": "karate 카탈로그 karate__tobi-geri"
+  },
+  {
+    "id": "taekwondo__뛰어옆차기",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱 규칙상 발차기는 금지되어 복싱 기술이 아니다.",
+    "evidence": "AIBA/프로 복싱 규칙: 펀치(주먹)만 허용, 킥 금지"
+  },
+  {
+    "id": "taekwondo__뛰어옆차기",
+    "art": "kickboxing",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "점프 옆차기는 킥복싱에서 드물다.",
+    "evidence": "kickboxing 카탈로그 kickboxing__jumping-kick"
+  },
+  {
+    "id": "taekwondo__뛰어옆차기",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "점프 옆차기는 무에타이 커리큘럼에 없다.",
+    "evidence": "muay-thai 카탈로그에 점프 옆차기 없음"
+  },
+  {
+    "id": "taekwondo__뛰어옆차기",
+    "art": "karate",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "토비 요코게리는 전통 가라테에 있으나 Tobi Geri 항목과 관계가 불분명하다.",
+    "evidence": "karate 카탈로그 karate__tobi-geri"
+  },
+  {
+    "id": "taekwondo__뛰어뒤차기",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱 규칙상 발차기는 금지되어 복싱 기술이 아니다.",
+    "evidence": "AIBA/프로 복싱 규칙: 펀치(주먹)만 허용, 킥 금지"
+  },
+  {
+    "id": "taekwondo__뛰어뒤차기",
+    "art": "kickboxing",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "점프 뒤차기는 킥복싱에서 드문 화려한 기술이다.",
+    "evidence": "kickboxing 카탈로그 kickboxing__jumping-kick, kickboxing__back-kick"
+  },
+  {
+    "id": "taekwondo__뛰어뒤차기",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "점프 뒤차기는 무에타이 커리큘럼에 없다.",
+    "evidence": "muay-thai 카탈로그에 없음"
+  },
+  {
+    "id": "taekwondo__뛰어뒤차기",
+    "art": "karate",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "점프 뒤차기는 가라테에서 드물게만 쓰인다.",
+    "evidence": "karate 카탈로그 karate__tobi-geri"
+  },
+  {
+    "id": "taekwondo__뛰어내려차기",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱 규칙상 발차기는 금지되어 복싱 기술이 아니다.",
+    "evidence": "AIBA/프로 복싱 규칙: 펀치(주먹)만 허용, 킥 금지"
+  },
+  {
+    "id": "taekwondo__뛰어내려차기",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "점프 내려차기는 킥복싱에서 쓰이지 않는다.",
+    "evidence": "kickboxing 카탈로그에 없음"
+  },
+  {
+    "id": "taekwondo__뛰어내려차기",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "점프 내려차기는 무에타이에 없다.",
+    "evidence": "muay-thai 카탈로그에 없음"
+  },
+  {
+    "id": "taekwondo__뛰어내려차기",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "점프 내려차기는 가라테 커리큘럼에 없다.",
+    "evidence": "karate 카탈로그에 없음"
+  },
+  {
+    "id": "taekwondo__이단옆차기",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱 규칙상 발차기는 금지되어 복싱 기술이 아니다.",
+    "evidence": "AIBA/프로 복싱 규칙: 펀치(주먹)만 허용, 킥 금지"
+  },
+  {
+    "id": "taekwondo__이단옆차기",
+    "art": "kickboxing",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "플라잉 사이드킥은 킥복싱에서 드문 화려한 기술이다.",
+    "evidence": "kickboxing 카탈로그 kickboxing__jumping-kick"
+  },
+  {
+    "id": "taekwondo__이단옆차기",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "이단옆차기는 무에타이 커리큘럼에 없다.",
+    "evidence": "muay-thai 카탈로그에 없음"
+  },
+  {
+    "id": "taekwondo__이단옆차기",
+    "art": "karate",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "토비 요코게리는 전통 가라테에 있으나 Tobi Geri 항목과 관계가 불분명하다.",
+    "evidence": "karate 카탈로그 karate__tobi-geri, karate__nidan-geri"
+  },
+  {
+    "id": "taekwondo__뛰어이단옆차기",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱 규칙상 발차기는 금지되어 복싱 기술이 아니다.",
+    "evidence": "AIBA/프로 복싱 규칙: 펀치(주먹)만 허용, 킥 금지"
+  },
+  {
+    "id": "taekwondo__뛰어이단옆차기",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "도약 진입형 이단옆차기는 킥복싱에서 쓰이지 않는다.",
+    "evidence": "kickboxing 카탈로그에 없음"
+  },
+  {
+    "id": "taekwondo__뛰어이단옆차기",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "뛰어이단옆차기는 무에타이에 없다.",
+    "evidence": "muay-thai 카탈로그에 없음"
+  },
+  {
+    "id": "taekwondo__뛰어이단옆차기",
+    "art": "karate",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "도약 플라잉 사이드킥은 일부 가라테 유파에서만 보인다.",
+    "evidence": "karate 카탈로그 karate__tobi-geri"
+  },
+  {
+    "id": "taekwondo__공중회전-발차기",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱 규칙상 발차기는 금지되어 복싱 기술이 아니다.",
+    "evidence": "AIBA/프로 복싱 규칙: 펀치(주먹)만 허용, 킥 금지"
+  },
+  {
+    "id": "taekwondo__공중회전-발차기",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "시범·격파용 퍼포먼스 기술로 해당 무술에서 쓰이지 않는다.",
+    "evidence": "항목 설명: 시범단·격파 시범용 기술"
+  },
+  {
+    "id": "taekwondo__공중회전-발차기",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "시범·격파용 퍼포먼스 기술로 해당 무술에서 쓰이지 않는다.",
+    "evidence": "항목 설명: 시범단·격파 시범용 기술"
+  },
+  {
+    "id": "taekwondo__공중회전-발차기",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "시범·격파용 퍼포먼스 기술로 해당 무술에서 쓰이지 않는다.",
+    "evidence": "항목 설명: 시범단·격파 시범용 기술"
+  },
+  {
+    "id": "taekwondo__다단-점프-발차기",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱 규칙상 발차기는 금지되어 복싱 기술이 아니다.",
+    "evidence": "AIBA/프로 복싱 규칙: 펀치(주먹)만 허용, 킥 금지"
+  },
+  {
+    "id": "taekwondo__다단-점프-발차기",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "시범·격파용 퍼포먼스 기술로 해당 무술에서 쓰이지 않는다.",
+    "evidence": "항목 설명: 시범단·격파 시범용 기술"
+  },
+  {
+    "id": "taekwondo__다단-점프-발차기",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "시범·격파용 퍼포먼스 기술로 해당 무술에서 쓰이지 않는다.",
+    "evidence": "항목 설명: 시범단·격파 시범용 기술"
+  },
+  {
+    "id": "taekwondo__다단-점프-발차기",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "시범·격파용 퍼포먼스 기술로 해당 무술에서 쓰이지 않는다.",
+    "evidence": "항목 설명: 시범단·격파 시범용 기술"
+  },
+  {
+    "id": "taekwondo__앞발-돌려차기-뒷발-돌려차기",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱 규칙상 발차기는 금지되어 복싱 기술이 아니다.",
+    "evidence": "AIBA/프로 복싱 규칙: 펀치(주먹)만 허용, 킥 금지"
+  },
+  {
+    "id": "taekwondo__앞발-돌려차기-뒷발-돌려차기",
+    "art": "kickboxing",
+    "decision": "add",
+    "confidence": "B",
+    "category": "대표적인 콤비네이션 (연결)",
+    "duplicateOf": null,
+    "reason": "리드 돌려차기 후 리어 돌려차기 연결은 킥복싱에서 흔히 쓰이는 킥 콤비네이션이다.",
+    "evidence": "kickboxing 카탈로그 Round Kick + [대표적인 콤비네이션 (연결)]"
+  },
+  {
+    "id": "taekwondo__앞발-돌려차기-뒷발-돌려차기",
+    "art": "muay-thai",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "무에타이에서 리드-리어 라운드킥 연결은 쓰이나 태권도식 연결과 같은지 불분명하다.",
+    "evidence": "muay-thai 카탈로그 muay-thai__lead-round-kick, muay-thai__rear-round-kick"
+  },
+  {
+    "id": "taekwondo__앞발-돌려차기-뒷발-돌려차기",
+    "art": "karate",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "기자미→갸쿠 마와시게리 연결은 쿠미테에서 쓰이나 카탈로그 근거가 약하다.",
+    "evidence": "karate 카탈로그 [조합 (Renzoku-waza)]에 없음"
+  },
+  {
+    "id": "taekwondo__앞발-돌려차기-내려차기",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱 규칙상 발차기는 금지되어 복싱 기술이 아니다.",
+    "evidence": "AIBA/프로 복싱 규칙: 펀치(주먹)만 허용, 킥 금지"
+  },
+  {
+    "id": "taekwondo__앞발-돌려차기-내려차기",
+    "art": "kickboxing",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "돌려차기→내려차기 연결은 킥복싱에서 드물다.",
+    "evidence": "kickboxing 카탈로그 Axe Kick 존재, 콤비네이션 없음"
+  },
+  {
+    "id": "taekwondo__앞발-돌려차기-내려차기",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "내려차기 연결은 무에타이 커리큘럼에 없다.",
+    "evidence": "muay-thai 카탈로그 콤비네이션에 없음"
+  },
+  {
+    "id": "taekwondo__앞발-돌려차기-내려차기",
+    "art": "karate",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "마와시게리→가카토 연결은 일부 쿠미테에서만 쓰인다.",
+    "evidence": "karate 카탈로그 [조합 (Renzoku-waza)]에 없음"
+  },
+  {
+    "id": "taekwondo__앞발-밀어차기-반대발-뒷발-돌려차기",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱 규칙상 발차기는 금지되어 복싱 기술이 아니다.",
+    "evidence": "AIBA/프로 복싱 규칙: 펀치(주먹)만 허용, 킥 금지"
+  },
+  {
+    "id": "taekwondo__앞발-밀어차기-반대발-뒷발-돌려차기",
+    "art": "kickboxing",
+    "decision": "add",
+    "confidence": "B",
+    "category": "대표적인 콤비네이션 (연결)",
+    "duplicateOf": null,
+    "reason": "앞발 티프 후 리어 돌려차기 연결은 킥복싱의 표준 콤비네이션이다.",
+    "evidence": "kickboxing 카탈로그 kickboxing__teep, kickboxing__round-kick, [대표적인 콤비네이션 (연결)]"
+  },
+  {
+    "id": "taekwondo__앞발-밀어차기-반대발-뒷발-돌려차기",
+    "art": "muay-thai",
+    "decision": "add",
+    "confidence": "B",
+    "category": "장거리 킥 (Round Kick / Low Kick 계열)",
+    "duplicateOf": null,
+    "reason": "티프로 거리를 만든 뒤 리어 라운드킥으로 잇는 것은 무에타이 기본 연결이다.",
+    "evidence": "muay-thai 카탈로그 muay-thai__lead-teep, muay-thai__rear-round-kick, muay-thai__low-kick-after-teep"
+  },
+  {
+    "id": "taekwondo__앞발-밀어차기-반대발-뒷발-돌려차기",
+    "art": "karate",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "마에게리 게코미→마와시게리 연결은 가능하나 카탈로그 근거가 약하다.",
+    "evidence": "karate 카탈로그 [조합 (Renzoku-waza)]에 없음"
+  },
+  {
+    "id": "taekwondo__돌려차기-뒤후려차기",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱 규칙상 발차기는 금지되어 복싱 기술이 아니다.",
+    "evidence": "AIBA/프로 복싱 규칙: 펀치(주먹)만 허용, 킥 금지"
+  },
+  {
+    "id": "taekwondo__돌려차기-뒤후려차기",
+    "art": "kickboxing",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "돌려차기→스피닝 힐킥 연결은 킥복싱에서 드물다.",
+    "evidence": "kickboxing 카탈로그 Wheel Kick 존재, 콤비네이션 없음"
+  },
+  {
+    "id": "taekwondo__돌려차기-뒤후려차기",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "뒤후려차기 연결은 무에타이 커리큘럼에 없다.",
+    "evidence": "muay-thai 카탈로그에 없음"
+  },
+  {
+    "id": "taekwondo__돌려차기-뒤후려차기",
+    "art": "karate",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "가라테에 뒤후려차기는 있으나 이 연결은 드물다.",
+    "evidence": "karate 카탈로그 taekwondo__뒤후려차기"
+  },
+  {
+    "id": "taekwondo__돌려차기-뒤차기",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱 규칙상 발차기는 금지되어 복싱 기술이 아니다.",
+    "evidence": "AIBA/프로 복싱 규칙: 펀치(주먹)만 허용, 킥 금지"
+  },
+  {
+    "id": "taekwondo__돌려차기-뒤차기",
+    "art": "kickboxing",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "돌려차기→스피닝 백킥 연결은 킥복싱에서 가끔 쓰이나 드물다.",
+    "evidence": "kickboxing 카탈로그 muay-thai__spinning-back-kick, 콤비네이션 없음"
+  },
+  {
+    "id": "taekwondo__돌려차기-뒤차기",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "돌려차기→뒤차기 연결은 무에타이 표준 연결이 아니다.",
+    "evidence": "muay-thai 카탈로그 콤비네이션에 없음"
+  },
+  {
+    "id": "taekwondo__돌려차기-뒤차기",
+    "art": "karate",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "마와시게리→우시로게리 연결은 쿠미테에서 드물게 쓰인다.",
+    "evidence": "karate 카탈로그 [조합 (Renzoku-waza)]에 없음"
+  },
+  {
+    "id": "taekwondo__돌려차기-주먹-반대지르기",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱 규칙상 발차기는 금지되어 복싱 기술이 아니다.",
+    "evidence": "AIBA/프로 복싱 규칙: 펀치(주먹)만 허용, 킥 금지"
+  },
+  {
+    "id": "taekwondo__돌려차기-주먹-반대지르기",
+    "art": "kickboxing",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "킥 후 펀치 연결이나 카탈로그 Punch After Kick(카운터)과 같은지 불분명하다.",
+    "evidence": "kickboxing 카탈로그 kickboxing__punch-after-kick [카운터]"
+  },
+  {
+    "id": "taekwondo__돌려차기-주먹-반대지르기",
+    "art": "muay-thai",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "라운드킥 후 펀치 연결은 쓰이나 카탈로그에 대응 항목이 없다.",
+    "evidence": "muay-thai 카탈로그 [중거리 펀치]에 킥→펀치 항목 없음"
+  },
+  {
+    "id": "taekwondo__돌려차기-주먹-반대지르기",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "karate__mawashi-geri-gyaku-zuki",
+    "reason": "가라테 카탈로그에 이미 마와시게리→갸쿠즈키로 있다.",
+    "evidence": "karate 카탈로그 karate__mawashi-geri-gyaku-zuki"
+  },
+  {
+    "id": "taekwondo__페인트-스텝-몸통-돌려차기",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱 규칙상 발차기는 금지되어 복싱 기술이 아니다.",
+    "evidence": "AIBA/프로 복싱 규칙: 펀치(주먹)만 허용, 킥 금지"
+  },
+  {
+    "id": "taekwondo__페인트-스텝-몸통-돌려차기",
+    "art": "kickboxing",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "스텝 페인트 후 바디킥은 Hand Feint → Body Kick과 유사해 정체가 불분명하다.",
+    "evidence": "kickboxing 카탈로그 kickboxing__hand-feint-body-kick"
+  },
+  {
+    "id": "taekwondo__페인트-스텝-몸통-돌려차기",
+    "art": "muay-thai",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "무에타이에서 페인트 후 바디킥은 쓰이나 태권도식 스텝 페인트와 같은지 불분명하다.",
+    "evidence": "muay-thai 카탈로그 kickboxing__body-kick"
+  },
+  {
+    "id": "taekwondo__페인트-스텝-몸통-돌려차기",
+    "art": "karate",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "스텝 페인트 후 쥬단 마와시게리는 쿠미테에서 쓰이나 카탈로그 근거가 약하다.",
+    "evidence": "karate 카탈로그 karate__feint-gyaku-zuki만 존재"
+  },
+  {
+    "id": "taekwondo__스위치-스텝-돌려차기",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱 규칙상 발차기는 금지되어 복싱 기술이 아니다.",
+    "evidence": "AIBA/프로 복싱 규칙: 펀치(주먹)만 허용, 킥 금지"
+  },
+  {
+    "id": "taekwondo__스위치-스텝-돌려차기",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "muay-thai__switch-kick",
+    "reason": "킥복싱 카탈로그에 이미 Switch Kick으로 있다.",
+    "evidence": "kickboxing 카탈로그 muay-thai__switch-kick"
+  },
+  {
+    "id": "taekwondo__스위치-스텝-돌려차기",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "muay-thai__switch-kick",
+    "reason": "무에타이 카탈로그에 이미 Switch Kick으로 있다.",
+    "evidence": "muay-thai 카탈로그 muay-thai__switch-kick"
+  },
+  {
+    "id": "taekwondo__스위치-스텝-돌려차기",
+    "art": "karate",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "가라테 쿠미테에서 스위치 마와시게리가 쓰이나 표준 명칭 여부가 불분명하다.",
+    "evidence": "karate 카탈로그에 없음"
+  },
+  {
+    "id": "taekwondo__태극-1장",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-1장",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-1장",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-1장",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-2장",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-2장",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-2장",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-2장",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-3장",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-3장",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-3장",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-3장",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-4장",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-4장",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-4장",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-4장",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-5장",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-5장",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-5장",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-5장",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-6장",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-6장",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-6장",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-6장",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-7장",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-7장",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-7장",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-7장",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-8장",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-8장",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-8장",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__태극-8장",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 품새는 해당 무술의 기술이 아닌 품새 형식이다.",
+    "evidence": "기준: poomsae/kata/tul은 none"
+  },
+  {
+    "id": "taekwondo__위력격파",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "격파는 태권도 시범·심사 형식으로 다른 무술의 기술이 아니다.",
+    "evidence": "기준: breaking은 none"
+  },
+  {
+    "id": "taekwondo__위력격파",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "격파는 태권도 시범·심사 형식으로 다른 무술의 기술이 아니다.",
+    "evidence": "기준: breaking은 none"
+  },
+  {
+    "id": "taekwondo__위력격파",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "격파는 태권도 시범·심사 형식으로 다른 무술의 기술이 아니다.",
+    "evidence": "기준: breaking은 none"
+  },
+  {
+    "id": "taekwondo__위력격파",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "격파는 태권도 시범·심사 형식으로 다른 무술의 기술이 아니다.",
+    "evidence": "기준: breaking은 none"
+  },
+  {
+    "id": "taekwondo__정확격파",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "격파는 태권도 시범·심사 형식으로 다른 무술의 기술이 아니다.",
+    "evidence": "기준: breaking은 none"
+  },
+  {
+    "id": "taekwondo__정확격파",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "격파는 태권도 시범·심사 형식으로 다른 무술의 기술이 아니다.",
+    "evidence": "기준: breaking은 none"
+  },
+  {
+    "id": "taekwondo__정확격파",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "격파는 태권도 시범·심사 형식으로 다른 무술의 기술이 아니다.",
+    "evidence": "기준: breaking은 none"
+  },
+  {
+    "id": "taekwondo__정확격파",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "격파는 태권도 시범·심사 형식으로 다른 무술의 기술이 아니다.",
+    "evidence": "기준: breaking은 none"
+  },
+  {
+    "id": "taekwondo__시범격파",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "격파는 태권도 시범·심사 형식으로 다른 무술의 기술이 아니다.",
+    "evidence": "기준: breaking은 none"
+  },
+  {
+    "id": "taekwondo__시범격파",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "격파는 태권도 시범·심사 형식으로 다른 무술의 기술이 아니다.",
+    "evidence": "기준: breaking은 none"
+  },
+  {
+    "id": "taekwondo__시범격파",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "격파는 태권도 시범·심사 형식으로 다른 무술의 기술이 아니다.",
+    "evidence": "기준: breaking은 none"
+  },
+  {
+    "id": "taekwondo__시범격파",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "격파는 태권도 시범·심사 형식으로 다른 무술의 기술이 아니다.",
+    "evidence": "기준: breaking은 none"
+  },
+  {
+    "id": "taekwondo__앞낙법",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "낙법은 해당 입식 타격 무술의 표준 커리큘럼이 아니다.",
+    "evidence": "boxing 카탈로그에 낙법(ukemi) 항목 없음"
+  },
+  {
+    "id": "taekwondo__앞낙법",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "낙법은 해당 입식 타격 무술의 표준 커리큘럼이 아니다.",
+    "evidence": "kickboxing 카탈로그에 낙법(ukemi) 항목 없음"
+  },
+  {
+    "id": "taekwondo__앞낙법",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "낙법은 해당 입식 타격 무술의 표준 커리큘럼이 아니다.",
+    "evidence": "muay-thai 카탈로그에 낙법(ukemi) 항목 없음"
+  },
+  {
+    "id": "taekwondo__앞낙법",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "낙법은 해당 입식 타격 무술의 표준 커리큘럼이 아니다.",
+    "evidence": "karate 카탈로그에 낙법(ukemi) 항목 없음"
+  },
+  {
+    "id": "taekwondo__뒤낙법",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "낙법은 해당 입식 타격 무술의 표준 커리큘럼이 아니다.",
+    "evidence": "boxing 카탈로그에 낙법(ukemi) 항목 없음"
+  },
+  {
+    "id": "taekwondo__뒤낙법",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "낙법은 해당 입식 타격 무술의 표준 커리큘럼이 아니다.",
+    "evidence": "kickboxing 카탈로그에 낙법(ukemi) 항목 없음"
+  },
+  {
+    "id": "taekwondo__뒤낙법",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "낙법은 해당 입식 타격 무술의 표준 커리큘럼이 아니다.",
+    "evidence": "muay-thai 카탈로그에 낙법(ukemi) 항목 없음"
+  },
+  {
+    "id": "taekwondo__뒤낙법",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "낙법은 해당 입식 타격 무술의 표준 커리큘럼이 아니다.",
+    "evidence": "karate 카탈로그에 낙법(ukemi) 항목 없음"
+  },
+  {
+    "id": "taekwondo__옆낙법",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "낙법은 해당 입식 타격 무술의 표준 커리큘럼이 아니다.",
+    "evidence": "boxing 카탈로그에 낙법(ukemi) 항목 없음"
+  },
+  {
+    "id": "taekwondo__옆낙법",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "낙법은 해당 입식 타격 무술의 표준 커리큘럼이 아니다.",
+    "evidence": "kickboxing 카탈로그에 낙법(ukemi) 항목 없음"
+  },
+  {
+    "id": "taekwondo__옆낙법",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "낙법은 해당 입식 타격 무술의 표준 커리큘럼이 아니다.",
+    "evidence": "muay-thai 카탈로그에 낙법(ukemi) 항목 없음"
+  },
+  {
+    "id": "taekwondo__옆낙법",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "낙법은 해당 입식 타격 무술의 표준 커리큘럼이 아니다.",
+    "evidence": "karate 카탈로그에 낙법(ukemi) 항목 없음"
+  },
+  {
+    "id": "taekwondo__굴러-낙법",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "낙법은 해당 입식 타격 무술의 표준 커리큘럼이 아니다.",
+    "evidence": "boxing 카탈로그에 낙법(ukemi) 항목 없음"
+  },
+  {
+    "id": "taekwondo__굴러-낙법",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "낙법은 해당 입식 타격 무술의 표준 커리큘럼이 아니다.",
+    "evidence": "kickboxing 카탈로그에 낙법(ukemi) 항목 없음"
+  },
+  {
+    "id": "taekwondo__굴러-낙법",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "낙법은 해당 입식 타격 무술의 표준 커리큘럼이 아니다.",
+    "evidence": "muay-thai 카탈로그에 낙법(ukemi) 항목 없음"
+  },
+  {
+    "id": "taekwondo__굴러-낙법",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "낙법은 해당 입식 타격 무술의 표준 커리큘럼이 아니다.",
+    "evidence": "karate 카탈로그에 낙법(ukemi) 항목 없음"
+  },
+  {
+    "id": "taekwondo__손목-잡힘-대응",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "호신술 드릴일 뿐 해당 무술의 기술이 아니다.",
+    "evidence": "기준: self-defense drill only는 none"
+  },
+  {
+    "id": "taekwondo__손목-잡힘-대응",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "호신술 드릴일 뿐 해당 무술의 기술이 아니다.",
+    "evidence": "기준: self-defense drill only는 none"
+  },
+  {
+    "id": "taekwondo__손목-잡힘-대응",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "호신술 드릴일 뿐 해당 무술의 기술이 아니다.",
+    "evidence": "기준: self-defense drill only는 none"
+  },
+  {
+    "id": "taekwondo__손목-잡힘-대응",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "호신술 드릴일 뿐 해당 무술의 기술이 아니다.",
+    "evidence": "기준: self-defense drill only는 none"
+  },
+  {
+    "id": "taekwondo__옷깃-어깨-잡힘-대응",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "호신술 드릴일 뿐 해당 무술의 기술이 아니다.",
+    "evidence": "기준: self-defense drill only는 none"
+  },
+  {
+    "id": "taekwondo__옷깃-어깨-잡힘-대응",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "호신술 드릴일 뿐 해당 무술의 기술이 아니다.",
+    "evidence": "기준: self-defense drill only는 none"
+  },
+  {
+    "id": "taekwondo__옷깃-어깨-잡힘-대응",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "호신술 드릴일 뿐 해당 무술의 기술이 아니다.",
+    "evidence": "기준: self-defense drill only는 none"
+  },
+  {
+    "id": "taekwondo__옷깃-어깨-잡힘-대응",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "호신술 드릴일 뿐 해당 무술의 기술이 아니다.",
+    "evidence": "기준: self-defense drill only는 none"
+  },
+  {
+    "id": "taekwondo__뒤에서-안겼을-때-대응",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "호신술 드릴일 뿐 해당 무술의 기술이 아니다.",
+    "evidence": "기준: self-defense drill only는 none"
+  },
+  {
+    "id": "taekwondo__뒤에서-안겼을-때-대응",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "호신술 드릴일 뿐 해당 무술의 기술이 아니다.",
+    "evidence": "기준: self-defense drill only는 none"
+  },
+  {
+    "id": "taekwondo__뒤에서-안겼을-때-대응",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "호신술 드릴일 뿐 해당 무술의 기술이 아니다.",
+    "evidence": "기준: self-defense drill only는 none"
+  },
+  {
+    "id": "taekwondo__뒤에서-안겼을-때-대응",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "호신술 드릴일 뿐 해당 무술의 기술이 아니다.",
+    "evidence": "기준: self-defense drill only는 none"
+  }
+]

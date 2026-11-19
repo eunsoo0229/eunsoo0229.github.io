@@ -1,0 +1,2202 @@
+[
+  {
+    "id": "wrestling__motion-circle",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 고유의 이동 원리로 해당 무술의 표준 기술로 볼 수 없다.",
+    "evidence": "카탈로그에 동일 항목 없음; 레슬링 모션 개념"
+  },
+  {
+    "id": "wrestling__motion-circle",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 고유의 이동 원리로 해당 무술의 표준 기술로 볼 수 없다.",
+    "evidence": "유도는 Tai Sabaki/Ayumi Ashi로 별도 체계화; 카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__motion-circle",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 고유의 이동 원리로 해당 무술의 표준 기술로 볼 수 없다.",
+    "evidence": "카탈로그에 동일 항목 없음; 레슬링 모션 개념"
+  },
+  {
+    "id": "wrestling__shuffle-step",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ의 표준 기술 목록에 속하는 풋워크가 아니다.",
+    "evidence": "catalog-bjj에 스탠딩 풋워크 항목 없음"
+  },
+  {
+    "id": "wrestling__shuffle-step",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "judo__tsugi-ashi",
+    "reason": "유도의 츠기아시(미끄러지는 걸음)와 같은 동작이 이미 카탈로그에 있다.",
+    "evidence": "catalog-judo: judo__tsugi-ashi Tsugi Ashi / 미끄러지는 걸음"
+  },
+  {
+    "id": "wrestling__shuffle-step",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": "sambo__footwork",
+    "reason": "삼보 카탈로그의 풋워크 항목에 포함되는 일반 이동으로 별도 연결하지 않는다.",
+    "evidence": "catalog-sambo: sambo__footwork Footwork"
+  },
+  {
+    "id": "wrestling__switch",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 바텀 리버설로 해당 무술에서 같은 이름·형태로 가르치지 않는다.",
+    "evidence": "레슬링 referee's position 리버설; 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__switch",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 바텀 리버설로 해당 무술에서 같은 이름·형태로 가르치지 않는다.",
+    "evidence": "레슬링 referee's position 리버설; 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__switch",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 바텀 리버설로 해당 무술에서 같은 이름·형태로 가르치지 않는다.",
+    "evidence": "레슬링 referee's position 리버설; 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__neutral",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 경기 규칙상의 시작 포지션 개념으로 기술이 아니다.",
+    "evidence": "레슬링 규칙의 neutral position(경기 시작 자세) = 규칙 개념"
+  },
+  {
+    "id": "wrestling__neutral",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 경기 규칙상의 시작 포지션 개념으로 기술이 아니다.",
+    "evidence": "레슬링 규칙의 neutral position(경기 시작 자세) = 규칙 개념"
+  },
+  {
+    "id": "wrestling__neutral",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 경기 규칙상의 시작 포지션 개념으로 기술이 아니다.",
+    "evidence": "레슬링 규칙의 neutral position(경기 시작 자세) = 규칙 개념"
+  },
+  {
+    "id": "wrestling__square-stance",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 고유 스탠스로 BJJ 기술로 연결하지 않는다.",
+    "evidence": "catalog-bjj에 스탠스 항목 없음"
+  },
+  {
+    "id": "wrestling__square-stance",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": "judo__shizen-hontai",
+    "reason": "유도의 시젠혼타이(정면 자연 자세)가 같은 자세로 이미 있다.",
+    "evidence": "catalog-judo: judo__shizen-hontai Shizen Hontai"
+  },
+  {
+    "id": "wrestling__square-stance",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": "sambo__스탠스",
+    "reason": "삼보 카탈로그의 스탠스 항목과 중복된다.",
+    "evidence": "catalog-sambo: sambo__스탠스"
+  },
+  {
+    "id": "wrestling__staggered-stance",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 고유 스탠스로 BJJ 기술로 연결하지 않는다.",
+    "evidence": "catalog-bjj에 스탠스 항목 없음"
+  },
+  {
+    "id": "wrestling__staggered-stance",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": "judo__migi-shizentai-hidari-shizentai",
+    "reason": "유도의 우/좌 자연 자세(미기/히다리 시젠타이)와 같은 자세가 이미 있다.",
+    "evidence": "catalog-judo: judo__migi-shizentai-hidari-shizentai"
+  },
+  {
+    "id": "wrestling__staggered-stance",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": "sambo__스탠스",
+    "reason": "삼보 카탈로그의 스탠스 항목과 중복된다.",
+    "evidence": "catalog-sambo: sambo__스탠스"
+  },
+  {
+    "id": "wrestling__low-stance",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 고유 스탠스로 BJJ 기술로 연결하지 않는다.",
+    "evidence": "catalog-bjj에 스탠스 항목 없음"
+  },
+  {
+    "id": "wrestling__low-stance",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": "judo__jigo-hontai",
+    "reason": "유도의 지고혼타이(낮은 방어 자세)가 이미 있다.",
+    "evidence": "catalog-judo: judo__jigo-hontai Jigo Hontai"
+  },
+  {
+    "id": "wrestling__low-stance",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": "sambo__스탠스",
+    "reason": "삼보 카탈로그의 스탠스 항목과 중복된다.",
+    "evidence": "catalog-sambo: sambo__스탠스"
+  },
+  {
+    "id": "wrestling__shuck-by",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 셋업 동작으로 해당 무술의 표준 커리큘럼 기술이 아니다.",
+    "evidence": "카탈로그에 동일 기술 없음 (암드래그와는 별개 동작)"
+  },
+  {
+    "id": "wrestling__shuck-by",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 셋업 동작으로 해당 무술의 표준 커리큘럼 기술이 아니다.",
+    "evidence": "카탈로그에 동일 기술 없음 (암드래그와는 별개 동작)"
+  },
+  {
+    "id": "wrestling__shuck-by",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 셋업 동작으로 해당 무술의 표준 커리큘럼 기술이 아니다.",
+    "evidence": "카탈로그에 동일 기술 없음 (암드래그와는 별개 동작)"
+  },
+  {
+    "id": "wrestling__throw-by",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 셋업 동작으로 해당 무술의 표준 커리큘럼 기술이 아니다.",
+    "evidence": "카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__throw-by",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 셋업 동작으로 해당 무술의 표준 커리큘럼 기술이 아니다.",
+    "evidence": "카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__throw-by",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 셋업 동작으로 해당 무술의 표준 커리큘럼 기술이 아니다.",
+    "evidence": "카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__near-ankle",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 싱글 레그 세부 그립으로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__near-ankle",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도는 다리 직접 잡기가 금지되어 해당 그립을 쓰지 않는다.",
+    "evidence": "IJF 심판규정(2013~): 띠 아래 다리 직접 잡기 금지(반칙패)"
+  },
+  {
+    "id": "wrestling__near-ankle",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 싱글 레그 세부 그립으로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__far-ankle",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 싱글 레그 세부 그립으로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__far-ankle",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도는 다리 직접 잡기가 금지되어 해당 그립을 쓰지 않는다.",
+    "evidence": "IJF 심판규정(2013~): 띠 아래 다리 직접 잡기 금지(반칙패)"
+  },
+  {
+    "id": "wrestling__far-ankle",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 싱글 레그 세부 그립으로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__crackdown-position",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 싱글 레그 세부 통제 자세로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__crackdown-position",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도는 다리 잡기가 금지되어 싱글 레그 통제 자세가 없다.",
+    "evidence": "IJF 심판규정(2013~): 띠 아래 다리 직접 잡기 금지(반칙패)"
+  },
+  {
+    "id": "wrestling__crackdown-position",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 싱글 레그 세부 통제 자세로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__cutback",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 싱글 레그 세부 마무리로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__cutback",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도는 다리 잡기가 금지되어 싱글 레그 마무리가 없다.",
+    "evidence": "IJF 심판규정(2013~): 띠 아래 다리 직접 잡기 금지(반칙패)"
+  },
+  {
+    "id": "wrestling__cutback",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 싱글 레그 세부 마무리로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__switch-off",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 싱글 레그 연결 동작으로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__switch-off",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도는 다리 잡기가 금지되어 싱글 레그 연결 동작이 없다.",
+    "evidence": "IJF 심판규정(2013~): 띠 아래 다리 직접 잡기 금지(반칙패)"
+  },
+  {
+    "id": "wrestling__switch-off",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 싱글 레그 연결 동작으로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__snatch-double",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "더블 레그 세부 변형으로 해당 무술에서 별도 기술로 가르치지 않는다.",
+    "evidence": "카탈로그엔 기본 더블 레그(wrestling__basic-double-leg)만 존재; 변형은 별개"
+  },
+  {
+    "id": "wrestling__snatch-double",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도는 다리 잡기가 금지되어 더블 레그 변형을 쓰지 않는다.",
+    "evidence": "IJF 심판규정(2013~): 띠 아래 다리 직접 잡기 금지(반칙패)"
+  },
+  {
+    "id": "wrestling__snatch-double",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "더블 레그 세부 변형으로 해당 무술에서 별도 기술로 가르치지 않는다.",
+    "evidence": "카탈로그엔 기본 더블 레그(wrestling__basic-double-leg)만 존재; 변형은 별개"
+  },
+  {
+    "id": "wrestling__low-double",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "더블 레그 세부 변형으로 해당 무술에서 별도 기술로 가르치지 않는다.",
+    "evidence": "카탈로그엔 기본 더블 레그(wrestling__basic-double-leg)만 존재; 변형은 별개"
+  },
+  {
+    "id": "wrestling__low-double",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도는 다리 잡기가 금지되어 더블 레그 변형을 쓰지 않는다.",
+    "evidence": "IJF 심판규정(2013~): 띠 아래 다리 직접 잡기 금지(반칙패)"
+  },
+  {
+    "id": "wrestling__low-double",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "더블 레그 세부 변형으로 해당 무술에서 별도 기술로 가르치지 않는다.",
+    "evidence": "카탈로그엔 기본 더블 레그(wrestling__basic-double-leg)만 존재; 변형은 별개"
+  },
+  {
+    "id": "wrestling__cutback-finish",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 더블 레그 세부 마무리로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__cutback-finish",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도는 다리 잡기가 금지되어 더블 레그 마무리가 없다.",
+    "evidence": "IJF 심판규정(2013~): 띠 아래 다리 직접 잡기 금지(반칙패)"
+  },
+  {
+    "id": "wrestling__cutback-finish",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 더블 레그 세부 마무리로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__reshot-double",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 더블 레그 재진입 동작으로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__reshot-double",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도는 다리 잡기가 금지되어 더블 레그 재진입이 없다.",
+    "evidence": "IJF 심판규정(2013~): 띠 아래 다리 직접 잡기 금지(반칙패)"
+  },
+  {
+    "id": "wrestling__reshot-double",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 더블 레그 재진입 동작으로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__locking-hands-position",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "바디락의 손 자세 세부로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__locking-hands-position",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "바디락의 손 자세 세부로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__locking-hands-position",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "바디락의 손 자세 세부로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__bear-hug-style-control",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": "wrestling__body-lock",
+    "reason": "이미 카탈로그의 바디락 항목과 사실상 같은 통제다.",
+    "evidence": "catalog-bjj: wrestling__body-lock Body Lock"
+  },
+  {
+    "id": "wrestling__bear-hug-style-control",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도는 그립 없는 베어허그가 지도 반칙이라 표준 통제 방식이 아니다.",
+    "evidence": "IJF 규정: 최소 한 손 그립 없이 베어허그 시 지도"
+  },
+  {
+    "id": "wrestling__bear-hug-style-control",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": "wrestling__body-lock",
+    "reason": "이미 카탈로그의 바디락 항목과 사실상 같은 통제다.",
+    "evidence": "catalog-sambo: wrestling__body-lock Body Lock"
+  },
+  {
+    "id": "wrestling__double-ankle-pick",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "앵클 픽의 양손 변형으로 해당 무술에서 별도 기술로 가르치지 않는다.",
+    "evidence": "카탈로그엔 단일 Ankle Pick(wrestling__ankle-pick)만 존재; 변형은 별개"
+  },
+  {
+    "id": "wrestling__double-ankle-pick",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도는 다리 직접 잡기가 금지되어 있다.",
+    "evidence": "IJF 심판규정(2013~): 띠 아래 다리 직접 잡기 금지(반칙패)"
+  },
+  {
+    "id": "wrestling__double-ankle-pick",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "앵클 픽의 양손 변형으로 해당 무술에서 별도 기술로 가르치지 않는다.",
+    "evidence": "카탈로그엔 단일 Ankle Pick(wrestling__ankle-pick)만 존재; 변형은 별개"
+  },
+  {
+    "id": "wrestling__head-and-arm-throw",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 표준 커리큘럼의 던지기로 보기 어렵다.",
+    "evidence": "catalog-bjj에 해당 던지기 없음"
+  },
+  {
+    "id": "wrestling__head-and-arm-throw",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": "judo__koshi-guruma",
+    "reason": "유도의 고시구루마(목 감아 허리 바퀴)와 같은 던지기가 이미 있다.",
+    "evidence": "catalog-judo: judo__koshi-guruma Koshi Guruma"
+  },
+  {
+    "id": "wrestling__head-and-arm-throw",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": "sambo__с-захватом-шеи",
+    "reason": "삼보의 목 잡고 허리 던지기(с захватом шеи)와 같은 기술이 이미 있다.",
+    "evidence": "catalog-sambo: sambo__с-захватом-шеи (бросок через бедро с захватом шеи)"
+  },
+  {
+    "id": "wrestling__headlock-throw",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 표준 테이크다운 목록에 없는 던지기다.",
+    "evidence": "catalog-bjj 스탠딩/테이크다운에 해당 없음"
+  },
+  {
+    "id": "wrestling__headlock-throw",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "judo__koshi-guruma",
+    "reason": "유도의 고시구루마와 같은 기술이 이미 있다.",
+    "evidence": "catalog-judo: judo__koshi-guruma Koshi Guruma (목 감아 허리 던지기)"
+  },
+  {
+    "id": "wrestling__headlock-throw",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "sambo__с-захватом-шеи",
+    "reason": "삼보의 목 잡고 허리 던지기가 이미 있다.",
+    "evidence": "catalog-sambo: sambo__с-захватом-шеи"
+  },
+  {
+    "id": "wrestling__arm-spin",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 표준 테이크다운이 아니다.",
+    "evidence": "catalog-bjj에 해당 없음"
+  },
+  {
+    "id": "wrestling__arm-spin",
+    "art": "judo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "팔을 잡고 회전하는 던지기로 대응 기술(세오이/마키코미 계열)과 동일성이 불분명하다.",
+    "evidence": "judo Seoi Otoshi/Makikomi, sambo Вертушка와 형태 비교 필요"
+  },
+  {
+    "id": "wrestling__arm-spin",
+    "art": "sambo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "팔을 잡고 회전하는 던지기로 대응 기술(세오이/마키코미 계열)과 동일성이 불분명하다.",
+    "evidence": "judo Seoi Otoshi/Makikomi, sambo Вертушка와 형태 비교 필요"
+  },
+  {
+    "id": "wrestling__arm-throw",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 표준 테이크다운 목록에 없는 던지기다.",
+    "evidence": "catalog-bjj에 세오이 계열 없음"
+  },
+  {
+    "id": "wrestling__arm-throw",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "judo__ippon-seoi-nage",
+    "reason": "유도의 잇폰세오이나게와 같은 기술이 이미 있다.",
+    "evidence": "catalog-judo: judo__ippon-seoi-nage Ippon Seoi Nage"
+  },
+  {
+    "id": "wrestling__arm-throw",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "sambo__захватом-руки-на-плечо",
+    "reason": "삼보의 팔을 어깨 위로 잡는 등 던지기가 이미 있다.",
+    "evidence": "catalog-sambo: sambo__захватом-руки-на-плечо (бросок через спину)"
+  },
+  {
+    "id": "wrestling__hip-toss",
+    "art": "bjj",
+    "decision": "add",
+    "confidence": "B",
+    "category": "스탠딩 / 테이크다운",
+    "duplicateOf": null,
+    "reason": "힙 토스는 BJJ 기본 스탠딩 커리큘럼에서 가르치는 허리 던지기다.",
+    "evidence": "Gracie Combatives/BJJ 기본 테이크다운 커리큘럼의 Hip Toss(O Goshi); catalog-bjj에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__hip-toss",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "judo__o-goshi",
+    "reason": "유도의 오고시(큰 허리)와 같은 기술이 이미 있다.",
+    "evidence": "catalog-judo: judo__o-goshi O Goshi"
+  },
+  {
+    "id": "wrestling__hip-toss",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "sambo__бросок-через-бедро",
+    "reason": "삼보의 허리 던지기(Бросок через бедро)가 이미 있다.",
+    "evidence": "catalog-sambo: sambo__бросок-через-бедро"
+  },
+  {
+    "id": "wrestling__lateral-drop",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 표준 테이크다운이 아니다.",
+    "evidence": "catalog-bjj에 해당 없음"
+  },
+  {
+    "id": "wrestling__lateral-drop",
+    "art": "judo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "옆으로 몸을 던지는 희생 던지기로 대응 기술과의 동일성이 불분명하다.",
+    "evidence": "judo Ura Nage/Yoko Guruma와 형태 비교 필요"
+  },
+  {
+    "id": "wrestling__lateral-drop",
+    "art": "sambo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "옆으로 몸을 던지는 희생 던지기로 대응 기술과의 동일성이 불분명하다.",
+    "evidence": "sambo Бросок через грудь와 형태 비교 필요"
+  },
+  {
+    "id": "wrestling__head-and-arm-spin",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 표준 테이크다운이 아니다.",
+    "evidence": "catalog-bjj에 해당 없음"
+  },
+  {
+    "id": "wrestling__head-and-arm-spin",
+    "art": "judo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "목·팔 감아 회전하는 던지기로 고시구루마 계열과 동일 기술인지 불분명하다.",
+    "evidence": "judo Koshi Guruma와 비교 필요"
+  },
+  {
+    "id": "wrestling__head-and-arm-spin",
+    "art": "sambo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "목·팔 감아 회전하는 던지기로 고시구루마 계열과 동일 기술인지 불분명하다.",
+    "evidence": "sambo с захватом шеи와 비교 필요"
+  },
+  {
+    "id": "wrestling__duckunder-to-throw",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 연결 동작으로 해당 무술의 표준 기술로 볼 수 없다.",
+    "evidence": "카탈로그에 동일 연결 기술 없음"
+  },
+  {
+    "id": "wrestling__duckunder-to-throw",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 연결 동작으로 해당 무술의 표준 기술로 볼 수 없다.",
+    "evidence": "카탈로그에 동일 연결 기술 없음"
+  },
+  {
+    "id": "wrestling__duckunder-to-throw",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 연결 동작으로 해당 무술의 표준 기술로 볼 수 없다.",
+    "evidence": "카탈로그에 동일 연결 기술 없음"
+  },
+  {
+    "id": "wrestling__body-lock-throw",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 카탈로그의 바디락 테이크다운 외 별도 던지기로 보기 어렵다.",
+    "evidence": "catalog-bjj: wrestling__body-lock만 존재"
+  },
+  {
+    "id": "wrestling__body-lock-throw",
+    "art": "judo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "바디락 회전 던지기로 대응 기술(우츠리고시/우라나게, 허리 던지기)과 동일성이 불분명하다.",
+    "evidence": "judo Ura Nage/Utsuri Goshi, IJF 베어허그 규정 확인 필요"
+  },
+  {
+    "id": "wrestling__body-lock-throw",
+    "art": "sambo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "바디락 회전 던지기로 대응 기술(우츠리고시/우라나게, 허리 던지기)과 동일성이 불분명하다.",
+    "evidence": "sambo с захватом пояса 등과 비교 필요"
+  },
+  {
+    "id": "wrestling__gut-wrench",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 고유의 몸통 굴리기로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__gut-wrench",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 고유의 몸통 굴리기로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__gut-wrench",
+    "art": "sambo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "파르테르에서 몸통 굴리기로 삼보 뒤집기 기술과 같은지 불분명하다.",
+    "evidence": "sambo 파르테르 перевороты와 비교 필요"
+  },
+  {
+    "id": "wrestling__suplex",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 표준 테이크다운이 아니다.",
+    "evidence": "catalog-bjj에 해당 없음"
+  },
+  {
+    "id": "wrestling__suplex",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": "judo__ura-nage",
+    "reason": "유도의 우라나게(뒤로 젖혀 던지기)와 같은 기술이 이미 있다.",
+    "evidence": "catalog-judo: judo__ura-nage Ura Nage"
+  },
+  {
+    "id": "wrestling__suplex",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": "sambo__бросок-через-грудь",
+    "reason": "삼보의 가슴으로 던지기(Бросок через грудь)가 이미 있다.",
+    "evidence": "catalog-sambo: sambo__бросок-через-грудь"
+  },
+  {
+    "id": "wrestling__headlock",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "스탠딩 헤드락 그립은 유도의 독립 그립 기술로 분류되지 않는다.",
+    "evidence": "catalog-judo Kumi Kata 목록에 헤드락 없음 (목 감기는 Koshi Guruma 일부)"
+  },
+  {
+    "id": "wrestling__lift",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "들어올리기는 던지기의 일부일 뿐 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__lift",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "들어올리기는 던지기의 일부일 뿐 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__front-headlock-exposure",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 프론트 헤드락 세부 동작으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__front-headlock-exposure",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 프론트 헤드락 세부 동작으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__front-headlock-exposure",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 프론트 헤드락 세부 동작으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__near-side-crank-position",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 프론트 헤드락 세부 통제로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__near-side-crank-position",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 프론트 헤드락 세부 통제로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__near-side-crank-position",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 프론트 헤드락 세부 통제로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__front-headlock-to-ankle",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 연결 동작으로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__front-headlock-to-ankle",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도는 다리 직접 잡기가 금지되어 있다.",
+    "evidence": "IJF 심판규정(2013~): 띠 아래 다리 직접 잡기 금지(반칙패)"
+  },
+  {
+    "id": "wrestling__front-headlock-to-ankle",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 연결 동작으로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__tight-waist",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 라이딩 그립으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__tight-waist",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 라이딩 그립으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__tight-waist",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 라이딩 그립으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__wrist-ride",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 라이딩 기술로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__wrist-ride",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 라이딩 기술로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__wrist-ride",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 라이딩 기술로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__claw-ride",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 라이딩 기술로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__claw-ride",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 라이딩 기술로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__claw-ride",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 라이딩 기술로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__chop",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 브레이크다운 동작으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__chop",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 브레이크다운 동작으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__chop",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 브레이크다운 동작으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__ankle-ride",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 라이딩 기술로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__ankle-ride",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 라이딩 기술로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__ankle-ride",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 라이딩 기술로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__leg-ride",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 라이딩(레그 라이드)으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__leg-ride",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 라이딩(레그 라이드)으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__leg-ride",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 라이딩(레그 라이드)으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__half-nelson",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 핀 기술로 해당 무술 커리큘럼의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__half-nelson",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 핀 기술로 해당 무술 커리큘럼의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__half-nelson",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 핀 기술로 해당 무술 커리큘럼의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__power-half-nelson",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 하프 넬슨 변형으로 해당 무술의 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__power-half-nelson",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 하프 넬슨 변형으로 해당 무술의 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__power-half-nelson",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 하프 넬슨 변형으로 해당 무술의 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__bar-arm",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 핀 통제 그립으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__bar-arm",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 핀 통제 그립으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__bar-arm",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 핀 통제 그립으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__cross-wrist",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 라이딩 그립으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__cross-wrist",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 라이딩 그립으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__cross-wrist",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 라이딩 그립으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__wrist-tilt",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__wrist-tilt",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__wrist-tilt",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__two-on-one-tilt",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__two-on-one-tilt",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__two-on-one-tilt",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__near-wrist-tilt",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__near-wrist-tilt",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__near-wrist-tilt",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__far-wrist-tilt",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__far-wrist-tilt",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__far-wrist-tilt",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__guillotine-tilt",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__guillotine-tilt",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__guillotine-tilt",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__tight-waist-tilt",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__tight-waist-tilt",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__tight-waist-tilt",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__turk-tilt",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__turk-tilt",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__turk-tilt",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__ankle-tilt",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__ankle-tilt",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__ankle-tilt",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__navy-ride-tilt",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__navy-ride-tilt",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__navy-ride-tilt",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 백포인트 득점용 틸트로 해당 무술 규칙에 없는 개념이다.",
+    "evidence": "포크스타일/자유형 백포인트(near fall) 득점용 틸트 = 레슬링 득점 규칙 개념"
+  },
+  {
+    "id": "wrestling__near-side-cradle",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 크래들 핀으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__near-side-cradle",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 크래들 핀으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__near-side-cradle",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 크래들 핀으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__far-side-cradle",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 크래들 핀으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__far-side-cradle",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 크래들 핀으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__far-side-cradle",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 크래들 핀으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__guillotine-cradle",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 크래들 변형으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__guillotine-cradle",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 크래들 변형으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__guillotine-cradle",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 크래들 변형으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__cross-face-cradle",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 크래들 변형으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__cross-face-cradle",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 크래들 변형으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__cross-face-cradle",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 크래들 변형으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__reverse-cradle",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 크래들 변형으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__reverse-cradle",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 크래들 변형으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__reverse-cradle",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 크래들 변형으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__half-nelson-to-cradle",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 핀 연결 동작으로 해당 무술의 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__half-nelson-to-cradle",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 핀 연결 동작으로 해당 무술의 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__half-nelson-to-cradle",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 핀 연결 동작으로 해당 무술의 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__half-nelson-to-bar-arm",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 핀 연결 동작으로 해당 무술의 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__half-nelson-to-bar-arm",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 핀 연결 동작으로 해당 무술의 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__half-nelson-to-bar-arm",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 핀 연결 동작으로 해당 무술의 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__double-half-nelson",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 넬슨 그립 변형으로 해당 무술의 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__double-half-nelson",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 넬슨 그립 변형으로 해당 무술의 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__double-half-nelson",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 넬슨 그립 변형으로 해당 무술의 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__turk-to-half-nelson",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 핀 연결 동작으로 해당 무술의 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__turk-to-half-nelson",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 핀 연결 동작으로 해당 무술의 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__turk-to-half-nelson",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 핀 연결 동작으로 해당 무술의 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__chicken-wing",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링의 팔 꺾어 굴리는 핀 통제로 해당 무술의 표준 기술과 다르다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음 (관절기 키무라/узел와는 목적이 다름)"
+  },
+  {
+    "id": "wrestling__chicken-wing",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링의 팔 꺾어 굴리는 핀 통제로 해당 무술의 표준 기술과 다르다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음 (관절기 키무라/узел와는 목적이 다름)"
+  },
+  {
+    "id": "wrestling__chicken-wing",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링의 팔 꺾어 굴리는 핀 통제로 해당 무술의 표준 기술과 다르다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음 (관절기 키무라/узел와는 목적이 다름)"
+  },
+  {
+    "id": "wrestling__guillotine-pin-combination",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "양어깨 폴(핀)을 위한 레슬링 득점 규칙 기반 조합이다.",
+    "evidence": "레슬링 폴(fall) 규칙 기반 핀 조합"
+  },
+  {
+    "id": "wrestling__guillotine-pin-combination",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "양어깨 폴(핀)을 위한 레슬링 득점 규칙 기반 조합이다.",
+    "evidence": "레슬링 폴(fall) 규칙 기반 핀 조합"
+  },
+  {
+    "id": "wrestling__guillotine-pin-combination",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "양어깨 폴(핀)을 위한 레슬링 득점 규칙 기반 조합이다.",
+    "evidence": "레슬링 폴(fall) 규칙 기반 핀 조합"
+  },
+  {
+    "id": "wrestling__tight-waist-and-half-nelson",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 핀 조합 기술로 해당 무술의 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__tight-waist-and-half-nelson",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 핀 조합 기술로 해당 무술의 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__tight-waist-and-half-nelson",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 핀 조합 기술로 해당 무술의 기술이 아니다.",
+    "evidence": "레슬링 탑 포지션 라이딩/핀 개념; 해당 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "wrestling__base",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 레프리 포지션 바텀 자세로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "레슬링 referee's position 바텀 = 경기 시작 자세; 카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__base",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 레프리 포지션 바텀 자세로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "레슬링 referee's position 바텀 = 경기 시작 자세; 카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__peterson-roll",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 바텀 리버설로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__peterson-roll",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 바텀 리버설로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__peterson-roll",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 바텀 리버설로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__quadpod",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 바텀 자세 세부로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__quadpod",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 바텀 자세 세부로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__quadpod",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 바텀 자세 세부로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__tripod",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 바텀 자세 세부로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__tripod",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 바텀 자세 세부로 해당 무술의 독립 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__peek-out",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 바텀 탈출 세부 동작으로 해당 무술의 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__peek-out",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 바텀 탈출 세부 동작으로 해당 무술의 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__peek-out",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 바텀 탈출 세부 동작으로 해당 무술의 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__switch-to-attack",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 스위치 응용으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__switch-to-attack",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 스위치 응용으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__switch-to-attack",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 스위치 응용으로 해당 무술의 표준 기술이 아니다.",
+    "evidence": "카탈로그에 동일 항목 없음"
+  },
+  {
+    "id": "wrestling__knee-slide",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 바텀 이동 세부 동작이며 BJJ 니 슬라이드 패스와는 다른 동작이다.",
+    "evidence": "카탈로그에 동일 항목 없음 (BJJ Knee Cut Pass와 별개)"
+  },
+  {
+    "id": "wrestling__knee-slide",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 바텀 이동 세부 동작이며 BJJ 니 슬라이드 패스와는 다른 동작이다.",
+    "evidence": "카탈로그에 동일 항목 없음 (BJJ Knee Cut Pass와 별개)"
+  },
+  {
+    "id": "wrestling__knee-slide",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 바텀 이동 세부 동작이며 BJJ 니 슬라이드 패스와는 다른 동작이다.",
+    "evidence": "카탈로그에 동일 항목 없음 (BJJ Knee Cut Pass와 별개)"
+  }
+]

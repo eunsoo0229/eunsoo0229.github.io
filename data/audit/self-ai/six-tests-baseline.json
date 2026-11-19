@@ -1,0 +1,397 @@
+{
+  "at": "2026-10-31T17:58:42.013Z",
+  "label": "baseline",
+  "results": [
+    {
+      "id": "A",
+      "text": "MARTIALDEX 자료에 따르면 암바(Armbar)의 핵심 포인트는 세 가지입니다. 첫째, 다리를 상대 머리 위로 완전히 넘기기. 둘째, 무릎을 좁게 조여 팔이 빠지지 않게 하기. 셋째, 고관절을 들어 올려 압박 만들기. 그리고 암바(Armbar)의 흔한 실수는 세 가지입니다. 첫째, 다리를 상대 머리 위로 완전히 넘기지 못해 탈출 공간을 허용함. 둘째, 무릎을 조이지 않아 상대가 팔을 회전시켜 빠져나감. 셋째, 고관절을 들지 않고 팔로만 당겨 압박이 약해짐. 그리고 암바(Armbar)의 기술 설명은 두 가지입니다. 첫째, 암바는 클로즈드 가드에서 상대의 한쪽 팔을 다리 사이에 고정하고 고관절을 밀어 올려 팔꿈치 관절을 펴는 방식으로 제압하는 관절기입니다. 둘째, 십자 굳히기 --- 팔꿈치를 반대로 꺾는 대표 암바. 그리고 MARTIALDEX 자료에 따르면 암바는 클로즈드 가드에서 상대의 한쪽 팔을 다리 사이에 고정하고 고관절을 밀어 올려 팔꿈치 관절을 펴는 방식으로 제압하는 관절기입니다. 암바(Armbar)의 수행 방법을 자료 순서대로 보겠습니다. 동작 단계는 4단계입니다. 1단계 — 시작 자세: 클로즈드 가드에서 상대의 한쪽 팔을 몸 중심선으로 끌어당겨 고정합니다. 2단계 — 준비: 팔쪽 다리를 상대의 머리 위로 넘기고 반대 다리로 허리를 누릅니다. 3단계 — 핵심 동작: 무릎을 조이고 고관절을 들어 올려 팔꿈치 관절을 신전시킵니다. 4단계 — 완료 자세: 팔이 완전히 펴진 상태에서 압박을 유지합니다. 하면서 챙길 핵심 포인트는 세 가지입니다. 첫째, 다리를 상대 머리 위로 완전히 넘기기. 둘째, 무릎을 좁게 조여 팔이 빠지지 않게 하기. 셋째, 고관절을 들어 올려 압박 만들기. 자료에 기록된 흔한 실수도 함께 점검해 보세요. 다리를 상대 머리 위로 완전히 넘기지 못해 탈출 공간을 허용함. 무릎을 조이지 않아 상대가 팔을 회전시켜 빠져나감.",
+      "totalMs": 6076,
+      "stages": {
+        "index": 729,
+        "dataAnswer": 2593
+      },
+      "firstTokenMs": null,
+      "phases": [],
+      "intent": "technique",
+      "research": {
+        "needed": false,
+        "kind": "web",
+        "queries": [],
+        "reason": ""
+      },
+      "techniques": [
+        "bjj__armbar"
+      ],
+      "model": "martialdex-data",
+      "sources": [],
+      "videos": [],
+      "papers": [],
+      "guardNotes": [],
+      "researchInfo": {
+        "kind": "web",
+        "queries": [],
+        "reason": "검색이 필요 없는 질문",
+        "searched": false,
+        "status": "skipped"
+      },
+      "lessonProposal": null,
+      "style": null
+    },
+    {
+      "id": "B",
+      "text": "🔎 검색했지만 관련 자료를 찾지 못했습니다.\n\n관련 논문·연구 자료를 찾지 못했습니다.",
+      "totalMs": 7143,
+      "stages": {
+        "index": 0,
+        "search": 3710
+      },
+      "firstTokenMs": null,
+      "phases": [
+        [
+          3426,
+          "논문·연구 자료 검색 중…"
+        ]
+      ],
+      "intent": "paper",
+      "research": {
+        "needed": true,
+        "kind": "paper",
+        "queries": [
+          "최근 그래플링 관련 스포츠 과학 논문을 찾아 줘. 제목, 연도, 핵심 내용, 원문 링크를 정리해 줘.",
+          "최근 그래플링 스포츠 과학 찾아 제목 연도 핵심 내용 원문 링크 정리해 study"
+        ],
+        "reason": "논문·연구 자료 요청"
+      },
+      "techniques": [],
+      "model": "martialdex-list",
+      "sources": [],
+      "videos": [],
+      "papers": [],
+      "guardNotes": [],
+      "researchInfo": {
+        "kind": "paper",
+        "queries": [
+          "최근 그래플링 관련 스포츠 과학 논문을 찾아 줘. 제목, 연도, 핵심 내용, 원문 링크를 정리해 줘.",
+          "최근 그래플링 스포츠 과학 찾아 제목 연도 핵심 내용 원문 링크 정리해 study"
+        ],
+        "reason": "논문·연구 자료 요청",
+        "searched": true,
+        "status": "empty",
+        "failedEngines": [
+          "semantic scholar",
+          "pubmed"
+        ],
+        "duplicatesRemoved": 8,
+        "pagesRead": 0
+      },
+      "lessonProposal": null,
+      "style": null
+    },
+    {
+      "id": "C",
+      "text": "🔎 영상 검색 결과 6건 (본문 확인 0건)\n\n찾은 영상 6개입니다. 제목과 설명만 확인했고 영상 내용은 직접 확인하지 않았습니다.\n[1] WRESTLING TIPS / SINGLE LEG FINISHES PART 1 #wrestling #bjj #레슬링 #mma #jujitsu\n[2] 슬기로운 레슬링생활 | 싱글렉 테이크다운 배우기 🤼‍♂️ Learn Wrestling in 3 Minutes | DJ HEY BRO\n[3] [한판TV] 레슬링 국대가 알려주는 싱글렉(Single-Leg) - YouTube (2019-03-16)\n[4] IKMA Krav Maga Single-Leg Takedown Defense #ikma #kravmaga #wrestling #mma\n[5] Heavyweight Inside Single Leg #Wrestling\n[6] Legendary wrestler! Chance to learn wrestling from a gold medalist!",
+      "totalMs": 3360,
+      "stages": {
+        "index": 0,
+        "search": 1850
+      },
+      "firstTokenMs": null,
+      "phases": [
+        [
+          1495,
+          "영상 검색 중…"
+        ]
+      ],
+      "intent": "video",
+      "research": {
+        "needed": true,
+        "kind": "video",
+        "queries": [
+          "레슬링 싱글렉을 배울 수 있는 교육 영상을 찾아 줘.",
+          "싱글렉 배울 있는 교육 찾아 Single Leg highlights wrestling"
+        ],
+        "reason": "영상 요청"
+      },
+      "techniques": [
+        "sambo__single-leg"
+      ],
+      "model": "martialdex-list",
+      "sources": [
+        {
+          "n": 1,
+          "title": "WRESTLING TIPS / SINGLE LEG FINISHES PART 1 #wrestling #bjj #레슬링 #mma #jujitsu",
+          "url": "https://www.youtube.com/watch?v=2UqFVfScxZM",
+          "source": "youtube.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "검색 엔진 2곳에서 함께 검색됨",
+              "원문 본문 확인",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false
+        },
+        {
+          "n": 2,
+          "title": "슬기로운 레슬링생활 | 싱글렉 테이크다운 배우기 🤼‍♂️ Learn Wrestling in 3 Minutes | DJ HEY BRO",
+          "url": "https://www.youtube.com/watch?v=KD9Ru5JAKIs",
+          "source": "youtube.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "검색 엔진 2곳에서 함께 검색됨",
+              "원문 본문 확인",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false
+        },
+        {
+          "n": 3,
+          "title": "[한판TV] 레슬링 국대가 알려주는 싱글렉(Single-Leg) - YouTube",
+          "url": "https://youtube.com/watch?v=ILhy1OanY9Q",
+          "source": "youtube.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "publishedAt": "2019-03-16T15:00:00.000Z",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "원문 본문 확인",
+              "게시일 표기: 2019-03-16"
+            ]
+          },
+          "contentRead": false
+        },
+        {
+          "n": 4,
+          "title": "IKMA Krav Maga Single-Leg Takedown Defense #ikma #kravmaga #wrestling #mma",
+          "url": "https://www.youtube.com/watch?v=ExvstUALIkk",
+          "source": "youtube.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "검색 엔진 2곳에서 함께 검색됨",
+              "원문 본문 확인",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false
+        },
+        {
+          "n": 5,
+          "title": "Heavyweight Inside Single Leg #Wrestling",
+          "url": "https://www.youtube.com/watch?v=p19h_48FA6E",
+          "source": "youtube.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "검색 엔진 2곳에서 함께 검색됨",
+              "원문 본문 확인",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false
+        },
+        {
+          "n": 6,
+          "title": "Legendary wrestler! Chance to learn wrestling from a gold medalist!",
+          "url": "https://www.youtube.com/watch?v=hKS5Yz0c5sk",
+          "source": "youtube.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "원문 본문 확인",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false
+        }
+      ],
+      "videos": [],
+      "papers": [],
+      "guardNotes": [],
+      "researchInfo": {
+        "kind": "video",
+        "queries": [
+          "레슬링 싱글렉을 배울 수 있는 교육 영상을 찾아 줘.",
+          "싱글렉 배울 있는 교육 찾아 Single Leg highlights wrestling"
+        ],
+        "reason": "영상 요청",
+        "searched": true,
+        "status": "ok",
+        "failedEngines": [],
+        "duplicatesRemoved": 19,
+        "pagesRead": 0
+      },
+      "lessonProposal": null,
+      "style": null
+    },
+    {
+      "id": "D",
+      "text": "🔎 웹 검색 결과 1건 (본문 확인 0건)\n\n제 판단으로는, 삼보의 싱글렉 기술을 기초로 레슬링에서 싱글렉을 응용하고 실전에 적용하는 방법을 체계적으로 배우고 싶으시군요. 먼저, 싱글렉은 레슬링에서 테이크다운 진입 기술 중 하나로, 상대방의 한쪽 다리를 잡아 상대방의 몸을 제어하는 기술입니다. 이를 통해 상대방을 테이킹하거나, 상대방의 위치를 제어할 수 있습니다. 이러한 기술을 실전에서 어떻게 활용할 수 있는지에 대한 연습이 필요할 것 같습니다.",
+      "totalMs": 111442,
+      "stages": {
+        "index": 0,
+        "search": 2708,
+        "model": 106778
+      },
+      "firstTokenMs": 69030,
+      "phases": [
+        [
+          1937,
+          "웹 검색 중…"
+        ],
+        [
+          4654,
+          "답변 작성 중…"
+        ]
+      ],
+      "intent": "lesson",
+      "research": {
+        "needed": true,
+        "kind": "web",
+        "queries": [
+          "레슬링 싱글렉을 기초부터 실전 응용까지 체계적으로 배우고 싶어.",
+          "싱글렉 기초부터 실전 응용까지 체계적 Single Leg Choku-zuki wrestling"
+        ],
+        "reason": "실제 활용 사례 질문"
+      },
+      "techniques": [
+        "sambo__single-leg",
+        "karate__choku-zuki"
+      ],
+      "model": "qwen2.5:3b",
+      "sources": [
+        {
+          "n": 1,
+          "title": "종합격투기 - 나무위키",
+          "url": "https://namu.wiki/w/%EB%82%98%EB%AC%B4%EC%9C%84%ED%82%A4:%EB%8C%80%EB%AC%B8",
+          "source": "namu.wiki",
+          "sourceType": "reference",
+          "sourceTypeLabel": "백과사전",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 백과사전",
+              "본문을 읽지 못해 검색 요약만 있음",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false
+        }
+      ],
+      "videos": [],
+      "papers": [],
+      "guardNotes": [
+        "답변에 출처 번호가 없습니다. 아래 출처와 직접 대조해 주세요."
+      ],
+      "researchInfo": {
+        "kind": "web",
+        "queries": [
+          "레슬링 싱글렉을 기초부터 실전 응용까지 체계적으로 배우고 싶어.",
+          "싱글렉 기초부터 실전 응용까지 체계적 Single Leg Choku-zuki wrestling"
+        ],
+        "reason": "실제 활용 사례 질문",
+        "searched": true,
+        "status": "ok",
+        "failedEngines": [
+          "brave"
+        ],
+        "duplicatesRemoved": 1,
+        "pagesRead": 0
+      },
+      "lessonProposal": {
+        "topic": "레슬링 싱글렉을 기초부터 실전 응용까지 체계적으로 배우고 싶어.",
+        "martialArt": "sambo",
+        "techniqueIds": [
+          "sambo__single-leg",
+          "karate__choku-zuki"
+        ],
+        "sequenceIds": [
+          "shared:sc_c87418a7-7a23-4dfe-a33e-d478764a4811"
+        ],
+        "sourceUrls": [
+          "https://namu.wiki/w/%EB%82%98%EB%AC%B4%EC%9C%84%ED%82%A4:%EB%8C%80%EB%AC%B8"
+        ],
+        "candidateIds": []
+      },
+      "style": null
+    },
+    {
+      "id": "F",
+      "text": "🔎 검색했지만 관련 자료를 찾지 못했습니다.\n\n관련 논문·연구 자료를 찾지 못했습니다.",
+      "totalMs": 10546,
+      "stages": {
+        "index": 0,
+        "search": 6953
+      },
+      "firstTokenMs": null,
+      "phases": [
+        [
+          3582,
+          "논문·연구 자료 검색 중…"
+        ]
+      ],
+      "intent": "paper",
+      "research": {
+        "needed": true,
+        "kind": "paper",
+        "queries": [
+          "코너 맥그리거의 타격 스타일을 분석해 줘. 대표적인 셋업, 콤비네이션, 카운터와 근거 자료를 구분해서 정리해 줘.",
+          "코너 맥그리거 타격 대표적인 근거 구분해서 정리해 Combination setup combination counter style breakdown analysis"
+        ],
+        "reason": "논문·연구 자료 요청"
+      },
+      "techniques": [
+        "boxing__combination"
+      ],
+      "model": "martialdex-list",
+      "sources": [],
+      "videos": [],
+      "papers": [],
+      "guardNotes": [],
+      "researchInfo": {
+        "kind": "paper",
+        "queries": [
+          "코너 맥그리거의 타격 스타일을 분석해 줘. 대표적인 셋업, 콤비네이션, 카운터와 근거 자료를 구분해서 정리해 줘.",
+          "코너 맥그리거 타격 대표적인 근거 구분해서 정리해 Combination setup combination counter style breakdown analysis"
+        ],
+        "reason": "논문·연구 자료 요청",
+        "searched": true,
+        "status": "empty",
+        "failedEngines": [
+          "semantic scholar"
+        ],
+        "duplicatesRemoved": 0,
+        "pagesRead": 0
+      },
+      "lessonProposal": null,
+      "style": null
+    }
+  ]
+}

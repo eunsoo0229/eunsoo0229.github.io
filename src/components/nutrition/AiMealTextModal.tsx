@@ -1,3 +1,4 @@
+import Icon from '../Icon';
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { parseMealFromText } from '../../lib/nutrition/aiMealParse';
@@ -42,7 +43,7 @@ export default function AiMealTextModal({
 
   return createPortal(
     <BottomSheet onClose={onClose}>
-        <h3>📝 자연어로 식사 입력</h3>
+        <h3><Icon name="note" /> 자연어로 식사 입력</h3>
         <p className="video-status-message">예: "오늘 점심에 김치찌개 한 그릇이랑 밥 한 공기 먹었어."</p>
         <textarea
           value={text}

@@ -1,9 +1,11 @@
+import Icon from '../components/Icon';
 import { useState } from 'react';
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { getUnifiedMartialArt } from '../lib/userTechniques/service';
 import { getCurriculum, resolveTodayDay } from '../lib/curriculum/curriculumService';
 import { deleteCurriculumVerified } from '../lib/curriculum/deleteCurriculum';
 import { useAuth } from '../lib/auth/AuthProvider';
+import ShareButton from '../components/social/ShareButton';
 import { useCurriculumProgress } from '../lib/curriculum/useCurriculum';
 import { encodeShareCode } from '../lib/curriculum/shareCode';
 import { copyToClipboard } from '../lib/clipboard';
@@ -128,33 +130,48 @@ export default function CurriculumDayList() {
               {curriculum.source === 'official' ? 'Martialdex 추천 커리큘럼' : `커스텀 커리큘럼 · ${curriculum.authorName}`}
             </div>
             <p style={{ marginTop: 8, color: 'var(--text-muted)' }}>{curriculum.description}</p>
+            {curriculum.aiGoalMeta?.partialScope && (
+              <div className="banner banner--warning" style={{ marginTop: 8 }} data-testid="curriculum-partial-scope">
+                전체 목표 중 일부만 반영된 커리큘럼입니다. 근거 부족으로 제외: {curriculum.aiGoalMeta.partialScope.excluded.map((e) => e.label).join(', ')}
+              </div>
+            )}
           </div>
           <div className="detail-actions">
             <Link to={`/learning/${curriculum.martialArt}/${curriculum.id}/train`} className="btn btn-primary btn-lg">
-              🔥 훈련하기
+              <Icon name="flame" /> 훈련하기
             </Link>
             <Link
               to={`/learning/${curriculum.martialArt}/${curriculum.id}/day/${todayDay}`}
               className="btn btn-secondary"
               onClick={start}
             >
-              ▶ 오늘 학습하기
+              <Icon name="play" /> 오늘 학습하기
             </Link>
+            <ShareButton
+              attachment={() => ({
+                kind: 'curriculum',
+                title: curriculum.title,
+                martialArt: curriculum.martialArt,
+                totalDays: curriculum.totalDays,
+                techniqueCount: curriculum.techniqueCount,
+                shareCode: encodeShareCode(curriculum),
+              })}
+            />
             {curriculum.source === 'custom' && (
               <>
                 <Link to={`/learning/${curriculum.martialArt}/${curriculum.id}/edit`} className="btn btn-secondary">
                   편집
                 </Link>
                 <button className="btn btn-secondary" onClick={handleShare}>
-                  {copied ? '복사됨 ✓' : '공유 코드 복사'}
+                  {copied ? <>복사됨 <Icon name="check" /></> : '공유 코드 복사'}
                 </button>
                 {curriculum.marketplaceListingId ? (
                   <Link to={`/marketplace/${curriculum.marketplaceListingId}`} className="btn btn-secondary">
-                    🛒 마켓에서 보기
+                    <Icon name="cart" /> 마켓에서 보기
                   </Link>
                 ) : (
                   <Link to={`/marketplace/publish/${curriculum.id}`} className="btn btn-secondary">
-                    🛒 마켓에 게시
+                    <Icon name="cart" /> 마켓에 게시
                   </Link>
                 )}
                 <button className="btn btn-ghost" onClick={handleDelete} disabled={deleting}>
@@ -169,7 +186,7 @@ export default function CurriculumDayList() {
 
         {curriculum.sparringAnalysisMeta && (
           <div className="card info-card" data-testid="sparring-curriculum-meta">
-            <h3 style={{ marginTop: 0 }}>🥊 스파링 분석에서 온 커리큘럼</h3>
+            <h3 style={{ marginTop: 0 }}><Icon name="glove" /> 스파링 분석에서 온 커리큘럼</h3>
             <p>
               해결하려는 약점: {curriculum.sparringAnalysisMeta.weakAreaLabels.join(', ')}{' '}
               <Link to={`/sparring/${curriculum.sparringAnalysisMeta.sparringSessionId}`}>분석·약점 장면 보기</Link>
@@ -209,7 +226,7 @@ export default function CurriculumDayList() {
 
         {curriculum.styleMeta && (
           <div className="card info-card">
-            <h3>🎯 핵심 기술 &amp; AI 자세 분석 점수</h3>
+            <h3><Icon name="target" /> 핵심 기술 &amp; AI 자세 분석 점수</h3>
             <div className="stack gap-1">
               {curriculum.styleMeta.matchedTechniques.slice(0, 8).map((m) => (
                 <KeyTechniqueRow key={m.techniqueId} techniqueId={m.techniqueId} techniqueName={m.techniqueName} />
@@ -272,7 +289,7 @@ export default function CurriculumDayList() {
                     <span>{d.estimatedMinutes}분</span>
                     {d.techniqueIds.length > 0 && <span>기술 {d.techniqueIds.length}개</span>}
                   </div>
-                  {done && <div className="day-card__check">✓</div>}
+                  {done && <div className="day-card__check"><Icon name="check" label="완료" /></div>}
                 </Link>
               </div>
             );

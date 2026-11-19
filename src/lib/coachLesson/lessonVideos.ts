@@ -27,7 +27,8 @@ export interface LessonVideo {
   /** From the search result when available; otherwise YouTube's standard thumbnail URL for this real id. */
   thumbnailUrl: string;
   url: string;
-  source: 'saved' | 'verified';
+  /** self_search = 자체 검색으로 찾았고 영상 내용은 확인하지 않음 (반드시 그렇게 표시해야 한다) */
+  source: 'saved' | 'verified' | 'self_search';
   reason?: string;
 }
 

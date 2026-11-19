@@ -1,0 +1,116 @@
+{
+ "generatedAt": "2026-11-02T08:42:30.048Z",
+ "note": "Before = survey before the position categories (2026-11-02, report-category-survey.mjs). After = same survey + positionTaxonomy. The position layer is computed from the data; no technique, id, name, description or category string was changed.",
+ "arts": {
+  "bjj": {
+   "techniques": {
+    "before": 319,
+    "after": 319
+   },
+   "existingCategories": {
+    "before": 35,
+    "after": 35
+   },
+   "existingHierarchy": {
+    "before": {
+     "level2": 26,
+     "nodes": 85,
+     "byLevel": {
+      "2": 26,
+      "3": 59,
+      "4": 0
+     },
+     "placed": 319,
+     "unplaced": 0,
+     "inSeveralGroups": 0,
+     "review": 35
+    },
+    "after": {
+     "level2": 26,
+     "nodes": 85,
+     "byLevel": {
+      "2": 26,
+      "3": 59,
+      "4": 0
+     },
+     "placed": 319,
+     "unplaced": 0,
+     "inSeveralGroups": 0,
+     "review": 35
+    }
+   },
+   "positionCategories": {
+    "positions": 24,
+    "purposeBuckets": 104,
+    "placements": 462,
+    "multiPosition": 100,
+    "review": 4,
+    "positionWithoutPurpose": 23
+   },
+   "integrity": {
+    "techniques": 319,
+    "distinctIds": 319,
+    "duplicateIds": 0,
+    "accounted": 319,
+    "missing": []
+   },
+   "movedTechniques": "0 — no technique data moved; each technique is additionally placed under position › purpose (category strings unchanged)",
+   "categoriesUnchanged": true
+  },
+  "mixed-martial-arts": {
+   "techniques": {
+    "before": 545,
+    "after": 545
+   },
+   "existingCategories": {
+    "before": 12,
+    "after": 12
+   },
+   "existingHierarchy": {
+    "before": {
+     "level2": 12,
+     "nodes": 64,
+     "byLevel": {
+      "2": 12,
+      "3": 52,
+      "4": 0
+     },
+     "placed": 545,
+     "unplaced": 0,
+     "inSeveralGroups": 0,
+     "review": 93
+    },
+    "after": {
+     "level2": 12,
+     "nodes": 64,
+     "byLevel": {
+      "2": 12,
+      "3": 52,
+      "4": 0
+     },
+     "placed": 545,
+     "unplaced": 0,
+     "inSeveralGroups": 0,
+     "review": 93
+    }
+   },
+   "positionCategories": {
+    "positions": 16,
+    "purposeBuckets": 86,
+    "placements": 782,
+    "multiPosition": 141,
+    "review": 0,
+    "positionWithoutPurpose": 7
+   },
+   "integrity": {
+    "techniques": 545,
+    "distinctIds": 545,
+    "duplicateIds": 0,
+    "accounted": 545,
+    "missing": []
+   },
+   "movedTechniques": "0 — no technique data moved; each technique is additionally placed under position › purpose (category strings unchanged)",
+   "categoriesUnchanged": true
+  }
+ }
+}

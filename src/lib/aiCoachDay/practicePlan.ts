@@ -10,6 +10,7 @@ import { classifyMmaArea } from '../mmaCurriculum/areaClassifier';
 import type { CoachLocation } from '../aiCoachCurriculum/types';
 import { isSoloLocation } from '../aiCoachCurriculum/location';
 import type { LessonDrillPlan, LessonMittPlan } from './types';
+import { artLessonMitt, lessonItem } from './artMitt';
 
 // How the AI coach runs a technique's PRACTICE. The Visualizing Mitt is
 // always called when the technique (or the chain it belongs to) can be drawn
@@ -22,7 +23,8 @@ import type { LessonDrillPlan, LessonMittPlan } from './types';
 //   MMA takedown entry                 → mitt: setup strikes → entry
 //   MMA grappling without a mitt motion → mitt: strikes → takedown, then the technique (drill / timer)
 //   submission as the goal (MMA, or a submission-goal class) → takedown → (position) → submission
-//   otherwise                          → solo call-out drill (home/limited) or the timer
+//   no mitt motion (stance, counter, combination record, clinch, tactic …) → that ART's pads (artMitt.ts)
+//   ground grappling                   → solo call-out drill (home/limited) or the timer
 //
 // Every id below is a real MARTIALDEX technique; chains are kept only when
 // reviewConnections() finds the order natural.
@@ -33,7 +35,7 @@ const JAB = 'boxing__jab';
 const CROSS = 'boxing__cross';
 const DOUBLE_LEG = 'wrestling__basic-double-leg';
 
-export type PracticeMode = 'mitt' | 'mma_mix' | 'takedown_submission' | 'drill' | 'timer';
+export type PracticeMode = 'mitt' | 'mma_mix' | 'takedown_submission' | 'art_mitt' | 'drill' | 'timer';
 
 export interface PracticeSetup {
   techniqueId: string;
@@ -126,6 +128,8 @@ export interface PracticeContext {
   submissionGoal: boolean;
   /** Planned practice length for this technique. */
   seconds: number;
+  /** The class's martial art — picks that art's pad drill for items without a mitt motion (artMitt.ts). */
+  art?: string | null;
 }
 
 export function isMmaContext(art: string | null | undefined, t?: Technique | null): boolean {
@@ -214,6 +218,20 @@ export function planPractice(t: Technique, ctx: PracticeContext): PracticeSetup 
         intro: `MMA는 타격과 그래플링을 섞어서 연습합니다. 먼저 Visualizing Mitt로 ${arrow(td)}를 치고, 테이크다운 뒤 ${name}로 이어 가겠습니다.`,
       });
     }
+  }
+  // The art's pads anyway (stance, footwork, counters, combination records, clinch, tactics …) —
+  // ground grappling has no pad version and stays on the drill / timer.
+  // a solo GROUND movement (sit-out, hip escape …) is not a pad drill
+  const am = drillPlanFor(t)?.group === 'ground' ? null : artLessonMitt(lessonItem(t), ctx.art ?? t.martialArt);
+  if (am) {
+    return finish({
+      ...base,
+      mode: 'art_mitt',
+      mitt: mittFor(am.ids, am.name, am.purpose),
+      after: drill ? 'drill' : null,
+      drill,
+      intro: `${am.intro}${drill ? ` 미트가 끝나면 솔로 드릴로 ${name} 동작을 이어 가겠습니다.` : ''}`,
+    });
   }
   if (drill) {
     return finish({

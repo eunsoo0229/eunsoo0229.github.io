@@ -1,3 +1,4 @@
+import Icon from '../Icon';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { startRecording, type Recorder, type SttEngineId, type SttResult, type SttPhase } from '../../lib/voice/stt';
 import { detectSttEngine, engineInfo, localModelChoice, LOCAL_MODEL_KEY, type SttEngineInfo } from '../../lib/voice/sttEngines';
@@ -247,7 +248,7 @@ export function VoiceInputPanel({ voice, testIdPrefix = 'voice', showAutoSend = 
     <div className="voice-input" data-testid={`${testIdPrefix}-panel`} data-engine={info?.id ?? ''} data-phase={phase}>
       {(phase === 'listening' || phase === 'recognizing') && (
         <p className="voice-input__live" data-testid={`${testIdPrefix}-partial`} aria-live="polite">
-          {phase === 'listening' ? '🎙 듣는 중' : '⏳ 마무리하는 중'}
+          {phase === 'listening' ? <><Icon name="mic" /> 듣는 중</> : <><Icon name="hourglass" /> 마무리하는 중</>}
           {partial ? `: ${partial}` : '…'}
         </p>
       )}

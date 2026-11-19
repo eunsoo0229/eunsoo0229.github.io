@@ -1,5 +1,7 @@
 import { supabase } from '../supabase/client';
 import type { AskAiRequest, AskAiResult } from './types';
+import { getAiEngine } from '../localAi/enginePreference';
+import { askLocal } from '../localAi/localProvider';
 
 // Two transports, chosen automatically per platform — neither ever puts the
 // Gemini API key in this bundle:
@@ -104,11 +106,76 @@ async function askViaSupabaseEdgeFunction(request: AskAiRequest): Promise<AskAiR
   }
 }
 
+// ---------------- Gemini 사용 한도 (0066) ----------------
+// "1회" = 사용자가 시킨 작업 1건. 한 작업이 Gemini 를 여러 번 부르면(수업 생성, 검증 재시도 …) 같은 useId 로
+// 묶는다: 직전 호출에서 90초 안에 이어지는 호출은 같은 묶음. 묶음의 상한(시간·호출 수)은 서버가 강제한다.
+export const GEMINI_QUOTA_EVENT = 'martialdex:gemini-quota-changed';
+const BURST_GAP_MS = 90_000;
+const BURST_MAX_MS = 9 * 60_000;
+const BURST_MAX_CALLS = 14;
+let burst: { id: string; startedAt: number; lastAt: number; calls: number } | null = null;
+function currentUseId(): string {
+  const now = Date.now();
+  if (!burst || now - burst.lastAt > BURST_GAP_MS || now - burst.startedAt > BURST_MAX_MS || burst.calls >= BURST_MAX_CALLS) {
+    burst = { id: crypto.randomUUID().replace(/-/g, '').slice(0, 32), startedAt: now, lastAt: now, calls: 0 };
+  }
+  burst.lastAt = now;
+  burst.calls++;
+  return burst.id;
+}
+function quotaExceeded(limit: number): AskAiResult {
+  return { ok: false, code: 'QUOTA_EXCEEDED', message: `오늘 Gemini 코치 무료 사용 ${limit}회를 모두 썼습니다. 내일 다시 쓸 수 있고, PRO 멤버십은 한도 없이 사용할 수 있습니다.` };
+}
+
+// Mac 앱(Electron)은 기기의 키로 Gemini 를 직접 부른다 → 로그인했으면 같은 서버 카운터로 판정,
+// 로그인 전이면 서버에 물을 수 없으므로 이 기기에서 하루 5회를 센다(서울 날짜).
+const LOCAL_FREE_USES = 5;
+function localGuestCheck(useId: string): boolean {
+  try {
+    const day = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' });
+    const key = `martialdex:gemini-guest-uses:${day}`;
+    const ids: string[] = JSON.parse(window.localStorage.getItem(key) ?? '[]');
+    if (ids.includes(useId)) return true;
+    if (ids.length >= LOCAL_FREE_USES) return false;
+    window.localStorage.setItem(key, JSON.stringify([...ids, useId]));
+    return true;
+  } catch {
+    return true;
+  }
+}
+async function electronQuotaGate(useId: string): Promise<AskAiResult | null> {
+  const { data } = supabase ? await supabase.auth.getSession() : { data: { session: null } };
+  if (!supabase || !data.session) return localGuestCheck(useId) ? null : quotaExceeded(LOCAL_FREE_USES);
+  let r = await supabase.rpc('consume_gemini_use', { p_use_id: useId });
+  if (!r.error && r.data?.allowed === false && r.data?.reason === 'USE_EXPIRED') r = await supabase.rpc('consume_gemini_use', { p_use_id: `${useId}-${Date.now().toString(36)}` });
+  if (r.error) return { ok: false, code: 'UNKNOWN', message: 'AI 사용량을 확인하지 못했습니다. 잠시 후 다시 시도해주세요.' };
+  return r.data?.allowed === true ? null : quotaExceeded(r.data?.limit ?? LOCAL_FREE_USES);
+}
+
+/** Gemini (external, paid) — only reached when the user chose it. Every call passes the daily-use gate first. */
+async function askGemini(request: AskAiRequest): Promise<AskAiResult> {
+  const { engine: _engine, responseFormat: _format, ...geminiRequest } = request;
+  const useId = currentUseId();
+  try {
+    if (window.martialdex?.askAi) {
+      const blocked = await electronQuotaGate(useId);
+      if (blocked) return blocked;
+      return await askViaElectron(geminiRequest);
+    }
+    return await askViaSupabaseEdgeFunction({ ...geminiRequest, useId });
+  } finally {
+    window.dispatchEvent(new CustomEvent(GEMINI_QUOTA_EVENT));
+  }
+}
+
+/**
+ * The common provider every generative feature calls. Engine = the request's explicit
+ * per-feature choice, else 설정 > AI 엔진 (local by default). A local failure is returned
+ * as-is: there is no automatic Gemini fallback.
+ */
 export const aiProvider: AiProvider = {
   async ask(request) {
-    if (window.martialdex?.askAi) {
-      return askViaElectron(request);
-    }
-    return askViaSupabaseEdgeFunction(request);
+    const engine = request.engine ?? getAiEngine();
+    return engine === 'gemini' ? askGemini(request) : askLocal(request);
   },
 };

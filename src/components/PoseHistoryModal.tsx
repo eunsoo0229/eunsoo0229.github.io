@@ -1,8 +1,10 @@
+import Icon from './Icon';
+import { SkillStatusGlyph } from './StatusGlyph';
 import { useState } from 'react';
 import type { Technique } from '../types';
 import { useTechniqueRecords, useTechniqueSkillSummary } from '../lib/poseAnalysis/usePoseRecords';
 import { deleteAllRecordsForTechnique, deleteRecord } from '../lib/poseAnalysis/recordsService';
-import { STATUS_ICON, STATUS_LABEL } from '../lib/poseAnalysis/scoring';
+import { STATUS_LABEL } from '../lib/poseAnalysis/scoring';
 import ScoreHistoryChart from './ScoreHistoryChart';
 import { listCompareRecords } from '../lib/formCompare/referenceStore';
 
@@ -24,7 +26,7 @@ export default function PoseHistoryModal({ technique, onClose }: { technique: Te
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-panel pose-modal" onClick={(e) => e.stopPropagation()}>
-        <h3>📊 {technique.name} 분석 기록</h3>
+        <h3><Icon name="chart" /> {technique.name} 분석 기록</h3>
 
         {records.length === 0 ? (
           <p className="video-status-message">아직 이 기술을 분석한 기록이 없습니다.</p>
@@ -64,7 +66,7 @@ export default function PoseHistoryModal({ technique, onClose }: { technique: Te
                   <button className="pose-history-row__main" onClick={() => setExpandedId(expandedId === r.recordId ? null : r.recordId)}>
                     <span>{r.analyzedAt.slice(0, 10)}</span>
                     <span>
-                      {STATUS_ICON[r.status]} {r.score}점{r.method === 'video_compare' ? ' · 🎬 기준 영상 비교' : ''}
+                      <SkillStatusGlyph status={r.status} /> {r.score}점{r.method === 'video_compare' && <> · <Icon name="video" /> 기준 영상 비교</>}
                     </span>
                   </button>
                   <button className="btn btn-ghost btn-sm" onClick={() => handleDeleteOne(r.recordId)}>

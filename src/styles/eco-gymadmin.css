@@ -1,0 +1,36 @@
+/* 체육관 운영 대시보드 · 회원 패널 · 플랫폼 관리자 콘솔 (ecosystem.css 위에 얹는 보조 스타일).
+   기존 토큰만 사용 — 라이트/다크 테마를 그대로 따른다. */
+
+.gadm-missing { color: var(--text-faint); font-size: 16px; font-weight: 700; }
+.gadm-why { font-size: 11px; color: var(--text-faint); margin-top: 4px; line-height: 1.4; }
+.gadm-danger { color: var(--accent); }
+.gadm-btn-danger { border-color: var(--accent) !important; color: var(--accent) !important; }
+.gadm-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.gadm-table-actions { display: flex; flex-wrap: wrap; gap: 4px; }
+.gadm-table-actions .btn { white-space: nowrap; }
+.gadm-cell-strong { font-weight: 700; color: var(--text); text-decoration: none; }
+.gadm-cell-strong:hover { text-decoration: underline; }
+.gadm-body { white-space: pre-wrap; word-break: break-word; font-size: 14px; margin: 6px 0 0; }
+.gadm-picker { display: grid; gap: 4px; margin-top: 6px; max-height: 220px; overflow-y: auto; }
+.gadm-picker button { text-align: left; }
+.gadm-error { color: var(--accent); font-size: 13px; margin: 6px 0 0; }
+.gadm-ok { color: var(--beginner); font-size: 13px; margin: 6px 0 0; }
+.gadm-consent { font-size: 13px; line-height: 1.55; }
+.gadm-consent h4 { margin: 8px 0 2px; font-size: 13px; }
+.gadm-consent ul { margin: 2px 0 0; padding-left: 18px; }
+.gadm-toggle { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.gadm-search { position: relative; }
+.gadm-search input { padding-left: 34px !important; }
+.gadm-search .mdx-icon, .gadm-search svg { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-faint); pointer-events: none; }
+.gadm-score { font-variant-numeric: tabular-nums; font-weight: 700; }
+.gadm-subtle-list { margin: 0; padding-left: 18px; font-size: 13px; color: var(--text-muted); }
+.gadm-link-card { display: flex; align-items: center; gap: 12px; }
+.gadm-link-card > svg, .gadm-link-card > .mdx-icon { flex: 0 0 auto; }
+.gadm-section-card { margin-top: 12px; }
+
+
+/* wider value column so "데이터 없음" / "12/30" fit */
+.gadm-bars .eco-bar { grid-template-columns: minmax(72px, 140px) 1fr 76px; }
+.gadm-bars .eco-bar__value--muted { font-size: 12px; }
+.gadm-bars a.eco-bar__label { color: var(--text); text-decoration: none; }
+.info-card .gym-row { flex-wrap: wrap; }

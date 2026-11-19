@@ -1,3 +1,4 @@
+import Icon from './Icon';
 import type { PostureBodyPosition, PostureInfo } from '../types';
 
 const BODY_PART_LABEL: Record<keyof PostureBodyPosition, string> = {
@@ -24,7 +25,7 @@ export default function PostureSection({ posture }: { posture: PostureInfo }) {
 
   return (
     <div className="card info-card">
-      <h3>🧍 자세 잡기</h3>
+      <h3><Icon name="stance" /> 자세 잡기</h3>
       <p>{posture.overview}</p>
 
       {posture.startingPosition && (

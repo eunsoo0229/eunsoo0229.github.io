@@ -132,10 +132,14 @@ const ADD_TEQ_DUPLICATES = [
   { id: 'bjj__closed-guard-armbar', canonical: 'bjj__armbar', reason: '공식 Armbar가 클로즈드 가드 암바' },
   { id: 'bjj__니-슬라이스-패스', canonical: 'bjj__knee-cut-pass', reason: '니 슬라이스 = 니 컷 패스' },
   { id: 'bjj__bullfighter-pass', canonical: 'bjj__torreando-pass', reason: 'Bullfighter Pass = Torreando(투우사) 패스' },
+  // 2026-10 sibling-art audit (data/audit/judgements-library): 킥복싱에만 들어가 있던 미들킥 = 공식 Body Kick (킥복싱·무에타이·가라테·삼보·MMA)
+  { id: 'kickboxing__미들킥-middle-kick', canonical: 'kickboxing__body-kick', reason: '미들킥(Middle Kick) = 몸통 높이 돌려차기 Body Kick' },
 ];
 
 // Search aliases for names users actually type (Korean transliteration etc.).
 const EXTRA_ALIASES = {
+  // 사용자가 "미들킥"으로 찾고 추가함 — 같은 기술로 인식되도록
+  'kickboxing__body-kick': ['Middle Kick', 'Mid Kick', '미들킥', '미들 킥', '바디킥', '몸통 돌려차기'],
   'wrestling__granby-roll': ['Granby', '그랜비 롤', '그랜비롤'],
   // 같은 "Catch"라는 이름의 서로 다른 두 기술을 검색·목록에서 구분
   'kickboxing__catch': ['Kick Catch', '킥 캐치'],

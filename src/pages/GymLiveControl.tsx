@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useLiveSession } from '../lib/gymLive/useLiveSession';
@@ -74,7 +75,7 @@ export default function GymLiveControl() {
           <span>실시간 훈련</span>
         </div>
         <div className="section-title">
-          <h2>⏱ 실시간 {session.kind === 'sparring' ? '스파링' : '훈련'}</h2>
+          <h2><Icon name="timer" /> 실시간 {session.kind === 'sparring' ? '스파링' : '훈련'}</h2>
         </div>
         <div className="card info-card text-center">
           <p className="live-student__title">
@@ -95,7 +96,7 @@ export default function GymLiveControl() {
               {session.status === 'ready' && (
                 <>
                   <button className="btn btn-primary btn-lg" disabled={busy} onClick={() => act('start')}>
-                    ▶ 시작
+                    <Icon name="play" /> 시작
                   </button>
                   <button className="btn btn-ghost" disabled={busy} onClick={() => act('cancel')}>
                     취소
@@ -104,21 +105,21 @@ export default function GymLiveControl() {
               )}
               {session.status === 'running' && (
                 <button className="btn btn-secondary" disabled={busy} onClick={() => act('pause')}>
-                  ⏸ 일시정지
+                  <Icon name="pause" /> 일시정지
                 </button>
               )}
               {session.status === 'paused' && (
                 <button className="btn btn-primary" disabled={busy} onClick={() => act('resume')}>
-                  ▶ 재개
+                  <Icon name="play" /> 재개
                 </button>
               )}
               {(session.status === 'running' || session.status === 'paused') && (
                 <>
                   <button className="btn btn-secondary" disabled={busy} onClick={() => act('next')}>
-                    ⏭ 다음 {unit}
+                    <Icon name="next" /> 다음 {unit}
                   </button>
                   <button className="btn btn-ghost" disabled={busy} onClick={() => act('end')}>
-                    ■ 종료
+                    <Icon name="stop" /> 종료
                   </button>
                 </>
               )}

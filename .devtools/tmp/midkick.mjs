@@ -1,0 +1,15 @@
+import fs from 'node:fs';
+import { createServer } from 'vite';
+const store = new Map(); globalThis.window = globalThis; const et = new EventTarget();
+Object.assign(globalThis, { addEventListener: (...a) => et.addEventListener(...a), removeEventListener: (...a) => et.removeEventListener(...a), dispatchEvent: (e) => et.dispatchEvent(e) });
+globalThis.localStorage = { getItem: (k) => store.get(k) ?? null, setItem: (k, v) => store.set(k, String(v)), removeItem: (k) => store.delete(k), key: (i) => [...store.keys()][i] ?? null, get length() { return store.size; } };
+const server = await createServer({ server: { middlewareMode: true, hmr: false }, appType: 'custom', logLevel: 'error', optimizeDeps: { noDiscovery: true, include: [] } });
+const R = await server.ssrLoadModule('/src/lib/addTeq/repository.ts');
+const U = await server.ssrLoadModule('/src/lib/userTechniques/service.ts');
+const tc = await server.ssrLoadModule('/src/lib/techniqueCanonical/index.ts');
+R.addTeqRepository.upsertMany(JSON.parse(fs.readFileSync('data/audit/sibling-packs/add-teq-live.json', 'utf8')));
+const t = U.resolveTechnique('kickboxing__미들킥-middle-kick');
+console.log('library 미들킥 resolves to', t?.id, t?.name, tc.techniqueArts(t));
+for (const a of ['kickboxing', 'muay-thai', 'mixed-martial-arts', 'karate']) console.log(a, U.getUnifiedTechniquesByMartialArt(a).filter((x) => /body kick|middle|미들/i.test(x.name + (x.koreanName ?? ''))).map((x) => x.id));
+for (const a of ['kickboxing', 'muay-thai']) console.log('dup check', a, JSON.stringify(U.findNormalizedDuplicate?.('미들킥', a) ?? U.findNormalizedDuplicate?.(a, '미들킥'))?.slice(0, 160));
+await server.close();

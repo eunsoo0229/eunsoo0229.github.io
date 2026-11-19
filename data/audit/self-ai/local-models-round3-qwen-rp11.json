@@ -1,0 +1,101 @@
+{
+  "at": "2026-10-31T19:51:19.419Z",
+  "host": "Intel i5-7600K 4C, 8GB RAM, CPU only",
+  "repeatPenalty": 1.1,
+  "report": [
+    {
+      "model": "qwen2.5:3b",
+      "tasks": [
+        {
+          "id": "ko-explain",
+          "pass": false,
+          "note": "hangul 1.00 FOREIGN",
+          "ms": 38259,
+          "text": "초보자들이 복싱에서 잽을 치는 데常见する 실수로는 다음과 같습니다:\n\n1. 잡음이 너무 가볍게 치는 경우: 이는 상대방에게 자신이 무시무시한 힘을 가지고 있다는 잘못된 정보를 줍니다.\n\n2. 잡음이 너무 강하게 치는 경우: 이는 상대방에게 과도한 공격력을 보여주고, 상대방은 이를 이용하여 자신의 공격을 더 강하게 준비할 수 있습니다.\n\n3. 잡음이 불규칙적으로 치는 경우: 이는 상대방에게 공격 패턴을 파악하기 어렵게 만들며, 상대방은 당신의 움직임을 예측하기 어려워집니다.\n\n4. 잡음을 지연시키거나 연속으로 치지 않는 경우: 이는 상대방에게 당신이 공격에 대한 준비가 부족하다는 오해를 줄 수 있습니다.\n\n5. 잡음이 상대방의 위치와 맞지 않은 경우: 이는 상대방에게 당신이 상대방을 잘 파악하지 못하고 있다는 오해를 줄 수 있습니다.\n\n이러한 실수들을 피하는 것이 중요하며, 정확한 위치감과 일관성 있는 공격 패턴을 유지하는 것이 복싱에서 성공적인 공격을 하는 데 도움이 됩니다."
+        },
+        {
+          "id": "fact-kimura",
+          "pass": false,
+          "note": "",
+          "ms": 3372,
+          "text": "주짓수의 기무는 주로 손목과 팔꿈치를 공격합니다."
+        },
+        {
+          "id": "fact-teep",
+          "pass": false,
+          "note": "",
+          "ms": 4048,
+          "text": "무에타이는 팁(teep)을 상대방의 무릎이나 배를 공격하는 기술입니다."
+        },
+        {
+          "id": "fact-triangle",
+          "pass": false,
+          "note": "",
+          "ms": 2520,
+          "text": "그것은 상대의 목을 가리는 방법입니다."
+        },
+        {
+          "id": "fact-double-leg",
+          "pass": false,
+          "note": "",
+          "ms": 4270,
+          "text": "레벨 체인지是指在進行Double Leg Take Down之前提高自身重心，以便更容易地控制對手的腰腹。"
+        },
+        {
+          "id": "reason-setup",
+          "pass": false,
+          "note": "",
+          "ms": 15175,
+          "text": "오른손을 앞으로 뻗은 모습을 이용하여, 상대방의 오른손을 가리는 순간에 왼손으로 그 위를 치면 효과적일 것입니다. 왜냐하면 상대방이 자신의 오른손으로 자신을 보호하려고 하면, 그 과정에서 자연스럽게 왼쪽 방향으로 몸을 돌릴 수 있기 때문입니다. 이때 왼손으로 공격을 날리면 더욱 효과적으로 상대방의 방어를 깨뜨릴 수 있습니다."
+        },
+        {
+          "id": "instr-3items",
+          "pass": true,
+          "note": "items 3",
+          "ms": 20372,
+          "text": "1. 패스를 통해 상대방의 팔을 가리고, 그 위로 자신의 손가락을 뻗어서 상대방의 팔꿈치를 잡아당겨야 한다.\n2. 페니스 테크닉은 상대방의 팔을 잡아당기는 기술 중 하나이며, 상대방의 팔을 바깥쪽으로 돌려서 자신의 팔을 이용해 상대방의 팔을 잡아당긴다.\n3. 스파이럴 압박은 상대방의 팔을 잡아당기는 기법으로, 상대방의 팔을 내侧으로 돌려서 자신의 팔을 이용해 상대방의 팔을 잡아당긴다."
+        },
+        {
+          "id": "json-extract",
+          "pass": false,
+          "note": "items 3 grounded 0",
+          "ms": 15145,
+          "text": "{\"items\":[\n  {\n    \"name\":\"Double Jab\",\n    \"kind\":\"setup\",\n    \"quote\":\"Close distance with the double jab.\"\n  },\n  {\n    \"name\":\"Jab to Body\",\n    \"kind\":\"setup\",\n    \"quote\":\"Lower the opponent's guard with the jab to the body.\"\n  },\n  {\n    \"name\":\"Jab-Cross (1-2)\",\n    \"kind\":\"combo\",\n    \"quote\":\"Basic combination of jab followed by cross.\"\n  }\n]}"
+        },
+        {
+          "id": "cite-two-sources",
+          "pass": true,
+          "note": "sentences 2 cited 2 wrong 0",
+          "ms": 12625,
+          "text": "셋업 1은 [1]에서 설명한 바와 같이, 상대방의 방어를 낮추고 앞쪽 킥을 열어줍니다. \n\n셋업 2는 [2]에서 제시된 대로, 가위를 조종하여 후방 손을 상대방에게 높여서 몸통을 노출시키며, 이를 통해 라이브샷을 수행할 수 있게 합니다."
+        },
+        {
+          "id": "repeat-combos",
+          "pass": true,
+          "note": "sentences 3 repeats 0",
+          "ms": 9283,
+          "text": "저는 MARTIALDEX의 격투기 코치로서, 복싱에 대해 전문적인 지식을 가지고 있지 않습니다. 따라서 \" jaws\"로 시작하는 복싱 콤비네이션 세부 사항은 제공할 수 없습니다. 이러한 정보는 복싱 기술 교육자나 복싱 선수에게 문의하시는 것이 좋습니다."
+        },
+        {
+          "id": "refuse-missing",
+          "pass": true,
+          "note": "",
+          "ms": 3265,
+          "text": "자료 없음"
+        },
+        {
+          "id": "memory-6turn",
+          "pass": true,
+          "note": "",
+          "text": "민준 씨, 라이트급 오소독스, 왼쪽 스탠스입니다."
+        }
+      ],
+      "pass": 5,
+      "total": 12,
+      "tokPerSec": 9.1,
+      "loadMs": 23947,
+      "memMB": 2068,
+      "error": null
+    }
+  ]
+}

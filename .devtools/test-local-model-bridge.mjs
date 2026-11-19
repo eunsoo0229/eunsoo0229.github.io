@@ -13,7 +13,8 @@ let generateCalls = 0;
 const server = http.createServer((req, res) => {
   if (req.url === '/api/tags') {
     res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ models: [{ name: process.env.OLLAMA_MODEL || 'llama3.2:1b' }] }));
+    // the bridge's default is now the shared engine model (qwen2.5:3b, electron/localEngine.cjs)
+    res.end(JSON.stringify({ models: [{ name: process.env.OLLAMA_MODEL || require('../electron/localEngine.cjs').DEFAULT_MODEL }] }));
     return;
   }
   if (req.url === '/api/generate') {

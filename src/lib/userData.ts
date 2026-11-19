@@ -18,6 +18,11 @@ function readList(key: string): string[] {
   }
 }
 
+/** Favorite technique ids (canonical, saved order) — plain read for non-React callers (AI coach context). */
+export function listFavorites(): string[] {
+  return readList(FAVORITES_KEY);
+}
+
 function writeList(key: string, list: string[]) {
   window.localStorage.setItem(key, JSON.stringify(list));
 }

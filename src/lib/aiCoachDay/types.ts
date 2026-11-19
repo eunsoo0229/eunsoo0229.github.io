@@ -51,6 +51,17 @@ export interface CoachMessage {
   /** Timer announcements are tagged so the UI can style them (and tests can find them). */
   kind?: 'cue' | 'explain' | 'quiz' | 'feedback' | 'answer' | 'system';
   at: string;
+  /** A free question answered by the conversation coach mid-lesson (the lesson state was not touched). */
+  side?: boolean;
+  /** Sources / videos of that answer — copied from the search results, never written by the model. */
+  sources?: import('../selfAi/types').ChatSource[];
+  videos?: import('../selfAi/types').ChatSource[];
+  /** Which writer produced the answer (martialdex-data / -list / -evidence / a local model name). */
+  model?: string;
+  /** Techniques offered for this lesson — added only after the learner agrees. */
+  proposal?: import('../selfAi/lessonSession').LessonAddProposal;
+  /** 3D preview of the technique(s) the answer is about (selfAi/preview.ts). */
+  preview?: import('../selfAi/types').TechniquePreview;
 }
 
 export interface PracticeRun {

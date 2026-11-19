@@ -1,3 +1,5 @@
+import SocialProfilePanel from '../components/social/SocialProfilePanel';
+import Icon from '../components/Icon';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useProfileStats } from '../lib/profileStats/useProfileStats';
@@ -22,7 +24,10 @@ import type { MarketplaceListing, MarketplaceOrder } from '../lib/marketplace/ty
 import { requestRefund } from '../lib/payments/paymentService';
 import BackButton from '../components/BackButton';
 import TutorVoiceSettingsPanel from '../components/TutorVoiceSettingsPanel';
+import LocalAiEnginePanel from '../components/LocalAiEnginePanel';
+import SelfSearchSwitch from '../components/SelfSearchSwitch';
 import MyCommunityPostsCard from '../components/community/MyCommunityPostsCard';
+import { AchievementBadge, RankEmblem } from '../components/icons/BrandAssets';
 
 function PurchasedCurriculumRow({ curriculum }: { curriculum: import('../lib/curriculum/types').Curriculum }) {
   const { progress } = useCurriculumProgress(curriculum);
@@ -171,8 +176,10 @@ export default function Profile() {
           <span>프로필</span>
         </div>
 
+        <div className="profile-banner" role="img" aria-label="" />
+
         <div className="section-title">
-          <h2>👤 프로필</h2>
+          <h2><Icon name="user" /> 프로필</h2>
           <Link to="/dashboard" className="see-all">
             대시보드 (최근 훈련·통계) →
           </Link>
@@ -196,7 +203,7 @@ export default function Profile() {
                 <div className="modal-actions modal-actions--start">
                   {hasLocalDataToBackup() && (
                     <button className="btn btn-secondary" onClick={handleBackup} disabled={syncing}>
-                      {syncing ? '처리 중…' : '☁️ 계정에 백업하기'}
+                      {syncing ? '처리 중…' : <><Icon name="cloud" /> 계정에 백업하기</>}
                     </button>
                   )}
                   <button className="btn btn-secondary" onClick={handleRestore} disabled={syncing}>
@@ -264,15 +271,23 @@ export default function Profile() {
           </div>
         )}
 
+        {user && <SocialProfilePanel userId={user.id} />}
+
+        <div className="card info-card" data-testid="profile-ai-engine">
+          <h3><Icon name="brain" /> AI 엔진 · 로컬 AI</h3>
+          <LocalAiEnginePanel />
+          <SelfSearchSwitch />
+        </div>
+
         <div className="card info-card" data-testid="profile-tutor-voice">
-          <h3>🔊 AI 튜터 음성</h3>
+          <h3><Icon name="sound" /> AI 튜터 음성</h3>
           <p className="video-status-message" style={{ marginTop: 0 }}>AI 코치와 "말로 대화"할 때 쓰는 목소리와 말하기 속도입니다. 입력으로 대화하는 모드에는 영향을 주지 않습니다.</p>
           <TutorVoiceSettingsPanel autoSave />
         </div>
 
         {user && (
           <div className="card info-card">
-            <h3>🕑 AI 질문 기록</h3>
+            <h3><Icon name="timer" /> AI 질문 기록</h3>
             <p className="video-status-message">기술/자세 분석/커리큘럼/선수 스타일/AI 코치 화면에서 나눈 AI 질문·답변을 확인하고 삭제할 수 있습니다.</p>
             <div className="modal-actions modal-actions--start">
               <Link to="/ai-history" className="btn btn-secondary btn-sm">
@@ -340,15 +355,18 @@ export default function Profile() {
             <Link to="/my-style" className="btn btn-secondary">
               나의 스타일 보기 →
             </Link>
+            <Link to="/goals" className="btn btn-secondary" data-testid="profile-goals-link">
+              <Icon name="target" /> 개인 목표 →
+            </Link>
           </div>
         </div>
 
         <div className="card info-card">
           <div className="chip-row">
-            <span className="chip active">🥋 {rank.title}</span>
+            <span className="chip active rank-chip"><RankEmblem level={level.level} /> {rank.title}</span>
             <span className="chip">Level {level.level}</span>
             <span className="chip">{level.label}</span>
-            {stats.currentStreak > 0 && <span className="chip">🔥 {stats.currentStreak}일 연속 학습</span>}
+            {stats.currentStreak > 0 && <span className="chip"><Icon name="flame" /> {stats.currentStreak}일 연속 학습</span>}
           </div>
           {level.xpForNextLevel !== null && (
             <>
@@ -368,7 +386,7 @@ export default function Profile() {
 
         {user && (
           <div className="card info-card">
-            <h3>🛍 구매한 커리큘럼</h3>
+            <h3><Icon name="cart" /> 구매한 커리큘럼</h3>
             {purchasedCurricula.length === 0 ? (
               <p className="video-status-message">아직 마켓에서 받거나 구매한 커리큘럼이 없습니다.</p>
             ) : (
@@ -388,7 +406,7 @@ export default function Profile() {
 
         {user && sellingListings !== null && sellingListings.length > 0 && (
           <div className="card info-card">
-            <h3>💰 내 판매 커리큘럼</h3>
+            <h3><Icon name="coin" /> 내 판매 커리큘럼</h3>
             <div className="stack gap-2">
               {sellingListings.map((l) => {
                 // Only paid/completed orders count toward settlement math — pending/failed/cancelled never did, and refunded no longer does (spec section 13).
@@ -430,15 +448,14 @@ export default function Profile() {
 
         <div className="card info-card">
           <h3>
-            🏆 업적 ({unlockedCount}/{achievements.length})
+            <Icon name="trophy" /> 업적 ({unlockedCount}/{achievements.length})
           </h3>
           <div className="stack gap-2">
             {achievements.map((a) => (
-              <div key={a.id} className="technique-row" style={{ opacity: a.unlocked ? 1 : 0.55 }}>
+              <div key={a.id} className={`technique-row achievement-row${a.unlocked ? '' : ' achievement-row--locked'}`}>
+                <AchievementBadge id={a.id} fallback={a.icon} locked={!a.unlocked} />
                 <div className="technique-row__main">
-                  <div className="technique-row__name">
-                    {a.icon} {a.title}
-                  </div>
+                  <div className="technique-row__name">{a.title}</div>
                   <div className="technique-row__sub">{a.description}</div>
                   {!a.unlocked && (
                     <div className="progress-track" style={{ marginTop: 4 }}>

@@ -1,7 +1,9 @@
+import Icon from '../components/Icon';
 import { useEffect, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { getSparringVideo, resolvePlayableSrc } from '../lib/sparringVideo/service';
 import { SPARRING_SPORTS } from '../lib/sparringAnalysis/martialArtCriteria';
+import ArtIcon from '../components/ArtIcon';
 import { formatDuration, readVideoMeta, validateVideoFile, type VideoMeta } from '../lib/sparringAnalysis/videoMeta';
 import { createMultiPoseLandmarker } from '../lib/poseAnalysis/poseEstimator';
 import { ALL_LANDMARK_NAMES } from '../lib/poseAnalysis/landmarks';
@@ -395,7 +397,7 @@ export default function SparringAnalysis() {
         </div>
 
         <div className="section-title">
-          <h2>🥊 스파링 분석</h2>
+          <h2><Icon name="glove" /> 스파링 분석</h2>
         </div>
 
         {step === 'hub' && (
@@ -407,10 +409,10 @@ export default function SparringAnalysis() {
             </p>
             <div className="chip-row" style={{ marginBottom: 8 }}>
               <Link to="/sparring/record" className="chip">
-                📹 직접 촬영하기
+                <Icon name="camera" /> 직접 촬영하기
               </Link>
               <Link to="/sparring/videos" className="chip">
-                🎥 촬영한 영상 보기
+                <Icon name="video" /> 촬영한 영상 보기
               </Link>
             </div>
             <LoginToBackupBanner featureName="스파링 기록" />
@@ -516,7 +518,7 @@ export default function SparringAnalysis() {
                 >
                   <span className="choice-card__radio">{sport === s.id ? '●' : '○'}</span>
                   <span className="choice-card__title">
-                    {s.icon} {s.nameKo}
+                    <ArtIcon art={s.id} fallback={s.icon} size={26} /> {s.nameKo}
                   </span>
                 </button>
               ))}
@@ -541,7 +543,7 @@ export default function SparringAnalysis() {
 
         {step === 'upload' && (
           <div className="card info-card">
-            <h3>🎥 스파링 영상 분석</h3>
+            <h3><Icon name="video" /> 스파링 영상 분석</h3>
             <div className="field-label">선택한 종목</div>
             <p>{SPARRING_SPORTS.find((s) => s.id === sport)?.nameKo}</p>
             <div className="field-label" style={{ marginTop: 10 }}>
@@ -598,7 +600,7 @@ export default function SparringAnalysis() {
                       }}
                       onClick={() => setSelectedIndex(c.index)}
                     >
-                      {selectedIndex === c.index ? '🔵' : '⚪'} {c.label}
+                      <Icon name={selectedIndex === c.index ? 'check-square' : 'square'} /> {c.label}
                     </button>
                   ))}
                 </div>

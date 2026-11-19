@@ -1,4 +1,6 @@
-// Real external web search — the ONLY place this app knows about Tavily.
+// Real external web search. Default backend is the self-hosted SearXNG
+// pipeline (electron/selfSearch); Tavily below is the legacy, optional path.
+// This file is still the ONLY place this app knows about Tavily.
 // Runs in the Electron main process (Node), never in the renderer bundle,
 // same isolation rationale as gemini.cjs: the API key read from
 // process.env never ships to the frontend.
@@ -37,7 +39,7 @@ function runtimeLog(fields) {
   console.debug(`[CURRICULUM_TAVILY_RUNTIME] ${parts.join(' ')}`);
 }
 
-async function webSearch(query) {
+async function tavilySearch(query) {
   if (typeof query !== 'string' || !query.trim()) {
     return { ok: false, code: 'UNKNOWN', message: '검색어가 비어 있습니다.' };
   }
@@ -146,4 +148,31 @@ async function webSearch(query) {
   return { ok: true, results };
 }
 
-module.exports = { webSearch };
+// Backend selection (MARTIALDEX_SEARCH_BACKEND):
+//   auto (default) — the user's own SearXNG (electron/selfSearch), and only while
+//                    자체 검색 is ON (selfSearch/service.cjs). OFF or down → a failure
+//                    the caller reports; Tavily is never used in its place.
+//   searxng        — self-hosted only, never Tavily.
+//   tavily         — legacy behaviour, only when a developer sets it explicitly.
+async function webSearch(query) {
+  if (typeof query !== 'string' || !query.trim()) {
+    return { ok: false, code: 'UNKNOWN', message: '검색어가 비어 있습니다.' };
+  }
+  const backend = (process.env.MARTIALDEX_SEARCH_BACKEND || 'auto').trim().toLowerCase();
+  if (backend === 'tavily') return tavilySearch(query);
+  const { selfWebSearch, searxStatus } = require('./selfSearch/index.cjs');
+  const off = require('./selfSearch/service.cjs').offOutcome();
+  if (off) {
+    runtimeLog({ phase: 'backend_select', backend: 'none', reason: 'self_search_off' });
+    return { ok: false, code: 'NETWORK', message: off.message };
+  }
+  if (backend === 'searxng') return selfWebSearch(query);
+  const st = await searxStatus();
+  if (st.ok) {
+    runtimeLog({ phase: 'backend_select', backend: 'searxng' });
+    return selfWebSearch(query);
+  }
+  return { ok: false, code: 'NETWORK', message: '자체 검색 서버(SearXNG)가 실행 중이 아닙니다. 설정 > AI 엔진에서 자체 검색을 다시 켜 주세요.' };
+}
+
+module.exports = { webSearch, tavilySearch };

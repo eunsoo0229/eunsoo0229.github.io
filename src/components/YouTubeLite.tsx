@@ -1,3 +1,4 @@
+import Icon from './Icon';
 import { useState } from 'react';
 
 const IFRAME_ALLOW = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
@@ -15,7 +16,7 @@ export default function YouTubeLite({ videoId, title }: { videoId: string; title
   return (
     <button type="button" className="youtube-lite" onClick={() => setPlay(true)} aria-label={`${title} 재생`} data-testid="youtube-lite" data-video-id={videoId}>
       <img src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`} alt="" loading="lazy" decoding="async" />
-      <span className="youtube-lite__play" aria-hidden="true">▶</span>
+      <span className="youtube-lite__play" aria-hidden="true"><Icon name="play" /></span>
     </button>
   );
 }

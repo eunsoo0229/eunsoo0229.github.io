@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PERIOD_LABEL, type PeriodKey } from '../lib/statsHub/types';
@@ -70,7 +71,7 @@ export default function MyStats() {
         </div>
 
         <div className="section-title">
-          <h2>📊 나의 통계</h2>
+          <h2><Icon name="chart" /> 나의 통계</h2>
         </div>
         <p className="video-status-message" style={{ marginTop: -8 }}>
           훈련 기록, 카메라 자세 분석, 스파링 분석을 종합한 참고용 통계입니다. 실제 기록이 없는
@@ -120,7 +121,7 @@ export default function MyStats() {
             </div>
 
             <div className="card info-card">
-              <h3>🤖 AI 학습 요약</h3>
+              <h3><Icon name="bot" /> AI 학습 요약</h3>
               <button className="btn btn-primary btn-sm" onClick={handleGetSummary} disabled={loadingSummary}>
                 {loadingSummary ? '요약 생성 중…' : aiSummary ? '요약 다시 받기' : '이번 기간 요약 받기'}
               </button>
@@ -175,7 +176,7 @@ export default function MyStats() {
             )}
 
             <div className="card info-card">
-              <h3>🥊 스파링 통계</h3>
+              <h3><Icon name="glove" /> 스파링 통계</h3>
               {sparringStats.totalCount === 0 ? (
                 <EmptyState icon="🥊" text="이 기간에 분석한 스파링 영상이 없습니다." />
               ) : (

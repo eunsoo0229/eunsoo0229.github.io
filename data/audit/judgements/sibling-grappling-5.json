@@ -1,0 +1,1792 @@
+[
+  {
+    "id": "bjj__backdoor-escape",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__backdoor-escape",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링은 도복·서브미션·가드 하위 플레이가 없어 해당되지 않음",
+    "evidence": "UWW/folkstyle 규칙(서브미션 없음, 하위 가드 플레이 없음, 등이 매트에 닿으면 불리)"
+  },
+  {
+    "id": "bjj__backdoor-escape",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__deep-half-sweep",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__deep-half-sweep",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링은 도복·서브미션·가드 하위 플레이가 없어 해당되지 않음",
+    "evidence": "UWW/folkstyle 규칙(서브미션 없음, 하위 가드 플레이 없음, 등이 매트에 닿으면 불리)"
+  },
+  {
+    "id": "bjj__deep-half-sweep",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__long-step",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__long-step",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링은 도복·서브미션·가드 하위 플레이가 없어 해당되지 않음",
+    "evidence": "UWW/folkstyle 규칙(서브미션 없음, 하위 가드 플레이 없음, 등이 매트에 닿으면 불리)"
+  },
+  {
+    "id": "bjj__long-step",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__x-pass",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__x-pass",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링은 도복·서브미션·가드 하위 플레이가 없어 해당되지 않음",
+    "evidence": "UWW/folkstyle 규칙(서브미션 없음, 하위 가드 플레이 없음, 등이 매트에 닿으면 불리)"
+  },
+  {
+    "id": "bjj__x-pass",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__headquarters-pass",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__headquarters-pass",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링은 도복·서브미션·가드 하위 플레이가 없어 해당되지 않음",
+    "evidence": "UWW/folkstyle 규칙(서브미션 없음, 하위 가드 플레이 없음, 등이 매트에 닿으면 불리)"
+  },
+  {
+    "id": "bjj__headquarters-pass",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__folding-pass",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__folding-pass",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링은 도복·서브미션·가드 하위 플레이가 없어 해당되지 않음",
+    "evidence": "UWW/folkstyle 규칙(서브미션 없음, 하위 가드 플레이 없음, 등이 매트에 닿으면 불리)"
+  },
+  {
+    "id": "bjj__folding-pass",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__leg-weave-pass",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__leg-weave-pass",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링은 도복·서브미션·가드 하위 플레이가 없어 해당되지 않음",
+    "evidence": "UWW/folkstyle 규칙(서브미션 없음, 하위 가드 플레이 없음, 등이 매트에 닿으면 불리)"
+  },
+  {
+    "id": "bjj__leg-weave-pass",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__leg-control",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__leg-control",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링은 도복·서브미션·가드 하위 플레이가 없어 해당되지 않음",
+    "evidence": "UWW/folkstyle 규칙(서브미션 없음, 하위 가드 플레이 없음, 등이 매트에 닿으면 불리)"
+  },
+  {
+    "id": "bjj__reverse-kesa-gatame",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "judo__ushiro-kesa-gatame",
+    "reason": "유도에 반대 방향 케사가타메인 우시로 케사가타메로 이미 존재함",
+    "evidence": "catalog-judo.tsv: judo__ushiro-kesa-gatame Ushiro Kesa Gatame [굳히기 --- Osaekomi Waza]"
+  },
+  {
+    "id": "bjj__reverse-kesa-gatame",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링의 핀은 케사 계열 반대 방향 누르기를 표준 기술로 다루지 않음",
+    "evidence": "catalog-wrestling.tsv 탑 포지션에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__reverse-kesa-gatame",
+    "art": "sambo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "삼보 옆누르기 변형(반대 방향)과 유사하나 대응 항목이 불확실함",
+    "evidence": "catalog-sambo.tsv: sambo__удержание-сбоку / sambo__удержание-спиной-поперек"
+  },
+  {
+    "id": "bjj__paper-cutter-choke",
+    "art": "judo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "기 칼라 초크로 유도에서 합법이나 십자 조르기 변형과의 동일성이 불확실함",
+    "evidence": "catalog-judo.tsv: judo__kata-juji-jime [조르기 --- Shime Waza]"
+  },
+  {
+    "id": "bjj__paper-cutter-choke",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 조르기 등 서브미션이 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 조르기 금지"
+  },
+  {
+    "id": "bjj__paper-cutter-choke",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "스포츠 삼보 규칙상 조르기 기술이 금지되어 있음",
+    "evidence": "FIAS 스포츠 삼보 규칙: 조르기 금지(컴뱃 삼보 한정)"
+  },
+  {
+    "id": "bjj__baseball-bat-choke",
+    "art": "judo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도에서 합법인 깃 조르기이나 코도칸 명명 기술과의 대응이 불확실함",
+    "evidence": "catalog-judo.tsv 조르기 --- Shime Waza 항목들"
+  },
+  {
+    "id": "bjj__baseball-bat-choke",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 조르기 등 서브미션이 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 조르기 금지"
+  },
+  {
+    "id": "bjj__baseball-bat-choke",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "스포츠 삼보 규칙상 조르기 기술이 금지되어 있음",
+    "evidence": "FIAS 스포츠 삼보 규칙: 조르기 금지(컴뱃 삼보 한정)"
+  },
+  {
+    "id": "bjj__backstep",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__backstep",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링은 도복·서브미션·가드 하위 플레이가 없어 해당되지 않음",
+    "evidence": "UWW/folkstyle 규칙(서브미션 없음, 하위 가드 플레이 없음, 등이 매트에 닿으면 불리)"
+  },
+  {
+    "id": "bjj__backstep",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__double-armbar",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "두 팔 동시 관절기는 유도 커리큘럼의 표준 관절기가 아님",
+    "evidence": "Kodokan kansetsu-waza 목록(ude-hishigi 계열)에 해당 항목 없음"
+  },
+  {
+    "id": "bjj__double-armbar",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 관절기·서브미션이 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 관절기 금지"
+  },
+  {
+    "id": "bjj__double-armbar",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "삼보 상체 관절기 목록에 두 팔 동시 관절기는 표준 기술이 아님",
+    "evidence": "catalog-sambo.tsv 상체 관절기 항목에 대응 없음"
+  },
+  {
+    "id": "bjj__trap-and-roll-prevention",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "백 컨트롤 유지 방어 원칙으로 유도의 독립 기술이 아님",
+    "evidence": "catalog-judo.tsv 대응 항목 없음"
+  },
+  {
+    "id": "bjj__trap-and-roll-prevention",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 백 컨트롤 유지 원칙으로 레슬링 기술이 아님",
+    "evidence": "catalog-wrestling.tsv 대응 항목 없음"
+  },
+  {
+    "id": "bjj__trap-and-roll-prevention",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 백 컨트롤 유지 원칙으로 삼보 기술이 아님",
+    "evidence": "catalog-sambo.tsv 대응 항목 없음"
+  },
+  {
+    "id": "bjj__hand-fighting",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "백에서 조르기 방어 손싸움은 BJJ 맥락의 원칙으로 유도 독립 기술이 아님",
+    "evidence": "catalog-judo.tsv 대응 항목 없음(그립 다툼은 스탠딩 kumi-kata)"
+  },
+  {
+    "id": "bjj__hand-fighting",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "조르기가 금지된 스포츠 삼보에서 백 컨트롤 손싸움은 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙: 조르기 금지"
+  },
+  {
+    "id": "bjj__chair-sit",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 백 컨트롤 자세 디테일로 유도 기술이 아님",
+    "evidence": "catalog-judo.tsv 대응 항목 없음"
+  },
+  {
+    "id": "bjj__chair-sit",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 백 컨트롤 자세로 레슬링 기술이 아님",
+    "evidence": "catalog-wrestling.tsv 대응 항목 없음"
+  },
+  {
+    "id": "bjj__chair-sit",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 백 컨트롤 자세로 삼보 기술이 아님",
+    "evidence": "catalog-sambo.tsv 대응 항목 없음"
+  },
+  {
+    "id": "bjj__crucifix-back",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__crucifix-back",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링은 도복·서브미션·가드 하위 플레이가 없어 해당되지 않음",
+    "evidence": "UWW/folkstyle 규칙(서브미션 없음, 하위 가드 플레이 없음, 등이 매트에 닿으면 불리)"
+  },
+  {
+    "id": "bjj__crucifix-back",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__truck-back",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__truck-back",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링은 도복·서브미션·가드 하위 플레이가 없어 해당되지 않음",
+    "evidence": "UWW/folkstyle 규칙(서브미션 없음, 하위 가드 플레이 없음, 등이 매트에 닿으면 불리)"
+  },
+  {
+    "id": "bjj__truck-back",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__short-choke",
+    "art": "judo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "하다카지메 변형이나 카탈로그 리어 네이키드 초크와 별도 기술인지 불확실함",
+    "evidence": "catalog-judo.tsv: bjj__rear-naked-choke [조르기 --- Shime Waza]"
+  },
+  {
+    "id": "bjj__short-choke",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 조르기 등 서브미션이 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 조르기 금지"
+  },
+  {
+    "id": "bjj__short-choke",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "스포츠 삼보 규칙상 조르기 기술이 금지되어 있음",
+    "evidence": "FIAS 스포츠 삼보 규칙: 조르기 금지(컴뱃 삼보 한정)"
+  },
+  {
+    "id": "bjj__bow-and-arrow-choke",
+    "art": "judo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도 오쿠리에리지메 변형으로 쓰이나 별도 기술인지 불확실함",
+    "evidence": "catalog-judo.tsv: judo__okuri-eri-jime [조르기 --- Shime Waza]"
+  },
+  {
+    "id": "bjj__bow-and-arrow-choke",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 조르기 등 서브미션이 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 조르기 금지"
+  },
+  {
+    "id": "bjj__bow-and-arrow-choke",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "스포츠 삼보 규칙상 조르기 기술이 금지되어 있음",
+    "evidence": "FIAS 스포츠 삼보 규칙: 조르기 금지(컴뱃 삼보 한정)"
+  },
+  {
+    "id": "bjj__collar-choke",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "judo__okuri-eri-jime",
+    "reason": "뒤에서 양손 깃 조르기는 유도의 오쿠리에리지메로 이미 존재함",
+    "evidence": "catalog-judo.tsv: judo__okuri-eri-jime Okuri Eri Jime [조르기 --- Shime Waza]"
+  },
+  {
+    "id": "bjj__collar-choke",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 조르기 등 서브미션이 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 조르기 금지"
+  },
+  {
+    "id": "bjj__clock-choke",
+    "art": "judo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "터틀 상대 깃 조르기로 유도에서 쓰이나 오쿠리에리지메 변형과 동일성이 불확실함",
+    "evidence": "catalog-judo.tsv: judo__okuri-eri-jime"
+  },
+  {
+    "id": "bjj__clock-choke",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 조르기 등 서브미션이 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 조르기 금지"
+  },
+  {
+    "id": "bjj__clock-choke",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "스포츠 삼보 규칙상 조르기 기술이 금지되어 있음",
+    "evidence": "FIAS 스포츠 삼보 규칙: 조르기 금지(컴뱃 삼보 한정)"
+  },
+  {
+    "id": "bjj__bow-and-arrow-entry",
+    "art": "judo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "터틀에서 깃 조르기 진입은 유도 네와자에도 있으나 대응 항목이 불확실함",
+    "evidence": "catalog-judo.tsv: judo__okuri-eri-jime"
+  },
+  {
+    "id": "bjj__bow-and-arrow-entry",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 조르기 등 서브미션이 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 조르기 금지"
+  },
+  {
+    "id": "bjj__bow-and-arrow-entry",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "스포츠 삼보 규칙상 조르기 기술이 금지되어 있음",
+    "evidence": "FIAS 스포츠 삼보 규칙: 조르기 금지(컴뱃 삼보 한정)"
+  },
+  {
+    "id": "bjj__armbar-entry",
+    "art": "judo",
+    "decision": "add",
+    "confidence": "B",
+    "category": "관절기 --- Kansetsu Waza",
+    "duplicateOf": null,
+    "reason": "엎드린 상대를 굴려 주지가타메로 들어가는 진입은 유도 네와자의 표준 공격임",
+    "evidence": "Judo juji-gatame turnover/roll from turtle (Ude-hishigi-juji-gatame); catalog-judo.tsv: bjj__armbar [관절기 --- Kansetsu Waza]"
+  },
+  {
+    "id": "bjj__armbar-entry",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 관절기·서브미션이 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 관절기 금지"
+  },
+  {
+    "id": "bjj__armbar-entry",
+    "art": "sambo",
+    "decision": "add",
+    "confidence": "B",
+    "category": "상체 관절기 --- 뤄착(Рычаг)과 우젤(Узел)",
+    "duplicateOf": null,
+    "reason": "파르테르(엎드린 상대)에서 굴려 팔꺾기로 가는 진입은 삼보의 표준 공격임",
+    "evidence": "Sambo рычаг локтя из партера (перекат); catalog-sambo.tsv: sambo__рычаг-локтя"
+  },
+  {
+    "id": "bjj__japanese-necktie",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "노기 프론트 헤드락 초크로 유도 표준 조르기가 아님",
+    "evidence": "Kodokan shime-waza 목록에 해당 없음"
+  },
+  {
+    "id": "bjj__japanese-necktie",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 조르기 등 서브미션이 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 조르기 금지"
+  },
+  {
+    "id": "bjj__japanese-necktie",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "스포츠 삼보 규칙상 조르기 기술이 금지되어 있음",
+    "evidence": "FIAS 스포츠 삼보 규칙: 조르기 금지(컴뱃 삼보 한정)"
+  },
+  {
+    "id": "bjj__peruvian-necktie",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "다리를 쓰는 노기 헤드락 초크로 유도 표준 조르기가 아님",
+    "evidence": "Kodokan shime-waza 목록에 해당 없음"
+  },
+  {
+    "id": "bjj__peruvian-necktie",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 조르기 등 서브미션이 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 조르기 금지"
+  },
+  {
+    "id": "bjj__peruvian-necktie",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "스포츠 삼보 규칙상 조르기 기술이 금지되어 있음",
+    "evidence": "FIAS 스포츠 삼보 규칙: 조르기 금지(컴뱃 삼보 한정)"
+  },
+  {
+    "id": "bjj__side-control-crucifix",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__side-control-crucifix",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 크루시픽스는 라이드에서 들어가며 사이드 컨트롤 전환과 다름",
+    "evidence": "catalog-wrestling.tsv 대응 항목 없음"
+  },
+  {
+    "id": "bjj__side-control-crucifix",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__back-control-crucifix",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__back-control-crucifix",
+    "art": "wrestling",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 탑에서 팔을 다리로 잡는 크루시픽스 핀과 유사하나 동일성이 불확실함",
+    "evidence": "Folkstyle crucifix (cement mixer) 핀 조합; catalog-wrestling.tsv 대응 항목 없음"
+  },
+  {
+    "id": "bjj__back-control-crucifix",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__crucifix-choke",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "크루시픽스 초크는 유도 표준 조르기가 아님",
+    "evidence": "Kodokan shime-waza 목록에 해당 없음"
+  },
+  {
+    "id": "bjj__crucifix-choke",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 조르기 등 서브미션이 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 조르기 금지"
+  },
+  {
+    "id": "bjj__crucifix-choke",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "스포츠 삼보 규칙상 조르기 기술이 금지되어 있음",
+    "evidence": "FIAS 스포츠 삼보 규칙: 조르기 금지(컴뱃 삼보 한정)"
+  },
+  {
+    "id": "bjj__transition-to-back",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__transition-to-back",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링은 도복·서브미션·가드 하위 플레이가 없어 해당되지 않음",
+    "evidence": "UWW/folkstyle 규칙(서브미션 없음, 하위 가드 플레이 없음, 등이 매트에 닿으면 불리)"
+  },
+  {
+    "id": "bjj__transition-to-back",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__outside-ashi",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도 규칙상 다리 관절기가 금지되어 있음",
+    "evidence": "IJF 규칙: 관절기는 팔꿈치만 허용"
+  },
+  {
+    "id": "bjj__outside-ashi",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 관절기가 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 관절기 금지"
+  },
+  {
+    "id": "bjj__outside-ashi",
+    "art": "sambo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "삼보 발목 관절기용 다리 얽기와 유사하나 동일 포지션인지 불확실함",
+    "evidence": "catalog-sambo.tsv: sambo__двойной-зацеп / sambo__рычаг-стопы"
+  },
+  {
+    "id": "bjj__inside-ashi",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도 규칙상 다리 관절기가 금지되어 있음",
+    "evidence": "IJF 규칙: 관절기는 팔꿈치만 허용"
+  },
+  {
+    "id": "bjj__inside-ashi",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 관절기가 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 관절기 금지"
+  },
+  {
+    "id": "bjj__50-50",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도 규칙상 다리 관절기가 금지되어 있음",
+    "evidence": "IJF 규칙: 관절기는 팔꿈치만 허용"
+  },
+  {
+    "id": "bjj__50-50",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 관절기가 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 관절기 금지"
+  },
+  {
+    "id": "bjj__50-50",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "힐훅 중심의 BJJ 다리 얽기 포지션으로 삼보 표준 기술이 아님",
+    "evidence": "FIAS 규칙: 힐훅·비틀기 무릎 관절기 금지"
+  },
+  {
+    "id": "bjj__outside-sankaku",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도 규칙상 다리 관절기가 금지되어 있음",
+    "evidence": "IJF 규칙: 관절기는 팔꿈치만 허용"
+  },
+  {
+    "id": "bjj__outside-sankaku",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 관절기가 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 관절기 금지"
+  },
+  {
+    "id": "bjj__outside-sankaku",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "힐훅용 다리 얽기로 삼보 규칙상 힐훅이 금지되어 있음",
+    "evidence": "FIAS 스포츠 삼보 규칙: 힐훅 금지"
+  },
+  {
+    "id": "bjj__50-50-sweep",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "다리 얽힘 포지션 스윕으로 유도 기술이 아님",
+    "evidence": "catalog-judo.tsv 대응 항목 없음"
+  },
+  {
+    "id": "bjj__50-50-sweep",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링은 도복·서브미션·가드 하위 플레이가 없어 해당되지 않음",
+    "evidence": "UWW/folkstyle 규칙(서브미션 없음, 하위 가드 플레이 없음, 등이 매트에 닿으면 불리)"
+  },
+  {
+    "id": "bjj__50-50-sweep",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__backside-50-50",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도 규칙상 다리 관절기가 금지되어 있음",
+    "evidence": "IJF 규칙: 관절기는 팔꿈치만 허용"
+  },
+  {
+    "id": "bjj__backside-50-50",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링은 도복·서브미션·가드 하위 플레이가 없어 해당되지 않음",
+    "evidence": "UWW/folkstyle 규칙(서브미션 없음, 하위 가드 플레이 없음, 등이 매트에 닿으면 불리)"
+  },
+  {
+    "id": "bjj__backside-50-50",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "힐훅 중심 BJJ 레그 포지션으로 삼보 표준 기술이 아님",
+    "evidence": "FIAS 규칙: 힐훅 금지"
+  },
+  {
+    "id": "bjj__transition-to-slx",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도 규칙상 다리 관절기가 금지되어 있음",
+    "evidence": "IJF 규칙: 관절기는 팔꿈치만 허용"
+  },
+  {
+    "id": "bjj__transition-to-slx",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링은 도복·서브미션·가드 하위 플레이가 없어 해당되지 않음",
+    "evidence": "UWW/folkstyle 규칙(서브미션 없음, 하위 가드 플레이 없음, 등이 매트에 닿으면 불리)"
+  },
+  {
+    "id": "bjj__transition-to-slx",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__transition-to-x-guard",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__transition-to-x-guard",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링은 도복·서브미션·가드 하위 플레이가 없어 해당되지 않음",
+    "evidence": "UWW/folkstyle 규칙(서브미션 없음, 하위 가드 플레이 없음, 등이 매트에 닿으면 불리)"
+  },
+  {
+    "id": "bjj__transition-to-x-guard",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__outside-ankle-lock",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도 규칙상 다리 관절기가 금지되어 있음",
+    "evidence": "IJF 규칙: 관절기는 팔꿈치만 허용"
+  },
+  {
+    "id": "bjj__outside-ankle-lock",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 관절기가 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 관절기 금지"
+  },
+  {
+    "id": "bjj__outside-ankle-lock",
+    "art": "sambo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "삼보 발목 관절기(рычаг стопы)와 같은 기술인지 변형인지 불확실함",
+    "evidence": "catalog-sambo.tsv: sambo__рычаг-стопы, bjj__straight-ankle-lock"
+  },
+  {
+    "id": "bjj__inside-ankle-lock",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도 규칙상 다리 관절기가 금지되어 있음",
+    "evidence": "IJF 규칙: 관절기는 팔꿈치만 허용"
+  },
+  {
+    "id": "bjj__inside-ankle-lock",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 관절기가 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 관절기 금지"
+  },
+  {
+    "id": "bjj__inside-ankle-lock",
+    "art": "sambo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "삼보 발목 관절기(рычаг стопы)와 같은 기술인지 변형인지 불확실함",
+    "evidence": "catalog-sambo.tsv: sambo__рычаг-стопы, bjj__straight-ankle-lock"
+  },
+  {
+    "id": "bjj__toe-hold",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도 규칙상 다리 관절기가 금지되어 있음",
+    "evidence": "IJF 규칙: 관절기는 팔꿈치만 허용"
+  },
+  {
+    "id": "bjj__toe-hold",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 관절기가 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 관절기 금지"
+  },
+  {
+    "id": "bjj__toe-hold",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "sambo__узел-стопы",
+    "reason": "삼보에 토홀드에 해당하는 узел стопы가 이미 존재함",
+    "evidence": "catalog-sambo.tsv: sambo__узел-стопы [하체 관절기 --- 삼보의 전통적 강점]"
+  },
+  {
+    "id": "bjj__calf-slicer",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도 규칙상 다리 관절기가 금지되어 있음",
+    "evidence": "IJF 규칙: 관절기는 팔꿈치만 허용"
+  },
+  {
+    "id": "bjj__calf-slicer",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 관절기가 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 관절기 금지"
+  },
+  {
+    "id": "bjj__calf-slicer",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "sambo__ущемление-икроножной-мышцы",
+    "reason": "삼보에 종아리 압박기 ущемление икроножной мышцы가 이미 존재함",
+    "evidence": "catalog-sambo.tsv: sambo__ущемление-икроножной-мышцы [하체 관절기 --- 삼보의 전통적 강점]"
+  },
+  {
+    "id": "bjj__kimura-armbar",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__kimura-armbar",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 관절기·서브미션이 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 관절기 금지"
+  },
+  {
+    "id": "bjj__kimura-armbar",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__omoplata-armbar",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도 관절기는 팔꿈치만 허용되어 오모플라타 연결은 표준이 아님",
+    "evidence": "IJF 규칙: 관절기는 팔꿈치만 허용"
+  },
+  {
+    "id": "bjj__omoplata-armbar",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 관절기·서브미션이 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 관절기 금지"
+  },
+  {
+    "id": "bjj__omoplata-armbar",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__reverse-triangle",
+    "art": "judo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도 우라 산카쿠 계열과 유사하나 동일 기술인지 불확실함",
+    "evidence": "Judo sankaku-jime variants; catalog-judo.tsv: bjj__triangle-choke"
+  },
+  {
+    "id": "bjj__reverse-triangle",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 조르기 등 서브미션이 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 조르기 금지"
+  },
+  {
+    "id": "bjj__reverse-triangle",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "스포츠 삼보 규칙상 조르기 기술이 금지되어 있음",
+    "evidence": "FIAS 스포츠 삼보 규칙: 조르기 금지(컴뱃 삼보 한정)"
+  },
+  {
+    "id": "bjj__side-triangle",
+    "art": "judo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도 요코 산카쿠 계열과 유사하나 사이드 컨트롤 변형과 동일성이 불확실함",
+    "evidence": "Judo yoko-sankaku; catalog-judo.tsv: bjj__triangle-choke"
+  },
+  {
+    "id": "bjj__side-triangle",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 조르기 등 서브미션이 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 조르기 금지"
+  },
+  {
+    "id": "bjj__side-triangle",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "스포츠 삼보 규칙상 조르기 기술이 금지되어 있음",
+    "evidence": "FIAS 스포츠 삼보 규칙: 조르기 금지(컴뱃 삼보 한정)"
+  },
+  {
+    "id": "bjj__inverted-triangle",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "뒤집힌 자세 트라이앵글은 유도 표준 조르기가 아님",
+    "evidence": "catalog-judo.tsv 대응 항목 없음"
+  },
+  {
+    "id": "bjj__inverted-triangle",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 조르기 등 서브미션이 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 조르기 금지"
+  },
+  {
+    "id": "bjj__inverted-triangle",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "스포츠 삼보 규칙상 조르기 기술이 금지되어 있음",
+    "evidence": "FIAS 스포츠 삼보 규칙: 조르기 금지(컴뱃 삼보 한정)"
+  },
+  {
+    "id": "bjj__kimura-back-take",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__kimura-back-take",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "키무라 그립 백 테이크는 레슬링 표준 기술이 아님",
+    "evidence": "catalog-wrestling.tsv 대응 항목 없음"
+  },
+  {
+    "id": "bjj__kimura-back-take",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__kimura-triangle",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__kimura-triangle",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 조르기 등 서브미션이 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 조르기 금지"
+  },
+  {
+    "id": "bjj__kimura-triangle",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "스포츠 삼보 규칙상 조르기 기술이 금지되어 있음",
+    "evidence": "FIAS 스포츠 삼보 규칙: 조르기 금지(컴뱃 삼보 한정)"
+  },
+  {
+    "id": "bjj__arm-drag-butterfly-sweep",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__arm-drag-butterfly-sweep",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링은 도복·서브미션·가드 하위 플레이가 없어 해당되지 않음",
+    "evidence": "UWW/folkstyle 규칙(서브미션 없음, 하위 가드 플레이 없음, 등이 매트에 닿으면 불리)"
+  },
+  {
+    "id": "bjj__arm-drag-butterfly-sweep",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__arm-drag-closed-guard",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__arm-drag-closed-guard",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링은 도복·서브미션·가드 하위 플레이가 없어 해당되지 않음",
+    "evidence": "UWW/folkstyle 규칙(서브미션 없음, 하위 가드 플레이 없음, 등이 매트에 닿으면 불리)"
+  },
+  {
+    "id": "bjj__arm-drag-closed-guard",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__arm-drag-turtle-attack",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__arm-drag-turtle-attack",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/터틀 공략 연결로 레슬링 표준 기술이 아님",
+    "evidence": "catalog-wrestling.tsv 대응 항목 없음"
+  },
+  {
+    "id": "bjj__arm-drag-turtle-attack",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__technical-stand-up-back-take",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__technical-stand-up-back-take",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 백 테이크 연결로 레슬링 표준 기술이 아님(레슬링은 매트 리턴으로 대응)",
+    "evidence": "catalog-wrestling.tsv: wrestling__mat-return"
+  },
+  {
+    "id": "bjj__technical-stand-up-back-take",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__granby-counter",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "그랜비 롤 반격은 유도 커리큘럼의 표준 기술이 아님",
+    "evidence": "catalog-judo.tsv 대응 항목 없음"
+  },
+  {
+    "id": "bjj__granby-counter",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "wrestling__granby-roll",
+    "reason": "레슬링에 그랜비 롤이 이미 존재함",
+    "evidence": "catalog-wrestling.tsv: wrestling__granby-roll"
+  },
+  {
+    "id": "bjj__granby-counter",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "wrestling__granby-roll",
+    "reason": "삼보 카탈로그에 그랜비 롤이 이미 존재함",
+    "evidence": "catalog-sambo.tsv: wrestling__granby-roll [바텀 포지션과 탈출]"
+  },
+  {
+    "id": "bjj__kimura-trap-back",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__kimura-trap-back",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "키무라 트랩 백 테이크는 레슬링 표준 기술이 아님",
+    "evidence": "catalog-wrestling.tsv 대응 항목 없음"
+  },
+  {
+    "id": "bjj__kimura-trap-back",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__dlr-sweep",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__dlr-sweep",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링은 도복·서브미션·가드 하위 플레이가 없어 해당되지 않음",
+    "evidence": "UWW/folkstyle 규칙(서브미션 없음, 하위 가드 플레이 없음, 등이 매트에 닿으면 불리)"
+  },
+  {
+    "id": "bjj__dlr-sweep",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__loop-choke",
+    "art": "judo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도에서 합법인 깃 조르기로 쓰이나 표준 명명 기술인지 불확실함",
+    "evidence": "catalog-judo.tsv 조르기 --- Shime Waza 항목들"
+  },
+  {
+    "id": "bjj__loop-choke",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 규칙상 조르기 등 서브미션이 금지되어 있음",
+    "evidence": "UWW 레슬링 규칙: 조르기 금지"
+  },
+  {
+    "id": "bjj__loop-choke",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "스포츠 삼보 규칙상 조르기 기술이 금지되어 있음",
+    "evidence": "FIAS 스포츠 삼보 규칙: 조르기 금지(컴뱃 삼보 한정)"
+  },
+  {
+    "id": "bjj__worm-guard",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도 규칙상 띠·도복 끝을 상대 몸에 감는 것이 금지됨",
+    "evidence": "IJF 규칙: 띠 끝/상의 자락을 상대 신체에 감는 행위 금지"
+  },
+  {
+    "id": "bjj__worm-guard",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링은 도복·서브미션·가드 하위 플레이가 없어 해당되지 않음",
+    "evidence": "UWW/folkstyle 규칙(서브미션 없음, 하위 가드 플레이 없음, 등이 매트에 닿으면 불리)"
+  },
+  {
+    "id": "bjj__worm-guard",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "삼보 쿠르트카는 긴 옷깃이 없어 웜 가드가 성립하지 않음",
+    "evidence": "FIAS 복장 규정(쿠르트카·반바지)"
+  },
+  {
+    "id": "bjj__collar-drag",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__collar-drag",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링은 도복이 없어 깃 잡기가 존재하지 않음",
+    "evidence": "UWW 레슬링 복장 규정(싱글렛)"
+  },
+  {
+    "id": "bjj__collar-drag",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__sleeve-drag",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__sleeve-drag",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링은 도복이 없어 소매 잡기가 존재하지 않음",
+    "evidence": "UWW 레슬링 복장 규정(싱글렛)"
+  },
+  {
+    "id": "bjj__sleeve-drag",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__collar-sleeve-sweep",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 하위/가드 플레이 특유의 기술로 유도 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "Kodokan newaza 체계 및 IJF 규칙(짧은 네와자, 가드 스윕 무득점); catalog-judo.tsv에 대응 항목 없음"
+  },
+  {
+    "id": "bjj__collar-sleeve-sweep",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링은 도복이 없고 가드 하위 플레이가 없음",
+    "evidence": "UWW 레슬링 규칙/복장 규정"
+  },
+  {
+    "id": "bjj__collar-sleeve-sweep",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 가드/포지션 특유의 기술로 삼보 커리큘럼·경기의 표준 기술이 아님",
+    "evidence": "FIAS 스포츠 삼보 규칙(짧은 파르테르, 포지션 점수 체계); catalog-sambo.tsv에 대응 항목 없음"
+  }
+]

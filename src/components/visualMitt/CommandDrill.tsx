@@ -1,9 +1,11 @@
+import Icon from '../Icon';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { FrontView, POV_IMPACT_MS, povTiming, type Stance } from './MittStage';
 import type { MittCombo } from '../../lib/visualMitt/combos';
 import { calloutFor, pickNext } from '../../lib/visualMitt/reaction';
 import { useMittTempo } from '../../lib/visualMitt/tempo';
 import TempoControls from './TempoControls';
+import DrillScopeControls, { useDrillScope } from './DrillScopeControls';
 import { COMMAND_LEVEL_LABEL, commandCallout, commandPhase, commandPool, commandTiming, recordCommandSession, type CommandLevel } from '../../lib/visualMitt/commandDrill';
 import { useReadyCountdown } from '../../lib/visualMitt/readyCountdown';
 import { HitSound } from '../../lib/visualMitt/hitSound';
@@ -27,16 +29,18 @@ const speechTimeoutMs = (text: string) => 1500 + text.length * 220;
  * one slot per strike, recovery). Nothing here watches the user — the round
  * records what was called and for how long.
  */
-export default function CommandDrill({ stance: initialStance = 'orthodox', voice: voiceDefault = true, record = true }: { stance?: Stance; voice?: boolean; record?: boolean }) {
+export default function CommandDrill({ stance: initialStance = 'orthodox', voice: voiceDefault = true, record = true, art = '' }: { stance?: Stance; voice?: boolean; record?: boolean; art?: string }) {
   const [level, setLevel] = useState<CommandLevel>('mixed');
-  const [withKicks, setWithKicks] = useState(false);
-  const [withDefense, setWithDefense] = useState(false);
+  const scope = useDrillScope(art);
   const [tempo, setTempo] = useMittTempo();
   const [roundSeconds, setRoundSeconds] = useState(120);
   const [stance, setStance] = useState<Stance>(initialStance);
   const [voice, setVoice] = useState(voiceDefault && isTtsSupported());
   const [sound, setSound] = useState(true);
-  const pool = useMemo(() => commandPool(level, withKicks, undefined, undefined, withDefense), [level, withKicks, withDefense]);
+  const pool = useMemo(
+    () => commandPool(level, { profile: scope.profile, range: scope.range, withKicks: scope.withKicks, withDefense: scope.withDefense, extra: scope.shared }),
+    [level, scope.profile, scope.range, scope.withKicks, scope.withDefense, scope.shared],
+  );
   const [running, setRunning] = useState(false);
   const [paused, setPaused] = useState(false);
   const [done, setDone] = useState(false);
@@ -121,7 +125,7 @@ export default function CommandDrill({ stance: initialStance = 'orthodox', voice
         if (ph.phase === 'strike' && ph.local >= POV_IMPACT_MS && impactKey.current !== key) {
           impactKey.current = key;
           const a = cur.combo.steps[ph.step].motion.archetype;
-          if (opts.current.sound && a.kind === 'strike') soundRef.current?.play(a.path === 'hook' || a.path === 'round' || a.path === 'overhand' ? 'hook' : a.side === 'rear' ? 'straight' : 'jab');
+          if (opts.current.sound && (a.kind === 'strike' || a.kind === 'entry' || a.incoming?.path === 'shot')) soundRef.current?.play(a.path === 'hook' || a.path === 'round' || a.path === 'overhand' ? 'hook' : a.side === 'rear' ? 'straight' : 'jab');
         }
       }
       raf = requestAnimationFrame(tick);
@@ -153,14 +157,12 @@ export default function CommandDrill({ stance: initialStance = 'orthodox', voice
   const strikes = calledRef.current.reduce((k, c) => k + c.steps.length, 0);
   const busy = running || ready.left !== null;
 
-  if (!pool.length) {
-    return <p className="video-status-message" data-testid="command-empty">지시할 수 있는 기본 공격이 없습니다. 레벨이나 킥 포함 여부를 바꿔 보세요.</p>;
-  }
   return (
     <div className="card info-card command-drill" data-testid="command-drill" data-running={running} data-called={calledRef.current.length} data-done={done}>
       <p className="video-status-message" style={{ marginTop: 0 }}>
-        미트 잡는 코치가 무작위로 공격을 불러 주고, 그 미트를 내밀어 보여 줍니다. 부르는 즉시 치세요. 지시는 MARTIALDEX에 있는 기본 공격{level !== 'single' ? '과 실제 콤보' : ''} {pool.length}가지 중에서 나옵니다.
+        미트 잡는 코치가 무작위로 공격을 불러 주고, 그 미트를 내밀어 보여 줍니다. 부르는 즉시 치세요. 지시는 MARTIALDEX에 있는 기술{level !== 'single' ? '과 실제 콤보' : ''} <strong data-testid="command-pool-size">{pool.length}</strong>가지 중에서 나옵니다.
       </p>
+      <DrillScopeControls scope={scope} disabled={busy} testIdPrefix="command" />
       <div className="chip-row">
         <span className="field-label" style={{ margin: 0 }}>지시</span>
         {(Object.keys(COMMAND_LEVEL_LABEL) as CommandLevel[]).map((l) => (
@@ -168,12 +170,6 @@ export default function CommandDrill({ stance: initialStance = 'orthodox', voice
             {COMMAND_LEVEL_LABEL[l]}
           </button>
         ))}
-        <label className="chip" style={{ cursor: 'pointer' }}>
-          <input type="checkbox" checked={withKicks} onChange={(e) => setWithKicks(e.target.checked)} disabled={busy} data-testid="command-kicks" /> 킥 포함
-        </label>
-        <label className="chip" style={{ cursor: 'pointer' }} title="코치가 공격을 뻗으면 피하거나 막고, 바로 카운터">
-          <input type="checkbox" checked={withDefense} onChange={(e) => setWithDefense(e.target.checked)} disabled={busy} data-testid="command-defense" /> 🛡 방어 포함
-        </label>
       </div>
       <TempoControls tempo={tempo} onChange={setTempo} testIdPrefix="command-pace" />
       <div className="chip-row">
@@ -186,7 +182,7 @@ export default function CommandDrill({ stance: initialStance = 'orthodox', voice
       </div>
       <div className="chip-row">
         <label className="chip" style={{ cursor: 'pointer' }}>
-          <input type="checkbox" checked={voice} onChange={(e) => setVoice(e.target.checked)} disabled={!isTtsSupported()} data-testid="command-voice" /> 🗣 음성 지시
+          <input type="checkbox" checked={voice} onChange={(e) => setVoice(e.target.checked)} disabled={!isTtsSupported()} data-testid="command-voice" /> <Icon name="sound" /> 음성 지시
         </label>
         <label className="chip" style={{ cursor: 'pointer' }}>
           <input type="checkbox" checked={sound} onChange={(e) => setSound(e.target.checked)} data-testid="command-sound" /> 타격음
@@ -196,6 +192,11 @@ export default function CommandDrill({ stance: initialStance = 'orthodox', voice
         </label>
       </div>
 
+      {!pool.length && (
+        <p className="ai-inline-warning" data-testid="command-empty">
+          이 설정으로 부를 수 있는 기술·콤보가 없습니다. 지시 레벨, 기술 범위, 방어·사용자 콤보 포함 여부를 바꿔 보세요.
+        </p>
+      )}
       <div className="mitt-stage mitt-stage--single" style={{ marginTop: 8 }} ref={stageRef}>
         {ready.left !== null && (
           <div className="mitt-ready" role="status" aria-live="assertive" data-testid="command-ready-countdown">
@@ -235,19 +236,19 @@ export default function CommandDrill({ stance: initialStance = 'orthodox', voice
         <span className="chip-row">
           {ready.left !== null ? (
             <button className="btn btn-secondary btn-sm" onClick={ready.cancel} data-testid="command-cancel-ready">
-              ✕ 준비 취소
+              <Icon name="close" /> 준비 취소
             </button>
           ) : !running ? (
-            <button className="btn btn-primary btn-sm" onClick={start} data-testid="command-start">
-              {done ? '다시 시작' : '▶ 시작'}
+            <button className="btn btn-primary btn-sm" onClick={start} disabled={!pool.length} data-testid="command-start">
+              {done ? '다시 시작' : <><Icon name="play" /> 시작</>}
             </button>
           ) : (
             <>
               <button className="btn btn-secondary btn-sm" onClick={togglePause} data-testid="command-pause">
-                {paused ? '계속' : '⏸ 일시정지'}
+                {paused ? '계속' : <><Icon name="pause" /> 일시정지</>}
               </button>
               <button className="btn btn-ghost btn-sm" onClick={() => finish(false)} data-testid="command-stop">
-                ■ 그만하기
+                <Icon name="stop" /> 그만하기
               </button>
             </>
           )}

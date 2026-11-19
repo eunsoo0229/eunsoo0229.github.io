@@ -1,3 +1,4 @@
+import Icon from '../Icon';
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { MEAL_TYPE_LABEL, type MealSource, type MealType, type NutritionFoodItem } from '../../lib/nutrition/types';
@@ -68,7 +69,7 @@ export default function MealFormModal({
   return createPortal(
     <BottomSheet onClose={onClose} className="modal-panel--scrollable">
         <h3>{mode === 'edit' ? '식사 수정' : '식사 추가'}</h3>
-        {estimateNote && <p className="video-status-message">⚠️ {estimateNote}</p>}
+        {estimateNote && <p className="video-status-message"><Icon name="warn" /> {estimateNote}</p>}
 
         <label className="field-label">식사 종류</label>
         <div className="chip-row" style={{ marginBottom: 10 }}>

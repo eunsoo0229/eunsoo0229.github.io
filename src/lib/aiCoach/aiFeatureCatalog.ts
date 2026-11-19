@@ -44,6 +44,27 @@ export interface AiFeature {
 export const AI_FEATURES: AiFeature[] = [
   // ---- 수업·코칭
   {
+    id: 'self-ai-chat',
+    group: 'coaching',
+    icon: '💬',
+    title: 'MARTIALDEX 자체 AI 코치와 대화',
+    description: '격투기 무엇이든 자유롭게 물어보세요. 내 컴퓨터의 오픈소스 AI가 MARTIALDEX 기술·셋업·콤보 기록과 자체 검색(웹·영상·논문) 자료를 근거로 답하고, 출처와 신뢰도를 함께 보여 줍니다. 대화 중 바로 수업으로 이어 갈 수 있습니다.',
+    to: '/coach/chat',
+    cta: '대화 시작',
+    modules: ['selfAi/coachAgent', 'selfAi/chatLesson'],
+    testId: 'self-ai-chat-entry',
+  },
+  {
+    id: 'fighter-profile',
+    group: 'coaching',
+    icon: '🧑‍🥋',
+    title: '개인 파이터 프로필 (AI 인터뷰)',
+    description: '코치와 상담하듯 질문에 하나씩 답하며 스탠스·타격·방어·그래플링 성향과 습관, 사거리를 기록합니다. AI 코치 수업이 이 프로필을 참고해 나에게 맞게 달라집니다.',
+    to: '/fighter-profile',
+    cta: '프로필 만들기',
+    modules: ['fighterProfile/interview', 'fighterProfile/coachContext'],
+  },
+  {
     id: 'oneoff-lesson',
     group: 'coaching',
     icon: '✍️',
@@ -138,17 +159,7 @@ export const AI_FEATURES: AiFeature[] = [
     description: '찾는 기술이 없으면 AI가 웹 자료로 조사·검증한 뒤 중복을 확인하고 기술로 등록합니다.',
     to: '/techniques/request',
     cta: '기술 요청하기',
-    modules: ['userTechniques/recordGenerator', 'userTechniques/verification', 'userTechniques/duplicateCheck', 'martialArtDiscovery/aiVerification'],
-  },
-  {
-    id: 'art-request',
-    group: 'technique',
-    icon: '🌏',
-    title: '새 무술 추가 (AI 조사·검증)',
-    description: 'MARTIALDEX에 없는 무술을 AI가 조사하고 검증해 추가합니다.',
-    to: '/arts/add',
-    cta: '무술 추가하기',
-    modules: ['martialArtDiscovery/aiVerification'],
+    modules: ['userTechniques/recordGenerator', 'userTechniques/verification', 'userTechniques/duplicateCheck', 'martialArtDiscovery/aiVerification', 'grappling/analyzeNewTechnique', 'techniqueCanonical/otherArts'],
   },
   {
     id: 'video-verify',
@@ -204,6 +215,16 @@ export const AI_FEATURES: AiFeature[] = [
     cta: '복습 보기',
     modules: ['reviewSystem/reviewAiService'],
   },
+  {
+    id: 'personal-curriculum',
+    group: 'curriculum',
+    icon: '🧭',
+    title: '나의 학습 커리큘럼 (기록 기반 적응형)',
+    description: '목표를 고르면 내 학습·평가 기록으로 단계별 로드맵과 오늘·이번 주 할 일을 만들고, 결과에 따라 선행 기술 추가·재평가·복습을 제안합니다. 제안은 내가 적용해야만 반영됩니다.',
+    to: '/my-curriculum',
+    cta: '나의 커리큘럼',
+    modules: [],
+  },
 
   // ---- 분석
   {
@@ -239,6 +260,17 @@ export const AI_FEATURES: AiFeature[] = [
     modules: ['statsHub/aiSummaryService'],
   },
   {
+    id: 'growth-report',
+    group: 'analysis',
+    icon: '📑',
+    title: '훈련 성과 분석 · AI 성장 리포트',
+    description: '기간별 훈련·평가 기록을 평가 방식별로 나눠 보여 주고, 실제 기록 근거(F1…)를 인용한 성장 리포트를 만듭니다. 근거 없는 문장은 표시하지 않습니다.',
+    to: '/performance',
+    cta: '성과 분석 보기',
+    where: '훈련 성과 분석 화면의 "AI 성장 리포트"',
+    modules: ['trainingEcosystem/growthReport'],
+  },
+  {
     id: 'my-style',
     group: 'analysis',
     icon: '🧭',
@@ -269,6 +301,16 @@ export const AI_FEATURES: AiFeature[] = [
     to: '/home-training/request',
     cta: '홈트 운동 요청',
     modules: ['homeTrainingDiscovery/recordGenerator', 'homeTrainingDiscovery/verification'],
+  },
+  {
+    id: 'gym-trainer',
+    group: 'fitness',
+    icon: '🏋️',
+    title: 'AI 트레이너 (헬스 루틴·식단·자세 교정)',
+    description: '목적에 맞는 헬스 루틴과 식단을 짜 주고, 운동 중 쉬는 시간에 자극·통증과 내 자세를 물어보면 자세를 의심해 확인 질문을 하고 바로잡아 줍니다.',
+    to: '/training/trainer',
+    cta: '루틴·식단 짜기',
+    modules: ['gymTrainer/planner', 'gymTrainer/trainer'],
   },
   {
     id: 'gym-request',

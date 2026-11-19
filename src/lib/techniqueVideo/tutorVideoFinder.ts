@@ -18,7 +18,8 @@ import { verifyTechniqueVideoUrl, type VideoVerificationResult } from './urlVeri
 
 export interface TutorVideo {
   video: CuratedVideo;
-  source: 'saved' | 'verified';
+  /** saved = MARTIALDEX 등록 영상, verified = 내용까지 확인됨, self_search = 자체 검색으로 찾았고 내용 미확인 */
+  source: 'saved' | 'verified' | 'self_search';
   reason?: string;
 }
 export interface TutorVideoResult {

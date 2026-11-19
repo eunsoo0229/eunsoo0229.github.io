@@ -71,6 +71,29 @@ export interface CurriculumDay {
   coachPlan?: import('../aiCoachCurriculum/types').CoachPlanItem[];
   /** Set only on "AI 코치 수업" curricula — the coach's one-line note for this Day. */
   coachNotes?: string;
+  /**
+   * Optional setup / combo / connection drills for this Day, composed from
+   * recorded MARTIALDEX sequences (martialdexKnowledge/) — every step is a real
+   * technique id and `sequenceId` points at the record it came from. Additive:
+   * absent on every curriculum made before this field existed.
+   */
+  drills?: CurriculumDrill[];
+}
+
+export type CurriculumDrillKind = 'setup' | 'combo' | 'connection';
+
+export interface CurriculumDrill {
+  kind: CurriculumDrillKind;
+  /** The Day technique this drill is built around. */
+  focusTechniqueId: string;
+  steps: { techniqueId: string; name: string; note?: string; opponentReaction?: string }[];
+  title: string;
+  purpose?: string;
+  /** Knowledge sequence id ("db:…", "shared:…", "mine:…") or "follow:<a>><b>" for a recorded follow-up. */
+  sequenceId: string;
+  origin: 'technique_db' | 'shared_combo' | 'my_combo';
+  /** Steps not taught by this Day yet (a setup may introduce at most one). */
+  newStepIds?: string[];
 }
 
 export interface CurriculumPhaseRange {
@@ -113,6 +136,17 @@ export interface Curriculum {
   homeTrainingMeta?: import('../homeTraining/types').HomeTrainingMeta;
   /** Set only for "AI 코치 수업" curricula (집/체육관 맞춤) — see src/lib/aiCoachCurriculum/. Independent of the other *Meta fields. */
   aiCoachMeta?: import('../aiCoachCurriculum/types').AiCoachCurriculumMeta;
+  /**
+   * Set only on a lesson started from the 자체 AI 코치 conversation (selfAi/chatLesson.ts):
+   * which conversation it came from and the sources gathered for it (original URLs kept).
+   */
+  chatLessonMeta?: {
+    conversationId: string;
+    topic: string;
+    sources: { title: string; url: string; sourceTypeLabel: string; reliabilityLabel: string; publishedAt?: string }[];
+    candidateIds: string[];
+    createdAt: string;
+  };
   /** Set only for curricula generated from a 스파링 분석 result — see src/lib/sparringAnalysis/sparringToCurriculum.ts. Independent of the other *Meta fields above. */
   sparringAnalysisMeta?: {
     sparringSessionId: string;

@@ -1,9 +1,13 @@
+import { artImage } from '../components/brand/imagery';
+import Icon, { Glyph, type IconName } from '../components/Icon';
 import { useEffect, useMemo, useState, lazy, Suspense } from 'react';
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Link, Navigate, useParams, useSearchParams } from 'react-router-dom';
 import { getUnifiedAllTechniques, getUnifiedMartialArt, resolveTechnique, resolveTechniquesByIds } from '../lib/userTechniques/service';
 import DifficultyBadge from '../components/DifficultyBadge';
 import AiAskModal from '../components/AiAskModal';
 import RelatedVideos from '../components/RelatedVideos';
+import SelfVideoSearch from '../components/video/SelfVideoSearch';
+import { getMartialArt } from '../lib/loadData';
 import PoseAnalysisModal from '../components/PoseAnalysisModal';
 import PoseHistoryModal from '../components/PoseHistoryModal';
 // loaded only when opened (keeps this page's first load unchanged)
@@ -11,10 +15,11 @@ const FormCompareModal = lazy(() => import('../components/formCompare/FormCompar
 import { recordRecentlyViewed, useFavorites } from '../lib/userData';
 import { isPoseAnalysisSupported } from '../lib/poseAnalysis/poseAnalysisConfig';
 import { useTechniqueRecords, useTechniqueSkillSummary } from '../lib/poseAnalysis/usePoseRecords';
-import { STATUS_ICON, STATUS_LABEL } from '../lib/poseAnalysis/scoring';
+import { STATUS_LABEL } from '../lib/poseAnalysis/scoring';
+import type { SkillStatus } from '../lib/poseAnalysis/types';
 import ScoreHistoryChart from '../components/ScoreHistoryChart';
 import { useSkillProgress } from '../lib/skillProgress/useSkillProgress';
-import { MASTERY_ICON, MASTERY_LABEL, type MasteryStatus } from '../lib/skillProgress/types';
+import { MASTERY_LABEL, type MasteryStatus } from '../lib/skillProgress/types';
 import { clearOverride, setOverride } from '../lib/skillProgress/overrideStore';
 import { formatRelativeDays } from '../lib/dateUtil';
 import { getTechniqueConnections, hasAnyConnections } from '../lib/techniqueGraph/buildGraph';
@@ -28,9 +33,28 @@ import GrapplingStylePanel from '../components/GrapplingStylePanel';
 import { getGiNoGi } from '../lib/grappling/giNoGi';
 import { getLocalGiNoGi, isGiNoGiTarget, LOCAL_GI_NOGI_EVENT } from '../lib/grappling/analyzeNewTechnique';
 import GiNoGiResearch from '../components/GiNoGiResearch';
+import Motion3dDemo from '../components/motion3d/Motion3dDemo';
+import SafetySection from '../components/safety/SafetySection';
 import { isTechniqueInArt, techniqueArts, techniqueCategoryInArt, techniqueNameInArt } from '../lib/techniqueCanonical';
+import { classificationOf } from '../lib/techniqueTaxonomy';
 
 const MASTERY_OPTIONS: MasteryStatus[] = ['not_started', 'learning', 'average', 'proficient', 'needs_improvement'];
+
+// Forge 'status' marks for the mastery / pose-score states (the lib maps stay emoji for text uses).
+type StatusGlyph = 'not-started' | 'learning' | 'partial' | 'proficient' | 'needs-work';
+const MASTERY_GLYPH: Record<MasteryStatus, StatusGlyph> = {
+  not_started: 'not-started',
+  learning: 'learning',
+  average: 'partial',
+  proficient: 'proficient',
+  needs_improvement: 'needs-work',
+};
+const POSE_STATUS_GLYPH: Record<SkillStatus, StatusGlyph> = {
+  good: 'proficient',
+  average: 'partial',
+  needs_improvement: 'needs-work',
+  not_analyzed: 'not-started',
+};
 
 function InfoCard({
   title,
@@ -38,13 +62,13 @@ function InfoCard({
   children,
 }: {
   title: string;
-  icon: string;
+  icon: IconName;
   children: React.ReactNode;
 }) {
   return (
     <div className="card info-card">
       <h3>
-        <span aria-hidden="true">{icon}</span> {title}
+        <Icon name={icon} /> {title}
       </h3>
       {children}
     </div>
@@ -54,7 +78,7 @@ function InfoCard({
 // Renders nothing when there's no real content for this field — step 2 never
 // invents a description/principle/counter etc. for a technique the source
 // text doesn't cover, and this page follows the same rule on the way out.
-function ListCard({ title, icon, items }: { title: string; icon: string; items: string[] }) {
+function ListCard({ title, icon, items }: { title: string; icon: IconName; items: string[] }) {
   if (!items.length) return null;
   return (
     <InfoCard title={title} icon={icon}>
@@ -85,7 +109,9 @@ export default function TechniqueDetail() {
   const giNoGi = curatedGiNoGi ?? (addedGiNoGi && addedGiNoGi.method !== 'pending' ? addedGiNoGi : null);
   const canResearchGiNoGi = !!technique && !curatedGiNoGi && isGiNoGiTarget(technique) && (!addedGiNoGi || addedGiNoGi.method === 'pending' || addedGiNoGi.method === 'ai_rejected');
   const [aiOpen, setAiOpen] = useState(false);
-  const [poseOpen, setPoseOpen] = useState(false);
+  // ?open=pose — the 자체 AI 코치 ("자세 확인하고 싶어") opens the on-device pose analysis directly (only where it is supported).
+  const [searchParams] = useSearchParams();
+  const [poseOpen, setPoseOpen] = useState(() => searchParams.get('open') === 'pose' && !!technique && isPoseAnalysisSupported(technique.id));
   const [historyOpen, setHistoryOpen] = useState(false);
   const [compareOpen, setCompareOpen] = useState(false);
   const { isFavorite, toggleFavorite } = useFavorites();
@@ -185,8 +211,9 @@ export default function TechniqueDetail() {
           <span>{nameInArt.name}</span>
         </div>
 
-        <div className="detail-hero">
+        <div className="detail-hero mx-entry" style={{ ['--mx-entry-img' as string]: `url(${artImage(viewArt)})` }}>
           <div>
+            <span className="mx-eyebrow">{(art?.nameEn ?? viewArt).toUpperCase()} · TECHNIQUE ENTRY</span>
             <h1 data-testid="technique-title">{nameInArt.name}</h1>
             {nameInArt.koreanName && <div className="detail-hero__korean">{nameInArt.koreanName}</div>}
             {nameInArt.otherNames.length > 0 && (
@@ -201,9 +228,22 @@ export default function TechniqueDetail() {
                 </Link>
               ))}
               <span className="chip" data-testid="technique-category">{viewCategory}</span>
+              {classificationOf(technique.id, viewArt)
+                .filter((c) => c.node.level >= 3 && c.node.kind !== 'other' && c.node.kind !== 'member')
+                .map((c) => (
+                  <Link
+                    key={c.node.id}
+                    to={`/arts/${viewArt}/techniques?node=${encodeURIComponent(c.node.id)}`}
+                    className="chip"
+                    data-testid="technique-taxonomy"
+                    title={`분류 근거 (${c.assignment.confidence === 'HIGH' ? '높음' : '보통 — 기술명 기준'}): ${c.assignment.basis}`}
+                  >
+                    {c.node.fullKo}
+                  </Link>
+                ))}
               <DifficultyBadge difficulty={technique.difficulty} />
-              {technique.source === 'user_added' && <span className="chip">🧑‍🤝‍🧑 사용자 추가 기술</span>}
-              {technique.source === 'ai_web_research' && <span className="chip">🔎 웹 검색 기반 추가 기술</span>}
+              {technique.source === 'user_added' && <span className="chip"><Icon name="users" /> 사용자 추가 기술</span>}
+              {technique.source === 'ai_web_research' && <span className="chip"><Icon name="search" /> 웹 검색 기반 추가 기술</span>}
               {technique.aliases.slice(0, 4).map((a) => (
                 <span className="chip" key={a}>
                   {a}
@@ -213,18 +253,18 @@ export default function TechniqueDetail() {
           </div>
           <div className="detail-actions">
             <button className="btn btn-secondary" onClick={() => toggleFavorite(technique.id)}>
-              {fav ? '★ 즐겨찾기 됨' : '☆ 즐겨찾기'}
+              {fav ? <><Icon name="star-filled" /> 즐겨찾기 됨</> : <><Icon name="star" /> 즐겨찾기</>}
             </button>
             <button className="btn btn-primary" onClick={() => setAiOpen(true)}>
-              ✦ AI에게 질문
+              <Glyph set="ai" name="ask" /> AI에게 질문
             </button>
             {poseSupported ? (
               <>
                 <button className="btn btn-primary" onClick={() => setPoseOpen(true)}>
-                  📷 내 자세 분석하기
+                  <Icon name="camera" /> 내 자세 분석하기
                 </button>
                 <button className="btn btn-secondary" onClick={() => setHistoryOpen(true)}>
-                  📊 분석 기록{skillSummary.analysisCount > 0 ? ` (${skillSummary.analysisCount})` : ''}
+                  <Icon name="chart" /> 분석 기록{skillSummary.analysisCount > 0 ? ` (${skillSummary.analysisCount})` : ''}
                 </button>
               </>
             ) : (
@@ -232,14 +272,14 @@ export default function TechniqueDetail() {
                 <span className="pose-unsupported-note">관절 지표 자세 분석은 이 기술을 지원하지 않습니다 — 기준 영상 비교 평가를 이용해 주세요.</span>
                 {skillSummary.analysisCount > 0 && (
                   <button className="btn btn-secondary" onClick={() => setHistoryOpen(true)}>
-                    📊 분석 기록 ({skillSummary.analysisCount})
+                    <Icon name="chart" /> 분석 기록 ({skillSummary.analysisCount})
                   </button>
                 )}
               </>
             )}
             {/* 기준 시연 영상 ↔ 내 수행 영상 AI 비교 — every technique (criteria are built from the reference video). */}
             <button className="btn btn-primary" onClick={() => setCompareOpen(true)} data-testid="form-compare-open">
-              🎬 기준 영상과 비교해 평가
+              <Icon name="video" /> 기준 영상과 비교해 평가
             </button>
           </div>
         </div>
@@ -247,7 +287,7 @@ export default function TechniqueDetail() {
         {poseSupported && skillSummary.analysisCount > 0 && (
           <div className="chip-row" style={{ marginTop: -10, marginBottom: 16 }}>
             <span className="chip">
-              {STATUS_ICON[skillSummary.status]} AI 자세 분석: {skillSummary.latestScore}점 ({STATUS_LABEL[skillSummary.status]})
+              <Glyph set="status" name={POSE_STATUS_GLYPH[skillSummary.status]} /> AI 자세 분석: {skillSummary.latestScore}점 ({STATUS_LABEL[skillSummary.status]})
             </span>
           </div>
         )}
@@ -268,12 +308,12 @@ export default function TechniqueDetail() {
         <div className="detail-grid">
           <div>
             {technique.purpose && (
-              <InfoCard title="목적 · 언제 쓰는가" icon="🎯">
+              <InfoCard title="목적 · 언제 쓰는가" icon="target">
                 <p>{technique.purpose}</p>
               </InfoCard>
             )}
             {technique.splitInto && technique.splitInto.length > 0 && (
-              <InfoCard title="여러 기술을 묶은 항목" icon="🔀">
+              <InfoCard title="여러 기술을 묶은 항목" icon="repeat">
                 <div data-testid="technique-split-into">
                   <p className="video-status-message" style={{ marginTop: 0 }}>
                     이 항목은 원문에서 서로 다른 기술을 한 줄로 묶어 적은 것이어서, 각 기술로 나누어 정리했습니다. 이전 학습 기록은 이 항목에 그대로 남아 있습니다.
@@ -292,19 +332,19 @@ export default function TechniqueDetail() {
               </InfoCard>
             )}
             {technique.notTechnique && (
-              <InfoCard title="기술이 아닌 항목" icon="ℹ️">
+              <InfoCard title="기술이 아닌 항목" icon="info">
                 <p className="video-status-message" data-testid="technique-not-technique">
                   {technique.notTechnique} — 기술 목록에는 표시하지 않습니다.
                 </p>
               </InfoCard>
             )}
             {technique.description && (
-              <InfoCard title="설명" icon="📖">
+              <InfoCard title="설명" icon="book">
                 <p>{technique.description}</p>
               </InfoCard>
             )}
             {arts.length > 1 && (
-              <InfoCard title="이 기술을 사용하는 무술" icon="🌐">
+              <InfoCard title="이 기술을 사용하는 무술" icon="globe">
                 <p data-testid="technique-arts">{arts.map((a) => getUnifiedMartialArt(a)?.nameKo ?? a).join(' · ')}</p>
                 {technique.namesByArt && Object.keys(technique.namesByArt).length > 1 && (
                   <p className="video-status-message" data-testid="technique-names-by-art">
@@ -326,31 +366,38 @@ export default function TechniqueDetail() {
               </InfoCard>
             )}
             {canResearchGiNoGi && <GiNoGiResearch technique={technique} failedReason={addedGiNoGi?.reason ?? null} />}
+            {/* 3D demo: only techniques with a clip in data/curated/motion3d.json; three.js loads when opened */}
+            {/* sibling keys must differ: the Gi/No-Gi panel below is keyed by the technique id too (a duplicate key left
+                stale 3D cards behind when moving between grappling techniques) */}
+            <Motion3dDemo key={`motion3d-${technique.id}`} techniqueId={technique.id} />
             {/* Grappling techniques: one Gi / No-Gi panel switches posture + videos together. Others: unchanged. */}
             {giNoGi ? (
-              <GrapplingStylePanel key={technique.id} technique={technique} record={giNoGi} />
+              <GrapplingStylePanel key={`gi-nogi-${technique.id}`} technique={technique} record={giNoGi} />
             ) : technique.posture ? (
               <PostureSection posture={technique.posture} />
             ) : (
-              <InfoCard title="자세 잡기" icon="🧍">
+              <InfoCard title="자세 잡기" icon="stance">
                 <p className="posture-pending-note video-status-message">자세 설명 준비 중입니다.</p>
               </InfoCard>
             )}
-            <ListCard title="핵심 원리" icon="🧭" items={technique.principles} />
-            <ListCard title="변형" icon="🔀" items={technique.variations} />
-            <ListCard title="방어" icon="🛡" items={technique.defenses} />
-            <ListCard title="카운터" icon="⚔" items={technique.counters} />
-            <ListCard title="연결 기술" icon="➡" items={technique.transitions} />
+            {/* 사양 §5-4: 기술별 안전 가이드 (기술 분류 기반 일반 수칙 · 기록 원문 · 선행 기술) */}
+            <SafetySection technique={technique} />
+            <ListCard title="핵심 원리" icon="pin" items={technique.principles} />
+            <ListCard title="변형" icon="repeat" items={technique.variations} />
+            <ListCard title="방어" icon="shield" items={technique.defenses} />
+            <ListCard title="카운터" icon="zap" items={technique.counters} />
+            <ListCard title="연결 기술" icon="forward" items={technique.transitions} />
 
             {!giNoGi && <RelatedVideos technique={technique} />}
+            <SelfVideoSearch technique={technique} artNameKo={getMartialArt(technique.martialArt)?.nameKo} />
           </div>
 
           <div>
             <div className="card info-card">
-              <h3>📈 숙련도</h3>
+              <h3><Icon name="trend" /> 숙련도</h3>
               <div className="chip-row">
                 <span className="chip active">
-                  {MASTERY_ICON[skillProgress.status]} {MASTERY_LABEL[skillProgress.status]}
+                  <Glyph set="status" name={MASTERY_GLYPH[skillProgress.status]} /> {MASTERY_LABEL[skillProgress.status]}
                 </span>
                 {skillProgress.userOverride && <span className="chip">사용자 지정</span>}
               </div>
@@ -414,7 +461,7 @@ export default function TechniqueDetail() {
                     >
                       <span className="choice-card__radio">{skillProgress.status === s ? '●' : '○'}</span>
                       <span className="choice-card__title">
-                        {MASTERY_ICON[s]} {MASTERY_LABEL[s]}
+                        <Glyph set="status" name={MASTERY_GLYPH[s]} /> {MASTERY_LABEL[s]}
                       </span>
                     </button>
                   ))}
@@ -440,7 +487,7 @@ export default function TechniqueDetail() {
 
             {relatedTechniques.length > 0 && (
               <div className="card info-card">
-                <h3>🔗 관련 기술</h3>
+                <h3><Icon name="link" /> 관련 기술</h3>
                 <div className="related-link-list">
                   {relatedTechniques.map((t) => {
                     const relArt = getUnifiedMartialArt(t.martialArt);
@@ -466,7 +513,7 @@ export default function TechniqueDetail() {
 
             {hasAnyConnections(connections) && (
               <div className="card info-card">
-                <h3>🔗 기술 연결</h3>
+                <h3><Icon name="link" /> 기술 연결</h3>
                 {CONNECTION_SECTIONS.map((kind) => {
                   const items = connections[kind];
                   if (items.length === 0) return null;
@@ -485,7 +532,7 @@ export default function TechniqueDetail() {
                 })}
                 <div className="modal-actions modal-actions--start" style={{ marginTop: 4 }}>
                   <Link to={`/graph?technique=${technique.id}`} className="btn btn-secondary btn-sm">
-                    🕸 그래프로 보기
+                    <Icon name="graph" /> 그래프로 보기
                   </Link>
                 </div>
               </div>
@@ -493,7 +540,7 @@ export default function TechniqueDetail() {
 
             {crossArtMatches.length > 0 && (
               <div className="card info-card">
-                <h3>🌐 다른 무술의 유사 기술</h3>
+                <h3><Icon name="globe" /> 다른 무술의 유사 기술</h3>
                 <div className="stack gap-1">
                   {crossArtMatches.map(({ artId, match }) => {
                     const otherArt = getUnifiedMartialArt(artId);
@@ -518,7 +565,7 @@ export default function TechniqueDetail() {
 
             {displayTags.length > 0 && (
               <div className="card info-card">
-                <h3>🏷 태그</h3>
+                <h3><Icon name="tag" /> 태그</h3>
                 <div className="chip-row">
                   {displayTags.map((tag) => (
                     <span className="chip" key={tag}>

@@ -6,6 +6,10 @@ import { _electron as electron } from 'playwright-core';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { requireAccountQaTarget } from './lib/prodGuard.mjs';
+
+// Creates / signs in Supabase accounts — blocked against the production project unless separately approved.
+requireAccountQaTarget('qa-visual-mitt');
 
 const APP_DIR = '/Users/swcho/Documents/MARTIALDEX';
 const electronBin = path.join(APP_DIR, 'node_modules/electron/dist/Electron.app/Contents/MacOS/Electron');
@@ -61,7 +65,7 @@ async function main() {
   await page.locator('[data-testid="visual-mitt-entry"] a').click();
   await sleep(1200);
   const setup = await page.evaluate(() => ({ url: location.hash, tabs: [...document.querySelectorAll('[data-testid^="mitt-tab-"]')].map((t) => t.textContent) }));
-  check('[M1] AI 코치 화면 → AI Visualizing Mitt 진입 (AI 요청/공격 지시/반응 훈련/추천/내 콤보/단일/만들기)', setup.url.includes('/coach/mitt') && setup.tabs.length === 7 && setup.tabs.some((t) => t.startsWith('반응 훈련')) && setup.tabs.some((t) => t.includes('공격 지시')), setup);
+  check('[M1] AI 코치 화면 → AI Visualizing Mitt 진입 (AI 요청/공격 지시/반응 훈련/사용자 콤보/추천/내 콤보/단일/만들기)', setup.url.includes('/coach/mitt') && setup.tabs.length === 8 && setup.tabs.some((t) => t.includes('사용자 콤보')) && setup.tabs.some((t) => t.startsWith('반응 훈련')) && setup.tabs.some((t) => t.includes('공격 지시')), setup);
   const data = await page.evaluate(async () => {
     const c = await import('/src/lib/visualMitt/combos.ts');
     const db = c.listDbCombos();
@@ -272,6 +276,12 @@ async function main() {
     return c.days.find((d) => { const t = svc.coachTechniquesForDay(d)[0]; return t && a.motionForTechnique(t); })?.day;
   });
   await goto(`#/learning/boxing/official__boxing/coach/${mittDay}?mode=text&place=limited`);
+  // newer builds first ask which AI coach to use — this test covers the Gemini coach lesson
+  await page.waitForFunction(() => document.querySelector('[data-testid="coach-picker"]') || document.querySelector('[data-testid="coach-step"]'), null, { timeout: 60000 });
+  if (await page.locator('[data-testid="coach-picker"]').count()) {
+    await page.click('[data-testid="coach-pick-gemini"]');
+    await page.click('[data-testid="coach-pick-confirm"]');
+  }
   // The coach session opens with the 1:1 lesson (explain → question); "준비됐어" moves on to the video step.
   await page.waitForFunction(() => ['lesson', 'videos'].includes(document.querySelector('[data-testid="coach-step"]')?.dataset.step), null, { timeout: 60000 });
   if ((await page.evaluate(() => document.querySelector('[data-testid="coach-step"]')?.dataset.step)) === 'lesson') {

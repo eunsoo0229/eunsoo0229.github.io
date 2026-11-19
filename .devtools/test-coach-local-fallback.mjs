@@ -62,6 +62,9 @@ globalThis.window = {
   },
 };
 globalThis.localStorage = window.localStorage;
+// The local model is OFF by default (localModelEnabled); this test covers the kept re-enable path, so it switches it on.
+// The default-off behaviour is tested in test-coach-actions.mjs [L1].
+mem.set('martialdex:coach-local-model', 'on');
 globalThis.CustomEvent ??= class { constructor(t) { this.type = t; } };
 await build({ entryPoints: [entry], bundle: true, format: 'esm', platform: 'node', outfile: out, logLevel: 'error', define: { 'import.meta.env': '{}' }, plugins: [viteGlobPlugin] });
 const S = await import(pathToFileURL(out).href);

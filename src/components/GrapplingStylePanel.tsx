@@ -1,3 +1,4 @@
+import Icon from './Icon';
 import { useState } from 'react';
 import type { Technique } from '../types';
 import PostureSection from './PostureSection';
@@ -28,7 +29,7 @@ function StylePostureCard({ style, posture }: { style: GrapplingStyle; posture: 
   return (
     <div className="card info-card style-posture" data-testid="style-posture" data-style={style}>
       <h3>
-        🧍 {STYLE_LABEL[style]} 자세 <span className="chip chip--sm style-posture__status">{posture.status === 'verified' ? '검토 완료' : 'AI 조사 · 검토 전'}</span>
+        <Icon name="stance" /> {STYLE_LABEL[style]} 자세 <span className="chip chip--sm style-posture__status">{posture.status === 'verified' ? '검토 완료' : 'AI 조사 · 검토 전'}</span>
       </h3>
       <p>
         <strong>그립·제어:</strong> {posture.grips}
@@ -49,7 +50,7 @@ function StylePostureCard({ style, posture }: { style: GrapplingStyle; posture: 
           </ul>
         </>
       )}
-      {posture.safety && <p className="video-status-message">⚠️ {posture.safety}</p>}
+      {posture.safety && <p className="video-status-message"><Icon name="warn" /> {posture.safety}</p>}
       {posture.sources.length > 0 && (
         <details>
           <summary>근거 자료 {posture.sources.length}개</summary>
@@ -150,7 +151,7 @@ export default function GrapplingStylePanel({ technique, record }: { technique: 
       )}
       {view.kind === 'missing' && (
         <div className="card info-card" data-testid="style-posture-missing">
-          <h3>🧍 {STYLE_LABEL[style]} 자세</h3>
+          <h3><Icon name="stance" /> {STYLE_LABEL[style]} 자세</h3>
           <p className="posture-pending-note video-status-message" style={{ margin: 0 }}>
             {view.note}
           </p>

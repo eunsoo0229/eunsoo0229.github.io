@@ -1,4 +1,5 @@
 // 29단계 — AI Personal Combat Coach. Same Gemini transport (askGeminiForJson
+import { profileContextBlock } from '../fighterProfile/coachContext';
 // -> aiProvider.ask, no client-held API key) and the same shared real-data
 // context (buildTrainingAiContext, built on 26단계's Training Analytics
 // report) as 27단계's AI 훈련 분석 — this module supplies its own
@@ -100,7 +101,7 @@ export async function getPersonalCoachRecommendation(userText: string): Promise<
       '의료적 진단, 부상 판단, 통증 원인 추정은 절대 하지 않는다.',
       '출력 형식: {"analysisSummary": string, "techniqueQueries": string[], "recommendedTraining": string, "underTrainedAreas": string, "curriculumDirection": string, "nextTraining": string, "curriculumGoalText": string, "suggestedMartialArt": string | null}',
     ].join('\n'),
-    contextText: [...contextLines, '', `사용자의 요청: "${userText}"`].join('\n'),
+    contextText: [...contextLines, '', `사용자의 요청: "${userText}"`].join('\n') + profileContextBlock(null, userText),
     question: '위 사용자의 요청과 실제 훈련 데이터를 바탕으로 추천을 제공해줘.',
     validate: isAiRecommendationResponse,
   });

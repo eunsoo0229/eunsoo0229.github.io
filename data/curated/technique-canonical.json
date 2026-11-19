@@ -1148,9 +1148,22 @@
       "id": "bjj__bullfighter-pass",
       "canonical": "bjj__torreando-pass",
       "reason": "Bullfighter Pass = Torreando(투우사) 패스"
+    },
+    {
+      "id": "kickboxing__미들킥-middle-kick",
+      "canonical": "kickboxing__body-kick",
+      "reason": "미들킥(Middle Kick) = 몸통 높이 돌려차기 Body Kick"
     }
   ],
   "extraAliases": {
+    "kickboxing__body-kick": [
+      "Middle Kick",
+      "Mid Kick",
+      "미들킥",
+      "미들 킥",
+      "바디킥",
+      "몸통 돌려차기"
+    ],
     "wrestling__granby-roll": [
       "Granby",
       "그랜비 롤",
@@ -11452,6 +11465,246 @@
       "audit": true
     },
     {
+      "canonicalId": "wrestling__hip-toss",
+      "martialArt": "bjj",
+      "category": "스탠딩 / 테이크다운",
+      "sourceId": null,
+      "reason": "전수 감사 B: 힙 토스는 BJJ 기본 스탠딩 커리큘럼에서 가르치는 허리 던지기다.",
+      "grade": "B",
+      "evidence": "Gracie Combatives/BJJ 기본 테이크다운 커리큘럼의 Hip Toss(O Goshi); catalog-bjj에 동일 항목 없음",
+      "audit": true
+    },
+    {
+      "canonicalId": "sambo__рычаг-кисти",
+      "martialArt": "bjj",
+      "category": "클로즈드 가드 (Closed Guard)",
+      "sourceId": null,
+      "reason": "전수 감사 B: 손목 관절기는 BJJ(성인 상급)에서 허용되어 사용됩니다.",
+      "grade": "B",
+      "evidence": "IBJJF rules: wrist locks legal for adults; BJJ files arm locks under 클로즈드 가드 (Closed Guard)",
+      "audit": true
+    },
+    {
+      "canonicalId": "sambo__ущемление-двуглавой-мышцы-плеча",
+      "martialArt": "bjj",
+      "category": "암바 계열",
+      "sourceId": null,
+      "reason": "전수 감사 B: 바이셉스 슬라이서는 BJJ(상급 벨트)에서 허용되어 사용됩니다.",
+      "grade": "B",
+      "evidence": "IBJJF rules: biceps slicer legal for brown/black belts",
+      "audit": true
+    },
+    {
+      "canonicalId": "judo__cross-grip",
+      "martialArt": "sambo",
+      "category": "그립 파이팅(Захват) --- 재킷·벨트 중심",
+      "sourceId": null,
+      "reason": "전수 감사 B: 삼보 재킷 그립 싸움에서 교차 그립(скрестный захват)을 사용함",
+      "grade": "B",
+      "evidence": "sambo \"скрестный захват\"; catalog-sambo: sambo__скрестным-захватом-рук",
+      "audit": true
+    },
+    {
+      "canonicalId": "judo__osoto-otoshi",
+      "martialArt": "sambo",
+      "category": "다리 기술 --- 자쳅(Зацеп)·오트하바트(Отхват)·포드핫(Подхват)· 포드사드(Подсад)",
+      "sourceId": null,
+      "reason": "전수 감사 B: 삼보의 задняя подножка로 표준 사용되는 던지기임",
+      "grade": "B",
+      "evidence": "sambo \"Задняя подножка\" (= osoto otoshi)",
+      "audit": true
+    },
+    {
+      "canonicalId": "judo__kosoto-gari",
+      "martialArt": "bjj",
+      "category": "스탠딩 / 테이크다운",
+      "sourceId": null,
+      "reason": "전수 감사 B: 도복 BJJ 스탠딩에서 흔히 쓰는 발 걸기 테이크다운임",
+      "grade": "B",
+      "evidence": "BJJ gi takedown (kosoto gari), IBJJF 합법",
+      "audit": true
+    },
+    {
+      "canonicalId": "judo__seoi-nage",
+      "martialArt": "bjj",
+      "category": "스탠딩 / 테이크다운",
+      "sourceId": null,
+      "reason": "전수 감사 B: 도복 BJJ 스탠딩 테이크다운으로 널리 쓰이는 업어치기임",
+      "grade": "B",
+      "evidence": "BJJ gi takedown (seoi nage), IBJJF 합법",
+      "audit": true
+    },
+    {
+      "canonicalId": "judo__ippon-seoi-nage",
+      "martialArt": "bjj",
+      "category": "스탠딩 / 테이크다운",
+      "sourceId": null,
+      "reason": "전수 감사 B: BJJ 스탠딩에서 도복/노기 모두 쓰이는 한팔 업어치기임",
+      "grade": "B",
+      "evidence": "BJJ takedown (ippon seoi nage), IBJJF 합법",
+      "audit": true
+    },
+    {
+      "canonicalId": "judo__tai-otoshi",
+      "martialArt": "sambo",
+      "category": "다리 기술 --- 자쳅(Зацеп)·오트하바트(Отхват)·포드핫(Подхват)· 포드사드(Подсад)",
+      "sourceId": null,
+      "reason": "전수 감사 A: 삼보의 핵심 던지기 передняя подножка에 해당함",
+      "grade": "A",
+      "evidence": "sambo \"Передняя подножка\" (= tai otoshi)",
+      "audit": true
+    },
+    {
+      "canonicalId": "judo__tomoe-nage",
+      "martialArt": "bjj",
+      "category": "스탠딩 / 테이크다운",
+      "sourceId": null,
+      "reason": "전수 감사 B: BJJ에서 가드 풀/스윕 겸 던지기로 흔히 쓰임",
+      "grade": "B",
+      "evidence": "BJJ gi (tomoe nage), IBJJF 합법",
+      "audit": true
+    },
+    {
+      "canonicalId": "judo__kesa-escape",
+      "martialArt": "bjj",
+      "category": "탈출 기술 모음",
+      "sourceId": null,
+      "reason": "전수 감사 B: BJJ에서 케사가타메 탈출은 기본 탈출로 가르침",
+      "grade": "B",
+      "evidence": "catalog-bjj: judo__kesa-gatame (포지션 존재), BJJ 기본 탈출",
+      "audit": true
+    },
+    {
+      "canonicalId": "judo__kesa-escape",
+      "martialArt": "sambo",
+      "category": "바텀 포지션과 탈출",
+      "sourceId": null,
+      "reason": "전수 감사 B: 삼보에서 옆누르기(удержание сбоку) 탈출을 표준으로 연습함",
+      "grade": "B",
+      "evidence": "catalog-sambo: sambo__удержание-сбоку, 삼보 홀드다운 점수 규칙",
+      "audit": true
+    },
+    {
+      "canonicalId": "judo__kami-shiho-escape",
+      "martialArt": "bjj",
+      "category": "탈출 기술 모음",
+      "sourceId": null,
+      "reason": "전수 감사 B: BJJ에서 노스 사우스 탈출로 가르치는 기본 탈출임",
+      "grade": "B",
+      "evidence": "catalog-bjj: bjj__north-south-control (포지션 존재)",
+      "audit": true
+    },
+    {
+      "canonicalId": "judo__kami-shiho-escape",
+      "martialArt": "sambo",
+      "category": "바텀 포지션과 탈출",
+      "sourceId": null,
+      "reason": "전수 감사 B: 삼보에서 머리 쪽 홀드다운 탈출을 연습함",
+      "grade": "B",
+      "evidence": "catalog-sambo: sambo__удержание-со-стороны-головы",
+      "audit": true
+    },
+    {
+      "canonicalId": "judo__kata-ha-jime",
+      "martialArt": "bjj",
+      "category": "백 컨트롤 (Back Control)",
+      "sourceId": null,
+      "reason": "전수 감사 B: BJJ 백 컨트롤에서 싱글 윙 초크로 흔히 쓰임",
+      "grade": "B",
+      "evidence": "BJJ \"Single Wing Choke\" (= kata ha jime), IBJJF 합법",
+      "audit": true
+    },
+    {
+      "canonicalId": "bjj__armbar-entry",
+      "martialArt": "judo",
+      "category": "관절기 --- Kansetsu Waza",
+      "sourceId": null,
+      "reason": "전수 감사 B: 엎드린 상대를 굴려 주지가타메로 들어가는 진입은 유도 네와자의 표준 공격임",
+      "grade": "B",
+      "evidence": "Judo juji-gatame turnover/roll from turtle (Ude-hishigi-juji-gatame); catalog-judo.tsv: bjj__armbar [관절기 --- Kansetsu Waza]",
+      "audit": true
+    },
+    {
+      "canonicalId": "bjj__armbar-entry",
+      "martialArt": "sambo",
+      "category": "상체 관절기 --- 뤄착(Рычаг)과 우젤(Узел)",
+      "sourceId": null,
+      "reason": "전수 감사 B: 파르테르(엎드린 상대)에서 굴려 팔꺾기로 가는 진입은 삼보의 표준 공격임",
+      "grade": "B",
+      "evidence": "Sambo рычаг локтя из партера (перекат); catalog-sambo.tsv: sambo__рычаг-локтя",
+      "audit": true
+    },
+    {
+      "canonicalId": "karate__kizami-zuki-mawashi-geri",
+      "martialArt": "muay-thai",
+      "category": "중거리 펀치",
+      "sourceId": null,
+      "reason": "전수 감사 B: 잽으로 반응을 끌어낸 뒤 라운드킥은 무에타이 기본 조합이다.",
+      "grade": "B",
+      "evidence": "Muay Thai jab → round kick; catalog-muay-thai [중거리 펀치]에 Jab → Low Kick만 있음",
+      "audit": true
+    },
+    {
+      "canonicalId": "muay-thai__khao-chiang-khao-khong",
+      "martialArt": "kickboxing",
+      "category": "니 (무릎)",
+      "sourceId": null,
+      "reason": "전수 감사 B: K-1 계열 킥복싱에서 대각선 니는 허용되어 사용됩니다.",
+      "grade": "B",
+      "evidence": "K-1 rules: knees allowed; kickboxing catalog [니 (무릎)]",
+      "audit": true
+    },
+    {
+      "canonicalId": "taekwondo__학다리서기",
+      "martialArt": "karate",
+      "category": "기본 자세 (Kihon Dachi)",
+      "sourceId": null,
+      "reason": "전수 감사 B: 가라테 가타의 츠루아시 다치(학 자세)와 같은 서기입니다.",
+      "grade": "B",
+      "evidence": "karate \"Tsuru-ashi-dachi / Sagi-ashi-dachi\" (Gankaku kata)",
+      "audit": true
+    },
+    {
+      "canonicalId": "taekwondo__헤쳐막기",
+      "martialArt": "karate",
+      "category": "막기 (Uke)",
+      "sourceId": null,
+      "reason": "전수 감사 B: 가라테 가타의 카키와케우케와 같은 막기입니다.",
+      "grade": "B",
+      "evidence": "karate \"Kakiwake-uke\" (Heian Yondan, Sanchin)",
+      "audit": true
+    },
+    {
+      "canonicalId": "taekwondo__앞발-돌려차기-뒷발-돌려차기",
+      "martialArt": "kickboxing",
+      "category": "대표적인 콤비네이션 (연결)",
+      "sourceId": null,
+      "reason": "전수 감사 B: 리드 돌려차기 후 리어 돌려차기 연결은 킥복싱에서 흔히 쓰이는 킥 콤비네이션이다.",
+      "grade": "B",
+      "evidence": "kickboxing 카탈로그 Round Kick + [대표적인 콤비네이션 (연결)]",
+      "audit": true
+    },
+    {
+      "canonicalId": "taekwondo__앞발-밀어차기-반대발-뒷발-돌려차기",
+      "martialArt": "kickboxing",
+      "category": "대표적인 콤비네이션 (연결)",
+      "sourceId": null,
+      "reason": "전수 감사 B: 앞발 티프 후 리어 돌려차기 연결은 킥복싱의 표준 콤비네이션이다.",
+      "grade": "B",
+      "evidence": "kickboxing 카탈로그 kickboxing__teep, kickboxing__round-kick, [대표적인 콤비네이션 (연결)]",
+      "audit": true
+    },
+    {
+      "canonicalId": "taekwondo__앞발-밀어차기-반대발-뒷발-돌려차기",
+      "martialArt": "muay-thai",
+      "category": "장거리 킥 (Round Kick / Low Kick 계열)",
+      "sourceId": null,
+      "reason": "전수 감사 B: 티프로 거리를 만든 뒤 리어 라운드킥으로 잇는 것은 무에타이 기본 연결이다.",
+      "grade": "B",
+      "evidence": "muay-thai 카탈로그 muay-thai__lead-teep, muay-thai__rear-round-kick, muay-thai__low-kick-after-teep",
+      "audit": true
+    },
+    {
       "canonicalId": "sambo__single-leg",
       "martialArt": "bjj",
       "category": "스탠딩 / 테이크다운",
@@ -11969,6 +12222,86 @@
       "reason": "전수 감사 B: 뒷발 밀어차기(리어 티프)는 MMA 견제 킥",
       "grade": "B",
       "evidence": "S1 MMA 킥복싱",
+      "audit": true
+    },
+    {
+      "canonicalId": "sambo__drop-seoi",
+      "martialArt": "judo",
+      "category": "손기술 --- Te Waza",
+      "sourceId": null,
+      "reason": "전수 감사 A: 드롭 세오이나게는 유도에서 널리 쓰이는 핵심 업어치기 변형입니다.",
+      "grade": "A",
+      "evidence": "Judo \"drop seoi-nage\" (hiza-tsuki seoi-nage); judo catalog files seoi-nage under 손기술 --- Te Waza",
+      "audit": true
+    },
+    {
+      "canonicalId": "karate__yoko-empi",
+      "martialArt": "taekwondo",
+      "category": "손기술",
+      "sourceId": null,
+      "reason": "전수 감사 B: 태권도에도 팔굽 옆치기가 표준 기술로 있다.",
+      "grade": "B",
+      "evidence": "Kukkiwon 팔굽 옆치기 (팔굽치기 종류)",
+      "audit": true
+    },
+    {
+      "canonicalId": "karate__age-empi",
+      "martialArt": "taekwondo",
+      "category": "손기술",
+      "sourceId": null,
+      "reason": "전수 감사 B: 태권도 팔굽 올려치기로 표준 기술이다.",
+      "grade": "B",
+      "evidence": "Kukkiwon 팔굽 올려치기 (팔굽치기 종류)",
+      "audit": true
+    },
+    {
+      "canonicalId": "karate__ushiro-empi",
+      "martialArt": "taekwondo",
+      "category": "손기술",
+      "sourceId": null,
+      "reason": "전수 감사 B: 태권도 팔굽 뒤치기로 표준 기술이다.",
+      "grade": "B",
+      "evidence": "Kukkiwon 팔굽 뒤치기 (팔굽치기 종류)",
+      "audit": true
+    },
+    {
+      "canonicalId": "karate__otoshi-empi",
+      "martialArt": "taekwondo",
+      "category": "손기술",
+      "sourceId": null,
+      "reason": "전수 감사 B: 태권도 팔굽 내려치기로 표준 기술이다.",
+      "grade": "B",
+      "evidence": "Kukkiwon 팔굽 내려치기 (팔굽치기 종류)",
+      "audit": true
+    },
+    {
+      "canonicalId": "karate__nidan-geri",
+      "martialArt": "taekwondo",
+      "category": "점프 / 공중 발차기",
+      "sourceId": null,
+      "reason": "전수 감사 B: 태권도 두발당성 앞차기와 같은 표준 뛰어차기다.",
+      "grade": "B",
+      "evidence": "Kukkiwon 두발당성차기",
+      "audit": true
+    },
+    {
+      "canonicalId": "taekwondo__옆지르기",
+      "martialArt": "karate",
+      "category": "손기술 (Te-waza)",
+      "sourceId": null,
+      "reason": "전수 감사 B: 가라테 기본기의 요코즈키(옆지르기)와 같은 기술입니다.",
+      "grade": "B",
+      "evidence": "karate \"Yoko-zuki\" (kihon, kiba-dachi)",
+      "audit": true
+    },
+    {
+      "canonicalId": "taekwondo__산틀막기",
+      "martialArt": "karate",
+      "category": "막기 (Uke)",
+      "sourceId": null,
+      "reason": "전수 감사 B: 가라테 가타의 야마우케(산 막기)와 같은 기술입니다.",
+      "grade": "B",
+      "evidence": "karate \"Yama-uke\" (Bassai Dai, Jitte)",
       "audit": true
     }
   ],

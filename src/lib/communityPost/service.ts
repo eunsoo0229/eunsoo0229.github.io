@@ -57,6 +57,7 @@ function mapPost(row: Record<string, unknown>, media: CommunityPostMedia[]): Com
     content,
     hashtags: extractHashtags(content),
     postType: row.post_type as CommunityPostType,
+    visibility: ((row.visibility as string) ?? 'public') as CommunityPost['visibility'],
     media,
     gymId: (row.gym_id as string | null) ?? null,
     gymName: (row.gym_name as string | null) ?? null,
@@ -193,7 +194,7 @@ export interface CommunityFeedPage {
  */
 export async function listFeed(
   viewerUserId: string | null,
-  opts: { cursor?: string | null; limit?: number; filter?: CommunityFeedFilter; hashtag?: string } = {}
+  opts: { cursor?: string | null; limit?: number; filter?: CommunityFeedFilter; hashtag?: string; authorId?: string } = {}
 ): Promise<AuthResult<CommunityFeedPage>> {
   if (!supabase) return { ok: false, message: NOT_CONFIGURED };
   const limit = opts.limit ?? 20;
@@ -206,12 +207,16 @@ export async function listFeed(
       .order('created_at', { ascending: false })
       .limit(limit * PAGE_OVERFETCH_MULTIPLIER);
     if (opts.cursor) postsQuery = postsQuery.lt('created_at', opts.cursor);
+    // One person's profile feed. RLS still decides what is readable — this
+    // only narrows an already-authorised result set.
+    if (opts.authorId) postsQuery = postsQuery.eq('author_id', opts.authorId);
     const { data: postRows, error: postsError } = await postsQuery;
     if (postsError) return { ok: false, message: toKoreanAuthMessage(postsError) };
 
     let repostRows: Record<string, unknown>[] = [];
     if (filter === 'all') {
       let repostsQuery = supabase.from('community_post_reposts').select('*').order('created_at', { ascending: false }).limit(limit);
+      if (opts.authorId) repostsQuery = repostsQuery.eq('user_id', opts.authorId);
       if (opts.cursor) repostsQuery = repostsQuery.lt('created_at', opts.cursor);
       const { data, error } = await repostsQuery;
       if (error) return { ok: false, message: toKoreanAuthMessage(error) };

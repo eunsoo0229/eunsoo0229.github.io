@@ -9,6 +9,7 @@ import { _electron as electron } from 'playwright-core';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { accountQaAllowed } from './lib/prodGuard.mjs';
 
 const APP_DIR = '/Users/swcho/Documents/MARTIALDEX';
 const FX = path.join(APP_DIR, '.devtools/fixtures-form');
@@ -294,6 +295,10 @@ async function main() {
   check('[8] 기존 관절 지표 분석 버튼 유지 + 새 비교 평가 버튼', legacy);
 
   // ---------- 9. Android / web transport: no Electron bridge → the deployed gemini-ask Edge Function ----------
+  // Signs up an account — blocked against the production project (4 accounts were created there before this guard).
+  const g9 = accountQaAllowed('qa-form-compare');
+  if (!g9.allowed) console.log(`SKIP — [9] ${g9.reason}`);
+  else {
   const winP = app.waitForEvent('window');
   await app.evaluate(({ BrowserWindow }) => {
     const w = new BrowserWindow({ width: 1100, height: 900, webPreferences: { contextIsolation: true } }); // no preload = no window.martialdex
@@ -327,6 +332,7 @@ async function main() {
   }, { ref: b64('jab_reference.webm'), user: { good: b64('jab_good.webm'), wrong: b64('jab_wrong.webm') } });
   console.log(`  · edge transport: ${JSON.stringify(webRes).slice(0, 900)}`);
   check('[9] Android/웹 전송 경로(배포된 gemini-ask Edge Function, Electron 브리지 없음): 기준 생성 + 비교 실행, 좋은 수행 > 부정확한 수행', !webRes.error && webRes.criteria >= 2 && webRes.out.good.score !== null && webRes.out.good.score !== undefined && (webRes.out.wrong.score ?? 0) < webRes.out.good.score, webRes);
+  }
 
   check('[Z] 페이지 에러 없음', errors.length === 0, errors);
   await app.close();

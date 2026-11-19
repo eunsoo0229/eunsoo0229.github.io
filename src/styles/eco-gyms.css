@@ -1,0 +1,19 @@
+/* 체육관 검색·제휴 화면 전용 보조 스타일 (ecosystem.css 의 eco-* 위에 얹는다). */
+.gym-coupon-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  margin: 6px 0;
+  word-break: break-all;
+  user-select: all;
+}
+.gym-example { border-style: dashed; }
+.gym-example__label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: var(--text-muted); }
+.gym-filter-checks { display: flex; flex-wrap: wrap; gap: 14px; margin: 0 0 14px; font-size: 14px; }
+.gym-filter-checks label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.gym-rows { display: grid; gap: 8px; }
+.gym-row-edit { display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) auto; align-items: end; }
+.gym-arts-pick { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.gym-compare-table th:first-child { position: sticky; left: 0; z-index: 1; }
+.gym-compare-table td, .gym-compare-table th { min-width: 120px; }

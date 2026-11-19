@@ -1,3 +1,4 @@
+import Icon, { Glyph } from '../components/Icon';
 import { useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { getMartialArt, getTechnique, getTechniquesByMartialArt, martialArtSummaries } from '../lib/loadData';
@@ -147,7 +148,7 @@ export default function TechniqueGraph() {
         </div>
 
         <div className="section-title">
-          <h2>🕸 기술 그래프</h2>
+          <h2><Icon name="graph" /> 기술 그래프</h2>
         </div>
         <p className="video-status-message" style={{ marginTop: -8 }}>
           기술 사이의 실제 연결(선행/다음/카운터/탈출/같은 포지션/연결 기술)을 시각적으로 살펴봅니다. 노드
@@ -216,7 +217,7 @@ export default function TechniqueGraph() {
                 </button>
                 {history.length > 0 && (
                   <button className="btn btn-ghost btn-sm" onClick={goBack}>
-                    ↩ 이전 기술
+                    <Icon name="back" /> 이전 기술
                   </button>
                 )}
               </div>
@@ -257,7 +258,7 @@ export default function TechniqueGraph() {
                   기술 상세 보기
                 </Link>
                 <button className="btn btn-primary" onClick={() => setAiOpen(true)}>
-                  ✦ AI에게 질문
+                  <Glyph set="ai" name="ask" /> AI에게 질문
                 </button>
               </div>
             </div>

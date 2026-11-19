@@ -11,9 +11,41 @@ export type CameraView = 'front' | 'side' | 'diagonal' | 'back' | 'unknown';
 
 export type ReferenceSource =
   | { kind: 'youtube'; videoId: string; url: string; title: string; channel: string; lengthSeconds: number }
-  | { kind: 'file'; fileName: string; mimeType: string; sizeBytes: number; durationSeconds: number };
+  | { kind: 'file'; fileName: string; mimeType: string; sizeBytes: number; durationSeconds: number }
+  /**
+   * A recording of the app's own 3D preview, made by motion3d/recorder.ts. It
+   * travels through the SAME pipeline as a 'file' reference — the extra fields
+   * only record where it came from, so it can be told apart in the UI and
+   * re-recorded when the clip or the angle changes. Removing them and storing
+   * it as a plain file would make it impossible to regenerate.
+   */
+  | {
+      kind: 'motion3d';
+      /** motion3d catalogue clip this was rendered from. */
+      clipId: string;
+      /** Camera preset the preview was rendered at. */
+      angle: string;
+      fileName: string;
+      mimeType: string;
+      sizeBytes: number;
+      durationSeconds: number;
+      /** Length the engine played, for comparison against the decoded file. */
+      clipDurationSeconds: number;
+      recordedAt: string;
+    };
 
 /** A registered reference demonstration for one technique. */
+/**
+ * Does this reference keep its video frames in local media storage (referenceStore)?
+ * True for an uploaded file AND for a 3D-preview recording — both are real video
+ * this device holds. A YouTube reference has no local media and is read from the
+ * embed instead. Every load/restore path asks this rather than testing
+ * `kind === 'file'`, so adding another local-video kind cannot silently skip them.
+ */
+export function hasLocalMedia(source: ReferenceSource): boolean {
+  return source.kind === 'file' || source.kind === 'motion3d';
+}
+
 export interface ReferenceVideo {
   id: string;
   techniqueId: string;
@@ -167,6 +199,10 @@ export interface ComparisonJudgement {
   samples: number;
   /** Local pose hints the AI confirmed on the frames, with the criterion they adjusted ("H1→C3"). */
   confirmedHints?: string[];
+  /** The AI's comparison of the two camera directions (Phase 6). Absent on older records / when not answered. */
+  viewCheck?: { relation: 'same' | 'different' | 'uncertain'; userView: CameraView; note: string } | null;
+  /** Criteria the AI said it could not see because of the camera direction — not counted as wrong. */
+  viewLimitedCriteria?: string[];
 }
 
 export type Reliability = 'high' | 'medium' | 'low';
@@ -206,6 +242,8 @@ export interface FormCompareRecord {
   signals: ClipSignals;
   alignment: AlignmentInfo;
   viewWarning: string | null;
+  /** Reference angle vs the user's filming direction (Phase 6). Absent on older records. */
+  viewCheck?: import('./captureAngle').ViewCheck;
   /** Local pose-difference hints given to the AI (file references only). */
   poseHints?: string[];
   /** Matching PoseAnalysisRecord id (existing history / skill progress), when a score was given. */

@@ -1,6 +1,9 @@
+import { StoredIcon } from '../components/icons/BrandAssets';
+import Icon, { Glyph } from '../components/Icon';
 import { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useAuth } from '../lib/auth/AuthProvider';
+import ShareButton from '../components/social/ShareButton';
 import {
   computeFeeSplit,
   getMarketplaceCurriculumContent,
@@ -184,11 +187,14 @@ export default function MarketplaceCurriculumDetail() {
         <div className="detail-hero">
           <div>
             <h1>
-              {listing.coverIcon ? `${listing.coverIcon} ` : ''}
+              {listing.coverIcon ? <><StoredIcon value={listing.coverIcon} /> </> : ''}
               {listing.title}
             </h1>
             <div className="detail-hero__korean">제작자 {listing.sellerNickname}</div>
             <p style={{ marginTop: 8, color: 'var(--text-muted)' }}>{listing.description}</p>
+          </div>
+          <div className="detail-actions">
+            <ShareButton attachment={() => ({ kind: 'market', id: listing.id, title: listing.title, martialArt: listing.martialArt, price: listing.priceKrw })} />
           </div>
         </div>
 
@@ -259,7 +265,7 @@ export default function MarketplaceCurriculumDetail() {
                 <p className="video-status-message">
                   {isTossConfigured()
                     ? `가격 ${feeSplit.priceKrw.toLocaleString()}원 중 플랫폼 수수료 ${feeSplit.platformFeeKrw.toLocaleString()}원, 판매자 수익 ${feeSplit.sellerEarningKrw.toLocaleString()}원 (토스페이먼츠 테스트 환경 — 실제 카드가 청구되지 않습니다).`
-                    : `🧪 테스트 결제 안내: 가격 ${feeSplit.priceKrw.toLocaleString()}원 중 플랫폼 수수료 ${feeSplit.platformFeeKrw.toLocaleString()}원, 판매자 수익 ${feeSplit.sellerEarningKrw.toLocaleString()}원 (실제 결제는 이루어지지 않습니다).`}
+                    : <><Glyph set="misc" name="test-payment" /> {`테스트 결제 안내: 가격 ${feeSplit.priceKrw.toLocaleString()}원 중 플랫폼 수수료 ${feeSplit.platformFeeKrw.toLocaleString()}원, 판매자 수익 ${feeSplit.sellerEarningKrw.toLocaleString()}원 (실제 결제는 이루어지지 않습니다).`}</>}
                 </p>
               )}
               {!tossOrder && (
@@ -270,8 +276,8 @@ export default function MarketplaceCurriculumDetail() {
                       : listing.isFree
                         ? '무료로 받기'
                         : isTossConfigured()
-                          ? `💳 결제하기 (${listing.priceKrw.toLocaleString()}원)`
-                          : `🧪 테스트 구매 (${listing.priceKrw.toLocaleString()}원)`}
+                          ? <><Glyph set="misc" name="payment" /> 결제하기 ({listing.priceKrw.toLocaleString()}원)</>
+                          : <><Glyph set="misc" name="test-payment" /> 테스트 구매 ({listing.priceKrw.toLocaleString()}원)</>}
                   </button>
                 </div>
               )}
@@ -343,7 +349,7 @@ export default function MarketplaceCurriculumDetail() {
                 <div key={r.id} className="technique-row">
                   <div className="technique-row__main">
                     <div className="technique-row__name">
-                      {'⭐'.repeat(r.rating)} · {r.reviewerNickname}
+                      <span role="img" aria-label={`별점 ${r.rating}점`}>{Array.from({ length: r.rating }, (_, i) => <Icon key={i} name="star-filled" />)}</span> · {r.reviewerNickname}
                     </div>
                     <div className="technique-row__sub">{r.reviewText}</div>
                   </div>

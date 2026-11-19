@@ -1,0 +1,368 @@
+{
+  "at": "2026-10-31T15:16:05.260Z",
+  "model": "qwen2.5:3b",
+  "report": [
+    {
+      "text": "안녕하세요. 무엇을 도와드릴까요?",
+      "art": null,
+      "expectSearch": false,
+      "mustNot": {},
+      "ok": true,
+      "checks": {
+        "searchAsExpected": true,
+        "modelAnswered": true,
+        "engine": true,
+        "mustNot": true,
+        "mustHave": true,
+        "sourcesAreRetrieved": true,
+        "noUnknownUrlsInText": true,
+        "lesson": true,
+        "korean": true
+      },
+      "ms": 3248,
+      "firstTokenMs": 1937,
+      "research": {
+        "kind": "web",
+        "queries": [],
+        "reason": "검색이 필요 없는 질문",
+        "searched": false,
+        "status": "skipped"
+      }
+    },
+    {
+      "text": "MARTIALDEX 자료에 따르면 암바(Armbar)의 골반·엉덩이는 이렇습니다. 고관절을 지면에서 들어 올려(다리 브릿지) 상대의 팔꿈치 관절에 신전 압박을 가합니다.",
+      "art": "bjj",
+      "expectSearch": false,
+      "expectModel": "martialdex-data",
+      "ok": true,
+      "checks": {
+        "searchAsExpected": true,
+        "modelAnswered": true,
+        "engine": true,
+        "mustNot": true,
+        "mustHave": true,
+        "sourcesAreRetrieved": true,
+        "noUnknownUrlsInText": true,
+        "lesson": true,
+        "korean": true
+      },
+      "ms": 1872,
+      "firstTokenMs": 0,
+      "research": {
+        "kind": "web",
+        "queries": [],
+        "reason": "검색이 필요 없는 질문",
+        "searched": false,
+        "status": "skipped"
+      }
+    },
+    {
+      "text": "🔎 웹 검색 결과 6건 (본문 확인 4건)\n\n복싱에서 잽을 활용한 셋업과 콤보를 배우려면 체계적인 학습 과정이 필요합니다. 먼저, 잽의 기본 이해부터 시작해보겠습니다. 잽은 복싱에서 매우 중요한 기술 중 하나로, 상대방의 가드를 벗어나는 데 도움이 됩니다. 잽은 주로 팔을 앞으로 뻗어 상대방의 가드를 벗어나는 방식으로 사용됩니다. \n\n이제 잽을 활용한 셋업과 콤보를 배우려면 다음과 같은 단계를 거쳐야 합니다:\n\n1. **기본 잽 이해**: 먼저, 기본 잽을 배우고, 잽을 던지는 방법을 연습하세요. 잽을 던지는 동안 에너지를 어떻게 모아야 하는지, 잽을 던질 때의 각도와 속도는 어떻게 조절해야 하는지 등을 배우세요.\n\n2. **리듬과 패턴 이해**: 잽을 사용하는 패턴과 리듬을 이해하는 것이 중요합니다. 잽을 사용하는 패턴은 상대방의 움직임을 예측하고, 그에 맞춰 잽을 던지게 하는데 도움이 됩니다.\n\n3. **실전 셋업과 콤보 연습**: 잽을 사용하는 기본 패턴을 배우고, 그에 맞춰 실전에서 셋업과 콤보를 연습하세요. 잽을 사용하는 패턴과 리듬을 이해하고, 상대방의 움직임을 예측하고, 그에 맞춰 잽을 사용하는 패턴을 만들어보세요.\n\n4. **연습과 훈련**: 잽을 사용하는 기술을 연습하고, 실전에서 잽을 사용하는 방법을 연습하세요. 잽을 사용하는 패턴과 리듬을 이해하고, 상대방의 움직임을 예측하고, 그에 맞춰 잽을 사용하는 패턴을 만들어보세요.\n\n복싱은 실전에서 연습하고, 상대방의 움직임을 예측하고, 그에 맞춰 잽을 사용하는 패턴을 만들어야 합니다. 이 과정은 시간이 걸리지만, 꾸준히 연습하면 빠르게 향상할 수 있습니다. \n\n복싱 코치나 복싱 선수와 상담하는 것도 도움이 될 수 있습니다. 그들은 당신의 실력을 향상시키는 데 필요한 팁과 조언을 제공할 수 있습니다. 또한, 복싱 스튜디오나 클럽에서 실전 연습을 할 수 있는 기회가 있는지 확인해보세요. 이러한 연습은 당신의 잽 기술을 향상시키는 데 도움이 될 것입니다. \n\n복싱은 기술과 실력을 향상시키는 데 많은 시간과 노력이 필요합니다. 하지만, 당신의 잽 기술이 향상되면, 당신은 상대방의 움직임을",
+      "art": "boxing",
+      "expectSearch": true,
+      "expectLesson": true,
+      "mustNot": {},
+      "ok": true,
+      "checks": {
+        "searchAsExpected": true,
+        "modelAnswered": true,
+        "engine": true,
+        "mustNot": true,
+        "mustHave": true,
+        "sourcesAreRetrieved": true,
+        "noUnknownUrlsInText": true,
+        "lesson": true,
+        "korean": true
+      },
+      "ms": 143373,
+      "firstTokenMs": 46251,
+      "research": {
+        "kind": "web",
+        "queries": [
+          "복싱에서 잽을 활용한 셋업과 콤보를 배우고 싶어",
+          "활용한 Jab setup combination boxing"
+        ],
+        "reason": "수업 구성을 위한 자료 조사",
+        "searched": true,
+        "status": "ok",
+        "failedEngines": [
+          "brave"
+        ],
+        "duplicatesRemoved": 0,
+        "pagesRead": 4
+      },
+      "sources": [
+        {
+          "title": "Improve Your Jab FAST (Power, Speed & Setup) - YouTube",
+          "url": "https://www.youtube.com/watch?v=l6zAa6T0M6I",
+          "type": "영상",
+          "reliability": "보통",
+          "contentRead": false
+        },
+        {
+          "title": "Master the Jab: Boxing Combo Setup & Exit Strategy",
+          "url": "https://www.youtube.com/watch?v=M0G4e078gEQ",
+          "type": "영상",
+          "reliability": "보통",
+          "contentRead": false
+        },
+        {
+          "title": "잽 (Jab): 복싱에서 가장 중요한 펀치를 완벽하게 익히는 법 - Boxing...",
+          "url": "http://www.boxing-mate.com/wikis/5",
+          "type": "일반 웹",
+          "reliability": "보통",
+          "contentRead": true
+        },
+        {
+          "title": "최고의 복싱 잽 가이드 The Ultimate Boxing Jab Guide : ...",
+          "url": "https://m.blog.naver.com/pyup/220513215832",
+          "type": "블로그·개인 글",
+          "reliability": "낮음",
+          "contentRead": true
+        },
+        {
+          "title": "초보자를 위한 복싱 가이드 The BEGINNER'S Guide to Boxing ...",
+          "url": "https://m.blog.naver.com/pyup/220459592062",
+          "type": "블로그·개인 글",
+          "reliability": "낮음",
+          "contentRead": true
+        },
+        {
+          "title": "Boxing Combo Callouts & Shadowboxing Training | Jabcall",
+          "url": "https://jabcall.com/",
+          "type": "일반 웹",
+          "reliability": "보통",
+          "contentRead": true
+        }
+      ],
+      "guardNotes": [
+        "답변에 출처 번호가 없습니다. 아래 출처와 직접 대조해 주세요."
+      ]
+    },
+    {
+      "text": "🔎 영상 검색 결과 6건 (본문 확인 0건)\n\n찾은 영상 6개입니다. 제목과 설명만 확인했고 영상 내용은 직접 확인하지 않았습니다.\n[1] 로마첸코 복싱스타일\n[2] 복싱을 배우러 갔는데 아버지는 발레부터 시켰다… 결국 396승 1패의 괴물이 탄생했다 [복싱스토리]\n[3] Why is he the God of Boxing? Vasyl Lomachenko Highlights!! Waiting for his comeback...\n[4] 복싱을 예술의 경지로 끌어올린 로마첸코의 미친 테크닉\n[5] ​🥊 Lomachenko Combo: The Art of Footwork & Precision​로마첸코 콤보: 보이지 않는 스텝과 정교한 타격\n[6] 로마첸코 풋워크 배우기 #로마첸코 #복싱 #슬립 #권투 #스텝 #풋워크 #킥복싱 #격투기",
+      "art": "boxing",
+      "expectSearch": true,
+      "expectModel": "martialdex-list",
+      "mustHave": {},
+      "ok": true,
+      "checks": {
+        "searchAsExpected": true,
+        "modelAnswered": true,
+        "engine": true,
+        "mustNot": true,
+        "mustHave": true,
+        "sourcesAreRetrieved": true,
+        "noUnknownUrlsInText": true,
+        "lesson": true,
+        "korean": true
+      },
+      "ms": 3366,
+      "firstTokenMs": 0,
+      "research": {
+        "kind": "video",
+        "queries": [
+          "로마첸코 풋워크 영상 보여줘",
+          "로마첸코 highlights footwork"
+        ],
+        "reason": "영상 요청",
+        "searched": true,
+        "status": "ok",
+        "failedEngines": [
+          "brave.videos"
+        ],
+        "duplicatesRemoved": 46,
+        "pagesRead": 0
+      },
+      "sources": [
+        {
+          "title": "로마첸코 복싱스타일",
+          "url": "https://www.youtube.com/watch?v=jV2Pw977L98",
+          "type": "영상",
+          "reliability": "보통",
+          "contentRead": false
+        },
+        {
+          "title": "복싱을 배우러 갔는데 아버지는 발레부터 시켰다… 결국 396승 1패의 괴물이 탄생했다 [복싱스토리]",
+          "url": "https://www.youtube.com/watch?v=paqFG_WBCa4",
+          "type": "영상",
+          "reliability": "보통",
+          "contentRead": false
+        },
+        {
+          "title": "Why is he the God of Boxing? Vasyl Lomachenko Highlights!! Waiting for his comeback...",
+          "url": "https://www.youtube.com/watch?v=EVAZTiNhuqs",
+          "type": "영상",
+          "reliability": "보통",
+          "contentRead": false
+        },
+        {
+          "title": "복싱을 예술의 경지로 끌어올린 로마첸코의 미친 테크닉",
+          "url": "https://www.youtube.com/watch?v=hrfefOBZyUI",
+          "type": "영상",
+          "reliability": "보통",
+          "contentRead": false
+        },
+        {
+          "title": "​🥊 Lomachenko Combo: The Art of Footwork & Precision​로마첸코 콤보: 보이지 않는 스텝과 정교한 타격",
+          "url": "https://www.youtube.com/watch?v=M-KPSqH_eic",
+          "type": "영상",
+          "reliability": "보통",
+          "contentRead": false
+        },
+        {
+          "title": "로마첸코 풋워크 배우기 #로마첸코 #복싱 #슬립 #권투 #스텝 #풋워크 #킥복싱 #격투기",
+          "url": "https://www.tiktok.com/@respectkickboxing/video/7310529538247740690",
+          "type": "영상",
+          "reliability": "보통",
+          "contentRead": false
+        }
+      ]
+    },
+    {
+      "text": "🔎 논문·연구 자료 검색 결과 6건 (본문 확인 1건)\n\n찾은 논문·연구 자료 6건입니다. 제목·요약 기준이며 본문 결론은 원문에서 확인해 주세요.\n[1] Increasing the maximum angular velocity of the jab punch in amateur boxers (2026-02-27)\n[2] Jab and Straight Punch of Extracurricular Boxing Athlete Panjaguru UPT SMA Negeri 7 Jeneponto (2024-10-27)\n[3] The Effect of Dumble Weight Training and Spring Strength Training on Speed Jab's Punch (2024-12-31)\n[4] Relativity between Jab Lower Limb Driving Force and Punch Speed (2012-12-31)\n[5] Physiological and biomechanical key performance indicators for frontal jab in boxing (2025-12-31)\n[6] Single maximal versus combination punch kinematics (2011-02-28)",
+      "art": "boxing",
+      "expectSearch": true,
+      "expectModel": "martialdex-list",
+      "mustHave": {},
+      "ok": true,
+      "checks": {
+        "searchAsExpected": true,
+        "modelAnswered": true,
+        "engine": true,
+        "mustNot": true,
+        "mustHave": true,
+        "sourcesAreRetrieved": true,
+        "noUnknownUrlsInText": true,
+        "lesson": true,
+        "korean": true
+      },
+      "ms": 9376,
+      "firstTokenMs": 0,
+      "research": {
+        "kind": "paper",
+        "queries": [
+          "잽 펀치 속도에 관한 연구 논문 있어?",
+          "Jab punch speed study"
+        ],
+        "reason": "논문·연구 자료 요청",
+        "searched": true,
+        "status": "ok",
+        "failedEngines": [],
+        "duplicatesRemoved": 11,
+        "pagesRead": 1
+      },
+      "sources": [
+        {
+          "title": "Increasing the maximum angular velocity of the jab punch in amateur boxers",
+          "url": "https://oadoi.org/10.15561/26649837.2026.0104",
+          "type": "학술 자료",
+          "reliability": "높음",
+          "contentRead": false
+        },
+        {
+          "title": "Jab and Straight Punch of Extracurricular Boxing Athlete Panjaguru UPT SMA Negeri 7 Jeneponto",
+          "url": "https://oadoi.org/10.26858/cjpko.v16i3.67214",
+          "type": "학술 자료",
+          "reliability": "높음",
+          "contentRead": false
+        },
+        {
+          "title": "The Effect of Dumble Weight Training and Spring Strength Training on Speed Jab's Punch",
+          "url": "https://imacj.ppj.unp.ac.id/index.php/imacj/article/view/29",
+          "type": "일반 웹",
+          "reliability": "보통",
+          "contentRead": true
+        },
+        {
+          "title": "Relativity between Jab Lower Limb Driving Force and Punch Speed",
+          "url": "https://en.cnki.com.cn/Article_en/CJFDTOTAL-BJTD201307026.htm",
+          "type": "일반 웹",
+          "reliability": "낮음",
+          "contentRead": false
+        },
+        {
+          "title": "Physiological and biomechanical key performance indicators for frontal jab in boxing",
+          "url": "https://ieeexplore.ieee.org/abstract/document/11655570/",
+          "type": "일반 웹",
+          "reliability": "낮음",
+          "contentRead": false
+        },
+        {
+          "title": "Single maximal versus combination punch kinematics",
+          "url": "https://oadoi.org/10.1080/14763141.2010.547590",
+          "type": "학술 자료",
+          "reliability": "높음",
+          "contentRead": false
+        }
+      ]
+    },
+    {
+      "text": "제 판단으로는 현재 훈련이 너무 힘들어지면, 휴식과 재충전의 시간을 가져보는 것이 좋을 것 같습니다. 하지만 반드시 그만두지 않아도 되고, 훈련을 조금씩 조절하면서 균형을 유지하는 것도 고려해보시면 좋을 것 같습니다.",
+      "art": null,
+      "expectSearch": false,
+      "ok": true,
+      "checks": {
+        "searchAsExpected": true,
+        "modelAnswered": true,
+        "engine": true,
+        "mustNot": true,
+        "mustHave": true,
+        "sourcesAreRetrieved": true,
+        "noUnknownUrlsInText": true,
+        "lesson": true,
+        "korean": true
+      },
+      "ms": 13679,
+      "firstTokenMs": 2623,
+      "research": {
+        "kind": "web",
+        "queries": [],
+        "reason": "검색이 필요 없는 질문",
+        "searched": false,
+        "status": "skipped"
+      }
+    },
+    {
+      "style": {
+        "ms": 84934,
+        "counts": {},
+        "items": [],
+        "videos": [
+          {
+            "title": "Vasyl Lomachenko (Ukraine) vs Richard Commey (Ghana) | Boxing Fight Highlights",
+            "url": "https://www.youtube.com/watch?v=OwHcSYSKrrg",
+            "note": "제목·설명만 확인 (영상 내용 미확인)"
+          },
+          {
+            "title": "Devin Haney vs Vasyl Lomachenko Full Fight Highlights",
+            "url": "https://www.dailymotion.com/video/x8lqtqg",
+            "note": "제목·설명만 확인 (영상 내용 미확인)"
+          },
+          {
+            "title": "Vasyl Lomachenko Highlights - The Perfect Technical Fighter.",
+            "url": "https://www.youtube.com/watch?v=EmO2NfbbH70",
+            "note": "제목·설명만 확인 (영상 내용 미확인)"
+          },
+          {
+            "title": "Vasyl Lomachenko Vs Jose Pedraza Highlights (A Tactical Fight)",
+            "url": "https://www.dailymotion.com/video/x8i8f69",
+            "note": "제목·설명만 확인 (영상 내용 미확인)"
+          },
+          {
+            "title": "Vasyl Lomachenko (Ukraine) vs Jamaine Ortiz (USA) | Full Fight Highlights",
+            "url": "https://www.youtube.com/watch?v=woKsTsqAMF0",
+            "note": "제목·설명만 확인 (영상 내용 미확인)"
+          }
+        ],
+        "limits": [
+          "영상 내용은 앱이 직접 보지 않습니다 — 영상은 링크만 제공하며 \"영상에서 확인됨\"으로 표시하지 않습니다.",
+          "boxingscience.co.uk: 분석 실패: prediction aborted, token repeat limit reached",
+          "MARTIALDEX 기술로 확인되지 않은 추출 3건은 제외했습니다.",
+          "두 곳 이상의 독립 자료에서 공통으로 확인된 패턴은 없습니다."
+        ],
+        "candidates": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,1240 @@
+[
+ {
+  "id": "judo__gyaku-juji-jime",
+  "name": "Gyaku Juji Jime",
+  "koreanName": "역십자 조르기",
+  "art": "judo",
+  "category": "조르기 --- Shime Waza",
+  "positions": [
+   "조르기 --- Shime Waza"
+  ],
+  "description": "갸쿠주지지메(역십자 조르기)는 양손 모두 손바닥이 아래를 향하게 교차해 깃을 잡아 조르는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__nami-juji-jime",
+  "name": "Nami Juji Jime",
+  "koreanName": "보통 십자 조르기",
+  "art": "judo",
+  "category": "조르기 --- Shime Waza",
+  "positions": [
+   "조르기 --- Shime Waza"
+  ],
+  "description": "나미주지지메(보통 십자 조르기)는 양손 모두 손바닥이 위를 향하게 교차해 깃을 잡아 조르는 가장 기본적인 십자 조르기입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__sode-guruma-jime",
+  "name": "Sode Guruma Jime",
+  "koreanName": "소매 바퀴 조르기",
+  "art": "judo",
+  "category": "조르기 --- Shime Waza",
+  "positions": [
+   "조르기 --- Shime Waza"
+  ],
+  "description": "소데구루마지메(소매 바퀴 조르기)는 소매와 깃을 이용해 회전시키듯 조르는 변형 조르기 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__ryote-jime",
+  "name": "Ryote Jime",
+  "koreanName": "양손 조르기",
+  "art": "judo",
+  "category": "조르기 --- Shime Waza",
+  "positions": [
+   "조르기 --- Shime Waza"
+  ],
+  "description": "료테지메(양손 조르기)는 양손으로 상대의 양쪽 깃을 각각 잡아 대칭적으로 조르는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__tsukkomi-jime",
+  "name": "Tsukkomi Jime",
+  "koreanName": "찔러 넣는 조르기",
+  "art": "judo",
+  "category": "조르기 --- Shime Waza",
+  "positions": [
+   "조르기 --- Shime Waza"
+  ],
+  "description": "츠콤미지메(찔러 넣는 조르기)는 손을 상대의 깃 깊숙이 찔러 넣어 순간적으로 강하게 조르는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__상대의-중심-이동",
+  "name": "상대의 중심 이동",
+  "koreanName": "상대의 중심 이동",
+  "art": "bjj",
+  "category": "기본 움직임과 연결 기술",
+  "positions": [
+   "기본 움직임과 연결 기술"
+  ],
+  "description": "",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__pant-grip",
+  "name": "Pant Grip",
+  "koreanName": "팬츠 그립",
+  "art": "bjj",
+  "category": "패스 가드 (Guard Passing)",
+  "positions": [
+   "패스 가드 (Guard Passing)",
+   "스탠딩 / 테이크다운"
+  ],
+  "description": "팬트 그립은 상대 도복 바지단을 잡아 다리의 움직임을 제어하는 패스의 기본 그립입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__collar-sleeve",
+  "name": "Collar & Sleeve",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "클로즈드 가드 (Closed Guard)",
+  "positions": [
+   "클로즈드 가드 (Closed Guard)",
+   "오픈 가드 (Open Guard)"
+  ],
+  "description": "칼라 앤 슬리브는 클로즈드 가드에서 한 손으로 옷깃, 반대 손으로 소매를 잡아 상체를 통제하고 스윕이나 서브미션으로 연결하는 기본 그립입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__double-sleeve",
+  "name": "Double Sleeve",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "클로즈드 가드 (Closed Guard)",
+  "positions": [
+   "클로즈드 가드 (Closed Guard)",
+   "오픈 가드 (Open Guard)"
+  ],
+  "description": "더블 슬리브는 양손으로 상대의 양쪽 소매를 잡아 팔의 움직임을 완전히 제어하는 클로즈드 가드 그립입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__hip-control",
+  "name": "Hip Control",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "클로즈드 가드 (Closed Guard)",
+  "positions": [
+   "클로즈드 가드 (Closed Guard)",
+   "패스 가드 (Guard Passing)",
+   "사이드 컨트롤 (Side Control)",
+   "마운트 (Mount)"
+  ],
+  "description": "힙 컨트롤은 다리와 발을 이용해 상대의 골반을 고정하거나 밀어 자세와 거리를 제어하는 클로즈드 가드 기술입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__knee-in-the-middle",
+  "name": "Knee-in-the-middle",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "클로즈드 가드 (Closed Guard)",
+  "positions": [
+   "클로즈드 가드 (Closed Guard)"
+  ],
+  "description": "니 인 더 미들은 클로즈드 가드가 열렸을 때 무릎을 상대와 자신의 몸통 사이 중앙에 즉시 세워 가드 패스를 방어하는 원칙입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__double-under-guard-break",
+  "name": "Double Under Guard Break",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "클로즈드 가드 (Closed Guard)",
+  "positions": [
+   "클로즈드 가드 (Closed Guard)"
+  ],
+  "description": "더블 언더 가드 브레이크는 양팔로 상대의 양다리를 아래에서 감싸 눌러 클로즈드 가드를 풀어내는 패스 준비 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__hip-pressure-guard-break",
+  "name": "Hip Pressure Guard Break",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "클로즈드 가드 (Closed Guard)",
+  "positions": [
+   "클로즈드 가드 (Closed Guard)"
+  ],
+  "description": "힙 프레셔 가드 브레이크는 무릎과 엉덩이 압박으로 상대의 다리를 눌러 클로즈드 가드를 풀어내는 방식입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__scissor-sweep",
+  "name": "Scissor Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "클로즈드 가드 (Closed Guard)",
+  "positions": [
+   "클로즈드 가드 (Closed Guard)",
+   "오픈 가드 (Open Guard)",
+   "스윕 기술 모음"
+  ],
+  "description": "시저 스윕은 한쪽 다리로 상대의 상체를 눌러 지지하고 반대 다리로 상대의 다리를 가위처럼 후려 쓸어 넘기는 클로즈드 가드 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__pendulum-sweep",
+  "name": "Pendulum Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "클로즈드 가드 (Closed Guard)",
+  "positions": [
+   "클로즈드 가드 (Closed Guard)",
+   "스윕 기술 모음"
+  ],
+  "description": "펜듈럼 스윕은 다리를 진자처럼 크게 흔들어 반동을 이용해 상대를 옆으로 넘기는 클로즈드 가드 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__flower-sweep",
+  "name": "Flower Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "클로즈드 가드 (Closed Guard)",
+  "positions": [
+   "클로즈드 가드 (Closed Guard)",
+   "스윕 기술 모음"
+  ],
+  "description": "플라워 스윕은 상대의 한쪽 다리를 넘어 잡고 반대쪽으로 회전하며 넘기는 클로즈드 가드 스윕으로, 힙 범프 스윕의 변형으로도 불립니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__lumberjack-sweep",
+  "name": "Lumberjack Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "클로즈드 가드 (Closed Guard)",
+  "positions": [
+   "클로즈드 가드 (Closed Guard)",
+   "스윕 기술 모음"
+  ],
+  "description": "럼버잭 스윕은 힙 범프 스윕이나 다른 스윕이 막혔을 때 상대의 다리를 잡고 몸을 일으켜 세워 넘기는 연결 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__tripod-계열-스윕",
+  "name": "Tripod 계열 스윕",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "클로즈드 가드 (Closed Guard)",
+  "positions": [
+   "클로즈드 가드 (Closed Guard)"
+  ],
+  "description": "트라이포드 계열 스윕은 한 손과 양발로 삼각대(트라이포드) 형태의 지지를 만들어 상대를 밀거나 당겨 넘기는 오픈 가드 계열 스윕의 기본 원리입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__shoulder-clamp-sweep",
+  "name": "Shoulder Clamp Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "클로즈드 가드 (Closed Guard)",
+  "positions": [
+   "클로즈드 가드 (Closed Guard)"
+  ],
+  "description": "숄더 클램프 스윕은 상대의 팔을 어깨와 함께 감싸 눌러 고정한 뒤 몸을 회전시켜 넘기는 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__cross-collar-choke",
+  "name": "Cross Collar Choke",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "클로즈드 가드 (Closed Guard)",
+  "positions": [
+   "클로즈드 가드 (Closed Guard)",
+   "니 온 벨리 (Knee on Belly)",
+   "마운트 (Mount)",
+   "상체 서브미션",
+   "기(Gi)에서 특히 중요한 기술"
+  ],
+  "description": "크로스 칼라 초크는 양손을 교차시켜 상대의 옷깃 양쪽을 깊게 잡고 조르는 클로즈드 가드 기반 초크입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__ezekiel-choke",
+  "name": "Ezekiel Choke",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "클로즈드 가드 (Closed Guard)",
+  "positions": [
+   "클로즈드 가드 (Closed Guard)",
+   "사이드 컨트롤 (Side Control)",
+   "상체 서브미션",
+   "니 온 벨리 (Knee on Belly)",
+   "마운트 (Mount)",
+   "기(Gi)에서 특히 중요한 기술"
+  ],
+  "description": "에제키엘 초크는 도복 소매 안쪽 천을 이용해 팔뚝으로 상대의 목을 감아 조르는 클로즈드 가드/마운트 기반 초크입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__spider-guard",
+  "name": "Spider Guard",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "오픈 가드 (Open Guard)",
+  "positions": [
+   "오픈 가드 (Open Guard)",
+   "암바 계열",
+   "트라이앵글 계열",
+   "기(Gi)에서 특히 중요한 기술"
+  ],
+  "description": "스파이더 가드는 손으로 상대의 소매를 잡고 발을 상대의 팔뚝(이두근)에 대어 거리를 조절하며 스윕이나 서브미션을 노리는 오픈 가드입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__lasso-guard",
+  "name": "Lasso Guard",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "오픈 가드 (Open Guard)",
+  "positions": [
+   "오픈 가드 (Open Guard)",
+   "기(Gi)에서 특히 중요한 기술"
+  ],
+  "description": "라쏘 가드는 한쪽 다리로 상대의 팔을 감아 걸어(올가미처럼) 팔을 묶고, 반대 손으로 그립을 잡아 스윕과 서브미션을 노리는 오픈 가드입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__de-la-riva",
+  "name": "De La Riva",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "오픈 가드 (Open Guard)",
+  "positions": [
+   "오픈 가드 (Open Guard)"
+  ],
+  "description": "데 라 히바는 한쪽 다리를 상대의 바깥쪽 다리에 감아 걸어(DLR 훅) 상대의 움직임을 제어하며 스윕이나 백 테이크를 노리는 오픈 가드입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__reverse-de-la-riva",
+  "name": "Reverse De La Riva",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "오픈 가드 (Open Guard)",
+  "positions": [
+   "오픈 가드 (Open Guard)"
+  ],
+  "description": "리버스 데 라 히바는 다리를 상대의 같은 쪽 다리 안쪽에서 바깥쪽으로 감아 거는 변형 DLR 훅으로, 반대 방향의 스윕과 백 테이크를 노립니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__x-guard",
+  "name": "X Guard",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "오픈 가드 (Open Guard)",
+  "positions": [
+   "오픈 가드 (Open Guard)",
+   "노기(No-Gi)에서 자주 등장하는 포지션"
+  ],
+  "description": "X 가드는 상대의 한쪽 다리 아래에 누워 양다리로 X자 모양을 만들어 다리를 통제하며 스윕을 노리는 오픈 가드입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__off-balancing",
+  "name": "Off-balancing",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "오픈 가드 (Open Guard)",
+  "positions": [
+   "오픈 가드 (Open Guard)",
+   "데 라 히바 (De La Riva Guard)"
+  ],
+  "description": "오프밸런싱은 오픈 가드에서 손과 발의 그립/프레임을 동시에 사용해 상대의 무게중심을 무너뜨려 스윕이나 진입 기회를 만드는 기본 원리입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__tripod-sweep",
+  "name": "Tripod Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "오픈 가드 (Open Guard)",
+  "positions": [
+   "오픈 가드 (Open Guard)",
+   "데 라 히바 (De La Riva Guard)",
+   "X 가드 (X-Guard)",
+   "스윕 기술 모음"
+  ],
+  "description": "트라이포드 스윕은 한 손으로 바닥을 짚고 한 다리로 상대의 발목을, 반대 다리로 반대쪽 무릎을 밀어 넘기는 오픈 가드 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__balloon-sweep",
+  "name": "Balloon Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "오픈 가드 (Open Guard)",
+  "positions": [
+   "오픈 가드 (Open Guard)",
+   "스파이더 가드 (Spider Guard)",
+   "스윕 기술 모음"
+  ],
+  "description": "벌룬 스윕은 발로 상대의 몸통을 풍선처럼 띄우듯 들어 올려 뒤로 넘기는 오픈 가드 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__double-under-butterfly-sweep",
+  "name": "Double Under Butterfly Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "버터플라이 가드 (Butterfly Guard)",
+  "positions": [
+   "버터플라이 가드 (Butterfly Guard)"
+  ],
+  "description": "더블 언더 버터플라이 스윕은 양팔로 상대의 양다리를 감싸 안고 버터플라이 후크로 함께 들어 올려 넘기는 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__shoulder-crunch-sweep",
+  "name": "Shoulder Crunch Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "버터플라이 가드 (Butterfly Guard)",
+  "positions": [
+   "버터플라이 가드 (Butterfly Guard)"
+  ],
+  "description": "숄더 크런치 스윕은 상대의 어깨를 팔로 감싸 눌러 상체를 접히게 만든 뒤 버터플라이 후크로 넘기는 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__tripod-style-butterfly-sweep",
+  "name": "Tripod-style Butterfly Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "버터플라이 가드 (Butterfly Guard)",
+  "positions": [
+   "버터플라이 가드 (Butterfly Guard)"
+  ],
+  "description": "트라이포드 스타일 버터플라이 스윕은 한 손 지지와 버터플라이 후크를 결합해 상대를 옆으로 넘기는 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__spider-sweep",
+  "name": "Spider Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "스파이더 가드 (Spider Guard)",
+  "positions": [
+   "스파이더 가드 (Spider Guard)",
+   "스윕 기술 모음"
+  ],
+  "description": "스파이더 스윕은 스파이더 가드 그립과 발의 밀기를 결합해 상대를 옆이나 뒤로 넘기는 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__triangle-entry",
+  "name": "Triangle Entry",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "스파이더 가드 (Spider Guard)",
+  "positions": [
+   "스파이더 가드 (Spider Guard)"
+  ],
+  "description": "트라이앵글 엔트리는 스파이더 가드에서 한쪽 발을 상대의 반대쪽 어깨/목으로 옮겨 트라이앵글 초크로 진입하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__omoplata-entry",
+  "name": "Omoplata Entry",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "스파이더 가드 (Spider Guard)",
+  "positions": [
+   "스파이더 가드 (Spider Guard)"
+  ],
+  "description": "오모플라타 엔트리는 스파이더 가드에서 다리를 상대의 팔 위로 넘겨 오모플라타 관절기로 진입하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__de-la-riva-transition",
+  "name": "De La Riva Transition",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "스파이더 가드 (Spider Guard)",
+  "positions": [
+   "스파이더 가드 (Spider Guard)"
+  ],
+  "description": "데 라 히바 트랜지션은 스파이더 가드에서 다리를 상대의 다리로 옮겨 DLR 훅으로 전환하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__lasso-transition",
+  "name": "Lasso Transition",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "스파이더 가드 (Spider Guard)",
+  "positions": [
+   "스파이더 가드 (Spider Guard)"
+  ],
+  "description": "라쏘 트랜지션은 스파이더 가드에서 다리를 상대의 팔에 완전히 감아 라쏘 가드로 전환하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__spider-to-x-guard",
+  "name": "Spider to X Guard",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "스파이더 가드 (Spider Guard)",
+  "positions": [
+   "스파이더 가드 (Spider Guard)"
+  ],
+  "description": "스파이더 투 X가드는 스파이더 가드에서 상대의 다리 아래로 몸을 넣어 X 가드로 전환하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__spider-to-single-leg",
+  "name": "Spider to Single Leg",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "스파이더 가드 (Spider Guard)",
+  "positions": [
+   "스파이더 가드 (Spider Guard)"
+  ],
+  "description": "스파이더 투 싱글 레그는 스파이더 가드에서 발을 이용해 상대의 한쪽 다리를 잡아 싱글 레그 X로 전환하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__lasso-sweep",
+  "name": "Lasso Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "라쏘 가드 (Lasso Guard)",
+  "positions": [
+   "라쏘 가드 (Lasso Guard)",
+   "스윕 기술 모음"
+  ],
+  "description": "라쏘 스윕은 라쏘 훅으로 상대의 팔을 묶은 상태에서 그립과 다리로 함께 당겨 상대를 넘기는 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__lasso-to-spider",
+  "name": "Lasso to Spider",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "라쏘 가드 (Lasso Guard)",
+  "positions": [
+   "라쏘 가드 (Lasso Guard)"
+  ],
+  "description": "라쏘 투 스파이더는 라쏘 가드에서 다리를 풀어 스파이더 가드 형태로 전환하는 연결 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__lasso-to-omoplata",
+  "name": "Lasso to Omoplata",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "라쏘 가드 (Lasso Guard)",
+  "positions": [
+   "라쏘 가드 (Lasso Guard)"
+  ],
+  "description": "라쏘 투 오모플라타는 라쏘 가드에서 다리를 상대의 어깨 위로 넘겨 오모플라타로 전환하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__lasso-to-triangle",
+  "name": "Lasso to Triangle",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "라쏘 가드 (Lasso Guard)",
+  "positions": [
+   "라쏘 가드 (Lasso Guard)"
+  ],
+  "description": "라쏘 투 트라이앵글은 라쏘 가드에서 다리를 상대의 목 쪽으로 옮겨 트라이앵글 초크로 전환하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__lasso-to-x-guard",
+  "name": "Lasso to X Guard",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "라쏘 가드 (Lasso Guard)",
+  "positions": [
+   "라쏘 가드 (Lasso Guard)"
+  ],
+  "description": "라쏘 투 X가드는 라쏘 가드에서 몸을 상대의 다리 아래로 넣어 X 가드로 전환하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__lasso-to-back-take",
+  "name": "Lasso to Back Take",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "라쏘 가드 (Lasso Guard)",
+  "positions": [
+   "라쏘 가드 (Lasso Guard)"
+  ],
+  "description": "라쏘 투 백 테이크는 라쏘 훅으로 상대의 균형을 흔든 뒤 몸을 회전시켜 등 뒤로 이동하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__dlr-hook",
+  "name": "DLR Hook",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "데 라 히바 (De La Riva Guard)",
+  "positions": [
+   "데 라 히바 (De La Riva Guard)"
+  ],
+  "description": "DLR 훅은 데 라 히바 가드의 핵심 요소로, 다리를 상대의 앞다리 바깥쪽에서 안쪽으로 감아 걸어 상대의 이동을 제한하는 다리 걸이입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__grip-fighting",
+  "name": "Grip Fighting",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "데 라 히바 (De La Riva Guard)",
+  "positions": [
+   "데 라 히바 (De La Riva Guard)"
+  ],
+  "description": "그립 파이팅은 상대가 원하는 그립을 잡기 전에 먼저 소매나 옷깃을 제어해 유리한 그립을 확보하는 스탠딩/오픈 가드 공통 원리입니다.",
+  "candidates": [
+   "wrestling"
+  ]
+ },
+ {
+  "id": "bjj__berimbolo-entry",
+  "name": "Berimbolo Entry",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "데 라 히바 (De La Riva Guard)",
+  "positions": [
+   "데 라 히바 (De La Riva Guard)"
+  ],
+  "description": "베림볼로 엔트리는 DLR 훅을 건 상태에서 뒤로 구르며 상대의 다리 아래로 몸을 회전시켜 백 테이크를 준비하는 진입 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__kiss-of-the-dragon",
+  "name": "Kiss of the Dragon",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "데 라 히바 (De La Riva Guard)",
+  "positions": [
+   "데 라 히바 (De La Riva Guard)",
+   "백 테이크 기술 모음"
+  ],
+  "description": "키스 오브 더 드래곤은 베림볼로 진행 중 상대가 반대로 압박해올 때 다리로 상대의 몸통을 감싸 눌러 통제하는 방어적 연결 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__x-guard-entry",
+  "name": "X Guard Entry",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "데 라 히바 (De La Riva Guard)",
+  "positions": [
+   "데 라 히바 (De La Riva Guard)"
+  ],
+  "description": "X 가드 엔트리는 데 라 히바 훅 상태에서 상대의 다리 아래로 몸을 낮춰 넣어 X 가드로 진입하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__dlr-technical-sweep",
+  "name": "DLR Technical Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "데 라 히바 (De La Riva Guard)",
+  "positions": [
+   "데 라 히바 (De La Riva Guard)"
+  ],
+  "description": "DLR 테크니컬 스윕은 DLR 훅과 소매/발목 그립을 결합해 상대를 정면으로 넘기는 기본 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__baby-bolo-sweep",
+  "name": "Baby Bolo Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "데 라 히바 (De La Riva Guard)",
+  "positions": [
+   "데 라 히바 (De La Riva Guard)"
+  ],
+  "description": "베이비 볼로 스윕은 베림볼로 진입 없이 DLR 훅만으로 간단하게 상대를 넘기는 단순화된 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__dlr-to-x-guard-sweep",
+  "name": "DLR to X Guard Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "데 라 히바 (De La Riva Guard)",
+  "positions": [
+   "데 라 히바 (De La Riva Guard)"
+  ],
+  "description": "DLR 투 X가드 스윕은 DLR에서 X 가드로 전환한 뒤 다리를 들어 올려 상대를 넘기는 연결 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__berimbolo",
+  "name": "Berimbolo",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "데 라 히바 (De La Riva Guard)",
+  "positions": [
+   "데 라 히바 (De La Riva Guard)",
+   "백 테이크 기술 모음"
+  ],
+  "description": "베림볼로는 DLR 훅을 걸고 뒤로 굴러 상대의 다리 아래로 회전해 등 뒤 포지션을 잡는 고난도 오픈 가드 기술입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__backstep-entry",
+  "name": "Backstep Entry",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "데 라 히바 (De La Riva Guard)",
+  "positions": [
+   "데 라 히바 (De La Riva Guard)"
+  ],
+  "description": "",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__inversion-entry",
+  "name": "Inversion Entry",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "데 라 히바 (De La Riva Guard)",
+  "positions": [
+   "데 라 히바 (De La Riva Guard)"
+  ],
+  "description": "",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__x-guard-sweep",
+  "name": "X Guard Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "X 가드 (X-Guard)",
+  "positions": [
+   "X 가드 (X-Guard)",
+   "스윕 기술 모음"
+  ],
+  "description": "X 가드 스윕은 X자 다리로 상대의 지지 다리를 완전히 들어 올려 반대쪽으로 넘기는 기본 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__back-sweep",
+  "name": "Back Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "X 가드 (X-Guard)",
+  "positions": [
+   "X 가드 (X-Guard)"
+  ],
+  "description": "X 가드에서의 백 스윕은 상대를 뒤쪽으로 넘겨 등을 보이게 만들어 백 테이크로 연결하는 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__single-leg-transition",
+  "name": "Single Leg Transition",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "X 가드 (X-Guard)",
+  "positions": [
+   "X 가드 (X-Guard)"
+  ],
+  "description": "X 가드에서의 싱글 레그 트랜지션은 X자 다리를 풀어 싱글 레그 X 자세로 전환하는 연결 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__slx-transition",
+  "name": "SLX Transition",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "X 가드 (X-Guard)",
+  "positions": [
+   "X 가드 (X-Guard)"
+  ],
+  "description": "SLX 트랜지션은 X 가드에서 싱글 레그 X로, 혹은 그 반대로 자연스럽게 전환하며 상대의 다리 통제를 유지하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__slx-sweep",
+  "name": "SLX Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "싱글 레그 X (SLX / Single Leg X)",
+  "positions": [
+   "싱글 레그 X (SLX / Single Leg X)",
+   "스윕 기술 모음"
+  ],
+  "description": "SLX 스윕은 싱글 레그 X로 상대의 한쪽 다리를 완전히 통제한 상태에서 들어 올려 넘기는 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__technical-sweep",
+  "name": "Technical Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "싱글 레그 X (SLX / Single Leg X)",
+  "positions": [
+   "싱글 레그 X (SLX / Single Leg X)"
+  ],
+  "description": "SLX에서의 테크니컬 스윕은 상대가 일어서려 할 때 발목 통제를 이용해 균형을 무너뜨리는 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__outside-sweep",
+  "name": "Outside Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "싱글 레그 X (SLX / Single Leg X)",
+  "positions": [
+   "싱글 레그 X (SLX / Single Leg X)"
+  ],
+  "description": "SLX에서의 아웃사이드 스윕은 상대의 바깥쪽으로 다리를 밀어 넘기는 방향의 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__inside-sweep",
+  "name": "Inside Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "싱글 레그 X (SLX / Single Leg X)",
+  "positions": [
+   "싱글 레그 X (SLX / Single Leg X)"
+  ],
+  "description": "SLX에서의 인사이드 스윕은 상대의 다리를 안쪽으로 당겨 넘기는 방향의 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__x-guard-transition",
+  "name": "X Guard Transition",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "싱글 레그 X (SLX / Single Leg X)",
+  "positions": [
+   "싱글 레그 X (SLX / Single Leg X)"
+  ],
+  "description": "SLX에서 X 가드로의 트랜지션은 통제하던 다리를 유지한 채 반대 다리를 추가해 X자 형태로 강화하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__back-take-transition",
+  "name": "Back Take Transition",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "싱글 레그 X (SLX / Single Leg X)",
+  "positions": [
+   "싱글 레그 X (SLX / Single Leg X)"
+  ],
+  "description": "SLX에서 백 테이크로의 트랜지션은 다리 통제를 유지한 채 몸을 회전시켜 상대의 등 뒤로 이동하는 동작입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__deep-half-guard",
+  "name": "Deep Half Guard",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "하프 가드 (Half Guard)",
+  "positions": [
+   "하프 가드 (Half Guard)"
+  ],
+  "description": "딥 하프 가드는 상대의 다리 아래로 완전히 파고들어 상대의 지지 다리를 등에 짊어지듯 통제하는 깊은 하프 가드 포지션입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__lockdown",
+  "name": "Lockdown",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "하프 가드 (Half Guard)",
+  "positions": [
+   "하프 가드 (Half Guard)"
+  ],
+  "description": "락다운은 다리로 상대의 다리를 얽어 걸어 상대가 발을 빼거나 패스하지 못하게 고정하는 하프 가드 다리 잠금입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__old-school-sweep",
+  "name": "Old School Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "하프 가드 (Half Guard)",
+  "positions": [
+   "하프 가드 (Half Guard)",
+   "스윕 기술 모음"
+  ],
+  "description": "올드 스쿨 스윕은 하프 가드에서 상대의 다리를 감싸 잡고 뒤로 굴러 상대를 넘기는 클래식 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__electric-chair-sweep",
+  "name": "Electric Chair Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "하프 가드 (Half Guard)",
+  "positions": [
+   "하프 가드 (Half Guard)",
+   "스윕 기술 모음"
+  ],
+  "description": "일렉트릭 체어 스윕은 딥 하프 가드에서 상대의 다리를 전기의자에 앉듯 들어 올려 반대쪽으로 넘기는 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__plan-b-sweep",
+  "name": "Plan B Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "하프 가드 (Half Guard)",
+  "positions": [
+   "하프 가드 (Half Guard)"
+  ],
+  "description": "플랜 B 스윕은 딥 하프 가드에서 언더훅을 확보한 뒤 상대의 다리를 밀어 올리며 몸을 회전시켜 넘기는 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__john-wayne-sweep",
+  "name": "John Wayne Sweep",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "하프 가드 (Half Guard)",
+  "positions": [
+   "하프 가드 (Half Guard)",
+   "스윕 기술 모음"
+  ],
+  "description": "존 웨인 스윕은 딥 하프 가드에서 상대의 몸통 뒤로 이동하며 다리를 들어 올려 넘기는 스윕입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__old-school",
+  "name": "Old School",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "딥 하프 가드 (Deep Half Guard)",
+  "positions": [
+   "딥 하프 가드 (Deep Half Guard)"
+  ],
+  "description": "올드 스쿨은 딥 하프 가드의 기본 형태로, 상대의 다리 아래에서 몸을 밀착시켜 다리를 등에 짊어지듯 받치는 자세입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__homer-simpson",
+  "name": "Homer Simpson",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "딥 하프 가드 (Deep Half Guard)",
+  "positions": [
+   "딥 하프 가드 (Deep Half Guard)"
+  ],
+  "description": "호머 심슨은 딥 하프 가드에서 상대의 다리를 감싸 안은 채 뒤로 눕듯 자세를 낮춰 컨트롤을 강화하는 변형 자세입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "bjj__electric-chair",
+  "name": "Electric Chair",
+  "koreanName": null,
+  "art": "bjj",
+  "category": "딥 하프 가드 (Deep Half Guard)",
+  "positions": [
+   "딥 하프 가드 (Deep Half Guard)"
+  ],
+  "description": "일렉트릭 체어는 딥 하프 가드에서 상대의 다리를 전기의자에 앉히듯 들어 올려 스윕을 준비하는 자세입니다.",
+  "candidates": [
+   "judo",
+   "wrestling",
+   "sambo"
+  ]
+ }
+]

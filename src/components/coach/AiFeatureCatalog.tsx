@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { AI_FEATURES, AI_GROUP_LABEL, AI_GROUP_ORDER, aiFeaturesByGroup, type AiFeatureGroup } from '../../lib/aiCoach/aiFeatureCatalog';
+import { FeatureIcon } from '../icons/BrandAssets';
 
 /**
  * AI 코치 탭의 "AI 기능 전체" — every AI feature of MARTIALDEX, grouped,
@@ -53,7 +54,7 @@ export default function AiFeatureCatalog(props: { onAsk: () => void }) {
               {list.map((f) => (
                 <div key={f.id} className="card info-card ai-feature-card" data-testid={f.testId ?? `ai-feature-${f.id}`} data-feature={f.id}>
                   <h3>
-                    {f.icon} {f.title}
+                    <FeatureIcon id={f.id} fallback={f.icon} /> {f.title}
                   </h3>
                   <p className="ai-feature-card__desc">{f.description}</p>
                   {f.where && <p className="video-status-message ai-feature-card__where">위치: {f.where}</p>}

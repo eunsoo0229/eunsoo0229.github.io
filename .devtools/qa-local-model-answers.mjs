@@ -73,6 +73,7 @@ function check(name, pass, detail = '') {
 const stats = { called: 0, accepted: 0, rejected: 0, failed: 0, ms: [] };
 for (const [id, q] of QUESTIONS) {
   const t = S.resolveTechnique(id);
+  A.resetLocalModelBackoff(); // model comparison: every model gets every question (no back-off skip)
   const t0 = Date.now();
   const a = await A.answerFromEvidence(t, q, { useModel: true });
   const ms = Date.now() - t0;

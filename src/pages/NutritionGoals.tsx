@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useNutritionProfile } from '../lib/nutrition/useNutritionProfile';
@@ -59,7 +60,7 @@ export default function NutritionGoals() {
           <span>목표 설정</span>
         </div>
         <div className="section-title">
-          <h2>🎯 영양 목표 설정</h2>
+          <h2><Icon name="target" /> 영양 목표 설정</h2>
         </div>
 
         <div className="card info-card">

@@ -2,6 +2,7 @@ import type { Technique } from '../../types';
 import type { CoachMessage } from '../aiCoachDay/types';
 import { geminiCoach, type CoachBackend } from '../coachProvider/backend';
 import { resolveTechniquesByIds } from '../userTechniques/service';
+import { genericTexts } from '../coachKnowledge/lookup';
 import { buildConcepts, keyPointsReference, lessonName } from './concepts';
 import { createLessonState, gradeChoice, lessonStep, type LessonContext } from './engine';
 import { classifyIntent } from './intent';
@@ -28,7 +29,7 @@ export function lessonContextFor(t: Technique): LessonContext {
   const distractors = related.map((r) => firstSentence(r.posture?.overview)).filter(Boolean).slice(0, 2);
   return {
     name: lessonName(t),
-    concepts: buildConcepts(t, { distractors }),
+    concepts: buildConcepts(t, { distractors, genericTexts: genericTexts() }),
     scenarios: buildScenarios(t),
     keyPointsReference: keyPointsReference(t),
     prior: getLearningRecord(t.id),
@@ -103,7 +104,7 @@ export async function respondToStudent(input: RespondInput): Promise<LessonStepR
   return lessonStep(state, ctx, { type: 'STUDENT', text, intent });
 }
 
-export function lessonEvent(t: Technique, state: CoachLessonState, event: { type: 'VIDEO_DONE' } | { type: 'PRACTICE_DONE'; completed: boolean } | { type: 'SKIP' }): LessonStepResult {
+export function lessonEvent(t: Technique, state: CoachLessonState, event: { type: 'VIDEO_DONE'; watched?: boolean } | { type: 'PRACTICE_DONE'; completed: boolean } | { type: 'SKIP' }): LessonStepResult {
   const ctx = lessonContextFor(t);
   if (event.type === 'SKIP') return lessonStep(state, ctx, { type: 'STUDENT', text: '건너뛰기', intent: 'skip' });
   return lessonStep(state, ctx, event);

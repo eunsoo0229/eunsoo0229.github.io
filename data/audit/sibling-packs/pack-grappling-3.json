@@ -1,0 +1,1202 @@
+[
+ {
+  "id": "judo__kuzushi-migi-mae",
+  "name": "오른앞 (Migi-Mae)",
+  "koreanName": null,
+  "art": "judo",
+  "category": "유도의 핵심 원리 --- Kuzushi · Tsukuri · Kake",
+  "positions": [
+   "유도의 핵심 원리 --- Kuzushi · Tsukuri · Kake"
+  ],
+  "description": "",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__kuzushi-hidari-mae",
+  "name": "왼앞 (Hidari-Mae)",
+  "koreanName": null,
+  "art": "judo",
+  "category": "유도의 핵심 원리 --- Kuzushi · Tsukuri · Kake",
+  "positions": [
+   "유도의 핵심 원리 --- Kuzushi · Tsukuri · Kake"
+  ],
+  "description": "",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__kuzushi-migi-ushiro",
+  "name": "오른뒤 (Migi-Ushiro)",
+  "koreanName": null,
+  "art": "judo",
+  "category": "유도의 핵심 원리 --- Kuzushi · Tsukuri · Kake",
+  "positions": [
+   "유도의 핵심 원리 --- Kuzushi · Tsukuri · Kake"
+  ],
+  "description": "",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__kuzushi-hidari-ushiro",
+  "name": "왼뒤 (Hidari-Ushiro)",
+  "koreanName": null,
+  "art": "judo",
+  "category": "유도의 핵심 원리 --- Kuzushi · Tsukuri · Kake",
+  "positions": [
+   "유도의 핵심 원리 --- Kuzushi · Tsukuri · Kake"
+  ],
+  "description": "",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__standard-grip",
+  "name": "Standard Grip",
+  "koreanName": "소매+깃",
+  "art": "judo",
+  "category": "잡기 / 그립 --- Kumi Kata",
+  "positions": [
+   "잡기 / 그립 --- Kumi Kata"
+  ],
+  "description": "표준 그립(소매+깃)은 한 손으로 상대의 소매를, 반대 손으로 깃을 잡는 유도의 가장 기본적인 그립입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__cross-grip",
+  "name": "Cross Grip",
+  "koreanName": "교차 그립",
+  "art": "judo",
+  "category": "잡기 / 그립 --- Kumi Kata",
+  "positions": [
+   "잡기 / 그립 --- Kumi Kata"
+  ],
+  "description": "교차 그립은 상대와 같은 방향이 아닌 반대 방향(교차)으로 잡는 비대칭 그립입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__same-side-grip",
+  "name": "Same-Side Grip",
+  "koreanName": "같은 쪽 그립",
+  "art": "judo",
+  "category": "잡기 / 그립 --- Kumi Kata",
+  "positions": [
+   "잡기 / 그립 --- Kumi Kata"
+  ],
+  "description": "같은 쪽 그립(아이 지고타이)은 양 선수가 서로 같은 발을 앞에 둔 상태에서 형성되는 그립 형태입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__russian-style-grip",
+  "name": "Russian-style Grip",
+  "koreanName": "팔을 감아 당기는 그립",
+  "art": "judo",
+  "category": "잡기 / 그립 --- Kumi Kata",
+  "positions": [
+   "잡기 / 그립 --- Kumi Kata"
+  ],
+  "description": "러시안 스타일 그립은 상대의 팔을 안쪽으로 감아 당기는 삼보/레슬링 영향을 받은 변형 그립입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__grip-fighting",
+  "name": "Grip Fighting",
+  "koreanName": "Kumi Kata 다툼",
+  "art": "judo",
+  "category": "잡기 / 그립 --- Kumi Kata",
+  "positions": [
+   "잡기 / 그립 --- Kumi Kata"
+  ],
+  "description": "쿠미카타 다툼은 유리한 그립을 확보하기 위해 상대와 지속적으로 그립을 뺏고 뺏기는 공방입니다.",
+  "candidates": [
+   "wrestling"
+  ]
+ },
+ {
+  "id": "judo__hiza-guruma",
+  "name": "Hiza Guruma",
+  "koreanName": "무릎 바퀴",
+  "art": "judo",
+  "category": "발기술 --- Ashi Waza",
+  "positions": [
+   "발기술 --- Ashi Waza"
+  ],
+  "description": "히자구루마는 상대의 무릎을 축으로 걸어 회전시키며 넘어뜨리는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__osoto-otoshi",
+  "name": "Osoto Otoshi",
+  "koreanName": "큰 바깥 떨어뜨리기",
+  "art": "judo",
+  "category": "발기술 --- Ashi Waza",
+  "positions": [
+   "발기술 --- Ashi Waza"
+  ],
+  "description": "오소토오토시는 오소토가리와 유사하지만 다리를 휘둘러 베지 않고 상대의 뒷다리 뒤에 곧게 대어 떨어뜨리는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__osoto-guruma",
+  "name": "Osoto Guruma",
+  "koreanName": "큰 바깥 바퀴",
+  "art": "judo",
+  "category": "발기술 --- Ashi Waza",
+  "positions": [
+   "발기술 --- Ashi Waza"
+  ],
+  "description": "오소토구루마는 오소토가리와 비슷하나 양다리를 모두 사용해 상대를 회전시키며 넘어뜨리는 변형 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__kosoto-gari",
+  "name": "Kosoto Gari",
+  "koreanName": "작은 바깥 베기",
+  "art": "judo",
+  "category": "발기술 --- Ashi Waza",
+  "positions": [
+   "발기술 --- Ashi Waza"
+  ],
+  "description": "코소토가리는 상대의 바깥쪽 뒷다리를 작게 걸어 후려 넘어뜨리는 발기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__okuri-ashi-barai",
+  "name": "Okuri Ashi Barai",
+  "koreanName": "양발 몰아 후리기",
+  "art": "judo",
+  "category": "발기술 --- Ashi Waza",
+  "positions": [
+   "발기술 --- Ashi Waza"
+  ],
+  "description": "오쿠리아시바라이는 상대의 양발이 나란히 있을 때 두 발을 동시에 옆으로 쓸어 넘어뜨리는 발기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__harai-tsurikomi-ashi",
+  "name": "Harai Tsurikomi Ashi",
+  "koreanName": "후리기 끌어당겨 걸기",
+  "art": "judo",
+  "category": "발기술 --- Ashi Waza",
+  "positions": [
+   "발기술 --- Ashi Waza"
+  ],
+  "description": "하라이츠리코미아시는 상대의 다리를 크게 후려 쓸며 동시에 강하게 당겨 넘어뜨리는 발기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__ashi-guruma",
+  "name": "Ashi Guruma",
+  "koreanName": "다리 바퀴",
+  "art": "judo",
+  "category": "발기술 --- Ashi Waza",
+  "positions": [
+   "발기술 --- Ashi Waza"
+  ],
+  "description": "아시구루마는 자신의 다리를 상대의 다리에 대어 축으로 삼고 몸통 회전으로 상대를 넘기는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__seoi-nage",
+  "name": "Seoi Nage",
+  "koreanName": "등 던지기",
+  "art": "judo",
+  "category": "손기술 --- Te Waza",
+  "positions": [
+   "손기술 --- Te Waza"
+  ],
+  "description": "세오이나게(등 던지기)는 상대의 팔을 잡고 자신의 등에 태워 앞으로 넘기는 유도의 대표적인 손기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling"
+  ]
+ },
+ {
+  "id": "judo__ippon-seoi-nage",
+  "name": "Ippon Seoi Nage",
+  "koreanName": "한팔 등 던지기",
+  "art": "judo",
+  "category": "손기술 --- Te Waza",
+  "positions": [
+   "손기술 --- Te Waza"
+  ],
+  "description": "입폰세오이나게는 상대의 한쪽 팔만 잡고 그 팔을 자신의 어깨 위에 걸어 넘기는 세오이나게 변형입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__morote-seoi-nage",
+  "name": "Morote Seoi Nage",
+  "koreanName": "양손 등 던지기",
+  "art": "judo",
+  "category": "손기술 --- Te Waza",
+  "positions": [
+   "손기술 --- Te Waza"
+  ],
+  "description": "모로테세오이나게는 양손으로 상대의 팔과 소매를 모두 잡고 등에 태워 넘기는 세오이나게 변형입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__seoi-otoshi",
+  "name": "Seoi Otoshi",
+  "koreanName": "등 떨어뜨리기",
+  "art": "judo",
+  "category": "손기술 --- Te Waza",
+  "positions": [
+   "손기술 --- Te Waza"
+  ],
+  "description": "세오이오토시는 세오이나게와 유사하나 서서 펴 던지지 않고 무릎을 꿇으며 상대를 앞으로 떨어뜨리는 변형입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__tai-otoshi",
+  "name": "Tai Otoshi",
+  "koreanName": "몸 떨어뜨리기",
+  "art": "judo",
+  "category": "손기술 --- Te Waza",
+  "positions": [
+   "손기술 --- Te Waza"
+  ],
+  "description": "타이오토시는 자신의 다리를 상대의 다리 앞에 뻗어 장애물로 삼고 상체 회전으로 넘기는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__sukui-nage",
+  "name": "Sukui Nage",
+  "koreanName": "퍼올려 던지기",
+  "art": "judo",
+  "category": "손기술 --- Te Waza",
+  "positions": [
+   "손기술 --- Te Waza"
+  ],
+  "description": "스쿠이나게(퍼올려 던지기)는 상대의 다리 뒤를 팔로 퍼올리듯 감아 들어 던지는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__uki-otoshi",
+  "name": "Uki Otoshi",
+  "koreanName": "뜬 떨어뜨리기",
+  "art": "judo",
+  "category": "손기술 --- Te Waza",
+  "positions": [
+   "손기술 --- Te Waza"
+  ],
+  "description": "우키오토시(뜬 떨어뜨리기)는 발기술 없이 순수하게 타이밍과 회전만으로 상대를 무너뜨려 떨어뜨리는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__sumi-otoshi",
+  "name": "Sumi Otoshi",
+  "koreanName": "구석 떨어뜨리기",
+  "art": "judo",
+  "category": "손기술 --- Te Waza",
+  "positions": [
+   "손기술 --- Te Waza"
+  ],
+  "description": "스미오토시(구석 떨어뜨리기)는 상대를 대각선 뒤 구석 방향으로 무너뜨려 최소한의 힘으로 떨어뜨리는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__obi-otoshi",
+  "name": "Obi Otoshi",
+  "koreanName": "허리띠 떨어뜨리기",
+  "art": "judo",
+  "category": "손기술 --- Te Waza",
+  "positions": [
+   "손기술 --- Te Waza"
+  ],
+  "description": "오비오토시(허리띠 떨어뜨리기)는 상대의 허리띠를 잡고 들어 올려 앞으로 떨어뜨리는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__kuchiki-daoshi",
+  "name": "Kuchiki Daoshi",
+  "koreanName": "마른나무 쓰러뜨리기",
+  "art": "judo",
+  "category": "손기술 --- Te Waza",
+  "positions": [
+   "손기술 --- Te Waza"
+  ],
+  "description": "쿠치키다오시(마른나무 쓰러뜨리기)는 손으로 상대의 다리를 직접 잡아 당겨 쓰러뜨리는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__yama-arashi",
+  "name": "Yama Arashi",
+  "koreanName": "산의 폭풍",
+  "art": "judo",
+  "category": "손기술 --- Te Waza",
+  "positions": [
+   "손기술 --- Te Waza"
+  ],
+  "description": "야마아라시(산의 폭풍)는 강한 당김과 다리 후리기를 결합한 고난도 복합 던지기 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__uchi-mata-sukashi",
+  "name": "Uchi Mata Sukashi",
+  "koreanName": "우치마타 흘리기",
+  "art": "judo",
+  "category": "손기술 --- Te Waza",
+  "positions": [
+   "손기술 --- Te Waza",
+   "카운터 --- Kaeshi Waza"
+  ],
+  "description": "우치마타스카시는 상대의 우치마타 시도를 흘려보내며 역으로 되받아치는 카운터 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__uki-goshi",
+  "name": "Uki Goshi",
+  "koreanName": "뜬 허리",
+  "art": "judo",
+  "category": "허리기술 --- Koshi Waza",
+  "positions": [
+   "허리기술 --- Koshi Waza"
+  ],
+  "description": "우키고시(뜬 허리)는 엉덩이를 상대의 골반 아래에 걸치듯 대고 회전시켜 넘기는 기본 허리기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__tsurikomi-goshi",
+  "name": "Tsurikomi Goshi",
+  "koreanName": "끌어올려 당기는 허리",
+  "art": "judo",
+  "category": "허리기술 --- Koshi Waza",
+  "positions": [
+   "허리기술 --- Koshi Waza"
+  ],
+  "description": "츠리코미고시(끌어올려 당기는 허리)는 상대를 발끝으로 세우듯 끌어올리며 허리에 걸어 넘기는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__sode-tsurikomi-goshi",
+  "name": "Sode Tsurikomi Goshi",
+  "koreanName": "소매 끌어올려 당기는 허리",
+  "art": "judo",
+  "category": "허리기술 --- Koshi Waza",
+  "positions": [
+   "허리기술 --- Koshi Waza"
+  ],
+  "description": "소데츠리코미고시는 소매만 잡은 상태에서 츠리코미고시와 같은 원리로 넘기는 변형 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__tsuri-goshi",
+  "name": "Tsuri Goshi",
+  "koreanName": "들어올리는 허리",
+  "art": "judo",
+  "category": "허리기술 --- Koshi Waza",
+  "positions": [
+   "허리기술 --- Koshi Waza"
+  ],
+  "description": "츠리고시(들어올리는 허리)는 상대의 허리띠를 잡고 엉덩이에 걸어 들어 올려 넘기는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__hane-goshi",
+  "name": "Hane Goshi",
+  "koreanName": "튀는 허리",
+  "art": "judo",
+  "category": "허리기술 --- Koshi Waza",
+  "positions": [
+   "허리기술 --- Koshi Waza"
+  ],
+  "description": "하네고시(튀는 허리)는 다리를 스프링처럼 튕겨 상대를 위로 튕겨 올리며 넘기는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__utsuri-goshi",
+  "name": "Utsuri Goshi",
+  "koreanName": "옮기는 허리",
+  "art": "judo",
+  "category": "허리기술 --- Koshi Waza",
+  "positions": [
+   "허리기술 --- Koshi Waza"
+  ],
+  "description": "우츠리고시(옮기는 허리)는 상대가 허리기술로 안아 들어 올릴 때 자세를 바꿔 역으로 넘기는 카운터 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__ushiro-goshi",
+  "name": "Ushiro Goshi",
+  "koreanName": "뒤 허리",
+  "art": "judo",
+  "category": "허리기술 --- Koshi Waza",
+  "positions": [
+   "허리기술 --- Koshi Waza"
+  ],
+  "description": "우시로고시(뒤 허리)는 상대가 허리기술로 공격할 때 엉덩이를 뒤로 빼며 역으로 들어 넘기는 카운터 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__tomoe-nage",
+  "name": "Tomoe Nage",
+  "koreanName": "똬리 던지기",
+  "art": "judo",
+  "category": "바로 누우며 던지기 --- Ma Sutemi Waza",
+  "positions": [
+   "바로 누우며 던지기 --- Ma Sutemi Waza"
+  ],
+  "description": "토모에나게(똬리 던지기)는 자신이 뒤로 누우며 발로 상대의 복부를 받쳐 위로 넘기는 희생 던지기입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__hikikomi-gaeshi",
+  "name": "Hikikomi Gaeshi",
+  "koreanName": "끌어당겨 뒤집기",
+  "art": "judo",
+  "category": "바로 누우며 던지기 --- Ma Sutemi Waza",
+  "positions": [
+   "바로 누우며 던지기 --- Ma Sutemi Waza"
+  ],
+  "description": "히키코미가에시(끌어당겨 뒤집기)는 상대를 강하게 끌어당기며 뒤로 누워 몸으로 넘기는 희생 던지기입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__tawara-gaeshi",
+  "name": "Tawara Gaeshi",
+  "koreanName": "쌀가마 뒤집기",
+  "art": "judo",
+  "category": "바로 누우며 던지기 --- Ma Sutemi Waza",
+  "positions": [
+   "바로 누우며 던지기 --- Ma Sutemi Waza"
+  ],
+  "description": "타와라가에시(쌀가마 뒤집기)는 상대에게 안겨 들린 상태에서 몸을 회전시켜 역으로 넘기는 희생 던지기입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__yoko-wakare",
+  "name": "Yoko Wakare",
+  "koreanName": "옆으로 가르기",
+  "art": "judo",
+  "category": "옆으로 누우며 던지기 --- Yoko Sutemi Waza",
+  "positions": [
+   "옆으로 누우며 던지기 --- Yoko Sutemi Waza"
+  ],
+  "description": "요코와카레(옆으로 가르기)는 옆으로 누우며 다리로 상대의 다리를 가르듯 벌려 넘기는 희생 던지기입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__yoko-gake",
+  "name": "Yoko Gake",
+  "koreanName": "옆으로 걸기",
+  "art": "judo",
+  "category": "옆으로 누우며 던지기 --- Yoko Sutemi Waza",
+  "positions": [
+   "옆으로 누우며 던지기 --- Yoko Sutemi Waza"
+  ],
+  "description": "요코가케(옆으로 걸기)는 상대의 다리를 발로 걸며 함께 옆으로 넘어지는 희생 던지기입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__uki-waza",
+  "name": "Uki Waza",
+  "koreanName": "뜬 기술",
+  "art": "judo",
+  "category": "옆으로 누우며 던지기 --- Yoko Sutemi Waza",
+  "positions": [
+   "옆으로 누우며 던지기 --- Yoko Sutemi Waza"
+  ],
+  "description": "우키와자(뜬 기술)는 다리를 걸지 않고 순수하게 몸을 눕히며 상대를 옆으로 넘기는 희생 던지기입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__tani-otoshi",
+  "name": "Tani Otoshi",
+  "koreanName": "골짜기 떨어뜨리기",
+  "art": "judo",
+  "category": "옆으로 누우며 던지기 --- Yoko Sutemi Waza",
+  "positions": [
+   "옆으로 누우며 던지기 --- Yoko Sutemi Waza"
+  ],
+  "description": "타니오토시(골짜기 떨어뜨리기)는 다리를 상대의 다리 뒤에 대고 뒤로 넘어지며 상대를 넘기는 희생 던지기입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__daki-wakare",
+  "name": "Daki Wakare",
+  "koreanName": "안아 가르기",
+  "art": "judo",
+  "category": "옆으로 누우며 던지기 --- Yoko Sutemi Waza",
+  "positions": [
+   "옆으로 누우며 던지기 --- Yoko Sutemi Waza"
+  ],
+  "description": "다키와카레(안아 가르기)는 상대의 몸통을 안고 다리를 가르며 옆으로 넘기는 희생 던지기입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__osoto-makikomi",
+  "name": "Osoto Makikomi",
+  "koreanName": "큰 바깥 감아던지기",
+  "art": "judo",
+  "category": "옆으로 누우며 던지기 --- Yoko Sutemi Waza",
+  "positions": [
+   "옆으로 누우며 던지기 --- Yoko Sutemi Waza"
+  ],
+  "description": "오소토마키코미는 오소토가리에 팔로 감아 던지는(마키코미) 동작을 결합해 강하게 넘기는 변형입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__uchi-makikomi",
+  "name": "Uchi Makikomi",
+  "koreanName": "안 감아던지기",
+  "art": "judo",
+  "category": "옆으로 누우며 던지기 --- Yoko Sutemi Waza",
+  "positions": [
+   "옆으로 누우며 던지기 --- Yoko Sutemi Waza"
+  ],
+  "description": "우치마키코미는 안쪽에서 팔로 상대를 감아 함께 회전하며 넘기는 마키코미 계열 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__harai-makikomi",
+  "name": "Harai Makikomi",
+  "koreanName": "후리기 감아던지기",
+  "art": "judo",
+  "category": "옆으로 누우며 던지기 --- Yoko Sutemi Waza",
+  "positions": [
+   "옆으로 누우며 던지기 --- Yoko Sutemi Waza"
+  ],
+  "description": "하라이마키코미는 하라이고시에 팔로 감아 던지는 동작을 결합한 변형 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__hane-makikomi",
+  "name": "Hane Makikomi",
+  "koreanName": "튀는 감아던지기",
+  "art": "judo",
+  "category": "옆으로 누우며 던지기 --- Yoko Sutemi Waza",
+  "positions": [
+   "옆으로 누우며 던지기 --- Yoko Sutemi Waza"
+  ],
+  "description": "하네마키코미는 하네고시에 팔로 감아 던지는 동작을 결합한 변형 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__uchi-mata-makikomi",
+  "name": "Uchi Mata Makikomi",
+  "koreanName": "허벅다리 감아던지기",
+  "art": "judo",
+  "category": "옆으로 누우며 던지기 --- Yoko Sutemi Waza",
+  "positions": [
+   "옆으로 누우며 던지기 --- Yoko Sutemi Waza"
+  ],
+  "description": "우치마타마키코미는 우치마타에 팔로 감아 던지는 동작을 결합해 더 강하게 넘기는 변형 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__ouchi-gari-uchi-mata",
+  "name": "Ouchi Gari → Uchi Mata",
+  "koreanName": null,
+  "art": "judo",
+  "category": "연속·연결·변화 기술 --- Renraku Waza / Henka Waza",
+  "positions": [
+   "연속·연결·변화 기술 --- Renraku Waza / Henka Waza"
+  ],
+  "description": "오우치가리에서 우치마타로 이어지는 콤비네이션은 안쪽 다리 공격에 대한 상대의 저항을 이용해 반대쪽 우치마타로 전환하는 연결 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__ouchi-gari-seoi-nage",
+  "name": "Ouchi Gari → Seoi Nage",
+  "koreanName": null,
+  "art": "judo",
+  "category": "연속·연결·변화 기술 --- Renraku Waza / Henka Waza",
+  "positions": [
+   "연속·연결·변화 기술 --- Renraku Waza / Henka Waza"
+  ],
+  "description": "오우치가리에서 세오이나게로 이어지는 콤비네이션은 하체 공격 저항을 상체 던지기로 연결하는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__kouchi-gari-seoi-nage",
+  "name": "Kouchi Gari → Seoi Nage",
+  "koreanName": null,
+  "art": "judo",
+  "category": "연속·연결·변화 기술 --- Renraku Waza / Henka Waza",
+  "positions": [
+   "연속·연결·변화 기술 --- Renraku Waza / Henka Waza"
+  ],
+  "description": "코우치가리에서 세오이나게로 이어지는 콤비네이션은 작은 안다리 공격으로 반응을 유도한 뒤 세오이나게로 전환하는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__kouchi-gari-tai-otoshi",
+  "name": "Kouchi Gari → Tai Otoshi",
+  "koreanName": null,
+  "art": "judo",
+  "category": "연속·연결·변화 기술 --- Renraku Waza / Henka Waza",
+  "positions": [
+   "연속·연결·변화 기술 --- Renraku Waza / Henka Waza"
+  ],
+  "description": "코우치가리에서 타이오토시로 이어지는 콤비네이션은 안다리 공격 반응을 이용해 몸통 던지기로 전환하는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__osoto-gari-uchi-mata",
+  "name": "Osoto Gari → Uchi Mata",
+  "koreanName": null,
+  "art": "judo",
+  "category": "연속·연결·변화 기술 --- Renraku Waza / Henka Waza",
+  "positions": [
+   "연속·연결·변화 기술 --- Renraku Waza / Henka Waza"
+  ],
+  "description": "오소토가리에서 우치마타로 이어지는 콤비네이션은 뒷다리 공격에 대한 저항을 안쪽 허벅지 공격으로 연결하는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__osoto-gari-ouchi-gari",
+  "name": "Osoto Gari → Ouchi Gari",
+  "koreanName": null,
+  "art": "judo",
+  "category": "연속·연결·변화 기술 --- Renraku Waza / Henka Waza",
+  "positions": [
+   "연속·연결·변화 기술 --- Renraku Waza / Henka Waza"
+  ],
+  "description": "오소토가리에서 오우치가리로 이어지는 콤비네이션은 바깥 다리 공격에서 안쪽 다리 공격으로 전환하는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__de-ashi-barai-sasae-tsurikomi-ashi",
+  "name": "De Ashi Barai → Sasae Tsurikomi Ashi",
+  "koreanName": null,
+  "art": "judo",
+  "category": "연속·연결·변화 기술 --- Renraku Waza / Henka Waza",
+  "positions": [
+   "연속·연결·변화 기술 --- Renraku Waza / Henka Waza"
+  ],
+  "description": "데아시바라이에서 사사에츠리코미아시로 이어지는 콤비네이션은 발 후리기 실패를 다른 발기술로 즉시 연결하는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__sasae-tsurikomi-ashi-osoto-gari",
+  "name": "Sasae Tsurikomi Ashi → Osoto Gari",
+  "koreanName": null,
+  "art": "judo",
+  "category": "연속·연결·변화 기술 --- Renraku Waza / Henka Waza",
+  "positions": [
+   "연속·연결·변화 기술 --- Renraku Waza / Henka Waza"
+  ],
+  "description": "사사에츠리코미아시에서 오소토가리로 이어지는 콤비네이션은 앞다리 저지 기술에서 뒷다리 공격으로 전환하는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__uchi-mata-ouchi-gari",
+  "name": "Uchi Mata → Ouchi Gari",
+  "koreanName": null,
+  "art": "judo",
+  "category": "연속·연결·변화 기술 --- Renraku Waza / Henka Waza",
+  "positions": [
+   "연속·연결·변화 기술 --- Renraku Waza / Henka Waza"
+  ],
+  "description": "우치마타에서 오우치가리로 이어지는 콤비네이션은 허벅다리 공격 저항을 안쪽 다리 공격으로 연결하는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__kouchi-gari-uchi-mata",
+  "name": "Kouchi Gari → Uchi Mata",
+  "koreanName": null,
+  "art": "judo",
+  "category": "연속·연결·변화 기술 --- Renraku Waza / Henka Waza",
+  "positions": [
+   "연속·연결·변화 기술 --- Renraku Waza / Henka Waza"
+  ],
+  "description": "코우치가리에서 우치마타로 이어지는 콤비네이션은 작은 안다리 공격 반응을 큰 허벅다리 공격으로 연결하는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__uchi-mata-gaeshi",
+  "name": "Uchi Mata Gaeshi",
+  "koreanName": "우치마타 되잡기",
+  "art": "judo",
+  "category": "카운터 --- Kaeshi Waza",
+  "positions": [
+   "카운터 --- Kaeshi Waza"
+  ],
+  "description": "우치마타가에시는 상대의 우치마타 시도를 무게중심 이동으로 흘리며 역으로 넘기는 카운터 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__ouchi-gaeshi",
+  "name": "Ouchi Gaeshi",
+  "koreanName": "오우치 되잡기",
+  "art": "judo",
+  "category": "카운터 --- Kaeshi Waza",
+  "positions": [
+   "카운터 --- Kaeshi Waza"
+  ],
+  "description": "오우치가에시는 상대의 오우치가리 시도를 역으로 이용해 넘기는 카운터 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__kouchi-gaeshi",
+  "name": "Kouchi Gaeshi",
+  "koreanName": "코우치 되잡기",
+  "art": "judo",
+  "category": "카운터 --- Kaeshi Waza",
+  "positions": [
+   "카운터 --- Kaeshi Waza"
+  ],
+  "description": "코우치가에시는 상대의 코우치가리 시도를 역으로 이용해 넘기는 카운터 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__osoto-gaeshi",
+  "name": "Osoto Gaeshi",
+  "koreanName": "오소토 되잡기",
+  "art": "judo",
+  "category": "카운터 --- Kaeshi Waza",
+  "positions": [
+   "카운터 --- Kaeshi Waza"
+  ],
+  "description": "오소토가에시는 상대의 오소토가리 시도를 역으로 이용해 넘기는 카운터 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__harai-goshi-gaeshi",
+  "name": "Harai Goshi Gaeshi",
+  "koreanName": "하라이고시 되잡기",
+  "art": "judo",
+  "category": "카운터 --- Kaeshi Waza",
+  "positions": [
+   "카운터 --- Kaeshi Waza"
+  ],
+  "description": "하라이고시가에시는 상대의 하라이고시 시도를 역으로 이용해 넘기는 카운터 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__hane-goshi-gaeshi",
+  "name": "Hane Goshi Gaeshi",
+  "koreanName": "하네고시 되잡기",
+  "art": "judo",
+  "category": "카운터 --- Kaeshi Waza",
+  "positions": [
+   "카운터 --- Kaeshi Waza"
+  ],
+  "description": "하네고시가에시는 상대의 하네고시 시도를 역으로 이용해 넘기는 카운터 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__tsubame-gaeshi",
+  "name": "Tsubame Gaeshi",
+  "koreanName": "제비 되잡기",
+  "art": "judo",
+  "category": "카운터 --- Kaeshi Waza",
+  "positions": [
+   "카운터 --- Kaeshi Waza"
+  ],
+  "description": "츠바메가에시(제비 되잡기)는 상대의 발기술 시도를 발을 빼며 피한 뒤 역으로 되잡아 넘기는 카운터 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__sasae-counter",
+  "name": "Sasae Counter",
+  "koreanName": null,
+  "art": "judo",
+  "category": "카운터 --- Kaeshi Waza",
+  "positions": [
+   "카운터 --- Kaeshi Waza"
+  ],
+  "description": "사사에 카운터는 상대의 사사에츠리코미아시 시도를 역으로 이용해 넘기는 카운터 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__tani-otoshi-counter",
+  "name": "Tani Otoshi Counter",
+  "koreanName": null,
+  "art": "judo",
+  "category": "카운터 --- Kaeshi Waza",
+  "positions": [
+   "카운터 --- Kaeshi Waza"
+  ],
+  "description": "타니오토시 카운터는 상대의 타니오토시 시도(또는 다른 던지기)를 역으로 이용해 타니오토시로 반격하는 카운터 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__kuzure-kami-shiho-gatame",
+  "name": "Kuzure Kami Shiho Gatame",
+  "koreanName": null,
+  "art": "judo",
+  "category": "네와자 / 바닥 포지션",
+  "positions": [
+   "네와자 / 바닥 포지션",
+   "굳히기 --- Osaekomi Waza"
+  ],
+  "description": "쿠즈레카미시호가타메는 카미시호가타메의 변형으로, 한 팔을 상대의 팔 아래로 넣어 더 강하게 통제하는 자세입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__kuzure-tate-shiho-gatame",
+  "name": "Kuzure Tate Shiho Gatame",
+  "koreanName": null,
+  "art": "judo",
+  "category": "네와자 / 바닥 포지션",
+  "positions": [
+   "네와자 / 바닥 포지션",
+   "굳히기 --- Osaekomi Waza"
+  ],
+  "description": "쿠즈레타테시호가타메는 타테시호가타메의 변형으로, 한 팔이나 다리 위치를 바꿔 서브미션 연결을 노리는 자세입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__ushiro-kesa-gatame",
+  "name": "Ushiro Kesa Gatame",
+  "koreanName": null,
+  "art": "judo",
+  "category": "굳히기 --- Osaekomi Waza",
+  "positions": [
+   "굳히기 --- Osaekomi Waza"
+  ],
+  "description": "우시로케사가타메는 케사가타메와 반대 방향(상대의 뒤쪽)에서 목과 팔을 감싸 누르는 굳히기 변형입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__kesa-escape",
+  "name": "Kesa Escape",
+  "koreanName": null,
+  "art": "judo",
+  "category": "탈출",
+  "positions": [
+   "탈출"
+  ],
+  "description": "케사 탈출은 케사가타메로 고정된 상태에서 다리나 팔을 이용해 벗어나는 탈출 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__kami-shiho-escape",
+  "name": "Kami Shiho Escape",
+  "koreanName": null,
+  "art": "judo",
+  "category": "탈출",
+  "positions": [
+   "탈출"
+  ],
+  "description": "카미시호 탈출은 카미시호가타메로 고정된 상태에서 몸을 회전시켜 벗어나는 탈출 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__okuri-eri-jime",
+  "name": "Okuri Eri Jime",
+  "koreanName": "보내는 깃 조르기",
+  "art": "judo",
+  "category": "조르기 --- Shime Waza",
+  "positions": [
+   "조르기 --- Shime Waza"
+  ],
+  "description": "오쿠리에리지메(보내는 깃 조르기)는 상대의 등 뒤에서 양손으로 깃을 교차해 조르는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__kata-ha-jime",
+  "name": "Kata Ha Jime",
+  "koreanName": "한쪽 어깨 조르기",
+  "art": "judo",
+  "category": "조르기 --- Shime Waza",
+  "positions": [
+   "조르기 --- Shime Waza"
+  ],
+  "description": "카타하지메(한쪽 어깨 조르기)는 한 팔로 목을 조르고 반대 팔은 상대의 팔을 등 뒤로 꺾어 고정하는 조르기입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ },
+ {
+  "id": "judo__kata-juji-jime",
+  "name": "Kata Juji Jime",
+  "koreanName": "한쪽 십자 조르기",
+  "art": "judo",
+  "category": "조르기 --- Shime Waza",
+  "positions": [
+   "조르기 --- Shime Waza"
+  ],
+  "description": "카타주지지메(한쪽 십자 조르기)는 양손이 서로 다른 손바닥 방향(하나는 위, 하나는 아래)으로 교차해 깃을 잡아 조르는 기술입니다.",
+  "candidates": [
+   "bjj",
+   "wrestling",
+   "sambo"
+  ]
+ }
+]

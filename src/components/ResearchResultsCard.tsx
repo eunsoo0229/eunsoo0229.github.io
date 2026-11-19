@@ -1,3 +1,4 @@
+import Icon, { type IconName } from './Icon';
 import type { CurriculumDay } from '../lib/curriculum/types';
 import type { GoalTechniqueMatch } from '../lib/aiCurriculum/types';
 import type { GoalCurriculumResearchSummary, GoalCurriculumDiscoveryStats } from '../lib/aiCurriculum/service';
@@ -18,7 +19,7 @@ import type { GoalCurriculumResearchSummary, GoalCurriculumDiscoveryStats } from
 // web search happened when it didn't); status only adjusts the icon/detail
 // within that mode's own wording.
 interface BannerMeta {
-  icon: string;
+  icon: IconName;
   bannerClass: string;
   title: string;
   body: string;
@@ -30,20 +31,20 @@ function buildBannerMeta(r: GoalCurriculumResearchSummary): BannerMeta {
 
   if (r.researchMode === 'web_search' && (r.status === 'SEARCH_SUCCESS' || r.status === 'SEARCH_PARTIAL')) {
     return thin
-      ? { icon: '⚠', bannerClass: 'banner--warning', title: '외부 웹 검색 완료(결과 부족)', body: `실제 웹 검색 결과를 분석했지만 유효한 기술은 ${n}개뿐입니다 — 목표를 더 구체적으로 입력하면 결과가 나아질 수 있습니다.` }
-      : { icon: '✓', bannerClass: 'banner--success', title: '외부 웹 검색 완료', body: `실제 웹 검색 결과 ${n}개를 분석했습니다.` };
+      ? { icon: 'warn', bannerClass: 'banner--warning', title: '외부 웹 검색 완료(결과 부족)', body: `실제 웹 검색 결과를 분석했지만 유효한 기술은 ${n}개뿐입니다 — 목표를 더 구체적으로 입력하면 결과가 나아질 수 있습니다.` }
+      : { icon: 'check', bannerClass: 'banner--success', title: '외부 웹 검색 완료', body: `실제 웹 검색 결과 ${n}개를 분석했습니다.` };
   }
   if (r.researchMode === 'grounded' && (r.status === 'SEARCH_SUCCESS' || r.status === 'SEARCH_PARTIAL')) {
     return thin
-      ? { icon: '⚠', bannerClass: 'banner--warning', title: 'Google Search 기반 조사 완료(결과 부족)', body: `유효한 검색 결과가 ${n}개뿐입니다 — 목표를 더 구체적으로 입력하면 결과가 나아질 수 있습니다.` }
-      : { icon: '✓', bannerClass: 'banner--success', title: 'Google Search 기반 조사 완료', body: `실제 검색 결과 ${n}개를 분석했습니다.` };
+      ? { icon: 'warn', bannerClass: 'banner--warning', title: 'Google Search 기반 조사 완료(결과 부족)', body: `유효한 검색 결과가 ${n}개뿐입니다 — 목표를 더 구체적으로 입력하면 결과가 나아질 수 있습니다.` }
+      : { icon: 'check', bannerClass: 'banner--success', title: 'Google Search 기반 조사 완료', body: `실제 검색 결과 ${n}개를 분석했습니다.` };
   }
   if (r.researchMode === 'knowledge_fallback' && (r.status === 'SEARCH_SUCCESS' || r.status === 'SEARCH_PARTIAL')) {
     // Always rendered as a warning, never success — this is a degraded mode
     // by definition (no real web search backs these results), regardless of
     // how many candidates it produced. See ResearchMode's doc comment.
     return {
-      icon: '⚠',
+      icon: 'warn',
       bannerClass: 'banner--warning',
       title: 'AI 지식 기반 조사 (실시간 검색 아님)',
       body: '실시간 웹 검색에 실패하여 AI의 기존 지식만으로 추정했습니다 — 검색 결과에 근거한 것이 아니므로 실제와 다르거나 부정확한 기술이 포함될 수 있습니다. 정확도가 중요하다면 잠시 후 다시 시도해 실시간 검색이 적용되는지 확인해주세요.',
@@ -56,7 +57,7 @@ function buildBannerMeta(r: GoalCurriculumResearchSummary): BannerMeta {
   // invariant is ever loosened later.
   if (r.researchMode === 'insufficient_web_evidence') {
     return {
-      icon: '⚠',
+      icon: 'warn',
       bannerClass: 'banner--warning',
       title: '검색 근거가 충분하지 않습니다',
       body: '실시간 웹 검색은 실행되었지만 현재 목표와 직접적으로 관련된 자료를 충분히 찾지 못했습니다. 정확하지 않은 기술을 임의로 추가하지 않고 커리큘럼 생성을 중단했습니다.',
@@ -65,7 +66,7 @@ function buildBannerMeta(r: GoalCurriculumResearchSummary): BannerMeta {
   // 'unavailable', or a mode that technically ran but produced literally
   // nothing (status SEARCH_FAILED/SEARCH_NOT_AVAILABLE) — never dress this
   // up as a partial success.
-  return { icon: '✕', bannerClass: 'banner--error', title: '조사에 실패했습니다', body: '외부 검색과 AI 지식 분석을 모두 사용할 수 없습니다.' };
+  return { icon: 'close', bannerClass: 'banner--error', title: '조사에 실패했습니다', body: '외부 검색과 AI 지식 분석을 모두 사용할 수 없습니다.' };
 }
 
 function foundTechniqueSectionLabel(r: GoalCurriculumResearchSummary): string {
@@ -99,9 +100,9 @@ export default function ResearchResultsCard({
 
   return (
     <div className="card info-card">
-      <h3 style={{ marginTop: 0 }}>🔍 외부 조사</h3>
+      <h3 style={{ marginTop: 0 }}><Icon name="search" /> 외부 조사</h3>
       <div className={`banner ${meta.bannerClass}`} style={{ marginBottom: 10 }}>
-        <span aria-hidden="true">{meta.icon}</span>
+        <Icon name={meta.icon} />
         <div>
           <strong>{meta.title}</strong>
           <div style={{ fontWeight: 400 }}>{meta.body}</div>
@@ -156,7 +157,7 @@ export default function ResearchResultsCard({
                           : 'Martialdex에서 확인되지 않음'
                     }
                   >
-                    {t.matchedToDatabase ? '✓' : '?'} {t.name}
+                    {t.matchedToDatabase ? <Icon name="check" /> : '?'} {t.name}
                   </span>
                 ))}
               </div>

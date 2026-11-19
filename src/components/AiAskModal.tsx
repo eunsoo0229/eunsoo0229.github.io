@@ -1,3 +1,5 @@
+import EvidencePanel from './coach/EvidencePanel';
+import Icon from './Icon';
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import BottomSheet from './BottomSheet';
@@ -14,7 +16,27 @@ import {
   buildTechniqueContext,
 } from '../lib/ai/context';
 import { AI_SYSTEM_INSTRUCTION } from '../lib/ai/systemInstruction';
-import { useAiChat } from '../lib/ai/useAiChat';
+import { useAiChat, type AiEngine } from '../lib/ai/useAiChat';
+import { getAiEngine } from '../lib/localAi/enginePreference';
+import GeminiQuotaBadge from './monetization/GeminiQuotaBadge';
+
+// Which AI answers — chosen before asking, remembered on this device only.
+const ENGINE_KEY = 'martialdex.aiAsk.engine';
+const ENGINE_LABEL: Record<AiEngine, string> = { gemini: 'Gemini', martialdex: 'MARTIALDEX AI + 웹 검색' };
+const ENGINE_HELP: Record<AiEngine, string> = {
+  gemini: 'Google Gemini가 앱 자료를 참고해 답합니다.',
+  martialdex: 'MARTIALDEX 자체 AI가 앱의 기술 자료로 답하고, Tavily 웹 검색 결과를 참고 링크로 붙입니다.',
+};
+// Gemini only when the user picked it here (stored on click) or in 설정 > AI 엔진 — otherwise the local engine.
+function loadEngine(): AiEngine {
+  try {
+    const stored = localStorage.getItem(ENGINE_KEY);
+    if (stored === 'gemini' || stored === 'martialdex') return stored;
+    return getAiEngine() === 'gemini' ? 'gemini' : 'martialdex';
+  } catch {
+    return 'martialdex';
+  }
+}
 
 const EXAMPLE_QUESTIONS = [
   '이 기술은 어떤 상황에서 사용해?',
@@ -71,7 +93,16 @@ export default function AiAskModal({
   fighterStyleContext?: FighterStyleAiContext;
   coach?: boolean;
 }) {
-  const sessionKey =
+  const [engine, setEngine] = useState<AiEngine>(loadEngine);
+  function chooseEngine(e: AiEngine) {
+    setEngine(e);
+    try {
+      localStorage.setItem(ENGINE_KEY, e);
+    } catch {
+      // per-device convenience only
+    }
+  }
+  const baseSessionKey =
     technique && poseResult
       ? `pose:${technique.id}:${poseResult.overallScore}`
       : technique
@@ -83,6 +114,8 @@ export default function AiAskModal({
             : coach
               ? 'coach'
               : 'global';
+  // each AI keeps its own conversation (Gemini's history is never mixed with the own AI's answers)
+  const sessionKey = engine === 'gemini' ? baseSessionKey : `${baseSessionKey}:martialdex`;
   const contextText =
     technique && poseResult
       ? buildPoseAnalysisContext(technique, poseResult)
@@ -116,6 +149,8 @@ export default function AiAskModal({
     systemInstruction: AI_SYSTEM_INSTRUCTION,
     contextText,
     historyMeta,
+    engine,
+    technique: technique ?? null,
   });
 
   const [input, setInput] = useState('');
@@ -169,7 +204,7 @@ export default function AiAskModal({
   // matter which ancestor tree renders this component.
   return createPortal(
     <BottomSheet onClose={onClose} className="ai-modal">
-        <h3>✦ AI에게 질문하기</h3>
+        <h3><Icon name="spark" /> AI에게 질문하기</h3>
         <p>
           {poseResult && technique
             ? `방금 "${technique.name}" 자세 분석 결과(${poseResult.overallScore}점)에 대해 궁금한 점을 물어보세요.`
@@ -184,6 +219,25 @@ export default function AiAskModal({
                     : '무술 기술에 대해 무엇이든 물어보세요.'}
         </p>
 
+        <div className="chip-row ai-engine" role="radiogroup" aria-label="답변할 AI" data-testid="ai-engine">
+          {(['gemini', 'martialdex'] as const).map((e) => (
+            <button
+              key={e}
+              type="button"
+              role="radio"
+              aria-checked={engine === e}
+              className={`chip${engine === e ? ' active' : ''}`}
+              onClick={() => chooseEngine(e)}
+              disabled={loading}
+              data-testid={`ai-engine-${e}`}
+            >
+              {ENGINE_LABEL[e]}
+            </button>
+          ))}
+          {engine === 'gemini' && <GeminiQuotaBadge compact />}
+        </div>
+        <p className="ai-engine__help">{ENGINE_HELP[engine]}</p>
+
         <div className="ai-chat" ref={scrollRef}>
           {messages.length === 0 && !loading && (
             <div className="ai-chat__examples">
@@ -197,7 +251,26 @@ export default function AiAskModal({
 
           {messages.map((m, i) => (
             <div key={i} className={`ai-msg ai-msg--${m.role}`}>
-              <div className="ai-msg__bubble">{m.text}</div>
+              <div className="ai-msg__bubble">
+                {m.text}
+                {m.role === 'model' && m.coach?.evidence ? (
+                  // MARTIALDEX 자체 AI: the same evidence panel as the coach chat (status · 6 source categories · conflicts)
+                  <EvidencePanel m={{ id: `m${i}`, createdAt: '', role: 'assistant', text: m.text, techniqueIds: m.coach.techniqueIds, research: m.coach.research, ...m.coach.evidence }} />
+                ) : m.role === 'model' && !!m.sources?.length ? (
+                  <div className="ai-msg__sources" data-testid="ai-web-sources">
+                    <div className="ai-msg__sources-label"><Icon name="search" /> 출처 (검색 결과 원문 링크 — MARTIALDEX 자료 아님)</div>
+                    {m.sources.map((src) => (
+                      <a key={src.uri} href={src.uri} target="_blank" rel="noreferrer">
+                        {src.title}
+                      </a>
+                    ))}
+                  </div>
+                ) : m.role === 'model' && i > 0 ? (
+                  // 사양 §4-2: an answer without sources must not look sourced
+                  <div className="ai-msg__sources-label" data-testid="ai-no-sources"><Icon name="info" /> 출처 없음 — 이 답변은 검색 자료 없이 AI가 작성했습니다. 기술 정보는 MARTIALDEX 기술 페이지에서 확인해 주세요.</div>
+                ) : null}
+                {m.role === 'model' && m.webNote && <div className="ai-msg__sources-label">{m.webNote}</div>}
+              </div>
             </div>
           ))}
 

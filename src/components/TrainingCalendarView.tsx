@@ -1,3 +1,4 @@
+import Icon from './Icon';
 import type { CalendarDayData } from '../lib/trainingAnalytics/calendarData';
 import { formatVolumeCompact } from '../lib/gymTraining/volume';
 
@@ -30,13 +31,13 @@ export default function TrainingCalendarView({
     <div className="training-calendar">
       <div className="training-calendar__header">
         <button type="button" className="btn btn-ghost btn-sm" onClick={onPrevMonth} aria-label="이전 달">
-          ◀
+          <Icon name="prev" />
         </button>
         <strong>
           {year}년 {month + 1}월
         </strong>
         <button type="button" className="btn btn-ghost btn-sm" onClick={onNextMonth} aria-label="다음 달">
-          ▶
+          <Icon name="next" />
         </button>
       </div>
       <div className="training-calendar__weekdays">

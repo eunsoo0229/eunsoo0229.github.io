@@ -28,7 +28,8 @@ interface EdgeFunctionResult<T> {
   order?: T;
 }
 
-async function callPaymentVerify<T>(action: string, params: Record<string, unknown>): Promise<AuthResult<T>> {
+/** Also used by the gear (장비 택배 거래) checkout — same Edge Function, gear_* actions. */
+export async function callPaymentVerify<T>(action: string, params: Record<string, unknown>): Promise<AuthResult<T>> {
   if (!supabase || !SUPABASE_URL) return { ok: false, message: NOT_CONFIGURED };
   try {
     const { data: sessionData } = await supabase.auth.getSession();

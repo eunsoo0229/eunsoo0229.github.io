@@ -1,3 +1,4 @@
+import Icon from '../Icon';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../lib/auth/AuthProvider';
@@ -49,7 +50,7 @@ export function HeartButton(props: { combo: SharedCombo; onChange: (c: SharedCom
         data-testid="combo-heart"
         data-liked={String(!!c.viewerHasLiked)}
       >
-        {c.viewerHasLiked ? '♥' : '♡'} <span data-testid="combo-heart-count">{c.likeCount}</span>
+        <Icon name={c.viewerHasLiked ? 'heart-filled' : 'heart'} /> <span data-testid="combo-heart-count">{c.likeCount}</span>
       </button>
       {error && (
         <span className="ai-inline-warning heart-error" role="alert">
@@ -88,7 +89,7 @@ export function FavoriteComboButton(props: { combo: SharedCombo }) {
         data-testid="combo-favorite"
         data-on={String(on)}
       >
-        {on ? '★ 저장됨' : '☆ 저장'}
+        {on ? <><Icon name="star-filled" /> 저장됨</> : <><Icon name="star" /> 저장</>}
       </button>
       {note && (
         <span className="technique-row__sub" data-testid="combo-favorite-note">
@@ -108,7 +109,7 @@ export function stepFlow(c: Pick<SharedCombo, 'steps'>): string {
   return c.steps.map((s) => s.name.replace(/\s*\(.*\)$/, '')).join(' → ');
 }
 
-export default function SharedComboCard(props: { combo: SharedCombo; hearts?: number; heartsLabel?: string; reason?: string | null; onChange: (c: SharedCombo) => void }) {
+export default function SharedComboCard(props: { combo: SharedCombo; hearts?: number; heartsLabel?: string; reason?: string | null; onChange: (c: SharedCombo) => void; /** 🔗 연결 수 (shared_combo_links) */ linkCount?: number }) {
   const c = props.combo;
   const intents = intentTags(c.purposeTags);
   return (
@@ -119,7 +120,7 @@ export default function SharedComboCard(props: { combo: SharedCombo; hearts?: nu
           {c.name}
         </Link>
       </div>
-      <p className="shared-combo-card__purpose">🎯 {c.purpose}</p>
+      <p className="shared-combo-card__purpose"><Icon name="target" /> {c.purpose}</p>
       <p className="shared-combo-card__flow">{stepFlow(c)}</p>
       {intents.length > 0 && (
         <div className="chip-row">
@@ -132,14 +133,19 @@ export default function SharedComboCard(props: { combo: SharedCombo; hearts?: nu
       )}
       {props.reason && (
         <p className="video-status-message shared-combo-card__reason" data-testid="combo-reason">
-          ✨ {props.reason}
+          <Icon name="spark" /> {props.reason}
         </p>
       )}
       <div className="shared-combo-card__foot">
         <span className="technique-row__sub">by {c.authorNickname || '익명'}</span>
+        {!!props.linkCount && (
+          <span className="technique-row__sub" data-testid="combo-link-count" title="다른 콤보·셋업과 연결된 수">
+            <Icon name="link" /> {props.linkCount}
+          </span>
+        )}
         {props.heartsLabel && (
           <span className="technique-row__sub" data-testid="combo-period-hearts">
-            {props.heartsLabel} ♥ {props.hearts ?? 0}
+            {props.heartsLabel} <Icon name="heart-filled" /> {props.hearts ?? 0}
           </span>
         )}
         <span className="shared-combo-card__actions">

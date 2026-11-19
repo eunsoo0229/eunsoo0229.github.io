@@ -1,3 +1,4 @@
+import Icon from '../Icon';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { listMyPosts, listMyReposts, listSavedPosts } from '../../lib/communityPost/service';
@@ -55,7 +56,7 @@ export default function MyCommunityPostsCard({ userId, nickname }: { userId: str
 
   return (
     <div className="card info-card">
-      <h3>📱 내 커뮤니티 게시물</h3>
+      <h3><Icon name="video" /> 내 커뮤니티 게시물</h3>
       <div className="chip-row" style={{ marginBottom: 10 }}>
         {TABS.map((t) => (
           <button key={t.key} type="button" className={`chip ${tab === t.key ? 'active' : ''}`} onClick={() => setTab(t.key)}>

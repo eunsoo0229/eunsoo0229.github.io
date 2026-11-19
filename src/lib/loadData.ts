@@ -6,6 +6,7 @@ import { getPostureInfo } from './posture/postureConfig';
 import { getDifficultyOverride } from './difficulty/difficultyConfig';
 import { HOME_TRAINING_FILE, HOME_TRAINING_MARTIAL_ART_ID } from './homeTraining/library';
 import { GYM_TRAINING_FILE, GYM_MARTIAL_ART_ID } from './gymTraining/library';
+import { approvedCurationFor } from './knowledgeBase/approved';
 
 // Eagerly bundles every per-martial-art JSON produced by
 // scripts/parse-techniques.mjs. Dropping a new file into data/processed
@@ -217,6 +218,22 @@ for (const file of martialArtFiles) {
 for (const t of newTechniqueById.values()) techniqueById.set(t.id, t);
 for (const t of allTechniques) techniqueById.set(t.id, t);
 
+// ---- Curation a person approved (data/curated/knowledge-review.json) ----
+// Fills only what the record lacks — official text is never replaced — and keeps
+// where it came from, so the UI / coach can say "검토 승인된 설명".
+for (const t of allTechniques) {
+  const a = approvedCurationFor(t.mergedIds ?? [t.id]);
+  if (!a) continue;
+  if (!t.description?.trim() && a.description) {
+    t.description = a.description.text;
+    t.curation = { ...t.curation, description: a.description };
+  }
+  if (!t.koreanName && a.koreanName) {
+    t.koreanName = a.koreanName.text;
+    t.curation = { ...t.curation, koreanName: a.koreanName };
+  }
+}
+
 /** The category a technique has within one art (a merged technique can be filed differently per art). */
 export function categoryInArt(t: Technique, martialArtId: string): string {
   return t.categoryByArt?.[martialArtId] ?? t.category;
@@ -317,6 +334,16 @@ export function isSyntheticTrainingDomain(martialArtId: string | null | undefine
 
 export function getMartialArt(id: string): MartialArtSummary | undefined {
   return martialArtById.get(id);
+}
+
+/** Arts that were added through the removed "무술 추가" feature. Their shared
+ * rows are archived by supabase/migrations/0048_retire_custom_martial_arts.sql;
+ * personal records that mention them are kept but no longer listed. */
+export const RETIRED_MARTIAL_ART_IDS: ReadonlySet<string> = new Set(['wushu', 'taekkyon']);
+
+/** Only the official arts (data/processed) and the synthetic training domains are used by the app. */
+export function isManagedMartialArt(martialArtId: string | null | undefined): boolean {
+  return !!martialArtId && martialArtById.has(martialArtId);
 }
 
 export function getTechnique(id: string): Technique | undefined {

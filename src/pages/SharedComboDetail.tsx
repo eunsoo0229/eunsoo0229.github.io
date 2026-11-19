@@ -1,9 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import BackButton from '../components/BackButton';
+import Icon from '../components/Icon';
 import PostureSection from '../components/PostureSection';
 import SharedComboCard, { FavoriteComboButton, HeartButton, stepFlow } from '../components/sharedCombo/SharedComboCard';
+import ComboLinks from '../components/sharedCombo/ComboLinks';
 import { useAuth } from '../lib/auth/AuthProvider';
+import ShareButton from '../components/social/ShareButton';
 import { getMartialArt } from '../lib/loadData';
 import { resolveTechnique } from '../lib/userTechniques/service';
 import { createCombo } from '../lib/combo/service';
@@ -39,8 +42,8 @@ function StepGuide(props: { index: number; total: number; name: string; techniqu
         )}
       </div>
       {about && <p className="combo-step__about">{about}</p>}
-      {props.note && <p className="combo-step__note">📝 작성자 메모: {props.note}</p>}
-      {props.opponentReaction && <p className="combo-step__note">👀 예상 상대 반응: {props.opponentReaction}</p>}
+      {props.note && <p className="combo-step__note"><Icon name="note" /> 작성자 메모: {props.note}</p>}
+      {props.opponentReaction && <p className="combo-step__note"><Icon name="eye" /> 예상 상대 반응: {props.opponentReaction}</p>}
       {t?.posture?.keyPoints?.length ? (
         <p className="combo-step__key" data-testid="combo-step-key">
           핵심: {t.posture.keyPoints.slice(0, 2).join(' · ')}
@@ -142,10 +145,11 @@ export default function SharedComboDetail() {
               <h2 data-testid="shared-combo-title">
                 <span className={`chip shared-kind shared-kind--${combo.kind}`}>{KIND_LABEL[combo.kind]}</span> {combo.name}
               </h2>
+              <ShareButton attachment={() => ({ kind: 'combo', id: combo.id, name: combo.name, comboKind: combo.kind === 'setup' ? 'setup' : 'combo', martialArt: combo.martialArt ?? null })} />
             </div>
             <div className="card info-card" data-testid="shared-combo-detail" data-id={combo.id}>
               <p className="shared-combo-card__purpose" style={{ fontSize: 'var(--fs-body)' }}>
-                🎯 목적: {combo.purpose}
+                <Icon name="target" /> 목적: {combo.purpose}
               </p>
               <div className="chip-row">
                 {intentTags(combo.purposeTags).map((t) => (
@@ -164,7 +168,7 @@ export default function SharedComboDetail() {
                 <HeartButton combo={combo} onChange={setCombo} size="md" />
                 <FavoriteComboButton combo={combo} />
                 <button type="button" className="btn btn-secondary btn-sm" onClick={copyToBook} disabled={!techniques.some(Boolean)} data-testid="combo-copy">
-                  📥 내 콤보 북에 담기
+                  <Icon name="download" /> 내 콤보 북에 담기
                 </button>
                 {user?.id === combo.authorId && (
                   <button type="button" className="btn btn-ghost btn-sm" onClick={() => void remove()} data-testid="combo-unshare">
@@ -191,6 +195,8 @@ export default function SharedComboDetail() {
                 <StepGuide key={`${s.techniqueId}-${i}`} index={i} total={combo.steps.length} name={s.name} technique={techniques[i]} note={s.note} opponentReaction={s.opponentReaction} open={i === 0} />
               ))}
             </ol>
+
+            <ComboLinks combo={combo} all={all} />
 
             <h3 className="ai-catalog__section">관련 추천 {KIND_LABEL[combo.kind]}</h3>
             {related.length === 0 ? (

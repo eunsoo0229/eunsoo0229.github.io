@@ -1,3 +1,4 @@
+import Icon from '../Icon';
 import { useEffect, useState } from 'react';
 import { getTtsState, isTtsSupported, pauseSpeaking, resumeSpeaking, speak, stopSpeaking, TTS_EVENT, type TtsState } from '../../lib/voice/tts';
 import { isVoiceInputSupported } from '../../lib/voice/stt';
@@ -70,9 +71,9 @@ export default function CoachVoiceBar(props: {
     : !props.voiceOn
       ? '음성 안내 꺼짐'
       : tts.status === 'speaking'
-        ? '🔊 AI 코치가 말하는 중'
+        ? <><Icon name="sound" /> AI 코치가 말하는 중</>
         : tts.status === 'paused'
-          ? '⏸ 음성 일시정지'
+          ? <><Icon name="pause" /> 음성 일시정지</>
           : '음성 안내 켜짐';
 
   return (
@@ -88,17 +89,17 @@ export default function CoachVoiceBar(props: {
             </label>
             {tts.status === 'speaking' && (
               <button type="button" className="btn btn-ghost btn-sm" onClick={pauseSpeaking} data-testid="coach-tts-pause">
-                ⏸ 일시정지
+                <Icon name="pause" /> 일시정지
               </button>
             )}
             {tts.status === 'paused' && (
               <button type="button" className="btn btn-ghost btn-sm" onClick={resumeSpeaking} data-testid="coach-tts-resume">
-                ▶ 계속
+                <Icon name="play" /> 계속
               </button>
             )}
             {(tts.status === 'speaking' || tts.status === 'paused') && (
               <button type="button" className="btn btn-ghost btn-sm" onClick={stopSpeaking} data-testid="coach-tts-stop">
-                ■ 그만 말하기
+                <Icon name="stop" /> 그만 말하기
               </button>
             )}
           </>
@@ -119,7 +120,7 @@ export default function CoachVoiceBar(props: {
           data-testid="coach-mic"
           data-phase={phase}
         >
-          {voice.recording ? '■ 말하기 끝' : phase === 'recognizing' ? '알아듣는 중…' : '🎙 말해서 답하기 · 질문하기'}
+          {voice.recording ? <><Icon name="stop" /> 말하기 끝</> : phase === 'recognizing' ? '알아듣는 중…' : <><Icon name="mic" /> 말해서 답하기 · 질문하기</>}
         </button>
         {voice.recording && (
           <button type="button" className="btn btn-ghost btn-sm" onClick={voice.cancel} data-testid="coach-mic-cancel">
@@ -143,7 +144,7 @@ export default function CoachVoiceBar(props: {
 
       {ttsOk && (
         <details className="coach-voice-bar__settings">
-          <summary>🔊 음성 설정 · 재생 테스트</summary>
+          <summary><Icon name="sound" /> 음성 설정 · 재생 테스트</summary>
           <div className="modal-actions modal-actions--start" style={{ margin: '6px 0' }}>
             <button type="button" className="btn btn-ghost btn-sm" onClick={() => void testVoice()} data-testid="coach-tts-test">
               음성 재생 테스트

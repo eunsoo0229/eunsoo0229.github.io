@@ -1,0 +1,171 @@
+{
+  "at": "2026-10-31T14:06:44.245Z",
+  "queries": [
+    "jab setup combinations boxing",
+    "복싱 잽 셋업 콤보",
+    "Lomachenko footwork angles analysis",
+    "kimura trap system bjj",
+    "무에타이 티프 카운터",
+    "Ilia Topuria boxing style breakdown"
+  ],
+  "rows": [
+    {
+      "engine": "bing",
+      "ok": 5,
+      "empty": 1,
+      "failed": 0,
+      "results": 50,
+      "ms": 1383,
+      "errors": [],
+      "avgMs": 231
+    },
+    {
+      "engine": "brave",
+      "ok": 0,
+      "empty": 0,
+      "failed": 6,
+      "results": 0,
+      "ms": 679,
+      "errors": [
+        "brave: too many requests",
+        "brave: Suspended: too many requests"
+      ],
+      "avgMs": 113
+    },
+    {
+      "engine": "yahoo",
+      "ok": 6,
+      "empty": 0,
+      "failed": 0,
+      "results": 42,
+      "ms": 5753,
+      "errors": [],
+      "avgMs": 959
+    },
+    {
+      "engine": "naver",
+      "ok": 6,
+      "empty": 0,
+      "failed": 0,
+      "results": 71,
+      "ms": 3428,
+      "errors": [],
+      "avgMs": 571
+    },
+    {
+      "engine": "mojeek",
+      "ok": 0,
+      "empty": 0,
+      "failed": 6,
+      "results": 0,
+      "ms": 3676,
+      "errors": [
+        "mojeek: access denied",
+        "mojeek: Suspended: access denied"
+      ],
+      "avgMs": 613
+    },
+    {
+      "engine": "wikipedia",
+      "ok": 0,
+      "empty": 6,
+      "failed": 0,
+      "results": 0,
+      "ms": 1061,
+      "errors": [],
+      "avgMs": 177
+    },
+    {
+      "engine": "youtube",
+      "ok": 5,
+      "empty": 1,
+      "failed": 0,
+      "results": 42,
+      "ms": 6534,
+      "errors": [],
+      "avgMs": 1089
+    },
+    {
+      "engine": "bing videos",
+      "ok": 5,
+      "empty": 1,
+      "failed": 0,
+      "results": 117,
+      "ms": 2685,
+      "errors": [],
+      "avgMs": 448
+    },
+    {
+      "engine": "brave.videos",
+      "ok": 0,
+      "empty": 0,
+      "failed": 6,
+      "results": 0,
+      "ms": 30,
+      "errors": [
+        "brave.videos: Suspended: too many requests"
+      ],
+      "avgMs": 5
+    },
+    {
+      "engine": "dailymotion",
+      "ok": 5,
+      "empty": 1,
+      "failed": 0,
+      "results": 50,
+      "ms": 5160,
+      "errors": [],
+      "avgMs": 860
+    },
+    {
+      "engine": "vimeo",
+      "ok": 1,
+      "empty": 5,
+      "failed": 0,
+      "results": 1,
+      "ms": 3445,
+      "errors": [],
+      "avgMs": 574
+    },
+    {
+      "engine": "semantic scholar",
+      "ok": 3,
+      "empty": 3,
+      "failed": 0,
+      "results": 28,
+      "ms": 3734,
+      "errors": [],
+      "avgMs": 622
+    },
+    {
+      "engine": "openalex",
+      "ok": 3,
+      "empty": 3,
+      "failed": 0,
+      "results": 21,
+      "ms": 5133,
+      "errors": [],
+      "avgMs": 856
+    },
+    {
+      "engine": "arxiv",
+      "ok": 4,
+      "empty": 2,
+      "failed": 0,
+      "results": 40,
+      "ms": 3737,
+      "errors": [],
+      "avgMs": 623
+    },
+    {
+      "engine": "crossref",
+      "ok": 6,
+      "empty": 0,
+      "failed": 0,
+      "results": 119,
+      "ms": 3074,
+      "errors": [],
+      "avgMs": 512
+    }
+  ]
+}

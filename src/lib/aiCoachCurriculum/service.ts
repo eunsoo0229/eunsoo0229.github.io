@@ -1,4 +1,5 @@
 import { isSubmissionGoal, MMA_ART_IDS } from '../aiCoachDay/practicePlan';
+import { userCoachContextBlock } from '../coachContext/userContext';
 import type { Technique } from '../../types';
 import type { Curriculum, CurriculumDay, ExerciseConfig } from '../curriculum/types';
 import { getMartialArt, getTechniquesByMartialArt, gymExercises, homeTrainingExercises, isSyntheticTrainingDomain } from '../loadData';
@@ -8,7 +9,9 @@ import { resolveTechnique } from '../userTechniques/service';
 import { withObject } from '../aiCoachDay/politeSpeech';
 import { buildLearnerProfile, masteryLine, type LearnedRef, type LearnerProfile } from './profile';
 import { equipmentLabel, isSoloLocation, LOCATION_ICON, LOCATION_LABEL, LOCATION_SHORT, locationRules } from './location';
-import type { AiCoachCurriculumMeta, CoachLocation, CoachPlanItem, CoachPlanRole } from './types';
+import type { AiCoachCurriculumMeta, CoachClassFocus, CoachLocation, CoachPlanItem, CoachPlanRole } from './types';
+import { listLearnedTechniques } from '../learnedTechniques/service';
+import { canonicalTechniqueId } from '../techniqueCanonical';
 
 // AI 코치 수업 curriculum generation:
 //   learner profile (learned techniques + mastery + goal + earlier classes)
@@ -27,6 +30,42 @@ export interface CoachClassInput {
   goal: string;
   sessionMinutes: number;
   days: number;
+  /** 수업 방향 (default mixed = 복습 + 새 기술). */
+  focus?: CoachClassFocus;
+}
+
+export const FOCUS_LABEL: Record<CoachClassFocus, string> = {
+  mixed: '복습 + 새 기술',
+  review: '배운 기술만 복습',
+  new: '새 기술만 (배운 기술 언급 안 함)',
+};
+
+/** Which plan roles a focus allows (review = no new technique; new = nothing built on learned techniques). */
+export const FOCUS_ROLES: Record<CoachClassFocus, CoachPlanRole[]> = {
+  mixed: ['warmup', 'review', 'connection', 'application', 'new', 'conditioning'],
+  review: ['warmup', 'review', 'connection', 'application', 'conditioning'],
+  new: ['warmup', 'new', 'application', 'conditioning'],
+};
+/** New techniques a Day may introduce under each focus. */
+const MAX_NEW_PER_DAY: Record<CoachClassFocus, number> = { mixed: 1, review: 0, new: 3 };
+
+/** Every technique the user has EVER learned (any art, canonical ids) — what a "new techniques only" class never touches. */
+export function everLearnedIds(): Set<string> {
+  const ids = new Set<string>();
+  for (const e of listLearnedTechniques()) {
+    ids.add(e.technique.id);
+    ids.add(canonicalTechniqueId(e.technique.id));
+  }
+  return ids;
+}
+const isEverLearned = (id: string, learned: Set<string>) => learned.has(id) || learned.has(canonicalTechniqueId(id));
+
+/** A learned technique named in free text (AI-written instruction / notes) — a "new only" class must not mention it. */
+export function mentionsLearned(text: string, learned: Technique[], allowed: Technique[] = []): boolean {
+  // the planned techniques' own names are fine even when they contain a learned name ("Jab Feint" ⊃ "Jab")
+  let t = text.toLowerCase();
+  for (const n of allowed.flatMap((x) => [x.name, x.koreanName ?? '']).filter((n) => n.trim().length >= 2).sort((a, b) => b.length - a.length)) t = t.split(n.trim().toLowerCase()).join(' ');
+  return learned.some((x) => [x.name, x.koreanName ?? ''].some((n) => n.trim().length >= 2 && t.includes(n.trim().toLowerCase())));
 }
 
 export interface CoachClassResult {
@@ -69,16 +108,21 @@ function isPlanCombat(t: Technique): boolean {
 }
 
 /** Not-yet-learned techniques of this art the coach may introduce: ones linked from what the user knows first, then the easiest. */
-export function newTechniquePool(profile: LearnerProfile): Technique[] {
+export function newTechniquePool(profile: LearnerProfile, opts: { exclude?: Set<string>; limit?: number } = {}): Technique[] {
   const learnedIds = new Set(profile.learned.map((l) => l.technique.id));
-  const all = getTechniquesByMartialArt(profile.martialArt).filter((t) => !learnedIds.has(t.id));
+  const all = getTechniquesByMartialArt(profile.martialArt).filter(
+    (t) =>
+      !learnedIds.has(t.id) &&
+      // 새 기술 기준: never a learned technique — nor a combination record ("1--2", "Jab → Cross"), which is made of other techniques
+      !(opts.exclude && (isEverLearned(t.id, opts.exclude) || /--|→|->|\bto\b/i.test(t.name))),
+  );
   const linked = new Set(profile.learned.flatMap((l) => l.technique.relatedTechniques));
   const rank = (t: Technique) => (linked.has(t.id) ? 0 : 1) * 10 + (t.difficulty === 'beginner' ? 0 : t.difficulty === null ? 1 : t.difficulty === 'intermediate' ? 2 : 5);
   const allowAdvanced = profile.learned.length >= 15;
   return all
     .filter((t) => allowAdvanced || t.difficulty !== 'advanced')
     .sort((a, b) => rank(a) - rank(b) || a.name.localeCompare(b.name))
-    .slice(0, MAX_NEW_POOL);
+    .slice(0, opts.limit ?? MAX_NEW_POOL);
 }
 
 /** Real home-training (and, with 운동기구 confirmed at a gym, real gym) exercises whose equipment is actually available. */
@@ -141,6 +185,8 @@ function makeItem(role: CoachPlanRole, t: Technique, input: CoachClassInput, min
 }
 
 export function fallbackDay(dayIndex: number, input: CoachClassInput, profile: LearnerProfile, newPool: Technique[], drills: Technique[]): CoachPlanItem[] {
+  const focus = input.focus ?? 'mixed';
+  if (focus === 'new') return fallbackNewDay(dayIndex, input, newPool, drills);
   const items: CoachPlanItem[] = [];
   const learned = profile.learned.map((l) => l.technique);
   const pick = <T,>(arr: T[], i: number): T | undefined => (arr.length ? arr[i % arr.length] : undefined);
@@ -154,9 +200,22 @@ export function fallbackDay(dayIndex: number, input: CoachClassInput, profile: L
     if (a.id !== b.id) items.push(makeItem('connection', b, input, 5, a));
   }
   // Introduce one new technique on alternate days — or every day when there is little to review yet.
-  const newTech = learned.length < 3 || dayIndex % 2 === 1 ? pick(newPool, dayIndex) : undefined;
+  const newTech = focus === 'review' ? undefined : learned.length < 3 || dayIndex % 2 === 1 ? pick(newPool, dayIndex) : undefined;
   if (newTech) items.push(makeItem('new', newTech, input, 6));
   const cond = pick(drills, dayIndex * 2 + 1);
+  if (cond && cond.id !== warm?.id) items.push(makeItem('conditioning', cond, input, 4));
+  return fitMinutes(items, input.sessionMinutes);
+}
+
+/** 새 기술만: warm-up → two new techniques (each day different) → apply the first → conditioning. Nothing learned is used. */
+function fallbackNewDay(dayIndex: number, input: CoachClassInput, newPool: Technique[], drills: Technique[]): CoachPlanItem[] {
+  const items: CoachPlanItem[] = [];
+  const warm = drills.length ? drills[(dayIndex * 2) % drills.length] : undefined;
+  if (warm) items.push(makeItem('warmup', warm, input, 4));
+  const today = [newPool[dayIndex * 2], newPool[dayIndex * 2 + 1]].filter((t): t is Technique => !!t);
+  for (const t of today) items.push(makeItem('new', t, input, 7));
+  if (today[0]) items.push(makeItem('application', today[0], input, 5));
+  const cond = drills.length ? drills[(dayIndex * 2 + 1) % drills.length] : undefined;
   if (cond && cond.id !== warm?.id) items.push(makeItem('conditioning', cond, input, 4));
   return fitMinutes(items, input.sessionMinutes);
 }
@@ -196,6 +255,7 @@ function isRawPlan(v: unknown): v is RawPlan {
 const SYSTEM = [
   '당신은 MARTIALDEX의 AI 코치다. 사용자를 위한 "AI 코치 수업" 커리큘럼을 JSON으로 설계한다.',
   '규칙:',
+  '- [수업 방향] 블록이 있으면 아래 순서·역할 규칙보다 그것을 우선한다.',
   '- techniqueId에는 반드시 [배운 기술], [새 기술 후보], [드릴 후보] 목록에 있는 id만 그대로 쓴다. 목록에 없는 기술이나 운동을 만들지 않는다.',
   '- 순서: warmup(드릴) → review(배운 기술 복습) → connection(배운 기술끼리 연결) → application(응용) → new(새 기술, 하루 최대 1개) → conditioning(드릴).',
   '- review/connection/application은 [배운 기술]의 id만, new는 [새 기술 후보]의 id만, warmup/conditioning은 [드릴 후보] 또는 [배운 기술]의 id만 쓴다.',
@@ -226,8 +286,31 @@ export function mmaRules(input: Pick<CoachClassInput, 'martialArt' | 'goal'>): s
   return [rules.join('\n')];
 }
 
+/** The 수업 방향 rule block for the planner prompt. */
+export function focusRules(focus: CoachClassFocus): string[] {
+  if (focus === 'review')
+    return ['[수업 방향: 배운 기술만 복습]\n- new 단계를 만들지 않는다. 새 기술을 소개하지 않는다.\n- review/connection/application은 [배운 기술]의 id만 쓰고, 숙련도가 낮은 기술부터 복습 비중을 높인다.'];
+  if (focus === 'new')
+    return ['[수업 방향: 새 기술 기준]\n- 사용자가 이미 배운 기술은 계획·연결·설명 어디에도 쓰거나 언급하지 않는다.\n- review/connection 단계를 만들지 않는다. 하루 new 1~3개, application은 그날 배운 [새 기술 후보]의 id로만 응용한다.\n- warmup/conditioning은 [드릴 후보]의 id만 쓴다.'];
+  return [];
+}
+
 export function buildPlanContext(input: CoachClassInput, profile: LearnerProfile, newPool: Technique[], drills: Technique[]): string {
   const art = getMartialArt(input.martialArt);
+  const focus = input.focus ?? 'mixed';
+  if (focus === 'new') {
+    // a learned technique must not even reach the planner — no learned list, no earlier classes (they name learned techniques)
+    return [
+      `[운동 장소]\n${locationRules(input.location, input.equipment)}`,
+      `[무술]\n${art?.nameKo ?? input.martialArt}`,
+      `[사용자의 목표]\n${input.goal.trim() || '특별한 목표 없음 — 새 기술을 차근차근 익히기'}`,
+      `[운동 시간]\n하루 ${input.sessionMinutes}분, 총 ${input.days}일`,
+      `[새 기술 후보] (사용자가 한 번도 배운 적 없는 기술)\n${newPool.map(poolLine).join('\n') || '없음'}`,
+      `[드릴 후보] (실제 MARTIALDEX 운동, 장비 조건 충족)\n${drills.map(poolLine).join('\n') || '없음'}`,
+      ...focusRules(focus),
+      ...mmaRules(input),
+    ].join('\n\n');
+  }
   return [
     `[운동 장소]\n${locationRules(input.location, input.equipment)}`,
     `[무술]\n${art?.nameKo ?? input.martialArt}`,
@@ -235,8 +318,9 @@ export function buildPlanContext(input: CoachClassInput, profile: LearnerProfile
     `[운동 시간]\n하루 ${input.sessionMinutes}분, 총 ${input.days}일`,
     `[배운 기술] (id | 이름 | 숙련도 | 연습 횟수)\n${profile.learned.slice(0, MAX_LEARNED_IN_PROMPT).map(masteryLine).join('\n') || '없음 — 새 기술 위주로 구성'}`,
     `[이전 AI 코치 수업]\n${profile.previousClasses.join('\n') || '없음'}`,
-    `[새 기술 후보] (아직 배우지 않은 기술)\n${newPool.map(poolLine).join('\n') || '없음'}`,
+    ...(focus === 'review' ? [] : [`[새 기술 후보] (아직 배우지 않은 기술)\n${newPool.map(poolLine).join('\n') || '없음'}`]),
     `[드릴 후보] (실제 MARTIALDEX 운동, 장비 조건 충족)\n${drills.map(poolLine).join('\n') || '없음'}`,
+    ...focusRules(focus),
     ...mmaRules(input),
   ].join('\n\n');
 }
@@ -247,7 +331,8 @@ export function buildPlanContext(input: CoachClassInput, profile: LearnerProfile
  * an alternative for every partner/unconfirmed-equipment step), minutes
  * fitted to the session. Returns the cleaned items and what was changed.
  */
-export function validatePlanDay(raw: RawItem[], input: CoachClassInput, learnedIds: Set<string>, newIds: Set<string>, drillIds: Set<string>): { items: CoachPlanItem[]; dropped: number } {
+export function validatePlanDay(raw: RawItem[], input: CoachClassInput, learnedIds: Set<string>, newIds: Set<string>, drillIds: Set<string>, everLearned: Technique[] = []): { items: CoachPlanItem[]; dropped: number } {
+  const focus = input.focus ?? 'mixed';
   const items: CoachPlanItem[] = [];
   let dropped = 0;
   let newCount = 0;
@@ -255,17 +340,28 @@ export function validatePlanDay(raw: RawItem[], input: CoachClassInput, learnedI
   for (const r of raw) {
     const role = r.role as CoachPlanRole;
     const t = typeof r.techniqueId === 'string' ? resolveTechnique(r.techniqueId) : undefined;
-    const roleOk =
-      ROLE_ORDER.includes(role) &&
-      !!t &&
-      ((role === 'review' || role === 'connection' || role === 'application') ? learnedIds.has(t.id) : role === 'new' ? newIds.has(t.id) : drillIds.has(t.id) || learnedIds.has(t.id));
-    if (!t || !roleOk || seen.has(`${role}:${t.id}`) || (role === 'new' && newCount >= 1)) {
+    const poolOk = !t
+      ? false
+      : focus === 'new'
+        ? role === 'new' || role === 'application'
+          ? newIds.has(t.id)
+          : drillIds.has(t.id)
+        : role === 'review' || role === 'connection' || role === 'application'
+          ? learnedIds.has(t.id)
+          : role === 'new'
+            ? newIds.has(t.id)
+            : drillIds.has(t.id) || learnedIds.has(t.id);
+    const roleOk = FOCUS_ROLES[focus].includes(role) && poolOk;
+    if (!t || !roleOk || seen.has(`${role}:${t.id}`) || (role === 'new' && newCount >= MAX_NEW_PER_DAY[focus])) {
       dropped++;
       continue;
     }
     let needsPartner = r.needsPartner === true;
     let instruction = typeof r.instruction === 'string' && r.instruction.trim() ? r.instruction.trim() : defaultInstruction(role, t, input.location, input.equipment);
     let soloAlternative = typeof r.soloAlternative === 'string' && r.soloAlternative.trim() ? r.soloAlternative.trim() : null;
+    // 새 기술 기준: an AI sentence that names a learned technique is replaced by the plain instruction
+    if (focus === 'new' && mentionsLearned(instruction, everLearned, [t])) instruction = defaultInstruction(role, t, input.location, input.equipment);
+    if (focus === 'new' && soloAlternative && mentionsLearned(soloAlternative, everLearned, [t])) soloAlternative = soloTextFor(t, input.location);
     if (isSoloLocation(input.location) && needsPartner) {
       // Home / limited = alone: a partner step survives only as its solo alternative.
       if (!soloAlternative) {
@@ -324,15 +420,22 @@ function dayTitleFallback(items: CoachPlanItem[], location: CoachLocation): stri
 }
 
 export async function generateCoachClassCurriculum(input: CoachClassInput): Promise<CoachClassResult> {
-  const profile = buildLearnerProfile(input.martialArt);
-  const newPool = newTechniquePool(profile);
+  const focus = input.focus ?? 'mixed';
+  const fullProfile = buildLearnerProfile(input.martialArt);
+  const learnedEver = everLearnedIds();
+  const everLearnedTechs = focus === 'new' ? listLearnedTechniques().map((e) => e.technique) : [];
+  // 새 기술 기준: the planner works as if nothing was learned (and never sees what was)
+  const profile: LearnerProfile = focus === 'new' ? { ...fullProfile, learned: [], previousClasses: [] } : fullProfile;
+  const newPool = focus === 'review' ? [] : focus === 'new' ? newTechniquePool(fullProfile, { exclude: learnedEver, limit: Math.min(40, input.days * 3 + 4) }) : newTechniquePool(profile);
   const drills = drillPool(input.location, input.equipment);
   const learnedIds = new Set(profile.learned.map((l) => l.technique.id));
   const newIds = new Set(newPool.map((t) => t.id));
   const drillIds = new Set(drills.map((t) => t.id));
   const notices: string[] = [];
 
-  const baseContext = buildPlanContext(input, profile, newPool, drills);
+  // + 개인 파이터 프로필 (this art's relevant items only) and 개인 목표 — these personalize the plan; neither
+  // decides mastery, and neither is rewritten by the plan.
+  const baseContext = buildPlanContext(input, profile, newPool, drills) + userCoachContextBlock({ martialArt: input.martialArt, topic: input.goal, budget: { profile: 800, goals: 1000, learning: 1000 }, detailBudget: 1000 });
   const days: CurriculumDay[] = [];
   let aiDays = 0;
   let title = '';
@@ -360,18 +463,20 @@ export async function generateCoachClassCurriculum(input: CoachClassInput): Prom
       }
       continue;
     }
-    if (!title) title = ai.data.title.trim();
-    if (!summary) summary = (ai.data.summary ?? '').trim();
+    if (!title) title = focus === 'new' && mentionsLearned(ai.data.title, everLearnedTechs, newPool) ? '' : ai.data.title.trim();
+    if (!summary) summary = focus === 'new' && mentionsLearned(ai.data.summary ?? '', everLearnedTechs, newPool) ? '' : (ai.data.summary ?? '').trim();
     for (const q of ai.data.equipmentQuestions ?? []) if (typeof q === 'string' && q.trim() && !equipmentQuestions.includes(q.trim())) equipmentQuestions.push(q.trim());
     for (let k = 0; k < count; k++) {
       const i = days.length;
       const d = ai.data.days[k];
-      const v = d ? validatePlanDay(d.items, input, learnedIds, newIds, drillIds) : { items: [], dropped: 0 };
+      const v = d ? validatePlanDay(d.items, input, learnedIds, newIds, drillIds, everLearnedTechs) : { items: [], dropped: 0 };
       dropped += v.dropped;
       const usable = v.items.some((x) => isPlanCombat(resolveTechnique(x.techniqueId)!));
       const items = usable ? v.items : fallbackDay(i, input, profile, newPool, drills);
       if (usable) aiDays++;
-      days.push(toCurriculumDay(i + 1, (usable && d?.title?.trim()) || dayTitleFallback(items, input.location), usable ? (d?.coachNotes ?? '').trim() : '', items));
+      const dayTechs = items.map((x) => resolveTechnique(x.techniqueId)).filter((x): x is Technique => !!x);
+      const clean = (x: string) => (focus === 'new' && mentionsLearned(x, everLearnedTechs, dayTechs) ? '' : x);
+      days.push(toCurriculumDay(i + 1, (usable && clean(d?.title?.trim() ?? '')) || dayTitleFallback(items, input.location), usable ? clean((d?.coachNotes ?? '').trim()) : '', items));
     }
   }
   equipmentQuestions = equipmentQuestions.slice(0, 4);
@@ -379,7 +484,10 @@ export async function generateCoachClassCurriculum(input: CoachClassInput): Prom
   if (dropped > 0) notices.push(`AI가 제안한 단계 중 ${dropped}개는 MARTIALDEX 기술 DB나 장소 조건과 맞지 않아 제외했습니다.`);
   if (aiDays === 0) notices.push(`AI 응답을 받지 못해 배운 기술과 숙련도를 기준으로 기본 수업을 구성했습니다.${lastError ? ` (${lastError})` : ''}`);
   else if (aiDays < input.days) notices.push(`${input.days - aiDays}개 Day는 AI 응답을 쓸 수 없어 배운 기술 기준 기본 구성으로 채웠습니다.`);
-  if (profile.learned.length === 0) notices.push('아직 이 무술에서 배운 기술이 없어 새 기술 위주로 구성했습니다.');
+  if (focus === 'mixed' && profile.learned.length === 0) notices.push('아직 이 무술에서 배운 기술이 없어 새 기술 위주로 구성했습니다.');
+  if (focus === 'new' && learnedEver.size) notices.push('새 기술 기준: 한 번이라도 학습한 기술은 수업 계획·연결·설명에서 모두 뺐습니다.');
+  if (focus === 'new' && newPool.length === 0) notices.push('이 무술에서 아직 배우지 않은 기술을 찾지 못했습니다.');
+  if (focus === 'review' && fullProfile.learned.length === 0) notices.push('이 무술에서 배운 기술이 없어 복습할 기술이 없습니다. 드릴 위주로만 구성되었습니다.');
 
   const art = getMartialArt(input.martialArt);
   const meta: AiCoachCurriculumMeta = {
@@ -389,7 +497,14 @@ export async function generateCoachClassCurriculum(input: CoachClassInput): Prom
     sessionMinutes: input.sessionMinutes,
     generatedAt: new Date().toISOString(),
     source,
-    summary: summary || `${LOCATION_LABEL[input.location]} 기준으로 배운 기술 ${profile.learned.length}개를 복습·연결하고 필요한 새 기술을 더한 수업입니다.`,
+    summary:
+      summary ||
+      (focus === 'new'
+        ? `${LOCATION_LABEL[input.location]} 기준으로 아직 배우지 않은 새 기술을 차근차근 익히는 수업입니다.`
+        : focus === 'review'
+          ? `${LOCATION_LABEL[input.location]} 기준으로 배운 기술 ${profile.learned.length}개만 복습·연결하는 수업입니다.`
+          : `${LOCATION_LABEL[input.location]} 기준으로 배운 기술 ${profile.learned.length}개를 복습·연결하고 필요한 새 기술을 더한 수업입니다.`),
+    focus,
     equipmentQuestions,
     learnedSnapshot: profile.learned.map((l: LearnedRef) => ({ techniqueId: l.technique.id, status: l.status })),
   };
@@ -398,7 +513,7 @@ export async function generateCoachClassCurriculum(input: CoachClassInput): Prom
     id: `aicoach-${newId()}`,
     martialArt: input.martialArt,
     title: title || `${LOCATION_ICON[input.location]} ${LOCATION_SHORT[input.location]} AI 코치 수업 · ${art?.nameKo ?? input.martialArt}`,
-    subtitle: `AI 코치 수업 · ${LOCATION_LABEL[input.location]}`,
+    subtitle: `AI 코치 수업 · ${LOCATION_LABEL[input.location]} · ${FOCUS_LABEL[focus]}`,
     description: `${meta.summary} 실제 훈련은 안전한 환경에서, 필요하면 지도자와 함께 진행하세요.`,
     source: 'custom',
     visibility: 'private',

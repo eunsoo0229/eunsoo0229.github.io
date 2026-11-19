@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import BackButton from '../components/BackButton';
@@ -6,6 +7,7 @@ import SharedComboCard from '../components/sharedCombo/SharedComboCard';
 import { useAuth } from '../lib/auth/AuthProvider';
 import { getMartialArt } from '../lib/loadData';
 import { listSharedCombos, periodLikeCounts } from '../lib/sharedCombo/service';
+import { linkCounts, listAllLinks } from '../lib/sharedCombo/links';
 import { listInterestEvents } from '../lib/sharedCombo/localStores';
 import { periodStart, rankCombos } from '../lib/sharedCombo/ranking';
 import { KIND_LABEL, SORT_LABEL, SORT_ORDER, type SharedCombo, type SharedComboKind, type SharedComboSort } from '../lib/sharedCombo/types';
@@ -29,6 +31,11 @@ export default function UserCombos() {
   const [error, setError] = useState<string | null>(null);
   const [periodLikes, setPeriodLikes] = useState<{ sort: SharedComboSort; map: Map<string, number> } | null>(null);
   const [periodError, setPeriodError] = useState<string | null>(null);
+  // 🔗 badge — links are optional: if the links table isn't there yet the list still works
+  const [links, setLinks] = useState<Map<string, number>>(new Map());
+  useEffect(() => {
+    void listAllLinks().then((r) => r.ok && setLinks(linkCounts(r.data)));
+  }, []);
 
   const load = useCallback(() => {
     setError(null);
@@ -84,13 +91,13 @@ export default function UserCombos() {
           <span>사용자 콤보·셋업</span>
         </div>
         <div className="section-title">
-          <h2>🧑‍🤝‍🧑 사용자 콤보·셋업</h2>
+          <h2><Icon name="users" /> 사용자 콤보·셋업</h2>
           <Link to="/combos" className="see-all">
             + 내 콤보 공유하기
           </Link>
         </div>
         <p className="video-status-message" style={{ marginTop: -8 }}>
-          사용자들이 직접 만들어 공유한 콤보와 셋업입니다. 마음에 들면 ♥를 눌러 주세요 — 하트가 많을수록 인기 순위에 올라가고, 내가 자주 보는 목적(예: 잽을 맞추기 위한 셋업, 테이크다운을 위한 셋업)의 콤보가 맞춤 추천 맨 위에 옵니다. 공유는 <Link to="/combos">콤보 북</Link>·<Link to="/tactics">전술 셋업</Link>의 "공유" 버튼으로 할 수 있습니다.
+          사용자들이 직접 만들어 공유한 콤보와 셋업입니다. 마음에 들면 <Icon name="heart-filled" label="하트" />를 눌러 주세요 — 하트가 많을수록 인기 순위에 올라가고, 내가 자주 보는 목적(예: 잽을 맞추기 위한 셋업, 테이크다운을 위한 셋업)의 콤보가 맞춤 추천 맨 위에 옵니다. 공유는 <Link to="/combos">콤보 북</Link>·<Link to="/tactics">전술 셋업</Link>의 "공유" 버튼으로 할 수 있습니다.
         </p>
 
         <div className="chip-row" role="tablist" aria-label="정렬" data-testid="combo-sorts">
@@ -122,7 +129,7 @@ export default function UserCombos() {
         </div>
 
         {sort === 'recommended' && listInterestEvents().length === 0 && combos && combos.length > 0 && (
-          <p className="video-status-message">아직 본 콤보가 없어 인기·최신 순으로 보여 드립니다. 콤보를 열어 보거나 ♥를 누르면 관심 있는 목적에 맞춰 추천이 바뀝니다.</p>
+          <p className="video-status-message">아직 본 콤보가 없어 인기·최신 순으로 보여 드립니다. 콤보를 열어 보거나 <Icon name="heart-filled" label="하트" />를 누르면 관심 있는 목적에 맞춰 추천이 바뀝니다.</p>
         )}
         {periodError && <p className="ai-inline-warning">기간별 하트를 불러오지 못했습니다: {periodError}</p>}
 
@@ -142,7 +149,7 @@ export default function UserCombos() {
         ) : (
           <div className="stack gap-2" data-testid="user-combos-list" data-sort={sort}>
             {ranked.map((r) => (
-              <SharedComboCard key={r.combo.id} combo={r.combo} hearts={r.hearts} heartsLabel={PERIOD_LABEL[sort]} reason={sort === 'recommended' ? r.reason : null} onChange={update} />
+              <SharedComboCard key={r.combo.id} combo={r.combo} hearts={r.hearts} heartsLabel={PERIOD_LABEL[sort]} reason={sort === 'recommended' ? r.reason : null} onChange={update} linkCount={links.get(r.combo.id)} />
             ))}
           </div>
         )}

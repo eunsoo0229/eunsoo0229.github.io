@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { martialArtSummaries } from '../lib/loadData';
@@ -133,7 +134,7 @@ export default function HomeTraining() {
           <span>홈트</span>
         </div>
         <div className="section-title">
-          <h2>💪 홈트레이닝</h2>
+          <h2><Icon name="dumbbell" /> 홈트레이닝</h2>
         </div>
         <p className="video-status-message" style={{ marginTop: -8 }}>
           일반 체력 운동뿐 아니라 격투기 훈련에 필요한 움직임(레벨체인지, 풋워크 등)을 함께 다루는 홈트레이닝입니다. 목적을 입력하면 AI가 맞춤 커리큘럼을 만들고,
@@ -141,10 +142,10 @@ export default function HomeTraining() {
         </p>
         <div className="chip-row" style={{ marginBottom: 16 }}>
           <Link to={`/arts/${HOME_TRAINING_MARTIAL_ART_ID}/techniques`} className="chip">
-            📋 전체 홈트 운동 보기
+            <Icon name="list" /> 전체 홈트 운동 보기
           </Link>
           <Link to="/home-training/request" className="chip">
-            ➕ 없는 운동 추가하기
+            <Icon name="plus" /> 없는 운동 추가하기
           </Link>
         </div>
 

@@ -9,10 +9,14 @@ import { syncTacticsBidirectional } from '../../lib/cloudSync/tacticSync';
 import { syncTrainingHistoryBidirectional } from '../../lib/cloudSync/trainingHistorySync';
 import { syncSparringSessionsBidirectional } from '../../lib/cloudSync/sparringSessionSync';
 import { syncLessonLogsBidirectional, syncReviewLogsBidirectional } from '../../lib/cloudSync/jsonRowSync';
+import { syncFighterProfileBidirectional } from '../../lib/cloudSync/fighterProfileSync';
+import { syncGoalsBidirectional } from '../../lib/cloudSync/goalsSync';
+import { pullCustomCategories, pushLocalCategories } from '../../lib/categoryRegistry/service';
+import { GOALS_EVENT } from '../../lib/goals/store';
+import { FIGHTER_PROFILE_EVENT } from '../../lib/fighterProfile/store';
 import { syncGymRoutinesBidirectional } from '../../lib/cloudSync/gymRoutineSync';
 import { syncNutritionMealsBidirectional, syncNutritionProfileBidirectional } from '../../lib/cloudSync/nutritionSync';
 import { syncAddTeqFromCloud } from '../../lib/cloudSync/addTeqSync';
-import { syncCustomMartialArtsFromCloud } from '../../lib/cloudSync/customMartialArtSync';
 import { syncTechniqueVideoPicksBidirectional } from '../../lib/cloudSync/techniqueVideoPickSync';
 import { syncPurchasedCurricula } from '../../lib/marketplace/purchaseSync';
 
@@ -64,11 +68,16 @@ export default function LocalDataMigrationPrompt() {
     void syncNutritionProfileBidirectional(userId);
     void syncPurchasedCurricula(userId);
     void syncAddTeqFromCloud();
-    void syncCustomMartialArtsFromCloud();
     void syncTechniqueVideoPicksBidirectional(userId);
     // 0038 — if the tables aren't deployed yet these just return an error; local data is unaffected.
     void syncReviewLogsBidirectional(userId);
     void syncLessonLogsBidirectional(userId);
+    // 0041 개인 파이터 프로필 — same: an undeployed table only returns an error.
+    void syncFighterProfileBidirectional(userId);
+    // 0044 개인 목표 — same.
+    void syncGoalsBidirectional(userId);
+    // 0043 기술 카테고리 — this device's local categories become shared, then the shared list is pulled
+    void pushLocalCategories(userId).then(() => pullCustomCategories());
 
     if (window.localStorage.getItem(promptSeenKey(userId))) return;
     const localHasData = hasLocalDataToBackup();
@@ -125,6 +134,8 @@ export default function LocalDataMigrationPrompt() {
     let tacticTimer: number | undefined;
     let userTechniqueTimer: number | undefined;
     let videoPickTimer: number | undefined;
+    let fighterProfileTimer: number | undefined;
+    let goalsTimer: number | undefined;
     const onHistoryUpdate = () => {
       window.clearTimeout(historyTimer);
       historyTimer = window.setTimeout(() => void syncTrainingHistoryBidirectional(userId), 800);
@@ -176,6 +187,18 @@ export default function LocalDataMigrationPrompt() {
       window.clearTimeout(videoPickTimer);
       videoPickTimer = window.setTimeout(() => void syncTechniqueVideoPicksBidirectional(userId), 800);
     };
+    // An interview writes on every answer — a longer debounce keeps it to one push per pause.
+    const onFighterProfileUpdate = () => {
+      window.clearTimeout(fighterProfileTimer);
+      fighterProfileTimer = window.setTimeout(() => void syncFighterProfileBidirectional(userId), 2000);
+    };
+    // typing a goal autosaves — debounce so a whole paragraph is one push
+    const onGoalsUpdate = () => {
+      window.clearTimeout(goalsTimer);
+      goalsTimer = window.setTimeout(() => void syncGoalsBidirectional(userId), 2000);
+    };
+    window.addEventListener(FIGHTER_PROFILE_EVENT, onFighterProfileUpdate);
+    window.addEventListener(GOALS_EVENT, onGoalsUpdate);
     window.addEventListener('martialdex:training-history-updated', onHistoryUpdate);
     window.addEventListener('martialdex:gym-routines-updated', onRoutineUpdate);
     window.addEventListener('martialdex:nutrition-meals-updated', onNutritionMealsUpdate);
@@ -186,6 +209,10 @@ export default function LocalDataMigrationPrompt() {
     window.addEventListener('martialdex:user-techniques-updated', onUserTechniqueUpdate);
     window.addEventListener('martialdex:technique-video-picks-updated', onVideoPickUpdate);
     return () => {
+      window.removeEventListener(FIGHTER_PROFILE_EVENT, onFighterProfileUpdate);
+      window.removeEventListener(GOALS_EVENT, onGoalsUpdate);
+      window.clearTimeout(fighterProfileTimer);
+      window.clearTimeout(goalsTimer);
       window.removeEventListener('martialdex:training-history-updated', onHistoryUpdate);
       window.removeEventListener('martialdex:gym-routines-updated', onRoutineUpdate);
       window.removeEventListener('martialdex:nutrition-meals-updated', onNutritionMealsUpdate);

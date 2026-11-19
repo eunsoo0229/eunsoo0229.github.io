@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import type { FighterCandidate, FighterStyleAnalysis, Intensity, TechniqueMatch, UserLevel } from '../lib/fighterStyle/types';
@@ -12,6 +13,7 @@ import { useMyActiveProgress } from '../lib/curriculum/useCurriculum';
 import { useAuth } from '../lib/auth/AuthProvider';
 import AiAskModal from '../components/AiAskModal';
 import BackButton from '../components/BackButton';
+import EvidenceStylePanel from '../components/fighterStyle/EvidenceStylePanel';
 
 type Step =
   | 'input'
@@ -316,9 +318,9 @@ export default function FighterStyleLearning() {
 
           {step === 'styleResult' && styleAnalysis && fighter && (
             <>
-              <h3>🥋 {styleAnalysis.fighterName} 스타일 분석</h3>
+              <h3><Icon name="gi" /> {styleAnalysis.fighterName} 스타일 분석</h3>
               <p style={{ fontSize: 13, color: 'var(--text-muted)' }}>
-                공개 경기 기록과 분석 정보를 바탕으로 한 Martialdex의 학습용 스타일 분석입니다.
+                AI가 학습된 일반 지식으로 작성한 학습용 요약이며, 출처 확인을 거치지 않았습니다. 근거가 필요하면 아래 근거 기반 분석을 사용하세요.
               </p>
               <p>{styleAnalysis.styleSummary}</p>
 
@@ -346,9 +348,11 @@ export default function FighterStyleLearning() {
                 </ol>
               )}
 
+              <EvidenceStylePanel fighterName={fighter.name} sport={fighter.sport} />
+
               <div className="modal-actions modal-actions--start">
                 <button className="btn btn-secondary" onClick={() => setAiOpen(true)}>
-                  ✦ AI에게 질문하기
+                  <Icon name="spark" /> AI에게 질문하기
                 </button>
                 <button
                   className="btn btn-primary"
@@ -487,7 +491,7 @@ export default function FighterStyleLearning() {
 
           {step === 'preview' && preview && fighter && (
             <>
-              <h3>🥋 {fighter.name} Style</h3>
+              <h3><Icon name="gi" /> {fighter.name} Style</h3>
               <div className="curriculum-stat-row">
                 <div>
                   <strong>{durationDays}일</strong>

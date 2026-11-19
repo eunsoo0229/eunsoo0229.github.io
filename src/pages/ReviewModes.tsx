@@ -1,3 +1,4 @@
+import Icon, { Glyph } from '../components/Icon';
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import type { Technique } from '../types';
@@ -7,6 +8,7 @@ import { resolveTechnique, searchAllTechniques } from '../lib/userTechniques/ser
 import { lessonContextFor } from '../lib/coachLesson/service';
 import { analyzeAnswer } from '../lib/coachLesson/analyzer';
 import { getLessonLog, LESSON_LOG_EVENT } from '../lib/coachLesson/lessonLog';
+import LessonAssessmentCard from '../components/coach/LessonAssessmentCard';
 import { buildTodayReviewPlan, computeReviewCandidates } from '../lib/reviewSystem/reviewEngine';
 import {
   REVIEW_LOG_EVENT,
@@ -88,19 +90,19 @@ export function ReviewHub() {
     ai: buildTodayReviewPlan(computeReviewCandidates()).actionable.length,
   };
   const recent = listReviewLog().slice(0, 6);
-  const cards: { mode: ReviewMode; to: string; icon: string; desc: string; unit: string }[] = [
-    { mode: 'training', to: '/review/training', icon: '📒', desc: '개인 훈련 · AI 코치 · 체육관에서 실제로 기록된 훈련을 다시 봅니다.', unit: '개 훈련 기록' },
-    { mode: 'lesson', to: '/review/lessons', icon: '🎓', desc: 'AI 코치 수업에서 배운 설명, 질문과 답, 이해가 부족했던 개념을 다시 봅니다.', unit: '개 수업' },
-    { mode: 'gym', to: '/review/gym', icon: '🥋', desc: '체육관 수업 · 실시간 훈련 · 스파링 기록만 따로 봅니다.', unit: '개 체육관 기록' },
-    { mode: 'weak', to: '/review/weak', icon: '🩹', desc: '복습 확인 결과, 수업 기록, 직접 지정, 자세 점수에서 확인된 부족 기술만 모읍니다.', unit: '개 부족 기술' },
-    { mode: 'ai', to: '/review/ai', icon: '🤖', desc: '복습 예정일 · 점수 추세 · 스파링 사용 · 부족 기술을 함께 계산한 오늘의 추천입니다.', unit: '개 추천' },
+  const cards: { mode: ReviewMode; to: string; desc: string; unit: string }[] = [
+    { mode: 'training', to: '/review/training', desc: '개인 훈련 · AI 코치 · 체육관에서 실제로 기록된 훈련을 다시 봅니다.', unit: '개 훈련 기록' },
+    { mode: 'lesson', to: '/review/lessons', desc: 'AI 코치 수업에서 배운 설명, 질문과 답, 이해가 부족했던 개념을 다시 봅니다.', unit: '개 수업' },
+    { mode: 'gym', to: '/review/gym', desc: '체육관 수업 · 실시간 훈련 · 스파링 기록만 따로 봅니다.', unit: '개 체육관 기록' },
+    { mode: 'weak', to: '/review/weak', desc: '복습 확인 결과, 수업 기록, 직접 지정, 자세 점수에서 확인된 부족 기술만 모읍니다.', unit: '개 부족 기술' },
+    { mode: 'ai', to: '/review/ai', desc: '복습 예정일 · 점수 추세 · 스파링 사용 · 부족 기술을 함께 계산한 오늘의 추천입니다.', unit: '개 추천' },
   ];
   return (
     <div className="page" data-testid="review-hub">
       <div className="container">
         <BackButton />
         <div className="section-title">
-          <h2>🔁 복습</h2>
+          <h2><Icon name="repeat" /> 복습</h2>
         </div>
         <p className="video-status-message" style={{ marginTop: -8 }}>
           복습은 훈련 기록과 따로 저장됩니다. 복습했다고 해서 훈련 횟수나 연습 기록이 늘어나지 않습니다.
@@ -109,7 +111,7 @@ export function ReviewHub() {
           {cards.map((c) => (
             <Link key={c.mode} to={c.to} className="card review-mode-card" data-testid={`review-mode-${c.mode}`}>
               <div className="review-mode-card__head">
-                <span aria-hidden>{c.icon}</span>
+                <Glyph set="review-modes" name={c.mode} />
                 <strong>{REVIEW_MODE_LABEL[c.mode]}</strong>
               </div>
               <p>{c.desc}</p>
@@ -226,7 +228,7 @@ export function ReviewTraining() {
       <div className="container">
         <Crumb title={REVIEW_MODE_LABEL.training} />
         <div className="section-title">
-          <h2>📒 {REVIEW_MODE_LABEL.training}</h2>
+          <h2><Icon name="list" /> {REVIEW_MODE_LABEL.training}</h2>
         </div>
         <p className="video-status-message" style={{ marginTop: -8 }}>
           저장된 훈련 기록 그대로 보여 줍니다. 기록되지 않은 세트·시간은 표시하지 않습니다.
@@ -262,7 +264,7 @@ export function ReviewGym() {
       <div className="container">
         <Crumb title={REVIEW_MODE_LABEL.gym} />
         <div className="section-title">
-          <h2>🥋 {REVIEW_MODE_LABEL.gym}</h2>
+          <h2><Icon name="gi" /> {REVIEW_MODE_LABEL.gym}</h2>
         </div>
         <p className="video-status-message" style={{ marginTop: -8 }}>
           체육관 수업 완료 · 실시간 훈련 · 체육관 스파링으로 저장된 내 기록만 보여 줍니다. 코치 피드백은 현재 앱에 저장되는 항목이 없어 표시하지 않습니다.
@@ -294,7 +296,7 @@ export function ReviewLessons() {
       <div className="container">
         <Crumb title={REVIEW_MODE_LABEL.lesson} />
         <div className="section-title">
-          <h2>🎓 {REVIEW_MODE_LABEL.lesson}</h2>
+          <h2><Icon name="grad" /> {REVIEW_MODE_LABEL.lesson}</h2>
         </div>
         <div className="stack gap-2">
           {items.length === 0 && <EmptyState icon="🎓" text="AI 코치 수업 기록이 없습니다." />}
@@ -348,11 +350,12 @@ export function ReviewLessonDetail() {
       <div className="container">
         <Crumb title={log.title} />
         <div className="section-title">
-          <h2>🎓 {log.title}</h2>
+          <h2><Icon name="grad" /> {log.title}</h2>
         </div>
         <p className="video-status-message" style={{ marginTop: -8 }}>
           {log.date} 수업 · 수업에서 실제로 설명한 내용과 이해 확인 결과입니다.
         </p>
+        {log.techniques.some((t) => t.techniqueId) && <LessonAssessmentCard logId={log.id} auto={false} />}
         {log.techniques.map((t) => (
           <div key={t.techniqueId ?? t.name} className="card info-card">
             <h3>
@@ -413,7 +416,7 @@ export function ReviewWeak() {
       <div className="container">
         <Crumb title={REVIEW_MODE_LABEL.weak} />
         <div className="section-title">
-          <h2>🩹 {REVIEW_MODE_LABEL.weak}</h2>
+          <h2><Icon name="bandage" /> {REVIEW_MODE_LABEL.weak}</h2>
         </div>
         <p className="video-status-message" style={{ marginTop: -8 }}>
           기록으로 확인된 근거가 있는 기술만 보여 줍니다. 근거가 없으면 아래에서 직접 골라 추가할 수 있습니다.
@@ -623,7 +626,7 @@ export function ReviewSession() {
         <div className="container">
           <Crumb title={REVIEW_MODE_LABEL[mode]} />
           <div className="section-title">
-            <h2>✅ 복습 완료</h2>
+            <h2><Icon name="check" /> 복습 완료</h2>
           </div>
           <p className="video-status-message">
             {REVIEW_MODE_LABEL[mode]} · 기술 {log.completedTechniqueIds.length}개 · 확인 질문 {understood}/{log.results.length} 이해

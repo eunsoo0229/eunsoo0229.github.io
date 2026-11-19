@@ -4,6 +4,30 @@ const fs = require('node:fs');
 
 const isDev = !app.isPackaged;
 
+// Automated runs (Playwright QA scripts launch Electron with --remote-debugging-port /
+// --inspect; MARTIALDEX_HEADLESS=1 forces it): no visible window, no DevTools window,
+// no Dock icon, and no sound — page audio is muted and speech synthesis runs at
+// volume 0 (its start/end events still fire, so voice QA keeps working).
+// A normal launch by the user is unchanged.
+const isAutomation =
+  process.env.MARTIALDEX_HEADLESS === '1' ||
+  app.commandLine.hasSwitch('remote-debugging-port') ||
+  process.argv.some((a) => a.startsWith('--remote-debugging-port') || a.startsWith('--inspect'));
+const SILENCE_SPEECH = `(() => {
+  const s = window.speechSynthesis;
+  if (!s || s.__mdxSilent) return;
+  const speak = s.speak.bind(s);
+  s.speak = (u) => { try { u.volume = 0; } catch {} return speak(u); };
+  s.__mdxSilent = true;
+})();`;
+if (isAutomation) {
+  app.on('browser-window-created', (_e, win) => {
+    win.webContents.setAudioMuted(true);
+    win.webContents.on('dom-ready', () => win.webContents.executeJavaScript(SILENCE_SPEECH).catch(() => {}));
+  });
+  app.whenReady().then(() => app.dock?.hide());
+}
+
 // In dev, `.env` sits at the project root, one directory above this file —
 // __dirname/../.env resolves correctly there.
 //
@@ -57,6 +81,10 @@ const { askGemini } = require('./gemini.cjs');
 const { askLocalModel, cancelLocalModel, localModelStatus } = require('./ollama.cjs');
 const { searchYoutube, getVideoInfo } = require('./youtubeSearch.cjs');
 const { webSearch } = require('./webSearch.cjs');
+const selfSearch = require('./selfSearch/index.cjs');
+const selfSearchService = require('./selfSearch/service.cjs');
+const selfAi = require('./selfAi.cjs');
+const localEngine = require('./localEngine.cjs');
 const { getDeviceInfo } = require('./deviceInfo.cjs');
 const localStt = require('./localStt.cjs');
 
@@ -141,11 +169,128 @@ ipcMain.handle('localai:cancel', async (_event, requestId) => {
   }
 });
 
+// 통합 로컬 AI 엔진 (electron/localEngine.cjs) — in-app 시작/종료, model download and load.
+// Starts nothing by itself; every handler is async (no main-process blocking).
+ipcMain.handle('localengine:status', async () => {
+  try {
+    return await localEngine.status();
+  } catch {
+    return { phase: 'error', error: { code: 'UNKNOWN', message: '로컬 AI 상태를 확인하지 못했습니다.' } };
+  }
+});
+ipcMain.handle('localengine:start', async (_e, opts) => {
+  try {
+    return await localEngine.start(opts && typeof opts === 'object' ? { model: opts.model } : {});
+  } catch {
+    return { ok: false, code: 'UNKNOWN', message: '로컬 AI를 시작하지 못했습니다.' };
+  }
+});
+ipcMain.handle('localengine:stop', async () => {
+  try {
+    return await localEngine.stop();
+  } catch {
+    return { ok: false, code: 'UNKNOWN', message: '로컬 AI를 종료하지 못했습니다.' };
+  }
+});
+ipcMain.handle('localengine:set-model', (_e, model) => localEngine.setModel(model));
+ipcMain.handle('localengine:pull', async (event, model) => {
+  const sender = event.sender;
+  try {
+    return await localEngine.pullModel(model, (p) => {
+      if (!sender.isDestroyed()) sender.send('localengine:pull-progress', p);
+    });
+  } catch {
+    return { ok: false, code: 'UNKNOWN', message: '모델 다운로드 중 오류가 발생했습니다.' };
+  }
+});
+ipcMain.handle('localengine:cancel-pull', () => localEngine.cancelPull());
+localEngine.onChange(() => {
+  for (const w of BrowserWindow.getAllWindows()) if (!w.isDestroyed()) w.webContents.send('localengine:changed');
+});
+app.whenReady().then(() => localEngine.init(app.getPath('userData')));
+
+// 자체 검색 ON/OFF — the user's switch; ON starts SearXNG (or adopts a running one), OFF stops only the app's own.
+ipcMain.handle('selfsearch:status', async () => {
+  try {
+    return await selfSearchService.status();
+  } catch {
+    return { supported: true, enabled: false, phase: 'error', running: false, owned: false, external: false, installed: false, missing: [], error: { code: 'UNKNOWN', message: '자체 검색 상태를 확인하지 못했습니다.' } };
+  }
+});
+ipcMain.handle('selfsearch:set-enabled', async (_e, on) => {
+  try {
+    return await selfSearchService.setEnabled(on === true);
+  } catch {
+    return { ok: false, code: 'UNKNOWN', message: '자체 검색 설정을 바꾸지 못했습니다.' };
+  }
+});
+selfSearchService.onChange(() => {
+  for (const w of BrowserWindow.getAllWindows()) if (!w.isDestroyed()) w.webContents.send('selfsearch:changed');
+});
+app.whenReady().then(() => selfSearchService.init(app.getPath('userData')));
+
 ipcMain.handle('websearch:search', async (_event, query) => {
   try {
     return await webSearch(query);
   } catch {
     return { ok: false, code: 'UNKNOWN', message: '외부 검색 중 알 수 없는 오류가 발생했습니다.' };
+  }
+});
+
+// MARTIALDEX 자체 AI 대화 (electron/selfAi.cjs) — local model, streamed. Tokens are
+// pushed to the requesting window as 'selfai:delta' { requestId, delta }.
+ipcMain.handle('selfai:status', async () => {
+  try {
+    return await selfAi.status();
+  } catch {
+    return { ok: false, running: false, model: null, models: [], reason: 'UNKNOWN' };
+  }
+});
+ipcMain.handle('selfai:chat', async (event, request) => {
+  const sender = event.sender;
+  const requestId = request && request.requestId;
+  try {
+    return await selfAi.chat(request, (delta) => {
+      if (!sender.isDestroyed()) sender.send('selfai:delta', { requestId, delta });
+    });
+  } catch {
+    return { ok: false, code: 'UNKNOWN', message: '자체 AI 요청 중 알 수 없는 오류가 발생했습니다.' };
+  }
+});
+ipcMain.handle('selfai:cancel', async (_event, requestId) => {
+  try {
+    return selfAi.cancel(requestId);
+  } catch {
+    return false;
+  }
+});
+
+// Self-hosted research pipeline (SearXNG + page extraction, electron/selfSearch).
+// Returns labelled results with original URLs and diagnostics; never Tavily.
+// 자체 검색 OFF (electron/selfSearch/service.cjs): nothing is searched or looked up, and no other
+// search service is used in its place — callers get DISABLED and answer from the MARTIALDEX data.
+ipcMain.handle('research:status', async () => {
+  try {
+    if (!selfSearchService.enabled()) return { ok: false, url: null, disabled: true };
+    return await selfSearch.searxStatus();
+  } catch {
+    return { ok: false, url: null };
+  }
+});
+ipcMain.handle('research:entity', async (_event, name) => {
+  try {
+    const off = selfSearchService.offOutcome();
+    if (off) return { ok: false, query: String(name || ''), reason: off.message };
+    return await require('./selfSearch/entity.cjs').resolvePerson(name);
+  } catch {
+    return { ok: false, query: String(name || ''), reason: '이름 확인 중 오류가 발생했습니다.' };
+  }
+});
+ipcMain.handle('research:search', async (_event, request) => {
+  try {
+    return selfSearchService.offOutcome() ?? (await selfSearch.research(request));
+  } catch {
+    return { ok: false, code: 'UNKNOWN', message: '자체 검색 중 알 수 없는 오류가 발생했습니다.' };
   }
 });
 
@@ -305,12 +450,13 @@ ipcMain.on('shell:open-in-app', (_event, url) => {
   if (typeof url !== 'string' || !/^https?:\/\//.test(url)) return;
   if (inAppBrowserWindow && !inAppBrowserWindow.isDestroyed()) {
     inAppBrowserWindow.loadURL(url);
-    inAppBrowserWindow.focus();
+    if (!isAutomation) inAppBrowserWindow.focus();
     return;
   }
   inAppBrowserWindow = new BrowserWindow({
     width: 1000,
     height: 800,
+    show: !isAutomation,
     title: 'MARTIALDEX',
     webPreferences: {
       contextIsolation: true,
@@ -329,6 +475,7 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 1280,
     height: 860,
+    show: !isAutomation,
     minWidth: 720,
     minHeight: 560,
     backgroundColor: '#111318',
@@ -338,6 +485,8 @@ function createWindow() {
       contextIsolation: true,
       nodeIntegration: false,
       sandbox: true,
+      // a hidden (automation) window must keep timers / animation at full speed (mitt & drill timing)
+      backgroundThrottling: !isAutomation,
     },
   });
 
@@ -350,7 +499,7 @@ function createWindow() {
 
   if (isDev) {
     win.loadURL('http://localhost:5173');
-    win.webContents.openDevTools({ mode: 'detach' });
+    if (!isAutomation) win.webContents.openDevTools({ mode: 'detach' });
   } else {
     win.loadFile(path.join(__dirname, '..', 'dist', 'renderer', 'index.html'));
   }
@@ -390,7 +539,20 @@ function flushStorage() {
 }
 app.on('browser-window-created', (_e, win) => win.on('close', flushStorage));
 app.on('before-quit', flushStorage);
-app.on('will-quit', () => localStt.stopServer());
+// Quit: unload the model MARTIALDEX loaded and stop the Ollama it started (bounded to 5 s), then quit for real.
+let engineCleaned = false;
+app.on('before-quit', (e) => {
+  if (engineCleaned || (!localEngine.needsCleanup() && !selfSearchService.needsCleanup())) return;
+  e.preventDefault();
+  engineCleaned = true;
+  Promise.race([Promise.all([localEngine.stop(), selfSearchService.stopOwned()]), new Promise((r) => setTimeout(r, 5000))]).finally(() => app.quit());
+});
+app.on('will-quit', () => {
+  localStt.stopServer();
+  // only a server MARTIALDEX itself started; a user's own Ollama keeps running
+  localEngine.stopSync();
+  selfSearchService.stopSync();
+});
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit();

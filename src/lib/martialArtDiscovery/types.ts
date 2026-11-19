@@ -1,23 +1,11 @@
 import type { Difficulty, PostureInfo } from '../../types';
-import type { WebEvidenceSource } from '../customMartialArt/types';
 
-export type MartialArtVerificationStatus = 'already_exists' | 'verified' | 'insufficient_web_evidence' | 'search_unavailable';
-
-export interface MartialArtVerificationOutcome {
-  status: MartialArtVerificationStatus;
-  normalizedInput: string;
-  /** Set only when status === 'already_exists' — the id of the existing (official or custom) martial art this input matched. */
-  existingMartialArtId?: string;
-  existingMartialArtName?: string;
-  /** Set only when status === 'verified'. */
-  nameKo?: string;
-  nameEn?: string | null;
-  description?: string;
-  sources?: WebEvidenceSource[];
-  /** Structured logging / transparency (spec section 9's "출처"). */
-  executedQueries: string[];
-  wavesRun: number;
-  errorMessage?: string;
+/** A real source page actually returned by Tavily and actually cited as evidence — never fabricated (see aiVerification.ts). */
+export interface WebEvidenceSource {
+  title: string;
+  url: string;
+  /** Short excerpt/paraphrase of what in the source actually supports the verdict — never invented. */
+  snippet: string;
 }
 
 export type TechniqueCategory = 'strike' | 'kick' | 'defense' | 'evasion' | 'takedown' | 'clinch' | 'grip' | 'other';
@@ -35,15 +23,6 @@ export interface DiscoveredTechniqueCandidate {
   posture: PostureInfo | null;
   /** Criteria-based assessment (spec "긴급 안정화" section 11: complexity/coordination/balance/timing/prerequisite, not sourced from external evidence) — null when even that judgment isn't reasonably confident. */
   difficulty: Difficulty;
-}
-
-export interface TechniqueResearchOutcome {
-  status: 'ok' | 'insufficient_web_evidence' | 'search_unavailable';
-  candidates: DiscoveredTechniqueCandidate[];
-  rawCandidateCount: number;
-  executedQueries: string[];
-  wavesRun: number;
-  errorMessage?: string;
 }
 
 export type SingleTechniqueVerificationStatus =

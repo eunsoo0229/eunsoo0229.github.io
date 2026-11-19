@@ -237,6 +237,13 @@ async function main() {
   await page.locator('[data-testid="coach-class-start"]').click();
   await page.locator('button', { hasText: '입력으로 대화' }).click();
   await sleep(800);
+  // newer builds first ask which AI coach to use — this test covers the Gemini coach lesson
+  await page.waitForFunction(() => document.querySelector('[data-testid="coach-picker"]') || document.querySelector('[data-testid="coach-location"]'), null, { timeout: 60000 });
+  if (await page.locator('[data-testid="coach-picker"]').count()) {
+    await page.click('[data-testid="coach-pick-gemini"]');
+    await page.click('[data-testid="coach-pick-confirm"]');
+    await sleep(800);
+  }
   check('[S1] 수업 시작 → AI 코치 Day 세션 (장소 표시: 집)', (await page.locator('[data-testid="coach-location"]').getAttribute('data-location')) === 'home', page.url());
   // 1:1 수업: the lesson opens with a short explanation and a question (coach-lesson engine).
   await page.waitForFunction(() => document.querySelector('[data-testid="coach-step"]')?.dataset.step === 'lesson', null, { timeout: 60000 });
@@ -337,6 +344,12 @@ async function main() {
   await page.locator('[data-testid="coach-location-confirm"]').click();
   const placeText = await page.locator('[data-testid="day-start-place"]').textContent();
   await page.locator('button', { hasText: '입력으로 대화' }).click();
+  await page.waitForFunction(() => document.querySelector('[data-testid="coach-picker"]') || document.querySelector('[data-testid="coach-location"]'), null, { timeout: 60000 });
+  if (await page.locator('[data-testid="coach-picker"]').count()) {
+    await page.click('[data-testid="coach-pick-gemini"]');
+    await page.click('[data-testid="coach-pick-confirm"]');
+    await sleep(800);
+  }
   await sleep(800);
   check('[H2] 장소 → 대화 방식 → 세션 URL에 장소 전달', placeText.includes('체육관에서 운동') && page.url().includes('place=gym') && page.url().includes('equip=mitts'), page.url());
   await page.waitForFunction(() => document.querySelector('[data-testid="coach-step"]')?.dataset.step === 'lesson', null, { timeout: 60000 });
@@ -352,6 +365,12 @@ async function main() {
 
   // Direct link without a place → picker first, nothing starts before it.
   await goto('#/learning/bjj/official__bjj/coach/3?mode=text');
+  await page.waitForFunction(() => document.querySelector('[data-testid="coach-picker"]') || document.querySelector('[data-testid="coach-location-picker"]'), null, { timeout: 60000 });
+  if (await page.locator('[data-testid="coach-picker"]').count()) {
+    await page.click('[data-testid="coach-pick-gemini"]');
+    await page.click('[data-testid="coach-pick-confirm"]');
+    await sleep(600);
+  }
   const pickerFirst = (await page.locator('[data-testid="coach-location-picker"]').count()) === 1 && (await page.locator('[data-testid="coach-step"]').count()) === 0;
   await page.locator('[data-testid="coach-location-home"]').click();
   await page.locator('[data-testid="coach-location-confirm"]').click();

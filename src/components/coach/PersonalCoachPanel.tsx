@@ -1,15 +1,16 @@
+import Icon, { type IconName } from '../Icon';
 import { Link } from 'react-router-dom';
 import type { PersonalCoachResult } from '../../lib/personalCoach/service';
 
 // 바로가기 — carried over from the former AI Personal Coach page.
-const SHORTCUTS: { to: string; label: string }[] = [
-  { to: '/learning', label: '📘 커리큘럼' },
-  { to: '/today-training', label: '🔥 훈련하기' },
-  { to: '/my-skills', label: '📷 자세 분석' },
-  { to: '/sparring', label: '🥊 스파링 분석' },
-  { to: '/combos', label: '🥋 콤보' },
-  { to: '/tactics', label: '🧩 전술' },
-  { to: '/training-analytics', label: '📊 훈련 기록' },
+const SHORTCUTS: { to: string; icon: IconName; label: string }[] = [
+  { to: '/learning', icon: 'book', label: '커리큘럼' },
+  { to: '/today-training', icon: 'flame', label: '훈련하기' },
+  { to: '/my-skills', icon: 'camera', label: '자세 분석' },
+  { to: '/sparring', icon: 'glove', label: '스파링 분석' },
+  { to: '/combos', icon: 'gi', label: '콤보' },
+  { to: '/tactics', icon: 'puzzle', label: '전술' },
+  { to: '/training-analytics', icon: 'chart', label: '훈련 기록' },
 ];
 
 /**
@@ -23,12 +24,12 @@ export default function PersonalCoachPanel(props: { result: PersonalCoachResult;
   const lessonRequest = [r.nextTraining, r.recommendedTechniques.length ? `(${r.recommendedTechniques.slice(0, 3).map((t) => t.koreanName || t.name).join(', ')})` : ''].filter(Boolean).join(' ');
   return (
     <div className="card info-card" data-testid="personal-coach-result" data-source={r.source}>
-      <h3 style={{ marginTop: 0 }}>📊 내 기록 분석 · 추천</h3>
+      <h3 style={{ marginTop: 0 }}><Icon name="chart" /> 내 기록 분석 · 추천</h3>
       <p>{r.analysisSummary}</p>
       {r.source === 'fallback' && <p className="video-status-message">AI 분석을 불러오지 못해 기본 안내를 표시하고 있습니다.</p>}
       {r.recommendedTechniques.length > 0 && (
         <div className="chip-row" data-testid="personal-coach-techniques">
-          <span className="field-label">🎯 추천 기술</span>
+          <span className="field-label"><Icon name="target" /> 추천 기술</span>
           {r.recommendedTechniques.map((t) => (
             <Link key={t.id} to={`/arts/${t.martialArt}/techniques/${t.id}`} className="chip active">
               {t.koreanName || t.name}
@@ -70,7 +71,7 @@ export default function PersonalCoachPanel(props: { result: PersonalCoachResult;
       <div className="chip-row" style={{ marginTop: 8 }}>
         {SHORTCUTS.map((s) => (
           <Link key={s.to} to={s.to} className="chip">
-            {s.label}
+            <Icon name={s.icon} /> {s.label}
           </Link>
         ))}
       </div>

@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useState } from 'react';
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { deleteTrainingHistoryEntry, getTrainingHistoryEntry, updateTrainingHistoryExerciseNotes, updateTrainingHistoryNotes } from '../lib/trainingHistory/service';
@@ -24,6 +25,7 @@ const SOURCE_LABEL: Record<string, string> = {
   // Removed feature — kept only so past entries still show a readable label.
   ground_battle: '그라운드 배틀 (지난 기록)',
   visual_mitt: 'AI Visualizing Mitt',
+  program: '개인 훈련 프로그램',
 };
 
 export default function TrainingHistoryDetail() {
@@ -74,7 +76,7 @@ export default function TrainingHistoryDetail() {
         </div>
 
         <div className="section-title">
-          <h2>📋 훈련 상세</h2>
+          <h2><Icon name="list" /> 훈련 상세</h2>
         </div>
 
         <div className="card info-card">
@@ -317,7 +319,7 @@ export default function TrainingHistoryDetail() {
 
         {relatedPoseRecords.length > 0 && (
           <div className="card info-card">
-            <h3>📈 이 날짜의 자세 분석 결과</h3>
+            <h3><Icon name="trend" /> 이 날짜의 자세 분석 결과</h3>
             <div className="stack gap-2">
               {relatedPoseRecords.map((r) => (
                 <div key={r.recordId} className="pose-history-row">

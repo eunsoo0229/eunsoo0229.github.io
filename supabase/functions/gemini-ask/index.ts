@@ -36,7 +36,7 @@ const CORS_HEADERS = {
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
 };
 
-type AiErrorCode = 'NO_API_KEY' | 'INVALID_API_KEY' | 'RATE_LIMIT' | 'NETWORK' | 'EMPTY_RESPONSE' | 'UNKNOWN' | 'UNAUTHORIZED';
+type AiErrorCode = 'NO_API_KEY' | 'INVALID_API_KEY' | 'RATE_LIMIT' | 'NETWORK' | 'EMPTY_RESPONSE' | 'UNKNOWN' | 'UNAUTHORIZED' | 'QUOTA_EXCEEDED';
 
 function jsonResponse(body: unknown, status = 200) {
   return new Response(JSON.stringify(body), {
@@ -73,6 +73,8 @@ interface AskRequest {
   temperature?: number;
   maxOutputTokens?: number;
   thinkingLevel?: 'minimal' | 'low' | 'medium';
+  /** 사용 한도(0066): 한 작업의 여러 호출을 1회로 묶는 id. 없으면 호출마다 1회로 센다. */
+  useId?: string;
 }
 
 function isAskRequest(value: unknown): value is AskRequest {
@@ -341,6 +343,24 @@ Deno.serve(async (req: Request) => {
     return jsonResponse(errorResult('UNKNOWN', '질문 내용이 비어 있습니다.'), 400);
   }
 
-  const result = await askGemini(body);
+  // 사용 한도(0066 consume_gemini_use): FREE 하루 N회, PRO·운영자 무제한. 판정은 DB 가 사용자 토큰으로 한다.
+  // 확인에 실패하면 Gemini 를 부르지 않는다(비용 보호 — 실패 시 열어 두지 않음).
+  const userDb = createClient(supabaseUrl, supabaseAnonKey, { global: { headers: { Authorization: `Bearer ${token}` } } });
+  const baseUse = typeof body.useId === 'string' && /^[A-Za-z0-9_-]{8,48}$/.test(body.useId) ? body.useId : crypto.randomUUID();
+  let quota = await userDb.rpc('consume_gemini_use', { p_use_id: baseUse });
+  if (!quota.error && quota.data?.allowed === false && quota.data?.reason === 'USE_EXPIRED') {
+    // 묶음이 끝난 id → 새 1회로 센다 (같은 id 재사용으로 한도를 피할 수 없음)
+    quota = await userDb.rpc('consume_gemini_use', { p_use_id: `${baseUse}-${Date.now().toString(36)}` });
+  }
+  if (quota.error) {
+    return jsonResponse(errorResult('UNKNOWN', 'AI 사용량을 확인하지 못했습니다. 잠시 후 다시 시도해주세요.'));
+  }
+  if (quota.data?.allowed !== true) {
+    const limit = quota.data?.limit ?? 5;
+    return jsonResponse({ ...errorResult('QUOTA_EXCEEDED', `오늘 Gemini 코치 무료 사용 ${limit}회를 모두 썼습니다. 내일 다시 쓸 수 있고, PRO 멤버십은 한도 없이 사용할 수 있습니다.`), quota: quota.data });
+  }
+
+  const { useId: _useId, ...askBody } = body;
+  const result = await askGemini(askBody);
   return jsonResponse(result);
 });

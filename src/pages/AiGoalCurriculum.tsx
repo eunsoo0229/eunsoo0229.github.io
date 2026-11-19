@@ -1,10 +1,10 @@
+import Icon from '../components/Icon';
 import { useMemo, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { martialArtSummaries } from '../lib/loadData';
 import { getUnifiedMartialArtSummaries } from '../lib/userTechniques/service';
-import { useCustomMartialArtLibraryVersion } from '../lib/customMartialArt/useCustomMartialArtLibrary';
 import { GOAL_DAILY_MINUTES_PRESETS, GOAL_DURATION_PRESETS, GOAL_MAX_DURATION_DAYS, GOAL_MIN_DURATION_DAYS } from '../lib/aiCurriculum/types';
-import type { GoalCurriculumPreview, InsufficientWebEvidenceSummary } from '../lib/aiCurriculum/service';
+import type { GoalCurriculumPreview, InsufficientWebEvidenceSummary, PartialEvidenceSummary } from '../lib/aiCurriculum/service';
 import { generateGoalCurriculumPreview, saveGoalCurriculumPreview } from '../lib/aiCurriculum/service';
 import { getProgress } from '../lib/curriculum/curriculumService';
 import { useMyCurricula } from '../lib/curriculum/useCurriculum';
@@ -13,8 +13,10 @@ import { getMmaAreaAnalysis, type MmaAreaAnalysis } from '../lib/mmaCurriculum/m
 import { useAuth } from '../lib/auth/AuthProvider';
 import BackButton from '../components/BackButton';
 import ResearchResultsCard from '../components/ResearchResultsCard';
+import ResearchDiagnosticsView from '../components/ResearchDiagnosticsView';
+import DayDrills from '../components/curriculum/DayDrills';
 
-type Step = 'input' | 'generating' | 'clarifying' | 'preview' | 'saving' | 'error';
+type Step = 'input' | 'generating' | 'clarifying' | 'partial_confirm' | 'preview' | 'saving' | 'error';
 
 const EXAMPLES = [
   '복싱 풋워크가 부족해',
@@ -31,6 +33,66 @@ const MMA_EXAMPLES = [
   '그래플링이 약한 MMA 선수 스타일로 훈련하고 싶어',
 ];
 
+/** 근거 등급 — which scheduled techniques are web-verified (A) and which rest on MARTIALDEX's own data (B). */
+function EvidenceGradeCard({ preview }: { preview: GoalCurriculumPreview }) {
+  const ev = preview.evidence!;
+  const scheduled = new Set(preview.days.flatMap((d) => [...d.techniqueIds, ...d.reviewTechniqueIds]));
+  const list = (g: 'A' | 'B') => preview.matchedTechniques.filter((m) => m.evidenceGrade === g && scheduled.has(m.techniqueId));
+  return (
+    <div className="card info-card" data-testid="evidence-grades">
+      <h3>근거 등급</h3>
+      {!ev.fullScope && <p className="banner banner--warning">전체 목표를 충족하지 못한 커리큘럼입니다. 근거가 확인된 목표만 포함했습니다.</p>}
+      {ev.scheduleMode === 'focused' && (
+        <p className="video-status-message" data-testid="focused-schedule-note">
+          검증된 기술 수가 기간에 비해 적어, 새 기술을 억지로 늘리지 않고 같은 기술을 단계 수행 · 연결 · 상황 판단 · 반응 선택 · 저강도 적용 · 복습으로 반복하도록 구성했습니다. 하루 훈련량은 선택한 시간({preview.dailyMinutes}분)을 넘지 않습니다.
+        </p>
+      )}
+      <p>
+        <strong>A · 웹 자료로 검증 ({list('A').length})</strong>
+      </p>
+      <ul data-testid="grade-a">
+        {list('A').map((m) => (
+          <li key={m.techniqueId}>
+            {m.techniqueName} <span className="technique-row__sub">— {m.evidenceNote}</span>
+          </li>
+        ))}
+      </ul>
+      {list('B').length > 0 && (
+        <>
+          <p>
+            <strong>B · MARTIALDEX 자체 DB로 확인 ({list('B').length})</strong>
+          </p>
+          <p className="video-status-message">
+            B 등급은 웹 검색으로 검증된 것이 아니라, MARTIALDEX에 수록된 자세 데이터(시작 자세·동작 단계)에서 목표 상황과 목적이 확인된 기술입니다.
+          </p>
+          <ul data-testid="grade-b">
+            {list('B').map((m) => (
+              <li key={m.techniqueId}>
+                {m.techniqueName} <span className="technique-row__sub">— {m.evidenceNote}</span>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+      {ev.excludedC.length > 0 && (
+        <details>
+          <summary>C · 근거 부족으로 제외한 후보 {ev.excludedC.length}개</summary>
+          <ul data-testid="grade-c">
+            {ev.excludedC.map((c) => (
+              <li key={c.name}>
+                {c.name} <span className="technique-row__sub">— {c.reason}</span>
+              </li>
+            ))}
+          </ul>
+        </details>
+      )}
+      {ev.duplicatesMerged.length > 0 && (
+        <p className="video-status-message">같은 기술로 판단해 하나로 합친 항목: {ev.duplicatesMerged.map((d) => `${d.dropped} → ${d.kept}`).join(', ')}</p>
+      )}
+    </div>
+  );
+}
+
 export default function AiGoalCurriculum() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -42,9 +104,6 @@ export default function AiGoalCurriculum() {
   const [step, setStep] = useState<Step>('input');
   const [freeText, setFreeText] = useState(handoffState?.freeText ?? '');
   const [martialArt, setMartialArt] = useState(handoffState?.martialArt ?? martialArtSummaries[0]?.id ?? 'boxing');
-  // 사용자가 새로 추가한 무술(spec "MARTIALDEX 신규 무술 추가 시스템")도 드롭다운에
-  // 즉시 나타나야 하므로 정적 martialArtSummaries가 아닌 unified 목록을 쓴다.
-  useCustomMartialArtLibraryVersion();
   const availableMartialArts = getUnifiedMartialArtSummaries();
   const [mmaAreaAnalysis, setMmaAreaAnalysis] = useState<MmaAreaAnalysis | null>(null);
   const [mmaAnalysisLoading, setMmaAnalysisLoading] = useState(false);
@@ -61,6 +120,8 @@ export default function AiGoalCurriculum() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   /** Set only when the last error was code 'INSUFFICIENT_WEB_EVIDENCE' — spec section 17/18: distinct wording + real search-stat transparency + a "다시 검색" retry that re-runs generation directly instead of sending the user back to the input form. */
   const [insufficientEvidence, setInsufficientEvidence] = useState<InsufficientWebEvidenceSummary | null>(null);
+  /** Set while asking whether to build from only the learning parts that had evidence (부분 생성). */
+  const [partialEvidence, setPartialEvidence] = useState<PartialEvidenceSummary | null>(null);
   const [clarifyingQuestion, setClarifyingQuestion] = useState<string | null>(null);
   const [clarifyingAnswerInput, setClarifyingAnswerInput] = useState('');
   const [refinementHistory, setRefinementHistory] = useState<string[]>([]);
@@ -77,10 +138,11 @@ export default function AiGoalCurriculum() {
     return Number(durationSelectValue);
   }
 
-  async function runGenerate(opts: { clarifyingAnswer?: string; skipClarifying?: boolean; history?: string[] } = {}) {
+  async function runGenerate(opts: { clarifyingAnswer?: string; skipClarifying?: boolean; history?: string[]; partialToken?: string } = {}) {
     setStep('generating');
     setErrorMessage(null);
     setInsufficientEvidence(null);
+    setPartialEvidence(null);
     const history = opts.history ?? refinementHistory;
     const result = await generateGoalCurriculumPreview({
       freeText,
@@ -92,6 +154,7 @@ export default function AiGoalCurriculum() {
       refinementHistory: history,
       userId: user?.id ?? null,
       excludeLearnedTechniques,
+      partialToken: opts.partialToken,
     });
     if (!result.ok) {
       if (result.code === 'CLARIFYING_NEEDED') {
@@ -99,12 +162,18 @@ export default function AiGoalCurriculum() {
         setStep('clarifying');
         return;
       }
+      if (result.code === 'PARTIAL_EVIDENCE') {
+        setPartialEvidence(result.partial);
+        setStep('partial_confirm');
+        return;
+      }
       if (result.code === 'INSUFFICIENT_WEB_EVIDENCE') {
-        // Spec section 17's exact wording — never claims the search itself
-        // failed (it didn't), and never silently falls back to a
-        // DB-padded curriculum.
+        // Never claims the search itself failed when it didn't, never blames the evidence when the
+        // analysis step failed, and never silently falls back to a DB-padded curriculum.
         setErrorMessage(
-          '⚠ 검색 근거가 충분하지 않습니다.\n\n실시간 웹 검색은 실행되었지만 현재 목표와 직접적으로 관련된 자료를 충분히 찾지 못했습니다.\n\n정확하지 않은 기술을 임의로 추가하지 않고 커리큘럼 생성을 중단했습니다.'
+          result.research.diagnostics?.stopReason === 'EXTRACTION_FAILED'
+            ? '검색 자료 분석 단계에서 오류가 발생했습니다.\n\n웹 검색은 실행되었지만 찾은 자료를 분석하는 AI 응답이 올바르지 않아 일부 자료를 확인하지 못했습니다. 자료가 부족하다는 뜻은 아닙니다.\n\n확인하지 못한 기술을 임의로 추가하지 않고 커리큘럼 생성을 중단했습니다.'
+            : '검색 근거가 충분하지 않습니다.\n\n실시간 웹 검색은 실행되었지만 현재 목표와 직접적으로 관련된 자료를 충분히 찾지 못했습니다.\n\n정확하지 않은 기술을 임의로 추가하지 않고 커리큘럼 생성을 중단했습니다.'
         );
         setInsufficientEvidence(result.research);
         setStep('error');
@@ -179,7 +248,7 @@ export default function AiGoalCurriculum() {
           <span>AI 맞춤 커리큘럼</span>
         </div>
         <div className="section-title">
-          <h2>🧠 AI 맞춤 커리큘럼</h2>
+          <h2><Icon name="brain" /> AI 맞춤 커리큘럼</h2>
         </div>
 
         {step === 'input' && (
@@ -327,7 +396,8 @@ export default function AiGoalCurriculum() {
         {step === 'error' && (
           <div className="card info-card">
             <div className="banner banner--error" style={{ whiteSpace: 'pre-line' }}>{errorMessage}</div>
-            {insufficientEvidence && (
+            {insufficientEvidence?.diagnostics && <ResearchDiagnosticsView diagnostics={insufficientEvidence.diagnostics} review={insufficientEvidence.review} />}
+            {insufficientEvidence && !insufficientEvidence.diagnostics && (
               // Spec section 18 — lets the user tell "검색 자체가 안 된 것"
               // apart from "검색은 됐지만 관련 기술이 부족한 것".
               <p className="video-status-message" style={{ marginTop: 8 }}>
@@ -346,6 +416,43 @@ export default function AiGoalCurriculum() {
                   다시 시도
                 </button>
               )}
+            </div>
+          </div>
+        )}
+
+        {step === 'partial_confirm' && partialEvidence && (
+          <div className="card info-card" data-testid="partial-confirm">
+            <h3>일부 목표만 근거가 확인되었습니다</h3>
+            <p>근거가 확인된 목표만으로 커리큘럼을 만들 수 있습니다. 근거가 부족한 목표는 채워 넣지 않고 제외합니다.</p>
+            <p>
+              <strong>포함할 목표</strong>
+            </p>
+            <ul data-testid="partial-included">
+              {partialEvidence.included.map((g) => (
+                <li key={g.label}>
+                  <Icon name="check" /> {g.label}
+                  {g.techniques.length > 0 && <span className="technique-row__sub"> — 근거 기술: {g.techniques.join(', ')}</span>}
+                </li>
+              ))}
+            </ul>
+            <p>
+              <strong>제외할 목표</strong>
+            </p>
+            <ul data-testid="partial-excluded">
+              {partialEvidence.excluded.map((g) => (
+                <li key={g.label}>
+                  <Icon name="close" /> {g.label} <span className="technique-row__sub">— {g.reason}</span>
+                </li>
+              ))}
+            </ul>
+            {partialEvidence.diagnostics && <ResearchDiagnosticsView diagnostics={partialEvidence.diagnostics} showStopReason={false} />}
+            <div className="modal-actions modal-actions--start" style={{ marginTop: 12 }}>
+              <button className="btn btn-primary" data-testid="partial-accept" onClick={() => void runGenerate({ history: refinementHistory, skipClarifying: true, partialToken: partialEvidence.token })}>
+                근거 있는 목표로만 만들기
+              </button>
+              <button className="btn btn-ghost" data-testid="partial-cancel" onClick={() => setStep('input')}>
+                취소하고 목표 수정
+              </button>
             </div>
           </div>
         )}
@@ -402,6 +509,13 @@ export default function AiGoalCurriculum() {
                 포지션이나 상황을 추가) 입력해 다시 만들어보세요.
               </div>
             )}
+            {preview.partialScope && (
+              <div className="banner banner--warning" data-testid="partial-scope-banner">
+                근거가 확인된 목표({preview.partialScope.included.join(', ')})만으로 만든 커리큘럼입니다. 제외된 목표:{' '}
+                {preview.partialScope.excluded.map((e) => `${e.label} (${e.reason})`).join(', ')}
+              </div>
+            )}
+            {preview.evidence && <EvidenceGradeCard preview={preview} />}
             {preview.contentWarning && <div className="banner banner--warning">{preview.contentWarning.message}</div>}
             {preview.qualityWarning && <div className="banner banner--warning">{preview.qualityWarning.message}</div>}
             {preview.excludedLearnedTechniqueCount > 0 && (
@@ -409,11 +523,17 @@ export default function AiGoalCurriculum() {
             )}
 
             <ResearchResultsCard research={preview.research} discoveryStats={preview.discoveryStats} matchedTechniques={preview.matchedTechniques} days={preview.days} />
+            {preview.research.diagnostics && preview.research.diagnostics.parts.length > 1 && (
+              <div className="card info-card">
+                <h3>목표별 검색 근거</h3>
+                <ResearchDiagnosticsView diagnostics={preview.research.diagnostics} review={preview.research.review} showStopReason={false} />
+              </div>
+            )}
 
 
             {preview.martialArt === MMA_MARTIAL_ART_ID && (
               <div className="card info-card">
-                <h3>🥊 MMA 영역 분석</h3>
+                <h3><Icon name="glove" /> MMA 영역 분석</h3>
                 <p className="video-status-message" style={{ marginTop: -6 }}>
                   Striking/Clinch/Takedown/Ground/Submission 등 실제 매칭된 기술과 훈련 기록을 기준으로 한 분석입니다.
                 </p>
@@ -468,6 +588,13 @@ export default function AiGoalCurriculum() {
             <div className="section-title">
               <h2>Day별 커리큘럼</h2>
             </div>
+            {preview.sequenceDrills && (
+              <p className="video-status-message" data-testid="sequence-drills-summary">
+                셋업·콤보·연결 연습 {preview.sequenceDrills.totalDrills}개 (MARTIALDEX 기록에서 구성)
+                {preview.sequenceDrills.sources.filter((x) => !x.ok).map((x) => ` · ${x.note}`).join('')}
+              </p>
+            )}
+            {preview.sequenceDrills?.warning && <div className="modal-note">{preview.sequenceDrills.warning}</div>}
             <div className="stack gap-2">
               {preview.days.map((d) => (
                 <div key={d.day} className="card info-card">
@@ -481,6 +608,7 @@ export default function AiGoalCurriculum() {
                   {d.reviewTechniqueIds.length > 0 && d.techniqueIds.length === 0 && (
                     <p className="video-status-message" style={{ margin: 0 }}>복습: {d.reviewTechniqueIds.length}개 기술</p>
                   )}
+                  <DayDrills drills={d.drills} compact />
                 </div>
               ))}
             </div>

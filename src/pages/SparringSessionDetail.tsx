@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useRef, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { getSparringSession } from '../lib/sparringAnalysis/sparringSessionService';
@@ -47,7 +48,7 @@ export default function SparringSessionDetail() {
         </div>
 
         <div className="section-title">
-          <h2>🥊 스파링 기록</h2>
+          <h2><Icon name="glove" /> 스파링 기록</h2>
         </div>
 
         {!videoUrl ? (

@@ -1,0 +1,152 @@
+{
+  "at": "2026-10-31T14:02:56.841Z",
+  "queries": [
+    "jab setup combinations boxing",
+    "복싱 잽 셋업 콤보",
+    "Lomachenko footwork angles analysis",
+    "kimura trap system bjj",
+    "무에타이 티프 카운터",
+    "Ilia Topuria boxing style breakdown"
+  ],
+  "rows": [
+    {
+      "engine": "google",
+      "ok": 0,
+      "empty": 0,
+      "failed": 6,
+      "results": 0,
+      "ms": 1053,
+      "errors": [
+        "google: access denied",
+        "google: Suspended: access denied"
+      ],
+      "avgMs": 176
+    },
+    {
+      "engine": "bing",
+      "ok": 6,
+      "empty": 0,
+      "failed": 0,
+      "results": 60,
+      "ms": 1586,
+      "errors": [],
+      "avgMs": 264
+    },
+    {
+      "engine": "duckduckgo",
+      "ok": 0,
+      "empty": 0,
+      "failed": 6,
+      "results": 0,
+      "ms": 1394,
+      "errors": [
+        "duckduckgo: CAPTCHA"
+      ],
+      "avgMs": 232
+    },
+    {
+      "engine": "brave",
+      "ok": 6,
+      "empty": 0,
+      "failed": 0,
+      "results": 149,
+      "ms": 5868,
+      "errors": [],
+      "avgMs": 978
+    },
+    {
+      "engine": "startpage",
+      "ok": 0,
+      "empty": 0,
+      "failed": 6,
+      "results": 0,
+      "ms": 9321,
+      "errors": [
+        "duckduckgo: CAPTCHA",
+        "brave: too many requests",
+        "brave: Suspended: too many requests"
+      ],
+      "avgMs": 1554
+    },
+    {
+      "engine": "mojeek",
+      "ok": 0,
+      "empty": 0,
+      "failed": 6,
+      "results": 0,
+      "ms": 6599,
+      "errors": [
+        "brave: Suspended: too many requests"
+      ],
+      "avgMs": 1100
+    },
+    {
+      "engine": "qwant",
+      "ok": 0,
+      "empty": 0,
+      "failed": 6,
+      "results": 0,
+      "ms": 1114,
+      "errors": [
+        "qwant: access denied",
+        "qwant: Suspended: access denied"
+      ],
+      "avgMs": 186
+    },
+    {
+      "engine": "yahoo",
+      "ok": 6,
+      "empty": 0,
+      "failed": 0,
+      "results": 42,
+      "ms": 6058,
+      "errors": [],
+      "avgMs": 1010
+    },
+    {
+      "engine": "presearch",
+      "ok": 0,
+      "empty": 0,
+      "failed": 6,
+      "results": 0,
+      "ms": 6353,
+      "errors": [
+        "brave: Suspended: too many requests"
+      ],
+      "avgMs": 1059
+    },
+    {
+      "engine": "wikipedia",
+      "ok": 0,
+      "empty": 6,
+      "failed": 0,
+      "results": 0,
+      "ms": 884,
+      "errors": [],
+      "avgMs": 147
+    },
+    {
+      "engine": "youtube",
+      "ok": 6,
+      "empty": 0,
+      "failed": 0,
+      "results": 50,
+      "ms": 6901,
+      "errors": [],
+      "avgMs": 1150
+    },
+    {
+      "engine": "google videos",
+      "ok": 0,
+      "empty": 0,
+      "failed": 6,
+      "results": 0,
+      "ms": 732,
+      "errors": [
+        "google videos: access denied",
+        "google videos: Suspended: access denied"
+      ],
+      "avgMs": 122
+    }
+  ]
+}

@@ -35,7 +35,46 @@ function runtimeLog(fields: Record<string, string | number | boolean>) {
   console.log(`[CURRICULUM_TAVILY_RUNTIME] ${parts.join(' ')}`);
 }
 
+// Self-hosted search (MARTIALDEX self-AI server, server/self-ai): when SELF_AI_SERVER_URL and
+// SELF_AI_SERVER_TOKEN are set as function secrets, searches go to the user's own SearXNG +
+// page extraction instead of Tavily, with the same result shape. NOT deployed — it needs the
+// server reachable over HTTPS from Supabase and the owner's approval (docs/self-ai/SERVER.md).
+async function selfHostedSearch(base: string, token: string, query: string) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+  try {
+    const res = await fetch(`${base.replace(/\/+$/, '')}/v1/research/search`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+      body: JSON.stringify({ query, kind: 'web', maxResults: MAX_RESULTS, extractTop: 4 }),
+      signal: controller.signal,
+    });
+    const json: any = await res.json().catch(() => null);
+    if (res.status === 401) return errorResult('INVALID_API_KEY', '자체 AI 서버 토큰이 올바르지 않습니다.');
+    if (res.status === 429) return errorResult('RATE_LIMIT', '자체 검색 요청이 너무 많습니다.');
+    if (!res.ok || !json?.ok) return errorResult('UNKNOWN', json?.message ?? `자체 검색 실패 (${res.status})`);
+    const results = (json.results ?? []).map((r: any) => ({
+      title: r.title,
+      url: r.url,
+      snippet: typeof r.snippet === 'string' ? r.snippet.slice(0, MAX_CONTENT_CHARS) : undefined,
+      content: typeof r.content === 'string' ? r.content.slice(0, MAX_CONTENT_CHARS) : undefined,
+      publishedAt: r.publishedAt,
+      source: r.source,
+    }));
+    runtimeLog({ status: 'SUCCESS', transport: 'self_hosted', httpStatus: res.status, resultCount: results.length, queryCount: 1 });
+    return { ok: true, results };
+  } catch (err) {
+    const isTimeout = err instanceof Error && err.name === 'AbortError';
+    return errorResult('NETWORK', isTimeout ? '자체 검색 응답 시간이 너무 오래 걸립니다.' : '자체 AI 서버에 연결할 수 없습니다.');
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
 async function webSearch(query: string) {
+  const selfUrl = Deno.env.get('SELF_AI_SERVER_URL');
+  const selfToken = Deno.env.get('SELF_AI_SERVER_TOKEN');
+  if (selfUrl && selfToken) return selfHostedSearch(selfUrl, selfToken, query);
   const apiKey = Deno.env.get('TAVILY_API_KEY');
   if (!apiKey) {
     runtimeLog({ status: 'FAILED', transport: 'supabase_edge', errorType: 'ENV_MISSING', httpStatus: 'none', errorMessage: 'TAVILY_API_KEY is unavailable', queryCount: 1 });

@@ -26,12 +26,16 @@ export async function askGeminiForJsonWithGrounding<T>(params: {
   question: string;
   useSearchGrounding?: boolean;
   validate?: (data: unknown) => data is T;
+  /** Only where the user explicitly picked an engine for this feature (a lesson's Gemini coach); otherwise 설정 > AI 엔진. */
+  engine?: 'local' | 'gemini';
 }): Promise<GeminiJsonOutcome<T>> {
   const result = await aiProvider.ask({
     systemInstruction: `${JSON_MODE_PREAMBLE}\n\n${params.systemInstruction}`,
     contextText: params.contextText,
     history: [],
     question: params.question,
+    responseFormat: 'json',
+    engine: params.engine,
     useSearchGrounding: params.useSearchGrounding,
   });
 

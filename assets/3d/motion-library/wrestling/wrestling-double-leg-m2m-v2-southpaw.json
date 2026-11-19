@@ -1,0 +1,1416 @@
+{
+ "meta": {
+  "id": "wrestling-double-leg-m2m-v2-southpaw",
+  "techniqueIds": [
+   "wrestling__basic-double-leg"
+  ],
+  "title": "\ub354\ube14\ub809 \ud14c\uc774\ud06c\ub2e4\uc6b4 (\uc0ac\uc6b0\uc2a4\ud3ec \u00b7 2\uc778 \uc2dc\uc5f0)",
+  "fps": 30,
+  "lastKey": 96,
+  "phases": [
+   [
+    "prepare",
+    "\uc900\ube44\u00b7\ub808\ubca8 \uccb4\uc778\uc9c0",
+    0,
+    24
+   ],
+   [
+    "execute",
+    "\uc9c4\uc785: \ud398\ub124\ud2b8\ub808\uc774\uc158 \uc2a4\ud15d",
+    24,
+    38
+   ],
+   [
+    "drive",
+    "\ub4dc\ub77c\uc774\ube0c: \ub4b7\ubc1c \ub04c\uc5b4\uc624\uba70 \uc804\uc9c4",
+    38,
+    62
+   ],
+   [
+    "finish",
+    "\ub118\uae30\uae30\u00b7\uc0c1\uc704 \ud3ec\uc9c0\uc158",
+    62,
+    96
+   ]
+  ],
+  "placement": {
+   "A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "B": [
+    0.0,
+    1.3,
+    180.0
+   ]
+  },
+  "actors": {
+   "A": "performer",
+   "B": "partner"
+  },
+  "stance": "southpaw"
+ },
+ "mergedAnimations": 2,
+ "channels": 136,
+ "keys": [
+  {
+   "key": 0,
+   "headToPartnerTorsoM": 0.847,
+   "pelvisA": [
+    -0.0,
+    0.05,
+    0.797
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 1,
+   "headToPartnerTorsoM": 0.847,
+   "pelvisA": [
+    -0.0,
+    0.05,
+    0.797
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 2,
+   "headToPartnerTorsoM": 0.847,
+   "pelvisA": [
+    -0.0,
+    0.05,
+    0.797
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 3,
+   "headToPartnerTorsoM": 0.847,
+   "pelvisA": [
+    -0.0,
+    0.05,
+    0.797
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 4,
+   "headToPartnerTorsoM": 0.847,
+   "pelvisA": [
+    -0.0,
+    0.05,
+    0.797
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 5,
+   "headToPartnerTorsoM": 0.847,
+   "pelvisA": [
+    -0.0,
+    0.05,
+    0.797
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 6,
+   "headToPartnerTorsoM": 0.847,
+   "pelvisA": [
+    -0.0,
+    0.05,
+    0.797
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 7,
+   "headToPartnerTorsoM": 0.847,
+   "pelvisA": [
+    -0.0,
+    0.05,
+    0.797
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 8,
+   "headToPartnerTorsoM": 0.847,
+   "pelvisA": [
+    -0.0,
+    0.05,
+    0.797
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 9,
+   "headToPartnerTorsoM": 0.847,
+   "pelvisA": [
+    -0.0,
+    0.05,
+    0.797
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 10,
+   "headToPartnerTorsoM": 0.847,
+   "pelvisA": [
+    -0.0,
+    0.05,
+    0.797
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 11,
+   "headToPartnerTorsoM": 0.847,
+   "pelvisA": [
+    -0.0,
+    0.05,
+    0.797
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 12,
+   "headToPartnerTorsoM": 0.847,
+   "pelvisA": [
+    -0.0,
+    0.05,
+    0.797
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 13,
+   "headToPartnerTorsoM": 0.842,
+   "pelvisA": [
+    0.0,
+    0.048,
+    0.793
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 14,
+   "headToPartnerTorsoM": 0.83,
+   "pelvisA": [
+    0.0,
+    0.043,
+    0.781
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 15,
+   "headToPartnerTorsoM": 0.81,
+   "pelvisA": [
+    0.0,
+    0.035,
+    0.762
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 16,
+   "headToPartnerTorsoM": 0.786,
+   "pelvisA": [
+    0.0,
+    0.025,
+    0.737
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 17,
+   "headToPartnerTorsoM": 0.76,
+   "pelvisA": [
+    0.0,
+    0.013,
+    0.708
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 18,
+   "headToPartnerTorsoM": 0.734,
+   "pelvisA": [
+    0.0,
+    0.0,
+    0.677
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 19,
+   "headToPartnerTorsoM": 0.708,
+   "pelvisA": [
+    0.0,
+    -0.013,
+    0.646
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 20,
+   "headToPartnerTorsoM": 0.684,
+   "pelvisA": [
+    0.0,
+    -0.025,
+    0.617
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 21,
+   "headToPartnerTorsoM": 0.665,
+   "pelvisA": [
+    0.0,
+    -0.035,
+    0.592
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 22,
+   "headToPartnerTorsoM": 0.65,
+   "pelvisA": [
+    0.0,
+    -0.043,
+    0.573
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 23,
+   "headToPartnerTorsoM": 0.642,
+   "pelvisA": [
+    0.0,
+    -0.048,
+    0.561
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 24,
+   "headToPartnerTorsoM": 0.64,
+   "pelvisA": [
+    0.0,
+    -0.05,
+    0.557
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 25,
+   "headToPartnerTorsoM": 0.606,
+   "pelvisA": [
+    -0.006,
+    -0.083,
+    0.548
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 26,
+   "headToPartnerTorsoM": 0.573,
+   "pelvisA": [
+    -0.012,
+    -0.116,
+    0.539
+   ],
+   "pelvisB": [
+    0.0,
+    -1.25,
+    0.857
+   ]
+  },
+  {
+   "key": 27,
+   "headToPartnerTorsoM": 0.549,
+   "pelvisA": [
+    -0.016,
+    -0.138,
+    0.533
+   ],
+   "pelvisB": [
+    0.0,
+    -1.251,
+    0.856
+   ]
+  },
+  {
+   "key": 28,
+   "headToPartnerTorsoM": 0.492,
+   "pelvisA": [
+    -0.026,
+    -0.193,
+    0.518
+   ],
+   "pelvisB": [
+    0.0,
+    -1.254,
+    0.853
+   ]
+  },
+  {
+   "key": 29,
+   "headToPartnerTorsoM": 0.435,
+   "pelvisA": [
+    -0.036,
+    -0.247,
+    0.503
+   ],
+   "pelvisB": [
+    0.0,
+    -1.258,
+    0.848
+   ]
+  },
+  {
+   "key": 30,
+   "headToPartnerTorsoM": 0.408,
+   "pelvisA": [
+    -0.04,
+    -0.27,
+    0.497
+   ],
+   "pelvisB": [
+    0.0,
+    -1.264,
+    0.843
+   ]
+  },
+  {
+   "key": 31,
+   "headToPartnerTorsoM": 0.37,
+   "pelvisA": [
+    -0.046,
+    -0.306,
+    0.491
+   ],
+   "pelvisB": [
+    0.0,
+    -1.27,
+    0.837
+   ]
+  },
+  {
+   "key": 32,
+   "headToPartnerTorsoM": 0.309,
+   "pelvisA": [
+    -0.058,
+    -0.378,
+    0.479
+   ],
+   "pelvisB": [
+    0.0,
+    -1.276,
+    0.831
+   ]
+  },
+  {
+   "key": 33,
+   "headToPartnerTorsoM": 0.284,
+   "pelvisA": [
+    -0.064,
+    -0.414,
+    0.473
+   ],
+   "pelvisB": [
+    0.0,
+    -1.282,
+    0.825
+   ]
+  },
+  {
+   "key": 34,
+   "headToPartnerTorsoM": 0.265,
+   "pelvisA": [
+    -0.072,
+    -0.462,
+    0.465
+   ],
+   "pelvisB": [
+    0.0,
+    -1.286,
+    0.821
+   ]
+  },
+  {
+   "key": 35,
+   "headToPartnerTorsoM": 0.26,
+   "pelvisA": [
+    -0.08,
+    -0.51,
+    0.457
+   ],
+   "pelvisB": [
+    0.0,
+    -1.289,
+    0.818
+   ]
+  },
+  {
+   "key": 36,
+   "headToPartnerTorsoM": 0.254,
+   "pelvisA": [
+    -0.085,
+    -0.52,
+    0.472
+   ],
+   "pelvisB": [
+    0.0,
+    -1.29,
+    0.817
+   ]
+  },
+  {
+   "key": 37,
+   "headToPartnerTorsoM": 0.249,
+   "pelvisA": [
+    -0.095,
+    -0.54,
+    0.502
+   ],
+   "pelvisB": [
+    0.0,
+    -1.293,
+    0.816
+   ]
+  },
+  {
+   "key": 38,
+   "headToPartnerTorsoM": 0.253,
+   "pelvisA": [
+    -0.1,
+    -0.55,
+    0.517
+   ],
+   "pelvisB": [
+    0.0,
+    -1.302,
+    0.814
+   ]
+  },
+  {
+   "key": 39,
+   "headToPartnerTorsoM": 0.256,
+   "pelvisA": [
+    -0.1,
+    -0.568,
+    0.519
+   ],
+   "pelvisB": [
+    0.0,
+    -1.316,
+    0.81
+   ]
+  },
+  {
+   "key": 40,
+   "headToPartnerTorsoM": 0.254,
+   "pelvisA": [
+    -0.1,
+    -0.604,
+    0.523
+   ],
+   "pelvisB": [
+    0.0,
+    -1.335,
+    0.805
+   ]
+  },
+  {
+   "key": 41,
+   "headToPartnerTorsoM": 0.264,
+   "pelvisA": [
+    -0.1,
+    -0.622,
+    0.525
+   ],
+   "pelvisB": [
+    0.0,
+    -1.358,
+    0.8
+   ]
+  },
+  {
+   "key": 42,
+   "headToPartnerTorsoM": 0.279,
+   "pelvisA": [
+    -0.1,
+    -0.638,
+    0.526
+   ],
+   "pelvisB": [
+    0.0,
+    -1.383,
+    0.793
+   ]
+  },
+  {
+   "key": 43,
+   "headToPartnerTorsoM": 0.283,
+   "pelvisA": [
+    -0.1,
+    -0.676,
+    0.531
+   ],
+   "pelvisB": [
+    0.0,
+    -1.41,
+    0.787
+   ]
+  },
+  {
+   "key": 44,
+   "headToPartnerTorsoM": 0.287,
+   "pelvisA": [
+    -0.1,
+    -0.714,
+    0.535
+   ],
+   "pelvisB": [
+    0.0,
+    -1.437,
+    0.78
+   ]
+  },
+  {
+   "key": 45,
+   "headToPartnerTorsoM": 0.302,
+   "pelvisA": [
+    -0.1,
+    -0.73,
+    0.537
+   ],
+   "pelvisB": [
+    0.0,
+    -1.462,
+    0.774
+   ]
+  },
+  {
+   "key": 46,
+   "headToPartnerTorsoM": 0.315,
+   "pelvisA": [
+    -0.1,
+    -0.751,
+    0.54
+   ],
+   "pelvisB": [
+    0.0,
+    -1.485,
+    0.768
+   ]
+  },
+  {
+   "key": 47,
+   "headToPartnerTorsoM": 0.313,
+   "pelvisA": [
+    -0.1,
+    -0.793,
+    0.546
+   ],
+   "pelvisB": [
+    0.0,
+    -1.504,
+    0.763
+   ]
+  },
+  {
+   "key": 48,
+   "headToPartnerTorsoM": 0.318,
+   "pelvisA": [
+    -0.1,
+    -0.814,
+    0.549
+   ],
+   "pelvisB": [
+    0.0,
+    -1.518,
+    0.76
+   ]
+  },
+  {
+   "key": 49,
+   "headToPartnerTorsoM": 0.313,
+   "pelvisA": [
+    -0.1,
+    -0.842,
+    0.553
+   ],
+   "pelvisB": [
+    0.0,
+    -1.527,
+    0.757
+   ]
+  },
+  {
+   "key": 50,
+   "headToPartnerTorsoM": 0.303,
+   "pelvisA": [
+    -0.1,
+    -0.87,
+    0.557
+   ],
+   "pelvisB": [
+    0.0,
+    -1.53,
+    0.757
+   ]
+  },
+  {
+   "key": 51,
+   "headToPartnerTorsoM": 0.306,
+   "pelvisA": [
+    -0.1,
+    -0.87,
+    0.557
+   ],
+   "pelvisB": [
+    0.0,
+    -1.53,
+    0.751
+   ]
+  },
+  {
+   "key": 52,
+   "headToPartnerTorsoM": 0.314,
+   "pelvisA": [
+    -0.1,
+    -0.87,
+    0.557
+   ],
+   "pelvisB": [
+    0.0,
+    -1.531,
+    0.736
+   ]
+  },
+  {
+   "key": 53,
+   "headToPartnerTorsoM": 0.328,
+   "pelvisA": [
+    -0.1,
+    -0.87,
+    0.557
+   ],
+   "pelvisB": [
+    0.0,
+    -1.533,
+    0.711
+   ]
+  },
+  {
+   "key": 54,
+   "headToPartnerTorsoM": 0.35,
+   "pelvisA": [
+    -0.1,
+    -0.87,
+    0.557
+   ],
+   "pelvisB": [
+    0.0,
+    -1.535,
+    0.679
+   ]
+  },
+  {
+   "key": 55,
+   "headToPartnerTorsoM": 0.38,
+   "pelvisA": [
+    -0.1,
+    -0.87,
+    0.557
+   ],
+   "pelvisB": [
+    0.0,
+    -1.537,
+    0.642
+   ]
+  },
+  {
+   "key": 56,
+   "headToPartnerTorsoM": 0.415,
+   "pelvisA": [
+    -0.1,
+    -0.87,
+    0.557
+   ],
+   "pelvisB": [
+    0.0,
+    -1.54,
+    0.602
+   ]
+  },
+  {
+   "key": 57,
+   "headToPartnerTorsoM": 0.454,
+   "pelvisA": [
+    -0.1,
+    -0.87,
+    0.557
+   ],
+   "pelvisB": [
+    0.0,
+    -1.542,
+    0.562
+   ]
+  },
+  {
+   "key": 58,
+   "headToPartnerTorsoM": 0.493,
+   "pelvisA": [
+    -0.1,
+    -0.87,
+    0.557
+   ],
+   "pelvisB": [
+    0.0,
+    -1.545,
+    0.524
+   ]
+  },
+  {
+   "key": 59,
+   "headToPartnerTorsoM": 0.529,
+   "pelvisA": [
+    -0.1,
+    -0.87,
+    0.557
+   ],
+   "pelvisB": [
+    0.0,
+    -1.547,
+    0.492
+   ]
+  },
+  {
+   "key": 60,
+   "headToPartnerTorsoM": 0.556,
+   "pelvisA": [
+    -0.1,
+    -0.87,
+    0.557
+   ],
+   "pelvisB": [
+    0.0,
+    -1.549,
+    0.467
+   ]
+  },
+  {
+   "key": 61,
+   "headToPartnerTorsoM": 0.574,
+   "pelvisA": [
+    -0.1,
+    -0.87,
+    0.557
+   ],
+   "pelvisB": [
+    0.0,
+    -1.55,
+    0.452
+   ]
+  },
+  {
+   "key": 62,
+   "headToPartnerTorsoM": 0.58,
+   "pelvisA": [
+    -0.1,
+    -0.87,
+    0.557
+   ],
+   "pelvisB": [
+    0.0,
+    -1.55,
+    0.447
+   ]
+  },
+  {
+   "key": 63,
+   "headToPartnerTorsoM": 0.585,
+   "pelvisA": [
+    -0.1,
+    -0.87,
+    0.557
+   ],
+   "pelvisB": [
+    0.0,
+    -1.551,
+    0.443
+   ]
+  },
+  {
+   "key": 64,
+   "headToPartnerTorsoM": 0.6,
+   "pelvisA": [
+    -0.1,
+    -0.87,
+    0.557
+   ],
+   "pelvisB": [
+    0.0,
+    -1.556,
+    0.432
+   ]
+  },
+  {
+   "key": 65,
+   "headToPartnerTorsoM": 0.622,
+   "pelvisA": [
+    -0.1,
+    -0.87,
+    0.557
+   ],
+   "pelvisB": [
+    0.0,
+    -1.563,
+    0.415
+   ]
+  },
+  {
+   "key": 66,
+   "headToPartnerTorsoM": 0.652,
+   "pelvisA": [
+    -0.1,
+    -0.87,
+    0.557
+   ],
+   "pelvisB": [
+    0.0,
+    -1.572,
+    0.392
+   ]
+  },
+  {
+   "key": 67,
+   "headToPartnerTorsoM": 0.688,
+   "pelvisA": [
+    -0.1,
+    -0.87,
+    0.557
+   ],
+   "pelvisB": [
+    0.0,
+    -1.584,
+    0.365
+   ]
+  },
+  {
+   "key": 68,
+   "headToPartnerTorsoM": 0.727,
+   "pelvisA": [
+    -0.1,
+    -0.87,
+    0.557
+   ],
+   "pelvisB": [
+    0.0,
+    -1.597,
+    0.334
+   ]
+  },
+  {
+   "key": 69,
+   "headToPartnerTorsoM": 0.766,
+   "pelvisA": [
+    -0.1,
+    -0.87,
+    0.557
+   ],
+   "pelvisB": [
+    0.0,
+    -1.61,
+    0.302
+   ]
+  },
+  {
+   "key": 70,
+   "headToPartnerTorsoM": 0.781,
+   "pelvisA": [
+    -0.092,
+    -0.899,
+    0.553
+   ],
+   "pelvisB": [
+    0.0,
+    -1.623,
+    0.269
+   ]
+  },
+  {
+   "key": 71,
+   "headToPartnerTorsoM": 0.765,
+   "pelvisA": [
+    -0.072,
+    -0.969,
+    0.546
+   ],
+   "pelvisB": [
+    0.0,
+    -1.636,
+    0.239
+   ]
+  },
+  {
+   "key": 72,
+   "headToPartnerTorsoM": 0.752,
+   "pelvisA": [
+    -0.053,
+    -1.039,
+    0.538
+   ],
+   "pelvisB": [
+    0.0,
+    -1.647,
+    0.211
+   ]
+  },
+  {
+   "key": 73,
+   "headToPartnerTorsoM": 0.764,
+   "pelvisA": [
+    -0.045,
+    -1.068,
+    0.535
+   ],
+   "pelvisB": [
+    0.0,
+    -1.657,
+    0.188
+   ]
+  },
+  {
+   "key": 74,
+   "headToPartnerTorsoM": 0.763,
+   "pelvisA": [
+    -0.034,
+    -1.108,
+    0.53
+   ],
+   "pelvisB": [
+    0.0,
+    -1.664,
+    0.171
+   ]
+  },
+  {
+   "key": 75,
+   "headToPartnerTorsoM": 0.736,
+   "pelvisA": [
+    -0.011,
+    -1.189,
+    0.521
+   ],
+   "pelvisB": [
+    0.0,
+    -1.668,
+    0.16
+   ]
+  },
+  {
+   "key": 76,
+   "headToPartnerTorsoM": 0.722,
+   "pelvisA": [
+    0.0,
+    -1.23,
+    0.517
+   ],
+   "pelvisB": [
+    0.0,
+    -1.67,
+    0.157
+   ]
+  },
+  {
+   "key": 77,
+   "headToPartnerTorsoM": 0.723,
+   "pelvisA": [
+    0.0,
+    -1.23,
+    0.517
+   ],
+   "pelvisB": [
+    0.0,
+    -1.67,
+    0.157
+   ]
+  },
+  {
+   "key": 78,
+   "headToPartnerTorsoM": 0.725,
+   "pelvisA": [
+    0.0,
+    -1.23,
+    0.517
+   ],
+   "pelvisB": [
+    0.0,
+    -1.67,
+    0.157
+   ]
+  },
+  {
+   "key": 79,
+   "headToPartnerTorsoM": 0.728,
+   "pelvisA": [
+    0.0,
+    -1.23,
+    0.517
+   ],
+   "pelvisB": [
+    0.0,
+    -1.67,
+    0.157
+   ]
+  },
+  {
+   "key": 80,
+   "headToPartnerTorsoM": 0.732,
+   "pelvisA": [
+    0.0,
+    -1.23,
+    0.517
+   ],
+   "pelvisB": [
+    0.0,
+    -1.67,
+    0.157
+   ]
+  },
+  {
+   "key": 81,
+   "headToPartnerTorsoM": 0.736,
+   "pelvisA": [
+    0.0,
+    -1.23,
+    0.517
+   ],
+   "pelvisB": [
+    0.0,
+    -1.67,
+    0.157
+   ]
+  },
+  {
+   "key": 82,
+   "headToPartnerTorsoM": 0.742,
+   "pelvisA": [
+    0.0,
+    -1.23,
+    0.517
+   ],
+   "pelvisB": [
+    0.0,
+    -1.67,
+    0.157
+   ]
+  },
+  {
+   "key": 83,
+   "headToPartnerTorsoM": 0.748,
+   "pelvisA": [
+    0.0,
+    -1.23,
+    0.517
+   ],
+   "pelvisB": [
+    0.0,
+    -1.67,
+    0.157
+   ]
+  },
+  {
+   "key": 84,
+   "headToPartnerTorsoM": 0.755,
+   "pelvisA": [
+    0.0,
+    -1.23,
+    0.517
+   ],
+   "pelvisB": [
+    0.0,
+    -1.67,
+    0.157
+   ]
+  },
+  {
+   "key": 85,
+   "headToPartnerTorsoM": 0.762,
+   "pelvisA": [
+    0.0,
+    -1.23,
+    0.517
+   ],
+   "pelvisB": [
+    0.0,
+    -1.67,
+    0.157
+   ]
+  },
+  {
+   "key": 86,
+   "headToPartnerTorsoM": 0.77,
+   "pelvisA": [
+    0.0,
+    -1.23,
+    0.517
+   ],
+   "pelvisB": [
+    0.0,
+    -1.67,
+    0.157
+   ]
+  },
+  {
+   "key": 87,
+   "headToPartnerTorsoM": 0.777,
+   "pelvisA": [
+    0.0,
+    -1.23,
+    0.517
+   ],
+   "pelvisB": [
+    0.0,
+    -1.67,
+    0.157
+   ]
+  },
+  {
+   "key": 88,
+   "headToPartnerTorsoM": 0.784,
+   "pelvisA": [
+    0.0,
+    -1.23,
+    0.517
+   ],
+   "pelvisB": [
+    0.0,
+    -1.67,
+    0.157
+   ]
+  },
+  {
+   "key": 89,
+   "headToPartnerTorsoM": 0.79,
+   "pelvisA": [
+    0.0,
+    -1.23,
+    0.517
+   ],
+   "pelvisB": [
+    0.0,
+    -1.67,
+    0.157
+   ]
+  },
+  {
+   "key": 90,
+   "headToPartnerTorsoM": 0.796,
+   "pelvisA": [
+    0.0,
+    -1.23,
+    0.517
+   ],
+   "pelvisB": [
+    0.0,
+    -1.67,
+    0.157
+   ]
+  },
+  {
+   "key": 91,
+   "headToPartnerTorsoM": 0.802,
+   "pelvisA": [
+    0.0,
+    -1.23,
+    0.517
+   ],
+   "pelvisB": [
+    0.0,
+    -1.67,
+    0.157
+   ]
+  },
+  {
+   "key": 92,
+   "headToPartnerTorsoM": 0.806,
+   "pelvisA": [
+    0.0,
+    -1.23,
+    0.517
+   ],
+   "pelvisB": [
+    0.0,
+    -1.67,
+    0.157
+   ]
+  },
+  {
+   "key": 93,
+   "headToPartnerTorsoM": 0.81,
+   "pelvisA": [
+    0.0,
+    -1.23,
+    0.517
+   ],
+   "pelvisB": [
+    0.0,
+    -1.67,
+    0.157
+   ]
+  },
+  {
+   "key": 94,
+   "headToPartnerTorsoM": 0.812,
+   "pelvisA": [
+    0.0,
+    -1.23,
+    0.517
+   ],
+   "pelvisB": [
+    0.0,
+    -1.67,
+    0.157
+   ]
+  },
+  {
+   "key": 95,
+   "headToPartnerTorsoM": 0.814,
+   "pelvisA": [
+    0.0,
+    -1.23,
+    0.517
+   ],
+   "pelvisB": [
+    0.0,
+    -1.67,
+    0.157
+   ]
+  },
+  {
+   "key": 96,
+   "headToPartnerTorsoM": 0.815,
+   "pelvisA": [
+    0.0,
+    -1.23,
+    0.517
+   ],
+   "pelvisB": [
+    0.0,
+    -1.67,
+    0.157
+   ]
+  }
+ ]
+}

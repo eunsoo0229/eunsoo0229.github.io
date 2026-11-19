@@ -19,7 +19,7 @@ module.exports = {
   // electron-builder resolves a relative `icon` against directories.
   // buildResources (default: 'build/'), which this project doesn't have —
   // an absolute path sidesteps that and always points at the real file.
-  icon: path.join(__dirname, 'LOGO.png'),
+  icon: path.join(__dirname, 'assets', 'app-icon-1024.png'),
   directories: {
     output: 'release',
   },
@@ -28,6 +28,10 @@ module.exports = {
     'electron/**/*',
     'dist/renderer/**/*',
     'package.json',
+    // 자체 검색 ON/OFF: the SearXNG settings the app starts it with (electron/selfSearch/service.cjs looks next to the
+    // app first). The Python runtime + SearXNG source stay in ~/.martialdex-ai (installed by the user, see run.sh).
+    'services/searxng/settings.yml',
+    'services/searxng/run.sh',
     '!**/.env',
     '!**/.env.*',
     '!data/**/*',

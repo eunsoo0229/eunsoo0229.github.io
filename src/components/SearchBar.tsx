@@ -1,3 +1,4 @@
+import Icon from './Icon';
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import type { Technique } from '../types';
@@ -76,7 +77,7 @@ export default function SearchBar({
       ref={containerRef}
     >
       <span className="search-box__icon" aria-hidden="true">
-        ⌕
+        <Icon name="search" />
       </span>
       <input
         type="text"

@@ -1,0 +1,429 @@
+{
+  "at": "2026-11-01T15:05:01.105Z",
+  "profile": "temporary (fresh user-data-dir)",
+  "results": [
+    {
+      "id": "B-0a",
+      "action": "자유 수업 준비 상태(PRACTICE 단계)",
+      "expected": "directive ready, 미트 자세 안내 또는 실습 패널",
+      "actual": "directive=ready/mitt=posture",
+      "result": "통과",
+      "detail": {
+        "f0": {
+          "id": "oneoff_60c89f87-c094-4576-9e3c-082150c52f63",
+          "techniqueId": "kickboxing__jab"
+        },
+        "a": {
+          "directive": "ready",
+          "stage": "PRACTICE",
+          "done": false,
+          "mitt": "posture",
+          "mittResult": null,
+          "run": null,
+          "endMsgs": 0
+        }
+      }
+    },
+    {
+      "id": "B-0b",
+      "action": "\"준비됐어\"",
+      "expected": "미트 실행(running), 미트 화면 표시",
+      "actual": "mitt=running/화면=true",
+      "result": "통과",
+      "detail": {
+        "directive": "ready",
+        "stage": "PRACTICE",
+        "done": false,
+        "mitt": "running",
+        "mittResult": null,
+        "run": null,
+        "endMsgs": 0
+      }
+    },
+    {
+      "id": "B-N1",
+      "action": "자유 수업 미트 중 \"아직 안 끝났어\"",
+      "expected": "완료 안 함, 미트 계속, 카드 없음",
+      "actual": "done=false/mitt=running/directive=ready/화면=true/card=false",
+      "result": "통과",
+      "detail": {
+        "directive": "ready",
+        "stage": "PRACTICE",
+        "done": false,
+        "mitt": "running",
+        "mittResult": null,
+        "run": null,
+        "endMsgs": 0
+      }
+    },
+    {
+      "id": "B-N2",
+      "action": "자유 수업 미트 중 \"언제 끝나?\"",
+      "expected": "완료 안 함, 미트 계속, 카드 없음",
+      "actual": "done=false/mitt=running/directive=ready/화면=true/card=false",
+      "result": "통과",
+      "detail": {
+        "directive": "ready",
+        "stage": "PRACTICE",
+        "done": false,
+        "mitt": "running",
+        "mittResult": null,
+        "run": null,
+        "endMsgs": 0
+      }
+    },
+    {
+      "id": "B-N3",
+      "action": "자유 수업 미트 중 \"실습을 어떻게 해?\"",
+      "expected": "완료 안 함, 미트 계속, 카드 없음",
+      "actual": "done=false/mitt=running/directive=ready/화면=true/card=false",
+      "result": "통과",
+      "detail": {
+        "directive": "ready",
+        "stage": "PRACTICE",
+        "done": false,
+        "mitt": "running",
+        "mittResult": null,
+        "run": null,
+        "endMsgs": 0
+      }
+    },
+    {
+      "id": "B-N4",
+      "action": "자유 수업 미트 중 \"잽 자세를 설명해 줘\"",
+      "expected": "완료 안 함, 미트 계속, 카드 없음",
+      "actual": "done=false/mitt=running/directive=ready/화면=true/card=false",
+      "result": "통과",
+      "detail": {
+        "directive": "ready",
+        "stage": "PRACTICE",
+        "done": false,
+        "mitt": "running",
+        "mittResult": null,
+        "run": null,
+        "endMsgs": 0
+      }
+    },
+    {
+      "id": "B-N5",
+      "action": "자유 수업 미트 중 \"아까 끝냈었어\"",
+      "expected": "완료 안 함, 미트 계속, 카드 없음",
+      "actual": "done=false/mitt=running/directive=ready/화면=true/card=false",
+      "result": "통과",
+      "detail": {
+        "directive": "ready",
+        "stage": "PRACTICE",
+        "done": false,
+        "mitt": "running",
+        "mittResult": null,
+        "run": null,
+        "endMsgs": 0
+      }
+    },
+    {
+      "id": "B-1",
+      "action": "자유 수업(잽) \"실습 완료했어\"",
+      "expected": "미트 종료(횟수 기록 없음)·PRACTICE_DONE·제안 카드",
+      "actual": "mitt=done/result=null/done=true/종료 안내 1회/card=true",
+      "result": "통과",
+      "detail": {
+        "directive": "review",
+        "stage": "PRACTICE_REVIEW",
+        "done": true,
+        "mitt": "done",
+        "mittResult": null,
+        "run": null,
+        "endMsgs": 1
+      }
+    },
+    {
+      "id": "B-1b",
+      "action": "\"실습 완료했어\" 한 번 더",
+      "expected": "중복 종료·카드 중복 없음",
+      "actual": "종료 안내 1회/카드 1개",
+      "result": "통과",
+      "detail": {
+        "directive": "review",
+        "stage": "PRACTICE_REVIEW",
+        "done": true,
+        "mitt": "done",
+        "mittResult": null,
+        "run": null,
+        "endMsgs": 1
+      }
+    },
+    {
+      "id": "B-2",
+      "action": "\"나중에 하기\" → 같은 세션(즉시·새로고침 후)",
+      "expected": "재제안 없음",
+      "actual": "즉시 card=false/새로고침 후 card=false",
+      "result": "통과"
+    },
+    {
+      "id": "B-3",
+      "action": "새 자유 수업에서 \"다 했어\"",
+      "expected": "새 세션 → 다시 제안",
+      "actual": "세션 다름/done=true/card=true",
+      "result": "통과",
+      "detail": {
+        "directive": "review",
+        "stage": "PRACTICE_REVIEW",
+        "done": true,
+        "mitt": "done",
+        "mittResult": null,
+        "run": null,
+        "endMsgs": 1
+      }
+    },
+    {
+      "id": "E-3",
+      "action": "자유 수업 카드 \"자세 측정하기\"",
+      "expected": "PoseAnalysisModal(잽)",
+      "actual": "📷 Jab 자세 분석",
+      "result": "통과"
+    },
+    {
+      "id": "F-2",
+      "action": "자세 측정 창 → \"기준 시연 영상과 비교해 평가하기\"",
+      "expected": "기존 formCompare 화면(가로채지 않음)",
+      "actual": "opened=true, step=reference",
+      "result": "통과"
+    },
+    {
+      "id": "E-4",
+      "action": "비교 화면 닫은 뒤 자유 수업",
+      "expected": "수업 화면·상태 유지, 기록 불변",
+      "actual": "수업 화면=true/done=true/저장값 동일=true",
+      "result": "통과"
+    },
+    {
+      "id": "B-4",
+      "action": "기술 ID 없는 자유 수업(기술 ID 제거 설정) \"실습 완료했어\"",
+      "expected": "제안 없음",
+      "actual": "mitt=running→done/done=true/card=false",
+      "result": "통과",
+      "detail": {
+        "h": {
+          "directive": "ready",
+          "stage": "PRACTICE",
+          "done": false,
+          "mitt": "running",
+          "mittResult": null,
+          "run": null,
+          "endMsgs": 0
+        },
+        "h1": {
+          "directive": "review",
+          "stage": "PRACTICE_REVIEW",
+          "done": true,
+          "mitt": "done",
+          "mittResult": null,
+          "run": null,
+          "endMsgs": 1
+        }
+      }
+    },
+    {
+      "id": "C-1a",
+      "action": "하이 싱글(미트→드릴 연결 실습) 미트 중 \"실습 완료했어\"",
+      "expected": "실습 전체 종료(확인 단계)",
+      "actual": "mitt(after=drill)→review/done=true/card=false",
+      "result": "통과",
+      "detail": {
+        "c0": {
+          "step": "mitt",
+          "cur": "wrestling__high-single",
+          "done": false,
+          "after": "drill",
+          "mitt": 0,
+          "drill": 0,
+          "outcome": {
+            "practicedSeconds": 0,
+            "completed": false,
+            "quiz": "incorrect",
+            "understanding": "weak"
+          }
+        },
+        "c1": {
+          "step": "review",
+          "cur": "wrestling__high-single",
+          "done": true,
+          "after": null,
+          "mitt": 0,
+          "drill": 0,
+          "outcome": {
+            "practicedSeconds": 3,
+            "completed": false,
+            "quiz": "incorrect",
+            "understanding": "weak"
+          }
+        }
+      }
+    },
+    {
+      "id": "D-2",
+      "action": "솔로 드릴 \"종료\" 버튼(finishDrill, 미트 종료 버튼 뒤)",
+      "expected": "practiced→확인 단계, 미트·드릴 기록 각 1건, 카드 없음(하이 싱글)",
+      "actual": "review/done=true/mitt 1/drill 1/card=false",
+      "result": "통과",
+      "detail": {
+        "step": "review",
+        "cur": "wrestling__high-single",
+        "done": true,
+        "after": null,
+        "mitt": 1,
+        "drill": 1,
+        "outcome": {
+          "practicedSeconds": 6,
+          "completed": false,
+          "quiz": "incorrect",
+          "understanding": "weak"
+        }
+      }
+    }
+  ],
+  "external": [
+    "https://www.youtube.com/embed/4YvY1bObBCs",
+    "https://i.ytimg.com/vi/4YvY1bObBCs/hqdefault.jpg",
+    "https://i.ytimg.com/vi/vgbYMiXo9WA/hqdefault.jpg",
+    "https://i.ytimg.com/vi/pfTrQtfHGz0/hqdefault.jpg",
+    "https://i.ytimg.com/vi/odM78vAS86M/hqdefault.jpg",
+    "https://i.ytimg.com/vi/Xb_Wisc8Iiw/hqdefault.jpg",
+    "https://www.youtube.com/embed/4YvY1bObBCs",
+    "https://i.ytimg.com/vi/4YvY1bObBCs/hqdefault.jpg",
+    "https://i.ytimg.com/vi/vgbYMiXo9WA/hqdefault.jpg",
+    "https://i.ytimg.com/vi/pfTrQtfHGz0/hqdefault.jpg",
+    "https://i.ytimg.com/vi/odM78vAS86M/hqdefault.jpg",
+    "https://i.ytimg.com/vi/Xb_Wisc8Iiw/hqdefault.jpg",
+    "https://www.youtube.com/s/player/11a45ffb/www-player.css",
+    "https://www.youtube.com/s/_/ytembeds/_/ss/k=ytembeds.base.1rocrYPuO4g.L.W.O/am=AAAAgADAGA/d=1/br=1/rs=AGKMywFSnYFZLX56IK",
+    "https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.2oM_mCMT96E.2021.O/am=AAAAgADAGA/d=1/excm=base,root/br=1",
+    "https://www.youtube.com/s/player/11a45ffb/player_embed_es6.vflset/ko_KR/base.js",
+    "https://googleads.g.doubleclick.net/pagead/id",
+    "https://static.doubleclick.net/instream/ad_status.js",
+    "https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.2oM_mCMT96E.2021.O/ck=ytembeds.base.1rocrYPuO4g.L.W.O/am",
+    "https://www.google.com/js/th/iAkiX6pIdiOKUFnCNJ9wngcJ-9G8dmsccZT6pmAxnJQ.js",
+    "https://googleads.g.doubleclick.net/pagead/id?slf_rd=1",
+    "https://fonts.gstatic.com/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBHMdazQ.woff2",
+    "https://i.ytimg.com/vi_webp/4YvY1bObBCs/maxresdefault.webp",
+    "https://www.youtube.com/generate_204?cdqZOg",
+    "https://jnn-pa.googleapis.com/$rpc/google.internal.waa.v1.Waa/GenerateIT",
+    "https://www.youtube.com/youtubei/v1/log_event?alt=json",
+    "https://www.youtube.com/youtubei/v1/log_event?alt=json",
+    "https://i.ytimg.com/vi/4YvY1bObBCs/hqdefault.jpg",
+    "https://i.ytimg.com/vi/vgbYMiXo9WA/hqdefault.jpg",
+    "https://i.ytimg.com/vi/pfTrQtfHGz0/hqdefault.jpg",
+    "https://i.ytimg.com/vi/odM78vAS86M/hqdefault.jpg",
+    "https://i.ytimg.com/vi/Xb_Wisc8Iiw/hqdefault.jpg",
+    "https://www.youtube.com/embed/4YvY1bObBCs",
+    "https://www.youtube.com/s/player/11a45ffb/www-player.css",
+    "https://www.youtube.com/s/_/ytembeds/_/ss/k=ytembeds.base.1rocrYPuO4g.L.W.O/am=AAAAgADAGA/d=1/br=1/rs=AGKMywFSnYFZLX56IK",
+    "https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.2oM_mCMT96E.2021.O/am=AAAAgADAGA/d=1/excm=base,root/br=1",
+    "https://www.youtube.com/s/player/11a45ffb/player_embed_es6.vflset/ko_KR/base.js",
+    "https://googleads.g.doubleclick.net/pagead/id",
+    "https://static.doubleclick.net/instream/ad_status.js",
+    "https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.2oM_mCMT96E.2021.O/ck=ytembeds.base.1rocrYPuO4g.L.W.O/am",
+    "https://www.google.com/js/th/iAkiX6pIdiOKUFnCNJ9wngcJ-9G8dmsccZT6pmAxnJQ.js",
+    "https://googleads.g.doubleclick.net/pagead/id?slf_rd=1",
+    "https://fonts.gstatic.com/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBHMdazQ.woff2",
+    "https://i.ytimg.com/vi_webp/4YvY1bObBCs/maxresdefault.webp",
+    "https://www.youtube.com/generate_204?tUHGEQ",
+    "https://jnn-pa.googleapis.com/$rpc/google.internal.waa.v1.Waa/GenerateIT",
+    "https://www.youtube.com/youtubei/v1/log_event?alt=json",
+    "https://i.ytimg.com/vi/4YvY1bObBCs/hqdefault.jpg",
+    "https://i.ytimg.com/vi/vgbYMiXo9WA/hqdefault.jpg",
+    "https://i.ytimg.com/vi/pfTrQtfHGz0/hqdefault.jpg",
+    "https://i.ytimg.com/vi/odM78vAS86M/hqdefault.jpg",
+    "https://i.ytimg.com/vi/Xb_Wisc8Iiw/hqdefault.jpg",
+    "https://www.youtube.com/embed/4YvY1bObBCs",
+    "https://i.ytimg.com/vi/4YvY1bObBCs/hqdefault.jpg",
+    "https://i.ytimg.com/vi/vgbYMiXo9WA/hqdefault.jpg",
+    "https://i.ytimg.com/vi/pfTrQtfHGz0/hqdefault.jpg",
+    "https://i.ytimg.com/vi/odM78vAS86M/hqdefault.jpg",
+    "https://i.ytimg.com/vi/Xb_Wisc8Iiw/hqdefault.jpg",
+    "https://www.youtube.com/embed/4YvY1bObBCs",
+    "https://www.youtube.com/s/player/11a45ffb/www-player.css",
+    "https://www.youtube.com/s/_/ytembeds/_/ss/k=ytembeds.base.1rocrYPuO4g.L.W.O/am=AAAAgADAGA/d=1/br=1/rs=AGKMywFSnYFZLX56IK",
+    "https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.2oM_mCMT96E.2021.O/am=AAAAgADAGA/d=1/excm=base,root/br=1",
+    "https://www.youtube.com/s/player/11a45ffb/player_embed_es6.vflset/ko_KR/base.js",
+    "https://googleads.g.doubleclick.net/pagead/id",
+    "https://static.doubleclick.net/instream/ad_status.js",
+    "https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.2oM_mCMT96E.2021.O/ck=ytembeds.base.1rocrYPuO4g.L.W.O/am",
+    "https://www.google.com/js/th/iAkiX6pIdiOKUFnCNJ9wngcJ-9G8dmsccZT6pmAxnJQ.js",
+    "https://googleads.g.doubleclick.net/pagead/id?slf_rd=1",
+    "https://fonts.gstatic.com/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBHMdazQ.woff2",
+    "https://i.ytimg.com/vi_webp/4YvY1bObBCs/maxresdefault.webp",
+    "https://www.youtube.com/generate_204?54cL6Q",
+    "https://jnn-pa.googleapis.com/$rpc/google.internal.waa.v1.Waa/GenerateIT",
+    "https://www.youtube.com/youtubei/v1/log_event?alt=json",
+    "https://www.youtube.com/youtubei/v1/log_event?alt=json",
+    "https://i.ytimg.com/vi/4YvY1bObBCs/hqdefault.jpg",
+    "https://i.ytimg.com/vi/vgbYMiXo9WA/hqdefault.jpg",
+    "https://i.ytimg.com/vi/pfTrQtfHGz0/hqdefault.jpg",
+    "https://i.ytimg.com/vi/odM78vAS86M/hqdefault.jpg",
+    "https://i.ytimg.com/vi/Xb_Wisc8Iiw/hqdefault.jpg",
+    "https://www.youtube.com/embed/4YvY1bObBCs",
+    "https://i.ytimg.com/vi/4YvY1bObBCs/hqdefault.jpg",
+    "https://i.ytimg.com/vi/vgbYMiXo9WA/hqdefault.jpg",
+    "https://i.ytimg.com/vi/pfTrQtfHGz0/hqdefault.jpg",
+    "https://i.ytimg.com/vi/odM78vAS86M/hqdefault.jpg",
+    "https://i.ytimg.com/vi/Xb_Wisc8Iiw/hqdefault.jpg",
+    "https://www.youtube.com/embed/4YvY1bObBCs",
+    "https://www.youtube.com/s/player/11a45ffb/www-player.css",
+    "https://www.youtube.com/s/_/ytembeds/_/ss/k=ytembeds.base.1rocrYPuO4g.L.W.O/am=AAAAgADAGA/d=1/br=1/rs=AGKMywFSnYFZLX56IK",
+    "https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.2oM_mCMT96E.2021.O/am=AAAAgADAGA/d=1/excm=base,root/br=1",
+    "https://www.youtube.com/s/player/11a45ffb/player_embed_es6.vflset/ko_KR/base.js",
+    "https://googleads.g.doubleclick.net/pagead/id",
+    "https://static.doubleclick.net/instream/ad_status.js",
+    "https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.2oM_mCMT96E.2021.O/ck=ytembeds.base.1rocrYPuO4g.L.W.O/am",
+    "https://www.google.com/js/th/iAkiX6pIdiOKUFnCNJ9wngcJ-9G8dmsccZT6pmAxnJQ.js",
+    "https://googleads.g.doubleclick.net/pagead/id?slf_rd=1",
+    "https://fonts.gstatic.com/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBHMdazQ.woff2",
+    "https://i.ytimg.com/vi_webp/4YvY1bObBCs/maxresdefault.webp",
+    "https://www.youtube.com/generate_204?RYbSpQ",
+    "https://jnn-pa.googleapis.com/$rpc/google.internal.waa.v1.Waa/GenerateIT",
+    "https://www.youtube.com/youtubei/v1/log_event?alt=json",
+    "https://www.youtube.com/embed/YNVo9K2RwGc",
+    "https://i.ytimg.com/vi/YNVo9K2RwGc/hqdefault.jpg",
+    "https://i.ytimg.com/vi/WsTqgJLhOaY/hqdefault.jpg",
+    "https://www.youtube.com/s/player/11a45ffb/www-player.css",
+    "https://www.youtube.com/s/_/ytembeds/_/ss/k=ytembeds.base.1rocrYPuO4g.L.W.O/am=AAAAgADAGA/d=1/br=1/rs=AGKMywFSnYFZLX56IK",
+    "https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.2oM_mCMT96E.2021.O/am=AAAAgADAGA/d=1/excm=base,root/br=1",
+    "https://www.youtube.com/s/player/11a45ffb/player_embed_es6.vflset/ko_KR/base.js",
+    "https://googleads.g.doubleclick.net/pagead/id",
+    "https://static.doubleclick.net/instream/ad_status.js",
+    "https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.2oM_mCMT96E.2021.O/ck=ytembeds.base.1rocrYPuO4g.L.W.O/am",
+    "https://www.google.com/js/th/iAkiX6pIdiOKUFnCNJ9wngcJ-9G8dmsccZT6pmAxnJQ.js",
+    "https://googleads.g.doubleclick.net/pagead/id?slf_rd=1",
+    "https://fonts.gstatic.com/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBHMdazQ.woff2",
+    "https://i.ytimg.com/vi/YNVo9K2RwGc/hqdefault.jpg?sqp=-oaymwEmCOADEOgC8quKqQMa8AEB-AHeA4ACkAKKAgwIABABGHIgPig4MA8=&rs=AOn",
+    "https://yt3.ggpht.com/j_m1FcRthp9tj6BeoBoLlUVC1BxSandBF3DOLDrihgUASRZcfrZl8M9istYF1covI2Y8kM6eL0g=s68-c-k-c0x00ffffff-no",
+    "https://www.gstatic.com/youtube/img/icons/mweb/youtube_fill/logo/v2/67px.svg",
+    "https://www.youtube.com/youtubei/v1/log_event?alt=json",
+    "https://www.youtube.com/generate_204?5sqThg",
+    "https://jnn-pa.googleapis.com/$rpc/google.internal.waa.v1.Waa/GenerateIT",
+    "https://www.youtube.com/youtubei/v1/log_event?alt=json",
+    "https://www.youtube.com/youtubei/v1/log_event?alt=json",
+    "https://www.youtube.com/youtubei/v1/log_event?alt=json",
+    "https://www.youtube.com/youtubei/v1/log_event?alt=json",
+    "https://www.youtube.com/embed/YNVo9K2RwGc",
+    "https://i.ytimg.com/vi/YNVo9K2RwGc/hqdefault.jpg",
+    "https://i.ytimg.com/vi/WsTqgJLhOaY/hqdefault.jpg",
+    "https://www.youtube.com/s/player/11a45ffb/www-player.css",
+    "https://www.youtube.com/s/_/ytembeds/_/ss/k=ytembeds.base.1rocrYPuO4g.L.W.O/am=AAAAgADAGA/d=1/br=1/rs=AGKMywFSnYFZLX56IK",
+    "https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.2oM_mCMT96E.2021.O/am=AAAAgADAGA/d=1/excm=base,root/br=1",
+    "https://www.youtube.com/s/player/11a45ffb/player_embed_es6.vflset/ko_KR/base.js",
+    "https://googleads.g.doubleclick.net/pagead/id",
+    "https://static.doubleclick.net/instream/ad_status.js",
+    "https://www.youtube.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.2oM_mCMT96E.2021.O/ck=ytembeds.base.1rocrYPuO4g.L.W.O/am",
+    "https://www.google.com/js/th/iAkiX6pIdiOKUFnCNJ9wngcJ-9G8dmsccZT6pmAxnJQ.js",
+    "https://googleads.g.doubleclick.net/pagead/id?slf_rd=1",
+    "https://fonts.gstatic.com/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBHMdazQ.woff2",
+    "https://i.ytimg.com/vi/YNVo9K2RwGc/hqdefault.jpg?sqp=-oaymwEmCOADEOgC8quKqQMa8AEB-AHeA4ACkAKKAgwIABABGHIgPig4MA8=&rs=AOn",
+    "https://yt3.ggpht.com/j_m1FcRthp9tj6BeoBoLlUVC1BxSandBF3DOLDrihgUASRZcfrZl8M9istYF1covI2Y8kM6eL0g=s68-c-k-c0x00ffffff-no",
+    "https://www.youtube.com/youtubei/v1/log_event?alt=json",
+    "https://www.youtube.com/generate_204?-5LeHw",
+    "https://jnn-pa.googleapis.com/$rpc/google.internal.waa.v1.Waa/GenerateIT"
+  ],
+  "pageErrors": []
+}

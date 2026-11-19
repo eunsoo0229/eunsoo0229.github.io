@@ -6,14 +6,15 @@ import AiAskModal from './AiAskModal';
 import { useTheme } from '../lib/theme';
 import { useAuth } from '../lib/auth/AuthProvider';
 import { signOutUser } from '../lib/auth/authService';
-import logo from '../assets/logo.png';
+import Icon, { Glyph } from './Icon';
+import { useNotificationAlerts } from '../lib/social/useNotificationAlerts';
 
 
-const THEME_ICON: Record<string, string> = {
-  system: '🖥',
-  light: '☀',
-  dark: '☾',
-};
+const THEME_ICON = {
+  system: 'theme-system',
+  light: 'theme-light',
+  dark: 'theme-dark',
+} as const;
 
 // Kept short on purpose — these are the links people reach for constantly.
 // Everything else (still one click away) lives in the "메뉴" dropdown below,
@@ -23,6 +24,9 @@ const NAV_PRIMARY = [
   { to: '/learning', label: '학습' },
   { to: '/my-skills', label: '나의 기술' },
   { to: '/coach', label: 'AI 코치' },
+  { to: '/gyms', label: '체육관' },
+  { to: '/gear', label: '마켓' },
+  { to: '/community', label: '커뮤니티' },
 ];
 
 // Visually grouped for the "메뉴" dropdown / mobile menu — purely a
@@ -38,6 +42,7 @@ const NAV_MORE_GROUPS = [
       { to: '/learned-techniques', label: '배운 기술' },
       { to: '/graph', label: '기술 그래프' },
       { to: '/techniques/request', label: '기술 요청' },
+      { to: '/categories', label: '기술 카테고리 관리' },
       { to: '/user-combos', label: '사용자 콤보·셋업' },
       { to: '/favorites', label: '즐겨찾기' },
     ],
@@ -48,10 +53,13 @@ const NAV_MORE_GROUPS = [
       { to: '/training', label: '훈련 홈' },
       { to: '/free-training', label: '자유훈련' },
       { to: '/training/routines', label: '훈련 루틴' },
+      { to: '/training/trainer', label: 'AI 트레이너 (루틴·식단)' },
       { to: '/training/exercises', label: '헬스 운동' },
       { to: '/combos', label: '콤보 북' },
       { to: '/tactics', label: '전술 셋업' },
       { to: '/skill-tree', label: '비주얼 기술 트리' },
+      { to: '/program', label: '개인 훈련 프로그램' },
+      { to: '/progress', label: '훈련 성과 검증' },
       { to: '/training-analytics', label: '훈련 분석/캘린더' },
       { to: '/review', label: '복습' },
       { to: '/sparring/record', label: '스파링 촬영' },
@@ -62,6 +70,15 @@ const NAV_MORE_GROUPS = [
     items: [
       { to: '/learning', label: '학습 커리큘럼' },
       { to: '/marketplace', label: '커리큘럼 마켓' },
+    ],
+  },
+  {
+    label: '마켓',
+    items: [
+      { to: '/gear', label: '격투기 장비 중고거래' },
+      { to: '/gear/new', label: '장비 판매 등록' },
+      { to: '/gear/mine', label: '내 거래 관리' },
+      { to: '/gear/orders', label: '택배 거래 주문' },
     ],
   },
   {
@@ -83,21 +100,32 @@ const NAV_MORE_GROUPS = [
     items: [
       { to: '/community', label: '커뮤니티' },
       { to: '/shorts', label: '숏폼' },
+      { to: '/evaluations', label: '내 기술 평가' },
+      { to: '/messages', label: '메시지' },
+      { to: '/clans', label: '클랜' },
+      { to: '/notifications', label: '알림' },
     ],
   },
   {
     label: '체육관',
     items: [
+      { to: '/gyms', label: '체육관 찾기·가격 비교' },
+      { to: '/gyms/deals', label: '제휴 할인 혜택' },
+      { to: '/gyms/coupons', label: '내 할인 쿠폰' },
       { to: '/gym', label: '체육관 참가 (학생)' },
-      { to: '/gym/admin', label: '체육관 관리 (관장님)' },
+      { to: '/gym/admin', label: '체육관 운영 대시보드 (관장님)' },
+      { to: '/gyms/manage', label: '체육관 등록·제휴 신청' },
     ],
   },
   {
     label: '계정',
     items: [
       { to: '/dashboard', label: '대시보드' },
+      { to: '/fighter-profile', label: '개인 파이터 프로필' },
       { to: '/stats', label: '나의 통계' },
       { to: '/profile', label: '프로필' },
+      { to: '/verification', label: '지도자·숙련자 자격 검증' },
+      { to: '/admin/platform', label: '플랫폼 관리 (운영자)' },
     ],
   },
 ];
@@ -121,6 +149,7 @@ export default function Header() {
   const moreRef = useRef<HTMLDivElement>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const { unread, invite, dismissInvite } = useNotificationAlerts(isConfigured && user ? user.id : null, pathname);
 
   async function handleLogout() {
     await signOutUser();
@@ -156,8 +185,7 @@ export default function Header() {
     <header className="site-header">
       <div className="container site-header__inner">
         <NavLink to="/" className="brand">
-          <img src={logo} alt="MARTIALDEX" className="brand__mark" />
-          <span className="brand__text">MARTIALDEX</span>
+          <span className="brand__wordmark" role="img" aria-label="MARTIALDEX" />
         </NavLink>
         <nav className="nav-links">
           <NavLink to="/" end>
@@ -175,7 +203,7 @@ export default function Header() {
               onClick={() => setMoreOpen((v) => !v)}
               aria-expanded={moreOpen}
             >
-              메뉴 {moreOpen ? '▴' : '▾'}
+              메뉴 <Glyph set="ui" name="chevron-down" style={moreOpen ? { transform: 'rotate(180deg)' } : undefined} />
             </button>
             {moreOpen && (
               <div className="nav-more__panel">
@@ -201,8 +229,9 @@ export default function Header() {
             onClick={() => setMobileMenuOpen((v) => !v)}
             aria-expanded={mobileMenuOpen}
             title="메뉴"
+            aria-label="메뉴"
           >
-            ☰
+            <Icon name="menu" />
           </button>
           {mobileMenuOpen && (
             <div className="nav-more__panel mobile-menu-panel">
@@ -230,32 +259,52 @@ export default function Header() {
         <div className="header-search-wrap">
           <SearchBar variant="header" />
         </div>
-        <Link to="/techniques" className="icon-btn mobile-search-btn" title="기술 검색">
-          ⌕
+        <Link to="/techniques" className="icon-btn mobile-search-btn" title="기술 검색" aria-label="기술 검색">
+          <Icon name="search" />
         </Link>
-        <button className="icon-btn" onClick={() => setAiOpen(true)} title="AI에게 질문">
-          ✦
+        <button className="icon-btn" onClick={() => setAiOpen(true)} title="AI에게 질문" aria-label="AI에게 질문">
+          <Icon name="spark" />
         </button>
         <button
           className="icon-btn"
           onClick={cycleTheme}
           title={`테마: ${theme} (클릭해서 전환)`}
         >
-          {THEME_ICON[theme]}
+          <Icon name={THEME_ICON[theme]} />
         </button>
+        {isConfigured && user && (
+          <Link to="/notifications" className="icon-btn notif-bell" title={unread > 0 ? `알림 ${unread}개` : '알림'} aria-label={unread > 0 ? `알림, 읽지 않은 알림 ${unread}개` : '알림'} data-testid="header-notifications">
+            <Icon name="bell" />
+            {unread > 0 && <span className="notif-bell__badge">{unread > 99 ? '99+' : unread}</span>}
+          </Link>
+        )}
         {isConfigured && !authLoading && (
           user ? (
-            <button className="icon-btn" onClick={handleLogout} title="로그아웃">
-              ⎋
+            <button className="icon-btn" onClick={handleLogout} title="로그아웃" aria-label="로그아웃">
+              <Icon name="logout" />
             </button>
           ) : (
-            <Link to="/login" className="icon-btn" title="로그인">
-              👤
+            <Link to="/login" className="icon-btn" title="로그인" aria-label="로그인">
+              <Icon name="user" />
             </Link>
           )
         )}
       </div>
       {aiOpen && <AiAskModal onClose={() => setAiOpen(false)} />}
+      {invite && pathname !== '/notifications' && (
+        <div className="notif-toast" role="status" data-testid="clan-invite-toast">
+          <Icon name="users" />
+          <span className="notif-toast__text">
+            {invite.clanName ? `'${invite.clanName}' 클랜에서 초대가 왔습니다.` : '클랜 초대가 왔습니다.'}
+          </span>
+          <button type="button" className="btn btn-primary btn-sm" onClick={() => { dismissInvite(); navigate('/notifications'); }}>
+            확인
+          </button>
+          <button type="button" className="btn btn-ghost btn-sm" onClick={dismissInvite} aria-label="닫기">
+            닫기
+          </button>
+        </div>
+      )}
     </header>
   );
 }

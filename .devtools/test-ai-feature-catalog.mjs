@@ -49,7 +49,8 @@ const ids = C.AI_FEATURES.map((f) => f.id);
 check('[2b] 기능 id 중복 없음, 모든 기능이 분류에 속함', new Set(ids).size === ids.length && C.AI_FEATURES.every((f) => C.AI_GROUP_ORDER.includes(f.group)));
 check('[2c] 기존 QA가 쓰는 진입 카드 test id 유지', ['oneoff-entry', 'coach-class-entry', 'visual-mitt-entry'].every((t) => C.AI_FEATURES.some((f) => f.testId === t)));
 
-const header = fs.readFileSync(path.join(APP, 'src/components/Header.tsx'), 'utf8');
+// the site navigation moved from Header.tsx to the brand AppShell + navConfig (2026-11 redesign)
+const header = fs.readFileSync(path.join(APP, 'src/components/brand/navConfig.ts'), 'utf8') + fs.readFileSync(path.join(APP, 'src/components/brand/AppShell.tsx'), 'utf8');
 check('[3] 헤더에 별도 "AI" 메뉴 그룹 없음', !/label: 'AI',/.test(header));
 const aiOnly = C.AI_COACH_PATHS.filter((p) => p !== '/coach');
 const stillInMenus = aiOnly.filter((p) => header.includes(`to: '${p}'`));

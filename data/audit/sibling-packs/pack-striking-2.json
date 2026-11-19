@@ -1,0 +1,1272 @@
+[
+ {
+  "id": "karate__대표-가타",
+  "name": "대표 가타",
+  "koreanName": null,
+  "art": "karate",
+  "category": "유파별 대표 기술과 가타",
+  "positions": [
+   "유파별 대표 기술과 가타"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "muay-thai__muay-thai-stance",
+  "name": "Muay Thai Stance",
+  "koreanName": null,
+  "art": "muay-thai",
+  "category": "기본 개념 --- 거리(Range)와 자세",
+  "positions": [
+   "기본 개념 --- 거리(Range)와 자세"
+  ],
+  "description": "무에타이 스탠스는 발을 다소 넓게 벌리고 체중을 양발에 고르게 실어 킥, 니, 클린치 모두에 대응할 수 있는 기본 자세입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "muay-thai__teep-guard",
+  "name": "Teep Guard",
+  "koreanName": null,
+  "art": "muay-thai",
+  "category": "기본 개념 --- 거리(Range)와 자세",
+  "positions": [
+   "기본 개념 --- 거리(Range)와 자세"
+  ],
+  "description": "티프 가드는 앞다리를 살짝 들어 상대의 접근이나 로우킥을 미리 견제하는 준비 자세입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "muay-thai__jumping-teep",
+  "name": "Jumping Teep",
+  "koreanName": null,
+  "art": "muay-thai",
+  "category": "장거리 --- 티프 (Teep, ถีบ)",
+  "positions": [
+   "장거리 --- 티프 (Teep, ถีบ)"
+  ],
+  "description": "점핑 티프는 점프해 몸 전체 체중을 실어 미는 강력한 변형 티프입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "muay-thai__hip-teep",
+  "name": "Hip Teep",
+  "koreanName": null,
+  "art": "muay-thai",
+  "category": "장거리 --- 티프 (Teep, ถีบ)",
+  "positions": [
+   "장거리 --- 티프 (Teep, ถีบ)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "muay-thai__회수가-늦으면-한-발로-뛰어-균형-유지-반대손-가드",
+  "name": "회수가 늦으면 **한 발로 뛰어 균형 유지 + 반대손 가드**",
+  "koreanName": "회수가 늦으면 **한 발로 뛰어 균형 유지 + 반대손 가드**",
+  "art": "muay-thai",
+  "category": "장거리 --- 티프 (Teep, ถีบ)",
+  "positions": [
+   "장거리 --- 티프 (Teep, ถีบ)"
+  ],
+  "description": "회수가 늦으면 한 발로 뛰어 균형 유지 + 반대손 가드는 다리 회수가 늦어졌을 때 남은 한 발로 깨금발을 뛰어 균형을 지키며 반격에 대비하는 대응 동작입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "muay-thai__khao-chiang-khao-khong",
+  "name": "Khao Chiang / Khao Khong",
+  "koreanName": "다이애거널·커빙 니",
+  "art": "muay-thai",
+  "category": "니 (Khao, เข่า)",
+  "positions": [
+   "니 (Khao, เข่า)"
+  ],
+  "description": "카오 치앙/카오 콩(다이애거널·커빙 니)은 무릎을 대각선이나 곡선 궤적으로 올려 옆구리를 타격하는 니킥 변형입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "muay-thai__curving-knee",
+  "name": "Curving Knee (Khao Chiang)",
+  "koreanName": null,
+  "art": "muay-thai",
+  "category": "클린치 (Clinch)",
+  "positions": [
+   "클린치 (Clinch)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "muay-thai__cross-arm-guard",
+  "name": "Cross-Arm Guard",
+  "koreanName": "1.2절 참고",
+  "art": "muay-thai",
+  "category": "펀치 방어",
+  "positions": [
+   "펀치 방어"
+  ],
+  "description": "크로스 암 가드(1.2절 참고)는 양팔을 교차시켜 몸통과 얼굴을 동시에 방어하는 가드 변형입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "muay-thai__spinning-knee",
+  "name": "Spinning Knee",
+  "koreanName": null,
+  "art": "muay-thai",
+  "category": "스피닝 기술 모음",
+  "positions": [
+   "스피닝 기술 모음"
+  ],
+  "description": "스피닝 니는 몸을 회전시키며 무릎으로 강하게 타격하는 변칙 니킥 기술입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "boxing__peek-a-boo",
+  "name": "Peek-a-Boo",
+  "koreanName": null,
+  "art": "boxing",
+  "category": "기본 자세",
+  "positions": [
+   "기본 자세"
+  ],
+  "description": "피카부는 양 주먹을 뺨 앞에 바짝 붙이고 무릎을 굽혀 몸을 낮춰 상하 움직임으로 타격을 피하는 근접 압박형 자세입니다.",
+  "candidates": [
+   "kickboxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "boxing__philly-shell",
+  "name": "Philly Shell",
+  "koreanName": null,
+  "art": "boxing",
+  "category": "기본 자세",
+  "positions": [
+   "기본 자세"
+  ],
+  "description": "필리 쉘(크로스암 가드)은 리드 팔을 배 앞에 낮게 두고 리어 손으로 턱을 가리며 어깨로 펀치를 흘리는 디펜시브 자세입니다.",
+  "candidates": [
+   "kickboxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "boxing__cross-guard",
+  "name": "Cross Guard",
+  "koreanName": null,
+  "art": "boxing",
+  "category": "기본 자세",
+  "positions": [
+   "기본 자세"
+  ],
+  "description": "크로스 가드는 양팔을 교차하듯 배치해 리어 손으로 리드 쪽 얼굴을, 리드 팔로 몸통을 보호하는 방어 자세입니다.",
+  "candidates": [
+   "kickboxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "boxing__shoulder-roll-stance",
+  "name": "Shoulder Roll Stance",
+  "koreanName": null,
+  "art": "boxing",
+  "category": "기본 자세",
+  "positions": [
+   "기본 자세"
+  ],
+  "description": "숄더 롤 스탠스는 리어 어깨를 앞으로 돌려 턱을 가리고 리드 팔로 견제하며 몸을 살짝 비틀어 스트레이트 펀치를 흘리는 자세입니다.",
+  "candidates": [
+   "kickboxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "boxing__infighting",
+  "name": "Infighting",
+  "koreanName": null,
+  "art": "boxing",
+  "category": "거리별 포지션",
+  "positions": [
+   "거리별 포지션"
+  ],
+  "description": "인파이팅은 근거리에서 짧은 펀치와 몸싸움으로 공방을 주고받는 전투 방식입니다.",
+  "candidates": [
+   "kickboxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "boxing__lead-overhand",
+  "name": "Lead Overhand",
+  "koreanName": null,
+  "art": "boxing",
+  "category": "기본 펀치",
+  "positions": [
+   "기본 펀치"
+  ],
+  "description": "리드 오버핸드는 앞손을 크게 원을 그리며 위에서 아래로 내리치는 변형 펀치입니다.",
+  "candidates": [
+   "kickboxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "boxing__gazelle-punch",
+  "name": "Gazelle Punch",
+  "koreanName": null,
+  "art": "boxing",
+  "category": "특수 펀치",
+  "positions": [
+   "특수 펀치"
+  ],
+  "description": "가젤 펀치는 앞으로 도약하듯 뛰어들며 스트레이트를 던지는, 무하마드 알리가 즐겨 쓴 폭발적인 전진 펀치입니다.",
+  "candidates": [
+   "kickboxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "boxing__bolo-punch",
+  "name": "Bolo Punch",
+  "koreanName": null,
+  "art": "boxing",
+  "category": "특수 펀치",
+  "positions": [
+   "특수 펀치"
+  ],
+  "description": "볼로 펀치는 팔을 크게 원을 그리며 감았다가 던지는 변칙적인 훅/어퍼컷 혼합 펀치입니다.",
+  "candidates": [
+   "kickboxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "boxing__corkscrew-punch",
+  "name": "Corkscrew Punch",
+  "koreanName": null,
+  "art": "boxing",
+  "category": "특수 펀치",
+  "positions": [
+   "특수 펀치"
+  ],
+  "description": "코르크스크류 펀치는 스트레이트를 뻗는 동안 손목을 안쪽으로 회전시켜 타격 순간 관통력을 더하는 펀치 변형입니다.",
+  "candidates": [
+   "kickboxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "boxing__shoulder-bump",
+  "name": "Shoulder Bump",
+  "koreanName": null,
+  "art": "boxing",
+  "category": "근거리 / 인파이팅",
+  "positions": [
+   "근거리 / 인파이팅"
+  ],
+  "description": "숄더 범프는 어깨로 상대의 몸을 살짝 밀어 균형을 흔들거나 공간을 만드는 근거리 기술입니다.",
+  "candidates": [
+   "kickboxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "boxing__break-and-reset",
+  "name": "Break and Reset",
+  "koreanName": null,
+  "art": "boxing",
+  "category": "클린치",
+  "positions": [
+   "클린치"
+  ],
+  "description": "브레이크 앤 리셋은 클린치에서 빠져나와 다시 타격 거리로 자세를 재정비하는 동작입니다.",
+  "candidates": [
+   "kickboxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "boxing__거리-관리",
+  "name": "거리 관리",
+  "koreanName": "거리 관리",
+  "art": "boxing",
+  "category": "링 제너럴십 (Ring Generalship)",
+  "positions": [
+   "링 제너럴십 (Ring Generalship)"
+  ],
+  "description": "거리 관리는 풋워크와 리드 팔을 이용해 자신에게 유리한 타격 거리를 지속적으로 유지하는 전술적 원리입니다.",
+  "candidates": [
+   "kickboxing",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "boxing__앵글-관리",
+  "name": "앵글 관리",
+  "koreanName": "앵글 관리",
+  "art": "boxing",
+  "category": "링 제너럴십 (Ring Generalship)",
+  "positions": [
+   "링 제너럴십 (Ring Generalship)"
+  ],
+  "description": "앵글 관리는 정면 대치를 피하고 지속적으로 각도를 만들어 상대가 정면으로 반격하지 못하게 하는 전술적 원리입니다.",
+  "candidates": [
+   "kickboxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "boxing__커팅-오프-더-링",
+  "name": "커팅 오프 더 링",
+  "koreanName": "커팅 오프 더 링",
+  "art": "boxing",
+  "category": "링 제너럴십 (Ring Generalship)",
+  "positions": [
+   "링 제너럴십 (Ring Generalship)"
+  ],
+  "description": "커팅 오프 더 링은 상대의 도주 경로를 미리 차단해 링을 좁히고 압박하는 전술입니다.",
+  "candidates": [
+   "kickboxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "boxing__센터-링-컨트롤",
+  "name": "센터 링 컨트롤",
+  "koreanName": "센터 링 컨트롤",
+  "art": "boxing",
+  "category": "링 제너럴십 (Ring Generalship)",
+  "positions": [
+   "링 제너럴십 (Ring Generalship)"
+  ],
+  "description": "센터 링 컨트롤은 링의 중앙을 차지해 상대를 코너나 로프로 몰아넣는 위치 선점 전술입니다.",
+  "candidates": [
+   "kickboxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "boxing__센터라인-리스크",
+  "name": "센터라인 리스크",
+  "koreanName": "센터라인 리스크",
+  "art": "boxing",
+  "category": "사우스포 vs 오소독스 매치업 전술",
+  "positions": [
+   "사우스포 vs 오소독스 매치업 전술"
+  ],
+  "description": "사우스포의 스트레이트 레프트와 오소독스의 스트레이트 라이트가 서로의 가드 바깥쪽 열린 라인을 그대로 타고 들어가기 쉬워, 동형 매치업보다 카운터 크로스가 자주 터진다. 따라서 리드 핸드 컨트롤과 크로스 스텝으로 이 라인을 먼저 장악하는 쪽이 매치업에서 우위를 가진다.",
+  "candidates": [
+   "kickboxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "boxing__아마추어",
+  "name": "아마추어",
+  "koreanName": "올림픽 스타일",
+  "art": "boxing",
+  "category": "아마추어(포인트) vs 프로 스코어링과 전술",
+  "positions": [
+   "아마추어(포인트) vs 프로 스코어링과 전술"
+  ],
+  "description": "올림픽 스타일; 헤드기어 착용, 라운드 수가 적고 (예: 3분 3라운드), 대체로 깨끗하게 명중한 유효타의 수와 우세함을 기준으로 채점된다. 이 때문에 단발 파워 펀치보다 **잽 위주의 높은 펀치 출력, 콤비네이션 물량, 정확한 명중**이 점수에 직접 반영되는 전술(아웃복싱, 빠른 잽 교환)이 상대적으로 더 유리하게 작용하는 경향이 있다.",
+  "candidates": [
+   "kickboxing",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "boxing__프로",
+  "name": "프로",
+  "koreanName": "프로",
+  "art": "boxing",
+  "category": "아마추어(포인트) vs 프로 스코어링과 전술",
+  "positions": [
+   "아마추어(포인트) vs 프로 스코어링과 전술"
+  ],
+  "description": "라운드 수가 더 많고(대개 최대 12라운드), 판정 기준에 파워 펀치의 클린 타격 외에도 **이펙티브 어그레션(효율적인 전진·공격), 링 제너럴십, 디펜스**가 함께 반영된다. 그 결과 바디 공격으로 후반 라운드를 노리는 장기 전략, 클린치를 이용한 페이스 조절, 로프어도프 같은 체력 안배형 전술이 실제로 유효한 선택지가 된다.",
+  "candidates": [
+   "kickboxing",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "boxing__실전-함의",
+  "name": "실전 함의",
+  "koreanName": "실전 함의",
+  "art": "boxing",
+  "category": "아마추어(포인트) vs 프로 스코어링과 전술",
+  "positions": [
+   "아마추어(포인트) vs 프로 스코어링과 전술"
+  ],
+  "description": "아마추어 선수는 출력(펀치 수)과 잽 싸움에 더 비중을 두는 습관을 들이는 것이 유리하고, 프로 전향/장기전을 준비하는 선수는 바디 공격, 클린치를 통한 페이스 조절, 라운드 단위의 페이스 배분(링 제너럴십)을 별도로 훈련해야 한다.",
+  "candidates": [
+   "kickboxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "kickboxing__리드-lead",
+  "name": "리드(Lead)",
+  "koreanName": null,
+  "art": "kickboxing",
+  "category": "기본 개념",
+  "positions": [
+   "기본 개념"
+  ],
+  "description": "리드는 스탠스에서 상대와 더 가까운 쪽(앞쪽)의 팔과 다리를 가리키며, 잽과 리드킥 등 빠른 견제 타격에 주로 사용됩니다.",
+  "candidates": [
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "kickboxing__리어-rear",
+  "name": "리어(Rear)",
+  "koreanName": null,
+  "art": "kickboxing",
+  "category": "기본 개념",
+  "positions": [
+   "기본 개념"
+  ],
+  "description": "리어는 스탠스에서 상대와 더 먼 쪽(뒤쪽)의 팔과 다리를 가리키며, 크로스와 로우킥 등 강한 힘 전달 타격에 주로 사용됩니다.",
+  "candidates": [
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "kickboxing__k-1-rules",
+  "name": "K-1 Rules",
+  "koreanName": null,
+  "art": "kickboxing",
+  "category": "규칙 체계 (가장 먼저 알아야 할 것)",
+  "positions": [
+   "규칙 체계 (가장 먼저 알아야 할 것)"
+  ],
+  "description": "K-1 룰은 펀치, 킥, 니킥을 모두 허용하되 클린치 후 니킥 한 번 정도만 짧게 허용하는 스탠딩 중심 규정입니다.",
+  "candidates": [
+   "boxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "kickboxing__glory-rules",
+  "name": "Glory Rules",
+  "koreanName": null,
+  "art": "kickboxing",
+  "category": "규칙 체계 (가장 먼저 알아야 할 것)",
+  "positions": [
+   "규칙 체계 (가장 먼저 알아야 할 것)"
+  ],
+  "description": "글로리 룰은 K-1과 유사하지만 클린치 시간을 더 엄격히 제한하고 로우킥을 포함한 다양한 킥을 적극 활용하는 규정입니다.",
+  "candidates": [
+   "boxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "kickboxing__아메리칸-킥복싱",
+  "name": "아메리칸 킥복싱",
+  "koreanName": "벨트라인 룰",
+  "art": "kickboxing",
+  "category": "규칙 체계 (가장 먼저 알아야 할 것)",
+  "positions": [
+   "규칙 체계 (가장 먼저 알아야 할 것)"
+  ],
+  "description": "아메리칸 킥복싱(벨트라인 룰)은 로우킥을 금지하고 벨트라인(허리) 위쪽만 타격을 허용하는 미국식 규정입니다.",
+  "candidates": [
+   "boxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "kickboxing__풀컨택트-로우킥-룰",
+  "name": "풀컨택트 로우킥 룰",
+  "koreanName": "풀컨택트 로우킥 룰",
+  "art": "kickboxing",
+  "category": "규칙 체계 (가장 먼저 알아야 할 것)",
+  "positions": [
+   "규칙 체계 (가장 먼저 알아야 할 것)"
+  ],
+  "description": "풀컨택트 로우킥 룰은 로우킥을 포함한 모든 부위 타격을 허용하는 가장 실전적인 킥복싱 규정 체계입니다.",
+  "candidates": [
+   "boxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "kickboxing__포인트-스파링",
+  "name": "포인트 스파링",
+  "koreanName": "세미/라이트 컨택트",
+  "art": "kickboxing",
+  "category": "규칙 체계 (가장 먼저 알아야 할 것)",
+  "positions": [
+   "규칙 체계 (가장 먼저 알아야 할 것)"
+  ],
+  "description": "포인트 스파링(세미/라이트 컨택트)은 타격의 파워보다 정확한 적중과 스피드를 채점하는 경량 접촉 규정입니다.",
+  "candidates": [
+   "boxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "kickboxing__wheel-kick",
+  "name": "Wheel Kick",
+  "koreanName": null,
+  "art": "kickboxing",
+  "category": "킥",
+  "positions": [
+   "킥",
+   "백킥과 스피닝 기술"
+  ],
+  "description": "휠킥(회전 라운드킥)은 몸을 완전히 회전시켜 발등이나 발뒤꿈치로 강하게 타격하는 고난도 킥입니다.",
+  "candidates": [
+   "boxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "kickboxing__jumping-kick",
+  "name": "Jumping Kick",
+  "koreanName": null,
+  "art": "kickboxing",
+  "category": "킥",
+  "positions": [
+   "킥"
+  ],
+  "description": "점핑킥은 점프해 공중에서 라운드킥이나 사이드킥을 던지는 변칙 킥입니다.",
+  "candidates": [
+   "boxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "kickboxing__shoulder-roll",
+  "name": "Shoulder Roll",
+  "koreanName": null,
+  "art": "kickboxing",
+  "category": "방어",
+  "positions": [
+   "방어"
+  ],
+  "description": "숄더 롤은 어깨를 들어 올려 턱을 가리고 몸을 살짝 틀어 스트레이트 펀치를 흘리는 방어 기술입니다.",
+  "candidates": [
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "kickboxing__tag-and-back-off",
+  "name": "Tag and Back Off",
+  "koreanName": null,
+  "art": "kickboxing",
+  "category": "포인트 스파링 특유 전술",
+  "positions": [
+   "포인트 스파링 특유 전술"
+  ],
+  "description": "태그 앤 백오프는 빠르게 적중시킨 뒤 즉시 물러나 반격을 허용하지 않는 포인트 스파링 전술입니다.",
+  "candidates": [
+   "boxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "kickboxing__블리츠",
+  "name": "블리츠",
+  "koreanName": "블리츠",
+  "art": "kickboxing",
+  "category": "포인트 스파링 특유 전술",
+  "positions": [
+   "포인트 스파링 특유 전술"
+  ],
+  "description": "블리츠는 여러 개의 빠른 타격을 연속으로 몰아쳐 짧은 시간에 다득점을 노리는 포인트 스파링 전술입니다.",
+  "candidates": [
+   "boxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "kickboxing__리버스-카운터",
+  "name": "리버스 카운터",
+  "koreanName": "리버스 카운터",
+  "art": "kickboxing",
+  "category": "포인트 스파링 특유 전술",
+  "positions": [
+   "포인트 스파링 특유 전술"
+  ],
+  "description": "리버스 카운터는 상대의 공격을 유도한 뒤 예상과 반대되는 각도/기술로 반격하는 포인트 스파링 전술입니다.",
+  "candidates": [
+   "boxing",
+   "muay-thai",
+   "karate",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "taekwondo__준비서기-준비자세",
+  "name": "준비서기 / 준비자세",
+  "koreanName": "준비서기 / 준비자세",
+  "art": "taekwondo",
+  "category": "기본 서기 / 자세",
+  "positions": [
+   "기본 서기 / 자세"
+  ],
+  "description": "준비서기/준비자세는 양손을 단전 앞에 모으고 서서 품새나 겨루기를 시작하기 전 정신을 집중하는 준비 자세입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__앞서기",
+  "name": "앞서기",
+  "koreanName": "앞서기",
+  "art": "taekwondo",
+  "category": "기본 서기 / 자세",
+  "positions": [
+   "기본 서기 / 자세"
+  ],
+  "description": "앞서기는 짧은 보폭으로 한 발을 앞에 두는 기본 전진 자세로, 앞굽이보다 짧고 가볍습니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__학다리서기",
+  "name": "학다리서기",
+  "koreanName": "학다리서기",
+  "art": "taekwondo",
+  "category": "기본 서기 / 자세",
+  "positions": [
+   "기본 서기 / 자세"
+  ],
+  "description": "학다리서기는 한 발로 서고 반대 다리를 무릎 옆에 접어 학이 서 있는 듯한 모양을 만드는 균형 자세입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__겨루기준비자세",
+  "name": "겨루기준비자세",
+  "koreanName": "겨루기준비자세",
+  "art": "taekwondo",
+  "category": "기본 서기 / 자세",
+  "positions": [
+   "기본 서기 / 자세"
+  ],
+  "description": "겨루기준비자세는 실전 겨루기에서 사용하는 자연스러운 자세로, 무릎을 살짝 굽히고 양손을 얼굴 앞에 두어 언제든 공수 전환이 가능하게 합니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__후진",
+  "name": "후진",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "이동 / 풋워크",
+  "positions": [
+   "이동 / 풋워크"
+  ],
+  "description": "후진은 상대의 공격을 무효화하고 카운터 거리를 만든다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__사이드-스텝",
+  "name": "사이드 스텝",
+  "koreanName": "사이드 스텝",
+  "art": "taekwondo",
+  "category": "이동 / 풋워크",
+  "positions": [
+   "이동 / 풋워크"
+  ],
+  "description": "사이드 스텝은 좌우 옆 방향으로 이동해 상대의 정면 공격 라인을 벗어나는 측면 이동입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__피벗",
+  "name": "피벗",
+  "koreanName": "피벗",
+  "art": "taekwondo",
+  "category": "이동 / 풋워크",
+  "positions": [
+   "이동 / 풋워크"
+  ],
+  "description": "피벗은 한쪽 발을 축으로 몸을 회전시켜 각도를 바꾸는 방향 전환 풋워크입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__스텝-인-스텝-아웃",
+  "name": "스텝 인 / 스텝 아웃",
+  "koreanName": "스텝 인 / 스텝 아웃",
+  "art": "taekwondo",
+  "category": "이동 / 풋워크",
+  "positions": [
+   "이동 / 풋워크"
+  ],
+  "description": "스텝 인/스텝 아웃은 짧게 전진해 거리를 좁히거나 후퇴해 거리를 벌리는 기본 거리 조절 풋워크입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__점프-스텝",
+  "name": "점프 스텝",
+  "koreanName": "점프 스텝",
+  "art": "taekwondo",
+  "category": "이동 / 풋워크",
+  "positions": [
+   "이동 / 풋워크"
+  ],
+  "description": "점프 스텝은 양발로 가볍게 뛰어 자세를 유지한 채 거리를 조절하는 풋워크입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__스위치-스텝",
+  "name": "스위치 스텝",
+  "koreanName": "스위치 스텝",
+  "art": "taekwondo",
+  "category": "이동 / 풋워크",
+  "positions": [
+   "이동 / 풋워크"
+  ],
+  "description": "스위치 스텝은 양발을 빠르게 뛰어 교차시켜 앞뒤 발을 바꾸는 풋워크입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__끌기",
+  "name": "끌기 (드래그 스텝)",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "이동 / 풋워크",
+  "positions": [
+   "이동 / 풋워크"
+  ],
+  "description": "짧게 미끄러지듯 이동해 거리를 들키지 않고 좁히거나 벌리는 정밀 이동.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__밀기",
+  "name": "밀기",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "이동 / 풋워크",
+  "positions": [
+   "이동 / 풋워크"
+  ],
+  "description": "짧게 미끄러지듯 이동해 거리를 들키지 않고 좁히거나 벌리는 정밀 이동.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__바로지르기",
+  "name": "바로지르기",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "손기술",
+  "positions": [
+   "손기술"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__반대지르기",
+  "name": "반대지르기",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "거리별 전술",
+  "positions": [
+   "거리별 전술"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__지르기",
+  "name": "지르기",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "손기술",
+  "positions": [
+   "손기술"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__돌려지르기",
+  "name": "돌려지르기",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "손기술",
+  "positions": [
+   "손기술"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__옆지르기",
+  "name": "옆지르기",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "손기술",
+  "positions": [
+   "손기술"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__내려지르기",
+  "name": "내려지르기",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "손기술",
+  "positions": [
+   "손기술"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__바탕손",
+  "name": "바탕손",
+  "koreanName": "바탕손밀기 / 바탕손누르기",
+  "art": "taekwondo",
+  "category": "손기술",
+  "positions": [
+   "손기술"
+  ],
+  "description": "바탕손밀기/바탕손누르기는 손바닥 아래쪽(손목에 가까운 부위)으로 밀거나 눌러 타격하는 기술입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__편손끝",
+  "name": "편손끝",
+  "koreanName": "편손끝치기",
+  "art": "taekwondo",
+  "category": "손기술",
+  "positions": [
+   "손기술"
+  ],
+  "description": "편손끝치기는 손가락을 모아 편 채 손끝으로 찌르는 태권도의 특수 찌르기 기술입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__몸통막기",
+  "name": "몸통막기",
+  "koreanName": "바깥막기 / 안막기",
+  "art": "taekwondo",
+  "category": "막기",
+  "positions": [
+   "막기"
+  ],
+  "description": "몸통막기(바깥막기/안막기)는 팔을 바깥에서 안으로, 또는 안에서 바깥으로 휘둘러 중단 공격을 막는 기본 막기입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__한손날막기",
+  "name": "한손날막기",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "막기",
+  "positions": [
+   "막기"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__거들어막기",
+  "name": "거들어막기",
+  "koreanName": "거들어막기",
+  "art": "taekwondo",
+  "category": "막기",
+  "positions": [
+   "막기"
+  ],
+  "description": "거들어막기는 한 손으로 막고 반대 손으로 팔뚝을 받쳐 보강하는 이중 막기 기술입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__헤쳐막기",
+  "name": "헤쳐막기",
+  "koreanName": "헤쳐막기",
+  "art": "taekwondo",
+  "category": "막기",
+  "positions": [
+   "막기"
+  ],
+  "description": "헤쳐막기는 양팔을 안에서 바깥으로 동시에 벌려 양쪽 공격을 한 번에 쳐내는 막기 기술입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__금강막기",
+  "name": "금강막기",
+  "koreanName": "금강막기",
+  "art": "taekwondo",
+  "category": "막기",
+  "positions": [
+   "막기"
+  ],
+  "description": "금강막기는 아래막기와 몸통막기를 동시에 사용해 상하 공격을 함께 막는 복합 막기 기술입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__두손목막기",
+  "name": "두손목막기",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "막기",
+  "positions": [
+   "막기"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__엇걸어막기",
+  "name": "엇걸어막기",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "막기",
+  "positions": [
+   "막기"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__가위막기",
+  "name": "가위막기",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "막기",
+  "positions": [
+   "막기"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__산틀막기",
+  "name": "산틀막기",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "막기",
+  "positions": [
+   "막기"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__찍어차기",
+  "name": "찍어차기",
+  "koreanName": "찍어차기",
+  "art": "taekwondo",
+  "category": "기본 발차기 (세부 명칭)",
+  "positions": [
+   "기본 발차기 (세부 명칭)"
+  ],
+  "description": "찍어차기는 발바닥이나 발뒤꿈치로 상대의 발등이나 다리를 아래로 강하게 내리찍는 킥입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__비틀어차기",
+  "name": "비틀어차기",
+  "koreanName": "비틀어차기",
+  "art": "taekwondo",
+  "category": "기본 발차기 (세부 명칭)",
+  "positions": [
+   "기본 발차기 (세부 명칭)"
+  ],
+  "description": "비틀어차기는 발목을 비틀어 발등이나 발날의 각도를 바꿔 타격 지점을 조정하는 응용 킥입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__표적차기",
+  "name": "표적차기",
+  "koreanName": "표적차기",
+  "art": "taekwondo",
+  "category": "기본 발차기 (세부 명칭)",
+  "positions": [
+   "기본 발차기 (세부 명칭)"
+  ],
+  "description": "표적차기는 특정 표적(미트, 격파판 등)을 정확히 겨냥해 타점 정밀도를 훈련하는 킥 연습 방식입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__나래차기",
+  "name": "나래차기",
+  "koreanName": "나래차기",
+  "art": "taekwondo",
+  "category": "겨루기 발차기 [WT 중심]",
+  "positions": [
+   "겨루기 발차기 [WT 중심]",
+   "점프 / 공중 발차기"
+  ],
+  "description": "나래차기는 앞발로 상대의 반응을 유도한 뒤 같은 다리 또는 반대 다리로 곧바로 이어 차는 이단 콤비네이션 킥입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ }
+]

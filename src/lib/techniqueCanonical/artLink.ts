@@ -48,6 +48,25 @@ export function linkRecordId(martialArtId: string, canonicalId: string): string 
   return `link__${martialArtId}__${canonicalId}`;
 }
 
+/** The link record's technique: the canonical technique filed under one more art (nothing else copied or changed). */
+export function linkTechniqueOf(technique: Technique, martialArtId: string, category: string): Technique {
+  const canonicalId = technique.id;
+  const id = linkRecordId(martialArtId, canonicalId);
+  const official = getTechnique(canonicalId);
+  return {
+    ...(official ?? technique),
+    id,
+    martialArt: martialArtId,
+    category,
+    linkOf: canonicalId,
+    source: 'user_added',
+    martialArts: undefined,
+    categoryByArt: undefined,
+    mergedIds: undefined,
+    usageByArt: undefined,
+  };
+}
+
 /**
  * Verifies the technique is really used in that art (same grounded
  * verification gate a brand-new technique must pass), then writes the link:
@@ -70,19 +89,7 @@ export async function linkTechniqueToArt(
   const category = linkCategoryFor(technique, martialArtId);
   const now = new Date().toISOString();
   const id = linkRecordId(martialArtId, canonicalId);
-  const official = getTechnique(canonicalId);
-  const linkTechnique: Technique = {
-    ...(official ?? technique),
-    id,
-    martialArt: martialArtId,
-    category,
-    linkOf: canonicalId,
-    source: 'user_added',
-    martialArts: undefined,
-    categoryByArt: undefined,
-    mergedIds: undefined,
-    usageByArt: undefined,
-  };
+  const linkTechnique = linkTechniqueOf(technique, martialArtId, category);
   const duplicateCheck = { isDuplicate: true, matchedTechniqueId: canonicalId, matchedTechniqueName: technique.name, reason: `기존 기술 '${technique.name}'에 무술을 연결` };
   if (userId) {
     const record: AddTeqRecord = { id, technique: linkTechnique, status: 'approved', duplicateCheck, verification: verified.result, createdAt: now, updatedAt: now };

@@ -153,6 +153,11 @@ function askConcept(state: CoachLessonState, actions: CoachAction[], concept: Le
   ask(state, actions, { conceptId: concept.id, type, purpose, text: type === 'choice' && concept.choice ? choiceText(concept.choice) : text, choice: type === 'choice' ? concept.choice : null, tries }, lead);
 }
 
+/** The first two key points, quoted — '' when the record has none. */
+function referencePoints(ctx: LessonContext): string {
+  return ctx.keyPointsReference.split(' / ').map((x) => x.trim()).filter(Boolean).slice(0, 2).map((x) => `"${x}"`).join(', ');
+}
+
 /** Next explanation of a concept that has NOT been used yet (never the same text twice in a row). */
 function nextExplanation(state: CoachLessonState, concept: LessonConcept): string | null {
   const all = [concept.explain, ...concept.variants];
@@ -247,9 +252,12 @@ function afterVideo(state: CoachLessonState, ctx: LessonContext, actions: CoachA
     askConcept(state, actions, weak, type === 'confirm' ? (questionText(weak, 'explain') ? 'explain' : 'confirm') : type, 'pre_practice', '좋습니다. 이제 직접 해 볼 텐데, 시작하기 전에 하나만 확인하겠습니다.');
     return;
   }
+  // 영상을 보여 주지 못했으면 "영상에서 본 것"을 묻지 않는다 — 보여 준 적 없는 것을 묻는 질문이 되고,
+  // 학습자는 답할 수 없다. 대신 같은 자리에서 방금 설명한 자세를 확인한다.
   if (state.level !== 'advanced' && ctx.concepts.some((c) => c.id.startsWith('kp-'))) {
     state.currentStage = 'PRE_PRACTICE_CHECK';
-    ask(state, actions, { conceptId: null, type: 'explain', purpose: 'video', text: '영상에서 가장 눈에 띈 핵심 동작은 무엇이었습니까? 짧게 말씀해 주세요.', choice: null });
+    const text = state.videoSeen === false ? '방금 설명에서 가장 중요하다고 느낀 동작은 무엇이었습니까? 짧게 말씀해 주세요.' : '영상에서 가장 눈에 띈 핵심 동작은 무엇이었습니까? 짧게 말씀해 주세요.';
+    ask(state, actions, { conceptId: null, type: 'explain', purpose: 'video', text, choice: null });
     return;
   }
   goReady(state, actions, state.level === 'advanced' ? '핵심을 모두 정확히 이해하셨습니다. 바로 직접 해 보겠습니다.' : '좋습니다. 이제 직접 해 보겠습니다.');
@@ -278,12 +286,19 @@ function finishTechnique(state: CoachLessonState, ctx: LessonContext, actions: C
 
 // ---------------------------------------------------------------- answers
 
-function feedbackFor(verdict: ConceptStatus, analysis: AnswerAnalysis | null | undefined): string {
+// Several wordings per verdict, taken in turn: one lesson used to answer every miss
+// with the same sentence ("그 부분은 조금 다르게 생각해 보겠습니다." ×3).
+const FEEDBACK: Record<'understood' | 'partial' | 'weak' | 'unknown', string[]> = {
+  understood: ['맞습니다. 핵심을 정확히 짚으셨습니다.', '좋습니다. 정확합니다.', '네, 바로 그 부분입니다.'],
+  partial: ['방향은 맞습니다. 다만 한 가지가 더 있습니다.', '절반은 맞았습니다. 빠진 부분을 채워 보겠습니다.', '거의 맞습니다. 한 가지만 더 보태 보겠습니다.'],
+  weak: ['그 부분은 조금 다르게 생각해 보겠습니다.', '조금 다른 방향입니다. 다시 짚어 보겠습니다.', '아직 핵심과는 거리가 있습니다. 다른 각도로 설명해 보겠습니다.'],
+  unknown: ['괜찮습니다. 처음 배우면 헷갈릴 수 있는 부분입니다. 쉽게 생각해 보겠습니다.', '괜찮습니다. 함께 하나씩 짚어 보겠습니다.', '모르는 게 당연한 부분입니다. 천천히 다시 보겠습니다.'],
+};
+
+function feedbackFor(verdict: ConceptStatus, analysis: AnswerAnalysis | null | undefined, turn = 0): string {
   if (analysis?.feedback) return analysis.feedback;
-  if (verdict === 'understood') return '맞습니다. 핵심을 정확히 짚으셨습니다.';
-  if (verdict === 'partial') return '방향은 맞습니다. 다만 한 가지가 더 있습니다.';
-  if (verdict === 'weak') return '그 부분은 조금 다르게 생각해 보겠습니다.';
-  return '괜찮습니다. 처음 배우면 헷갈릴 수 있는 부분입니다. 쉽게 생각해 보겠습니다.';
+  const list = FEEDBACK[verdict === 'understood' || verdict === 'partial' || verdict === 'weak' ? verdict : 'unknown'];
+  return list[turn % list.length];
 }
 
 /** Understood → continue where this question was leading. */
@@ -291,7 +306,7 @@ function onSuccess(state: CoachLessonState, ctx: LessonContext, actions: CoachAc
   markUnderstood(state, pending.conceptId, evidence);
   state.attempts += 1;
   if (pending.conceptId) u(state, pending.conceptId).attempts += 1;
-  const fb = feedbackFor('understood', analysis);
+  const fb = feedbackFor('understood', analysis, state.attempts);
   switch (pending.purpose) {
     case 'pre_practice':
     case 'video': {
@@ -337,8 +352,10 @@ function onMiss(state: CoachLessonState, ctx: LessonContext, actions: CoachActio
 
   // Practice review / scenario: no loop — explain and continue.
   if (pending.purpose === 'practice_review') {
-    actions.push({ type: 'FEEDBACK', content: feedbackFor(verdict, analysis), verdict });
-    actions.push({ type: 'REEXPLAIN', content: analysis?.reexplain || `이 기술의 핵심을 다시 정리하면 ${ctx.keyPointsReference.split(' / ').slice(0, 2).map((x) => `"${x}"`).join(', ')}입니다.`, reason: 'practice_review' });
+    actions.push({ type: 'FEEDBACK', content: feedbackFor(verdict, analysis, state.attempts), verdict });
+    // (a record without key points has nothing to restate — never say `핵심은 ""입니다`)
+    const recap = analysis?.reexplain || (referencePoints(ctx) ? `이 기술의 핵심을 다시 정리하면 ${referencePoints(ctx)}입니다.` : '');
+    if (recap) actions.push({ type: 'REEXPLAIN', content: recap, reason: 'practice_review' });
     maybeScenario(state, ctx, actions, verdict);
     return;
   }
@@ -350,15 +367,16 @@ function onMiss(state: CoachLessonState, ctx: LessonContext, actions: CoachActio
   }
   if (pending.purpose === 'video') {
     // The video question only links what was seen to the concepts — a fuzzy answer is filled in, then practice.
-    actions.push({ type: 'FEEDBACK', content: feedbackFor(verdict === 'unknown' ? 'unknown' : 'partial', analysis), verdict });
-    actions.push({ type: 'REEXPLAIN', content: analysis?.reexplain || `영상에서는 ${josa(ctx.keyPointsReference.split(' / ').slice(0, 2).map((x) => `"${x}"`).join(', '), '을/를')} 확인하시면 됩니다.`, reason: 'video' });
+    actions.push({ type: 'FEEDBACK', content: feedbackFor(verdict === 'unknown' ? 'unknown' : 'partial', analysis, state.attempts), verdict });
+    const look = analysis?.reexplain || (referencePoints(ctx) ? `영상에서는 ${josa(referencePoints(ctx), '을/를')} 확인하시면 됩니다.` : '');
+    if (look) actions.push({ type: 'REEXPLAIN', content: look, reason: 'video' });
     goReady(state, actions, '그럼 그 부분에 집중해서 직접 해 보겠습니다.');
     return;
   }
 
   const concept = conceptOf(ctx, pending.conceptId);
   if (!concept) {
-    actions.push({ type: 'FEEDBACK', content: feedbackFor(verdict, analysis), verdict });
+    actions.push({ type: 'FEEDBACK', content: feedbackFor(verdict, analysis, state.attempts), verdict });
     advanceConcept(state, ctx, actions);
     return;
   }
@@ -377,7 +395,7 @@ function onMiss(state: CoachLessonState, ctx: LessonContext, actions: CoachActio
     return;
   }
 
-  actions.push({ type: 'FEEDBACK', content: feedbackFor(verdict, analysis), verdict });
+  actions.push({ type: 'FEEDBACK', content: feedbackFor(verdict, analysis, state.attempts), verdict });
 
   // A different explanation every time: the analyzer's targeted one first (if it is new), then the next data variant.
   const variant = verdict === 'unknown' ? (nextExplanation(state, concept) ?? analysis?.reexplain ?? null) : (analysis?.reexplain || nextExplanation(state, concept));
@@ -469,6 +487,7 @@ export function lessonStep(prev: CoachLessonState, ctx: LessonContext, event: Le
     actions.push({ type: 'EXPLAIN', content: event.lead ?? `오늘은 ${josa(ctx.name, '을/를')} 배워 보겠습니다.` });
     teachConcept(state, ctx, actions);
   } else if (event.type === 'VIDEO_DONE') {
+    if (event.watched !== undefined) state.videoSeen = event.watched;
     if (state.currentStage === 'VIDEO' || !state.videoDone) afterVideo(state, ctx, actions);
   } else if (event.type === 'PRACTICE_DONE') {
     state.practiceDone = true;

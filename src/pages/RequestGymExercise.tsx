@@ -1,3 +1,4 @@
+import Icon, { type IconName } from '../components/Icon';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../lib/auth/AuthProvider';
@@ -14,12 +15,23 @@ import BackButton from '../components/BackButton';
 type Step = 'input' | 'checking' | 'duplicate' | 'rejected' | 'preview' | 'saved' | 'error';
 
 const VERDICT_LABEL: Record<string, string> = {
-  confirmed: '✅ 실제로 사용되는 헬스 운동으로 확인되었습니다.',
-  alias_of_existing: '⚠️ 운동명은 확인되지만 표준 명칭이 아닌 별칭으로 보입니다.',
-  uncertain: '❌ 실제 헬스 운동으로 확인하기 어렵습니다.',
-  fictional: '❌ 실제 헬스 운동으로 확인하기 어렵습니다.',
-  insufficient_evidence: '⚠️ 검증할 수 있는 자료가 부족합니다.',
+  confirmed: '실제로 사용되는 헬스 운동으로 확인되었습니다.',
+  alias_of_existing: '운동명은 확인되지만 표준 명칭이 아닌 별칭으로 보입니다.',
+  uncertain: '실제 헬스 운동으로 확인하기 어렵습니다.',
+  fictional: '실제 헬스 운동으로 확인하기 어렵습니다.',
+  insufficient_evidence: '검증할 수 있는 자료가 부족합니다.',
 };
+const VERDICT_ICON: Record<string, IconName> = {
+  confirmed: 'check',
+  alias_of_existing: 'warn',
+  uncertain: 'close',
+  fictional: 'close',
+  insufficient_evidence: 'warn',
+};
+function VerdictIcon({ verdict }: { verdict: string }) {
+  const name = VERDICT_ICON[verdict];
+  return name ? <><Icon name={name} /> </> : null;
+}
 
 export default function RequestGymExercise() {
   const navigate = useNavigate();
@@ -111,7 +123,7 @@ export default function RequestGymExercise() {
           <span>운동 추가 요청</span>
         </div>
         <div className="section-title">
-          <h2>➕ 새로운 헬스 운동 추가</h2>
+          <h2><Icon name="plus" /> 새로운 헬스 운동 추가</h2>
         </div>
 
         {step === 'input' && (
@@ -162,12 +174,12 @@ export default function RequestGymExercise() {
           <div className="card info-card">
             <h3>"{name}"</h3>
             <p>
-              <strong>검증 결과:</strong> {VERDICT_LABEL[verificationOutcome.verification.verdict] ?? verificationOutcome.message}
+              <strong>검증 결과:</strong> <VerdictIcon verdict={verificationOutcome.verification.verdict} />{VERDICT_LABEL[verificationOutcome.verification.verdict] ?? verificationOutcome.message}
             </p>
             <p className="video-status-message">{verificationOutcome.message}</p>
             {verificationOutcome.verification.reason && <p className="video-status-message">{verificationOutcome.verification.reason}</p>}
             <p style={{ fontSize: 12, color: 'var(--text-faint)' }}>확신도: {verificationOutcome.verification.confidence}%</p>
-            <p className="video-status-message">⚠️ 실제 헬스 운동인지 확인하기 어려워 자동 등록하지 않았습니다.</p>
+            <p className="video-status-message"><Icon name="warn" /> 실제 헬스 운동인지 확인하기 어려워 자동 등록하지 않았습니다.</p>
             <div className="modal-actions modal-actions--start">
               <button className="btn btn-primary" onClick={reset}>
                 다시 시도
@@ -192,7 +204,7 @@ export default function RequestGymExercise() {
             <div className="card info-card">
               <h3>"{name}"</h3>
               <p>
-                <strong>검증 결과:</strong> {VERDICT_LABEL[record.verification.verdict]}
+                <strong>검증 결과:</strong> <VerdictIcon verdict={record.verification.verdict} />{VERDICT_LABEL[record.verification.verdict]}
               </p>
               <div className="curriculum-stat-row">
                 <div>
@@ -269,7 +281,7 @@ export default function RequestGymExercise() {
 
         {step === 'saved' && record && (
           <div className="card info-card">
-            <h3>✅ 운동이 등록되었습니다.</h3>
+            <h3><Icon name="check" /> 운동이 등록되었습니다.</h3>
             <p className="video-status-message">
               {user
                 ? '실제 존재 여부 검증을 통과해 공용 헬스 운동 라이브러리에 즉시 등록되었습니다. 다른 사용자도 검색·사용할 수 있습니다.'

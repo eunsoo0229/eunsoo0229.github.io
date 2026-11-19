@@ -1,0 +1,130 @@
+{
+ "generatedBy": "Phase 6 visual review (2026-11-02): strike_metrics.py, com_audit.py, strike_review.py, duo_review.py",
+ "hook": {
+  "boxing-hook-m2m-v3": {
+   "faceToFistYawDegAtKeys": {
+    "0": 21,
+    "10": 17.8,
+    "14": 79.7,
+    "18": 132.8,
+    "24": 85.7,
+    "30": 29.2
+   },
+   "maxHeadTurnPerKeyDeg": 1.97,
+   "maxChestTurnPerKeyDeg": 13.89
+  },
+  "boxing-hook-m2m-v4": {
+   "faceToFistYawDegAtKeys": {
+    "0": 21,
+    "10": 0,
+    "14": 20.9,
+    "18": 0.5,
+    "24": 15.4,
+    "30": 29.2
+   },
+   "maxHeadTurnPerKeyDeg": 22.16,
+   "maxChestTurnPerKeyDeg": 13.89,
+   "com": {
+    "contactLeadFraction": 0.49,
+    "outsideSupportKeys": [],
+    "torsoLeanDegAtContact": 6.8
+   },
+   "nonSeamIntersections": [],
+   "sha256": "9098cad3dfcac337e035ff4ae7742b2f97a9523cadf1ad8b1ad16d9091892f64"
+  },
+  "boxing-hook-m2m-v4-southpaw": {
+   "faceToFistYawDegAtKeys": {
+    "0": 21,
+    "10": 0,
+    "14": 20.9,
+    "18": 0.5,
+    "24": 15.4,
+    "30": 29.2
+   },
+   "maxHeadTurnPerKeyDeg": 22.16,
+   "maxChestTurnPerKeyDeg": 13.89,
+   "com": {
+    "contactLeadFraction": 0.49,
+    "outsideSupportKeys": [],
+    "torsoLeanDegAtContact": 6.8
+   },
+   "nonSeamIntersections": [],
+   "sha256": "baeac88f86656bc0974b7c94ea4df0000aaad1481e5b6c547257d4ce4232fc26"
+  },
+  "unchangedFromV3": {
+   "hookingFistMaxChangeM": 0,
+   "elbowMaxChangeDeg": 0
+  },
+  "notes": [
+   "eyes: guard gaze to key 8, turning (direction slerp, horizontal, guard eye height kept) to the fist at contact (key 18) by key 17, held to 21, back by 30 — target measured on each run's own solved pose (orthodox / southpaw same rule)",
+   "the head bone takes the follow-turn (neck share 0.4 -> 0 while following): the neck no longer counter-twists to keep the face forward as in v3; the head joint therefore sits with the turned chest (head-behind-hips audit -0.07 at contact; COM and torso lean unchanged)",
+   "rear guard hand 4 cm out at contact so the turning face does not run into it (v4 non-seam intersections 0)"
+  ]
+ },
+ "doubleLeg": {
+  "before": {
+   "plantedSlideMaxM": 0.0729,
+   "plantedSlideTotalM": 2.522
+  },
+  "after": {
+   "plantedSlideMaxM": 0.039,
+   "plantedSlideTotalM": 0.131,
+   "bodyPenetrationMax": 389,
+   "gripContactMax": 645,
+   "lowestSkin": -0.0004,
+   "pelvisStepMaxM": 0.0845,
+   "selfArmToArmMax": {
+    "A": 0,
+    "B": 0
+   },
+   "handToFaceMax": 0
+  },
+  "afterSouthpaw": {
+   "plantedSlideMaxM": 0.039,
+   "plantedSlideTotalM": 0.131,
+   "bodyPenetrationMax": 389,
+   "gripContactMax": 645,
+   "lowestSkin": -0.0004,
+   "pelvisStepMaxM": 0.0845,
+   "selfArmToArmMax": {
+    "A": 0,
+    "B": 0
+   },
+   "handToFaceMax": 0
+  },
+  "phases": "준비·레벨 체인지 0-24 / 진입: 페네트레이션 스텝 24-38 / 드라이브: 뒷발 끌어오며 전진 38-62 / 넘기기·상위 포지션 62-96",
+  "image": "data/audit/motion3d-phase6-double-leg-steps.png",
+  "mirrorFix": "grapple_kit.mirror: the plain-point end of a point blend (_Lerp) was not reflected — the first southpaw build crossed both actors' arms at keys 27-32; fixed and rebuilt"
+ },
+ "rearNakedChoke": {
+  "before": {
+   "selfArmToArmMaxA": 190,
+   "handToFaceMax": 14
+  },
+  "after": {
+   "plantedSlideMaxM": 0,
+   "plantedSlideTotalM": 0,
+   "bodyPenetrationMax": 1249,
+   "gripContactMax": 1162,
+   "lowestSkin": 0,
+   "pelvisStepMaxM": 0,
+   "selfArmToArmMax": {
+    "A": 616,
+    "B": 114
+   },
+   "handToFaceMax": 0
+  },
+  "safetyMinimaM": {
+   "chokeArmToNeckM": 0.118,
+   "supportArmToNeckM": 0.242,
+   "armsApartM": 0.086,
+   "handsToHeadsM": 0.167
+  },
+  "notes": [
+   "palm-to-palm hold (팔 맞잡기): the v1 \"hand on the opposite biceps\" grip was 11 cm out of reach for this character; arms no longer cross (v1 armToArm 117-190 in the hold) — remaining A armToArm is the clasped wrists (35 in the hold, up to ~300 for the ~4 keys the hands meet / part)",
+   "legs, hooks, pelvis, B posture, colours and timeline kept from v1"
+  ],
+  "image": "data/audit/motion3d-phase6-rnc-before-after.png"
+ },
+ "humanVisualReview": "NOT DONE by a person — renders checked by the author (Claude) only."
+}

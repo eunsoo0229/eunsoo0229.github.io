@@ -1,3 +1,4 @@
+import Icon from './Icon';
 import { useNavigate } from 'react-router-dom';
 import type { Technique } from '../types';
 import DifficultyBadge from './DifficultyBadge';
@@ -81,7 +82,7 @@ export default function TechniqueRow({
           aria-label="즐겨찾기"
           title="즐겨찾기"
         >
-          {fav ? '★' : '☆'}
+          <Icon name={fav ? 'star-filled' : 'star'} />
         </button>
       </div>
     </div>

@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { getMartialArt } from '../lib/loadData';
@@ -130,7 +131,7 @@ export default function LearnedTechniques() {
           <span>배운 기술</span>
         </div>
         <div className="section-title">
-          <h2>📚 배운 기술</h2>
+          <h2><Icon name="book" /> 배운 기술</h2>
         </div>
         <p className="video-status-message" style={{ marginTop: -8 }}>
           커리큘럼·훈련·자세 분석 등으로 한 번이라도 학습한 기술입니다. 지금 숙련도와 관계없이 모두 표시합니다.
@@ -229,7 +230,7 @@ export default function LearnedTechniques() {
 
             {toast && (
               <div className="ai-inline-warning learned-toast" role="status" data-testid="learned-toast">
-                ✅ {toast}
+                <Icon name="check" /> {toast}
               </div>
             )}
 
@@ -297,7 +298,7 @@ export default function LearnedTechniques() {
                     </button>
                   ))}
                   <button className="choice-card" data-testid="learned-bulk-option-auto" onClick={() => setPending({ target: null })}>
-                    <span className="choice-card__title">↺ 자동 계산으로 되돌리기</span>
+                    <span className="choice-card__title"><Icon name="refresh" /> 자동 계산으로 되돌리기</span>
                   </button>
                 </div>
                 <div className="modal-actions">

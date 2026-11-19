@@ -1,3 +1,4 @@
+import Icon, { Glyph } from '../components/Icon';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { deleteTactic, listMyTactics, saveTacticFeedback } from '../lib/tactic/service';
@@ -59,7 +60,7 @@ export default function TacticList() {
           <span>전술 셋업</span>
         </div>
         <div className="section-title">
-          <h2>🧩 상황별 전술 셋업</h2>
+          <h2><Icon name="puzzle" /> 상황별 전술 셋업</h2>
           <Link to="/tactics/new" className="see-all">
             + 새 전술 만들기
           </Link>
@@ -98,7 +99,7 @@ export default function TacticList() {
                   {tactic.feedback && (
                     <div className="card info-card" style={{ marginTop: 10, marginBottom: 0 }}>
                       <p style={{ margin: 0 }}>
-                        <strong>✦ AI 전술 피드백</strong>
+                        <strong><Glyph set="ai" name="tactic-feedback" /> AI 전술 피드백</strong>
                       </p>
                       <p style={{ marginBottom: 0 }}>{tactic.feedback}</p>
                     </div>
@@ -107,13 +108,13 @@ export default function TacticList() {
 
                   <div className="modal-actions modal-actions--start">
                     <button className="btn btn-primary" onClick={() => handleFeedback(tactic)} disabled={loadingFeedbackId === tactic.id}>
-                      {loadingFeedbackId === tactic.id ? '분석 중...' : tactic.feedback ? '✦ 피드백 다시 받기' : '✦ AI 피드백 받기'}
+                      {loadingFeedbackId === tactic.id ? '분석 중...' : tactic.feedback ? <><Icon name="spark" /> 피드백 다시 받기</> : <><Icon name="spark" /> AI 피드백 받기</>}
                     </button>
                     <Link to={`/tactics/${tactic.id}/edit`} className="btn btn-secondary">
                       편집
                     </Link>
                     <button className="btn btn-ghost" onClick={() => setSharing(shareSourceFor(tactic))} data-testid="tactic-share">
-                      {shared.has(`tactic:${tactic.id}`) ? '🔗 공유됨 · 갱신' : '🔗 공유'}
+                      <Icon name="link" /> {shared.has(`tactic:${tactic.id}`) ? '공유됨 · 갱신' : '공유'}
                     </button>
                     <button className="btn btn-ghost" onClick={() => handleDelete(tactic.id)}>
                       삭제

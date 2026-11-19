@@ -1,0 +1,1480 @@
+{
+  "at": "2026-11-01T04:49:47.150Z",
+  "label": "phase3-final",
+  "ollama": [
+    {
+      "name": "qwen2.5:3b",
+      "sizeGB": 2.17,
+      "vramGB": 0
+    }
+  ],
+  "results": [
+    {
+      "id": "A",
+      "text": "MARTIALDEX 기술 자료로 정리한 암바(Armbar)입니다.\n\n■ 기술 설명\n암바는 클로즈드 가드에서 상대의 한쪽 팔을 다리 사이에 고정하고 고관절을 밀어 올려 팔꿈치 관절을 펴는 방식으로 제압하는 관절기입니다.\n\n■ 원리\n관절기는 대부분 상대가 팔을 뻗어 방어하거나(Kesa Gatame 탈출 시도 중 팔을 뻗음), 굳히기에서 벗어나려고 팔을 짚는 순간(Turn-In, Bridge 실패) 노출된 팔을 따라 들어간다. Kami Shiho Gatame나 Tate Shiho Gatame 상태에서 상대가 팔을 펴 밀어내려 하면 그 팔을 따라 몸을 돌려 Juji Gatame로 전환하는 것이 대표적이며, Kesa Gatame나 등쪽 컨트롤에서 상대의 팔이 등 뒤나 옆으로 감기면 Ude Garami로 전환한다.\n\n■ 핵심 포인트\n1. 다리를 상대 머리 위로 완전히 넘기기.\n2. 무릎을 좁게 조여 팔이 빠지지 않게 하기.\n3. 고관절을 들어 올려 압박 만들기.\n\n■ 흔한 실수와 대응\n- 실수: 다리를 상대 머리 위로 완전히 넘기지 못해 탈출 공간을 허용함.\n  → 바로잡기: 위 핵심 포인트 1번\n- 실수: 무릎을 조이지 않아 상대가 팔을 회전시켜 빠져나감.\n  → 바로잡기: 위 핵심 포인트 2번\n- 실수: 고관절을 들지 않고 팔로만 당겨 압박이 약해짐.\n  → 바로잡기: 위 핵심 포인트 3번\n(대응은 자료에 따로 있는 항목이 아니라, 같은 기술의 핵심 포인트 중 그 실수와 같은 동작을 다루는 문장을 짝지은 것입니다.)",
+      "totalMs": 6656,
+      "stages": {
+        "index": 539,
+        "dataAnswer": 2993
+      },
+      "firstTokenMs": null,
+      "phases": [],
+      "promptChars": 0,
+      "evalCount": 0,
+      "intent": "technique",
+      "research": {
+        "needed": false,
+        "kind": "web",
+        "queries": [],
+        "reason": ""
+      },
+      "techniques": [
+        "bjj__armbar"
+      ],
+      "model": "martialdex-data",
+      "sources": [],
+      "videos": [],
+      "papers": [],
+      "guardNotes": [],
+      "researchInfo": {
+        "kind": "web",
+        "queries": [],
+        "reason": "검색이 필요 없는 질문",
+        "searched": false,
+        "status": "skipped"
+      },
+      "lessonProposal": null,
+      "style": null
+    },
+    {
+      "id": "B",
+      "text": "🔎 논문·연구 자료 검색 결과 6건 (본문 확인 0건)\n\n찾은 논문·연구 자료 6건입니다. 초록은 학술 검색 색인이 제공한 내용이며, 논문 본문은 읽지 않았습니다.\n[1] Navigating access and participation in grappling sports among adults with visual impairments: a qualitative study (2026)\n   Jaepyo Sim, T. N. Kirk · oadoi.org\n   DOI 10.1080/13573322.2026.2748351 (doi.org 등록 확인)\n   초록 일부: Adults with visual impairment (VI) are typically less active than their sighted peers, partly because many physical activity options are difficult to access and sustain. Grappling sports, which involve near-constant cont…\n   확인 수준: 서지 정보·초록 확인 · 출처 신뢰도 높음\n[2] Effects of Physical Education Programs on Strength and Endurance (2026)\n   Mohit Kumar · International Journal of Advanced Research in Science, Communication and Technology\n   DOI 10.48175/ijarsct-38043 (doi.org 등록 확인)\n   초록 일부: Strength-endurance is one of the key motor qualities that can be developed by an athlete, which probably explains why it was included in the training cycle of combat sports at the level of top-level competition. In strik…\n   확인 수준: 서지 정보·초록 확인 · 출처 신뢰도 높음\n[3] Bioenergetics of the combat sports brain: Between risk and resilience. (2026)\n   Bailey DM, Stacey BS, Cox K 외 · Journal of cerebral blood flow and metabolism : official journal of the International Society of Cerebral Blood Flow and Metabolism\n   DOI 10.1177/0271678x261473394 (doi.org 등록 확인)\n   초록 일부: Combat sports provide a unique human model in which cerebral ischaemia-reperfusion stress, adaptive neuroprotection, and impact-induced neurodegenerative risk coexist. Across striking and grappling disciplines, exercise-…\n   확인 수준: 서지 정보·초록 확인 · 출처 신뢰도 높음\n[4] Temporal trends and weight-class differences in takedown density in professional mixed martial arts: a retrospective analysis of 8,461 UFC bouts, 1997-2025. (2026)\n   Ma K, Li K, Zhu Z 외 · BMC sports science, medicine & rehabilitation\n   DOI 10.1186/s13102-026-01804-8 (doi.org 등록 확인)\n   초록 일부: BackgroundTakedowns are a central grappling action in mixed martial arts (MMA), but long-term evidence on time-normalized takedown output across competitive eras and weight classes remains limited. This study examined ta…\n   확인 수준: 서지 정보·초록 확인 · 출처 신뢰도 높음\n[5] Comparison of Anthropometric and Physical Performance Profiles in Elite Judo and Jiu-Jitsu Athletes. (2026)\n   Artur Avelino Birk Preissler, Filipe Manuel Clemente, Marcela Zimmermann Casal 외 · Sports (Basel, Switzerland)\n   DOI 10.3390/sports14050207 (doi.org 등록 확인)\n   초록 일부: Combat-sport performance depends on the interaction between technical skills and physical capacities, yet direct comparisons between grappling disciplines remain limited. The aim of this study was to compare the anthropo…\n   확인 수준: 서지 정보·초록 확인 · 출처 신뢰도 높음\n[6] GENETIC POLYMORPHISMS AND PERFORMANCE IN GRAPPLING SPORTS: A SYSTEMATIC REVIEW (2026)\n   Arthur dos Santos Monteiro, Larissa de Sousa Vieira, Vivian Yoko Silva Murakami 외 · oadoi.org\n   DOI 10.54751/revistafoco.v19n3-045 (doi.org 등록 확인)\n   초록 일부: Combat sports of the grappling type, such as judo, Brazilian jiu-jitsu, and wrestling, require complex physical capacities including strength, power, endurance, and rapid recovery. Although sports performance is influenc…\n   확인 수준: 서지 정보·초록 확인 · 출처 신뢰도 높음",
+      "totalMs": 15486,
+      "stages": {
+        "index": 0,
+        "search": 11944
+      },
+      "firstTokenMs": null,
+      "phases": [
+        [
+          3540,
+          "논문·연구 자료 검색 중…"
+        ]
+      ],
+      "promptChars": 0,
+      "evalCount": 0,
+      "intent": "paper",
+      "research": {
+        "needed": true,
+        "kind": "paper",
+        "queries": [
+          "sports science grappling",
+          "그래플링 스포츠 과학 논문"
+        ],
+        "reason": "논문·연구 자료 요청"
+      },
+      "techniques": [],
+      "model": "martialdex-list",
+      "sources": [
+        {
+          "n": 1,
+          "title": "Navigating access and participation in grappling sports among adults with visual impairments: a qualitative study",
+          "url": "https://oadoi.org/10.1080/13573322.2026.2748351",
+          "source": "oadoi.org",
+          "sourceType": "academic",
+          "sourceTypeLabel": "학술 자료",
+          "publishedAt": "2026-10-15T15:00:00.000Z",
+          "reliability": {
+            "level": "high",
+            "label": "높음",
+            "reasons": [
+              "출처 유형: 학술 자료",
+              "사이트가 자동 접근을 막아 본문 미확인",
+              "게시일 표기: 2026-10-15"
+            ]
+          },
+          "contentRead": false,
+          "paper": {
+            "doi": "10.1080/13573322.2026.2748351",
+            "doiUrl": "https://doi.org/10.1080/13573322.2026.2748351",
+            "doiStatus": "registered",
+            "authors": [
+              "Jaepyo Sim",
+              "T. N. Kirk"
+            ],
+            "year": 2026,
+            "abstract": "Adults with visual impairment (VI) are typically less active than their sighted peers, partly because many physical activity options are difficult to access and sustain. Grappling sports, which involve near-constant contact and reduce reliance on visual tracking, are often considered inherently accessible, yet little is known about practitioners' experiences. The purpose of this study was to explore the motivations and lived experiences of adults with VI who participate in grappling sports, and to interpret how expectancies, values and costs shape initiation and sustained engagement within rea",
+            "pdfUrl": "https://www.tandfonline.com/doi/pdf/10.1080/13573322.2026.2748351?needAccess=true"
+          }
+        },
+        {
+          "n": 2,
+          "title": "Effects of Physical Education Programs on Strength and Endurance",
+          "url": "https://oadoi.org/10.48175/ijarsct-38043",
+          "source": "oadoi.org",
+          "sourceType": "academic",
+          "sourceTypeLabel": "학술 자료",
+          "publishedAt": "2026-08-11T15:00:00.000Z",
+          "reliability": {
+            "level": "high",
+            "label": "높음",
+            "reasons": [
+              "출처 유형: 학술 자료",
+              "본문을 읽지 못해 검색 요약만 있음",
+              "게시일 표기: 2026-08-11"
+            ]
+          },
+          "contentRead": false,
+          "paper": {
+            "doi": "10.48175/ijarsct-38043",
+            "doiUrl": "https://doi.org/10.48175/ijarsct-38043",
+            "doiStatus": "registered",
+            "authors": [
+              "Mohit Kumar"
+            ],
+            "journal": "International Journal of Advanced Research in Science, Communication and Technology",
+            "year": 2026,
+            "abstract": "Strength-endurance is one of the key motor qualities that can be developed by an athlete, which probably explains why it was included in the training cycle of combat sports at the level of top-level competition. In striking combat sports, such as boxing or taekwondo, it is possible to suggest that an increase in dynamic strength-endurance will lead to an improvement in repeating explosive attacking movements. On the other hand, grapplers have to develop their strength-endurance since a lot of time during the fight is spent in the grip fight, and the outcome of this struggle ultimately determin"
+          }
+        },
+        {
+          "n": 3,
+          "title": "Bioenergetics of the combat sports brain: Between risk and resilience.",
+          "url": "https://europepmc.org/article/MED/42477911",
+          "source": "europepmc.org",
+          "sourceType": "academic",
+          "sourceTypeLabel": "학술 자료",
+          "publishedAt": "2026-07-19T15:00:00.000Z",
+          "reliability": {
+            "level": "high",
+            "label": "높음",
+            "reasons": [
+              "출처 유형: 학술 자료",
+              "본문을 읽지 못해 검색 요약만 있음",
+              "게시일 표기: 2026-07-19"
+            ]
+          },
+          "contentRead": false,
+          "paper": {
+            "doi": "10.1177/0271678x261473394",
+            "doiUrl": "https://doi.org/10.1177/0271678x261473394",
+            "doiStatus": "registered",
+            "authors": [
+              "Bailey DM",
+              "Stacey BS",
+              "Cox K",
+              "Fall L",
+              "Butkovic J",
+              "Vrselja Z",
+              "Assaf Y",
+              "Poole DC"
+            ],
+            "journal": "Journal of cerebral blood flow and metabolism : official journal of the International Society of Cerebral Blood Flow and Metabolism",
+            "year": 2026,
+            "abstract": "Combat sports provide a unique human model in which cerebral ischaemia-reperfusion stress, adaptive neuroprotection, and impact-induced neurodegenerative risk coexist. Across striking and grappling disciplines, exercise-induced metabolic and redox stress, repetitive head impacts and transient cerebral ischaemia-reperfusion during vascular neck restraints expose the brain to competing adaptive and injurious stimuli. Cerebral ischaemic preconditioning (cIPC) research demonstrates that brief, sublethal reductions in cerebral blood flow (CBF) activate a conserved hormetic programme involving modul",
+            "pdfUrl": "https://europepmc.org/articles/PMC13447599?pdf=render"
+          }
+        },
+        {
+          "n": 4,
+          "title": "Temporal trends and weight-class differences in takedown density in professional mixed martial arts: a retrospective analysis of 8,461 UFC bouts, 1997-2025.",
+          "url": "https://europepmc.org/article/MED/42316292",
+          "source": "europepmc.org",
+          "sourceType": "academic",
+          "sourceTypeLabel": "학술 자료",
+          "publishedAt": "2026-06-17T15:00:00.000Z",
+          "reliability": {
+            "level": "high",
+            "label": "높음",
+            "reasons": [
+              "출처 유형: 학술 자료",
+              "사이트가 자동 접근을 막아 본문 미확인",
+              "게시일 표기: 2026-06-17"
+            ]
+          },
+          "contentRead": false,
+          "paper": {
+            "doi": "10.1186/s13102-026-01804-8",
+            "doiUrl": "https://doi.org/10.1186/s13102-026-01804-8",
+            "doiStatus": "registered",
+            "authors": [
+              "Ma K",
+              "Li K",
+              "Zhu Z",
+              "Shao HT"
+            ],
+            "journal": "BMC sports science, medicine & rehabilitation",
+            "year": 2026,
+            "abstract": "BackgroundTakedowns are a central grappling action in mixed martial arts (MMA), but long-term evidence on time-normalized takedown output across competitive eras and weight classes remains limited. This study examined takedown density (TDpM; successful takedowns per minute) as a descriptive performance indicator in professional MMA.MethodsWe analyzed publicly available UFC bout-level records from 1997 to 2025, comprising 8,461 bouts and 16,922 fighter-bout observations. TDpM was calculated as successful takedowns divided by bout duration in minutes. Temporal trends were examined separately for",
+            "pdfUrl": "https://europepmc.org/articles/PMC13523191?pdf=render"
+          }
+        },
+        {
+          "n": 5,
+          "title": "Comparison of Anthropometric and Physical Performance Profiles in Elite Judo and Jiu-Jitsu Athletes.",
+          "url": "https://www.ncbi.nlm.nih.gov/pubmed/42188583",
+          "source": "ncbi.nlm.nih.gov",
+          "sourceType": "academic",
+          "sourceTypeLabel": "학술 자료",
+          "publishedAt": "2026-05-13T15:00:00.000Z",
+          "reliability": {
+            "level": "high",
+            "label": "높음",
+            "reasons": [
+              "출처 유형: 학술 자료",
+              "본문을 읽지 못해 검색 요약만 있음",
+              "게시일 표기: 2026-05-13"
+            ]
+          },
+          "contentRead": false,
+          "paper": {
+            "doi": "10.3390/sports14050207",
+            "doiUrl": "https://doi.org/10.3390/sports14050207",
+            "doiStatus": "registered",
+            "authors": [
+              "Artur Avelino Birk Preissler",
+              "Filipe Manuel Clemente",
+              "Marcela Zimmermann Casal",
+              "Rui Miguel Silva",
+              "Ana Filipa Silva",
+              "João Vitor Silveira",
+              "Pedro Schons"
+            ],
+            "journal": "Sports (Basel, Switzerland)",
+            "year": 2026,
+            "abstract": "Combat-sport performance depends on the interaction between technical skills and physical capacities, yet direct comparisons between grappling disciplines remain limited. The aim of this study was to compare the anthropometric profile and physical performance of elite judo and jiu-jitsu athletes. This cross-sectional study included 25 elite male athletes (judo-"
+          }
+        },
+        {
+          "n": 6,
+          "title": "GENETIC POLYMORPHISMS AND PERFORMANCE IN GRAPPLING SPORTS: A SYSTEMATIC REVIEW",
+          "url": "https://oadoi.org/10.54751/revistafoco.v19n3-045",
+          "source": "oadoi.org",
+          "sourceType": "academic",
+          "sourceTypeLabel": "학술 자료",
+          "publishedAt": "2026-03-16T15:00:00.000Z",
+          "reliability": {
+            "level": "high",
+            "label": "높음",
+            "reasons": [
+              "출처 유형: 학술 자료",
+              "검색 엔진 2곳에서 함께 검색됨",
+              "본문을 읽지 못해 검색 요약만 있음",
+              "게시일 표기: 2026-03-16"
+            ]
+          },
+          "contentRead": false,
+          "paper": {
+            "doi": "10.54751/revistafoco.v19n3-045",
+            "doiUrl": "https://doi.org/10.54751/revistafoco.v19n3-045",
+            "doiStatus": "registered",
+            "authors": [
+              "Arthur dos Santos Monteiro",
+              "Larissa de Sousa Vieira",
+              "Vivian Yoko Silva Murakami",
+              "Iasmyn de Souza Gomes",
+              "Adriano Lobato Freitas",
+              "Maria Eduarda Ambrozioni Moraes de Carvalho",
+              "Maiara Garcia da Silva",
+              "Erika Renata Souza Ribeiro",
+              "Luana Risuenho Saboia Oliveira",
+              "Agnes Mota Abreu",
+              "Valéria Mota Pizon",
+              "Andrey Carlos Sacramento de Oliveira"
+            ],
+            "year": 2026,
+            "abstract": "Combat sports of the grappling type, such as judo, Brazilian jiu-jitsu, and wrestling, require complex physical capacities including strength, power, endurance, and rapid recovery. Although sports performance is influenced by multiple biological and environmental factors, increasing evidence suggests that genetic polymorphisms may contribute to individual variability in athletic performance. However, studies synthesizing the role of these polymorphisms specifically in grappling sports remain limited. This study aimed to analyze the scientific literature regarding the association between geneti",
+            "pdfUrl": "https://ojs.focopublicacoes.com.br/foco/article/download/11627/8151"
+          }
+        }
+      ],
+      "videos": [],
+      "papers": [],
+      "guardNotes": [],
+      "researchInfo": {
+        "kind": "paper",
+        "queries": [
+          "sports science grappling",
+          "그래플링 스포츠 과학 논문"
+        ],
+        "reason": "논문·연구 자료 요청",
+        "searched": true,
+        "status": "ok",
+        "failedEngines": [
+          "arxiv"
+        ],
+        "duplicatesRemoved": 7,
+        "pagesRead": 0,
+        "rawCount": 120,
+        "irrelevantRemoved": 55,
+        "removedTitles": [
+          "Evolution of striking dominance in Ultimate Fighting Championship: A cross-temporal analysis of factors associated with victory.",
+          "Anthropometric Profiling, Somatotype Differentiation, and Methodological Discrepancies in Body Fat Estimation Across Combat Sports: A Comparative Multi-Equation Analysis.",
+          "Evolution of striking dominance in Ultimate Fighting Championship: A cross-temporal analysis of factors associated with victory."
+        ]
+      },
+      "lessonProposal": null,
+      "style": null
+    },
+    {
+      "id": "C",
+      "text": "🔎 영상 검색 결과 6건 (본문 확인 0건)\n\n찾은 영상 6개입니다 (앱에서 바로 재생 가능 6개). 제목·채널·길이는 검색 결과와 YouTube가 알려 준 정보이고, 영상 내용 자체는 확인하지 않았습니다.\n[1] Wrestling Inside Single Leg Motion Duck Under Technique Tutorial [ENG SUB] — 레슬링연구소 (03:38) · 앱에서 재생 가능\n[2] Outside Single-Leg Sprawl Advanced Course #Wrestling — 두귀TV (01:03) · 앱에서 재생 가능\n[3] 슬기로운 레슬링생활 | 싱글렉 테이크다운 배우기 🤼‍♂️ Learn Wrestling in 3 Minutes | DJ HEY BRO — HEY BRO MMA (02:27) · 앱에서 재생 가능\n[4] Inside Single Leg Takedown by Wrestling Situation — 레슬링연구소 (11:03) · 앱에서 재생 가능\n[5] 1-on-5 wrestling sparring with the coach (including single-leg escape technique video) — 횬쟁이의 생존일기(주짓수 채널) (10:28) · 앱에서 재생 가능\n[6] Easy Underhook Setup for Wrestling Beginners! [Inside Single Leg] — 알파레슬링 (01:06) · 앱에서 재생 가능",
+      "totalMs": 4874,
+      "stages": {
+        "index": 0,
+        "search": 3036
+      },
+      "firstTokenMs": null,
+      "phases": [
+        [
+          1837,
+          "영상 검색 중…"
+        ]
+      ],
+      "promptChars": 0,
+      "evalCount": 0,
+      "intent": "video",
+      "research": {
+        "needed": true,
+        "kind": "video",
+        "queries": [
+          "레슬링 싱글렉 강좌",
+          "single leg wrestling tutorial"
+        ],
+        "reason": "영상 요청"
+      },
+      "techniques": [
+        "sambo__single-leg"
+      ],
+      "model": "martialdex-list",
+      "sources": [
+        {
+          "n": 1,
+          "title": "Wrestling Inside Single Leg Motion Duck Under Technique Tutorial [ENG SUB]",
+          "url": "https://www.youtube.com/watch?v=HljJGiDvGbE",
+          "source": "youtube.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "검색 엔진 2곳에서 함께 검색됨",
+              "원문 본문 확인",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false,
+          "video": {
+            "platform": "youtube",
+            "videoId": "HljJGiDvGbE",
+            "channel": "레슬링연구소",
+            "duration": "03:38",
+            "thumbnail": "https://i.ytimg.com/vi/HljJGiDvGbE/hqdefault.jpg",
+            "embed": "embeddable"
+          }
+        },
+        {
+          "n": 2,
+          "title": "Outside Single-Leg Sprawl Advanced Course #Wrestling",
+          "url": "https://www.youtube.com/watch?v=_CFiIb89uj0",
+          "source": "youtube.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "검색 엔진 2곳에서 함께 검색됨",
+              "원문 본문 확인",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false,
+          "video": {
+            "platform": "youtube",
+            "videoId": "_CFiIb89uj0",
+            "channel": "두귀TV",
+            "duration": "01:03",
+            "thumbnail": "https://i.ytimg.com/vi/_CFiIb89uj0/hqdefault.jpg",
+            "embed": "embeddable"
+          }
+        },
+        {
+          "n": 3,
+          "title": "슬기로운 레슬링생활 | 싱글렉 테이크다운 배우기 🤼‍♂️ Learn Wrestling in 3 Minutes | DJ HEY BRO",
+          "url": "https://www.youtube.com/watch?v=KD9Ru5JAKIs",
+          "source": "youtube.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "검색 엔진 2곳에서 함께 검색됨",
+              "원문 본문 확인",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false,
+          "video": {
+            "platform": "youtube",
+            "videoId": "KD9Ru5JAKIs",
+            "channel": "HEY BRO MMA",
+            "duration": "02:27",
+            "thumbnail": "https://i.ytimg.com/vi/KD9Ru5JAKIs/hqdefault.jpg",
+            "embed": "embeddable"
+          }
+        },
+        {
+          "n": 4,
+          "title": "Inside Single Leg Takedown by Wrestling Situation",
+          "url": "https://www.youtube.com/watch?v=bvMocsiH5i4",
+          "source": "youtube.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "publishedAt": "2025-02-09T15:00:00.000Z",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "검색 엔진 2곳에서 함께 검색됨",
+              "원문 본문 확인",
+              "게시일 표기: 2025-02-09"
+            ]
+          },
+          "contentRead": false,
+          "video": {
+            "platform": "youtube",
+            "videoId": "bvMocsiH5i4",
+            "channel": "레슬링연구소",
+            "duration": "11:03",
+            "thumbnail": "https://i.ytimg.com/vi/bvMocsiH5i4/hqdefault.jpg",
+            "embed": "embeddable"
+          }
+        },
+        {
+          "n": 5,
+          "title": "1-on-5 wrestling sparring with the coach (including single-leg escape technique video)",
+          "url": "https://www.youtube.com/watch?v=axzf6m21yIw",
+          "source": "youtube.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "검색 엔진 2곳에서 함께 검색됨",
+              "원문 본문 확인",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false,
+          "video": {
+            "platform": "youtube",
+            "videoId": "axzf6m21yIw",
+            "channel": "횬쟁이의 생존일기(주짓수 채널)",
+            "duration": "10:28",
+            "thumbnail": "https://i.ytimg.com/vi/axzf6m21yIw/hqdefault.jpg",
+            "embed": "embeddable"
+          }
+        },
+        {
+          "n": 6,
+          "title": "Easy Underhook Setup for Wrestling Beginners! [Inside Single Leg]",
+          "url": "https://www.youtube.com/watch?v=Fq3OYEm1Z7U",
+          "source": "youtube.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "검색 엔진 2곳에서 함께 검색됨",
+              "원문 본문 확인",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false,
+          "video": {
+            "platform": "youtube",
+            "videoId": "Fq3OYEm1Z7U",
+            "channel": "알파레슬링",
+            "duration": "01:06",
+            "thumbnail": "https://i.ytimg.com/vi/Fq3OYEm1Z7U/hqdefault.jpg",
+            "embed": "embeddable"
+          }
+        }
+      ],
+      "videos": [],
+      "papers": [],
+      "guardNotes": [],
+      "researchInfo": {
+        "kind": "video",
+        "queries": [
+          "레슬링 싱글렉 강좌",
+          "single leg wrestling tutorial"
+        ],
+        "reason": "영상 요청",
+        "searched": true,
+        "status": "ok",
+        "failedEngines": [],
+        "duplicatesRemoved": 7,
+        "pagesRead": 0,
+        "rawCount": 289,
+        "irrelevantRemoved": 75,
+        "removedTitles": [
+          "Grappling Practice Lecture Single Rack",
+          "[레슬링기술] 싱글랙 깔렸을때 이렇게 해보세요 part.2",
+          "아기고양이 레슬링"
+        ]
+      },
+      "lessonProposal": null,
+      "style": null
+    },
+    {
+      "id": "D",
+      "text": "🔎 웹 검색 결과 6건 (본문 확인 1건)\n\n📘 수업 계획 — 레슬링 · 싱글 레그 계열 (19개 기록)\n• 싱글 레그란: \"싱글 레그는 상대의 한쪽 다리만 통제해 균형을 무너뜨리는 테이크다운으로, 상대가 스탠스를 넓게 벌리거나 한쪽 다리에 체중을 오래 싣고 있을 때, 또는 손싸움에서 상체 그립을 뺏겼을 때 주로 진입한다. 목적은 다리를 고정한 상태에서 상대를 눕히거나(테이크다운) 다리를 놓치지 않고 등 뒤로 돌아가는 것(고-비하인드)이다. 상대가 다리를 빼거나 스프롤로 저항하면 크랙다운 포지션이나 프론트 헤드락으로, 다리를 강하게 당겨 저항하면 더블 레그나 백테이크로 전환한다.\" — MARTIALDEX 레슬링 백과사전\n• 학습 목표: Single-Leg Position → High Single → High Crotch → Single to Double 순서로 동작 원리와 핵심 포인트를 익히고, 기록된 상황에 적용해 봅니다.\n• 선수 지식: Single-Leg Position\n• 진행 순서 (각 기술: 설명 → 이해 확인 → 영상 → 실습 → 상황 판단):\n  1. [선행] Single-Leg Position · 중급 — 자료: 기술 설명, 동작 단계, 핵심 포인트, 흔한 실수, 사용 상황\n  2. [핵심] High Single · 초급 — 자료: 기술 설명, 동작 단계, 핵심 포인트, 흔한 실수, 사용 상황\n  3. [핵심] High Crotch · 중급 — 자료: 기술 설명, 동작 단계, 핵심 포인트, 흔한 실수, 사용 상황\n  4. [응용] Single to Double · 고급 — 자료: 기술 설명, 동작 단계, 핵심 포인트, 흔한 실수, 사용 상황\n• 관련 셋업·콤보: Hand Fighting → High Single (Hand Fighting → High Single) / Sprawl → High Single (Sprawl → High Single) / High Single → Cutback (High Single → Cutback) / High Single → Back Trip (High Single → Back Trip)\n• 상황별 적용: 위 계열 설명의 진입 상황·상대 반응별 전환 / 상대 대응: Single-Leg Down Defense(방어)\n• 복습: 수업 마지막에 배운 핵심 포인트를 직접 말해 보는 복습이 있습니다.\n• 이어서 배울 수 있는 싱글 레그 기록: Low Single, Outside Single, Inside Single, Sweep Single, Snatch Single, Near Ankle, Far Ankle, Running the Pipe 외 7개\n• 자료 부족: Single Leg은(는) 기록에 설명·동작 단계·핵심 포인트가 없어 수업에서 뺐습니다.\n수업 내용은 MARTIALDEX 기술 기록으로만 구성합니다. 아래 \"이 주제로 수업 시작\"을 누르면 기존 수업 엔진으로 진행됩니다.",
+      "totalMs": 7587,
+      "stages": {
+        "index": 0,
+        "search": 2658
+      },
+      "firstTokenMs": null,
+      "phases": [
+        [
+          2433,
+          "웹 검색 중…"
+        ]
+      ],
+      "promptChars": 0,
+      "evalCount": 0,
+      "intent": "lesson",
+      "research": {
+        "needed": true,
+        "kind": "web",
+        "queries": [
+          "레슬링 싱글렉을 기초부터 실전 응용까지 체계적으로 배우고 싶어.",
+          "기초 응용 Single Leg single leg wrestling"
+        ],
+        "reason": "수업 참고 자료 (수업 내용은 MARTIALDEX 기록으로만 구성)"
+      },
+      "techniques": [
+        "sambo__single-leg"
+      ],
+      "model": "martialdex-plan",
+      "sources": [
+        {
+          "n": 1,
+          "title": "5 Minutes Of Pure Wrestling SINGLE LEG Technique - YouTube",
+          "url": "https://www.youtube.com/watch?v=2da6jUTIV38",
+          "source": "youtube.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "원문 본문 확인",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false
+        },
+        {
+          "n": 2,
+          "title": "프로레슬링의 기초 기술 분류",
+          "url": "https://kin.naver.com/",
+          "source": "kin.naver.com",
+          "sourceType": "web",
+          "sourceTypeLabel": "일반 웹",
+          "reliability": {
+            "level": "low",
+            "label": "낮음",
+            "reasons": [
+              "출처 유형: 일반 웹",
+              "본문을 읽지 못해 검색 요약만 있음",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false
+        },
+        {
+          "n": 3,
+          "title": "Defend Every Single Leg Attempt | Wrestling Fundamentals",
+          "url": "https://www.youtube.com/watch?v=0ffYPvn6_34",
+          "source": "youtube.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "원문 본문 확인",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false
+        },
+        {
+          "n": 4,
+          "title": "종합격투기 - 나무위키",
+          "url": "https://namu.wiki/w/%EB%82%98%EB%AC%B4%EC%9C%84%ED%82%A4:%EB%8C%80%EB%AC%B8",
+          "source": "namu.wiki",
+          "sourceType": "reference",
+          "sourceTypeLabel": "백과사전",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 백과사전",
+              "본문을 읽지 못해 검색 요약만 있음",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false
+        },
+        {
+          "n": 5,
+          "title": "허리 통증 극복을 위한 4가지 기본 운동법 시리즈 #3",
+          "url": "https://brunch.co.kr/",
+          "source": "brunch.co.kr",
+          "sourceType": "blog",
+          "sourceTypeLabel": "블로그·개인 글",
+          "reliability": {
+            "level": "low",
+            "label": "낮음",
+            "reasons": [
+              "출처 유형: 블로그·개인 글",
+              "본문을 읽지 못해 검색 요약만 있음",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false
+        },
+        {
+          "n": 6,
+          "title": "USA Wrestling Membership",
+          "url": "https://www.usawmembership.com/usa_wrestling_core_curriculum",
+          "source": "usawmembership.com",
+          "sourceType": "web",
+          "sourceTypeLabel": "일반 웹",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 일반 웹",
+              "원문 본문 확인",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": true
+        }
+      ],
+      "videos": [],
+      "papers": [],
+      "guardNotes": [],
+      "researchInfo": {
+        "kind": "web",
+        "queries": [
+          "레슬링 싱글렉을 기초부터 실전 응용까지 체계적으로 배우고 싶어.",
+          "기초 응용 Single Leg single leg wrestling"
+        ],
+        "reason": "수업 참고 자료 (수업 내용은 MARTIALDEX 기록으로만 구성)",
+        "searched": true,
+        "status": "ok",
+        "failedEngines": [
+          "brave"
+        ],
+        "duplicatesRemoved": 0,
+        "pagesRead": 1,
+        "rawCount": 46,
+        "irrelevantRemoved": 33,
+        "removedTitles": [
+          "레슬링 - 나무위키",
+          "레슬링 대표 기술 완전 정복: 테이크다운부터 스프롤까지 · 격투생활",
+          "대한레슬링협회"
+        ]
+      },
+      "lessonProposal": {
+        "topic": "레슬링 싱글렉을 기초부터 실전 응용까지 체계적으로 배우고 싶어.",
+        "martialArt": "wrestling",
+        "techniqueIds": [
+          "wrestling__single-leg-position",
+          "wrestling__high-single",
+          "bjj__high-crotch",
+          "wrestling__single-to-double"
+        ],
+        "sequenceIds": [
+          "shared:sc_974b24f9-00fb-4c8b-90c0-a79887532fcd",
+          "shared:sc_1f5fe99f-15bf-4bc2-871f-7d62609243ba",
+          "shared:sc_fa5a01dc-2b7c-48c2-a388-b76be0054b2f",
+          "shared:sc_d7d6463a-c8a1-41c9-bad5-06400429848a"
+        ],
+        "sourceUrls": [
+          "https://www.youtube.com/watch?v=2da6jUTIV38",
+          "https://kin.naver.com/",
+          "https://www.youtube.com/watch?v=0ffYPvn6_34",
+          "https://namu.wiki/w/%EB%82%98%EB%AC%B4%EC%9C%84%ED%82%A4:%EB%8C%80%EB%AC%B8",
+          "https://brunch.co.kr/",
+          "https://www.usawmembership.com/usa_wrestling_core_curriculum"
+        ],
+        "candidateIds": []
+      },
+      "style": null
+    },
+    {
+      "id": "F",
+      "text": "🔎 웹 검색 결과 6건 (본문 확인 5건)\n\n선수: 코너 맥그리거 → Conor McGregor (위키백과 한국어 문서 「코너 맥그레거」의 영어 문서 연결로 확인)\n분석 근거: 본문을 읽은 분석 자료 5곳. 각 항목은 그 원문 문장에서 MARTIALDEX 기술 이름을 찾고, 그 동작을 이 선수가 했다고 쓴 문장만 골랐습니다. 경기 영상은 보지 않았습니다(영상 자체를 분석하지 않음).\n\n■ 주요 타격 기술\n- Cross · 여러 자료에서 공통 확인 · 원문에 빈도 표현\n  근거: mma-ninja.com(분석 자료의 설명) \"Signature Strikes: His powerful left hand, known as the “Celtic Cross,” is a game-changer in his fights.\" / mmamania.com(분석 자료의 설명) \"When he goes high, the kick also plays off the threat of his left cross, as McGregor can cause his opponent’s to slip into the strike.\"\n- Hook · 출처 1곳의 분석\n  근거: theworkoutmag.com(실제 사용 서술) \"Quick Answer Conor McGregor knocked out Jose Aldo with a single counter left hook at UFC 194 on December 12, 2015, just 13 seconds into the first rou…\"\n- Front Kick · 출처 1곳의 분석\n  근거: mmamania.com(분석 자료의 설명) \"McGregor attacks with a wide variety of kicks, ranging from front kicks, side kicks, spinning attacks and roundhouse kicks.\"\n- Side Kick · 출처 1곳의 분석\n  근거: mmamania.com(분석 자료의 설명) \"McGregor attacks with a wide variety of kicks, ranging from front kicks, side kicks, spinning attacks and roundhouse kicks.\"\n- Low Kick · 출처 1곳의 분석\n  근거: mmamania.com(분석 자료의 설명) \"Against Cerrone last time out, a fast left head kick to start the fight also pretty much ended it.In the second Diaz bout, McGregor’s left low kick c…\" / mmamania.com(분석 자료의 설명) \"Once Diaz was over-reacting to the low kick, McGregor would step forward and drop huge punches.A major weapon in McGregor’s arsenal is the front snap…\"\n- Step Forward · 출처 1곳의 분석\n  근거: mmamania.com(분석 자료의 설명) \"Once Diaz was over-reacting to the low kick, McGregor would step forward and drop huge punches.A major weapon in McGregor’s arsenal is the front snap…\"\n\n■ 카운터\n- Hook · 출처 1곳의 분석\n  근거: theworkoutmag.com(실제 사용 서술) \"Quick Answer Conor McGregor knocked out Jose Aldo with a single counter left hook at UFC 194 on December 12, 2015, just 13 seconds into the first rou…\"\n\n■ 거리 운영\n- distance · 여러 자료에서 공통 확인\n  근거: theworkoutmag.com(분석 자료의 설명) \"Rather than chaining combinations, he relies on distance management, timing, and single-shot fight-ending power.\" / mmamania.com(분석 자료의 설명) \"Notably, McGregor did a lot of damage to the far shorter Chad Mendes, making it more difficult for the wrestler to close distance and sapping his ene…\"\n- stance · 여러 자료에서 공통 확인\n  근거: mma-ninja.com(분석 자료의 설명) \"This stance allows him to land his powerful left hand more effectively while keeping his opponent guessin\" / mmamania.com(분석 자료의 설명) \"McGregor stands in a wide stance, bouncing in-and-out like a Karate athlete, which helps with his counter punches and distance.\"\n- lateral · 출처 1곳의 분석\n  근거: theworkoutmag.com(분석 자료의 설명) \"The Quick Answer The Conor McGregor style of fighting is built on three pillars: karate-based lateral movement, explosive left-hand knockout power de…\"\n- Bladed Stance · 출처 1곳의 분석\n  근거: theworkoutmag.com(분석 자료의 설명) \"His background in traditional karate gives him a wide, bladed stance that most MMA fighters don't use — and that's precisely why it works: opponents …\"\n- Southpaw · 출처 1곳의 분석\n  근거: mma-ninja.com(분석 자료의 설명) \"The Southpaw Stance: An Advantage?\" / mma-ninja.com(분석 자료의 설명) \"McGregor fights out of a southpaw stance, which gives him a strategic advantage against orthodox fighters.\"\n- pocket · 출처 1곳의 분석\n  근거: mmamania.com(분석 자료의 설명) \"However, McGregor is also very sharp from the pocket, which means there are no real safe spaces when standing opposite the Irishman.At times, McGrego…\"\n- … 외 1건\n\n■ 경기 운영 특징\n- game plan · 출처 1곳의 분석\n  근거: theworkoutmag.com(분석 자료의 설명) \"McGregor's approach to MMA is unusual because it inverts the typical fight game plan.\"\n- explosive · 출처 1곳의 분석\n  근거: mma-ninja.com(분석 자료의 설명) \"Known for his explosive fighting style and charismatic persona, McGregor has captivated fans and opponents alike.\"\n- grappling · 출처 1곳의 분석\n  근거: mma-ninja.com(분석 자료의 설명) \"Grappling Skills: While primarily a striker, he holds a black belt in Brazilian Jiu-Jitsu, showcasing his well-rounded skill set.\"\n- conditioning · 출처 1곳의 분석\n  근거: theworkoutmag.com(분석 자료의 설명) \"Direct answer: The Conor McGregor workout is not a single fixed routine — it's a periodized MMA preparation system built around Olympic weightlifting…\" / theworkoutmag.com(분석 자료의 설명) \"For non-fighters, the trainable elements are his movement-based warm-ups, unilateral strength work, rotational power development, and interval condit…\"\n\n■ 반복적으로 확인되는 패턴\n- 거리·스탠스: distance (서로 다른 자료 2곳 이상)\n- Cross (서로 다른 자료 2곳 이상)\n- 거리·스탠스: stance (서로 다른 자료 2곳 이상)\n\n■ AI 추론 (MARTIALDEX 기록 기반)\n- 확인된 기술들이 MARTIALDEX의 「Jab → Cross → Lead Hook → Low Kick → Superman Punch」 기록으로 이어질 수 있습니다 (선수가 실제로 이 순서를 쓴다는 자료는 아님). (Jab → Cross → Lead Hook → Low Kick → Superman Punch)\n\n■ 확인할 수 없는 항목: 주요 그래플링 기술, 셋업, 콤비네이션 — 읽은 자료에 이 선수가 했다고 쓴 문장이 없습니다.\n\n■ 선수 기술에서 제외한 언급 (자료에 나오지만 이 선수의 기술로 보지 않음)\n- 상대가 사용한 기술 5건: Orthodox, Hook, Slip, Low Kick\n  예: \"McGregor fights out of a southpaw stance, which gives him a strategic advantage against orthodox fighters.\" (\"against …\" — 상대 쪽 기술·스탠스)\n\n■ 요청하신 항목: 셋업: 자료에서 확인 못함 / 콤비네이션: 자료에서 확인 못함 / 카운터 1건\n\n■ 경기 영상 6개 (제목·설명만 확인, 영상 내용 미확인) — 아래 카드에서 재생\n\n■ 한계\n- 영상 내용은 앱이 직접 보지 않습니다 — 영상은 링크만 제공하며 \"영상에서 확인됨\"으로 표시하지 않습니다.\n- 항목은 원문 문장에서 기술 이름을 찾고, 그 동작을 한 사람(이 선수·상대·일반 설명)을 문장 구조 규칙으로 판별해 뽑았습니다. 복잡한 문장에서는 판별이 틀릴 수 있으니 근거 문장을 함께 확인해 주세요.",
+      "totalMs": 7940,
+      "stages": {
+        "index": 0,
+        "fighterStyle": 3484
+      },
+      "firstTokenMs": null,
+      "phases": [
+        [
+          3735,
+          "선수 이름 확인 중…"
+        ],
+        [
+          4455,
+          "분석 자료 검색 중…"
+        ]
+      ],
+      "promptChars": 0,
+      "evalCount": 0,
+      "intent": "fighter",
+      "research": {
+        "needed": true,
+        "kind": "web",
+        "queries": [
+          "코너 맥그리거의 타격 스타일을 분석해 줘. 대표적인 셋업, 콤비네이션, 카운터와 근거 자료를 구분해서 정리해 줘.",
+          "코너 맥그리거 Combination striking setup combination counter style analysis"
+        ],
+        "reason": "선수·경기 분석은 MARTIALDEX DB에 없는 정보 — 선수·경기 분석 자료 검색"
+      },
+      "techniques": [
+        "boxing__combination"
+      ],
+      "model": "martialdex-evidence",
+      "sources": [
+        {
+          "n": 1,
+          "title": "Conor McGregor Style of Fighting: Training Breakdown & How to ...",
+          "url": "https://theworkoutmag.com/training/conor-mcgregor-fighting-style-training-breakdown",
+          "source": "theworkoutmag.com",
+          "sourceType": "web",
+          "sourceTypeLabel": "일반 웹",
+          "publishedAt": "2026-09-30T03:00:00.000Z",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 일반 웹",
+              "원문 본문 확인",
+              "게시일 표기: 2026-09-30"
+            ]
+          },
+          "contentRead": true
+        },
+        {
+          "n": 2,
+          "title": "A Breakdown of Conor McGregor's Style and Techniques",
+          "url": "https://howtofightnow.com/a-breakdown-of-conor-mcgregors-style-and-techniques/",
+          "source": "howtofightnow.com",
+          "sourceType": "web",
+          "sourceTypeLabel": "일반 웹",
+          "reliability": {
+            "level": "low",
+            "label": "낮음",
+            "reasons": [
+              "출처 유형: 일반 웹",
+              "본문을 읽지 못해 검색 요약만 있음",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false
+        },
+        {
+          "n": 3,
+          "title": "What Type of MMA is Conor McGregor? 7 Key Techniques ...",
+          "url": "https://www.mma-ninja.com/what-type-of-mma-is-conor-mcgregor/",
+          "source": "mma-ninja.com",
+          "sourceType": "web",
+          "sourceTypeLabel": "일반 웹",
+          "publishedAt": "2025-03-22T18:05:51.000Z",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 일반 웹",
+              "원문 본문 확인",
+              "게시일 표기: 2025-03-22"
+            ]
+          },
+          "contentRead": true
+        },
+        {
+          "n": 4,
+          "title": "Conor McGregor's Fight Style Explained - YouTube",
+          "url": "https://www.youtube.com/watch?v=fD4t903YA3g",
+          "source": "youtube.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "원문 본문 확인",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false
+        },
+        {
+          "n": 5,
+          "title": "Conor McGregor vs Jose Aldo: The 13-Second KO Training ...",
+          "url": "https://theworkoutmag.com/training/mcgregor-aldo-knockout-training-analysis",
+          "source": "theworkoutmag.com",
+          "sourceType": "web",
+          "sourceTypeLabel": "일반 웹",
+          "publishedAt": "2026-09-29T03:00:00.000Z",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 일반 웹",
+              "원문 본문 확인",
+              "게시일 표기: 2026-09-29"
+            ]
+          },
+          "contentRead": true
+        },
+        {
+          "n": 6,
+          "title": "Conor McGregor Workout Breakdown: MMA Training Methods You ...",
+          "url": "https://theworkoutmag.com/training/conor-mgregor-mma-workout-breakdown",
+          "source": "theworkoutmag.com",
+          "sourceType": "web",
+          "sourceTypeLabel": "일반 웹",
+          "publishedAt": "2026-09-29T03:00:00.000Z",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 일반 웹",
+              "원문 본문 확인",
+              "게시일 표기: 2026-09-29"
+            ]
+          },
+          "contentRead": true
+        }
+      ],
+      "videos": [
+        {
+          "n": 1,
+          "title": "Conor McGregor vs Max Holloway 2 FULL FIGHT HIGHLIGHTS | UFC 329",
+          "url": "https://www.youtube.com/watch?v=UTBb0vvhdiI",
+          "source": "youtube.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "검색 엔진 2곳에서 함께 검색됨",
+              "원문 본문 확인",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false,
+          "video": {
+            "platform": "youtube",
+            "videoId": "UTBb0vvhdiI",
+            "channel": "NEXT2FIGHT",
+            "duration": "0:51",
+            "thumbnail": "https://i.ytimg.com/vi/UTBb0vvhdiI/hqdefault.jpg",
+            "embed": "embeddable"
+          }
+        },
+        {
+          "n": 2,
+          "title": "Conor McGregor highlights — Notorious moments and fights",
+          "url": "https://www.tiktok.com/@7ama_topuria/video/7701756281144544530",
+          "source": "tiktok.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "원문 본문 확인",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false,
+          "video": {
+            "platform": "other",
+            "duration": "00:39",
+            "embed": "not_supported"
+          }
+        },
+        {
+          "n": 3,
+          "title": "Conor McGregor Vs Nate Diaz Fight Highlights",
+          "url": "https://www.dailymotion.com/video/x57ifzt",
+          "source": "dailymotion.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "publishedAt": "2017-01-05T22:18:07.000Z",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "원문 본문 확인",
+              "게시일 표기: 2017-01-05"
+            ]
+          },
+          "contentRead": false,
+          "video": {
+            "platform": "other",
+            "duration": "02:20",
+            "embed": "not_supported"
+          }
+        },
+        {
+          "n": 4,
+          "title": "Conor McGregor vs Eddie Alvarez [FIGHT HIGHLIGHTS]",
+          "url": "https://vimeo.com/442791461",
+          "source": "vimeo.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "publishedAt": "2020-07-29T17:57:46.000Z",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "원문 본문 확인",
+              "게시일 표기: 2020-07-29"
+            ]
+          },
+          "contentRead": false,
+          "video": {
+            "platform": "other",
+            "channel": "Jin Nguyễn",
+            "embed": "not_supported"
+          }
+        },
+        {
+          "n": 5,
+          "title": "Conor McGregor vs Eddie Alvarez [FIGHT HIGHLIGHTS]",
+          "url": "https://www.dailymotion.com/video/x7v987c",
+          "source": "dailymotion.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "publishedAt": "2020-07-28T10:05:23.000Z",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "원문 본문 확인",
+              "게시일 표기: 2020-07-28"
+            ]
+          },
+          "contentRead": false,
+          "video": {
+            "platform": "other",
+            "duration": "05:40",
+            "embed": "not_supported"
+          }
+        },
+        {
+          "n": 6,
+          "title": "Conor McGregor vs. Max Holloway UFC 329 Mini Fight Highlights",
+          "url": "https://vimeo.com/1209226560",
+          "source": "vimeo.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "publishedAt": "2026-07-12T11:50:36.000Z",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "원문 본문 확인",
+              "게시일 표기: 2026-07-12"
+            ]
+          },
+          "contentRead": false,
+          "video": {
+            "platform": "other",
+            "channel": "Goatversetv",
+            "embed": "not_supported"
+          }
+        }
+      ],
+      "papers": [],
+      "guardNotes": [],
+      "researchInfo": {
+        "kind": "web",
+        "queries": [
+          "Conor McGregor mma style breakdown",
+          "Conor McGregor fight analysis setups combinations",
+          "Conor McGregor interview technique training"
+        ],
+        "reason": "선수·경기 분석은 MARTIALDEX DB에 없는 정보 — 선수·경기 분석 자료 검색",
+        "searched": true,
+        "status": "ok",
+        "pagesRead": 5
+      },
+      "lessonProposal": null,
+      "style": null
+    },
+    {
+      "id": "E",
+      "text": "🔎 웹 검색 결과 6건 (본문 확인 2건)\n\n■ MARTIALDEX 기록\n- 수업 기술: Single-Leg Position · 사용 상황: 스탠딩 포지션 / 그립\n- 수업 기술 자료 중 상대의 반응을 다룬 문장: \"다리가 몸에서 떨어져 상대가 다리를 회수함\"\n\n■ 검색 자료 요약 (로컬 AI가 아래 출처를 요약했습니다 — 원문으로 확인해 주세요)\n검색 자료에서 이 질문에 대한 답을 찾지 못했습니다.\n\n질문에 답했습니다. 수업은 하던 단계에서 그대로 이어집니다.",
+      "totalMs": 15854,
+      "stages": {
+        "index": 0,
+        "search": 3794,
+        "model": 9046
+      },
+      "firstTokenMs": 11153,
+      "phases": [
+        [
+          3013,
+          "웹 검색 중…"
+        ],
+        [
+          6808,
+          "검색 자료 요약 중…"
+        ]
+      ],
+      "promptChars": 1443,
+      "evalCount": 17,
+      "intent": "lesson_question",
+      "research": {
+        "needed": true,
+        "kind": "web",
+        "queries": [
+          "single-leg position wrestling finishes when opponent sprawls or defends",
+          "single-leg position wrestling re-attack after defense",
+          "Single-Leg Position 방어 대응"
+        ],
+        "reason": "수업 기술에 대한 상대 대응 질문 — MARTIALDEX 연결 기록 + 웹 자료"
+      },
+      "techniques": [
+        "wrestling__single-leg-position"
+      ],
+      "model": "qwen2.5:3b",
+      "sources": [
+        {
+          "n": 1,
+          "title": "Single Leg Finishing On The Mat - The School of Wrestling",
+          "url": "https://www.theschoolofwrestling.com/single-leg-finishing-on-the-mat/",
+          "source": "theschoolofwrestling.com",
+          "sourceType": "web",
+          "sourceTypeLabel": "일반 웹",
+          "reliability": {
+            "level": "low",
+            "label": "낮음",
+            "reasons": [
+              "출처 유형: 일반 웹",
+              "본문을 읽지 못해 검색 요약만 있음",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false
+        },
+        {
+          "n": 2,
+          "title": "Finishing a single leg attack when opponent sprawls hard",
+          "url": "https://www.youtube.com/watch?v=lBOQ0KCygp4",
+          "source": "youtube.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "원문 본문 확인",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false
+        },
+        {
+          "n": 3,
+          "title": "How to finish a single leg when your opponent sprawls.",
+          "url": "https://www.youtube.com/watch?v=xpO4iwjYTuE",
+          "source": "youtube.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "원문 본문 확인",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false
+        },
+        {
+          "n": 4,
+          "title": "General laws of competition duel and universal requirements to technical-tactic fitness of elite wrestlers",
+          "url": "https://www.sportedu.org.ua/html/journal/2016-N1/pdf-en/16kgvoew.pdf",
+          "source": "sportedu.org.ua",
+          "sourceType": "web",
+          "sourceTypeLabel": "일반 웹",
+          "reliability": {
+            "level": "low",
+            "label": "낮음",
+            "reasons": [
+              "출처 유형: 일반 웹",
+              "본문을 읽지 못해 검색 요약만 있음",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false
+        },
+        {
+          "n": 5,
+          "title": "Single Leg Attack - The School of Wrestling",
+          "url": "https://www.theschoolofwrestling.com/single-leg-attack/",
+          "source": "theschoolofwrestling.com",
+          "sourceType": "web",
+          "sourceTypeLabel": "일반 웹",
+          "reliability": {
+            "level": "low",
+            "label": "낮음",
+            "reasons": [
+              "출처 유형: 일반 웹",
+              "본문을 읽지 못해 검색 요약만 있음",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false
+        },
+        {
+          "n": 6,
+          "title": "IKMA 크라브마가 싱글렉 테이크다운 방어 (IKMA Single-Leg Takedown ...",
+          "url": "https://www.youtube.com/watch?v=ExvstUALIkk",
+          "source": "youtube.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "원문 본문 확인",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false
+        }
+      ],
+      "videos": [],
+      "papers": [],
+      "guardNotes": [
+        "요약에 출처 번호가 없습니다. 아래 출처와 직접 대조해 주세요."
+      ],
+      "researchInfo": {
+        "kind": "web",
+        "queries": [
+          "single-leg position wrestling finishes when opponent sprawls or defends",
+          "single-leg position wrestling re-attack after defense",
+          "Single-Leg Position 방어 대응"
+        ],
+        "reason": "수업 기술에 대한 상대 대응 질문 — MARTIALDEX 연결 기록 + 웹 자료",
+        "searched": true,
+        "status": "ok",
+        "failedEngines": [
+          "brave"
+        ],
+        "duplicatesRemoved": 26,
+        "pagesRead": 2,
+        "rawCount": 103,
+        "irrelevantRemoved": 42,
+        "removedTitles": [
+          "Single - Apps on Google Play",
+          "SINGLE | English meaning - Cambridge Dictionary",
+          "single - WordReference 영-한 사전"
+        ]
+      },
+      "lessonProposal": null,
+      "style": null
+    },
+    {
+      "id": "G",
+      "text": "안녕하세요. 무엇을 도와드릴까요?",
+      "totalMs": 23484,
+      "stages": {
+        "index": 0,
+        "model": 23418
+      },
+      "firstTokenMs": 15004,
+      "phases": [
+        [
+          66,
+          "답변 작성 중…"
+        ]
+      ],
+      "promptChars": 473,
+      "evalCount": 13,
+      "intent": "smalltalk",
+      "research": {
+        "needed": false,
+        "kind": "web",
+        "queries": [],
+        "reason": ""
+      },
+      "techniques": [],
+      "model": "qwen2.5:3b",
+      "sources": [],
+      "videos": [],
+      "papers": [],
+      "guardNotes": [],
+      "researchInfo": {
+        "kind": "web",
+        "queries": [],
+        "reason": "검색이 필요 없는 질문",
+        "searched": false,
+        "status": "skipped"
+      },
+      "lessonProposal": null,
+      "style": null
+    },
+    {
+      "id": "H",
+      "text": "제 판단으로는 현재의 훈련 과정에서 어려움을 겪고 계신 것 같습니다. 조금 더 쉬면서 본인의 상태를 파악해보시면 좋을 것 같아요. 만약 계속 힘든 상황이 지속된다면 전문 지도자와 상담하는 것도 고려해 보시기 바랍니다. 안전을 최우선으로 생각하세요.",
+      "totalMs": 55860,
+      "stages": {
+        "index": 0,
+        "model": 54398
+      },
+      "firstTokenMs": 14719,
+      "phases": [
+        [
+          1460,
+          "답변 작성 중…"
+        ]
+      ],
+      "promptChars": 833,
+      "evalCount": 91,
+      "intent": "motivation",
+      "research": {
+        "needed": false,
+        "kind": "web",
+        "queries": [],
+        "reason": ""
+      },
+      "techniques": [],
+      "model": "qwen2.5:3b",
+      "sources": [],
+      "videos": [],
+      "papers": [],
+      "guardNotes": [],
+      "researchInfo": {
+        "kind": "web",
+        "queries": [],
+        "reason": "검색이 필요 없는 질문",
+        "searched": false,
+        "status": "skipped"
+      },
+      "lessonProposal": null,
+      "style": null
+    },
+    {
+      "id": "I",
+      "text": "🔎 웹 검색 결과 6건 (본문 확인 4건)\n\n■ MARTIALDEX 기록 — 잽(Jab)\n- [셋업] Catch → Jab — 안전한 캐치로 잽을 받고 같은 박자에 잽으로 되돌린다.\n- [셋업] Lead Hand Parry → Jab — 작은 패리로 라이트를 흘리고 그 위로 잽을 넣는다.\n- [셋업] Block → Jab — 잽을 막은 직후 같은 타이밍에 잽으로 되받아 주도권을 뺏는다.\n- [콤보] Jab → Cross (1--2): Jab → Cross — MARTIALDEX 복싱 기술 백과 「조합」에 수록된 연결 동작\n- [콤보] Jab → Rear Overhand — 잽으로 시선을 고정한 뒤 오버핸드\n- [콤보] Jab → Body Cross (1-2b): Jab → Body Cross — 얼굴 잽으로 가드를 올리고 크로스를 몸통에\n- 기록된 순서에서 이어진 기술: Cross, Body Cross, Lead Teep, Hook\n\n■ 검색 자료에서 찾은 콤비네이션·셋업 (본문을 읽은 자료 4곳의 원문 문장)\n- 읽은 자료에서 잽(Jab)이(가) 들어간 콤비네이션·셋업 문장을 찾지 못했습니다. 아래 출처 원문을 참고해 주세요.\n\n각 항목은 MARTIALDEX 기록이거나 검색 자료의 원문 문장입니다. 원문에 없는 설명은 덧붙이지 않았습니다.",
+      "totalMs": 3231,
+      "stages": {
+        "index": 0,
+        "search": 2261
+      },
+      "firstTokenMs": null,
+      "phases": [
+        [
+          965,
+          "웹 검색 중…"
+        ]
+      ],
+      "promptChars": 0,
+      "evalCount": 0,
+      "intent": "sequence",
+      "research": {
+        "needed": true,
+        "kind": "web",
+        "queries": [
+          "복싱 잽으로 시작하는 콤비네이션 연구해 줘",
+          "시작하 연구해 Combination Jab combination boxing"
+        ],
+        "reason": "셋업·콤보 연구 — MARTIALDEX 기록 + 웹 자료"
+      },
+      "techniques": [
+        "boxing__combination",
+        "kickboxing__jab"
+      ],
+      "model": "martialdex-evidence",
+      "sources": [
+        {
+          "n": 1,
+          "title": "잽으로 시작하는 복싱 펀치 콤비네이션 10가지 추천. : 네이버 블로그",
+          "url": "https://m.blog.naver.com/masta_zero/222270159393",
+          "source": "blog.naver.com",
+          "sourceType": "blog",
+          "sourceTypeLabel": "블로그·개인 글",
+          "reliability": {
+            "level": "low",
+            "label": "낮음",
+            "reasons": [
+              "출처 유형: 블로그·개인 글",
+              "원문 본문 확인",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": true
+        },
+        {
+          "n": 2,
+          "title": "핵꿀잼 복싱 콤비네이션! 잽-크로스-슬립-롤-훅-크로스 마스터하기! #...",
+          "url": "https://www.youtube.com/watch?v=6MVWc1uBS1Q",
+          "source": "youtube.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "원문 본문 확인",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false
+        },
+        {
+          "n": 3,
+          "title": "[파워홈트 복싱 클래스] 복싱 콤비네이션을 활용한 홈트 쉐도우 복싱",
+          "url": "https://heraclass.fit/",
+          "source": "heraclass.fit",
+          "sourceType": "web",
+          "sourceTypeLabel": "일반 웹",
+          "publishedAt": "2024-06-20T06:53:20.000Z",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 일반 웹",
+              "원문 본문 확인",
+              "게시일 표기: 2024-06-20"
+            ]
+          },
+          "contentRead": true
+        },
+        {
+          "n": 4,
+          "title": "복싱 기초 루틴 정리 (스텝, 잽, 콤비네이션)",
+          "url": "https://redhours.com/entry/%EB%B3%B5%EC%8B%B1-%EA%B8%B0%EC%B4%88-%EB%A3%A8%ED%8B%B4-%EC%A0%95%EB%A6%AC-%EC%8A%A4%ED%85%9D-%EC%9E%BD-%EC%BD%A4%EB%B9%84%EB%84%A4%EC%9D%B4%EC%85%98",
+          "source": "redhours.com",
+          "sourceType": "web",
+          "sourceTypeLabel": "일반 웹",
+          "publishedAt": "2026-03-05T04:28:19.000Z",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 일반 웹",
+              "원문 본문 확인",
+              "게시일 표기: 2026-03-05"
+            ]
+          },
+          "contentRead": true
+        },
+        {
+          "n": 5,
+          "title": "복싱 초보자분들이 가장 먼저 익혀야 할 기본 6가지 콤비네이션",
+          "url": "https://www.youtube.com/watch?v=_hEG3H3zUoY",
+          "source": "youtube.com",
+          "sourceType": "video",
+          "sourceTypeLabel": "영상",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 영상",
+              "원문 본문 확인",
+              "게시일 확인 안 됨"
+            ]
+          },
+          "contentRead": false
+        },
+        {
+          "n": 6,
+          "title": "복싱 콤비네이션 복싱독학 싸움독학 과학적 방법으로 펀치력 10배 높이기 - Hiiamback",
+          "url": "https://hiiamback.com/%EB%B3%B5%EC%8B%B1%EB%8F%85%ED%95%99-%ED%8E%80%EC%B9%98-%EC%BD%A4%EB%B9%84%EB%84%A4%EC%9D%B4%EC%85%98-%EA%B8%B0%EC%88%A0-%EC%8B%B8%EC%9B%80%EB%8F%85%ED%95%99-%ED%83%80%EA%B2%A9%EB%A0%A5-10%EB%B0%B0/",
+          "source": "hiiamback.com",
+          "sourceType": "web",
+          "sourceTypeLabel": "일반 웹",
+          "publishedAt": "2024-04-16T13:20:52.000Z",
+          "reliability": {
+            "level": "medium",
+            "label": "보통",
+            "reasons": [
+              "출처 유형: 일반 웹",
+              "원문 본문 확인",
+              "게시일 표기: 2024-04-16"
+            ]
+          },
+          "contentRead": true
+        }
+      ],
+      "videos": [],
+      "papers": [],
+      "guardNotes": [],
+      "researchInfo": {
+        "kind": "web",
+        "queries": [
+          "복싱 잽으로 시작하는 콤비네이션 연구해 줘",
+          "시작하 연구해 Combination Jab combination boxing"
+        ],
+        "reason": "셋업·콤보 연구 — MARTIALDEX 기록 + 웹 자료",
+        "searched": true,
+        "status": "ok",
+        "failedEngines": [
+          "brave"
+        ],
+        "duplicatesRemoved": 0,
+        "pagesRead": 4,
+        "rawCount": 32,
+        "irrelevantRemoved": 24,
+        "removedTitles": [
+          "Kospi Index Chart — KRX:KOSPI — TradingView",
+          "KOSPI Chart: Korea Composite Stock Price Index — TradingView",
+          "복싱 기본기 — 잽·스트레이트·훅·어퍼컷·보디샷 5종 펀치 완벽 정리 · 격투생활"
+        ]
+      },
+      "lessonProposal": null,
+      "style": null
+    }
+  ]
+}

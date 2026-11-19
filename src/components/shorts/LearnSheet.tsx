@@ -1,3 +1,4 @@
+import Icon from '../Icon';
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
@@ -22,7 +23,7 @@ export default function LearnSheet({ tags, initial, onClose }: { tags: PostTag[]
 
   return createPortal(
     <BottomSheet onClose={onClose} className="learn-sheet">
-      <h3 style={{ marginTop: 0 }}>🎓 영상에 나온 내용 배우기</h3>
+      <h3 style={{ marginTop: 0 }}><Icon name="grad" /> 영상에 나온 내용 배우기</h3>
       {tags.length > 1 && (
         <div className="learn-sheet__tags" role="radiogroup" aria-label="배울 내용">
           {tags.map((t) => (
@@ -37,15 +38,15 @@ export default function LearnSheet({ tags, initial, onClose }: { tags: PostTag[]
       </p>
       <div className="learn-sheet__actions">
         <button type="button" className="learn-sheet__action" onClick={() => go(aiCoachTarget(picked))} data-testid="learn-ai-coach">
-          <span className="learn-sheet__icon">🤖</span>
+          <span className="learn-sheet__icon"><Icon name="bot" /></span>
           <span><strong>AI 코치에게 배우기</strong><small>이 {TAG_KIND_LABEL(picked)}로 1:1 수업을 시작합니다</small></span>
         </button>
         <button type="button" className="learn-sheet__action" onClick={() => go(curriculum.to, curriculum.state)} data-testid="learn-curriculum">
-          <span className="learn-sheet__icon">📅</span>
+          <span className="learn-sheet__icon"><Icon name="calendar" /></span>
           <span><strong>관련 커리큘럼 만들기</strong><small>{tags.length > 1 && !initial ? '태그된 내용 전체' : picked.name}를 익히는 여러 날 계획</small></span>
         </button>
         <button type="button" className="learn-sheet__action" onClick={() => go(detailTarget(picked))} data-testid="learn-detail">
-          <span className="learn-sheet__icon">🔍</span>
+          <span className="learn-sheet__icon"><Icon name="search" /></span>
           <span><strong>{TAG_KIND_LABEL(picked)} 자세히 보기</strong><small>{picked.type === 'technique' ? '자세·핵심 포인트·영상' : '단계별 동작과 설명'}</small></span>
         </button>
       </div>

@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useProfileStats } from '../lib/profileStats/useProfileStats';
@@ -12,6 +13,7 @@ import TrainingEntryRow from '../components/TrainingEntryRow';
 import DonutChart from '../components/DonutChart';
 import EmptyState from '../components/EmptyState';
 import BackButton from '../components/BackButton';
+import { RankEmblem } from '../components/icons/BrandAssets';
 
 const DONUT_COLORS = ['#9c2b2b', '#a3792f', '#2f7a4f', '#2f6f9c', '#7c4a9c', '#c2703f', '#3f9c8f', '#9c3f7c', '#5f5f9c'];
 const RECENT_LIMIT = 5;
@@ -66,7 +68,7 @@ export default function Dashboard() {
         </div>
 
         <div className="section-title">
-          <h2>🏠 대시보드</h2>
+          <h2><Icon name="home" /> 대시보드</h2>
           <Link to="/profile" className="see-all">
             프로필 (구매·판매·업적) →
           </Link>
@@ -76,12 +78,12 @@ export default function Dashboard() {
         </p>
 
         <div className="card info-card">
-          <h3>👤 프로필</h3>
+          <h3><Icon name="user" /> 프로필</h3>
           <div className="chip-row">
-            <span className="chip active">🥋 {rank.title}</span>
+            <span className="chip active rank-chip"><RankEmblem level={level.level} /> {rank.title}</span>
             <span className="chip">Level {level.level}</span>
-            <span className="chip">🏆 {unlockedBadgeCount}/{achievements.length} 배지</span>
-            {stats.currentStreak > 0 && <span className="chip">🔥 {stats.currentStreak}일 연속</span>}
+            <span className="chip"><Icon name="trophy" /> {unlockedBadgeCount}/{achievements.length} 배지</span>
+            {stats.currentStreak > 0 && <span className="chip"><Icon name="flame" /> {stats.currentStreak}일 연속</span>}
           </div>
           <div className="progress-track" style={{ marginTop: 8 }}>
             <div className="progress-fill" style={{ width: `${overallProgressPct}%` }} />
@@ -95,7 +97,7 @@ export default function Dashboard() {
         </div>
 
         <div className="card info-card">
-          <h3>📘 진행 중인 커리큘럼</h3>
+          <h3><Icon name="book" /> 진행 중인 커리큘럼</h3>
           {report30d.curriculumCompletionRates.length === 0 ? (
             <EmptyState icon="📘" text="진행 중인 커리큘럼이 없습니다." />
           ) : (
@@ -117,7 +119,7 @@ export default function Dashboard() {
 
         <div className="card info-card">
           <div className="section-title" style={{ marginBottom: 6 }}>
-            <h3>🕓 최근 훈련</h3>
+            <h3><Icon name="timer" /> 최근 훈련</h3>
             <Link to="/training-analytics/history" className="see-all">
               전체 기록 보기 →
             </Link>
@@ -143,7 +145,7 @@ export default function Dashboard() {
         </div>
 
         <div className="card info-card">
-          <h3>📅 훈련 캘린더</h3>
+          <h3><Icon name="calendar" /> 훈련 캘린더</h3>
           <TrainingCalendarView
             year={calendarYear}
             month={calendarMonth}
@@ -158,7 +160,7 @@ export default function Dashboard() {
 
         {report30d.martialArtBreakdown.length > 0 && (
           <div className="card info-card">
-            <h3>🥋 무술별 훈련 밸런스 (최근 30일)</h3>
+            <h3><Icon name="gi" /> 무술별 훈련 밸런스 (최근 30일)</h3>
             <DonutChart
               slices={report30d.martialArtBreakdown.map((s, i) => ({ key: s.martialArtId, label: s.nameKo, value: s.trainingCount, color: DONUT_COLORS[i % DONUT_COLORS.length] }))}
             />
@@ -166,7 +168,7 @@ export default function Dashboard() {
         )}
 
         <div className="card info-card">
-          <h3>💡 AI 인사이트</h3>
+          <h3><Icon name="spark" /> AI 인사이트</h3>
           {insight ? (
             <p style={{ margin: 0 }}>{insight}</p>
           ) : (

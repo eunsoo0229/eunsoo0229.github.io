@@ -1,0 +1,203 @@
+{
+  "at": "2026-11-15T06:37:52.628Z",
+  "results": [
+    {
+      "case": "A_대각선기준_정면사용자",
+      "angle": "diagonal",
+      "user": "jab_good.webm",
+      "userViewTruth": "front",
+      "recording": {
+        "fileMs": 1516,
+        "leadInMs": 717,
+        "bytes": 169584
+      },
+      "profile": {
+        "matchesTechnique": true,
+        "observed": "Jab",
+        "cameraView": "diagonal",
+        "criteria": [
+          "C1[support·start_posture] 동작 시작 전, 앞손과 뒷손이 모두 턱과 얼굴 높이에서 안정적으로 가드를 형성하고 있어야 한다.",
+          "C2[core·trajectory] 앞손 주먹이 출발 지점에서 타격 목표 지점까지 직선 궤적을 그리며 뻗어나가야 한다.",
+          "C3[core·body_position] 앞손을 뻗어 타격하는 순간에도 반대쪽 손(뒷손)은 턱과 얼굴을 보호하는 가드 위치를 유지해야 한다.",
+          "C4[core·limb_motion] 타격 시 앞쪽 팔꿈치가 펴지며 주먹이 어깨 높이 일직선상으로 곧게 도달해야 한다.",
+          "C5[core·sequence] 타격 직후 주먹을 늘어뜨리지 않고 뻗었던 궤적 그대로 신속하게 원래 가드 위치로 회수해야 한다.",
+          "C6[support·finish] 동작 완료 후 처음의 양손 가드 스탠스 자세로 완전히 돌아와 균형을 유지해야 한다."
+        ],
+        "excluded": [
+          "weight_balance",
+          "trajectory"
+        ]
+      },
+      "userLocalView": "front",
+      "viewCheck": {
+        "referenceView": "diagonal",
+        "referenceViewSource": "motion3d",
+        "local": "mismatch",
+        "userViewLocal": "front",
+        "ai": "different",
+        "userViewAi": "front",
+        "aiNote": "기준 영상은 45° 대각선 구도인 반면, 사용자 영상은 정면을 향해 촬영되었습니다.",
+        "status": "mismatch",
+        "message": "기준 영상은 45° 대각선에서 촬영되었는데, 내 영상은 정면 등 다른 방향에서 촬영된 것으로 보입니다 (기준 영상은 45° 대각선 구도인 반면, 사용자 영상은 정면을 향해 촬영되었습니다.). 방향이 다르면 보이지 않는 동작이 생겨 판정이 부정확해질 수 있어 신뢰도를 '높음'으로 표시하지 않았습니다. 기준 각도(45° 대각선)에 맞춰 카메라를 다시 배치하고 촬영해 주세요."
+      },
+      "viewWarning": "기준 영상은 45° 대각선에서 촬영되었는데, 내 영상은 정면 등 다른 방향에서 촬영된 것으로 보입니다 (기준 영상은 45° 대각선 구도인 반면, 사용자 영상은 정면을 향해 촬영되었습니다.). 방향이 다르면 보이지 않는 동작이 생겨 판정이 부정확해질 수 있어 신뢰도를 '높음'으로 표시하지 않았습니다. 기준 각도(45° 대각선)에 맞춰 카메라를 다시 배치하고 촬영해 주세요.",
+      "verdicts": [
+        "C1:partial/medium",
+        "C2:not_observable/low",
+        "C3:partial/medium",
+        "C4:not_observable/low",
+        "C5:match/high",
+        "C6:match/high"
+      ],
+      "observations": [
+        "C1: U1~U2에서 사용자는 양손을 얼굴 앞 높이에 올려 안정적으로 가드를 올리고 있습니다. (자세 추정에서 기준과 차이가 확인되어 부분 일치로 조정)",
+        "C2: U3~U4 정면 구도로 인해 앞손 펀치가 앞으로 뻗어나가는 직선 궤적과 깊이감을 정확히 구분할 수 없습니다.",
+        "C3: U4 정점 동작에서 앞손을 뻗는 동안에도 반대쪽 뒷손이 턱과 얼굴을 계속 보호하고 있습니다. (자세 추정에서 기준과 차이가 확인되어 부분 일치로 조정)",
+        "C4: U4 정면 카메라 각도로 인해 앞쪽 팔꿈치가 완전히 펴졌는지 관찰하기 어렵습니다.",
+        "C5: U5~U6에서 펀치 후 즉시 손을 얼굴 높이 가드 위치로 되돌리고 있습니다.",
+        "C6: U9~U11에서 타격 후 처음의 안정적인 양손 가드 스탠스 자세로 복귀하였습니다."
+      ],
+      "viewLimitedCriteria": [
+        "C2",
+        "C4"
+      ],
+      "breakdown": {
+        "status": "scored",
+        "score": 75,
+        "rawScore": 75,
+        "cap": {
+          "value": 85,
+          "reason": "핵심 기준 1개가 부분적으로만 맞습니다."
+        },
+        "coverage": 0.63,
+        "reliability": "medium",
+        "reliabilityValue": 0.73,
+        "reasons": []
+      },
+      "differences": [],
+      "limitations": [
+        "사용자 영상이 정면에서 촬영되어 펀치의 직선 궤적 및 팔꿈치가 완전히 펴졌는지 여부를 명확히 평가하기 어렵습니다."
+      ]
+    },
+    {
+      "case": "B_측면기준_측면사용자",
+      "angle": "side",
+      "user": "jab_reference_side.webm",
+      "userViewTruth": "side",
+      "recording": {
+        "fileMs": 1383,
+        "leadInMs": 174,
+        "bytes": 134057
+      },
+      "profile": {
+        "matchesTechnique": true,
+        "observed": "Jab",
+        "cameraView": "side",
+        "criteria": [
+          "C1[core·start_posture] 타격 전 양손이 턱과 얼굴 높이의 가드를 유지하고 무릎이 살짝 굽혀진 안정적인 스탠스를 취한다.",
+          "C2[core·limb_motion] 앞손이 최단 경로 직선 방향으로 앞으로 뻗어나간다.",
+          "C3[core·body_position] 앞손 펀치가 최대 신전될 때 뒷손은 턱 근처에서 가드를 계속 유지한다.",
+          "C4[core·trajectory] 타격 직후 손이 아래로 떨어지지 않고 뻗었던 직선 궤적을 따라 곧바로 가드 위치로 회수된다.",
+          "C5[support·finish] 펀치 회수 후 즉시 시작할 때의 기본 가드 스탠스와 균형으로 돌아온다."
+        ],
+        "excluded": [
+          "weight_balance",
+          "technique_specific"
+        ]
+      },
+      "userLocalView": "side",
+      "viewCheck": {
+        "referenceView": "side",
+        "referenceViewSource": "motion3d",
+        "local": "unclear",
+        "userViewLocal": "side",
+        "ai": "same",
+        "userViewAi": "side",
+        "aiNote": "사용자와 기준 영상 모두 측면 시점에서 동일하게 촬영되었습니다.",
+        "status": "match",
+        "message": null
+      },
+      "viewWarning": null,
+      "verdicts": [
+        "C1:match/high",
+        "C2:match/high",
+        "C3:partial/medium",
+        "C4:partial/high",
+        "C5:match/high"
+      ],
+      "observations": [
+        "C1: U1~U3에서 양손 가드가 턱과 얼굴 높이에 위치하며 무릎을 약간 굽힌 안정적인 기본 스탠스를 유지하고 있습니다.",
+        "C2: U4~U6에서 앞손을 전방을 향해 직선 궤적으로 빠르게 뻗어 타격합니다.",
+        "C3: U5, U6 등 타격 및 임팩트 정점 시점에서도 뒷손이 턱 근처 가드 위치에 잘 남아 있습니다. (자세 추정에서 기준과 차이가 확인되어 부분 일치로 조정)",
+        "C4: U6~U8 구간에서 타격 후 손을 거두는 과정 중 펀치 손이 직선 궤적으로 복귀하지 않고 약간 내려오거나 느리게 가드로 돌아옵니다.",
+        "C5: U10~U11에서 동작 종료 후 준비 자세와 동일하게 양손 가드와 균형 잡힌 스탠스로 복귀합니다."
+      ],
+      "viewLimitedCriteria": [],
+      "breakdown": {
+        "status": "scored",
+        "score": 70,
+        "rawScore": 79,
+        "cap": {
+          "value": 70,
+          "reason": "핵심 기준 2개가 부분적으로만 맞습니다."
+        },
+        "coverage": 1,
+        "reliability": "high",
+        "reliabilityValue": 0.99,
+        "reasons": []
+      },
+      "differences": [
+        "펀치를 뻗은 후 가드로 회수할 때 주먹 궤적이 약간 쳐지면서 돌아옵니다."
+      ],
+      "limitations": [
+        "측면 시점 특성상 타격 시 손목의 회전 각도나 몸통의 미세한 정면 회전량은 정확히 확인하기 어렵습니다."
+      ]
+    }
+  ],
+  "geminiCalls": [
+    {
+      "model": "gemini-3.6-flash",
+      "status": 200,
+      "ms": 9843,
+      "usage": {
+        "prompt": 12448,
+        "output": 1152,
+        "thoughts": null,
+        "total": 13600
+      }
+    },
+    {
+      "model": "gemini-3.6-flash",
+      "status": 200,
+      "ms": 6978,
+      "usage": {
+        "prompt": 14870,
+        "output": 969,
+        "thoughts": null,
+        "total": 15839
+      }
+    },
+    {
+      "model": "gemini-3.6-flash",
+      "status": 200,
+      "ms": 8651,
+      "usage": {
+        "prompt": 12118,
+        "output": 1128,
+        "thoughts": null,
+        "total": 13246
+      }
+    },
+    {
+      "model": "gemini-3.6-flash",
+      "status": 200,
+      "ms": 8392,
+      "usage": {
+        "prompt": 15165,
+        "output": 1259,
+        "thoughts": null,
+        "total": 16424
+      }
+    }
+  ]
+}

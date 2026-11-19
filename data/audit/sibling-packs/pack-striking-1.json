@@ -1,0 +1,1275 @@
+[
+ {
+  "id": "karate__musubi-dachi",
+  "name": "Musubi-dachi",
+  "koreanName": null,
+  "art": "karate",
+  "category": "기본 자세 (Kihon Dachi)",
+  "positions": [
+   "기본 자세 (Kihon Dachi)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__sanchin-dachi",
+  "name": "Sanchin-dachi",
+  "koreanName": "삼전립",
+  "art": "karate",
+  "category": "기본 자세 (Kihon Dachi)",
+  "positions": [
+   "기본 자세 (Kihon Dachi)"
+  ],
+  "description": "산친다치(삼전립)는 발을 안쪽으로 살짝 모으고 무릎을 안으로 조여 몸통 전체의 긴장을 유지하는 강한 구조의 자세입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__shiko-dachi",
+  "name": "Shiko-dachi",
+  "koreanName": "사고립",
+  "art": "karate",
+  "category": "기본 자세 (Kihon Dachi)",
+  "positions": [
+   "기본 자세 (Kihon Dachi)"
+  ],
+  "description": "시코다치(사고립)는 키바다치와 유사하나 발끝을 바깥으로 향하게 벌려 회전과 던지기 응용에 유리한 자세입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__fudo-dachi",
+  "name": "Fudo-dachi",
+  "koreanName": "부동립",
+  "art": "karate",
+  "category": "기본 자세 (Kihon Dachi)",
+  "positions": [
+   "기본 자세 (Kihon Dachi)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__kumite-dachi",
+  "name": "Kumite-dachi",
+  "koreanName": "쿠미테 자유 자세",
+  "art": "karate",
+  "category": "기본 자세 (Kihon Dachi)",
+  "positions": [
+   "기본 자세 (Kihon Dachi)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__yori-ashi",
+  "name": "Yori-ashi",
+  "koreanName": null,
+  "art": "karate",
+  "category": "이동 (Shintai / 풋워크)",
+  "positions": [
+   "이동 (Shintai / 풋워크)"
+  ],
+  "description": "Yori-ashi는 자세를 유지한 채 발을 끌어당기듯 짧게 이동하는 미세 조정 풋워크입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__okuri-ashi",
+  "name": "Okuri-ashi",
+  "koreanName": "오쿠리아시",
+  "art": "karate",
+  "category": "이동 (Shintai / 풋워크)",
+  "positions": [
+   "이동 (Shintai / 풋워크)",
+   "쿠미테 --- 판정 규칙과 타이밍"
+  ],
+  "description": "오쿠리아시는 앞발이 먼저 이동하고 뒷발이 그 뒤를 바짝 따라붙는 이동 방식으로, 거리를 빠르게 좁힐 때 사용됩니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__tenkan",
+  "name": "Tenkan",
+  "koreanName": null,
+  "art": "karate",
+  "category": "이동 (Shintai / 풋워크)",
+  "positions": [
+   "이동 (Shintai / 풋워크)",
+   "타이사바키 / 회피 (Tai Sabaki)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__step-in",
+  "name": "Step In",
+  "koreanName": null,
+  "art": "karate",
+  "category": "이동 (Shintai / 풋워크)",
+  "positions": [
+   "이동 (Shintai / 풋워크)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__retreat",
+  "name": "Retreat",
+  "koreanName": null,
+  "art": "karate",
+  "category": "이동 (Shintai / 풋워크)",
+  "positions": [
+   "이동 (Shintai / 풋워크)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__forward-step",
+  "name": "Forward Step",
+  "koreanName": null,
+  "art": "karate",
+  "category": "이동 (Shintai / 풋워크)",
+  "positions": [
+   "이동 (Shintai / 풋워크)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__choku-zuki",
+  "name": "Choku-zuki",
+  "koreanName": null,
+  "art": "karate",
+  "category": "손기술 (Te-waza)",
+  "positions": [
+   "손기술 (Te-waza)"
+  ],
+  "description": "초쿠즈키는 제자리에서 팔을 곧게 뻗어 지르는 가라테의 가장 기본적인 찌르기입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__oi-zuki",
+  "name": "Oi-zuki",
+  "koreanName": "전진 찌르기",
+  "art": "karate",
+  "category": "손기술 (Te-waza)",
+  "positions": [
+   "손기술 (Te-waza)"
+  ],
+  "description": "오이즈키(전진 찌르기)는 앞으로 내딛는 발과 같은 쪽 손으로 지르는 전진형 찌르기입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__gyaku-zuki",
+  "name": "Gyaku-zuki",
+  "koreanName": "역찌르기",
+  "art": "karate",
+  "category": "손기술 (Te-waza)",
+  "positions": [
+   "손기술 (Te-waza)"
+  ],
+  "description": "갸쿠즈키(역찌르기)는 앞다리와 반대쪽 손으로 지르는 가라테의 대표적인 파워 찌르기입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__kagi-zuki",
+  "name": "Kagi-zuki",
+  "koreanName": "훅 찌르기",
+  "art": "karate",
+  "category": "손기술 (Te-waza)",
+  "positions": [
+   "손기술 (Te-waza)"
+  ],
+  "description": "카기즈키(훅 찌르기)는 팔을 옆에서 갈고리 모양으로 구부려 타격하는 가라테의 훅 펀치입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__tate-zuki",
+  "name": "Tate-zuki",
+  "koreanName": "세로 주먹",
+  "art": "karate",
+  "category": "손기술 (Te-waza)",
+  "positions": [
+   "손기술 (Te-waza)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__age-zuki",
+  "name": "Age-zuki",
+  "koreanName": "올려 찌르기",
+  "art": "karate",
+  "category": "손기술 (Te-waza)",
+  "positions": [
+   "손기술 (Te-waza)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__mawashi-zuki",
+  "name": "Mawashi-zuki",
+  "koreanName": null,
+  "art": "karate",
+  "category": "손기술 (Te-waza)",
+  "positions": [
+   "손기술 (Te-waza)"
+  ],
+  "description": "마와시즈키는 팔을 곡선으로 휘둘러 측면에서 타격하는 가라테의 곡선형 찌르기입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__nukite",
+  "name": "Nukite",
+  "koreanName": null,
+  "art": "karate",
+  "category": "손기술 (Te-waza)",
+  "positions": [
+   "손기술 (Te-waza)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__ippon-ken",
+  "name": "Ippon-ken",
+  "koreanName": null,
+  "art": "karate",
+  "category": "손기술 (Te-waza)",
+  "positions": [
+   "손기술 (Te-waza)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__nihon-nukite",
+  "name": "Nihon-nukite",
+  "koreanName": null,
+  "art": "karate",
+  "category": "손기술 (Te-waza)",
+  "positions": [
+   "손기술 (Te-waza)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__teisho",
+  "name": "Teisho",
+  "koreanName": "손바닥 밑동",
+  "art": "karate",
+  "category": "손기술 (Te-waza)",
+  "positions": [
+   "손기술 (Te-waza)"
+  ],
+  "description": "테이쇼(손바닥 밑동)는 손바닥 아래쪽(손목에 가까운 부위)으로 밀어 치듯 타격하는 기술입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__yoko-empi",
+  "name": "Yoko Empi",
+  "koreanName": null,
+  "art": "karate",
+  "category": "팔꿈치 (Empi / Hiji)",
+  "positions": [
+   "팔꿈치 (Empi / Hiji)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__age-empi",
+  "name": "Age Empi",
+  "koreanName": null,
+  "art": "karate",
+  "category": "팔꿈치 (Empi / Hiji)",
+  "positions": [
+   "팔꿈치 (Empi / Hiji)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__ushiro-empi",
+  "name": "Ushiro Empi",
+  "koreanName": null,
+  "art": "karate",
+  "category": "팔꿈치 (Empi / Hiji)",
+  "positions": [
+   "팔꿈치 (Empi / Hiji)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__otoshi-empi",
+  "name": "Otoshi Empi",
+  "koreanName": null,
+  "art": "karate",
+  "category": "팔꿈치 (Empi / Hiji)",
+  "positions": [
+   "팔꿈치 (Empi / Hiji)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__fumikomi-geri",
+  "name": "Fumikomi Geri",
+  "koreanName": "밟아차기",
+  "art": "karate",
+  "category": "발차기 (Geri)",
+  "positions": [
+   "발차기 (Geri)"
+  ],
+  "description": "후미코미게리(밟아차기)는 발바닥 전체로 상대의 발이나 다리를 아래로 강하게 내리밟는 킥입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__nidan-geri",
+  "name": "Nidan Geri",
+  "koreanName": "이단차기",
+  "art": "karate",
+  "category": "발차기 (Geri)",
+  "positions": [
+   "발차기 (Geri)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__tobi-geri",
+  "name": "Tobi Geri",
+  "koreanName": "뛰어차기",
+  "art": "karate",
+  "category": "발차기 (Geri)",
+  "positions": [
+   "발차기 (Geri)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__soto-uke",
+  "name": "Soto Uke",
+  "koreanName": "바깥막기",
+  "art": "karate",
+  "category": "막기 (Uke)",
+  "positions": [
+   "막기 (Uke)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai"
+  ]
+ },
+ {
+  "id": "karate__uchi-uke",
+  "name": "Uchi Uke",
+  "koreanName": "안막기",
+  "art": "karate",
+  "category": "막기 (Uke)",
+  "positions": [
+   "막기 (Uke)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai"
+  ]
+ },
+ {
+  "id": "karate__morote-uke",
+  "name": "Morote Uke",
+  "koreanName": "양손막기",
+  "art": "karate",
+  "category": "막기 (Uke)",
+  "positions": [
+   "막기 (Uke)"
+  ],
+  "description": "모로테우케(양손막기)는 양손을 함께 사용해 강한 공격을 이중으로 막는 가라테의 막기 기술입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__juji-uke",
+  "name": "Juji Uke",
+  "koreanName": "십자막기",
+  "art": "karate",
+  "category": "막기 (Uke)",
+  "positions": [
+   "막기 (Uke)"
+  ],
+  "description": "주지우케(십자막기)는 양팔을 교차시켜 강한 공격(발차기 등)을 막는 가라테의 막기 기술입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__kake-uke",
+  "name": "Kake Uke",
+  "koreanName": "걸어막기",
+  "art": "karate",
+  "category": "막기 (Uke)",
+  "positions": [
+   "막기 (Uke)"
+  ],
+  "description": "카케우케(걸어막기)는 손목을 갈고리처럼 구부려 상대의 팔이나 공격을 걸어 당기며 막는 기술입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__nagashi-uke",
+  "name": "Nagashi Uke",
+  "koreanName": "흘려막기",
+  "art": "karate",
+  "category": "막기 (Uke)",
+  "positions": [
+   "막기 (Uke)"
+  ],
+  "description": "나가시우케(흘려막기)는 공격을 정면으로 받아내지 않고 살짝 방향을 바꿔 흘려보내는 막기 기술입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__osae-uke",
+  "name": "Osae Uke",
+  "koreanName": "누르는막기",
+  "art": "karate",
+  "category": "막기 (Uke)",
+  "positions": [
+   "막기 (Uke)"
+  ],
+  "description": "오사에우케(누르는막기)는 손으로 상대의 팔이나 다리를 아래로 눌러 고정하며 막는 기술입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__sukui-uke",
+  "name": "Sukui Uke",
+  "koreanName": "퍼올리는막기",
+  "art": "karate",
+  "category": "막기 (Uke)",
+  "positions": [
+   "막기 (Uke)"
+  ],
+  "description": "스쿠이우케(퍼올리는막기)는 손을 아래에서 위로 퍼올리듯 움직여 하단 공격을 걷어 올리며 막는 기술입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__distance-control",
+  "name": "Distance Control",
+  "koreanName": null,
+  "art": "karate",
+  "category": "장거리 (To-ma)",
+  "positions": [
+   "장거리 (To-ma)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__counter-punch",
+  "name": "Counter Punch",
+  "koreanName": null,
+  "art": "karate",
+  "category": "중거리 (Ma)",
+  "positions": [
+   "중거리 (Ma)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__counter-kick",
+  "name": "Counter Kick",
+  "koreanName": null,
+  "art": "karate",
+  "category": "중거리 (Ma)",
+  "positions": [
+   "중거리 (Ma)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__combination-entry",
+  "name": "Combination Entry",
+  "koreanName": null,
+  "art": "karate",
+  "category": "중거리 (Ma)",
+  "positions": [
+   "중거리 (Ma)"
+  ],
+  "description": "Combination Entry는 중거리에서 여러 기술을 연속으로 조합해 진입하는 콤비네이션 원리입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__irimi",
+  "name": "Irimi",
+  "koreanName": null,
+  "art": "karate",
+  "category": "타이사바키 / 회피 (Tai Sabaki)",
+  "positions": [
+   "타이사바키 / 회피 (Tai Sabaki)"
+  ],
+  "description": "이리미는 상대의 공격 라인 안쪽으로 파고들어 오히려 거리를 좁히며 회피하는 적극적인 회피 기술입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__nagashi",
+  "name": "Nagashi",
+  "koreanName": null,
+  "art": "karate",
+  "category": "타이사바키 / 회피 (Tai Sabaki)",
+  "positions": [
+   "타이사바키 / 회피 (Tai Sabaki)"
+  ],
+  "description": "나가시는 몸을 살짝 틀거나 흘려 상대의 공격 힘을 무력화하며 회피하는 기술입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__angle-exit",
+  "name": "Angle Exit",
+  "koreanName": null,
+  "art": "karate",
+  "category": "타이사바키 / 회피 (Tai Sabaki)",
+  "positions": [
+   "타이사바키 / 회피 (Tai Sabaki)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__body-shift",
+  "name": "Body Shift",
+  "koreanName": null,
+  "art": "karate",
+  "category": "타이사바키 / 회피 (Tai Sabaki)",
+  "positions": [
+   "타이사바키 / 회피 (Tai Sabaki)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__kizami-zuki-counter",
+  "name": "Kizami-zuki Counter",
+  "koreanName": null,
+  "art": "karate",
+  "category": "카운터 (Go no Sen 응용)",
+  "positions": [
+   "카운터 (Go no Sen 응용)"
+  ],
+  "description": "상대 손기술에 대한 반격.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__gyaku-zuki-counter",
+  "name": "Gyaku-zuki Counter",
+  "koreanName": null,
+  "art": "karate",
+  "category": "카운터 (Go no Sen 응용)",
+  "positions": [
+   "카운터 (Go no Sen 응용)"
+  ],
+  "description": "상대 손기술에 대한 반격.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__mae-geri-counter",
+  "name": "Mae Geri Counter",
+  "koreanName": null,
+  "art": "karate",
+  "category": "카운터 (Go no Sen 응용)",
+  "positions": [
+   "카운터 (Go no Sen 응용)"
+  ],
+  "description": "상대 발차기에 대한 반격, 주로 상대가 발을 뻗는 순간의 축다리를 노리거나 들어오는 다리를 짧게 끊는다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__mawashi-geri-counter",
+  "name": "Mawashi Geri Counter",
+  "koreanName": null,
+  "art": "karate",
+  "category": "카운터 (Go no Sen 응용)",
+  "positions": [
+   "카운터 (Go no Sen 응용)"
+  ],
+  "description": "상대 발차기에 대한 반격, 주로 상대가 발을 뻗는 순간의 축다리를 노리거나 들어오는 다리를 짧게 끊는다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__uchi-uke-gyaku-zuki-soto-uke-gyaku-zuki",
+  "name": "Uchi Uke → Gyaku-zuki, Soto Uke → Gyaku-zuki",
+  "koreanName": null,
+  "art": "karate",
+  "category": "카운터 (Go no Sen 응용)",
+  "positions": [
+   "카운터 (Go no Sen 응용)"
+  ],
+  "description": "Uchi Uke → Gyaku-zuki, Soto Uke → Gyaku-zuki는 안막기/바깥막기 직후 역찌르기로 반격하는 기본 막기-반격 콤비네이션입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__age-uke-counter",
+  "name": "Age Uke → Counter",
+  "koreanName": null,
+  "art": "karate",
+  "category": "카운터 (Go no Sen 응용)",
+  "positions": [
+   "카운터 (Go no Sen 응용)"
+  ],
+  "description": "Age Uke → Counter는 상단막기 직후 반격 기술로 연결하는 기본 막기-반격 콤비네이션입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__tai-sabaki-counter",
+  "name": "Tai Sabaki → Counter",
+  "koreanName": null,
+  "art": "karate",
+  "category": "카운터 (Go no Sen 응용)",
+  "positions": [
+   "카운터 (Go no Sen 응용)"
+  ],
+  "description": "Tai Sabaki → Counter는 회전 이동으로 상대의 공격 라인을 벗어난 직후 반격하는 카운터 원리입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__kizami-zuki-gyaku-zuki",
+  "name": "Kizami-zuki → Gyaku-zuki",
+  "koreanName": null,
+  "art": "karate",
+  "category": "조합 (Renzoku-waza)",
+  "positions": [
+   "조합 (Renzoku-waza)"
+  ],
+  "description": "Kizami-zuki → Gyaku-zuki는 잽으로 견제한 뒤 역찌르기로 마무리하는 가라테의 기본 2연타 콤비네이션입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__oi-zuki-gyaku-zuki",
+  "name": "Oi-zuki → Gyaku-zuki",
+  "koreanName": null,
+  "art": "karate",
+  "category": "조합 (Renzoku-waza)",
+  "positions": [
+   "조합 (Renzoku-waza)"
+  ],
+  "description": "Oi-zuki → Gyaku-zuki는 전진 찌르기로 거리를 좁힌 뒤 역찌르기로 마무리하는 콤비네이션입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__gyaku-zuki-mawashi-geri",
+  "name": "Gyaku-zuki → Mawashi Geri",
+  "koreanName": null,
+  "art": "karate",
+  "category": "조합 (Renzoku-waza)",
+  "positions": [
+   "조합 (Renzoku-waza)"
+  ],
+  "description": "Gyaku-zuki → Mawashi Geri는 강한 역찌르기로 상체 반응을 유도한 뒤 돌려차기로 마무리하는 콤비네이션입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__kizami-zuki-mawashi-geri",
+  "name": "Kizami-zuki → Mawashi Geri",
+  "koreanName": null,
+  "art": "karate",
+  "category": "조합 (Renzoku-waza)",
+  "positions": [
+   "조합 (Renzoku-waza)"
+  ],
+  "description": "Kizami-zuki → Mawashi Geri는 잽으로 상체 반응을 유도한 뒤 돌려차기로 마무리하는 상하 콤비네이션입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__mae-geri-gyaku-zuki",
+  "name": "Mae Geri → Gyaku-zuki",
+  "koreanName": null,
+  "art": "karate",
+  "category": "조합 (Renzoku-waza)",
+  "positions": [
+   "조합 (Renzoku-waza)"
+  ],
+  "description": "Mae Geri → Gyaku-zuki는 앞차기로 거리를 좁힌 뒤 역찌르기로 마무리하는 콤비네이션입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__mawashi-geri-gyaku-zuki",
+  "name": "Mawashi Geri → Gyaku-zuki",
+  "koreanName": null,
+  "art": "karate",
+  "category": "조합 (Renzoku-waza)",
+  "positions": [
+   "조합 (Renzoku-waza)"
+  ],
+  "description": "Mawashi Geri → Gyaku-zuki는 돌려차기로 방어를 흔든 뒤 역찌르기로 마무리하는 콤비네이션입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__feint-gyaku-zuki",
+  "name": "Feint → Gyaku-zuki",
+  "koreanName": null,
+  "art": "karate",
+  "category": "조합 (Renzoku-waza)",
+  "positions": [
+   "조합 (Renzoku-waza)"
+  ],
+  "description": "Feint → Gyaku-zuki는 가짜 동작으로 상대의 반응을 유도한 뒤 역찌르기로 마무리하는 콤비네이션입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__step-kizami-zuki",
+  "name": "Step → Kizami-zuki",
+  "koreanName": null,
+  "art": "karate",
+  "category": "조합 (Renzoku-waza)",
+  "positions": [
+   "조합 (Renzoku-waza)"
+  ],
+  "description": "Step → Kizami-zuki는 전진 스텝으로 거리를 좁힌 뒤 잽으로 마무리하는 진입형 콤비네이션입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__sen",
+  "name": "Sen",
+  "koreanName": "선/Sen no Sen",
+  "art": "karate",
+  "category": "쿠미테 --- 판정 규칙과 타이밍",
+  "positions": [
+   "쿠미테 --- 판정 규칙과 타이밍"
+  ],
+  "description": "센/선노센(Sen no Sen)은 상대가 공격을 시작하는 바로 그 순간에 동시에 반격해 선제적으로 제압하는 타이밍 원리입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__tai-no-sen",
+  "name": "Tai no Sen",
+  "koreanName": null,
+  "art": "karate",
+  "category": "쿠미테 --- 판정 규칙과 타이밍",
+  "positions": [
+   "쿠미테 --- 판정 규칙과 타이밍"
+  ],
+  "description": "타이노센(Tai no Sen)은 상대의 공격이 시작된 직후 그것을 처리하며 반격하는 타이밍 원리로, 선노센보다 약간 늦은 반격입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__go-no-sen",
+  "name": "Go no Sen",
+  "koreanName": null,
+  "art": "karate",
+  "category": "쿠미테 --- 판정 규칙과 타이밍",
+  "positions": [
+   "쿠미테 --- 판정 규칙과 타이밍"
+  ],
+  "description": "고노센(Go no Sen)은 상대의 공격을 완전히 막아낸 후 반격하는 후수 타이밍 원리입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__deai",
+  "name": "Deai",
+  "koreanName": null,
+  "art": "karate",
+  "category": "쿠미테 --- 판정 규칙과 타이밍",
+  "positions": [
+   "쿠미테 --- 판정 규칙과 타이밍"
+  ],
+  "description": "데아이는 상대와 동시에 부딪히는 타이밍에 자신의 기술이 먼저 닿도록 맞춰 제압하는 원리입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__tobi-komi",
+  "name": "Tobi-komi",
+  "koreanName": "뛰어들기",
+  "art": "karate",
+  "category": "쿠미테 --- 판정 규칙과 타이밍",
+  "positions": [
+   "쿠미테 --- 판정 규칙과 타이밍"
+  ],
+  "description": "토비코미(뛰어들기)는 먼 거리에서 도약하듯 뛰어들어 순간적으로 거리를 좁혀 타격하는 진입 기술입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__maai-유지-전술",
+  "name": "Maai 유지 전술",
+  "koreanName": null,
+  "art": "karate",
+  "category": "쿠미테 --- 판정 규칙과 타이밍",
+  "positions": [
+   "쿠미테 --- 판정 규칙과 타이밍"
+  ],
+  "description": "Maai 유지 전술은 자신에게 유리한 거리(마아이)를 지속적으로 유지하며 상대의 유리한 거리를 허용하지 않는 거리 통제 전술입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__bunkai",
+  "name": "Bunkai",
+  "koreanName": "분석/해석",
+  "art": "karate",
+  "category": "전통 가라테의 응용 (자기방어 / Bunkai)",
+  "positions": [
+   "전통 가라테의 응용 (자기방어 / Bunkai)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__kuzushi",
+  "name": "Kuzushi",
+  "koreanName": "무너뜨림",
+  "art": "karate",
+  "category": "전통 가라테의 응용 (자기방어 / Bunkai)",
+  "positions": [
+   "전통 가라테의 응용 (자기방어 / Bunkai)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__hiki-te",
+  "name": "Hiki-te",
+  "koreanName": "당기는 손",
+  "art": "karate",
+  "category": "전통 가라테의 응용 (자기방어 / Bunkai)",
+  "positions": [
+   "전통 가라테의 응용 (자기방어 / Bunkai)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__osae",
+  "name": "Osae",
+  "koreanName": null,
+  "art": "karate",
+  "category": "전통 가라테의 응용 (자기방어 / Bunkai)",
+  "positions": [
+   "전통 가라테의 응용 (자기방어 / Bunkai)"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__kote-gaeshi",
+  "name": "Kote Gaeshi",
+  "koreanName": null,
+  "art": "karate",
+  "category": "전통 가라테의 응용 (자기방어 / Bunkai)",
+  "positions": [
+   "전통 가라테의 응용 (자기방어 / Bunkai)"
+  ],
+  "description": "코테가에시는 상대의 손목을 잡아 꺾어 제압하는 자기방어용 관절기 응용 기술입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__ashi-barai",
+  "name": "Ashi-barai",
+  "koreanName": "다리 걸어 넘기기",
+  "art": "karate",
+  "category": "전통 가라테의 응용 (자기방어 / Bunkai)",
+  "positions": [
+   "전통 가라테의 응용 (자기방어 / Bunkai)"
+  ],
+  "description": "아시바라이(다리 걸어 넘기기)는 발로 상대의 다리를 쓸어 걸어 균형을 무너뜨려 넘어뜨리는 자기방어 응용 기술입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__ibuki",
+  "name": "Ibuki",
+  "koreanName": null,
+  "art": "karate",
+  "category": "호흡법 (Kokyu-ho): Ibuki와 Nogare",
+  "positions": [
+   "호흡법 (Kokyu-ho): Ibuki와 Nogare"
+  ],
+  "description": "이부키는 숨을 강하게 내쉬며 복부와 몸통 전체를 긴장시켜 타격의 힘과 방어력을 극대화하는 강한 호흡법입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__nogare",
+  "name": "Nogare",
+  "koreanName": null,
+  "art": "karate",
+  "category": "호흡법 (Kokyu-ho): Ibuki와 Nogare",
+  "positions": [
+   "호흡법 (Kokyu-ho): Ibuki와 Nogare"
+  ],
+  "description": "노가레는 이부키와 반대로 부드럽고 자연스럽게 숨을 쉬며 유연한 움직임을 유지하는 호흡법입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "taekwondo"
+  ]
+ },
+ {
+  "id": "karate__특징",
+  "name": "특징",
+  "koreanName": null,
+  "art": "karate",
+  "category": "유파별 대표 기술과 가타",
+  "positions": [
+   "유파별 대표 기술과 가타"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "taekwondo"
+  ]
+ }
+]

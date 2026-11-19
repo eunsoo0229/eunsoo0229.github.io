@@ -16,7 +16,8 @@ function applyTheme(pref: ThemePreference) {
 function readInitial(): ThemePreference {
   const stored = window.localStorage.getItem(STORAGE_KEY);
   if (stored === 'light' || stored === 'dark' || stored === 'system') return stored;
-  return 'system';
+  // Nothing chosen yet → the brand's charcoal theme (a stored choice is always kept).
+  return 'dark';
 }
 
 export function useTheme() {

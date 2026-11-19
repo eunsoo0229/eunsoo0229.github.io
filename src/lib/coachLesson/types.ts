@@ -116,6 +116,8 @@ export interface CoachLessonState {
   scenarioAsked: boolean;
   /** Set once the video has been watched (or skipped). */
   videoDone: boolean;
+  /** 영상이 실제로 보여졌는가. 없을 때 "영상에서 본 것"을 물으면 안 된다 (보여 준 적이 없는 것을 묻는 질문). */
+  videoSeen?: boolean;
 }
 
 /** What the coach does — the engine never returns a bare string. */
@@ -166,7 +168,7 @@ export interface AnswerAnalysis {
 export type LessonEvent =
   | { type: 'START'; lead?: string }
   | { type: 'STUDENT'; text: string; intent: StudentIntent; analysis?: AnswerAnalysis | null; answer?: string | null }
-  | { type: 'VIDEO_DONE' }
+  | { type: 'VIDEO_DONE'; /** 영상을 실제로 보여 줬는가 (생략 = 기존 동작 유지) */ watched?: boolean }
   | { type: 'PRACTICE_DONE'; completed: boolean };
 
 /** Where the page should be after the engine ran — mapped onto the existing CoachStep UI. */

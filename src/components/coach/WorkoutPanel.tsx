@@ -1,3 +1,4 @@
+import Icon from '../Icon';
 import { CHEER_LABEL, describePlan, formatDuration, planErrors, PLAN_LIMITS, type CheerLevel } from '../../lib/coachLesson/workoutPlan';
 import { remainingMs, workedMs, type WorkoutResult, type WorkoutRun } from '../../lib/coachLesson/workoutTimer';
 import type { PlanDraft } from '../../lib/coachLesson/oneOffSession';
@@ -68,7 +69,7 @@ export default function WorkoutPanel(props: {
 
   return (
     <div className="card info-card workout-panel" data-testid="workout-panel" data-phase={run?.phase ?? 'plan'} data-paused={String(!!run?.paused)}>
-      <h3 style={{ marginTop: 0 }}>⏱ 실습 · {props.title}</h3>
+      <h3 style={{ marginTop: 0 }}><Icon name="timer" /> 실습 · {props.title}</h3>
       {props.practice && (
         <p className="technique-row__sub" data-testid="oneoff-practice" style={{ marginTop: 0 }}>
           코치의 실습 안내: {props.practice}
@@ -112,7 +113,7 @@ export default function WorkoutPanel(props: {
           ))}
           <div className="modal-actions modal-actions--start">
             <button type="button" className="btn btn-primary" disabled={!complete || errors.length > 0} onClick={props.onStart} data-testid="workout-start">
-              ▶ 타이머 시작
+              <Icon name="play" /> 타이머 시작
             </button>
             {props.manualAllowed && (
               <>
@@ -148,15 +149,15 @@ export default function WorkoutPanel(props: {
             <div className="modal-actions" style={{ justifyContent: 'center' }}>
               {run.paused ? (
                 <button type="button" className="btn btn-primary" onClick={props.onResume} data-testid="workout-resume">
-                  ▶ 재개
+                  <Icon name="play" /> 재개
                 </button>
               ) : (
                 <button type="button" className="btn btn-secondary" onClick={props.onPause} data-testid="workout-pause">
-                  ⏸ 일시정지
+                  <Icon name="pause" /> 일시정지
                 </button>
               )}
               <button type="button" className="btn btn-ghost" onClick={props.onStop} data-testid="workout-stop">
-                ■ 종료
+                <Icon name="stop" /> 종료
               </button>
             </div>
           )}

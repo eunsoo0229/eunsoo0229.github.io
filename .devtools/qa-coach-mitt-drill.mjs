@@ -178,8 +178,14 @@ async function main() {
   if (days.wrestling) {
     const spokenBeforeDrill = (await page.evaluate(() => window.__spoken.length));
     await toReady('wrestling', days.wrestling);
+    // 종목에 맞춘 수업 미트 (artMitt.ts): a standing wrestling item without its own motion
+    // first gets the wrestling pads (level change → shot), then the solo drill
+    const r0 = await runNow();
+    check(`[4] 레슬링 기술(${days.wrestling.name}) 실습: 먼저 레슬링 미트(타격 없이 진입 동작)`, (await stepNow()) === 'mitt' && r0.practiceSetup?.mode === 'art_mitt' && r0.practiceSetup?.after === 'drill', { step: await stepNow(), mode: r0.practiceSetup?.mode, mitt: r0.mittPlan?.name });
+    await page.locator('[data-testid="mitt-runner-stop"]').click();
+    await page.waitForFunction(() => document.querySelector('[data-testid="coach-step"]')?.dataset.step === 'drill', null, { timeout: 15000 });
     const r = await runNow();
-    check(`[4] 레슬링 기술(${days.wrestling.name}) 실습: 솔로 드릴 — 코치가 실제 기술 구령을 빠르게 부름`, (await stepNow()) === 'drill' && (await page.locator('[data-testid="solo-drill"]').count()) === 1 && r.drillPlan?.cues.length >= 5, { cues: r.drillPlan?.cues.map((c) => c.call) });
+    check(`[4] 레슬링 기술(${days.wrestling.name}) 실습: 미트 뒤 솔로 드릴 — 코치가 실제 기술 구령을 빠르게 부름`, (await stepNow()) === 'drill' && (await page.locator('[data-testid="solo-drill"]').count()) === 1 && r.drillPlan?.cues.length >= 5, { cues: r.drillPlan?.cues.map((c) => c.call) });
     await sleep(9000);
     const calls = await page.evaluate(() => Number(document.querySelector('[data-testid="solo-drill"]')?.dataset.calls));
     const spokenD = (await page.evaluate(() => window.__spoken)).slice(spokenBeforeDrill).map((s) => s.text);
@@ -268,7 +274,7 @@ async function main() {
   });
   check('[6] 입력한 수업의 기술(잽·크로스·로우킥)을 조합해 미트 콤보로', !!oneOff.kb && oneOff.kb.ids.length === 3 && /jab/.test(oneOff.kb.ids[0]) && /cross/.test(oneOff.kb.ids[1]) && /low-kick/.test(oneOff.kb.ids[2]), oneOff.kb);
   check('[6] MMA 입력 수업은 타격 뒤 테이크다운까지 섞어서', !!oneOff.mmaLesson && oneOff.mmaLesson.mode === 'mma_mix' && /double-leg/.test(oneOff.mmaLesson.ids.at(-1)), oneOff.mmaLesson);
-  check('[6] 그릴 수 있는 기술이 나오지 않은 수업은 미트를 지어내지 않음(기존 타이머)', oneOff.none === null, oneOff.none);
+  check('[6] 그릴 기술이 안 나온 수업(복싱 거리 조절)도 종목 미트 — 실제 DB 복싱 조합 (artMitt.ts, 2026-10-25 변경)', oneOff.none?.mode === 'art_mitt' && oneOff.none.ids.length >= 2 && oneOff.none.ids.every((id) => /^(boxing|kickboxing)__/.test(id)), oneOff.none);
   // UI: the lesson reaches practice → posture first → the mitt, and the record notes it
   await page.evaluate(async () => {
     const o = await import('/src/lib/coachLesson/oneOff.ts');
@@ -303,10 +309,11 @@ async function main() {
     await page.locator('[data-testid="oneoff-mitt"] [data-testid="mitt-runner"]').waitFor({ timeout: 10000 });
     await sleep(2000);
     await page.locator('[data-testid="mitt-runner-stop"]').click();
-    await sleep(1500);
+    // the lesson moves on asynchronously (state saved after the engine step) — poll instead of a fixed wait
+    await page.waitForFunction(() => JSON.parse(localStorage.getItem('martialdex:coach-oneoff-session') || 'null')?.directive !== 'ready', null, { timeout: 10000 }).catch(() => {});
     const after = await page.evaluate(() => {
       const s = JSON.parse(localStorage.getItem('martialdex:coach-oneoff-session') || 'null');
-      return { phase: s?.mitt?.phase, result: s?.mitt?.result, directive: s?.directive };
+      return { phase: s?.mitt?.phase, result: s?.mitt?.result, directive: s?.directive, stage: s?.state?.currentStage, tail: (s?.messages ?? []).slice(-4).map((m) => `${m.role}:${m.text.slice(0, 60)}`) };
     });
     check('[6] 미트를 끝내면 실습 완료로 수업이 다음 단계로 진행 (수행 기록 저장)', after.phase === 'done' && !!after.result && after.directive !== 'ready', after);
   }

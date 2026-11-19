@@ -1,4 +1,5 @@
 import type { Technique } from '../../types';
+import { profileContextBlock } from '../fighterProfile/coachContext';
 import { getMartialArt } from '../loadData';
 import { askGeminiForJson } from '../fighterStyle/geminiJson';
 import { computeAllSkillProgress, rankWeakness } from '../skillProgress/weaknessEngine';
@@ -108,7 +109,7 @@ export async function getSituationRecommendation(input: {
       `최대 ${MAX_RECOMMENDATIONS}개까지, 가장 적절한 순서로 추천한다.`,
       '출력 형식: {"items": [{"techniqueId": string, "reason": string}, ...]}',
     ].join('\n'),
-    contextText: contextLines.join('\n'),
+    contextText: contextLines.join('\n') + profileContextBlock(input.martialArt, input.situationText),
     question: `상황: "${input.situationText || (input.category ? SITUATION_CATEGORY_LABEL[input.category] : '')}" — 이 상황에 도움이 될 기술을 추천해줘.`,
     validate: isAiResponse,
   });

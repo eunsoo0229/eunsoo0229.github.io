@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import BackButton from '../components/BackButton';
@@ -30,6 +31,10 @@ import AutoGrowTextarea from '../components/AutoGrowTextarea';
 import { decideDrill, type MittPlan } from '../lib/visualMitt/aiPlan';
 import { comboBookText, hasAuthorText, interpretedCombo, interpretUserCombo, planMittTraining, type InterpretedCombo, type MittSourcePreference } from '../lib/visualMitt/mittSourcing';
 import { listMyCombos } from '../lib/combo/service';
+import SharedComboTab from '../components/visualMitt/SharedComboTab';
+import { sharedToMitt } from '../lib/visualMitt/sharedMitt';
+import { sharedComboText } from '../lib/visualMitt/mittSourcing';
+import type { SharedCombo } from '../lib/sharedCombo/types';
 import { useAuth } from '../lib/auth/AuthProvider';
 
 // AI Visualizing Mitt — practise strike sequences and takedown entry steps
@@ -108,6 +113,9 @@ export default function VisualMitt() {
     return hasAuthorText(text) ? text : null;
   }, [combo]);
   const [chosen, setChosen] = useState<{ id: string; combo: MittCombo } | null>(null);
+  if (comboId?.startsWith('shared:')) {
+    return <SharedComboRoute key={comboId} id={comboId.slice(7)} mode={mode} stance={stance} onExit={() => setParams({ mode })} />;
+  }
   if (combo && authored && chosen?.id !== combo.id) {
     return <UserComboGate key={combo.id} combo={combo} text={authored} onChoose={(c) => setChosen({ id: combo.id, combo: c })} onExit={() => setParams({ mode })} />;
   }
@@ -117,6 +125,53 @@ export default function VisualMitt() {
   ) : (
     <MittSetup mode={mode} onPick={(id, stance) => setParams({ combo: id, mode, stance })} onMode={(m) => setParams({ mode: m })} missing={!!comboId} />
   );
+}
+
+// ---------------- 사용자 공유 콤보·셋업 → mitt ----------------
+function SharedComboRoute({ id, mode, stance, onExit }: { id: string; mode: 'voice' | 'text'; stance: Stance; onExit: () => void }) {
+  const { user } = useAuth();
+  const [state, setState] = useState<{ busy: boolean; combo: SharedCombo | null; error: string | null }>({ busy: true, combo: null, error: null });
+  const [chosen, setChosen] = useState<MittCombo | null>(null);
+  useEffect(() => {
+    let alive = true;
+    void import('../lib/sharedCombo/service').then(({ getSharedCombo }) =>
+      getSharedCombo(id, user?.id ?? null).then((r) => alive && setState({ busy: false, combo: r.ok ? r.data : null, error: r.ok ? (r.data ? null : '공유 콤보를 찾을 수 없습니다.') : r.message })),
+    );
+    return () => {
+      alive = false;
+    };
+  }, [id, user?.id]);
+  const c = state.combo;
+  // the author's own steps (only the drawable ones when some step is not)
+  const original = useMemo<MittCombo | null>(() => {
+    if (!c) return null;
+    const full = sharedToMitt(c);
+    if (full) return full;
+    const steps = stepsForIds(c.steps.map((s) => s.techniqueId).filter(Boolean));
+    const drawn = new Set(steps.map((s) => s.techniqueId));
+    return { id: `shared:${c.id}`, name: c.name, source: 'saved', sourceLabel: `사용자 공유 ${c.kind === 'setup' ? '셋업' : '콤보'} · by ${c.authorNickname || '익명'}`, steps, skipped: c.steps.filter((s) => !drawn.has(s.techniqueId)).map((s) => s.name), warnings: [] };
+  }, [c]);
+  const text = useMemo(() => (c ? sharedComboText(c) : null), [c]);
+  if (chosen) return <MittSession key={chosen.id} combo={chosen} mode={mode} initialStance={stance} onExit={onExit} />;
+  if (state.busy || !c || !original || !text) {
+    return (
+      <div className="page">
+        <div className="container">
+          <BackButton />
+          <div className="card info-card" data-testid="mitt-shared-loading">
+            {state.busy ? '공유 콤보·셋업을 불러오는 중입니다…' : <div className="ai-inline-warning">{state.error}</div>}
+            {!state.busy && (
+              <button className="btn btn-ghost btn-sm" onClick={onExit}>
+                돌아가기
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (!hasAuthorText(text)) return <MittSession key={original.id} combo={original} mode={mode} initialStance={stance} onExit={onExit} />;
+  return <UserComboGate key={c.id} combo={original} text={text} onChoose={setChosen} onExit={onExit} />;
 }
 
 // ---------------- user-written combo → AI step split ----------------
@@ -135,10 +190,10 @@ function UserComboGate({ combo, text, onChoose, onExit }: { combo: MittCombo; te
       <div className="container">
         <BackButton />
         <div className="section-title">
-          <h2>🥊 {combo.name}</h2>
+          <h2><Icon name="glove" /> {combo.name}</h2>
         </div>
         <div className="card info-card" data-testid="mitt-interpret" data-state={state.busy ? 'busy' : ai ? 'done' : 'error'}>
-          <h3 style={{ margin: '0 0 4px' }}>🤖 AI가 콤보 설명을 읽고 미트 단계로 정리합니다</h3>
+          <h3 style={{ margin: '0 0 4px' }}><Icon name="bot" /> AI가 콤보 설명을 읽고 미트 단계로 정리합니다</h3>
           <p className="video-status-message" style={{ margin: '0 0 6px' }}>
             직접 만든 {text.kind === 'setup' ? '셋업' : '콤보'}은 설명과 단계가 애매하게 나뉘어 있을 수 있어, 이름·목적·설명·메모를 함께 읽고 실제로 칠 기술 순서로 나눕니다. 작성자가 쓰지 않은 기술은 추가하지 않습니다.
           </p>
@@ -181,7 +236,12 @@ function UserComboGate({ combo, text, onChoose, onExit }: { combo: MittCombo; te
 
 // ---------------- setup: pick or build a combo ----------------
 function MittSetup({ mode, onPick, onMode, missing }: { mode: 'voice' | 'text'; onPick: (id: string, stance: Stance) => void; onMode: (m: 'voice' | 'text') => void; missing: boolean }) {
-  const [tab, setTab] = useState<'ai' | 'command' | 'react' | 'db' | 'mine' | 'single' | 'build'>('ai');
+  // ?tab=command|react|db&art=<무술> — opened by the 자체 AI 코치 ("레슬링 솔로 드릴 하고 싶어"); unknown values are ignored.
+  const [startParams] = useSearchParams();
+  const [tab, setTab] = useState<'ai' | 'command' | 'react' | 'shared' | 'db' | 'mine' | 'single' | 'build'>(() => {
+    const t = startParams.get('tab');
+    return t === 'command' || t === 'react' || t === 'db' ? t : 'ai';
+  });
   const [purpose, setPurpose] = useState('');
   const [aiBusy, setAiBusy] = useState(false);
   const [aiPlan, setAiPlan] = useState<MittPlan | null>(null);
@@ -204,7 +264,10 @@ function MittSetup({ mode, onPick, onMode, missing }: { mode: 'voice' | 'text'; 
     else setAiError(r.message);
   }
   const [stance, setStance] = useState<Stance>('orthodox');
-  const [art, setArt] = useState('');
+  const [art, setArt] = useState(() => {
+    const a = startParams.get('art') ?? '';
+    return a && listVisualizableTechniques().some((t) => techniqueArts(t).includes(a)) ? a : '';
+  });
   const [query, setQuery] = useState('');
   const db = useMemo(() => listDbCombos(), []);
   const mine = useMemo(() => listBookCombos(), []);
@@ -256,7 +319,7 @@ function MittSetup({ mode, onPick, onMode, missing }: { mode: 'voice' | 'text'; 
           <span>AI Visualizing Mitt</span>
         </div>
         <div className="section-title">
-          <h2>🥊 AI Visualizing Mitt</h2>
+          <h2><Icon name="glove" /> AI Visualizing Mitt</h2>
         </div>
         <p className="video-status-message" style={{ marginTop: -8 }}>
           실제 미트나 파트너 없이, 화면의 미트 잡이·목표 미트·발 위치를 보며 타격 콤보와 테이크다운 진입 스텝을 순서대로 익힙니다. 그림은 동작의 경로와 풋워크를 보여 주는 도식이며, 앱이 사용자의 동작을 보거나 판정하지는 않습니다.
@@ -275,22 +338,22 @@ function MittSetup({ mode, onPick, onMode, missing }: { mode: 'voice' | 'text'; 
           <div className="chip-row">
             <span className="field-label">코치 안내</span>
             <button className={`chip ${mode === 'text' ? 'active' : ''}`} onClick={() => onMode('text')} data-testid="mitt-mode-text">
-              ⌨️ 글로 보기
+              <Icon name="keyboard" /> 글로 보기
             </button>
             <button className={`chip ${mode === 'voice' ? 'active' : ''}`} onClick={() => onMode('voice')} data-testid="mitt-mode-voice" disabled={!isTtsSupported()}>
-              🎙 음성으로 듣기
+              <Icon name="mic" /> 음성으로 듣기
             </button>
           </div>
           {mode === 'voice' && (
             <details className="coach-voice-settings">
-              <summary>🔊 AI 튜터 음성 · 말하기 속도</summary>
+              <summary><Icon name="sound" /> AI 튜터 음성 · 말하기 속도</summary>
               <TutorVoiceSettingsPanel autoSave />
             </details>
           )}
           <div className="chip-row">
             <span className="field-label">무술</span>
             <select className="select" value={art} onChange={(e) => setArt(e.target.value)} data-testid="mitt-art-filter">
-              <option value="">전체</option>
+              <option value="">전체 (입식 타격)</option>
               {arts.map((a) => (
                 <option key={a} value={a}>
                   {getMartialArt(a)?.nameKo ?? a}
@@ -304,8 +367,9 @@ function MittSetup({ mode, onPick, onMode, missing }: { mode: 'voice' | 'text'; 
           {(
             [
               ['ai', 'AI에게 콤보/셋업 요청'],
-              ['command', '🎯 공격 지시 (미트 콜)'],
+              ['command', <><Icon name="target" /> 공격 지시 (미트 콜)</>],
               ['react', '반응 훈련 (무작위 콤보)'],
+              ['shared', <><Icon name="book" /> 사용자 콤보·셋업</>],
               ['db', `추천 콤보 (기술 DB 수록 ${db.length})`],
               ['mine', `내 콤보 ${mine.length}`],
               ['single', `단일 기술 ${techniques.length}`],
@@ -318,8 +382,9 @@ function MittSetup({ mode, onPick, onMode, missing }: { mode: 'voice' | 'text'; 
           ))}
         </div>
 
-        {tab === 'react' && <ReactionDrill stance={stance} />}
-        {tab === 'command' && <CommandDrill stance={stance} voice={mode === 'voice'} />}
+        {tab === 'shared' && <SharedComboTab art={art} onPick={(id) => onPick(id, stance)} />}
+        {tab === 'react' && <ReactionDrill stance={stance} art={art} />}
+        {tab === 'command' && <CommandDrill stance={stance} voice={mode === 'voice'} art={art} />}
 
         {tab === 'ai' && (
           <div className="card info-card" data-testid="mitt-ai">
@@ -353,10 +418,10 @@ function MittSetup({ mode, onPick, onMode, missing }: { mode: 'voice' | 'text'; 
                   <div className="mitt-source" data-testid="mitt-ai-source" data-choice={aiPlan.decision.choice}>
                     <strong>
                       {aiPlan.decision.choice === 'shared'
-                        ? `📚 사용자 공유 ${aiPlan.shared?.kind === 'setup' ? '셋업을' : '콤보를'} 불러왔습니다 · by ${aiPlan.shared?.authorNickname || '익명'} · ♥${aiPlan.shared?.likeCount ?? 0}`
+                        ? <><Icon name="book" /> 사용자 공유 {aiPlan.shared?.kind === 'setup' ? '셋업을' : '콤보를'} 불러왔습니다 · by {aiPlan.shared?.authorNickname || '익명'} · <Icon name="heart-filled" label="좋아요" />{aiPlan.shared?.likeCount ?? 0}</>
                         : aiPlan.decision.choice === 'web'
-                          ? '🌐 실시간 검색 자료로 새로 만들었습니다'
-                          : '⚠️ 기술 DB만으로 만들었습니다'}
+                          ? <><Icon name="globe" /> 실시간 검색 자료로 새로 만들었습니다</>
+                          : <><Icon name="warn" /> 기술 DB만으로 만들었습니다</>}
                     </strong>
                     <div>{aiPlan.decision.reason}</div>
                     {aiPlan.webSources && aiPlan.webSources.length > 0 && (
@@ -374,12 +439,12 @@ function MittSetup({ mode, onPick, onMode, missing }: { mode: 'voice' | 'text'; 
                     <div className="chip-row" style={{ marginTop: 4 }}>
                       {aiPlan.decision.choice !== 'shared' && (
                         <button className="chip" onClick={() => void askAi('shared')} disabled={aiBusy} data-testid="mitt-ai-prefer-shared">
-                          📚 공유 콤보에서 찾기
+                          <Icon name="book" /> 공유 콤보에서 찾기
                         </button>
                       )}
                       {aiPlan.decision.choice !== 'web' && (
                         <button className="chip" onClick={() => void askAi('web')} disabled={aiBusy} data-testid="mitt-ai-prefer-web">
-                          🌐 실시간 검색으로 새로 만들기
+                          <Icon name="globe" /> 실시간 검색으로 새로 만들기
                         </button>
                       )}
                     </div>
@@ -400,7 +465,7 @@ function MittSetup({ mode, onPick, onMode, missing }: { mode: 'voice' | 'text'; 
                 </p>
                 <div className="modal-actions modal-actions--start">
                   <button className="btn btn-primary" onClick={() => setAiRunning(true)} data-testid="mitt-ai-run">
-                    ▶ 바로 연습 ({aiPlan.repetitions}회)
+                    <Icon name="play" /> 바로 연습 ({aiPlan.repetitions}회)
                   </button>
                   {aiSaved ? (
                     <span className="video-status-message" data-testid="mitt-ai-saved">콤보 북에 저장했습니다.</span>
@@ -492,13 +557,13 @@ function MittSetup({ mode, onPick, onMode, missing }: { mode: 'voice' | 'text'; 
                 <li key={`${s.techniqueId}-${i}`} data-testid="mitt-draft-step">
                   <span className="chip">{MITT_ROLE_LABEL[s.role]}</span> {s.technique.name}{' '}
                   <button className="btn btn-ghost btn-sm" disabled={i === 0} onClick={() => setDraft((d) => { const n = [...d]; [n[i - 1], n[i]] = [n[i], n[i - 1]]; return n; })} aria-label="위로">
-                    ↑
+                    <Icon name="chevron-up" />
                   </button>
                   <button className="btn btn-ghost btn-sm" disabled={i === draft.length - 1} onClick={() => setDraft((d) => { const n = [...d]; [n[i + 1], n[i]] = [n[i], n[i + 1]]; return n; })} aria-label="아래로">
-                    ↓
+                    <Icon name="chevron-down" />
                   </button>
                   <button className="btn btn-ghost btn-sm" onClick={() => setDraft((d) => d.filter((_, j) => j !== i))} aria-label="삭제">
-                    ✕
+                    <Icon name="close" />
                   </button>
                 </li>
               ))}
@@ -655,7 +720,7 @@ function MittSession({ combo, mode, initialStance, onExit }: { combo: MittCombo;
           <span>{combo.name}</span>
         </div>
         <div className="section-title">
-          <h2>🥊 {combo.name}</h2>
+          <h2><Icon name="glove" /> {combo.name}</h2>
         </div>
         <p className="video-status-message" style={{ marginTop: -8 }}>
           {combo.sourceLabel} · {STANCE_LABEL[stance]} · {mode === 'voice' ? '음성 안내' : '글 안내'} · 반복 <strong data-testid="mitt-reps">{reps}</strong>회
@@ -667,10 +732,10 @@ function MittSession({ combo, mode, initialStance, onExit }: { combo: MittCombo;
 
         <div className="chip-row" data-testid="mitt-run-mode">
           <button className={`chip ${runMode === 'continuous' ? 'active' : ''}`} onClick={() => setRunMode('continuous')} data-testid="mitt-mode-continuous">
-            ⚡ 콤보 연속 실행
+            <Icon name="zap" /> 콤보 연속 실행
           </button>
           <button className={`chip ${runMode === 'steps' ? 'active' : ''}`} onClick={() => setRunMode('steps')} data-testid="mitt-mode-steps">
-            🧩 단계별 익히기
+            <Icon name="puzzle" /> 단계별 익히기
           </button>
         </div>
 
@@ -695,10 +760,10 @@ function MittSession({ combo, mode, initialStance, onExit }: { combo: MittCombo;
             />
             <div className="modal-actions modal-actions--start" style={{ marginTop: 6 }}>
               <button className="btn btn-secondary btn-sm" onClick={() => setRunKey((k) => k + 1)}>
-                ↺ 새로 시작
+                <Icon name="refresh" /> 새로 시작
               </button>
               <button className="btn btn-ghost btn-sm" onClick={end} data-testid="mitt-end-continuous">
-                ■ 수업 종료
+                <Icon name="stop" /> 수업 종료
               </button>
             </div>
           </div>
@@ -709,7 +774,7 @@ function MittSession({ combo, mode, initialStance, onExit }: { combo: MittCombo;
         <div className="mitt-steps" data-testid="mitt-steps">
           {combo.steps.map((s, i) => (
             <button key={i} className={`mitt-step-chip${i === index ? ' mitt-step-chip--current' : ''}${completed.has(i) ? ' mitt-step-chip--done' : ''}`} onClick={() => go(i)} data-testid="mitt-step-chip" data-current={i === index ? 'true' : 'false'}>
-              {completed.has(i) ? '✔ ' : ''}
+              {completed.has(i) ? <><Icon name="check" /> </> : ''}
               {i + 1}. {s.technique.name}
             </button>
           ))}
@@ -725,8 +790,8 @@ function MittSession({ combo, mode, initialStance, onExit }: { combo: MittCombo;
           <p style={{ margin: '2px 0 6px' }}>{step.motion.archetype.cue}</p>
           {(step.note || step.opponentReaction) && (
             <p className="video-status-message" style={{ margin: '0 0 6px' }} data-testid="mitt-step-note">
-              {step.note && <>📝 {step.note} </>}
-              {step.opponentReaction && <>🎯 예상 반응: {step.opponentReaction}</>}
+              {step.note && <><Icon name="note" /> {step.note} </>}
+              {step.opponentReaction && <><Icon name="target" /> 예상 반응: {step.opponentReaction}</>}
             </p>
           )}
           <p className="video-status-message" style={{ margin: 0 }}>
@@ -748,25 +813,25 @@ function MittSession({ combo, mode, initialStance, onExit }: { combo: MittCombo;
           <div className="card info-card">
             <div className="mitt-controls">
               <button className="btn btn-secondary btn-sm" onClick={() => go(index - 1)} disabled={index === 0} data-testid="mitt-prev">
-                ◀ 이전
+                <Icon name="prev" /> 이전
               </button>
               {playing ? (
                 <button className="btn btn-secondary btn-sm" onClick={() => setPlaying(false)} data-testid="mitt-pause">
-                  ⏸ 일시정지
+                  <Icon name="pause" /> 일시정지
                 </button>
               ) : (
                 <button className="btn btn-primary btn-sm" onClick={() => setPlaying(true)} data-testid="mitt-play">
-                  ▶ 재생
+                  <Icon name="play" /> 재생
                 </button>
               )}
               <button className="btn btn-secondary btn-sm" onClick={() => go(index + 1)} disabled={index === n - 1} data-testid="mitt-next">
-                다음 ▶
+                다음 <Icon name="next" />
               </button>
               <button className="btn btn-secondary btn-sm" onClick={() => setRun((r) => r + 1)} data-testid="mitt-replay">
-                ↺ 다시 보기
+                <Icon name="refresh" /> 다시 보기
               </button>
               <button className={`btn btn-sm ${loopStep ? 'btn-primary' : 'btn-secondary'}`} onClick={() => setLoopStep((v) => !v)} aria-pressed={loopStep} data-testid="mitt-loop-step">
-                🔁 현재 단계 반복
+                <Icon name="repeat" /> 현재 단계 반복
               </button>
               <button
                 className="btn btn-secondary btn-sm"
@@ -776,7 +841,7 @@ function MittSession({ combo, mode, initialStance, onExit }: { combo: MittCombo;
                 }}
                 data-testid="mitt-repeat-all"
               >
-                ⏮ 전체 콤보 처음부터
+                <Icon name="prev" /> 전체 콤보 처음부터
               </button>
             </div>
             <div className="chip-row" style={{ marginTop: 8 }}>
@@ -800,15 +865,15 @@ function MittSession({ combo, mode, initialStance, onExit }: { combo: MittCombo;
             </div>
             <div className="modal-actions modal-actions--start" style={{ marginTop: 6 }}>
               <button className="btn btn-secondary btn-sm" onClick={() => setCompleted((c) => new Set(c).add(index))} disabled={completed.has(index)} data-testid="mitt-mark-step">
-                ✔ 이 단계 연습함 (내가 표시)
+                <Icon name="check" /> 이 단계 연습함 (내가 표시)
               </button>
               <button className="btn btn-ghost btn-sm" onClick={end} data-testid="mitt-end">
-                ■ 수업 종료
+                <Icon name="stop" /> 수업 종료
               </button>
             </div>
             {voice && (
               <details className="coach-voice-settings" data-testid="mitt-voice-settings">
-                <summary>🔊 AI 튜터 설정 (음성 · 말하기 속도)</summary>
+                <summary><Icon name="sound" /> AI 튜터 설정 (음성 · 말하기 속도)</summary>
                 <TutorVoiceSettingsPanel />
               </details>
             )}
@@ -856,7 +921,7 @@ function MittSession({ combo, mode, initialStance, onExit }: { combo: MittCombo;
 
         {ended && (
           <div className="card info-card" data-testid="mitt-summary">
-            <h3>🎉 수업 요약</h3>
+            <h3><Icon name="celebrate" /> 수업 요약</h3>
             <p style={{ margin: '4px 0' }}>
               반복 {reps}회 · 완료로 표시한 단계 {completed.size}/{n}개
             </p>

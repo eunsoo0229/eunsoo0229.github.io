@@ -1,0 +1,2222 @@
+[
+ {
+  "id": "judo__kuzushi-migi-mae",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 쿠즈시 방향 원리로 BJJ 기술 항목이 아님",
+  "evidence": "Kodokan Happo-no-kuzushi 원리 개념"
+ },
+ {
+  "id": "judo__kuzushi-migi-mae",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 쿠즈시 방향 원리로 레슬링 기술 항목이 아님",
+  "evidence": "Kodokan Happo-no-kuzushi 원리 개념"
+ },
+ {
+  "id": "judo__kuzushi-migi-mae",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": "sambo__당겨서-무너뜨리기",
+  "reason": "삼보 카탈로그의 균형 무너뜨리기 항목과 동일 개념임",
+  "evidence": "catalog-sambo: sambo__당겨서-무너뜨리기"
+ },
+ {
+  "id": "judo__kuzushi-hidari-mae",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 쿠즈시 방향 원리로 BJJ 기술 항목이 아님",
+  "evidence": "Kodokan Happo-no-kuzushi 원리 개념"
+ },
+ {
+  "id": "judo__kuzushi-hidari-mae",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 쿠즈시 방향 원리로 레슬링 기술 항목이 아님",
+  "evidence": "Kodokan Happo-no-kuzushi 원리 개념"
+ },
+ {
+  "id": "judo__kuzushi-hidari-mae",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": "sambo__당겨서-무너뜨리기",
+  "reason": "삼보 카탈로그의 균형 무너뜨리기 항목과 동일 개념임",
+  "evidence": "catalog-sambo: sambo__당겨서-무너뜨리기"
+ },
+ {
+  "id": "judo__kuzushi-migi-ushiro",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 쿠즈시 방향 원리로 BJJ 기술 항목이 아님",
+  "evidence": "Kodokan Happo-no-kuzushi 원리 개념"
+ },
+ {
+  "id": "judo__kuzushi-migi-ushiro",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 쿠즈시 방향 원리로 레슬링 기술 항목이 아님",
+  "evidence": "Kodokan Happo-no-kuzushi 원리 개념"
+ },
+ {
+  "id": "judo__kuzushi-migi-ushiro",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": "sambo__밀어서-무너뜨리기",
+  "reason": "삼보 카탈로그의 균형 무너뜨리기 항목과 동일 개념임",
+  "evidence": "catalog-sambo: sambo__밀어서-무너뜨리기"
+ },
+ {
+  "id": "judo__kuzushi-hidari-ushiro",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 쿠즈시 방향 원리로 BJJ 기술 항목이 아님",
+  "evidence": "Kodokan Happo-no-kuzushi 원리 개념"
+ },
+ {
+  "id": "judo__kuzushi-hidari-ushiro",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 쿠즈시 방향 원리로 레슬링 기술 항목이 아님",
+  "evidence": "Kodokan Happo-no-kuzushi 원리 개념"
+ },
+ {
+  "id": "judo__kuzushi-hidari-ushiro",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": "sambo__밀어서-무너뜨리기",
+  "reason": "삼보 카탈로그의 균형 무너뜨리기 항목과 동일 개념임",
+  "evidence": "catalog-sambo: sambo__밀어서-무너뜨리기"
+ },
+ {
+  "id": "judo__standard-grip",
+  "art": "bjj",
+  "decision": "review",
+  "confidence": "C",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "도복 BJJ 스탠딩에서 쓰이나 깃/소매 그립이 이미 연결되어 중복 여부 불확실",
+  "evidence": "catalog-bjj: judo__lapel-grip, judo__sleeve-grip"
+ },
+ {
+  "id": "judo__standard-grip",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복 그립을 쓰지 않아 해당되지 않음",
+  "evidence": "UWW 레슬링 규칙: 도복 없음, 깃/소매/띠 그립 불가"
+ },
+ {
+  "id": "judo__standard-grip",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": "sambo__소매-옷깃-그립",
+  "reason": "삼보 카탈로그의 소매+옷깃 그립과 동일함",
+  "evidence": "catalog-sambo: sambo__소매-옷깃-그립"
+ },
+ {
+  "id": "judo__cross-grip",
+  "art": "bjj",
+  "decision": "review",
+  "confidence": "C",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "도복 BJJ에서 크로스 그립이 쓰이나 독립 기술로 가르치는지 불확실",
+  "evidence": "BJJ gi grip fighting"
+ },
+ {
+  "id": "judo__cross-grip",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복 그립을 쓰지 않아 해당되지 않음",
+  "evidence": "UWW 레슬링 규칙: 도복 없음, 깃/소매/띠 그립 불가"
+ },
+ {
+  "id": "judo__cross-grip",
+  "art": "sambo",
+  "decision": "add",
+  "confidence": "B",
+  "category": "그립 파이팅(Захват) --- 재킷·벨트 중심",
+  "duplicateOf": null,
+  "reason": "삼보 재킷 그립 싸움에서 교차 그립(скрестный захват)을 사용함",
+  "evidence": "sambo \"скрестный захват\"; catalog-sambo: sambo__скрестным-захватом-рук"
+ },
+ {
+  "id": "judo__same-side-grip",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 아이요츠 자세 관계 개념으로 BJJ 기술이 아님",
+  "evidence": "Judo ai-yotsu 개념"
+ },
+ {
+  "id": "judo__same-side-grip",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복 그립을 쓰지 않아 해당되지 않음",
+  "evidence": "UWW 레슬링 규칙: 도복 없음, 깃/소매/띠 그립 불가"
+ },
+ {
+  "id": "judo__same-side-grip",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 아이요츠 자세 관계 개념으로 별도 삼보 기술이 아님",
+  "evidence": "Judo ai-yotsu 개념"
+ },
+ {
+  "id": "judo__russian-style-grip",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "wrestling__russian-tie",
+  "reason": "BJJ 카탈로그의 러시안 타이와 같은 그립임",
+  "evidence": "catalog-bjj: wrestling__russian-tie"
+ },
+ {
+  "id": "judo__russian-style-grip",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "wrestling__russian-tie",
+  "reason": "레슬링 러시안 타이와 같은 그립임",
+  "evidence": "catalog-wrestling: wrestling__russian-tie"
+ },
+ {
+  "id": "judo__russian-style-grip",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "wrestling__russian-tie",
+  "reason": "삼보 카탈로그의 러시안 타이와 같은 그립임",
+  "evidence": "catalog-sambo: wrestling__russian-tie"
+ },
+ {
+  "id": "judo__grip-fighting",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": "wrestling__hand-fighting",
+  "reason": "레슬링의 핸드 파이팅과 같은 개념임",
+  "evidence": "catalog-wrestling: wrestling__hand-fighting"
+ },
+ {
+  "id": "judo__hiza-guruma",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__hiza-guruma",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__hiza-guruma",
+  "art": "sambo",
+  "decision": "review",
+  "confidence": "C",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보 передняя подсечка(무릎 쓸기) 계열과 중복 여부 불확실",
+  "evidence": "catalog-sambo: sambo__передняя-подсечка"
+ },
+ {
+  "id": "judo__osoto-otoshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__osoto-otoshi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__osoto-otoshi",
+  "art": "sambo",
+  "decision": "add",
+  "confidence": "B",
+  "category": "다리 기술 --- 자쳅(Зацеп)·오트하바트(Отхват)·포드핫(Подхват)· 포드사드(Подсад)",
+  "duplicateOf": null,
+  "reason": "삼보의 задняя подножка로 표준 사용되는 던지기임",
+  "evidence": "sambo \"Задняя подножка\" (= osoto otoshi)"
+ },
+ {
+  "id": "judo__osoto-guruma",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__osoto-guruma",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__osoto-guruma",
+  "art": "sambo",
+  "decision": "review",
+  "confidence": "C",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보에서 쓰이나 отхват 계열과의 동일성 불확실",
+  "evidence": "catalog-sambo: sambo__отхват"
+ },
+ {
+  "id": "judo__kosoto-gari",
+  "art": "bjj",
+  "decision": "add",
+  "confidence": "B",
+  "category": "스탠딩 / 테이크다운",
+  "duplicateOf": null,
+  "reason": "도복 BJJ 스탠딩에서 흔히 쓰는 발 걸기 테이크다운임",
+  "evidence": "BJJ gi takedown (kosoto gari), IBJJF 합법"
+ },
+ {
+  "id": "judo__kosoto-gari",
+  "art": "wrestling",
+  "decision": "review",
+  "confidence": "C",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링 아웃사이드 트립과 동일 여부 불확실",
+  "evidence": "catalog-wrestling: wrestling__outside-trip"
+ },
+ {
+  "id": "judo__kosoto-gari",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": "sambo__задняя-подсечка",
+  "reason": "삼보 задняя подсечка와 같은 기술임",
+  "evidence": "catalog-sambo: sambo__задняя-подсечка"
+ },
+ {
+  "id": "judo__okuri-ashi-barai",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__okuri-ashi-barai",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__okuri-ashi-barai",
+  "art": "sambo",
+  "decision": "review",
+  "confidence": "C",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보 боковая подсечка와 중복 여부 불확실",
+  "evidence": "catalog-sambo: sambo__боковая-подсечка"
+ },
+ {
+  "id": "judo__harai-tsurikomi-ashi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__harai-tsurikomi-ashi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__harai-tsurikomi-ashi",
+  "art": "sambo",
+  "decision": "review",
+  "confidence": "C",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보 подсечка 계열과 중복 여부 불확실",
+  "evidence": "catalog-sambo: sambo__передняя-подсечка"
+ },
+ {
+  "id": "judo__ashi-guruma",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__ashi-guruma",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__ashi-guruma",
+  "art": "sambo",
+  "decision": "review",
+  "confidence": "C",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보에서 쓰이나 대응 기술명 확인 필요",
+  "evidence": "catalog-sambo 대응 항목 불명확"
+ },
+ {
+  "id": "judo__seoi-nage",
+  "art": "bjj",
+  "decision": "add",
+  "confidence": "B",
+  "category": "스탠딩 / 테이크다운",
+  "duplicateOf": null,
+  "reason": "도복 BJJ 스탠딩 테이크다운으로 널리 쓰이는 업어치기임",
+  "evidence": "BJJ gi takedown (seoi nage), IBJJF 합법"
+ },
+ {
+  "id": "judo__seoi-nage",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "wrestling__arm-throw",
+  "reason": "레슬링의 암 스로와 같은 계열 기술임",
+  "evidence": "catalog-wrestling: wrestling__arm-throw"
+ },
+ {
+  "id": "judo__ippon-seoi-nage",
+  "art": "bjj",
+  "decision": "add",
+  "confidence": "B",
+  "category": "스탠딩 / 테이크다운",
+  "duplicateOf": null,
+  "reason": "BJJ 스탠딩에서 도복/노기 모두 쓰이는 한팔 업어치기임",
+  "evidence": "BJJ takedown (ippon seoi nage), IBJJF 합법"
+ },
+ {
+  "id": "judo__ippon-seoi-nage",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": "wrestling__arm-throw",
+  "reason": "레슬링 암 스로와 같은 기술임",
+  "evidence": "catalog-wrestling: wrestling__arm-throw"
+ },
+ {
+  "id": "judo__ippon-seoi-nage",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": "sambo__захватом-руки-на-плечо",
+  "reason": "삼보 등으로 던지기(팔을 어깨 위로 잡고)와 같은 기술임",
+  "evidence": "catalog-sambo: sambo__захватом-руки-на-плечо"
+ },
+ {
+  "id": "judo__morote-seoi-nage",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__morote-seoi-nage",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복 그립을 쓰지 않아 해당되지 않음",
+  "evidence": "UWW 레슬링 규칙: 도복 없음, 깃/소매/띠 그립 불가"
+ },
+ {
+  "id": "judo__morote-seoi-nage",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "sambo__захватом-руки-под-плечо",
+  "reason": "삼보 등으로 던지기(팔을 어깨 아래로 잡고)와 같은 기술임",
+  "evidence": "catalog-sambo: sambo__захватом-руки-под-плечо"
+ },
+ {
+  "id": "judo__seoi-otoshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__seoi-otoshi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__seoi-otoshi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": "sambo__drop-seoi",
+  "reason": "삼보 카탈로그의 드롭 세오이와 같은 기술임",
+  "evidence": "catalog-sambo: sambo__drop-seoi"
+ },
+ {
+  "id": "judo__tai-otoshi",
+  "art": "bjj",
+  "decision": "review",
+  "confidence": "C",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "도복 BJJ에서 일부 쓰이나 표준 커리큘럼 여부 불확실",
+  "evidence": "BJJ gi takedown 사용 사례"
+ },
+ {
+  "id": "judo__tai-otoshi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__tai-otoshi",
+  "art": "sambo",
+  "decision": "add",
+  "confidence": "A",
+  "category": "다리 기술 --- 자쳅(Зацеп)·오트하바트(Отхват)·포드핫(Подхват)· 포드사드(Подсад)",
+  "duplicateOf": null,
+  "reason": "삼보의 핵심 던지기 передняя подножка에 해당함",
+  "evidence": "sambo \"Передняя подножка\" (= tai otoshi)"
+ },
+ {
+  "id": "judo__sukui-nage",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__sukui-nage",
+  "art": "wrestling",
+  "decision": "review",
+  "confidence": "C",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링 다리 잡기 던지기와 유사하나 동일성 불확실",
+  "evidence": "catalog-wrestling: wrestling__high-crotch-dump"
+ },
+ {
+  "id": "judo__sukui-nage",
+  "art": "sambo",
+  "decision": "review",
+  "confidence": "C",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보에서 다리 잡기 던지기로 쓰이나 대응 항목 불확실",
+  "evidence": "sambo 다리 잡기 허용 규칙"
+ },
+ {
+  "id": "judo__uki-otoshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__uki-otoshi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__uki-otoshi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "삼보 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__sumi-otoshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__sumi-otoshi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__sumi-otoshi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "삼보 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__obi-otoshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__obi-otoshi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복 그립을 쓰지 않아 해당되지 않음",
+  "evidence": "UWW 레슬링 규칙: 도복 없음, 깃/소매/띠 그립 불가"
+ },
+ {
+  "id": "judo__obi-otoshi",
+  "art": "sambo",
+  "decision": "review",
+  "confidence": "C",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보 벨트 그립 던지기로 쓰일 수 있으나 표준 여부 불확실",
+  "evidence": "catalog-sambo: sambo__벨트-그립"
+ },
+ {
+  "id": "judo__kuchiki-daoshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "wrestling__ankle-pick",
+  "reason": "BJJ 카탈로그의 앵클 픽과 같은 계열임",
+  "evidence": "catalog-bjj: wrestling__ankle-pick"
+ },
+ {
+  "id": "judo__kuchiki-daoshi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "wrestling__ankle-pick",
+  "reason": "레슬링 앵클 픽과 같은 계열 기술임",
+  "evidence": "catalog-wrestling: wrestling__ankle-pick"
+ },
+ {
+  "id": "judo__kuchiki-daoshi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "wrestling__ankle-pick",
+  "reason": "삼보 카탈로그의 앵클 픽과 같은 계열임",
+  "evidence": "catalog-sambo: wrestling__ankle-pick"
+ },
+ {
+  "id": "judo__yama-arashi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__yama-arashi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복 그립을 쓰지 않아 해당되지 않음",
+  "evidence": "UWW 레슬링 규칙: 도복 없음, 깃/소매/띠 그립 불가"
+ },
+ {
+  "id": "judo__yama-arashi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "삼보 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__uchi-mata-sukashi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__uchi-mata-sukashi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__uchi-mata-sukashi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "삼보 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__uki-goshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__uki-goshi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "wrestling__hip-toss",
+  "reason": "레슬링 힙 토스와 같은 계열 기술임",
+  "evidence": "catalog-wrestling: wrestling__hip-toss"
+ },
+ {
+  "id": "judo__uki-goshi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "sambo__бросок-через-бедро",
+  "reason": "삼보 허리 던지기(бросок через бедро)와 같은 계열임",
+  "evidence": "catalog-sambo: sambo__бросок-через-бедро"
+ },
+ {
+  "id": "judo__tsurikomi-goshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__tsurikomi-goshi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복 그립을 쓰지 않아 해당되지 않음",
+  "evidence": "UWW 레슬링 규칙: 도복 없음, 깃/소매/띠 그립 불가"
+ },
+ {
+  "id": "judo__tsurikomi-goshi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "sambo__бросок-через-бедро",
+  "reason": "삼보 허리 던지기(бросок через бедро) 변형으로 포함됨",
+  "evidence": "catalog-sambo: sambo__бросок-через-бедро"
+ },
+ {
+  "id": "judo__sode-tsurikomi-goshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__sode-tsurikomi-goshi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복 그립을 쓰지 않아 해당되지 않음",
+  "evidence": "UWW 레슬링 규칙: 도복 없음, 깃/소매/띠 그립 불가"
+ },
+ {
+  "id": "judo__sode-tsurikomi-goshi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "sambo__захватом-рукавов",
+  "reason": "삼보 양 소매 잡고 등으로 던지기와 같은 계열임",
+  "evidence": "catalog-sambo: sambo__захватом-рукавов"
+ },
+ {
+  "id": "judo__tsuri-goshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__tsuri-goshi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복 그립을 쓰지 않아 해당되지 않음",
+  "evidence": "UWW 레슬링 규칙: 도복 없음, 깃/소매/띠 그립 불가"
+ },
+ {
+  "id": "judo__tsuri-goshi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "sambo__с-захватом-пояса",
+  "reason": "삼보 벨트 잡고 허리 던지기와 같은 기술임",
+  "evidence": "catalog-sambo: sambo__с-захватом-пояса"
+ },
+ {
+  "id": "judo__hane-goshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__hane-goshi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__hane-goshi",
+  "art": "sambo",
+  "decision": "review",
+  "confidence": "C",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보에서 쓰이나 подхват 계열과 중복 여부 불확실",
+  "evidence": "catalog-sambo: sambo__подхват"
+ },
+ {
+  "id": "judo__utsuri-goshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__utsuri-goshi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__utsuri-goshi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "sambo__허리기술-counter",
+  "reason": "삼보 허리기술 카운터 항목에 포함됨",
+  "evidence": "catalog-sambo: sambo__허리기술-counter"
+ },
+ {
+  "id": "judo__ushiro-goshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__ushiro-goshi",
+  "art": "wrestling",
+  "decision": "review",
+  "confidence": "C",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링 리프트 계열과 유사하나 동일성 불확실",
+  "evidence": "catalog-wrestling: wrestling__lift"
+ },
+ {
+  "id": "judo__ushiro-goshi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "sambo__허리기술-counter",
+  "reason": "삼보 허리기술 카운터 항목에 포함됨",
+  "evidence": "catalog-sambo: sambo__허리기술-counter"
+ },
+ {
+  "id": "judo__tomoe-nage",
+  "art": "bjj",
+  "decision": "add",
+  "confidence": "B",
+  "category": "스탠딩 / 테이크다운",
+  "duplicateOf": null,
+  "reason": "BJJ에서 가드 풀/스윕 겸 던지기로 흔히 쓰임",
+  "evidence": "BJJ gi (tomoe nage), IBJJF 합법"
+ },
+ {
+  "id": "judo__tomoe-nage",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__tomoe-nage",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": "sambo__бросок-через-голову",
+  "reason": "삼보 бросок через голову와 같은 기술임",
+  "evidence": "catalog-sambo: sambo__бросок-через-голову"
+ },
+ {
+  "id": "judo__hikikomi-gaeshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__hikikomi-gaeshi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__hikikomi-gaeshi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "sambo__бросок-через-голову",
+  "reason": "삼보 бросок через голову 계열 변형임",
+  "evidence": "catalog-sambo: sambo__бросок-через-голову"
+ },
+ {
+  "id": "judo__tawara-gaeshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__tawara-gaeshi",
+  "art": "wrestling",
+  "decision": "review",
+  "confidence": "C",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "더블레그 대응 롤 카운터와 유사하나 레슬링 표준 여부 불확실",
+  "evidence": "wrestling sprawl/roll counter"
+ },
+ {
+  "id": "judo__tawara-gaeshi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "삼보 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__yoko-wakare",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__yoko-wakare",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__yoko-wakare",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "삼보 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__yoko-gake",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__yoko-gake",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__yoko-gake",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "삼보 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__uki-waza",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__uki-waza",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__uki-waza",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "삼보 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__tani-otoshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__tani-otoshi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__tani-otoshi",
+  "art": "sambo",
+  "decision": "review",
+  "confidence": "C",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보에서 쓰이나 대응 항목 확인 필요",
+  "evidence": "catalog-sambo 희생 기술 범주"
+ },
+ {
+  "id": "judo__daki-wakare",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__daki-wakare",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__daki-wakare",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "삼보 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__osoto-makikomi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__osoto-makikomi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__osoto-makikomi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "삼보 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__uchi-makikomi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__uchi-makikomi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__uchi-makikomi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "삼보 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__harai-makikomi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__harai-makikomi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__harai-makikomi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "삼보 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__hane-makikomi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__hane-makikomi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__hane-makikomi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "삼보 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__uchi-mata-makikomi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__uchi-mata-makikomi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__uchi-mata-makikomi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "삼보 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__ouchi-gari-uchi-mata",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__ouchi-gari-uchi-mata",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__ouchi-gari-uchi-mata",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__ouchi-gari-seoi-nage",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__ouchi-gari-seoi-nage",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__ouchi-gari-seoi-nage",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__kouchi-gari-seoi-nage",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__kouchi-gari-seoi-nage",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__kouchi-gari-seoi-nage",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__kouchi-gari-tai-otoshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__kouchi-gari-tai-otoshi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__kouchi-gari-tai-otoshi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__osoto-gari-uchi-mata",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__osoto-gari-uchi-mata",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__osoto-gari-uchi-mata",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__osoto-gari-ouchi-gari",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__osoto-gari-ouchi-gari",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__osoto-gari-ouchi-gari",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__de-ashi-barai-sasae-tsurikomi-ashi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__de-ashi-barai-sasae-tsurikomi-ashi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__de-ashi-barai-sasae-tsurikomi-ashi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__sasae-tsurikomi-ashi-osoto-gari",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__sasae-tsurikomi-ashi-osoto-gari",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__sasae-tsurikomi-ashi-osoto-gari",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__uchi-mata-ouchi-gari",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__uchi-mata-ouchi-gari",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__uchi-mata-ouchi-gari",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__kouchi-gari-uchi-mata",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__kouchi-gari-uchi-mata",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__kouchi-gari-uchi-mata",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 연결 기술 체인으로 대상 무술의 독립 기술로 보기 어려움",
+  "evidence": "유도 Renraku Waza 콤비네이션, 대상 카탈로그에 해당 체인 없음"
+ },
+ {
+  "id": "judo__uchi-mata-gaeshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__uchi-mata-gaeshi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 던지기에 대한 카운터로 레슬링 기술이 아님",
+  "evidence": "wrestling 카탈로그에 해당 기술 없음"
+ },
+ {
+  "id": "judo__uchi-mata-gaeshi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "sambo__다리걸기-counter",
+  "reason": "삼보 카운터 항목에 포함되는 반격 기술임",
+  "evidence": "catalog-sambo: sambo__다리걸기-counter"
+ },
+ {
+  "id": "judo__ouchi-gaeshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__ouchi-gaeshi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 던지기에 대한 카운터로 레슬링 기술이 아님",
+  "evidence": "wrestling 카탈로그에 해당 기술 없음"
+ },
+ {
+  "id": "judo__ouchi-gaeshi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "sambo__다리걸기-counter",
+  "reason": "삼보 카운터 항목에 포함되는 반격 기술임",
+  "evidence": "catalog-sambo: sambo__다리걸기-counter"
+ },
+ {
+  "id": "judo__kouchi-gaeshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__kouchi-gaeshi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 던지기에 대한 카운터로 레슬링 기술이 아님",
+  "evidence": "wrestling 카탈로그에 해당 기술 없음"
+ },
+ {
+  "id": "judo__kouchi-gaeshi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "sambo__다리걸기-counter",
+  "reason": "삼보 카운터 항목에 포함되는 반격 기술임",
+  "evidence": "catalog-sambo: sambo__다리걸기-counter"
+ },
+ {
+  "id": "judo__osoto-gaeshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__osoto-gaeshi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 던지기에 대한 카운터로 레슬링 기술이 아님",
+  "evidence": "wrestling 카탈로그에 해당 기술 없음"
+ },
+ {
+  "id": "judo__osoto-gaeshi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "sambo__отхват-подсечка-counter",
+  "reason": "삼보 카운터 항목에 포함되는 반격 기술임",
+  "evidence": "catalog-sambo: sambo__отхват-подсечка-counter"
+ },
+ {
+  "id": "judo__harai-goshi-gaeshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__harai-goshi-gaeshi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 던지기에 대한 카운터로 레슬링 기술이 아님",
+  "evidence": "wrestling 카탈로그에 해당 기술 없음"
+ },
+ {
+  "id": "judo__harai-goshi-gaeshi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "sambo__허리기술-counter",
+  "reason": "삼보 카운터 항목에 포함되는 반격 기술임",
+  "evidence": "catalog-sambo: sambo__허리기술-counter"
+ },
+ {
+  "id": "judo__hane-goshi-gaeshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__hane-goshi-gaeshi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 던지기에 대한 카운터로 레슬링 기술이 아님",
+  "evidence": "wrestling 카탈로그에 해당 기술 없음"
+ },
+ {
+  "id": "judo__hane-goshi-gaeshi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "sambo__허리기술-counter",
+  "reason": "삼보 카운터 항목에 포함되는 반격 기술임",
+  "evidence": "catalog-sambo: sambo__허리기술-counter"
+ },
+ {
+  "id": "judo__tsubame-gaeshi",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__tsubame-gaeshi",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 던지기에 대한 카운터로 레슬링 기술이 아님",
+  "evidence": "wrestling 카탈로그에 해당 기술 없음"
+ },
+ {
+  "id": "judo__tsubame-gaeshi",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "sambo__отхват-подсечка-counter",
+  "reason": "삼보 카운터 항목에 포함되는 반격 기술임",
+  "evidence": "catalog-sambo: sambo__отхват-подсечка-counter"
+ },
+ {
+  "id": "judo__sasae-counter",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__sasae-counter",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 던지기에 대한 카운터로 레슬링 기술이 아님",
+  "evidence": "wrestling 카탈로그에 해당 기술 없음"
+ },
+ {
+  "id": "judo__sasae-counter",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "sambo__отхват-подсечка-counter",
+  "reason": "삼보 카운터 항목에 포함되는 반격 기술임",
+  "evidence": "catalog-sambo: sambo__отхват-подсечка-counter"
+ },
+ {
+  "id": "judo__tani-otoshi-counter",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "BJJ 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__tani-otoshi-counter",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 던지기에 대한 카운터로 레슬링 기술이 아님",
+  "evidence": "wrestling 카탈로그에 해당 기술 없음"
+ },
+ {
+  "id": "judo__tani-otoshi-counter",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "sambo__희생기술-counter",
+  "reason": "삼보 카운터 항목에 포함되는 반격 기술임",
+  "evidence": "catalog-sambo: sambo__희생기술-counter"
+ },
+ {
+  "id": "judo__kuzure-kami-shiho-gatame",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "bjj__north-south-control",
+  "reason": "BJJ 노스 사우스 컨트롤과 같은 계열 고정임",
+  "evidence": "catalog-bjj: bjj__north-south-control"
+ },
+ {
+  "id": "judo__kuzure-kami-shiho-gatame",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__kuzure-kami-shiho-gatame",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "sambo__удержание-со-стороны-головы",
+  "reason": "삼보 머리 쪽 홀드다운과 같은 계열임",
+  "evidence": "catalog-sambo: sambo__удержание-со-стороны-головы"
+ },
+ {
+  "id": "judo__kuzure-tate-shiho-gatame",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "judo__mount",
+  "reason": "BJJ 마운트와 같은 계열 고정임",
+  "evidence": "catalog-bjj: judo__mount"
+ },
+ {
+  "id": "judo__kuzure-tate-shiho-gatame",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__kuzure-tate-shiho-gatame",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "sambo__удержание-верхом",
+  "reason": "삼보 위에서 누르기와 같은 계열임",
+  "evidence": "catalog-sambo: sambo__удержание-верхом"
+ },
+ {
+  "id": "judo__ushiro-kesa-gatame",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": "bjj__reverse-kesa-gatame",
+  "reason": "BJJ 리버스 케사가타메와 같은 기술임",
+  "evidence": "catalog-bjj: bjj__reverse-kesa-gatame"
+ },
+ {
+  "id": "judo__ushiro-kesa-gatame",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__ushiro-kesa-gatame",
+  "art": "sambo",
+  "decision": "review",
+  "confidence": "C",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보 홀드다운 변형으로 쓰이나 대응 항목 불확실",
+  "evidence": "catalog-sambo: sambo__удержание-сбоку"
+ },
+ {
+  "id": "judo__kesa-escape",
+  "art": "bjj",
+  "decision": "add",
+  "confidence": "B",
+  "category": "탈출 기술 모음",
+  "duplicateOf": null,
+  "reason": "BJJ에서 케사가타메 탈출은 기본 탈출로 가르침",
+  "evidence": "catalog-bjj: judo__kesa-gatame (포지션 존재), BJJ 기본 탈출"
+ },
+ {
+  "id": "judo__kesa-escape",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__kesa-escape",
+  "art": "sambo",
+  "decision": "add",
+  "confidence": "B",
+  "category": "바텀 포지션과 탈출",
+  "duplicateOf": null,
+  "reason": "삼보에서 옆누르기(удержание сбоку) 탈출을 표준으로 연습함",
+  "evidence": "catalog-sambo: sambo__удержание-сбоку, 삼보 홀드다운 점수 규칙"
+ },
+ {
+  "id": "judo__kami-shiho-escape",
+  "art": "bjj",
+  "decision": "add",
+  "confidence": "B",
+  "category": "탈출 기술 모음",
+  "duplicateOf": null,
+  "reason": "BJJ에서 노스 사우스 탈출로 가르치는 기본 탈출임",
+  "evidence": "catalog-bjj: bjj__north-south-control (포지션 존재)"
+ },
+ {
+  "id": "judo__kami-shiho-escape",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링의 표준 기술로 보기 어려운 유도 고유 기술임",
+  "evidence": "레슬링 카탈로그에 해당 기술 없음, 유도 고유 기술(Kodokan)"
+ },
+ {
+  "id": "judo__kami-shiho-escape",
+  "art": "sambo",
+  "decision": "add",
+  "confidence": "B",
+  "category": "바텀 포지션과 탈출",
+  "duplicateOf": null,
+  "reason": "삼보에서 머리 쪽 홀드다운 탈출을 연습함",
+  "evidence": "catalog-sambo: sambo__удержание-со-стороны-головы"
+ },
+ {
+  "id": "judo__okuri-eri-jime",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": "bjj__collar-choke",
+  "reason": "BJJ 카탈로그의 칼라 초크와 같은 기술임",
+  "evidence": "catalog-bjj: bjj__collar-choke"
+ },
+ {
+  "id": "judo__okuri-eri-jime",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링에서 조르기는 반칙이라 해당되지 않음",
+  "evidence": "UWW 레슬링 규칙: 조르기 금지"
+ },
+ {
+  "id": "judo__okuri-eri-jime",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": "sambo__collar-choke",
+  "reason": "컴뱃 삼보 칼라 초크 항목과 같은 기술임",
+  "evidence": "catalog-sambo: sambo__collar-choke"
+ },
+ {
+  "id": "judo__kata-ha-jime",
+  "art": "bjj",
+  "decision": "add",
+  "confidence": "B",
+  "category": "백 컨트롤 (Back Control)",
+  "duplicateOf": null,
+  "reason": "BJJ 백 컨트롤에서 싱글 윙 초크로 흔히 쓰임",
+  "evidence": "BJJ \"Single Wing Choke\" (= kata ha jime), IBJJF 합법"
+ },
+ {
+  "id": "judo__kata-ha-jime",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링에서 조르기는 반칙이라 해당되지 않음",
+  "evidence": "UWW 레슬링 규칙: 조르기 금지"
+ },
+ {
+  "id": "judo__kata-ha-jime",
+  "art": "sambo",
+  "decision": "review",
+  "confidence": "C",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "컴뱃 삼보에서만 가능하며 칼라 초크 항목과 중복 여부 불확실",
+  "evidence": "catalog-sambo: sambo__collar-choke"
+ },
+ {
+  "id": "judo__kata-juji-jime",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": "bjj__cross-collar-choke",
+  "reason": "BJJ 크로스 칼라 초크와 같은 기술임",
+  "evidence": "catalog-bjj: bjj__cross-collar-choke"
+ },
+ {
+  "id": "judo__kata-juji-jime",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링에서 조르기는 반칙이라 해당되지 않음",
+  "evidence": "UWW 레슬링 규칙: 조르기 금지"
+ },
+ {
+  "id": "judo__kata-juji-jime",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": "sambo__collar-choke",
+  "reason": "컴뱃 삼보 칼라 초크 항목과 같은 계열임",
+  "evidence": "catalog-sambo: sambo__collar-choke"
+ }
+]

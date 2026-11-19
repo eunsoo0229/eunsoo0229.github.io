@@ -18,6 +18,7 @@ import {
 } from '../lib/curriculum/curriculumService';
 import { getDefaultExerciseConfig } from '../lib/todayTraining/exerciseDefaults';
 import BackButton from '../components/BackButton';
+import Icon, { Glyph } from '../components/Icon';
 import NumberField from '../components/NumberField';
 
 function ExerciseConfigEditor({
@@ -314,7 +315,7 @@ export default function CurriculumEditor() {
                 onClick={() => toggleDayCollapsed(day.day)}
                 aria-expanded={!collapsed}
               >
-                <span className="curriculum-editor-day__chevron" aria-hidden="true">{collapsed ? '▶' : '▼'}</span>
+                <span className="curriculum-editor-day__chevron" aria-hidden="true"><Icon name={collapsed ? 'chevron-right' : 'chevron-down'} /></span>
                 <strong>Day {day.day}</strong>
                 {collapsed && (day.title || day.techniqueIds.length > 0) && (
                   <span className="curriculum-editor-day__summary">
@@ -326,16 +327,18 @@ export default function CurriculumEditor() {
                 <button
                   className="btn btn-ghost btn-sm"
                   disabled={day.day === 1}
+                  aria-label={`Day ${day.day} 위로`}
                   onClick={() => persist(reorderDay(curriculum, day.day, day.day - 1))}
                 >
-                  ▲
+                  <Glyph set="ui" name="chevron-up" />
                 </button>
                 <button
                   className="btn btn-ghost btn-sm"
                   disabled={day.day === curriculum.days.length}
+                  aria-label={`Day ${day.day} 아래로`}
                   onClick={() => persist(reorderDay(curriculum, day.day, day.day + 1))}
                 >
-                  ▼
+                  <Icon name="chevron-down" />
                 </button>
                 <button className="btn btn-ghost btn-sm" onClick={() => persist(removeDay(curriculum, day.day))}>
                   Day 삭제
@@ -379,7 +382,7 @@ export default function CurriculumEditor() {
               />
             </div>
 
-            <label className="field-label">기술 (세트/횟수/시간/휴식은 ⚙로 설정)</label>
+            <label className="field-label">기술 (세트/횟수/시간/휴식은 <Icon name="settings" />로 설정)</label>
             <div className="chip-row" style={{ marginTop: 6, marginBottom: 6 }}>
               {day.techniqueIds.map((id, idx) => (
                 <span className="chip active" key={id}>
@@ -391,7 +394,7 @@ export default function CurriculumEditor() {
                     className="icon-action-btn"
                     style={{ marginLeft: 6 }}
                   >
-                    ▲
+                    <Glyph set="ui" name="chevron-up" />
                   </button>
                   <button
                     aria-label="순서 아래로"
@@ -399,7 +402,7 @@ export default function CurriculumEditor() {
                     onClick={() => persist(reorderTechniqueInDay(curriculum, day.day, idx, idx + 1))}
                     className="icon-action-btn"
                   >
-                    ▼
+                    <Icon name="chevron-down" />
                   </button>
                   <button
                     aria-label="훈련 설정"
@@ -407,7 +410,7 @@ export default function CurriculumEditor() {
                     className="icon-action-btn"
                     style={{ marginLeft: 6 }}
                   >
-                    ⚙
+                    <Icon name="settings" />
                   </button>
                   <button
                     aria-label="기술 제거"
@@ -415,7 +418,7 @@ export default function CurriculumEditor() {
                     className="icon-action-btn"
                     style={{ marginLeft: 2 }}
                   >
-                    ×
+                    <Icon name="close" />
                   </button>
                 </span>
               ))}

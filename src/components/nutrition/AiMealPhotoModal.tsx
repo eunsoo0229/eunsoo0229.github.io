@@ -1,3 +1,4 @@
+import Icon from '../Icon';
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { analyzeMealPhoto } from '../../lib/nutrition/aiPhotoAnalysis';
@@ -73,7 +74,7 @@ export default function AiMealPhotoModal({
 
   return createPortal(
     <BottomSheet onClose={onClose}>
-        <h3>📷 사진으로 식사 분석</h3>
+        <h3><Icon name="camera" /> 사진으로 식사 분석</h3>
         <p className="video-status-message">
           사진을 기반으로 추정한 값이며 실제 조리법, 재료, 섭취량에 따라 달라질 수 있습니다. 분석 후 확인/수정할 수 있습니다.
         </p>

@@ -1,3 +1,4 @@
+import Icon from './Icon';
 import { useEffect, useRef, useState } from 'react';
 import { isVoiceInputSupported, type Recorder, type SttPhase } from '../lib/voice/stt';
 import { useVoiceInput, VoiceInputPanel } from './voice/useVoiceInput';
@@ -62,7 +63,7 @@ export default function MicTestPanel({ hints = [], allowFallback }: { hints?: st
           disabled={phase === 'requesting' || phase === 'recognizing' || !!voice.download}
           data-testid="mic-test-button"
         >
-          {voice.recording ? '■ 말하기 끝' : '🎤 마이크 테스트'}
+          {voice.recording ? <><Icon name="stop" /> 말하기 끝</> : <><Icon name="mic" /> 마이크 테스트</>}
         </button>
         <span className="video-status-message" data-testid="mic-test-phase">
           {PHASE_LABEL[phase]}
@@ -77,12 +78,12 @@ export default function MicTestPanel({ hints = [], allowFallback }: { hints?: st
       <VoiceInputPanel voice={voice} testIdPrefix="mic-test" showAutoSend={false} />
       {voice.info?.id === 'local' && local && (
         <details className="mic-test__model" data-testid="mic-test-model-settings">
-          <summary>🧠 음성인식 모델 (이 Mac)</summary>
+          <summary><Icon name="brain" /> 음성인식 모델 (이 Mac)</summary>
           <div className="chip-row" style={{ marginTop: 6 }}>
             {local.models.map((m) => (
               <label key={m.id} className="chip" style={{ cursor: 'pointer' }}>
                 <input type="radio" name="stt-model" checked={local.model === m.id} onChange={() => void voice.setModel(m.id)} disabled={voice.recording || !!voice.download} /> {m.label}
-                {m.downloaded ? ' ✓' : ''}
+                {m.downloaded && <>{' '}<Icon name="check" label="다운로드됨" /></>}
               </label>
             ))}
           </div>

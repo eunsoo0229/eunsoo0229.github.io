@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../lib/auth/AuthProvider';
 import { createGymClass, getGym, listGymClasses, openTodaySession } from '../lib/gymClass/service';
 import type { Gym, GymClass } from '../lib/gymClass/types';
@@ -8,16 +8,65 @@ import { getDefaultExerciseConfig } from '../lib/todayTraining/exerciseDefaults'
 import type { ExerciseConfig } from '../lib/curriculum/types';
 import type { Technique } from '../types';
 import BackButton from '../components/BackButton';
+import Icon from '../components/Icon';
 import EmptyState from '../components/EmptyState';
 import GymLivePanel from '../components/gymLive/GymLivePanel';
+import LoadingState from '../components/LoadingState';
+import ErrorState from '../components/ErrorState';
+import GymDashboardTab, { DASHBOARD_DAYS } from '../components/gymAdmin/GymDashboardTab';
+import GymMembersTab from '../components/gymAdmin/GymMembersTab';
+import GymJoinRequestsTab from '../components/gymAdmin/GymJoinRequestsTab';
+import GymAnnouncementsTab from '../components/gymAdmin/GymAnnouncementsTab';
+import AssignmentForm from '../components/gymAdmin/AssignmentForm';
+import AssignmentList from '../components/gymAdmin/AssignmentList';
+import { daysAgo } from '../components/gymAdmin/shared';
+import {
+  computeDashboard,
+  listAssignments,
+  listMembers,
+  listProgress,
+  listSessionsAndAttendance,
+  type Assignment,
+  type AttendanceRow,
+  type GymMemberRow,
+  type ProgressSummary,
+  type SessionRow,
+} from '../lib/gymClass/adminService';
+
+const TABS = [
+  { key: 'dashboard', label: '대시보드' },
+  { key: 'members', label: '회원' },
+  { key: 'requests', label: '가입 신청' },
+  { key: 'assignments', label: '과제·피드백' },
+  { key: 'announcements', label: '공지' },
+  { key: 'classes', label: '수업' },
+] as const;
+type TabKey = (typeof TABS)[number]['key'];
+
+interface OpsData {
+  members: GymMemberRow[];
+  sessions: SessionRow[];
+  attendance: AttendanceRow[];
+  progress: Map<string, { summary: ProgressSummary; updatedAt: string }>;
+  assignments: Assignment[];
+}
 
 // Instructor's per-gym class management (spec item 13/14): create classes
 // (reusing searchTechniques() — the same search index SearchBar.tsx uses,
 // no new technique-picking logic) and open today's session for one.
+// 0055: tabs for the operations dashboard (members, join requests, assignments,
+// announcements) — the class tools above live unchanged under "수업".
 export default function GymAdminDetail() {
   const { gymId = '' } = useParams();
   const navigate = useNavigate();
   const { user } = useAuth();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const tabParam = searchParams.get('tab');
+  const tab: TabKey = TABS.some((t) => t.key === tabParam) ? (tabParam as TabKey) : 'dashboard';
+  const [ops, setOps] = useState<OpsData | null>(null);
+  const [opsLoading, setOpsLoading] = useState(true);
+  const [opsError, setOpsError] = useState<string | null>(null);
+  const [assignFilter, setAssignFilter] = useState<'all' | Assignment['status']>('all');
   const [gym, setGym] = useState<Gym | null>(null);
   const [classes, setClasses] = useState<GymClass[]>([]);
   const [loading, setLoading] = useState(true);
@@ -38,10 +87,42 @@ export default function GymAdminDetail() {
     setLoading(false);
   }
 
+  async function loadOps() {
+    setOpsLoading(true);
+    setOpsError(null);
+    const [m, sa, p, a] = await Promise.all([listMembers(gymId), listSessionsAndAttendance(gymId, daysAgo(DASHBOARD_DAYS)), listProgress(gymId), listAssignments(gymId)]);
+    const failed = [m, sa, p, a].find((r) => !r.ok) as { ok: false; message: string } | undefined;
+    if (failed || !m.ok || !sa.ok || !p.ok || !a.ok) {
+      setOpsError(failed?.message ?? '운영 데이터를 불러오지 못했습니다.');
+      setOpsLoading(false);
+      return;
+    }
+    setOps({ members: m.data, sessions: sa.data.sessions, attendance: sa.data.attendance, progress: p.data, assignments: a.data });
+    setOpsLoading(false);
+  }
+
   useEffect(() => {
     void refresh();
+    void loadOps();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gymId]);
+
+  const stats = useMemo(() => (ops ? computeDashboard(ops.members, ops.sessions, ops.attendance, ops.progress, ops.assignments) : null), [ops]);
+  const memberNames = useMemo(() => new Map((ops?.members ?? []).map((m) => [m.userId, m.nickname])), [ops]);
+
+  function selectTab(key: TabKey) {
+    const next = new URLSearchParams(searchParams);
+    if (key === 'dashboard') next.delete('tab');
+    else next.set('tab', key);
+    setSearchParams(next, { replace: true });
+  }
+
+  function renderOps(render: (data: OpsData, s: NonNullable<typeof stats>) => JSX.Element) {
+    if (opsLoading && !ops) return <LoadingState />;
+    if (opsError) return <ErrorState text={opsError} onRetry={loadOps} />;
+    if (!ops || !stats) return <LoadingState />;
+    return render(ops, stats);
+  }
 
   function addTechnique(t: Technique) {
     if (picked.some((p) => p.id === t.id)) return;
@@ -82,7 +163,16 @@ export default function GymAdminDetail() {
     navigate(`/gym/admin/session/${result.data.id}`);
   }
 
-  if (loading) return null;
+  if (loading && !gym) {
+    return (
+      <div className="page">
+        <div className="container">
+          <BackButton fallback="/gym/admin" />
+          <LoadingState />
+        </div>
+      </div>
+    );
+  }
   if (!gym) {
     return (
       <div className="page">
@@ -110,7 +200,60 @@ export default function GymAdminDetail() {
           <p>가입 코드: <strong>{gym.joinCode}</strong></p>
           <p className="video-status-message">학생에게 이 코드를 공유하면 체육관에 참가할 수 있습니다.</p>
         </div>
+        {user && gym.ownerUserId === user.id && (
+          <p className="eco-meta" data-testid="gym-business-link">
+            사업자 통계·리포트 등 추가 기능은 <Link to={`/business?gym=${encodeURIComponent(gym.id)}`}>사업자 요금제</Link>에서 관리합니다. 지금 쓰는 회원·과제·공지 관리 기능은 요금제와 관계없이 그대로 이용할 수 있습니다.
+          </p>
+        )}
 
+        <div className="eco-tabs" role="tablist" aria-label="체육관 운영">
+          {TABS.map((t) => (
+            <button key={t.key} type="button" role="tab" className="eco-tab" aria-selected={tab === t.key} onClick={() => selectTab(t.key)}>
+              {t.label}
+            </button>
+          ))}
+        </div>
+
+        {tab === 'dashboard' && renderOps((_d, st) => <GymDashboardTab gymId={gym.id} stats={st} />)}
+
+        {tab === 'members' && user && renderOps((_d, st) => <GymMembersTab gymId={gym.id} stats={st} ownerUserId={gym.ownerUserId} myUserId={user.id} onChanged={loadOps} />)}
+
+        {tab === 'requests' && <GymJoinRequestsTab gymId={gym.id} isOwner={!!user && gym.ownerUserId === user.id} onDecided={loadOps} />}
+
+        {tab === 'assignments' &&
+          user &&
+          renderOps((d) => {
+            const filtered = assignFilter === 'all' ? d.assignments : d.assignments.filter((a) => a.status === assignFilter);
+            const counts = { open: 0, done: 0, dismissed: 0 } as Record<Assignment['status'], number>;
+            for (const a of d.assignments) counts[a.status]++;
+            return (
+              <div>
+                <AssignmentForm gymId={gym.id} authorId={user.id} members={d.members} onCreated={loadOps} />
+                <div className="eco-section">
+                  <h3>
+                    <Icon name="check-square" /> 보낸 과제·피드백
+                  </h3>
+                  <span className="eco-meta--faint">
+                    진행 중 {counts.open} · 완료 {counts.done} · 종료 {counts.dismissed}
+                  </span>
+                </div>
+                <div className="eco-filters">
+                  <select value={assignFilter} onChange={(e) => setAssignFilter(e.target.value as typeof assignFilter)} aria-label="상태 필터">
+                    <option value="all">전체 상태</option>
+                    <option value="open">진행 중</option>
+                    <option value="done">완료</option>
+                    <option value="dismissed">종료</option>
+                  </select>
+                </div>
+                <AssignmentList items={filtered} gymId={gym.id} memberNames={memberNames} onChanged={loadOps} emptyText={assignFilter === 'all' ? '아직 보낸 과제·피드백이 없습니다.' : '이 상태의 과제가 없습니다.'} />
+              </div>
+            );
+          })}
+
+        {tab === 'announcements' && user && <GymAnnouncementsTab gymId={gym.id} authorId={user.id} />}
+
+        {tab === 'classes' && (
+        <>
         <GymLivePanel gymId={gym.id} />
 
         <div className="card info-card">
@@ -132,7 +275,7 @@ export default function GymAdminDetail() {
                 <span key={t.id} className="chip active">
                   {t.name}{' '}
                   <button type="button" onClick={() => removeTechnique(t.id)} aria-label="제거" style={{ marginLeft: 4 }}>
-                    ✕
+                    <Icon name="close" />
                   </button>
                 </span>
               ))}
@@ -165,6 +308,8 @@ export default function GymAdminDetail() {
               </div>
             ))}
           </div>
+        )}
+        </>
         )}
       </div>
     </div>

@@ -1,0 +1,98 @@
+{
+  "at": "2026-11-01T03:20:05.294Z",
+  "machine": "Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz ×4, 9GB",
+  "runs": {
+    "parallel_1": {
+      "warm": {
+        "ms": 17884,
+        "firstTokenMs": 12567,
+        "queued": null,
+        "ok": true,
+        "evalCount": 27,
+        "code": null
+      },
+      "single": {
+        "ms": 18944,
+        "firstTokenMs": 879,
+        "queued": null,
+        "ok": true,
+        "evalCount": 77,
+        "code": null
+      },
+      "twoUsers": {
+        "a": {
+          "ms": 8954,
+          "firstTokenMs": 711,
+          "queued": null,
+          "ok": true,
+          "evalCount": 34,
+          "code": null
+        },
+        "b": {
+          "ms": 27173,
+          "firstTokenMs": 9850,
+          "queued": 1,
+          "ok": true,
+          "evalCount": 101,
+          "code": null
+        },
+        "wallMs": 27226
+      },
+      "search": {
+        "ms": 2411,
+        "ok": true,
+        "results": 6
+      },
+      "serverRssMB": 49
+    },
+    "parallel_2": {
+      "warm": {
+        "ms": 20752,
+        "firstTokenMs": 2469,
+        "queued": null,
+        "ok": true,
+        "evalCount": 96,
+        "code": null
+      },
+      "single": {
+        "ms": 8385,
+        "firstTokenMs": 913,
+        "queued": null,
+        "ok": true,
+        "evalCount": 50,
+        "code": null
+      },
+      "twoUsers": {
+        "a": {
+          "ms": 6993,
+          "firstTokenMs": 690,
+          "queued": null,
+          "ok": true,
+          "evalCount": 43,
+          "code": null
+        },
+        "b": {
+          "ms": 19662,
+          "firstTokenMs": 7301,
+          "queued": null,
+          "ok": true,
+          "evalCount": 82,
+          "code": null
+        },
+        "wallMs": 19714
+      },
+      "search": {
+        "ms": 1228,
+        "ok": true,
+        "results": 6
+      },
+      "serverRssMB": 51
+    }
+  },
+  "ollama": [
+    {
+      "name": "qwen2.5:3b",
+      "sizeGB": 2.17
+    }
+  ]
+}

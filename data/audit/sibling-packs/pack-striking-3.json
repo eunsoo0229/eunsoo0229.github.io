@@ -1,0 +1,665 @@
+[
+ {
+  "id": "taekwondo__뒷발-돌려차기의-완전-회전형",
+  "name": "뒷발 돌려차기의 완전 회전형",
+  "koreanName": "뒷발 돌려차기의 완전 회전형",
+  "art": "taekwondo",
+  "category": "회전 발차기",
+  "positions": [
+   "회전 발차기"
+  ],
+  "description": "뒷발 돌려차기의 완전 회전형은 몸을 360도에 가깝게 회전시켜 뒷발 돌려차기의 파워를 극대화한 변형입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__회전-내려차기",
+  "name": "회전 내려차기",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "회전 발차기",
+  "positions": [
+   "회전 발차기"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__회전-옆차기",
+  "name": "회전 옆차기",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "회전 발차기",
+  "positions": [
+   "회전 발차기"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__뒤돌아차기-계열",
+  "name": "뒤돌아차기 계열",
+  "koreanName": "뒤돌아차기 계열",
+  "art": "taekwondo",
+  "category": "회전 발차기",
+  "positions": [
+   "회전 발차기"
+  ],
+  "description": "뒤돌아차기 계열은 몸을 완전히 돌려 등을 보인 상태에서 다양한 킥(뒤차기, 뒤후려차기 등)으로 연결하는 회전 킥 모음입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__뛰어앞차기",
+  "name": "뛰어앞차기",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "점프 / 공중 발차기",
+  "positions": [
+   "점프 / 공중 발차기"
+  ],
+  "description": "각 기본 발차기의 점프 버전으로, 도약을 이용해 사거리를 늘리거나 높은 표적(얼굴)에 닿기 위해 사용.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__뛰어돌려차기",
+  "name": "뛰어돌려차기",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "점프 / 공중 발차기",
+  "positions": [
+   "점프 / 공중 발차기"
+  ],
+  "description": "각 기본 발차기의 점프 버전으로, 도약을 이용해 사거리를 늘리거나 높은 표적(얼굴)에 닿기 위해 사용.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__뛰어옆차기",
+  "name": "뛰어옆차기",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "점프 / 공중 발차기",
+  "positions": [
+   "점프 / 공중 발차기"
+  ],
+  "description": "각 기본 발차기의 점프 버전으로, 도약을 이용해 사거리를 늘리거나 높은 표적(얼굴)에 닿기 위해 사용.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__뛰어뒤차기",
+  "name": "뛰어뒤차기",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "점프 / 공중 발차기",
+  "positions": [
+   "점프 / 공중 발차기"
+  ],
+  "description": "각 기본 발차기의 점프 버전으로, 도약을 이용해 사거리를 늘리거나 높은 표적(얼굴)에 닿기 위해 사용.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__뛰어내려차기",
+  "name": "뛰어내려차기",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "점프 / 공중 발차기",
+  "positions": [
+   "점프 / 공중 발차기"
+  ],
+  "description": "각 기본 발차기의 점프 버전으로, 도약을 이용해 사거리를 늘리거나 높은 표적(얼굴)에 닿기 위해 사용.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__이단옆차기",
+  "name": "이단옆차기",
+  "koreanName": "이단옆차기",
+  "art": "taekwondo",
+  "category": "점프 / 공중 발차기",
+  "positions": [
+   "점프 / 공중 발차기"
+  ],
+  "description": "이단옆차기는 제자리에서 뛰어올라 몸을 옆으로 틀어 높은 표적을 겨냥해 차는 도약형 옆차기입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__뛰어이단옆차기",
+  "name": "뛰어이단옆차기",
+  "koreanName": "뛰어이단옆차기",
+  "art": "taekwondo",
+  "category": "점프 / 공중 발차기",
+  "positions": [
+   "점프 / 공중 발차기"
+  ],
+  "description": "뛰어이단옆차기는 앞으로 도약하며 거리를 좁힘과 동시에 이단옆차기를 완성하는 고난도 진입형 킥입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__공중회전-발차기",
+  "name": "공중회전 발차기",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "점프 / 공중 발차기",
+  "positions": [
+   "점프 / 공중 발차기"
+  ],
+  "description": "시범단·격파 시범에서 사용하는 고난도 기술로, 실제 스포츠 겨루기보다는 격파·퍼포먼스 목적이 크다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__다단-점프-발차기",
+  "name": "다단(멀티) 점프 발차기",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "점프 / 공중 발차기",
+  "positions": [
+   "점프 / 공중 발차기"
+  ],
+  "description": "시범단·격파 시범에서 사용하는 고난도 기술로, 실제 스포츠 겨루기보다는 격파·퍼포먼스 목적이 크다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__앞발-돌려차기-뒷발-돌려차기",
+  "name": "앞발 돌려차기 → 뒷발 돌려차기",
+  "koreanName": "앞발 돌려차기 → 뒷발 돌려차기",
+  "art": "taekwondo",
+  "category": "연결 기술 (콤비네이션)",
+  "positions": [
+   "연결 기술 (콤비네이션)"
+  ],
+  "description": "앞발 돌려차기 → 뒷발 돌려차기는 빠른 견제 킥 직후 강한 파워 킥으로 마무리하는 기본 콤비네이션입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__앞발-돌려차기-내려차기",
+  "name": "앞발 돌려차기 → 내려차기",
+  "koreanName": "앞발 돌려차기 → 내려차기",
+  "art": "taekwondo",
+  "category": "연결 기술 (콤비네이션)",
+  "positions": [
+   "연결 기술 (콤비네이션)"
+  ],
+  "description": "앞발 돌려차기 → 내려차기는 견제 킥으로 상대의 가드를 유도한 뒤 내려차기로 마무리하는 콤비네이션입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__앞발-밀어차기-반대발-뒷발-돌려차기",
+  "name": "앞발 밀어차기 → 반대발(뒷발) 돌려차기",
+  "koreanName": "앞발 밀어차기 → 반대발(뒷발) 돌려차기",
+  "art": "taekwondo",
+  "category": "연결 기술 (콤비네이션)",
+  "positions": [
+   "연결 기술 (콤비네이션)"
+  ],
+  "description": "앞발 밀어차기 → 반대발(뒷발) 돌려차기는 밀어차기로 거리와 균형을 만든 뒤 반대 다리로 돌려차기를 마무리하는 콤비네이션입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__돌려차기-뒤후려차기",
+  "name": "돌려차기 → 뒤후려차기",
+  "koreanName": "돌려차기 → 뒤후려차기",
+  "art": "taekwondo",
+  "category": "연결 기술 (콤비네이션)",
+  "positions": [
+   "연결 기술 (콤비네이션)"
+  ],
+  "description": "돌려차기 → 뒤후려차기는 돌려차기로 방어를 흔든 뒤 회전을 이어가 뒤후려차기로 마무리하는 콤비네이션입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__돌려차기-뒤차기",
+  "name": "돌려차기 → 뒤차기",
+  "koreanName": "돌려차기 → 뒤차기",
+  "art": "taekwondo",
+  "category": "연결 기술 (콤비네이션)",
+  "positions": [
+   "연결 기술 (콤비네이션)"
+  ],
+  "description": "돌려차기 → 뒤차기는 돌려차기 이후 몸을 마저 돌려 뒤차기로 마무리하는 콤비네이션입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__돌려차기-주먹-반대지르기",
+  "name": "돌려차기 → 주먹(반대지르기)",
+  "koreanName": "돌려차기 → 주먹(반대지르기)",
+  "art": "taekwondo",
+  "category": "연결 기술 (콤비네이션)",
+  "positions": [
+   "연결 기술 (콤비네이션)"
+  ],
+  "description": "돌려차기 → 주먹(반대지르기)은 킥으로 거리를 좁힌 뒤 손 기술로 마무리하는 하체-상체 콤비네이션입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__페인트-스텝-몸통-돌려차기",
+  "name": "페인트 스텝 → 몸통 돌려차기",
+  "koreanName": "페인트 스텝 → 몸통 돌려차기",
+  "art": "taekwondo",
+  "category": "연결 기술 (콤비네이션)",
+  "positions": [
+   "연결 기술 (콤비네이션)"
+  ],
+  "description": "페인트 스텝 → 몸통 돌려차기는 가짜 스텝으로 반응을 유도한 뒤 몸통을 노린 돌려차기로 마무리하는 콤비네이션입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__스위치-스텝-돌려차기",
+  "name": "스위치 스텝 → 돌려차기",
+  "koreanName": "스위치 스텝 → 돌려차기",
+  "art": "taekwondo",
+  "category": "연결 기술 (콤비네이션)",
+  "positions": [
+   "연결 기술 (콤비네이션)"
+  ],
+  "description": "스위치 스텝 → 돌려차기는 스텝으로 앞뒤 발을 바꾼 뒤 새로운 리어 발로 강한 돌려차기를 던지는 콤비네이션입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__태극-1장",
+  "name": "태극 1장",
+  "koreanName": "건",
+  "art": "taekwondo",
+  "category": "품새 (Poomsae / Tul)",
+  "positions": [
+   "품새 (Poomsae / Tul)"
+  ],
+  "description": "건 --- 하늘; 가장 기초적인 서기·지르기·앞차기.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__태극-2장",
+  "name": "태극 2장",
+  "koreanName": "태",
+  "art": "taekwondo",
+  "category": "품새 (Poomsae / Tul)",
+  "positions": [
+   "품새 (Poomsae / Tul)"
+  ],
+  "description": "태 --- 못/기쁨; 몸통막기·앞차기 응용.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__태극-3장",
+  "name": "태극 3장",
+  "koreanName": "리",
+  "art": "taekwondo",
+  "category": "품새 (Poomsae / Tul)",
+  "positions": [
+   "품새 (Poomsae / Tul)"
+  ],
+  "description": "리 --- 불; 손기술(등주먹, 몸통지르기) 비중 증가.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__태극-4장",
+  "name": "태극 4장",
+  "koreanName": "진",
+  "art": "taekwondo",
+  "category": "품새 (Poomsae / Tul)",
+  "positions": [
+   "품새 (Poomsae / Tul)"
+  ],
+  "description": "진 --- 우레; 처음으로 학다리서기·옆차기 등장.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__태극-5장",
+  "name": "태극 5장",
+  "koreanName": "손",
+  "art": "taekwondo",
+  "category": "품새 (Poomsae / Tul)",
+  "positions": [
+   "품새 (Poomsae / Tul)"
+  ],
+  "description": "손 --- 바람; 내려차기·눌러막기 등 응용 막기 등장.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__태극-6장",
+  "name": "태극 6장",
+  "koreanName": "감",
+  "art": "taekwondo",
+  "category": "품새 (Poomsae / Tul)",
+  "positions": [
+   "품새 (Poomsae / Tul)"
+  ],
+  "description": "감 --- 물; 반달차기·돌려차기 응용 확대.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__태극-7장",
+  "name": "태극 7장",
+  "koreanName": "간",
+  "art": "taekwondo",
+  "category": "품새 (Poomsae / Tul)",
+  "positions": [
+   "품새 (Poomsae / Tul)"
+  ],
+  "description": "간 --- 산; 범서기 계열과 복합 막기(금강막기 등) 등장.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__태극-8장",
+  "name": "태극 8장",
+  "koreanName": "곤",
+  "art": "taekwondo",
+  "category": "품새 (Poomsae / Tul)",
+  "positions": [
+   "품새 (Poomsae / Tul)"
+  ],
+  "description": "곤 --- 땅; 유급자 마지막 품새로 그동안의 기술을 종합.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__위력격파",
+  "name": "위력격파",
+  "koreanName": "위력격파",
+  "art": "taekwondo",
+  "category": "격파 (Kyokpa)",
+  "positions": [
+   "격파 (Kyokpa)"
+  ],
+  "description": "위력격파는 정해진 격파판이나 기와를 최대한의 힘으로 격파하는 파워 중심의 격파 훈련입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__정확격파",
+  "name": "정확격파",
+  "koreanName": "정확격파",
+  "art": "taekwondo",
+  "category": "격파 (Kyokpa)",
+  "positions": [
+   "격파 (Kyokpa)"
+  ],
+  "description": "정확격파는 여러 표적 중 지정된 하나만 정확히 격파해 타점 정밀도를 훈련하는 격파 방식입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__시범격파",
+  "name": "시범격파",
+  "koreanName": "시범격파",
+  "art": "taekwondo",
+  "category": "격파 (Kyokpa)",
+  "positions": [
+   "격파 (Kyokpa)"
+  ],
+  "description": "시범격파는 회전이나 점프 킥을 결합한 고난도 격파로, 시범단이나 심사에서 숙련도를 과시하는 데 사용됩니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__앞낙법",
+  "name": "앞낙법",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "낙법과 호신술 [ITF 중심]",
+  "positions": [
+   "낙법과 호신술 [ITF 중심]"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__뒤낙법",
+  "name": "뒤낙법",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "낙법과 호신술 [ITF 중심]",
+  "positions": [
+   "낙법과 호신술 [ITF 중심]"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__옆낙법",
+  "name": "옆낙법",
+  "koreanName": null,
+  "art": "taekwondo",
+  "category": "낙법과 호신술 [ITF 중심]",
+  "positions": [
+   "낙법과 호신술 [ITF 중심]"
+  ],
+  "description": "",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__굴러-낙법",
+  "name": "굴러 낙법",
+  "koreanName": "구르기",
+  "art": "taekwondo",
+  "category": "낙법과 호신술 [ITF 중심]",
+  "positions": [
+   "낙법과 호신술 [ITF 중심]"
+  ],
+  "description": "구르기(굴러 낙법)는 넘어지는 힘을 그대로 이용해 몸을 굴려 충격을 분산시키는 낙법 기술입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__손목-잡힘-대응",
+  "name": "손목 잡힘 대응",
+  "koreanName": "손목 잡힘 대응",
+  "art": "taekwondo",
+  "category": "낙법과 호신술 [ITF 중심]",
+  "positions": [
+   "낙법과 호신술 [ITF 중심]"
+  ],
+  "description": "손목 잡힘 대응은 상대가 손목을 잡았을 때 관절 구조를 이용해 빠져나오거나 제압하는 호신술 기술입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__옷깃-어깨-잡힘-대응",
+  "name": "옷깃/어깨 잡힘 대응",
+  "koreanName": "옷깃/어깨 잡힘 대응",
+  "art": "taekwondo",
+  "category": "낙법과 호신술 [ITF 중심]",
+  "positions": [
+   "낙법과 호신술 [ITF 중심]"
+  ],
+  "description": "옷깃/어깨 잡힘 대응은 상대가 옷깃이나 어깨를 잡았을 때 팔 통제와 반격을 결합해 빠져나오는 호신술 기술입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ },
+ {
+  "id": "taekwondo__뒤에서-안겼을-때-대응",
+  "name": "뒤에서 안겼을 때 대응",
+  "koreanName": "뒤에서 안겼을 때 대응",
+  "art": "taekwondo",
+  "category": "낙법과 호신술 [ITF 중심]",
+  "positions": [
+   "낙법과 호신술 [ITF 중심]"
+  ],
+  "description": "뒤에서 안겼을 때 대응은 상대가 뒤에서 몸을 감쌌을 때 자세를 낮추고 팔꿈치나 발을 이용해 빠져나오는 호신술 기술입니다.",
+  "candidates": [
+   "boxing",
+   "kickboxing",
+   "muay-thai",
+   "karate"
+  ]
+ }
+]

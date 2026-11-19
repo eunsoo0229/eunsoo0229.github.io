@@ -8,6 +8,24 @@ export function localModelSupported(): boolean {
   return typeof window !== 'undefined' && !!window.martialdex?.localAi;
 }
 
+/**
+ * The 자체 AI 코치 does NOT call a local model by default: on this project's
+ * reference PC no free model was reliable enough (2026-10 comparison —
+ * llama3.2:1b / gemma2:2b / qwen2.5:1.5b dropped steps or changed meanings),
+ * so answers come from the technique data's own sentences. The Ollama path
+ * is kept and can be switched back on per device with
+ * localStorage['martialdex:coach-local-model'] = 'on' (Mac app only).
+ */
+export const LOCAL_MODEL_KEY = 'martialdex:coach-local-model';
+export function localModelEnabled(): boolean {
+  if (!localModelSupported()) return false;
+  try {
+    return window.localStorage.getItem(LOCAL_MODEL_KEY) === 'on';
+  } catch {
+    return false;
+  }
+}
+
 export async function getLocalModelStatus(): Promise<LocalModelStatus> {
   const api = typeof window !== 'undefined' ? window.martialdex?.localAi : undefined;
   if (!api) return { ok: false, running: false, model: null, models: [], reason: 'UNSUPPORTED_PLATFORM' };

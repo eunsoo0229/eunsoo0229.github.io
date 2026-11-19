@@ -1,8 +1,10 @@
 import type { DiscoveryOutcome } from './types';
+import type { Technique } from '../../types';
 import type { UserTechniqueRecord } from '../userTechniques/types';
 import { findNormalizedDuplicate, normalizeTechniqueName, runDuplicateStage, runVerificationStage, saveUserTechnique } from '../userTechniques/service';
 import { pullAddTeqFromCloud, insertAddTeqTechnique } from '../addTeq/service';
 import { withGiNoGi } from '../grappling/analyzeNewTechnique';
+import { withOtherArts } from '../techniqueCanonical/otherArts';
 import type { AddTeqRecord } from '../addTeq/types';
 import { martialArtSummaries } from '../loadData';
 import { MMA_SOURCE_MARTIAL_ARTS } from '../mmaCurriculum/types';
@@ -73,12 +75,14 @@ async function attachDiscoveredVideo(record: UserTechniqueRecord): Promise<{ rec
  * discoverTechnique() below AND RequestTechnique.tsx's own manual
  * "등록하기" button, so this branch exists in exactly one place.
  */
-export async function registerDiscoveredTechnique(record: UserTechniqueRecord, userId: string | null): Promise<{ id: string; techniqueName: string }> {
-  // Grappling techniques get their Gi / No-Gi split researched before saving (add_teq rows can't be updated later).
-  record = { ...record, technique: await withGiNoGi(record.technique) };
+export async function registerDiscoveredTechnique(record: UserTechniqueRecord, userId: string | null): Promise<{ id: string; techniqueName: string; technique: Technique }> {
+  // Researched before saving (add_teq rows can't be updated later): the Gi / No-Gi split of a
+  // grappling technique, and the sibling arts that also use it (킥복싱 미들킥 → 무에타이·MMA too).
+  const [gi, arts] = await Promise.all([withGiNoGi(record.technique), withOtherArts(record.technique)]);
+  record = { ...record, technique: { ...arts, ...(gi.giNoGi ? { giNoGi: gi.giNoGi } : {}) } };
   if (!userId) {
     const saved = saveUserTechnique(record, null);
-    return { id: saved.id, techniqueName: saved.technique.name };
+    return { id: saved.id, techniqueName: saved.technique.name, technique: saved.technique };
   }
 
   const addTeqRecord: AddTeqRecord = {
@@ -95,13 +99,13 @@ export async function registerDiscoveredTechnique(record: UserTechniqueRecord, u
     updatedAt: record.updatedAt,
   };
   const inserted = await insertAddTeqTechnique(addTeqRecord);
-  if (inserted.ok) return { id: addTeqRecord.id, techniqueName: addTeqRecord.technique.name };
+  if (inserted.ok) return { id: addTeqRecord.id, techniqueName: addTeqRecord.technique.name, technique: addTeqRecord.technique };
 
   // Supabase insert failed (offline, RLS misconfiguration, etc.) — fall
   // back to the local-only path rather than losing the discovery entirely;
   // still usable by THIS user/session immediately via resolveTechnique.
   const saved = saveUserTechnique(record, userId);
-  return { id: saved.id, techniqueName: saved.technique.name };
+  return { id: saved.id, techniqueName: saved.technique.name, technique: saved.technique };
 }
 
 /**

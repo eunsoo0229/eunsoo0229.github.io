@@ -1,0 +1,710 @@
+{
+  "at": "2026-11-01T15:03:26.996Z",
+  "profile": "temporary (fresh user-data-dir)",
+  "results": [
+    {
+      "id": "A1",
+      "action": "정규 수업 하이 싱글(미트→드릴) 미트 중 \"실습 완료했어\"",
+      "expected": "드릴 없이 전체 실습 종료 → 확인 단계",
+      "actual": "mitt(after=drill)→review/done=true/드릴 시작 0/drillPlan=false/미트 기록 0/드릴 기록 0/completed=false/PRACTICE_DONE 1회",
+      "result": "PASS",
+      "detail": {
+        "a1b": {
+          "step": "mitt",
+          "cur": "wrestling__high-single",
+          "index": 0,
+          "done": false,
+          "stage": "UNDERSTANDING_CHECK",
+          "pending": null,
+          "after": "drill",
+          "mitt": 0,
+          "drill": 0,
+          "outcome": {
+            "practicedSeconds": 0,
+            "completed": false,
+            "quiz": "incorrect",
+            "understanding": "weak"
+          },
+          "drillPlan": false,
+          "practice": false,
+          "drillStarted": 0,
+          "practiceDoneEvents": 0,
+          "reAsk": 0,
+          "skippedNote": 0,
+          "msgs": 13
+        },
+        "a1": {
+          "step": "review",
+          "cur": "wrestling__high-single",
+          "index": 0,
+          "done": true,
+          "stage": "PRACTICE_REVIEW",
+          "pending": "방금 하신 동작에서 가장 중요했던 포인트는 무엇이었습니까?",
+          "after": null,
+          "mitt": 0,
+          "drill": 0,
+          "outcome": {
+            "practicedSeconds": 3,
+            "completed": false,
+            "quiz": "incorrect",
+            "understanding": "weak"
+          },
+          "drillPlan": false,
+          "practice": false,
+          "drillStarted": 0,
+          "practiceDoneEvents": 1,
+          "reAsk": 0,
+          "skippedNote": 1,
+          "msgs": 16
+        }
+      }
+    },
+    {
+      "id": "A1-t",
+      "action": "실습 시간 기록",
+      "expected": "미트 진행 시간만(1초 이상, 드릴 시간 없음)",
+      "actual": "practicedSeconds=3",
+      "result": "PASS"
+    },
+    {
+      "id": "A1-c",
+      "action": "하이 싱글 자세 측정 제안",
+      "expected": "없음(측정 미지원)",
+      "actual": "카드 0개",
+      "result": "PASS"
+    },
+    {
+      "id": "A2",
+      "action": "정규 수업 하이 싱글 미트 \"■ 종료\" 버튼",
+      "expected": "기존대로 드릴 시작",
+      "actual": "drill/drillPlan=true/드릴 시작 1/미트 기록 1/done=false",
+      "result": "PASS",
+      "detail": {
+        "step": "drill",
+        "cur": "wrestling__high-single",
+        "index": 0,
+        "done": false,
+        "stage": "UNDERSTANDING_CHECK",
+        "pending": null,
+        "after": "drill",
+        "mitt": 1,
+        "drill": 0,
+        "outcome": {
+          "practicedSeconds": 3,
+          "completed": false,
+          "quiz": "incorrect",
+          "understanding": "weak"
+        },
+        "drillPlan": true,
+        "practice": false,
+        "drillStarted": 1,
+        "practiceDoneEvents": 0,
+        "reAsk": 0,
+        "skippedNote": 0,
+        "msgs": 15
+      }
+    },
+    {
+      "id": "A3",
+      "action": "이어진 드릴 중 \"실습 완료했어\"",
+      "expected": "전체 실습 종료(드릴 기록 없음, 미트 기록 1 그대로)",
+      "actual": "review/done=true/미트 1/드릴 0/PRACTICE_DONE 1회",
+      "result": "PASS",
+      "detail": {
+        "step": "review",
+        "cur": "wrestling__high-single",
+        "index": 0,
+        "done": true,
+        "stage": "PRACTICE_REVIEW",
+        "pending": "방금 하신 동작에서 가장 중요했던 포인트는 무엇이었습니까?",
+        "after": null,
+        "mitt": 1,
+        "drill": 0,
+        "outcome": {
+          "practicedSeconds": 3,
+          "completed": true,
+          "quiz": "incorrect",
+          "understanding": "weak"
+        },
+        "drillPlan": false,
+        "practice": false,
+        "drillStarted": 1,
+        "practiceDoneEvents": 1,
+        "reAsk": 0,
+        "skippedNote": 0,
+        "msgs": 18
+      }
+    },
+    {
+      "id": "C1",
+      "action": "자체 AI 코치 잽 미트 중 \"실습 완료했어\"",
+      "expected": "실습 완료 → 확인 단계 + 자세 측정 제안",
+      "actual": "review/done=true/stage=PRACTICE_REVIEW/카드 1개",
+      "result": "PASS",
+      "detail": {
+        "step": "review",
+        "cur": "kickboxing__jab",
+        "index": 0,
+        "done": true,
+        "stage": "PRACTICE_REVIEW",
+        "pending": "방금 하신 동작에서 가장 중요했던 포인트는 무엇이었습니까?",
+        "after": null,
+        "mitt": 0,
+        "drill": 0,
+        "outcome": {
+          "practicedSeconds": 3,
+          "completed": true,
+          "quiz": "incorrect",
+          "understanding": "weak"
+        },
+        "drillPlan": false,
+        "practice": false,
+        "drillStarted": 0,
+        "practiceDoneEvents": 1,
+        "reAsk": 0,
+        "skippedNote": 0,
+        "msgs": 17
+      }
+    },
+    {
+      "id": "B1",
+      "action": "실습 직후 \"실습 완료했어\" 반복",
+      "expected": "확인 단계 유지(같은 기술·같은 질문), 이벤트·기록 중복 없음",
+      "actual": "review/기술 kickboxing__jab/stage=PRACTICE_REVIEW/같은 질문=true/재안내 1/PRACTICE_DONE 1/미트 0/카드 1",
+      "result": "PASS",
+      "detail": {
+        "b0": {
+          "step": "review",
+          "cur": "kickboxing__jab",
+          "index": 0,
+          "done": true,
+          "stage": "PRACTICE_REVIEW",
+          "pending": "방금 하신 동작에서 가장 중요했던 포인트는 무엇이었습니까?",
+          "after": null,
+          "mitt": 0,
+          "drill": 0,
+          "outcome": {
+            "practicedSeconds": 3,
+            "completed": true,
+            "quiz": "incorrect",
+            "understanding": "weak"
+          },
+          "drillPlan": false,
+          "practice": false,
+          "drillStarted": 0,
+          "practiceDoneEvents": 1,
+          "reAsk": 0,
+          "skippedNote": 0,
+          "msgs": 17
+        },
+        "b1": {
+          "step": "review",
+          "cur": "kickboxing__jab",
+          "index": 0,
+          "done": true,
+          "stage": "PRACTICE_REVIEW",
+          "pending": "방금 하신 동작에서 가장 중요했던 포인트는 무엇이었습니까?",
+          "after": null,
+          "mitt": 0,
+          "drill": 0,
+          "outcome": {
+            "practicedSeconds": 3,
+            "completed": true,
+            "quiz": "incorrect",
+            "understanding": "weak"
+          },
+          "drillPlan": false,
+          "practice": false,
+          "drillStarted": 0,
+          "practiceDoneEvents": 1,
+          "reAsk": 1,
+          "skippedNote": 0,
+          "msgs": 19
+        }
+      }
+    },
+    {
+      "id": "B2",
+      "action": "실습 직후 \"다 했어\" 반복",
+      "expected": "확인 단계 유지",
+      "actual": "review/기술 kickboxing__jab/stage=PRACTICE_REVIEW/재안내 2",
+      "result": "PASS",
+      "detail": {
+        "step": "review",
+        "cur": "kickboxing__jab",
+        "index": 0,
+        "done": true,
+        "stage": "PRACTICE_REVIEW",
+        "pending": "방금 하신 동작에서 가장 중요했던 포인트는 무엇이었습니까?",
+        "after": null,
+        "mitt": 0,
+        "drill": 0,
+        "outcome": {
+          "practicedSeconds": 3,
+          "completed": true,
+          "quiz": "incorrect",
+          "understanding": "weak"
+        },
+        "drillPlan": false,
+        "practice": false,
+        "drillStarted": 0,
+        "practiceDoneEvents": 1,
+        "reAsk": 2,
+        "skippedNote": 0,
+        "msgs": 21
+      }
+    },
+    {
+      "id": "P1",
+      "action": "제안 카드 \"자세 측정하기\" → 측정 창 → 기준 영상 비교 → 닫기",
+      "expected": "Jab 측정 창, 비교 화면 열림, 수업 상태·저장값 불변, 카드 다시 안 뜸",
+      "actual": "title=\"📷 Jab 자세 분석\"/비교 화면=true/step=review/stage=PRACTICE_REVIEW/저장값 동일=true/카드 0",
+      "result": "PASS"
+    },
+    {
+      "id": "B3",
+      "action": "실습 후 일반 질문",
+      "expected": "기존처럼 질문에 답변(반복 안내 아님, 진행 안 함)",
+      "actual": "답변 있음=true/재안내 2(전 2)/기술 kickboxing__jab",
+      "result": "PASS",
+      "detail": {
+        "reply": "이어서 아까 질문에 답해 주세요: 방금 하신 동작에서 가장 중요했던 포인트는 무엇이었습니까?"
+      }
+    },
+    {
+      "id": "B4",
+      "action": "실습 후 \"다음으로 넘어가자\"",
+      "expected": "기존 진행 규칙(질문 건너뛰기 → 다음 진행), 반복 안내 아님",
+      "actual": "stage=UNDERSTANDING_CHECK/기술 kickboxing__cross/step lesson/재안내 2/\"넘어가겠습니다\"=true",
+      "result": "PASS",
+      "detail": {
+        "b4": {
+          "step": "lesson",
+          "cur": "kickboxing__cross",
+          "index": 1,
+          "done": false,
+          "stage": "UNDERSTANDING_CHECK",
+          "pending": "Cross가 어떤 기술인지 본인의 말로 짧게 설명해 주시겠습니까?",
+          "after": null,
+          "mitt": 0,
+          "drill": 0,
+          "outcome": {
+            "practicedSeconds": 0,
+            "completed": false,
+            "quiz": "incorrect",
+            "understanding": "weak"
+          },
+          "drillPlan": false,
+          "practice": false,
+          "drillStarted": 0,
+          "practiceDoneEvents": 1,
+          "reAsk": 2,
+          "skippedNote": 0,
+          "msgs": 31
+        },
+        "b4texts": [
+          "다음 기술로 넘어가겠습니다.",
+          "이번 기술은 Cross입니다.",
+          "크로스는 리어 손으로 몸통 회전과 함께 강하게 뻗는 스트레이트 펀치입니다.",
+          "Cross가 어떤 기술인지 본인의 말로 짧게 설명해 주시겠습니까?"
+        ]
+      }
+    },
+    {
+      "id": "C2",
+      "action": "Gemini 코치 하이 싱글 미트 중 완료 → 반복",
+      "expected": "자체 AI와 같은 처리(드릴 없이 종료, 반복은 확인 단계 유지), Gemini 요청 없음",
+      "actual": "review/done=true/드릴 시작 0/반복 후 stage=PRACTICE_REVIEW/재안내 1/Gemini 요청 0",
+      "result": "PASS",
+      "detail": {
+        "c2": {
+          "step": "review",
+          "cur": "wrestling__high-single",
+          "index": 0,
+          "done": true,
+          "stage": "PRACTICE_REVIEW",
+          "pending": "방금 하신 동작에서 가장 중요했던 포인트는 무엇이었습니까?",
+          "after": null,
+          "mitt": 0,
+          "drill": 0,
+          "outcome": {
+            "practicedSeconds": 3,
+            "completed": false,
+            "quiz": "incorrect",
+            "understanding": "weak"
+          },
+          "drillPlan": false,
+          "practice": false,
+          "drillStarted": 0,
+          "practiceDoneEvents": 1,
+          "reAsk": 0,
+          "skippedNote": 1,
+          "msgs": 16
+        },
+        "c2b": {
+          "step": "review",
+          "cur": "wrestling__high-single",
+          "index": 0,
+          "done": true,
+          "stage": "PRACTICE_REVIEW",
+          "pending": "방금 하신 동작에서 가장 중요했던 포인트는 무엇이었습니까?",
+          "after": null,
+          "mitt": 0,
+          "drill": 0,
+          "outcome": {
+            "practicedSeconds": 3,
+            "completed": false,
+            "quiz": "incorrect",
+            "understanding": "weak"
+          },
+          "drillPlan": false,
+          "practice": false,
+          "drillStarted": 0,
+          "practiceDoneEvents": 1,
+          "reAsk": 1,
+          "skippedNote": 1,
+          "msgs": 18
+        }
+      }
+    },
+    {
+      "id": "C3",
+      "action": "단일 미트(잽) \"■ 종료\" 버튼",
+      "expected": "기존 기록 유지(미트 기록 1, 확인 단계, 카드)",
+      "actual": "review/done=true/미트 1/카드 1/PRACTICE_DONE 1",
+      "result": "PASS",
+      "detail": {
+        "step": "review",
+        "cur": "kickboxing__jab",
+        "index": 0,
+        "done": true,
+        "stage": "PRACTICE_REVIEW",
+        "pending": "방금 하신 동작에서 가장 중요했던 포인트는 무엇이었습니까?",
+        "after": null,
+        "mitt": 1,
+        "drill": 0,
+        "outcome": {
+          "practicedSeconds": 3,
+          "completed": false,
+          "quiz": "incorrect",
+          "understanding": "weak"
+        },
+        "drillPlan": false,
+        "practice": false,
+        "drillStarted": 0,
+        "practiceDoneEvents": 1,
+        "reAsk": 0,
+        "skippedNote": 0,
+        "msgs": 16
+      }
+    },
+    {
+      "id": "P2",
+      "action": "\"나중에 하기\" → 새로고침",
+      "expected": "같은 수업에서 다시 제안 안 함",
+      "actual": "카드 0개",
+      "result": "PASS"
+    },
+    {
+      "id": "C4",
+      "action": "단일 드릴(wrestling__hip-heist) \"종료\" 버튼",
+      "expected": "기존 기록 유지(드릴 기록 1, 확인 단계)",
+      "actual": "review/done=true/드릴 1/PRACTICE_DONE 1",
+      "result": "PASS",
+      "detail": {
+        "step": "review",
+        "cur": "wrestling__hip-heist",
+        "index": 0,
+        "done": true,
+        "stage": "PRACTICE_REVIEW",
+        "pending": "방금 하신 동작에서 가장 중요했던 포인트는 무엇이었습니까?",
+        "after": null,
+        "mitt": 0,
+        "drill": 1,
+        "outcome": {
+          "practicedSeconds": 3,
+          "completed": false,
+          "quiz": "incorrect",
+          "understanding": "weak"
+        },
+        "drillPlan": false,
+        "practice": false,
+        "drillStarted": 1,
+        "practiceDoneEvents": 1,
+        "reAsk": 0,
+        "skippedNote": 0,
+        "msgs": 15
+      }
+    },
+    {
+      "id": "C5-a",
+      "action": "단일 타이머 \"■ 여기서 끝내기\"",
+      "expected": "기존대로 확인 단계, completed=false",
+      "actual": "review/done=true/completed=false",
+      "result": "PASS",
+      "detail": {
+        "step": "review",
+        "cur": "bjj__armbar",
+        "index": 0,
+        "done": true,
+        "stage": "PRACTICE_REVIEW",
+        "pending": "방금 하신 동작에서 가장 중요했던 포인트는 무엇이었습니까?",
+        "after": null,
+        "mitt": 0,
+        "drill": 0,
+        "outcome": {
+          "practicedSeconds": 3,
+          "completed": false,
+          "quiz": "incorrect",
+          "understanding": "weak"
+        },
+        "drillPlan": false,
+        "practice": false,
+        "drillStarted": 0,
+        "practiceDoneEvents": 1,
+        "reAsk": 0,
+        "skippedNote": 0,
+        "msgs": 15
+      }
+    },
+    {
+      "id": "C5-b",
+      "action": "단일 타이머 자동 종료(남은 시간 0으로 설정)",
+      "expected": "기존대로 확인 단계, completed=true",
+      "actual": "review/done=true/completed=true",
+      "result": "PASS",
+      "detail": {
+        "step": "review",
+        "cur": "bjj__armbar",
+        "index": 0,
+        "done": true,
+        "stage": "PRACTICE_REVIEW",
+        "pending": "방금 하신 동작에서 가장 중요했던 포인트는 무엇이었습니까?",
+        "after": null,
+        "mitt": 0,
+        "drill": 0,
+        "outcome": {
+          "practicedSeconds": 600,
+          "completed": true,
+          "quiz": "incorrect",
+          "understanding": "weak"
+        },
+        "drillPlan": false,
+        "practice": false,
+        "drillStarted": 0,
+        "practiceDoneEvents": 2,
+        "reAsk": 0,
+        "skippedNote": 0,
+        "msgs": 16
+      }
+    },
+    {
+      "id": "A4",
+      "action": "자유 수업 bjj__armbar(미트→timer) 미트 중 \"실습 완료했어\"",
+      "expected": "타이머 시작 없이 전체 실습 종료",
+      "actual": "mitt running→done/result=null/plan=false/run=null/done=true/directive=review/PRACTICE_DONE 1/completed 머리말 0",
+      "result": "PASS",
+      "detail": {
+        "f4": {
+          "techniqueId": "bjj__armbar",
+          "after": "timer",
+          "mitt": true
+        },
+        "a4b": {
+          "id": "oneoff_9eb321e0-488e-4371-8ed6-9968fadd9880",
+          "directive": "ready",
+          "stage": "PRACTICE",
+          "done": false,
+          "pending": null,
+          "mitt": "running",
+          "mittResult": null,
+          "plan": false,
+          "run": null,
+          "workout": null,
+          "practiceDoneEvents": 0,
+          "reAsk": 0,
+          "skippedNote": 0,
+          "completedHead": 0
+        },
+        "a4": {
+          "id": "oneoff_9eb321e0-488e-4371-8ed6-9968fadd9880",
+          "directive": "review",
+          "stage": "PRACTICE_REVIEW",
+          "done": true,
+          "pending": "방금 하신 동작에서 가장 중요했던 포인트는 무엇이었습니까?",
+          "mitt": "done",
+          "mittResult": null,
+          "plan": false,
+          "run": null,
+          "workout": null,
+          "practiceDoneEvents": 1,
+          "reAsk": 0,
+          "skippedNote": 1,
+          "completedHead": 0
+        }
+      }
+    },
+    {
+      "id": "B1-free",
+      "action": "자유 수업 실습 직후 \"실습 완료했어\" 반복 → 새로고침",
+      "expected": "확인 단계 유지, 이벤트 중복 없음, 새로고침 후 같은 상태",
+      "actual": "stage=PRACTICE_REVIEW/같은 질문=true/재안내 1/PRACTICE_DONE 1/새로고침 후 동일=true",
+      "result": "PASS",
+      "detail": {
+        "fb1": {
+          "id": "oneoff_9eb321e0-488e-4371-8ed6-9968fadd9880",
+          "directive": "review",
+          "stage": "PRACTICE_REVIEW",
+          "done": true,
+          "pending": "방금 하신 동작에서 가장 중요했던 포인트는 무엇이었습니까?",
+          "mitt": "done",
+          "mittResult": null,
+          "plan": false,
+          "run": null,
+          "workout": null,
+          "practiceDoneEvents": 1,
+          "reAsk": 1,
+          "skippedNote": 1,
+          "completedHead": 0
+        },
+        "fb1r": {
+          "id": "oneoff_9eb321e0-488e-4371-8ed6-9968fadd9880",
+          "directive": "review",
+          "stage": "PRACTICE_REVIEW",
+          "done": true,
+          "pending": "방금 하신 동작에서 가장 중요했던 포인트는 무엇이었습니까?",
+          "mitt": "done",
+          "mittResult": null,
+          "plan": false,
+          "run": null,
+          "workout": null,
+          "practiceDoneEvents": 1,
+          "reAsk": 1,
+          "skippedNote": 1,
+          "completedHead": 0
+        }
+      }
+    },
+    {
+      "id": "B2-free",
+      "action": "자유 수업 실습 직후 \"다 했어\" 반복",
+      "expected": "확인 단계 유지",
+      "actual": "stage=PRACTICE_REVIEW/재안내 2",
+      "result": "PASS",
+      "detail": {
+        "id": "oneoff_9eb321e0-488e-4371-8ed6-9968fadd9880",
+        "directive": "review",
+        "stage": "PRACTICE_REVIEW",
+        "done": true,
+        "pending": "방금 하신 동작에서 가장 중요했던 포인트는 무엇이었습니까?",
+        "mitt": "done",
+        "mittResult": null,
+        "plan": false,
+        "run": null,
+        "workout": null,
+        "practiceDoneEvents": 1,
+        "reAsk": 2,
+        "skippedNote": 1,
+        "completedHead": 0
+      }
+    },
+    {
+      "id": "A5",
+      "action": "자유 수업 미트 \"■ 종료\" 버튼",
+      "expected": "기존대로 타이머(마무리 반복) 계획 → 실습 계속",
+      "actual": "mitt=done/result=true/plan=true/done=false/directive=ready",
+      "result": "PASS",
+      "detail": {
+        "id": "oneoff_de229433-42c9-4609-a287-ededfc9af44b",
+        "directive": "ready",
+        "stage": "PRACTICE",
+        "done": false,
+        "pending": null,
+        "mitt": "done",
+        "mittResult": {
+          "completedReps": 0,
+          "targetReps": 7,
+          "finished": false,
+          "seconds": 3
+        },
+        "plan": true,
+        "run": null,
+        "workout": null,
+        "practiceDoneEvents": 0,
+        "reAsk": 0,
+        "skippedNote": 0,
+        "completedHead": 0
+      }
+    },
+    {
+      "id": "A6",
+      "action": "자유 수업 타이머 중 \"실습 완료했어\"",
+      "expected": "타이머 종료(실제 시간만) + 전체 실습 종료",
+      "actual": "run work→done/workout={\"worked\":5}/done=true/directive=review/PRACTICE_DONE 1",
+      "result": "PASS",
+      "detail": {
+        "id": "oneoff_de229433-42c9-4609-a287-ededfc9af44b",
+        "directive": "review",
+        "stage": "PRACTICE_REVIEW",
+        "done": true,
+        "pending": "방금 하신 동작에서 가장 중요했던 포인트는 무엇이었습니까?",
+        "mitt": "done",
+        "mittResult": {
+          "completedReps": 0,
+          "targetReps": 7,
+          "finished": false,
+          "seconds": 3
+        },
+        "plan": true,
+        "run": "done",
+        "workout": {
+          "worked": 5
+        },
+        "practiceDoneEvents": 1,
+        "reAsk": 0,
+        "skippedNote": 0,
+        "completedHead": 0
+      }
+    },
+    {
+      "id": "A5b",
+      "action": "자유 수업 미트 버튼 종료 후 타이머 시작 전 \"실습 완료했어\"",
+      "expected": "전체 종료, 하지 않은 타이머는 완료로 기록 안 함",
+      "actual": "done=true/run=null/workout=null/완료 머리말 0/안내 1",
+      "result": "PASS",
+      "detail": {
+        "id": "oneoff_b7a4185a-655c-4269-899a-d92888d2224f",
+        "directive": "review",
+        "stage": "PRACTICE_REVIEW",
+        "done": true,
+        "pending": "방금 하신 동작에서 가장 중요했던 포인트는 무엇이었습니까?",
+        "mitt": "done",
+        "mittResult": {
+          "completedReps": 0,
+          "targetReps": 7,
+          "finished": false,
+          "seconds": 3
+        },
+        "plan": true,
+        "run": null,
+        "workout": null,
+        "practiceDoneEvents": 1,
+        "reAsk": 0,
+        "skippedNote": 1,
+        "completedHead": 0
+      }
+    },
+    {
+      "id": "P3",
+      "action": "자유 수업(잽) 완료 → 자세 측정 제안",
+      "expected": "카드 1개",
+      "actual": "done=true/카드 1",
+      "result": "PASS"
+    }
+  ],
+  "aiRequests": [
+    "https://dxazzyzsgmfqhagbpeux.supabase.co/rest/v1/shared_combos?select=*&order=created_at.desc&limit=500",
+    "https://dxazzyzsgmfqhagbpeux.supabase.co/rest/v1/shared_combo_links?select=*&order=created_at.desc&limit=2000"
+  ],
+  "pageErrors": []
+}

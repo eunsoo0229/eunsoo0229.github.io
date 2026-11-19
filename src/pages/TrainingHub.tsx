@@ -1,3 +1,4 @@
+import Icon, { Glyph } from '../components/Icon';
 import { useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useTrainingHistory } from '../lib/trainingHistory/useTrainingHistory';
@@ -75,32 +76,32 @@ export default function TrainingHub() {
           <span>훈련</span>
         </div>
         <div className="section-title">
-          <h2>🥋 훈련</h2>
+          <h2><Icon name="gi" /> 훈련</h2>
         </div>
         <div className="chip-row" style={{ marginBottom: 16 }}>
           <Link to="/training/routines" className="chip">
-            📅 요일별 루틴
+            <Icon name="calendar" /> 요일별 루틴
           </Link>
           <Link to="/training/routines/manage" className="chip">
-            🔀 루틴 관리
+            <Icon name="repeat" /> 루틴 관리
           </Link>
           <Link to="/training/exercises" className="chip">
-            🏋️ 헬스 운동 목록
+            <Icon name="dumbbell" /> 헬스 운동 목록
           </Link>
           <Link to="/free-training" className="chip">
-            🥊 자유 훈련
+            <Glyph set="sources" name="free-training" /> 자유 훈련
           </Link>
           <Link to="/home-training" className="chip">
-            💪 AI 맞춤 홈트 만들기
+            <Glyph set="ai" name="home-curriculum" /> AI 맞춤 홈트 만들기
           </Link>
           <Link to="/gym" className="chip">
-            🏛 체육관 수업
+            <Icon name="building" /> 체육관 수업
           </Link>
           <Link to="/sparring/record" className="chip">
-            🎥 스파링 촬영
+            <Icon name="video" /> 스파링 촬영
           </Link>
           <Link to="/training-analytics/history" className="chip">
-            📜 전체 훈련 기록
+            <Icon name="list" /> 전체 훈련 기록
           </Link>
         </div>
 

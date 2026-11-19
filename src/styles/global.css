@@ -1,32 +1,57 @@
-/* ---------- Design tokens ---------- */
+/* ---------- Design tokens ----------
+   Palette is tuned to the brand imagery in src/assets/placeholder (the
+   cinematic charcoal banner/poster/cover art). Those renders measure as a
+   cool neutral ramp — R-B runs -2..-10 across every tonal band — so the
+   greys here are cool too. The previous palette was a warm parchment set
+   (cream #f6f4f0 ground, warm #ece9e2 text, warm #302f2c borders) that read
+   as a different brand sitting behind the same pictures. Hues for accent /
+   gold / difficulty are kept in their existing families so no component
+   that reads them changes meaning. */
 :root {
-  --bg: #f6f4f0;
+  --bg: #f2f3f5;
   --bg-elevated: #ffffff;
-  --bg-subtle: #edeae4;
-  --bg-hover: #e8e4dc;
-  --text: #1c1b19;
-  --text-muted: #6b6459;
-  --text-faint: #93897a;
-  --border: #ddd6ca;
-  --border-strong: #c7bda9;
-  --accent: #9c2b2b;
-  --accent-strong: #7c2020;
-  --accent-contrast: #fff8f0;
-  --accent-soft: rgba(156, 43, 43, 0.1);
-  --gold: #a3792f;
-  --gold-soft: rgba(163, 121, 47, 0.14);
-  --beginner: #2f7a4f;
-  --beginner-soft: rgba(47, 122, 79, 0.12);
-  --intermediate: #a3792f;
-  --intermediate-soft: rgba(163, 121, 47, 0.14);
-  --advanced: #9c2b2b;
-  --advanced-soft: rgba(156, 43, 43, 0.12);
-  --shadow: 0 1px 2px rgba(20, 16, 8, 0.06), 0 4px 16px rgba(20, 16, 8, 0.06);
-  --shadow-lg: 0 8px 30px rgba(20, 16, 8, 0.12);
-  --radius-sm: 6px;
-  --radius: 10px;
-  --radius-lg: 16px;
-  --font-serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Noto Serif KR', serif;
+  --bg-subtle: #e9ebee;
+  --bg-hover: #e1e4e8;
+  --text: #16181c;
+  --text-muted: #5c636d;
+  --text-faint: #868d97;
+  --border: #d9dde2;
+  --border-strong: #bcc2ca;
+  --accent: #b02a28;
+  --accent-strong: #8d1f1e;
+  --accent-contrast: #fff7f6;
+  --accent-soft: rgba(176, 42, 40, 0.09);
+  --gold: #8a7334;
+  --gold-soft: rgba(138, 115, 52, 0.13);
+  --beginner: #2b7351;
+  --beginner-soft: rgba(43, 115, 81, 0.11);
+  --intermediate: #8a7334;
+  --intermediate-soft: rgba(138, 115, 52, 0.13);
+  --advanced: #b02a28;
+  --advanced-soft: rgba(176, 42, 40, 0.11);
+  --shadow: 0 1px 2px rgba(12, 16, 22, 0.05), 0 4px 14px rgba(12, 16, 22, 0.06);
+  --shadow-lg: 0 10px 34px rgba(12, 16, 22, 0.13);
+
+  /* Brushed-metal surface for secondary controls and card edges — the
+     "metallic grey" read of the imagery, expressed as a 1px edge plus a
+     very shallow gradient rather than a heavy bevel. */
+  --metal-surface: linear-gradient(180deg, #ffffff 0%, #eef0f3 100%);
+  --metal-edge: #cfd5dc;
+  --metal-sheen: rgba(255, 255, 255, 0.6);
+  /* Scrim laid over cover/banner art so overlaid text keeps its contrast. */
+  --scrim: linear-gradient(180deg, rgba(8, 9, 12, 0.72) 0%, rgba(8, 9, 12, 0.28) 45%, rgba(8, 9, 12, 0.78) 100%);
+  --scrim-solid: rgba(8, 9, 12, 0.55);
+  --ring: 0 0 0 3px rgba(176, 42, 40, 0.22);
+
+  --radius-sm: 5px;
+  --radius: 8px;
+  --radius-lg: 12px;
+  /* Display face for headings and the brand lockup. The previous value was
+     a Palatino/Iowan book serif, which fought the angular MARTIALDEX
+     wordmark; this keeps the token name so every existing rule that
+     references --font-serif picks the change up in one place. */
+  --font-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo',
+    'Pretendard', 'Noto Sans KR', Roboto, Helvetica, Arial, sans-serif;
   --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR',
     Roboto, Helvetica, Arial, sans-serif;
 
@@ -69,58 +94,73 @@
   --success-soft: var(--beginner-soft);
 }
 
+/* Dark is the brand-primary theme: these values are sampled straight off the
+   banner art's tonal ladder (p25 #0b0c10 ground, p50 #131417 card,
+   p75 #232529 raised, p90 #36393d edge). */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --bg: #0f0f11;
-    --bg-elevated: #191a1d;
-    --bg-subtle: #202226;
-    --bg-hover: #292a2f;
-    --text: #ece9e2;
-    --text-muted: #a7a196;
-    --text-faint: #7c7669;
-    --border: #302f2c;
-    --border-strong: #45433d;
-    --accent: #e2564c;
-    --accent-strong: #f0756c;
-    --accent-contrast: #1a0d0b;
-    --accent-soft: rgba(226, 86, 76, 0.16);
-    --gold: #d1a54a;
-    --gold-soft: rgba(209, 165, 74, 0.16);
-    --beginner: #56b980;
-    --beginner-soft: rgba(86, 185, 128, 0.14);
-    --intermediate: #d1a54a;
-    --intermediate-soft: rgba(209, 165, 74, 0.16);
-    --advanced: #e2564c;
-    --advanced-soft: rgba(226, 86, 76, 0.16);
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 20px rgba(0, 0, 0, 0.35);
-    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.5);
+    --bg: #0b0c0f;
+    --bg-elevated: #13151a;
+    --bg-subtle: #1a1d23;
+    --bg-hover: #232730;
+    --text: #e9ecf1;
+    --text-muted: #9aa1ab;
+    --text-faint: #6b727d;
+    --border: #262a31;
+    --border-strong: #3a414b;
+    --accent: #e2514a;
+    --accent-strong: #ef6a62;
+    --accent-contrast: #140a09;
+    --accent-soft: rgba(226, 81, 74, 0.14);
+    --gold: #c9a24c;
+    --gold-soft: rgba(201, 162, 76, 0.15);
+    --beginner: #4fb57e;
+    --beginner-soft: rgba(79, 181, 126, 0.14);
+    --intermediate: #c9a24c;
+    --intermediate-soft: rgba(201, 162, 76, 0.15);
+    --advanced: #e2514a;
+    --advanced-soft: rgba(226, 81, 74, 0.14);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 6px 22px rgba(0, 0, 0, 0.42);
+    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.62);
+    --metal-surface: linear-gradient(180deg, #23272f 0%, #171a20 100%);
+    --metal-edge: #363c45;
+    --metal-sheen: rgba(255, 255, 255, 0.06);
+    --scrim: linear-gradient(180deg, rgba(5, 6, 8, 0.78) 0%, rgba(5, 6, 8, 0.3) 45%, rgba(5, 6, 8, 0.86) 100%);
+    --scrim-solid: rgba(5, 6, 8, 0.6);
+    --ring: 0 0 0 3px rgba(226, 81, 74, 0.26);
   }
 }
 
 :root[data-theme='dark'] {
-  --bg: #0f0f11;
-  --bg-elevated: #191a1d;
-  --bg-subtle: #202226;
-  --bg-hover: #292a2f;
-  --text: #ece9e2;
-  --text-muted: #a7a196;
-  --text-faint: #7c7669;
-  --border: #302f2c;
-  --border-strong: #45433d;
-  --accent: #e2564c;
-  --accent-strong: #f0756c;
-  --accent-contrast: #1a0d0b;
-  --accent-soft: rgba(226, 86, 76, 0.16);
-  --gold: #d1a54a;
-  --gold-soft: rgba(209, 165, 74, 0.16);
-  --beginner: #56b980;
-  --beginner-soft: rgba(86, 185, 128, 0.14);
-  --intermediate: #d1a54a;
-  --intermediate-soft: rgba(209, 165, 74, 0.16);
-  --advanced: #e2564c;
-  --advanced-soft: rgba(226, 86, 76, 0.16);
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 20px rgba(0, 0, 0, 0.35);
-  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.5);
+  --bg: #0b0c0f;
+  --bg-elevated: #13151a;
+  --bg-subtle: #1a1d23;
+  --bg-hover: #232730;
+  --text: #e9ecf1;
+  --text-muted: #9aa1ab;
+  --text-faint: #6b727d;
+  --border: #262a31;
+  --border-strong: #3a414b;
+  --accent: #e2514a;
+  --accent-strong: #ef6a62;
+  --accent-contrast: #140a09;
+  --accent-soft: rgba(226, 81, 74, 0.14);
+  --gold: #c9a24c;
+  --gold-soft: rgba(201, 162, 76, 0.15);
+  --beginner: #4fb57e;
+  --beginner-soft: rgba(79, 181, 126, 0.14);
+  --intermediate: #c9a24c;
+  --intermediate-soft: rgba(201, 162, 76, 0.15);
+  --advanced: #e2514a;
+  --advanced-soft: rgba(226, 81, 74, 0.14);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 6px 22px rgba(0, 0, 0, 0.42);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.62);
+  --metal-surface: linear-gradient(180deg, #23272f 0%, #171a20 100%);
+  --metal-edge: #363c45;
+  --metal-sheen: rgba(255, 255, 255, 0.06);
+  --scrim: linear-gradient(180deg, rgba(5, 6, 8, 0.78) 0%, rgba(5, 6, 8, 0.3) 45%, rgba(5, 6, 8, 0.86) 100%);
+  --scrim-solid: rgba(5, 6, 8, 0.6);
+  --ring: 0 0 0 3px rgba(226, 81, 74, 0.26);
 }
 
 /* ---------- Reset ---------- */
@@ -147,7 +187,7 @@ h4 {
   font-family: var(--font-serif);
   font-weight: 700;
   margin: 0;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.021em;
 }
 p {
   margin: 0;
@@ -296,8 +336,10 @@ svg {
   color: var(--text);
 }
 .nav-links a.active {
-  color: var(--accent);
-  background: var(--accent-soft);
+  color: var(--text);
+  background: transparent;
+  box-shadow: inset 0 -2px 0 var(--accent);
+  border-radius: 0;
 }
 .header-spacer {
   flex: 1;
@@ -309,8 +351,8 @@ svg {
   width: 38px;
   height: 38px;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  background: var(--bg-elevated);
+  border: 1px solid var(--metal-edge);
+  background: var(--metal-surface);
   color: var(--text-muted);
   cursor: pointer;
   font-size: 16px;
@@ -345,6 +387,22 @@ svg {
   .icon-btn {
     width: 44px;
     height: 44px;
+  }
+  /* The ☰ button sits at the LEFT of the phone header, so a 170px panel
+     anchored to its right edge ran off the left of the screen (every link
+     clipped on 360–390px phones). On phones the panel hangs from the whole
+     sticky header instead: full width with a gutter, scrolling inside the
+     space left under the header. */
+  .nav-more.mobile-menu-wrap {
+    position: static;
+  }
+  .nav-more__panel.mobile-menu-panel {
+    top: calc(100% + 6px);
+    left: var(--space-4);
+    right: var(--space-4);
+    min-width: 0;
+    max-height: calc(100dvh - 64px - 24px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    overscroll-behavior: contain;
   }
   .mobile-menu-panel a {
     display: flex;
@@ -483,12 +541,13 @@ svg {
   background: var(--accent-strong);
 }
 .btn-secondary {
-  background: var(--bg-elevated);
-  border-color: var(--border);
+  background: var(--metal-surface);
+  border-color: var(--metal-edge);
   color: var(--text);
 }
 .btn-secondary:hover {
   background: var(--bg-hover);
+  border-color: var(--border-strong);
 }
 .btn-ghost {
   background: transparent;
@@ -514,6 +573,7 @@ svg {
    bumped to --radius-lg for a friendlier, less "boxy" feel. */
 .card {
   background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
 }
@@ -527,6 +587,7 @@ svg {
   padding: 20px;
   border-radius: var(--radius-lg);
   background: var(--bg-elevated);
+  border: 1px solid var(--border);
   box-shadow: var(--shadow);
   transition: transform 0.15s, box-shadow 0.15s;
   cursor: pointer;
@@ -590,6 +651,14 @@ svg {
 .section-title h2 {
   font-size: var(--fs-section-title);
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  min-width: 0;
+}
+.section-title h2 > .ui-icon {
+  margin-right: 0;
+  vertical-align: baseline;
 }
 .section-title .see-all {
   font-size: 13px;
@@ -987,22 +1056,61 @@ section + section {
 /* ---------- Home hero ---------- */
 .hero {
   text-align: center;
-  padding: 56px 0 40px;
+  padding: 64px 20px 44px;
+  position: relative;
+  isolation: isolate;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-top: 16px;
+  background-color: #0b0c0f;
+}
+/* Backdrop is a ::before so it can never delay text paint, and so the scrim
+   above it keeps the search field and CTAs at full contrast in both themes. */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: url('../assets/placeholder/hero-backdrop.webp') center / cover no-repeat;
+  opacity: 0.85;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--scrim);
+}
+.hero,
+.hero .hero__tagline,
+.hero .stat-row {
+  color: rgba(233, 236, 241, 0.72);
+}
+/* .stat-row strong resolves to var(--text); on the light theme that is near
+   black, which disappears against the hero's dark plate. */
+.hero .stat-row strong {
+  color: #ffffff;
+}
+.hero .hero__tagline {
+  color: rgba(233, 236, 241, 0.78);
 }
 .hero__logo {
-  font-family: var(--font-serif);
-  font-weight: 800;
-  font-size: 44px;
-  letter-spacing: 0.01em;
-  margin-bottom: 10px;
+  width: min(330px, 72vw);
+  height: 68px;
+  margin: 0 auto 14px;
+  background-color: #ffffff;
+  -webkit-mask: url('../assets/brand/wordmark-dark.png') no-repeat center / contain;
+  mask: url('../assets/brand/wordmark-dark.png') no-repeat center / contain;
 }
 @media (max-width: 400px) {
   .hero__logo {
-    font-size: 30px;
+    height: 44px;
   }
 }
 .hero__logo span {
-  color: var(--accent);
+  /* the lockup is a masked image now — this only keeps old markup safe */
+  display: none;
 }
 .hero__tagline {
   color: var(--text-muted);
@@ -1127,6 +1235,7 @@ textarea {
 }
 textarea:focus {
   border-color: var(--accent);
+  box-shadow: var(--ring);
 }
 .modal-panel textarea {
   width: 100%;
@@ -1778,6 +1887,105 @@ textarea.select {
 /* ---------- Pose analysis modal ---------- */
 .pose-modal {
   max-width: 640px;
+}
+/* Fits the viewport (incl. phone safe areas): title + action bar pinned, the middle
+   (.modal-scroll-body) scrolls on its own — the 닫기 button can never be pushed off-screen. */
+.pose-modal-overlay {
+  padding: max(12px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) max(12px, env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px));
+}
+.modal-panel--scrollable.pose-modal {
+  max-height: calc(100vh - 24px);
+  max-height: calc(100dvh - 24px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
+}
+.pose-modal--with-ref {
+  max-width: 980px;
+}
+.pose-modal__head {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.pose-modal__head h3 {
+  margin-bottom: 0;
+}
+.pose-modal__footer {
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.pose-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+.pose-stage__ref[hidden] {
+  display: none;
+}
+/* wide enough: reference video (left) and camera (right) side by side; narrow: camera first, reference below */
+@media (min-width: 760px) {
+  .pose-modal--with-ref .pose-stage {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+  }
+  .pose-modal--with-ref .pose-stage__ref {
+    order: -1;
+  }
+}
+/* short screens (phone landscape, small windows): the camera and the video stay within the visible height */
+@media (max-height: 560px) {
+  .modal-panel.pose-modal {
+    padding: 12px 16px;
+  }
+  .pose-modal__head {
+    margin-bottom: 6px;
+  }
+  .pose-modal__footer {
+    margin-top: 8px;
+    padding-top: 8px;
+  }
+  .pose-stage .pose-camera-frame {
+    width: min(100%, calc((100dvh - 180px) * 4 / 3));
+    margin-inline: auto;
+  }
+  .pose-stage .pose-reference__frame {
+    width: min(100%, calc((100dvh - 180px) * 16 / 9));
+    margin-inline: auto;
+  }
+}
+@media (max-width: 640px) {
+  .pose-modal {
+    padding: var(--space-4);
+  }
+}
+.pose-reference {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+}
+.pose-reference__title {
+  font-weight: 700;
+  font-size: 14px;
+}
+.pose-reference__caption,
+.pose-reference__note,
+.pose-reference__none {
+  color: var(--text-muted);
+  font-size: 12.5px;
+  line-height: 1.5;
+  margin: 0;
+}
+.pose-reference__guide {
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.55;
+  color: var(--text);
 }
 .pose-camera-frame {
   position: relative;
@@ -3378,7 +3586,7 @@ textarea.select {
   border-radius: var(--radius);
   background: var(--bg-elevated);
   position: sticky;
-  top: 64px;
+  top: var(--mx-bar, 64px);
   z-index: 5;
 }
 .learned-bulk-bar__count { font-weight: 600; }
@@ -3766,4 +3974,946 @@ textarea.select {
 .form-compare__live { position: absolute; left: 8px; bottom: 8px; background: rgba(0, 0, 0, 0.6); color: #fff; padding: 4px 8px; border-radius: 6px; font-size: 13px; }
 @media (max-width: 640px) {
   .form-compare__side { grid-template-columns: 1fr; }
+}
+
+/* 사용자 콤보·셋업 연결 (components/sharedCombo/ComboLinks.tsx) */
+.combo-links { list-style: none; padding: 0; margin: 6px 0 12px; display: flex; flex-direction: column; gap: 8px; }
+.combo-link { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 8px 10px; }
+.combo-link__head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.combo-link__rel--opens { background: color-mix(in srgb, var(--accent, #e2564c) 14%, transparent); }
+.combo-link__rel--if_blocked { background: color-mix(in srgb, #f0c419 22%, transparent); }
+.combo-flow { margin: 8px 0 12px; }
+.combo-flow__chain { margin: 6px 0; line-height: 1.7; }
+.combo-flow__arrow { opacity: 0.6; }
+.combo-link-picker { list-style: none; padding: 0; margin: 6px 0; max-height: 260px; overflow-y: auto; display: flex; flex-direction: column; gap: 4px; }
+.combo-link-picker__item { width: 100%; text-align: left; background: none; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 6px 8px; color: inherit; cursor: pointer; }
+.combo-link-picker__item.active { border-color: var(--accent, #e2564c); background: color-mix(in srgb, var(--accent, #e2564c) 10%, transparent); }
+
+/* ===================== 헬스 AI 트레이너 (components/gymTrainer, pages/GymTrainerPlanner) ===================== */
+.trainer-open { margin-top: 12px; width: 100%; white-space: normal; }
+.trainer-panel { margin-top: 12px; text-align: left; border-top: 1px solid var(--border, rgba(127, 127, 127, 0.25)); padding-top: 10px; }
+.trainer-panel__head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.trainer-panel__log { display: flex; flex-direction: column; gap: 8px; max-height: 46vh; overflow-y: auto; margin-top: 6px; }
+.trainer-msg { padding: 8px 12px; border-radius: 12px; font-size: 0.92rem; line-height: 1.45; max-width: 92%; }
+.trainer-msg--user { align-self: flex-end; background: var(--accent, #e5484d); color: #fff; }
+.trainer-msg--coach { align-self: flex-start; background: var(--bg-subtle, rgba(127, 127, 127, 0.12)); }
+.trainer-msg--coach.is-stop { border: 2px solid var(--warning, #d97706); }
+.trainer-checks { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+.trainer-check { padding: 8px; border-radius: 8px; border: 1px dashed var(--border, rgba(127, 127, 127, 0.35)); }
+.trainer-check__q { font-weight: 600; }
+.trainer-check__why { font-size: 0.8rem; opacity: 0.75; margin: 2px 0 6px; }
+.trainer-cues { margin: 8px 0 0; padding-left: 4px; list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.trainer-next { margin: 6px 0 0; font-weight: 600; }
+.trainer-safety { margin: 6px 0 0; color: var(--warning, #d97706); font-weight: 600; }
+.trainer-meta { margin: 6px 0 0; font-size: 0.75rem; opacity: 0.65; }
+.trainer-panel__input { display: flex; gap: 8px; align-items: flex-end; }
+.trainer-panel__input textarea { flex: 1; min-width: 0; }
+.trainer-form { display: grid; grid-template-columns: minmax(110px, auto) 1fr; gap: 8px 12px; align-items: center; }
+@media (max-width: 520px) { .trainer-form { grid-template-columns: 1fr; } }
+.trainer-day { margin-top: 10px; }
+.trainer-day ol, .trainer-day ul { margin: 4px 0 0; padding-left: 20px; }
+.trainer-basis { margin: 0 0 6px; padding-left: 18px; font-size: 0.88rem; }
+
+/* AiAskModal — Gemini ⇄ MARTIALDEX AI + 웹 검색 selector and web reference links */
+.ai-engine {
+  margin: 4px 0 2px;
+}
+.ai-engine__help {
+  font-size: var(--fs-meta);
+  color: var(--text-faint);
+  margin: 0 0 8px;
+}
+.ai-msg__sources {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+.ai-msg__sources a {
+  color: var(--accent);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.ai-msg__sources-label {
+  font-size: var(--fs-meta);
+  color: var(--text-faint);
+  margin-top: 6px;
+}
+
+/* AI 맞춤 커리큘럼 — web-evidence diagnostics (ResearchDiagnosticsView) */
+.research-diagnostics {
+  margin-top: 8px;
+  font-size: 14px;
+}
+.research-diagnostics ul {
+  margin: 4px 0 8px;
+  padding-left: 18px;
+}
+.research-diagnostics__bad {
+  color: var(--danger, #b42318);
+}
+.research-diagnostics__review summary {
+  cursor: pointer;
+  color: var(--text-muted);
+}
+
+/* 개인 파이터 프로필 (pages/FighterProfile.tsx, components/fighterProfile/) */
+.fp-meta { font-size: 0.82rem; color: var(--text-muted); }
+.fp-tabs { margin-bottom: 12px; }
+.fp-bar { display: inline-block; position: relative; height: 6px; min-width: 80px; flex: 1; border-radius: 3px; background: var(--bg-subtle, rgba(127, 127, 127, 0.15)); overflow: hidden; vertical-align: middle; }
+.fp-bar > span { position: absolute; inset: 0 auto 0 0; background: var(--accent, #e5484d); border-radius: 3px; }
+.fp-progress { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 6px; }
+.fp-progress__row { display: grid; grid-template-columns: minmax(84px, 120px) 1fr auto; gap: 8px; align-items: center; width: 100%; background: none; border: 0; padding: 4px 0; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.fp-sum { list-style: none; padding: 0; margin: 4px 0; display: grid; gap: 4px; }
+.fp-sum-row { font-size: 0.92rem; line-height: 1.45; overflow-wrap: anywhere; }
+.fp-area { margin-top: 8px; }
+.fp-badges { display: inline-flex; flex-wrap: wrap; gap: 4px; align-items: center; margin-left: 4px; }
+.fp-badge { font-size: 0.72rem; padding: 1px 6px; border-radius: 999px; background: var(--bg-subtle, rgba(127, 127, 127, 0.15)); }
+.fp-badge--measured { background: rgba(37, 99, 235, 0.15); }
+.fp-badge--coach_inferred, .fp-badge--video_observed { background: rgba(217, 119, 6, 0.18); }
+.fp-badge--needs_review, .fp-badge--outdated, .fp-badge--unconfirmed { background: rgba(217, 119, 6, 0.25); }
+.fp-style-tags { list-style: none; padding: 0; margin: 4px 0 8px; display: grid; gap: 4px; }
+.fp-edit-link { background: none; border: 0; padding: 0 0 0 6px; color: var(--accent, #e5484d); font-size: 0.8rem; cursor: pointer; text-decoration: underline; }
+.trainer-msg--user .fp-edit-link { color: #fff; opacity: 0.85; }
+.fp-interview__head { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: flex-start; }
+.fp-interview__head > div { flex: 1 1 200px; }
+.fp-engine { display: grid; gap: 4px; font-size: 0.82rem; flex: 1 1 220px; max-width: 320px; }
+.fp-log { display: flex; flex-direction: column; gap: 8px; max-height: 55vh; overflow-y: auto; margin-top: 10px; padding-right: 2px; }
+.fp-user-msg { overflow-wrap: anywhere; }
+.fp-proposal { border: 1px dashed var(--accent, #e5484d); border-radius: 10px; padding: 8px 10px; font-size: 0.9rem; display: grid; gap: 6px; }
+.fp-help { font-size: 0.85rem; color: var(--text-muted); margin: 8px 0 0; }
+.fp-quick { margin-top: 8px; }
+.fp-input { display: flex; gap: 8px; align-items: flex-end; margin-top: 8px; }
+.fp-input textarea { flex: 1; min-width: 0; }
+.fp-section { padding: 0; }
+.fp-section__head { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 12px 14px; background: none; border: 0; color: inherit; font: inherit; font-weight: 600; cursor: pointer; text-align: left; }
+.fp-items { list-style: none; margin: 0; padding: 0 14px 12px; display: grid; gap: 8px; }
+.fp-item { border-top: 1px solid var(--border, rgba(127, 127, 127, 0.2)); padding-top: 8px; }
+.fp-item__row { display: flex; gap: 8px; justify-content: space-between; align-items: flex-start; }
+.fp-item__row > div:first-child { min-width: 0; overflow-wrap: anywhere; }
+.fp-item__label { font-size: 0.8rem; color: var(--text-muted); }
+.fp-item__value { font-weight: 600; }
+.fp-item__actions { display: flex; flex-wrap: wrap; gap: 2px; justify-content: flex-end; flex-shrink: 0; }
+.fp-editor { margin-top: 8px; display: grid; gap: 6px; }
+.fp-measure { display: grid; gap: 6px; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .fp-measure { grid-template-columns: 1fr 1fr; } }
+.fp-inline { display: inline-flex; gap: 6px; align-items: center; }
+.fp-lesson-notes { margin-top: 10px; padding: 8px 10px; border-radius: 10px; background: var(--bg-subtle, rgba(127, 127, 127, 0.12)); font-size: 0.88rem; }
+.fp-lesson-notes ul { margin: 4px 0; padding-left: 18px; }
+.fp-lesson-notes__link { font-size: 0.8rem; }
+
+/* 계층형 기술 분류 (TaxonomyTree, TechniqueList node bar) */
+.taxonomy-tree__tools {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 4px;
+}
+.taxonomy-section {
+  margin-bottom: 14px;
+}
+.taxonomy-section__title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin: 6px 0 8px;
+  letter-spacing: 0.02em;
+}
+.taxonomy-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 8px;
+}
+.taxonomy-group {
+  padding: 10px 12px;
+}
+.taxonomy-group__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.taxonomy-group__name {
+  font-weight: 700;
+  color: var(--text);
+}
+.taxonomy-count {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.taxonomy-toggle {
+  border: 1px solid var(--border);
+  background: var(--bg-subtle);
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  padding: 2px 8px;
+  min-height: 32px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.taxonomy-children {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.taxonomy-children li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.taxonomy-children--d4 {
+  margin: 2px 0 0 12px;
+}
+.taxonomy-other {
+  opacity: 0.75;
+}
+.taxonomy-legacy {
+  margin-top: 8px;
+}
+.taxonomy-legacy summary {
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+.taxonomy-node-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+@media (max-width: 640px) {
+  .taxonomy-groups {
+    grid-template-columns: 1fr;
+  }
+}
+.taxonomy-groups {
+  align-items: start;
+}
+
+/* 기술 카테고리 (components/categoryRegistry/, pages/CategoryManager.tsx) */
+.cat-meta { font-size: 0.82rem; color: var(--text-muted); }
+.cat-picker { display: grid; gap: 8px; margin-top: 10px; }
+.cat-picker__level { display: grid; gap: 4px; }
+.cat-create { margin-top: 8px; padding: 10px; border: 1px dashed var(--border, rgba(127, 127, 127, 0.35)); border-radius: 10px; display: grid; gap: 4px; }
+.cat-dup { margin-top: 6px; padding: 8px; border-radius: 8px; background: rgba(217, 119, 6, 0.12); display: grid; gap: 6px; font-size: 0.88rem; }
+.cat-dup--same { background: rgba(220, 38, 38, 0.12); }
+.cat-dup__row { display: flex; flex-wrap: wrap; gap: 6px; justify-content: space-between; align-items: center; overflow-wrap: anywhere; }
+.cat-rec { padding: 8px 10px; border-radius: 10px; background: var(--bg-subtle, rgba(127, 127, 127, 0.12)); font-size: 0.9rem; }
+.cat-rec ul { margin: 4px 0; padding-left: 18px; }
+.cat-rec--low { border: 1px solid rgba(217, 119, 6, 0.6); }
+.cat-proposal { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--border, rgba(127, 127, 127, 0.35)); }
+.cat-form-grid { display: grid; gap: 6px; }
+.cat-manager { display: grid; gap: 12px; grid-template-columns: 1fr; }
+@media (min-width: 860px) { .cat-manager { grid-template-columns: minmax(260px, 1fr) 1.4fr; align-items: start; } }
+.cat-tree ul { list-style: none; margin: 0; padding-left: 14px; }
+.cat-tree > ul { padding-left: 0; }
+.cat-tree__node { background: none; border: 0; padding: 3px 4px; color: inherit; font: inherit; text-align: left; cursor: pointer; border-radius: 6px; overflow-wrap: anywhere; }
+.cat-tree__node.is-selected { background: var(--bg-subtle, rgba(127, 127, 127, 0.18)); font-weight: 600; }
+.cat-count { font-size: 0.75rem; color: var(--text-muted); }
+.cat-badge { font-size: 0.7rem; margin-left: 4px; padding: 0 6px; border-radius: 999px; background: rgba(37, 99, 235, 0.15); }
+.cat-admin { display: grid; gap: 8px; margin-top: 10px; }
+.cat-techniques { columns: 2 160px; margin: 4px 0; padding-left: 18px; }
+
+/* ---------- 3D technique demo (src/components/motion3d) ---------- */
+.motion3d-viewer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.motion3d-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-height: 62vh;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-subtle);
+  touch-action: none;
+}
+.motion3d-stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.motion3d-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: var(--fs-secondary);
+}
+.motion3d-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.motion3d-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.motion3d-speed {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.motion3d-timeline {
+  width: 100%;
+  accent-color: var(--accent);
+}
+.motion3d-readout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 12px;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+.motion3d-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+@media (min-width: 900px) {
+  .motion3d-stage {
+    aspect-ratio: 4 / 3;
+  }
+}
+/* 영상 검색 결과 카드 + 앱 내 플레이어 (components/video/VideoResultCards.tsx) */
+.video-results { margin-top: 10px; display: flex; flex-direction: column; gap: 10px; white-space: normal; }
+.video-results__player { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--bg-elevated); }
+.video-results__frame { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+.video-results__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-results__now { display: flex; flex-direction: column; gap: 2px; padding: 8px 10px; font-size: 13px; }
+.video-results__now span { color: var(--text-muted); }
+.video-results__hint { font-size: 12px; color: var(--text-faint) !important; }
+.video-results__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; }
+.video-card { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--bg-elevated); display: flex; flex-direction: column; min-width: 0; }
+.video-card--active { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
+.video-card__thumb { position: relative; padding: 0; border: 0; background: #000; aspect-ratio: 16 / 9; cursor: pointer; display: block; width: 100%; }
+.video-card__thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.video-card__thumb:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; }
+.video-card__noimg { display: flex; align-items: center; justify-content: center; height: 100%; font-size: 28px; color: #fff; }
+.video-card__duration { position: absolute; right: 6px; bottom: 6px; background: rgba(0, 0, 0, 0.78); color: #fff; font-size: 11px; padding: 1px 5px; border-radius: 4px; }
+.video-card__play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 46px; height: 32px; border-radius: 9px; background: rgba(229, 72, 77, 0.92); color: #fff; font-size: 15px; display: flex; align-items: center; justify-content: center; }
+.video-card__body { padding: 8px 10px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.video-card__title { font-size: 13px; font-weight: 600; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; }
+.video-card__meta { font-size: 12px; color: var(--text-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.video-card__foot { display: flex; justify-content: space-between; align-items: center; gap: 6px; font-size: 12px; }
+.video-card__status { padding: 1px 6px; border-radius: 999px; font-size: 11px; }
+.video-card__status--ok { background: var(--beginner-soft); color: var(--beginner); }
+.video-card__status--warn { background: var(--gold-soft); color: var(--gold); }
+.video-card__status--bad { background: var(--advanced-soft); color: var(--advanced); }
+@media (max-width: 480px) { .video-results__grid { grid-template-columns: 1fr 1fr; gap: 8px; } .video-card__meta { white-space: normal; } }
+
+/* 수업 중 자유 질문 (자체 AI 코치 수업) — answer bubble, sources, proposal, return bar */
+.ai-msg--side .ai-msg__bubble { border-left: 3px solid var(--accent, #4f8cff); }
+.ai-msg--side .ai-msg__sources ol { margin: 4px 0 0; padding-left: 18px; font-size: 0.85em; }
+.ai-msg--side .ai-msg__sources li { margin: 2px 0; word-break: break-word; }
+.lesson-proposal { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.coach-lesson-status { font-size: 0.85em; padding: 4px 8px; }
+.lesson-return { display: flex; flex-direction: column; gap: 8px; }
+.lesson-return__state { margin: 0; font-size: 0.9em; }
+.lesson-return__actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.lesson-return details ol { margin: 6px 0 0; padding-left: 18px; font-size: 0.88em; }
+.lesson-return details li { margin: 6px 0; word-break: break-word; }
+@media (max-width: 480px) {
+  .lesson-return__actions .btn, .lesson-proposal .btn { flex: 1 1 100%; }
+}
+.self-video-search { margin: 8px 0 12px; }
+.self-ai-server__form { display: flex; flex-direction: column; gap: 6px; max-width: 520px; margin-bottom: 8px; }
+
+/* 3D preview inside chat answers and AI lessons (components/motion3d/ChatMotionPreview, LessonMotionPreview) */
+.chat-motion-preview { margin-top: 10px; display: flex; flex-direction: column; gap: 8px; white-space: normal; }
+.chat-motion-preview .motion3d-card { margin: 0; }
+.lesson-motion-preview { margin: 10px 0; }
+.lesson-motion-preview__points { margin-top: 6px; font-size: var(--fs-secondary); }
+.lesson-motion-preview__points ul { margin: 4px 0 8px; padding-left: 18px; }
+
+/* Shared timed capture (components/PoseAnalysisModal + timedCapture/CaptureGauge): the gauge drains over exactly the
+   reference's length after the countdown */
+.capture-gauge { margin: 10px 0; padding: 10px 12px; border-radius: var(--radius); background: var(--bg-elevated); border: 1px solid var(--border); }
+.capture-gauge__head { display: flex; justify-content: space-between; align-items: baseline; font-size: var(--fs-secondary); margin-bottom: 6px; }
+.capture-gauge__rec { color: #d8432f; font-weight: 700; }
+.capture-gauge__left { font-variant-numeric: tabular-nums; font-weight: 700; }
+.capture-gauge__track { height: 12px; border-radius: 6px; background: var(--bg-subtle); overflow: hidden; }
+.capture-gauge__fill { height: 100%; background: #d8432f; border-radius: 6px; transition: width 50ms linear; }
+.pose-capture-ref { margin-bottom: 10px; }
+.pose-capture-ref__line { margin: 6px 0 0; }
+.pose-capture-guide ul { margin: 8px 0 0; padding-left: 18px; font-size: var(--fs-secondary); }
+.pose-capture-preview { margin-bottom: 10px; }
+.pose-capture-preview .motion3d-stage { min-height: 260px; }
+
+/* 설정 > AI 엔진 · 로컬 AI (LocalAiEnginePanel) */
+.local-ai-panel__help { margin: var(--space-2) 0; font-size: 0.9em; }
+.local-ai-panel__status { display: grid; grid-template-columns: max-content 1fr; gap: var(--space-1) var(--space-3); margin: var(--space-3) 0; }
+.local-ai-panel__status dt { color: var(--text-muted, #888); }
+.local-ai-panel__status dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.local-ai-panel__status select { max-width: 100%; }
+.local-ai-panel__warn { display: block; font-size: 0.85em; color: var(--warning, #b7791f); }
+.local-ai-panel__progress { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); margin-bottom: var(--space-2); }
+.local-ai-panel__progress progress { flex: 1 1 160px; }
+.local-ai-panel__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.local-ai-panel__error { color: var(--danger, #c53030); margin-top: var(--space-2); }
+
+/* Two-person 3D demos (components/motion3d): who is who — the actor colours of the viewer */
+.motion3d-duo-badge { margin-left: 8px; font-size: var(--fs-meta); vertical-align: middle; }
+.motion3d-roles { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 6px 0 0; padding: 0; font-size: var(--fs-secondary); }
+.motion3d-roles li { display: inline-flex; align-items: center; gap: 6px; }
+.motion3d-roles__swatch { width: 14px; height: 14px; border-radius: 4px; border: 1px solid var(--border); display: inline-block; }
+
+/* Position-first categories (components/PositionTree, BJJ · MMA): position cards → purpose chips */
+.position-tree__tools { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 8px 0 12px; }
+.position-tree__search { flex: 1 1 260px; min-width: 0; }
+.position-tree__results { margin-bottom: 12px; }
+.position-tree__results ul { margin: 0 0 8px; padding-left: 18px; }
+.position-tree__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; align-items: start; }
+.position-card { padding: 10px 12px; }
+.position-card__head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.position-card__name { font-weight: 700; color: var(--text); text-decoration: none; }
+.position-card__purposes { list-style: none; margin: 8px 0 0; padding: 8px 0 0 10px; border-top: 1px solid var(--border); border-left: 2px solid var(--accent-soft); display: flex; flex-wrap: wrap; gap: 6px; }
+.position-tree__review { margin-top: 12px; padding: 10px 12px; }
+.position-tree__review ul { margin: 8px 0; padding-left: 18px; }
+
+/* 개인 목표 (pages/TrainingGoals): one free-text card per period */
+.goal-card { margin-bottom: 10px; }
+.goal-card__head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.goal-card__head h3 { margin: 0; }
+.goal-card__text { width: 100%; box-sizing: border-box; margin-top: 8px; padding: 10px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--bg-subtle); color: var(--text); font: inherit; line-height: 1.6; resize: vertical; }
+.goal-card__text:focus { outline: none; border-color: var(--accent); background: var(--bg-elevated); }
+.goal-card__actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+.goal-past-list { list-style: none; margin: 8px 0 0; padding: 0; }
+.goal-past-list li { padding: 8px 0; border-top: 1px solid var(--border); }
+.goal-past-list p { margin: 4px 0 0; white-space: pre-wrap; }
+
+/* 설정 > AI 엔진 · 자체 웹 검색 (SelfSearchSwitch) */
+.self-search-switch { margin-top: var(--space-4); padding-top: var(--space-3); border-top: 1px solid var(--border); }
+.self-search-switch__row { display: flex; align-items: flex-start; gap: var(--space-2); cursor: pointer; }
+.self-search-switch__row input { margin-top: 3px; }
+
+/* ---------- Brand lockup & image placeholders ----------
+   Every mark here is drawn as a CSS mask over `currentColor` / a token
+   colour rather than as a two-file light+dark <img> pair: one asset, exact
+   colour match in all three theme states (system / light / dark). */
+.brand__wordmark {
+  width: 148px;
+  height: 20px;
+  background-color: currentColor;
+  -webkit-mask: url('../assets/brand/wordmark-dark.png') no-repeat left center / contain;
+  mask: url('../assets/brand/wordmark-dark.png') no-repeat left center / contain;
+  flex-shrink: 0;
+}
+@media (max-width: 720px) {
+  .brand__wordmark {
+    width: 120px;
+    height: 17px;
+  }
+}
+
+/* Default user avatar (src/components/Avatar.tsx). The initial stays behind
+   the image so a failed/!loaded picture still shows something meaningful. */
+.avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex: none;
+}
+.avatar__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+/* Shorts: a brand plate paints instantly behind the <video>, so swiping to
+   the next clip no longer shows the bare #111 block while it decodes. */
+.short__placeholder,
+.short__stage {
+  background-color: #0b0c0f;
+}
+.short__placeholder {
+  background-image: url('../assets/placeholder/shorts-poster.webp');
+  background-size: cover;
+  background-position: center;
+}
+.short__stage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url('../assets/placeholder/shorts-poster.webp') center / cover no-repeat;
+}
+.short__video {
+  position: relative;
+  z-index: 1;
+}
+
+/* Community video with no thumbnail yet */
+.community-post-media__video-poster-fallback {
+  width: 100%;
+  height: 100%;
+  background: url('../assets/placeholder/video-fallback.webp') center / cover no-repeat;
+  background-color: #0b0c0f;
+}
+
+/* Curriculum / marketplace cover art */
+.cover-art {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  /* the list is full-container width, where an uncapped 16:9 plate would be
+     600px tall on desktop and push every other row off screen */
+  max-height: 190px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  overflow: hidden;
+  background: url('../assets/placeholder/curriculum-cover.webp') center / cover no-repeat;
+  background-color: #0b0c0f;
+}
+.cover-art__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cover-art__scrim {
+  position: absolute;
+  inset: 0;
+  background: var(--scrim);
+}
+.cover-art__label {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 10px;
+  color: #f2f4f7;
+  font-weight: 700;
+  font-size: var(--fs-card-title);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Profile / gym / clan banner */
+.profile-banner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 1;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  overflow: hidden;
+  background: url('../assets/placeholder/profile-banner.webp') center / cover no-repeat;
+  background-color: #0b0c0f;
+}
+.profile-banner__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Gym with no uploaded logo */
+.gym-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  flex: none;
+  background-color: var(--text-muted);
+  -webkit-mask: url('../assets/placeholder/gym-default.png') no-repeat center / 76%;
+  mask: url('../assets/placeholder/gym-default.png') no-repeat center / 76%;
+}
+
+/* cover art sits flush with the card edge */
+.marketplace-card {
+  padding: 0;
+  overflow: hidden;
+}
+.marketplace-card > :not(.cover-art) {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.marketplace-card > :last-child {
+  padding-bottom: 14px;
+}
+.marketplace-card .chip-row {
+  padding-top: 12px;
+}
+.gym-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+/* the banner is a full-bleed plate above the page heading, not a row item */
+.profile-banner {
+  margin: 4px 0 14px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+}
+
+/* The brand lockups paint a colour through a mask. If a WebView ever lacks
+   mask support the element would otherwise render as a solid filled block,
+   so fall back to nothing visible (the aria-label still names the brand). */
+@supports not ((-webkit-mask-image: url('#m')) or (mask-image: url('#m'))) {
+  .brand__wordmark,
+  .hero__logo,
+  .gym-logo {
+    background-color: transparent;
+  }
+}
+
+.art-icon {
+  display: inline-block;
+  vertical-align: -0.22em;
+  object-fit: contain;
+  flex: none;
+}
+
+/* Compact cover for list rows — the same plate as .cover-art, square-cropped
+   so a long curriculum list doesn't turn into a wall of 16:9 banners. */
+.cover-thumb {
+  width: 52px;
+  height: 52px;
+  flex: none;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: url('../assets/placeholder/curriculum-cover.webp') center / cover no-repeat;
+  background-color: #0b0c0f;
+}
+
+/* Heading glyphs (components/Icon.tsx). Sized off the heading's own
+   font-size so an h2 and an h3 keep their proportions, and nudged onto the
+   text baseline rather than the line box. */
+.ui-icon {
+  display: inline-block;
+  width: 1.05em;
+  height: 1.05em;
+  vertical-align: -0.16em;
+  flex: none;
+  opacity: 0.82;
+}
+h2 > .ui-icon,
+h3 > .ui-icon,
+h4 > .ui-icon {
+  margin-right: 0.12em;
+  color: var(--accent);
+  opacity: 1;
+}
+
+/* EmptyState renders a glyph instead of a 34px emoji */
+.empty-state__icon .ui-icon {
+  width: 42px;
+  height: 42px;
+  stroke-width: 1.3;
+  opacity: 1;
+  color: var(--text-faint);
+}
+.chip .ui-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.12em;
+  margin-right: 0.15em;
+}
+
+/* ---------- 소셜 (프로필 · DM · 클랜) ---------- */
+.user-profile__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: -44px 0 12px 16px;
+  position: relative;
+  z-index: 1;
+}
+.user-profile__avatar {
+  width: 84px;
+  height: 84px;
+  min-width: 84px;
+  border-radius: 50%;
+  border: 3px solid var(--bg);
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.user-profile__id h2 {
+  margin: 0;
+}
+.user-profile__id .chip {
+  margin-top: 4px;
+}
+.user-profile__stats {
+  display: flex;
+  gap: 28px;
+  margin: 10px 0 12px;
+}
+.user-profile__stats > * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--fs-meta);
+  color: var(--text-muted);
+}
+.user-profile__stats strong {
+  font-size: 18px;
+  color: var(--text);
+}
+.user-profile__bio {
+  margin: 0 0 10px;
+  white-space: pre-wrap;
+}
+.user-profile__actions {
+  flex-wrap: wrap;
+}
+
+/* DM / 클랜 채팅 — 같은 말풍선 시스템을 공유한다 */
+.dm__thread {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 240px;
+  max-height: 56vh;
+  overflow-y: auto;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-subtle);
+}
+.dm__row {
+  display: flex;
+  justify-content: flex-start;
+}
+.dm__row--mine {
+  justify-content: flex-end;
+}
+.dm__bubble {
+  max-width: min(76%, 520px);
+  padding: 8px 12px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+}
+.dm__row--mine .dm__bubble {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-contrast);
+}
+.dm__bubble p {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.dm__bubble time {
+  display: block;
+  margin-top: 3px;
+  font-size: 11px;
+  opacity: 0.65;
+}
+.dm__sender {
+  display: block;
+  font-size: var(--fs-meta);
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+.dm__image {
+  max-width: 100%;
+  border-radius: var(--radius-sm);
+  display: block;
+  margin-bottom: 4px;
+}
+.dm__composer {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+.dm__composer input {
+  flex: 1;
+}
+.notif__icon {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+@media (max-width: 480px) {
+  .user-profile__avatar { width: 68px; height: 68px; min-width: 68px; }
+  .user-profile__head { margin-left: 10px; }
+  .user-profile__stats { gap: 20px; }
+}
+
+/* ---------- 채팅 첨부 (게시물 · 콤보/셋업 · 기술 · 커리큘럼 공유) ---------- */
+.attach-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 6px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-subtle);
+  overflow: hidden;
+}
+/* inside my own (accent) bubble the card has to stop inheriting the fill */
+.dm__row--mine .attach-card {
+  background: rgba(0, 0, 0, 0.22);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+.attach-card__main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 11px;
+  background: none;
+  border: 0;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+}
+.attach-card__main:hover {
+  background: var(--bg-hover);
+}
+.dm__row--mine .attach-card__main:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+.attach-card__icon {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.dm__row--mine .attach-card__icon {
+  background: rgba(255, 255, 255, 0.16);
+  color: inherit;
+}
+.attach-card__text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.attach-card__kind {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+}
+.attach-card__title {
+  font-size: var(--fs-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.attach-card__sub,
+.attach-card__cta,
+.attach-card__note {
+  font-size: var(--fs-meta);
+  opacity: 0.72;
+}
+.attach-card__cta,
+.attach-card__note {
+  padding: 0 11px 8px;
+}
+.attach-card__note {
+  opacity: 1;
+  color: var(--accent);
+}
+.dm__row--mine .attach-card__note {
+  color: inherit;
+}
+.dm__pending {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+.dm__pending .attach-card {
+  flex: 1;
+  margin-bottom: 0;
+}
+.share-picker__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 46vh;
+  overflow-y: auto;
+}
+.share-picker__list .technique-row {
+  width: 100%;
+  background: none;
+  border: 0;
+  color: inherit;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* ---------- 알림 bell + new clan invitation toast (Header) ---------- */
+.notif-bell {
+  position: relative;
+}
+.notif-bell__badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+}
+.notif-toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  padding: 10px 12px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+.notif-toast__text {
+  flex: 1;
+  min-width: 0;
 }

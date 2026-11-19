@@ -1,0 +1,568 @@
+{
+  "at": "2026-11-01T14:56:59.646Z",
+  "profile": "temporary (fresh user-data-dir), fake camera",
+  "results": [
+    {
+      "id": "R-1",
+      "action": "기술 상세(잽) 관련 영상 표시",
+      "expected": "등록 영상 그대로 표시",
+      "actual": "상세 화면 영상 5개 / 등록 5개",
+      "result": "PASS",
+      "detail": {
+        "detailVideos": [
+          "4YvY1bObBCs",
+          "vgbYMiXo9WA",
+          "pfTrQtfHGz0",
+          "odM78vAS86M",
+          "Xb_Wisc8Iiw"
+        ],
+        "reg": [
+          "4YvY1bObBCs",
+          "vgbYMiXo9WA",
+          "pfTrQtfHGz0",
+          "odM78vAS86M",
+          "Xb_Wisc8Iiw"
+        ]
+      }
+    },
+    {
+      "id": "V1",
+      "action": "잽 자세 측정 창 — 기준 시연 영상",
+      "expected": "잽에 등록된 영상(기술 상세와 같은 영상)",
+      "actual": "영상 4YvY1bObBCs, 등록 목록 첫 영상=true",
+      "result": "PASS"
+    },
+    {
+      "id": "V5",
+      "action": "촬영 안내",
+      "expected": "범위·높이·거리·위치·동작·방향(추측 없음)",
+      "actual": "화면 범위: 머리부터 발끝까지 몸 전체 (측정에 무릎·발목 관절이 필요)카메라 높이: 허리 높이 · 거리: 약 2.5–3m (몸 전체가 화면 높이의 70–90%)위치: 화면 가운데, 동작하는 팔·다리가 화면 밖으로 나가지 않게동작: 기본 자세에서 시작…",
+      "result": "PASS"
+    },
+    {
+      "id": "V3",
+      "action": "카메라 미리보기 + 기준 영상 동시 확인(1280×800)",
+      "expected": "나란히, 서로 겹치지 않음, 카메라 동작",
+      "actual": "카메라=준비됨/stream=true/겹침=false/카메라 x=629 영상 x=168",
+      "result": "PASS",
+      "detail": {
+        "cb": {
+          "x": 629,
+          "y": 250.796875,
+          "width": 449.5,
+          "height": 337.125
+        },
+        "rb": {
+          "x": 167.5,
+          "y": 881.6640625,
+          "width": 449.5,
+          "height": 252.84375
+        }
+      }
+    },
+    {
+      "id": "V2",
+      "action": "기준 영상 재생 → 일시정지",
+      "expected": "앱 안 YouTube 플레이어로 재생·일시정지",
+      "actual": "iframe=https://www.youtube.com/embed/4YvY1bObBCs/재생=true/일시정지=true",
+      "result": "PASS"
+    },
+    {
+      "id": "V4",
+      "action": "측정(카운트다운) 중 기준 영상 숨기기 → 다시 보기",
+      "expected": "측정 계속(초기화 없음), 같은 카메라 스트림, 영상 위치 유지",
+      "actual": "숨김=true/다시 보임=true/측정 화면=\"1.83초 동안 자동으로 촬영합니다 1\"/같은 스트림=true/영상 계속 재생=true",
+      "result": "PASS"
+    },
+    {
+      "id": "S-1",
+      "action": "측정 완료(가짜 카메라: 사람 없음)",
+      "expected": "기존 결과 화면·저장 규칙(실패면 기록 없음, 성공이면 기존대로 저장)",
+      "actual": "다시 촬영해 주세요 — 점수와 기록은 바뀌지 않았습니다.몸(어깨·골반)을 거의 인식하지 못했습니다. 카메라 /기록 변화 없음",
+      "result": "PASS"
+    },
+    {
+      "id": "L-1280x800",
+      "action": "결과 화면 — 데스크톱 일반 창",
+      "expected": "모달이 화면 안, 닫기 버튼 항상 보임·눌림, 내용은 따로 스크롤",
+      "actual": "닫기 보임=true(패널 12,788 / 화면 800)/본문 스크롤 필요→휠로 스크롤=true, 스크롤 중 닫기=true, 결과 끝까지=true",
+      "result": "PASS",
+      "detail": {
+        "r0": {
+          "ok": true,
+          "inView": true,
+          "inPanel": true,
+          "panelInView": true,
+          "hitIsButton": true,
+          "btn": [
+            720,
+            763
+          ],
+          "panel": [
+            12,
+            788
+          ],
+          "vh": 800
+        },
+        "sc": {
+          "sh": 1706,
+          "ch": 617,
+          "top": 622
+        },
+        "after": {
+          "ok": true,
+          "inView": true,
+          "inPanel": true,
+          "panelInView": true,
+          "hitIsButton": true,
+          "btn": [
+            720,
+            763
+          ],
+          "panel": [
+            12,
+            788
+          ],
+          "vh": 800
+        }
+      }
+    },
+    {
+      "id": "L-820x520",
+      "action": "결과 화면 — 데스크톱 작은 창",
+      "expected": "모달이 화면 안, 닫기 버튼 항상 보임·눌림, 내용은 따로 스크롤",
+      "actual": "닫기 보임=true(패널 12,508 / 화면 520)/본문 스크롤 필요→휠로 스크롤=true, 스크롤 중 닫기=true, 결과 끝까지=true",
+      "result": "PASS",
+      "detail": {
+        "r0": {
+          "ok": true,
+          "inView": true,
+          "inPanel": true,
+          "panelInView": true,
+          "hitIsButton": true,
+          "btn": [
+            452,
+            495
+          ],
+          "panel": [
+            12,
+            508
+          ],
+          "vh": 520
+        },
+        "sc": {
+          "sh": 1780,
+          "ch": 373,
+          "top": 0
+        },
+        "after": {
+          "ok": true,
+          "inView": true,
+          "inPanel": true,
+          "panelInView": true,
+          "hitIsButton": true,
+          "btn": [
+            452,
+            495
+          ],
+          "panel": [
+            12,
+            508
+          ],
+          "vh": 520
+        }
+      }
+    },
+    {
+      "id": "L-393x851",
+      "action": "결과 화면 — Android 세로(모사)",
+      "expected": "모달이 화면 안, 닫기 버튼 항상 보임·눌림, 내용은 따로 스크롤",
+      "actual": "닫기 보임=true(패널 12,839 / 화면 851)/본문 스크롤 필요→휠로 스크롤=true, 스크롤 중 닫기=true, 결과 끝까지=true",
+      "result": "PASS",
+      "detail": {
+        "r0": {
+          "ok": true,
+          "inView": true,
+          "inPanel": true,
+          "panelInView": true,
+          "hitIsButton": true,
+          "btn": [
+            779,
+            822
+          ],
+          "panel": [
+            12,
+            839
+          ],
+          "vh": 851
+        },
+        "sc": {
+          "sh": 2364,
+          "ch": 684,
+          "top": 0
+        },
+        "after": {
+          "ok": true,
+          "inView": true,
+          "inPanel": true,
+          "panelInView": true,
+          "hitIsButton": true,
+          "btn": [
+            779,
+            822
+          ],
+          "panel": [
+            12,
+            839
+          ],
+          "vh": 851
+        }
+      }
+    },
+    {
+      "id": "L-851x393",
+      "action": "결과 화면 — Android 가로(모사)",
+      "expected": "모달이 화면 안, 닫기 버튼 항상 보임·눌림, 내용은 따로 스크롤",
+      "actual": "닫기 보임=true(패널 12,381 / 화면 393)/본문 스크롤 필요→휠로 스크롤=true, 스크롤 중 닫기=true, 결과 끝까지=true",
+      "result": "PASS",
+      "detail": {
+        "r0": {
+          "ok": true,
+          "inView": true,
+          "inPanel": true,
+          "panelInView": true,
+          "hitIsButton": true,
+          "btn": [
+            325,
+            368
+          ],
+          "panel": [
+            12,
+            381
+          ],
+          "vh": 393
+        },
+        "sc": {
+          "sh": 1647,
+          "ch": 246,
+          "top": 0
+        },
+        "after": {
+          "ok": true,
+          "inView": true,
+          "inPanel": true,
+          "panelInView": true,
+          "hitIsButton": true,
+          "btn": [
+            325,
+            368
+          ],
+          "panel": [
+            12,
+            381
+          ],
+          "vh": 393
+        }
+      }
+    },
+    {
+      "id": "L-1024x420",
+      "action": "결과 화면 — 작은 높이",
+      "expected": "모달이 화면 안, 닫기 버튼 항상 보임·눌림, 내용은 따로 스크롤",
+      "actual": "닫기 보임=true(패널 12,408 / 화면 420)/본문 스크롤 필요→휠로 스크롤=true, 스크롤 중 닫기=true, 결과 끝까지=true",
+      "result": "PASS",
+      "detail": {
+        "r0": {
+          "ok": true,
+          "inView": true,
+          "inPanel": true,
+          "panelInView": true,
+          "hitIsButton": true,
+          "btn": [
+            352,
+            395
+          ],
+          "panel": [
+            12,
+            408
+          ],
+          "vh": 420
+        },
+        "sc": {
+          "sh": 1596,
+          "ch": 273,
+          "top": 0
+        },
+        "after": {
+          "ok": true,
+          "inView": true,
+          "inPanel": true,
+          "panelInView": true,
+          "hitIsButton": true,
+          "btn": [
+            352,
+            395
+          ],
+          "panel": [
+            12,
+            408
+          ],
+          "vh": 420
+        }
+      }
+    },
+    {
+      "id": "L-btn",
+      "action": "결과 화면 하단 버튼",
+      "expected": "다시 분석·닫기 고정 영역에 표시",
+      "actual": "다시 촬영 | 닫기",
+      "result": "PASS"
+    },
+    {
+      "id": "L-close",
+      "action": "닫기",
+      "expected": "모달 닫힘, 기술 상세 화면 유지",
+      "actual": "모달=0/상세 버튼=1",
+      "result": "PASS"
+    },
+    {
+      "id": "M-1280x800",
+      "action": "측정 전 화면 — 데스크톱 일반 창",
+      "expected": "닫기·촬영 시작 버튼 보임, 카메라와 기준 영상 겹치지 않음, 카메라 전체가 보이는 영역 안",
+      "actual": "닫기=true/촬영 시작=true/배치=상하/겹침=false/카메라 높이 337 ≤ 본문 617=true/본문 스크롤 있음",
+      "result": "PASS",
+      "detail": {
+        "r0": {
+          "ok": true,
+          "inView": true,
+          "inPanel": true,
+          "panelInView": true,
+          "hitIsButton": true,
+          "btn": [
+            720,
+            763
+          ],
+          "panel": [
+            12,
+            788
+          ],
+          "vh": 800
+        },
+        "cb2": {
+          "x": 629,
+          "y": 250.796875,
+          "width": 449.5,
+          "height": 337.125
+        },
+        "rb2": {
+          "x": 167.5,
+          "y": 881.6640625,
+          "width": 449.5,
+          "height": 252.84375
+        },
+        "sc": {
+          "sh": 1631,
+          "ch": 617,
+          "top": 0
+        }
+      }
+    },
+    {
+      "id": "M-820x520",
+      "action": "측정 전 화면 — 데스크톱 작은 창",
+      "expected": "닫기·촬영 시작 버튼 보임, 카메라와 기준 영상 겹치지 않음, 카메라 전체가 보이는 영역 안",
+      "actual": "닫기=true/촬영 시작=true/배치=상하/겹침=false/카메라 높이 269 ≤ 본문 373=true/본문 스크롤 있음",
+      "result": "PASS",
+      "detail": {
+        "r0": {
+          "ok": true,
+          "inView": true,
+          "inPanel": true,
+          "panelInView": true,
+          "hitIsButton": true,
+          "btn": [
+            452,
+            495
+          ],
+          "panel": [
+            12,
+            508
+          ],
+          "vh": 520
+        },
+        "cb2": {
+          "x": 399,
+          "y": 234.796875,
+          "width": 358,
+          "height": 268.5
+        },
+        "rb2": {
+          "x": 29,
+          "y": 886.9375,
+          "width": 358,
+          "height": 201.375
+        },
+        "sc": {
+          "sh": 1705,
+          "ch": 373,
+          "top": 0
+        }
+      }
+    },
+    {
+      "id": "M-393x851",
+      "action": "측정 전 화면 — Android 세로(모사)",
+      "expected": "닫기·촬영 시작 버튼 보임, 카메라와 기준 영상 겹치지 않음, 카메라 전체가 보이는 영역 안",
+      "actual": "닫기=true/촬영 시작=true/배치=상하/겹침=false/카메라 높이 226 ≤ 본문 684=true/본문 스크롤 있음",
+      "result": "PASS",
+      "detail": {
+        "r0": {
+          "ok": true,
+          "inView": true,
+          "inPanel": true,
+          "panelInView": true,
+          "hitIsButton": true,
+          "btn": [
+            779,
+            822
+          ],
+          "panel": [
+            12,
+            839
+          ],
+          "vh": 851
+        },
+        "cb2": {
+          "x": 29,
+          "y": 309.9921875,
+          "width": 301,
+          "height": 225.75
+        },
+        "rb2": {
+          "x": 29,
+          "y": 1279.8828125,
+          "width": 301,
+          "height": 169.3125
+        },
+        "sc": {
+          "sh": 2250,
+          "ch": 684,
+          "top": 0
+        }
+      }
+    },
+    {
+      "id": "M-851x393",
+      "action": "측정 전 화면 — Android 가로(모사)",
+      "expected": "닫기·촬영 시작 버튼 보임, 카메라와 기준 영상 겹치지 않음, 카메라 전체가 보이는 영역 안",
+      "actual": "닫기=true/촬영 시작=true/배치=상하/겹침=false/카메라 높이 213 ≤ 본문 246=true/본문 스크롤 있음",
+      "result": "PASS",
+      "detail": {
+        "r0": {
+          "ok": true,
+          "inView": true,
+          "inPanel": true,
+          "panelInView": true,
+          "hitIsButton": true,
+          "btn": [
+            325,
+            368
+          ],
+          "panel": [
+            12,
+            381
+          ],
+          "vh": 393
+        },
+        "cb2": {
+          "x": 459.25,
+          "y": 234.796875,
+          "width": 284,
+          "height": 213
+        },
+        "rb2": {
+          "x": 29,
+          "y": 788.5390625,
+          "width": 373.5,
+          "height": 210.09375
+        },
+        "sc": {
+          "sh": 1572,
+          "ch": 246,
+          "top": 0
+        }
+      }
+    },
+    {
+      "id": "M-1024x420",
+      "action": "측정 전 화면 — 작은 높이",
+      "expected": "닫기·촬영 시작 버튼 보임, 카메라와 기준 영상 겹치지 않음, 카메라 전체가 보이는 영역 안",
+      "actual": "닫기=true/촬영 시작=true/배치=상하/겹침=false/카메라 높이 240 ≤ 본문 273=true/본문 스크롤 있음",
+      "result": "PASS",
+      "detail": {
+        "r0": {
+          "ok": true,
+          "inView": true,
+          "inPanel": true,
+          "panelInView": true,
+          "hitIsButton": true,
+          "btn": [
+            352,
+            395
+          ],
+          "panel": [
+            12,
+            408
+          ],
+          "vh": 420
+        },
+        "cb2": {
+          "x": 569.75,
+          "y": 234.796875,
+          "width": 320,
+          "height": 240
+        },
+        "rb2": {
+          "x": 46.9140625,
+          "y": 788.9375,
+          "width": 426.6640625,
+          "height": 239.9921875
+        },
+        "sc": {
+          "sh": 1521,
+          "ch": 273,
+          "top": 0
+        }
+      }
+    },
+    {
+      "id": "V6",
+      "action": "기준 영상 없는 기술(boxing__uppercut)",
+      "expected": "\"등록된 기준 시연 영상이 없습니다\", 다른 영상 없음, 방향 추측 없음",
+      "actual": "없음 안내=1/영상=0/방향 문구=true",
+      "result": "PASS"
+    },
+    {
+      "id": "F-1",
+      "action": "측정 창 → \"기준 시연 영상과 비교해 평가하기\"",
+      "expected": "기존 기준 영상 비교 화면, 저장값 불변",
+      "actual": "비교 화면=true/저장값 동일=true",
+      "result": "PASS"
+    },
+    {
+      "id": "F-2",
+      "action": "기술 상세 → \"기준 영상과 비교해 평가\"",
+      "expected": "기존 비교 화면",
+      "actual": "열림=true",
+      "result": "PASS"
+    },
+    {
+      "id": "C-1",
+      "action": "수업 제안 카드 → 측정 창 → 하단 닫기",
+      "expected": "수업 화면·상태 그대로",
+      "actual": "수업 화면=true/상태 동일=true",
+      "result": "PASS"
+    }
+  ],
+  "pageErrors": []
+}

@@ -11,7 +11,7 @@
 // never be merged/confused.
 // 'ground_battle' and 'shadow' are removed features, kept in the union only
 // so existing users' past history entries keep type-checking and rendering.
-export type TrainingSource = 'curriculum' | 'coach_today' | 'sparring' | 'review' | 'combo' | 'shadow' | 'free_training' | 'gym_class' | 'sparring_session' | 'ground_battle' | 'visual_mitt';
+export type TrainingSource = 'curriculum' | 'coach_today' | 'sparring' | 'review' | 'combo' | 'shadow' | 'free_training' | 'gym_class' | 'sparring_session' | 'ground_battle' | 'visual_mitt' | 'program';
 
 /** Per-exercise set/rep/time log for a session recorded via the "오늘의 훈련" set-tracking flow. */
 export interface TrainingExerciseDetail {

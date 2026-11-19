@@ -1,0 +1,166 @@
+{
+  "at": "2026-10-31T14:45:02.094Z",
+  "host": "Intel i5-7600K 4C, 8GB RAM, CPU only",
+  "report": [
+    {
+      "model": "gemma3:4b",
+      "tasks": [
+        {
+          "id": "ko-explain",
+          "pass": true,
+          "note": "hangul 1.00",
+          "ms": 53859,
+          "text": "복싱에서 잽을 칠 때 초보자가 흔히 하는 실수들은 다음과 같습니다.\n\n1.  **팔꿈치 꺾기:** 잽을 칠 때 팔꿈치를 꺾는 경우가 많습니다. 이는 잽의 파워를 감소시키고, 상대방에게 닿지 않는 경우도 많습니다. \n2.  **손목 과신:** 손목을 너무 많이 꺾는 것은 손목 부상으로 이어질 수 있습니다. \n3.  **정타를 치지 않음:** 잽은 상대방의 얼굴을 찌르는 것이 목적이 아닙니다. 상대방의 턱 부근을 정확히 치는 연습이 필요합니다.\n4.  **속도 부족:** 잽은 빠르고 정확하게 뻗어야 합니다. \n5.  **균형 잃기:** 잽을 치는 동안 균형을 잃고 넘어지는 경우가 있습니다. \n\n이러한 실수들을 줄이기 위해, 잽을 칠 때 팔꿈치를 살짝 구부리고, 손목을 과도하게 꺾지 않으며, 턱 부근을 목표로 하는 연습을 꾸준히 하시는 것이 좋습니다."
+        },
+        {
+          "id": "fact-kimura",
+          "pass": false,
+          "note": "",
+          "ms": 14297,
+          "text": "기무라는 주로 상대의 고관절을 공격하는 기술을 사용합니다."
+        },
+        {
+          "id": "fact-teep",
+          "pass": false,
+          "note": "",
+          "ms": 31801,
+          "text": "무에타이 팁은 몽둥이를 사용하여 상대방의 다리나 몸통을 가격하는 기술입니다."
+        },
+        {
+          "id": "fact-triangle",
+          "pass": false,
+          "note": "",
+          "ms": 10672,
+          "text": "트라이앵글 초크에서 다리로 감싸는 것은 상대방의 팔과 몸통을 동시에 잡는 것입니다."
+        },
+        {
+          "id": "fact-double-leg",
+          "pass": false,
+          "note": "",
+          "ms": 24742,
+          "text": "레슬링 더블렉 테이크다운 전에 하는 레벨 체인지는 상대방의 균형을 무너뜨려 테이크다운을 용이하게 만드는 기술적인 준비 단계입니다."
+        },
+        {
+          "id": "reason-setup",
+          "pass": true,
+          "note": "",
+          "ms": 15032,
+          "text": "상대의 패리 동작을 유도하여 공격 기회를 만들 수 있는 왼손 공격은 훅입니다. 훅은 상대가 패리하는 동안 그의 균형을 깨뜨리고, 다음 공격을 위한 공간을 확보하는 데 효과적입니다."
+        },
+        {
+          "id": "instr-3items",
+          "pass": true,
+          "note": "items 3",
+          "ms": 7859,
+          "text": "1. 팔꿈치 높이 유지\n2. 손목 유연성 확보\n3. 뻗는 동작 연습"
+        },
+        {
+          "id": "json-extract",
+          "pass": true,
+          "note": "items 4 grounded 4",
+          "ms": 27192,
+          "text": "{\"items\":[\n  {\"name\":\"double jab\", \"kind\":\"setup\", \"quote\":\"Coaches teach the double jab to close distance\"},\n  {\"name\":\"jab to the body\", \"kind\":\"setup\", \"quote\":\"the jab to the body to lower the opponent's guard\"},\n  {\"name\":\"jab-cross (1-2)\", \"kind\":\"combo\", \"quote\":\"as the basic combination\"},\n  {\"name\":\"feint the jab\", \"kind\":\"setup\", \"quote\":\"to feint the jab\"}\n]}"
+        },
+        {
+          "id": "refuse-missing",
+          "pass": true,
+          "note": "",
+          "ms": 5745,
+          "text": "자료 없음"
+        },
+        {
+          "id": "memory-6turn",
+          "pass": true,
+          "note": "",
+          "text": "민준 선수, 라이트급 오소독스 스탠스를 가지고 계십니다."
+        }
+      ],
+      "pass": 6,
+      "total": 10,
+      "tokPerSec": 4.3,
+      "loadMs": 76142,
+      "memMB": 2755,
+      "error": null
+    },
+    {
+      "model": "qwen3:4b",
+      "tasks": [
+        {
+          "id": "ko-explain",
+          "pass": false,
+          "note": "hangul 0.03",
+          "ms": 75368,
+          "text": "Okay, the user is asking about common mistakes beginners make when punching in boxing. I need to explain this in Korean using formal polite language, keeping it concise and accurate. Let me think.\n\nFirst, I should recall the main mistakes. Beginners often have issues with their stance, like not keeping their feet properly. Maybe they don't have a good balance. Also, they might punch with their whole body, not just the arm. Oh, and the hand position—like not keeping the knuckles up or the fist too tight.\n\nWait, the user said \"잡을 칠 때\" which translates to \"when punching\" but maybe it's a typo for"
+        },
+        {
+          "id": "fact-kimura",
+          "pass": false,
+          "note": "",
+          "ms": 55986,
+          "text": "Okay, the user is asking about the main joint targeted in the \"kimu\" (기무) technique in Judo. Let me think.\n\nFirst, I need to recall what 기무 means in Judo. I think \"기무\" is a specific throw technique. Wait, maybe it's a typo? Because in Judo, the main throws are like osae-komi, which is a throw where you target the opponent's waist. Wait, no.\n\nWait, the user wrote \"기무\" which is Korean for \"kimu\" in Judo terms. But in Judo, the term \"kimu\" might not be standard. Let me check.\n\nWait, in Judo, there's a technique called \"kime\" which is the point of application, but maybe the user is referring to \"k"
+        },
+        {
+          "id": "fact-teep",
+          "pass": false,
+          "note": "",
+          "ms": 47522,
+          "text": "Okay, so the user is asking about what kind of technique a \"teep\" is in Muay Thai. Let me think. First, I need to recall what a teep is. In Muay Thai, the term \"teep\" is a bit tricky because sometimes terms can be confused with other martial arts. Wait, in Muay Thai, the term \"teep\" might refer to a specific move. Let me check my knowledge.\n\nWait, I remember that in Muay Thai, \"teep\" is actually a type of kick. Specifically, a teep is a front kick, but maybe it's a different kind of kick. Wait, no, maybe it's a roundhouse kick? Hmm. Wait, no, in Muay Thai terminology, \"teep\" is a term that's s"
+        },
+        {
+          "id": "fact-triangle",
+          "pass": false,
+          "note": "",
+          "ms": 64870,
+          "text": "Okay, let's tackle this question. The user is asking about a specific move in a martial arts context, specifically \"트라이앵글 초크\" which translates to \"triangle choke\" in English. The question is: \"트라이앵글 초크에서 다리로 감싸는 것은 상대의 무엇과 무엇인가요?\" which translates to \"In a triangle choke, what does the leg wrap around the opponent's what and what?\"\n\nFirst, I need to recall what a triangle choke is. In martial arts like Brazilian Jiu-Jitsu, a triangle choke is a submission hold where the practitioner uses two legs to form a triangle around the opponent's neck and head. Wait, but the question is about what the l"
+        },
+        {
+          "id": "fact-double-leg",
+          "pass": false,
+          "note": "",
+          "ms": 58324,
+          "text": "Okay, let's tackle this question. The user is asking about \"레슬링 더블렉 테이크다운 전에 하는 레벨 체인지는 무엇을 뜻하나요?\" which translates to \"What does 'level chain' mean before a wrestling double leg take down?\" in Korean.\n\nFirst, I need to recall what \"level chain\" refers to in wrestling terminology. Wait, in wrestling, especially in styles like Catch Wrestling or Brazilian Jiu-Jitsu, there's a term called \"leveling\" or \"chain\" but I'm not sure. Wait, maybe it's a mistranslation or a specific term in Korean wrestling jargon.\n\nWait, the user mentioned \"레슬링\" which is wrestling, \"더블렉\" is double leg, \"테이크다운\" is take "
+        },
+        {
+          "id": "reason-setup",
+          "pass": true,
+          "note": "",
+          "ms": 51191,
+          "text": "Okay, let's tackle this problem. So, the user is asking about a martial arts coach scenario. They want me to come up with a left-hand attack that can exploit the habit of the opponent stretching their right hand forward to block, and explain it in two sentences.\n\nFirst, I need to recall common martial arts techniques. When someone blocks with their right hand, they're usually in a defensive stance. If the opponent is reaching forward with their right, maybe they're trying to block a strike. So the left hand attack should target that movement.\n\nHmm, in some martial arts like Taekwondo or Karate"
+        },
+        {
+          "id": "instr-3items",
+          "pass": false,
+          "note": "items 6",
+          "ms": 53914,
+          "text": "Okay, the user wants me to act as a Martialdex fighting coach and give exactly 3 training tips in Korean using formal honorifics. They specified to list them as \"1.\" \"2.\" \"3.\" with no other sentences. Let me think.\n\nFirst, I need to make sure the tips are accurate for martial arts training. Martialdex is a fictional fighting game, so maybe they want general combat tips. But since it's a coach, I should focus on practical advice.\n\n1. Breathing control is important in combat to maintain stamina and focus. So maybe \"1. 호흡을 정확히 조절해 힘과 집중력을 유지하세요.\"\n\n2. Stance and balance are crucial. \"2. 안정된 자세를 유지"
+        },
+        {
+          "id": "json-extract",
+          "pass": true,
+          "note": "items 4 grounded 4",
+          "ms": 29866,
+          "text": "{\n  \"items\": [\n    {\n      \"name\": \"double jab\",\n      \"kind\": \"setup\",\n      \"quote\": \"the double jab to close distance\"\n    },\n    {\n      \"name\": \"jab to the body\",\n      \"kind\": \"setup\",\n      \"quote\": \"the jab to the body to lower the opponent's guard\"\n    },\n    {\n      \"name\": \"jab-cross (1-2)\",\n      \"kind\": \"combo\",\n      \"quote\": \"the jab-cross (1-2) as the basic combination\"\n    },\n    {\n      \"name\": \"feint the jab\",\n      \"kind\": \"setup\",\n      \"quote\": \"feint the jab, then throw a lead hook when the opponent raises the rear hand to parry\"\n    }\n  ]\n}"
+        },
+        {
+          "id": "refuse-missing",
+          "pass": true,
+          "note": "",
+          "ms": 49031,
+          "text": "Okay, let's see. The user is asking which university press published the book \"The Art of War\" in the given context. Wait, no, the question here is in Korean. Let me check again.\n\nWait, the user provided a source from a boxing coaching article (example.com/jab). The question is: \"이 자료에 따르면 잽은 누가 처음 만들었나요?\" which translates to \"According to this material, who first created the jab?\"\n\nHmm, the source material talks about the jab being the most important punch in boxing. It mentions coaches teaching the double jab, jab to the body, and jab-cross (1-2) as combinations. Also, a common setup is fein"
+        },
+        {
+          "id": "memory-6turn",
+          "pass": true,
+          "note": "",
+          "text": "Okay, let's see. The user wants me to state their name, division, and stance in one line. \n\nFirst, I need to recall the previous messages. The user introduced themselves as Minjun, lightweight division, and nickname \"오소독스\". \n\nWait, in the previous messages, they said \"제 이름은 민준이고 체급은 라이트급, 오소독과입니다.\" "
+        }
+      ],
+      "pass": 4,
+      "total": 10,
+      "tokPerSec": 5.9,
+      "loadMs": 39390,
+      "memMB": 3039,
+      "error": null
+    }
+  ]
+}

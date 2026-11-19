@@ -1,3 +1,4 @@
+import Icon, { Glyph } from '../components/Icon';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { deleteCombo, listMyCombos } from '../lib/combo/service';
@@ -54,7 +55,7 @@ export default function ComboList() {
           <span>콤보 북</span>
         </div>
         <div className="section-title">
-          <h2>🥊 콤보 북</h2>
+          <h2><Icon name="glove" /> 콤보 북</h2>
           <Link to="/combos/new" className="see-all">
             + 새 콤보 만들기
           </Link>
@@ -95,7 +96,7 @@ export default function ComboList() {
                   </div>
                   <div className="modal-actions modal-actions--start">
                     <Link to={`/combos/${combo.id}/train`} className="btn btn-primary">
-                      🔥 훈련하기
+                      <Icon name="flame" /> 훈련하기
                     </Link>
                     <Link to={`/combos/${combo.id}/edit`} className="btn btn-secondary">
                       편집
@@ -105,15 +106,15 @@ export default function ComboList() {
                         className="btn btn-ghost"
                         onClick={() => setExpandedAnalysisId(expandedAnalysisId === combo.id ? null : combo.id)}
                       >
-                        {expandedAnalysisId === combo.id ? 'AI 분석 닫기' : '🧠 AI 분석 보기'}
+                        {expandedAnalysisId === combo.id ? 'AI 분석 닫기' : <><Icon name="brain" /> AI 분석 보기</>}
                       </button>
                     )}
                     <Link to={`/coach/mitt?combo=${encodeURIComponent(combo.id)}`} className="btn btn-ghost" data-testid="combo-mitt">
-                      🥊 Mitt로 연습
+                      <Glyph set="ai" name="visual-mitt" /> Mitt로 연습
                     </Link>
                     {!combo.sharedMeta && (
                     <button className="btn btn-ghost" onClick={() => setSharing(shareSourceFor(combo))} data-testid="combo-share">
-                      {shared.has(`combo:${combo.id}`) ? '🔗 공유됨 · 갱신' : '🔗 공유'}
+                      <Icon name="link" /> {shared.has(`combo:${combo.id}`) ? '공유됨 · 갱신' : '공유'}
                     </button>
                     )}
                     <button className="btn btn-ghost" onClick={() => handleDelete(combo.id)}>
@@ -127,14 +128,14 @@ export default function ComboList() {
                       </p>
                       {combo.aiComboMeta.analysis.stepDetails.map((d, i) => (
                         <p key={i} className="video-status-message">
-                          {i + 1}. 🛡 {d.opponentReaction} → ➡ {d.followUpIfReacts}
+                          {i + 1}. <Icon name="shield" /> {d.opponentReaction} → <Icon name="forward" /> {d.followUpIfReacts}
                         </p>
                       ))}
                       {combo.aiComboMeta.analysis.pros.length > 0 && (
-                        <p className="video-status-message">👍 {combo.aiComboMeta.analysis.pros.join(' · ')}</p>
+                        <p className="video-status-message"><Icon name="thumbs-up" /> {combo.aiComboMeta.analysis.pros.join(' · ')}</p>
                       )}
                       {combo.aiComboMeta.analysis.cautions.length > 0 && (
-                        <p className="video-status-message">⚠️ {combo.aiComboMeta.analysis.cautions.join(' · ')}</p>
+                        <p className="video-status-message"><Icon name="warn" /> {combo.aiComboMeta.analysis.cautions.join(' · ')}</p>
                       )}
                     </div>
                   )}

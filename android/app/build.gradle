@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
 
+def localLlmEnabled = (project.findProperty('martialdexLocalLlm') ?: 'true') != 'false'
+def localLlmAbis = ((project.findProperty('localLlmAbis') ?: 'arm64-v8a,x86_64') as String).split(',').collect { it.trim() }
+
 android {
     namespace = "com.martialdex.testbuild"
     compileSdk = rootProject.ext.compileSdkVersion
@@ -10,10 +13,46 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        // 로컬 AI 엔진 (LocalLlmPlugin → src/main/cpp → llama.cpp): arm64 phones; x86_64 only for the emulator.
+        //   -PmartialdexLocalLlm=false  builds WITHOUT the engine (performance baseline / fallback; the plugin
+        //                               then reports the device as unsupported)
+        //   -PlocalLlmAbis=arm64-v8a    phones only (drops the emulator's x86_64 libraries, ~20MB smaller)
+        if (localLlmEnabled) {
+            ndk {
+                abiFilters(*localLlmAbis)
+            }
+            externalNativeBuild {
+                cmake {
+                    arguments '-DCMAKE_BUILD_TYPE=Release',
+                            '-DBUILD_SHARED_LIBS=ON',
+                            '-DLLAMA_BUILD_COMMON=ON',
+                            '-DLLAMA_BUILD_TESTS=OFF',
+                            '-DLLAMA_BUILD_EXAMPLES=OFF',
+                            '-DLLAMA_BUILD_TOOLS=OFF',
+                            '-DLLAMA_BUILD_SERVER=OFF',
+                            '-DLLAMA_BUILD_APP=OFF',
+                            '-DLLAMA_OPENSSL=OFF',
+                            '-DLLAMA_CURL=OFF',
+                            '-DGGML_NATIVE=OFF',
+                            '-DGGML_BACKEND_DL=ON',
+                            '-DGGML_CPU_ALL_VARIANTS=ON',
+                            '-DGGML_LLAMAFILE=OFF'
+                }
+            }
+        }
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
              // Default: https://android.googlesource.com/platform/frameworks/base/+/282e181b58cf72b6ca770dc7ca5f91f135444502/tools/aapt/AaptAssets.cpp#61
             ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
+        }
+    }
+    ndkVersion = "28.2.13676358"
+    if (localLlmEnabled) {
+        externalNativeBuild {
+            cmake {
+                path "src/main/cpp/CMakeLists.txt"
+                version "3.31.6"
+            }
         }
     }
     buildTypes {

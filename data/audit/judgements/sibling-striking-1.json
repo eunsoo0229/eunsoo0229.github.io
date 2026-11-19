@@ -1,0 +1,2962 @@
+[
+  {
+    "id": "karate__musubi-dachi",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "무스비다치는 가라테 고유의 기본/형 자세로 대상 무술에 이전되지 않는다.",
+    "evidence": "karate kihon dachi; 대상 무술 커리큘럼에 해당 자세 없음"
+  },
+  {
+    "id": "karate__musubi-dachi",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "무스비다치는 가라테 고유의 기본/형 자세로 대상 무술에 이전되지 않는다.",
+    "evidence": "karate kihon dachi; 대상 무술 커리큘럼에 해당 자세 없음"
+  },
+  {
+    "id": "karate__musubi-dachi",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "무스비다치는 가라테 고유의 기본/형 자세로 대상 무술에 이전되지 않는다.",
+    "evidence": "karate kihon dachi; 대상 무술 커리큘럼에 해당 자세 없음"
+  },
+  {
+    "id": "karate__musubi-dachi",
+    "art": "taekwondo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "발뒤꿈치를 붙이고 앞꿈치를 벌리는 형태가 태권도 모아서기와 같은지 불확실하다.",
+    "evidence": "Kukkiwon 모아서기(발을 붙여 섬) vs karate musubi-dachi(앞꿈치 45도)"
+  },
+  {
+    "id": "karate__sanchin-dachi",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "산친다치는 가라테 고유의 기본/형 자세로 대상 무술에 이전되지 않는다.",
+    "evidence": "karate kihon dachi; 대상 무술 커리큘럼에 해당 자세 없음"
+  },
+  {
+    "id": "karate__sanchin-dachi",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "산친다치는 가라테 고유의 기본/형 자세로 대상 무술에 이전되지 않는다.",
+    "evidence": "karate kihon dachi; 대상 무술 커리큘럼에 해당 자세 없음"
+  },
+  {
+    "id": "karate__sanchin-dachi",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "산친다치는 가라테 고유의 기본/형 자세로 대상 무술에 이전되지 않는다.",
+    "evidence": "karate kihon dachi; 대상 무술 커리큘럼에 해당 자세 없음"
+  },
+  {
+    "id": "karate__sanchin-dachi",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "산친다치는 가라테 고유의 기본/형 자세로 대상 무술에 이전되지 않는다.",
+    "evidence": "karate kihon dachi; 대상 무술 커리큘럼에 해당 자세 없음"
+  },
+  {
+    "id": "karate__shiko-dachi",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "시코다치는 가라테 고유의 기본/형 자세로 대상 무술에 이전되지 않는다.",
+    "evidence": "karate kihon dachi; 대상 무술 커리큘럼에 해당 자세 없음"
+  },
+  {
+    "id": "karate__shiko-dachi",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "시코다치는 가라테 고유의 기본/형 자세로 대상 무술에 이전되지 않는다.",
+    "evidence": "karate kihon dachi; 대상 무술 커리큘럼에 해당 자세 없음"
+  },
+  {
+    "id": "karate__shiko-dachi",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "시코다치는 가라테 고유의 기본/형 자세로 대상 무술에 이전되지 않는다.",
+    "evidence": "karate kihon dachi; 대상 무술 커리큘럼에 해당 자세 없음"
+  },
+  {
+    "id": "karate__shiko-dachi",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "시코다치는 발끝을 벌린 가라테 자세로 태권도에는 주춤서기(기바다치)만 있다.",
+    "evidence": "catalog-taekwondo: karate__kiba-dachi (주춤서기); 시코다치 형태 없음"
+  },
+  {
+    "id": "karate__fudo-dachi",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "후도다치는 가라테 고유의 기본/형 자세로 대상 무술에 이전되지 않는다.",
+    "evidence": "karate kihon dachi; 대상 무술 커리큘럼에 해당 자세 없음"
+  },
+  {
+    "id": "karate__fudo-dachi",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "후도다치는 가라테 고유의 기본/형 자세로 대상 무술에 이전되지 않는다.",
+    "evidence": "karate kihon dachi; 대상 무술 커리큘럼에 해당 자세 없음"
+  },
+  {
+    "id": "karate__fudo-dachi",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "후도다치는 가라테 고유의 기본/형 자세로 대상 무술에 이전되지 않는다.",
+    "evidence": "karate kihon dachi; 대상 무술 커리큘럼에 해당 자세 없음"
+  },
+  {
+    "id": "karate__fudo-dachi",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "후도다치는 가라테 고유의 기본/형 자세로 대상 무술에 이전되지 않는다.",
+    "evidence": "karate kihon dachi; 대상 무술 커리큘럼에 해당 자세 없음"
+  },
+  {
+    "id": "karate__kumite-dachi",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "쿠미테다치는 가라테 포인트 겨루기 자세로 복싱 스탠스와 다르다.",
+    "evidence": "catalog-boxing [기본 자세]: Orthodox/Southpaw 등"
+  },
+  {
+    "id": "karate__kumite-dachi",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "쿠미테다치는 가라테 겨루기 자세로 킥복싱은 자체 스탠스를 쓴다.",
+    "evidence": "catalog-kickboxing [스탠스]"
+  },
+  {
+    "id": "karate__kumite-dachi",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "쿠미테다치는 무에타이 정면형 스탠스와 다르다.",
+    "evidence": "catalog-muay-thai: muay-thai__muay-thai-stance"
+  },
+  {
+    "id": "karate__kumite-dachi",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "taekwondo__겨루기준비자세",
+    "reason": "태권도에는 같은 역할의 겨루기준비자세가 이미 있다.",
+    "evidence": "catalog-taekwondo: taekwondo__겨루기준비자세\t겨루기준비자세 / 겨루기준비자세\t[기본 서기 / 자세]"
+  },
+  {
+    "id": "karate__yori-ashi",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__shuffle",
+    "reason": "자세를 유지한 짧은 미끄럼 이동은 복싱 카탈로그의 셔플과 같다.",
+    "evidence": "catalog-boxing: kickboxing__shuffle\tShuffle\t[풋워크]"
+  },
+  {
+    "id": "karate__yori-ashi",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__step-and-slide",
+    "reason": "킥복싱의 Step-and-Slide와 같은 이동이다.",
+    "evidence": "catalog-kickboxing: kickboxing__step-and-slide\tStep-and-Slide\t[풋워크]"
+  },
+  {
+    "id": "karate__yori-ashi",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "무에타이는 미끄럼식 짧은 이동을 별도 기술로 다루지 않는다.",
+    "evidence": "catalog-muay-thai [풋워크]: Step Forward/Pivot/Lateral Step/Switch Step"
+  },
+  {
+    "id": "karate__yori-ashi",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "taekwondo__끌기",
+    "reason": "태권도의 끌기(드래그 스텝)와 같은 이동이다.",
+    "evidence": "catalog-taekwondo: taekwondo__끌기\t끌기 (드래그 스텝)\t[이동 / 풋워크]"
+  },
+  {
+    "id": "karate__okuri-ashi",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__step-forward",
+    "reason": "앞발이 먼저 나가고 뒷발이 따라붙는 복싱 기본 전진 스텝과 같다.",
+    "evidence": "catalog-boxing: kickboxing__step-forward\tStep Forward\t[풋워크]"
+  },
+  {
+    "id": "karate__okuri-ashi",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__step-forward",
+    "reason": "킥복싱 기본 전진 스텝과 같다.",
+    "evidence": "catalog-kickboxing: kickboxing__step-forward\tStep Forward\t[풋워크]"
+  },
+  {
+    "id": "karate__okuri-ashi",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__step-forward",
+    "reason": "무에타이 카탈로그의 Step Forward와 같다.",
+    "evidence": "catalog-muay-thai: kickboxing__step-forward\tStep Forward\t[풋워크]"
+  },
+  {
+    "id": "karate__okuri-ashi",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "taekwondo__전진",
+    "reason": "태권도 전진 스텝과 같다.",
+    "evidence": "catalog-taekwondo: taekwondo__전진\t전진\t[이동 / 풋워크]"
+  },
+  {
+    "id": "karate__tenkan",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "텐칸은 크게 몸을 돌려 방향을 바꾸는 이동으로 복싱 피벗과 다르다.",
+    "evidence": "catalog-boxing: kickboxing__pivot (앞발 축 회전)"
+  },
+  {
+    "id": "karate__tenkan",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "텐칸식 회전 이동은 킥복싱 기술이 아니다.",
+    "evidence": "catalog-kickboxing [풋워크]"
+  },
+  {
+    "id": "karate__tenkan",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "텐칸식 회전 이동은 무에타이 기술이 아니다.",
+    "evidence": "catalog-muay-thai [풋워크]"
+  },
+  {
+    "id": "karate__tenkan",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "텐칸은 가라테/합기도식 회전 이동으로 태권도 피벗과 다르다.",
+    "evidence": "catalog-taekwondo: taekwondo__피벗"
+  },
+  {
+    "id": "karate__step-in",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__step-forward",
+    "reason": "일반 전진 스텝으로 이미 있다.",
+    "evidence": "catalog-boxing: kickboxing__step-forward\tStep Forward\t[풋워크]"
+  },
+  {
+    "id": "karate__step-in",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__step-forward",
+    "reason": "일반 전진 스텝으로 이미 있다.",
+    "evidence": "catalog-kickboxing: kickboxing__step-forward\tStep Forward\t[풋워크]"
+  },
+  {
+    "id": "karate__step-in",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__step-forward",
+    "reason": "일반 전진 스텝으로 이미 있다.",
+    "evidence": "catalog-muay-thai: kickboxing__step-forward\tStep Forward\t[풋워크]"
+  },
+  {
+    "id": "karate__step-in",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "taekwondo__스텝-인-스텝-아웃",
+    "reason": "태권도 스텝 인으로 이미 있다.",
+    "evidence": "catalog-taekwondo: taekwondo__스텝-인-스텝-아웃\t스텝 인 / 스텝 아웃 / 스텝 인 / 스텝 아웃\t[이동 / 풋워크]"
+  },
+  {
+    "id": "karate__retreat",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "boxing__step-back",
+    "reason": "후퇴 스텝은 Step Back으로 이미 있다.",
+    "evidence": "catalog-boxing: boxing__step-back\tStep Back\t[풋워크]"
+  },
+  {
+    "id": "karate__retreat",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "boxing__step-back",
+    "reason": "후퇴 스텝은 Step Back으로 이미 있다.",
+    "evidence": "catalog-kickboxing: boxing__step-back\tStep Back\t[풋워크]"
+  },
+  {
+    "id": "karate__retreat",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "boxing__step-back",
+    "reason": "후퇴 스텝은 Step Back으로 이미 있다.",
+    "evidence": "catalog-muay-thai: boxing__step-back\tStep Back\t[펀치 방어]"
+  },
+  {
+    "id": "karate__retreat",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "taekwondo__후진",
+    "reason": "태권도 후진으로 이미 있다.",
+    "evidence": "catalog-taekwondo: taekwondo__후진\t후진\t[이동 / 풋워크]"
+  },
+  {
+    "id": "karate__forward-step",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__step-forward",
+    "reason": "전진 스텝으로 이미 있다.",
+    "evidence": "catalog-boxing: kickboxing__step-forward\tStep Forward\t[풋워크]"
+  },
+  {
+    "id": "karate__forward-step",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__step-forward",
+    "reason": "전진 스텝으로 이미 있다.",
+    "evidence": "catalog-kickboxing: kickboxing__step-forward\tStep Forward\t[풋워크]"
+  },
+  {
+    "id": "karate__forward-step",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__step-forward",
+    "reason": "전진 스텝으로 이미 있다.",
+    "evidence": "catalog-muay-thai: kickboxing__step-forward\tStep Forward\t[풋워크]"
+  },
+  {
+    "id": "karate__forward-step",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "taekwondo__전진",
+    "reason": "태권도 전진으로 이미 있다.",
+    "evidence": "catalog-taekwondo: taekwondo__전진\t전진\t[이동 / 풋워크]"
+  },
+  {
+    "id": "karate__choku-zuki",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "초쿠즈키(히키테를 동반한 제자리 지르기)는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__choku-zuki",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "초쿠즈키는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__choku-zuki",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "초쿠즈키는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__choku-zuki",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "taekwondo__지르기",
+    "reason": "태권도 기본 지르기와 같은 기술이다.",
+    "evidence": "catalog-taekwondo: taekwondo__지르기\t지르기\t[손기술]"
+  },
+  {
+    "id": "karate__oi-zuki",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "같은 쪽 발을 크게 내딛는 오이즈키는 복싱 기술이 아니다.",
+    "evidence": "catalog-boxing: 잽/크로스만 존재"
+  },
+  {
+    "id": "karate__oi-zuki",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "오이즈키는 킥복싱에서 별도 기술로 쓰지 않는다.",
+    "evidence": "catalog-kickboxing [펀치]"
+  },
+  {
+    "id": "karate__oi-zuki",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "오이즈키는 무에타이 기술이 아니다.",
+    "evidence": "catalog-muay-thai [중거리 펀치]"
+  },
+  {
+    "id": "karate__oi-zuki",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "taekwondo__반대지르기",
+    "reason": "앞발과 같은 쪽 손으로 지르는 태권도 반대지르기와 같다.",
+    "evidence": "catalog-taekwondo: taekwondo__반대지르기\t반대지르기\t[거리별 전술]"
+  },
+  {
+    "id": "karate__gyaku-zuki",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__cross",
+    "reason": "뒷손 직선 지르기로 복싱 크로스와 같다.",
+    "evidence": "catalog-boxing: kickboxing__cross\tCross\t[거리별 포지션]"
+  },
+  {
+    "id": "karate__gyaku-zuki",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__cross",
+    "reason": "뒷손 직선 지르기로 크로스와 같다.",
+    "evidence": "catalog-kickboxing: kickboxing__cross\tCross\t[펀치]"
+  },
+  {
+    "id": "karate__gyaku-zuki",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__cross",
+    "reason": "뒷손 직선 지르기로 크로스와 같다.",
+    "evidence": "catalog-muay-thai: kickboxing__cross\tCross\t[중거리 펀치]"
+  },
+  {
+    "id": "karate__gyaku-zuki",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "taekwondo__바로지르기",
+    "reason": "앞발 반대쪽 손으로 지르는 태권도 바로지르기와 같다.",
+    "evidence": "catalog-taekwondo: taekwondo__바로지르기\t바로지르기\t[손기술]"
+  },
+  {
+    "id": "karate__kagi-zuki",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "boxing__short-hook",
+    "reason": "짧게 꺾어 치는 훅으로 복싱 쇼트 훅과 같다.",
+    "evidence": "catalog-boxing: boxing__short-hook\tShort Hook\t[거리별 포지션]"
+  },
+  {
+    "id": "karate__kagi-zuki",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "카기즈키는 가라테 기본형이며 킥복싱 훅은 리드/리어 훅으로 따로 있다.",
+    "evidence": "catalog-kickboxing: kickboxing__lead-hook, kickboxing__rear-hook"
+  },
+  {
+    "id": "karate__kagi-zuki",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "카기즈키는 가라테 기본형이며 무에타이 훅은 리드/리어 훅으로 따로 있다.",
+    "evidence": "catalog-muay-thai: kickboxing__lead-hook, kickboxing__rear-hook"
+  },
+  {
+    "id": "karate__kagi-zuki",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "기마자세에서 가로지르는 카기즈키는 태권도 표준 기술이 아니다.",
+    "evidence": "catalog-taekwondo [손기술]"
+  },
+  {
+    "id": "karate__tate-zuki",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "타테즈키(세로주먹)는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__tate-zuki",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "타테즈키는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__tate-zuki",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "타테즈키는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__tate-zuki",
+    "art": "taekwondo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 세워지르기와 같은 기술인지, 표준 커리큘럼 포함 여부가 불확실하다.",
+    "evidence": "Kukkiwon 세워지르기(추정); catalog-taekwondo에 없음"
+  },
+  {
+    "id": "karate__age-zuki",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "아게즈키는 위로 올려 지르는 가라테 지르기로 어퍼컷과 다르다.",
+    "evidence": "catalog-boxing: boxing__uppercut"
+  },
+  {
+    "id": "karate__age-zuki",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "아게즈키는 킥복싱 기술이 아니며 어퍼컷은 따로 있다.",
+    "evidence": "catalog-kickboxing: lead/rear uppercut"
+  },
+  {
+    "id": "karate__age-zuki",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "아게즈키는 무에타이 기술이 아니다.",
+    "evidence": "catalog-muay-thai: lead/rear uppercut"
+  },
+  {
+    "id": "karate__age-zuki",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "아게즈키는 태권도 표준 손기술 목록에 없다.",
+    "evidence": "catalog-taekwondo [손기술]"
+  },
+  {
+    "id": "karate__mawashi-zuki",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__rear-hook",
+    "reason": "곡선으로 휘두르는 뒷손 펀치로 리어 훅과 같다.",
+    "evidence": "catalog-boxing: kickboxing__rear-hook\tRear Hook\t[기본 펀치]"
+  },
+  {
+    "id": "karate__mawashi-zuki",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__rear-hook",
+    "reason": "곡선 뒷손 펀치로 리어 훅과 같다.",
+    "evidence": "catalog-kickboxing: kickboxing__rear-hook\tRear Hook\t[펀치]"
+  },
+  {
+    "id": "karate__mawashi-zuki",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__rear-hook",
+    "reason": "곡선 뒷손 펀치로 리어 훅과 같다.",
+    "evidence": "catalog-muay-thai: kickboxing__rear-hook\tRear Hook\t[중거리 펀치]"
+  },
+  {
+    "id": "karate__mawashi-zuki",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "taekwondo__돌려지르기",
+    "reason": "태권도 돌려지르기와 같은 기술이다.",
+    "evidence": "catalog-taekwondo: taekwondo__돌려지르기\t돌려지르기\t[손기술]"
+  },
+  {
+    "id": "karate__nukite",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱은 글러브 주먹 너클 타격만 허용되어 손끝·손바닥 타격이 불가하다.",
+    "evidence": "Boxing rules: knuckle part of closed glove only"
+  },
+  {
+    "id": "karate__nukite",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "킥복싱는 글러브를 착용해 손끝·한손가락 관절 타격이 불가하다.",
+    "evidence": "킥복싱 rules: gloved closed-fist strikes"
+  },
+  {
+    "id": "karate__nukite",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "무에타이는 글러브를 착용해 손끝·한손가락 관절 타격이 불가하다.",
+    "evidence": "무에타이 rules: gloved closed-fist strikes"
+  },
+  {
+    "id": "karate__nukite",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "taekwondo__편손끝",
+    "reason": "태권도 편손끝치기와 같은 기술이다.",
+    "evidence": "catalog-taekwondo: taekwondo__편손끝\t편손끝 / 편손끝치기\t[손기술]"
+  },
+  {
+    "id": "karate__ippon-ken",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱은 글러브 주먹 너클 타격만 허용되어 손끝·손바닥 타격이 불가하다.",
+    "evidence": "Boxing rules: knuckle part of closed glove only"
+  },
+  {
+    "id": "karate__ippon-ken",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "킥복싱는 글러브를 착용해 손끝·한손가락 관절 타격이 불가하다.",
+    "evidence": "킥복싱 rules: gloved closed-fist strikes"
+  },
+  {
+    "id": "karate__ippon-ken",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "무에타이는 글러브를 착용해 손끝·한손가락 관절 타격이 불가하다.",
+    "evidence": "무에타이 rules: gloved closed-fist strikes"
+  },
+  {
+    "id": "karate__ippon-ken",
+    "art": "taekwondo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 밤주먹과 같은지, 표준 커리큘럼 포함 여부가 불확실하다.",
+    "evidence": "Kukkiwon 밤주먹(추정); catalog-taekwondo에 없음"
+  },
+  {
+    "id": "karate__nihon-nukite",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱은 글러브 주먹 너클 타격만 허용되어 손끝·손바닥 타격이 불가하다.",
+    "evidence": "Boxing rules: knuckle part of closed glove only"
+  },
+  {
+    "id": "karate__nihon-nukite",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "킥복싱는 글러브를 착용해 손끝·한손가락 관절 타격이 불가하다.",
+    "evidence": "킥복싱 rules: gloved closed-fist strikes"
+  },
+  {
+    "id": "karate__nihon-nukite",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "무에타이는 글러브를 착용해 손끝·한손가락 관절 타격이 불가하다.",
+    "evidence": "무에타이 rules: gloved closed-fist strikes"
+  },
+  {
+    "id": "karate__nihon-nukite",
+    "art": "taekwondo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 가위손끝과 대응하는지 불확실한 희소 기술이다.",
+    "evidence": "Kukkiwon 가위손끝(추정); catalog-taekwondo에 없음"
+  },
+  {
+    "id": "karate__teisho",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱은 글러브 주먹 너클 타격만 허용되어 손끝·손바닥 타격이 불가하다.",
+    "evidence": "Boxing rules: knuckle part of closed glove only"
+  },
+  {
+    "id": "karate__teisho",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "킥복싱는 글러브를 착용해 손끝·한손가락 관절 타격이 불가하다.",
+    "evidence": "킥복싱 rules: gloved closed-fist strikes"
+  },
+  {
+    "id": "karate__teisho",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "무에타이는 글러브를 착용해 손끝·한손가락 관절 타격이 불가하다.",
+    "evidence": "무에타이 rules: gloved closed-fist strikes"
+  },
+  {
+    "id": "karate__teisho",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "taekwondo__바탕손",
+    "reason": "태권도 바탕손 치기와 같은 기술이다.",
+    "evidence": "catalog-taekwondo: taekwondo__바탕손\t바탕손 / 바탕손밀기 / 바탕손누르기\t[손기술]"
+  },
+  {
+    "id": "karate__yoko-empi",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱은 주먹 외 타격(발차기·팔꿈치·무릎)이 금지된다.",
+    "evidence": "Boxing rules: 주먹 타격만 허용"
+  },
+  {
+    "id": "karate__yoko-empi",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "옆으로 찌르는 요코엠피는 킥복싱 엘보 목록에 없는 가라테형 팔꿈치다.",
+    "evidence": "catalog-kickboxing [엘보]"
+  },
+  {
+    "id": "karate__yoko-empi",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "옆으로 찌르는 요코엠피는 무에타이 속(Sok) 기술이 아니다.",
+    "evidence": "catalog-muay-thai [엘보 (Sok, ศอก)]"
+  },
+  {
+    "id": "karate__yoko-empi",
+    "art": "taekwondo",
+    "decision": "add",
+    "confidence": "B",
+    "category": "손기술",
+    "duplicateOf": null,
+    "reason": "태권도에도 팔굽 옆치기가 표준 기술로 있다.",
+    "evidence": "Kukkiwon 팔굽 옆치기 (팔굽치기 종류)"
+  },
+  {
+    "id": "karate__age-empi",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱은 주먹 외 타격(발차기·팔꿈치·무릎)이 금지된다.",
+    "evidence": "Boxing rules: 주먹 타격만 허용"
+  },
+  {
+    "id": "karate__age-empi",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__upward-elbow",
+    "reason": "올려치는 팔꿈치로 업워드 엘보와 같다.",
+    "evidence": "catalog-kickboxing: kickboxing__upward-elbow\tUpward Elbow / 업워드 엘보\t[엘보]"
+  },
+  {
+    "id": "karate__age-empi",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__upward-elbow",
+    "reason": "올려치는 팔꿈치로 업워드 엘보와 같다.",
+    "evidence": "catalog-muay-thai: kickboxing__upward-elbow\tUpward Elbow / 업워드 엘보\t[엘보 (Sok, ศอก)]"
+  },
+  {
+    "id": "karate__age-empi",
+    "art": "taekwondo",
+    "decision": "add",
+    "confidence": "B",
+    "category": "손기술",
+    "duplicateOf": null,
+    "reason": "태권도 팔굽 올려치기로 표준 기술이다.",
+    "evidence": "Kukkiwon 팔굽 올려치기 (팔굽치기 종류)"
+  },
+  {
+    "id": "karate__ushiro-empi",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱은 주먹 외 타격(발차기·팔꿈치·무릎)이 금지된다.",
+    "evidence": "Boxing rules: 주먹 타격만 허용"
+  },
+  {
+    "id": "karate__ushiro-empi",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "muay-thai__back-elbow",
+    "reason": "등 뒤로 찍는 팔꿈치로 Back Elbow와 같다.",
+    "evidence": "catalog-kickboxing: muay-thai__back-elbow\tBack Elbow / 등 뒤로 팔꿈치를 찍는 변형\t[엘보]"
+  },
+  {
+    "id": "karate__ushiro-empi",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "muay-thai__back-elbow",
+    "reason": "등 뒤로 찍는 팔꿈치로 Back Elbow와 같다.",
+    "evidence": "catalog-muay-thai: muay-thai__back-elbow\tBack Elbow / 등 뒤로 팔꿈치를 찍는 변형\t[엘보 (Sok, ศอก)]"
+  },
+  {
+    "id": "karate__ushiro-empi",
+    "art": "taekwondo",
+    "decision": "add",
+    "confidence": "B",
+    "category": "손기술",
+    "duplicateOf": null,
+    "reason": "태권도 팔굽 뒤치기로 표준 기술이다.",
+    "evidence": "Kukkiwon 팔굽 뒤치기 (팔굽치기 종류)"
+  },
+  {
+    "id": "karate__otoshi-empi",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱은 주먹 외 타격(발차기·팔꿈치·무릎)이 금지된다.",
+    "evidence": "Boxing rules: 주먹 타격만 허용"
+  },
+  {
+    "id": "karate__otoshi-empi",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__downward-elbow",
+    "reason": "내려찍는 팔꿈치로 다운워드 엘보와 같다.",
+    "evidence": "catalog-kickboxing: kickboxing__downward-elbow\tDownward Elbow / 다운워드 엘보\t[엘보]"
+  },
+  {
+    "id": "karate__otoshi-empi",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__downward-elbow",
+    "reason": "내려찍는 팔꿈치로 다운워드 엘보와 같다.",
+    "evidence": "catalog-muay-thai: kickboxing__downward-elbow\tDownward Elbow / 다운워드 엘보\t[엘보 (Sok, ศอก)]"
+  },
+  {
+    "id": "karate__otoshi-empi",
+    "art": "taekwondo",
+    "decision": "add",
+    "confidence": "B",
+    "category": "손기술",
+    "duplicateOf": null,
+    "reason": "태권도 팔굽 내려치기로 표준 기술이다.",
+    "evidence": "Kukkiwon 팔굽 내려치기 (팔굽치기 종류)"
+  },
+  {
+    "id": "karate__fumikomi-geri",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱은 주먹 외 타격(발차기·팔꿈치·무릎)이 금지된다.",
+    "evidence": "Boxing rules: 주먹 타격만 허용"
+  },
+  {
+    "id": "karate__fumikomi-geri",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "발이나 무릎을 내리밟는 킥은 킥복싱 규칙·커리큘럼에 없다.",
+    "evidence": "K-1/Glory rules; catalog-kickboxing [킥]"
+  },
+  {
+    "id": "karate__fumikomi-geri",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "내리밟는 스톰프 킥은 무에타이 표준 기술이 아니다.",
+    "evidence": "catalog-muay-thai: muay-thai__teep-to-leg(티프)는 별개"
+  },
+  {
+    "id": "karate__fumikomi-geri",
+    "art": "taekwondo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 찍어차기/짓찧기와 같은 기술인지 불확실하다.",
+    "evidence": "catalog-taekwondo: taekwondo__찍어차기"
+  },
+  {
+    "id": "karate__nidan-geri",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱은 주먹 외 타격(발차기·팔꿈치·무릎)이 금지된다.",
+    "evidence": "Boxing rules: 주먹 타격만 허용"
+  },
+  {
+    "id": "karate__nidan-geri",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "두 번 연속 뛰어 앞차기는 킥복싱 표준 기술이 아니다.",
+    "evidence": "catalog-kickboxing: kickboxing__jumping-kick(일반)"
+  },
+  {
+    "id": "karate__nidan-geri",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "니단게리는 무에타이 기술이 아니다.",
+    "evidence": "catalog-muay-thai [장거리 킥]"
+  },
+  {
+    "id": "karate__nidan-geri",
+    "art": "taekwondo",
+    "decision": "add",
+    "confidence": "B",
+    "category": "점프 / 공중 발차기",
+    "duplicateOf": null,
+    "reason": "태권도 두발당성 앞차기와 같은 표준 뛰어차기다.",
+    "evidence": "Kukkiwon 두발당성차기"
+  },
+  {
+    "id": "karate__tobi-geri",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱은 주먹 외 타격(발차기·팔꿈치·무릎)이 금지된다.",
+    "evidence": "Boxing rules: 주먹 타격만 허용"
+  },
+  {
+    "id": "karate__tobi-geri",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__jumping-kick",
+    "reason": "일반 뛰어차기로 Jumping Kick과 같다.",
+    "evidence": "catalog-kickboxing: kickboxing__jumping-kick\tJumping Kick\t[킥]"
+  },
+  {
+    "id": "karate__tobi-geri",
+    "art": "muay-thai",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "무에타이 점프킥(Kradot Te) 계열과 같은 항목으로 볼지 불확실하다.",
+    "evidence": "Muay Thai Kradot Te; catalog-muay-thai에 없음"
+  },
+  {
+    "id": "karate__tobi-geri",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 뛰어차기는 이미 세부 기술로 나뉘어 있어 포괄 항목은 맞지 않는다.",
+    "evidence": "catalog-taekwondo [점프 / 공중 발차기]: 뛰어앞차기·뛰어돌려차기 등"
+  },
+  {
+    "id": "karate__soto-uke",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "소토우케(전완 바깥막기)는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__soto-uke",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "소토우케는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__soto-uke",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "소토우케는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__uchi-uke",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "우치우케(전완 안막기)는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__uchi-uke",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "우치우케는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__uchi-uke",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "우치우케는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__morote-uke",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "모로테우케는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__morote-uke",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "모로테우케는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__morote-uke",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "모로테우케는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__morote-uke",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "taekwondo__거들어막기",
+    "reason": "태권도 거들어막기와 같은 기술이다.",
+    "evidence": "catalog-taekwondo: taekwondo__거들어막기\t거들어막기 / 거들어막기\t[막기]"
+  },
+  {
+    "id": "karate__juji-uke",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "주지우케는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__juji-uke",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "주지우케는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__juji-uke",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "주지우케는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__juji-uke",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "taekwondo__엇걸어막기",
+    "reason": "태권도 엇걸어막기(X막기)와 같은 기술이다.",
+    "evidence": "catalog-taekwondo: taekwondo__엇걸어막기\t엇걸어막기\t[막기]"
+  },
+  {
+    "id": "karate__kake-uke",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "카케우케는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__kake-uke",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "카케우케는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__kake-uke",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "카케우케는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__kake-uke",
+    "art": "taekwondo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 걸어막기와 동일한지, 국기원 표준인지 불확실하다.",
+    "evidence": "ITF/Kukkiwon 걸어막기(추정); catalog-taekwondo에 없음"
+  },
+  {
+    "id": "karate__nagashi-uke",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__parry",
+    "reason": "공격을 흘려 방향을 바꾸는 손 막기로 패리와 같다.",
+    "evidence": "catalog-boxing: kickboxing__parry\tParry\t[상대 펀치별 방어]"
+  },
+  {
+    "id": "karate__nagashi-uke",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__parry",
+    "reason": "공격을 흘리는 손 막기로 패리와 같다.",
+    "evidence": "catalog-kickboxing: kickboxing__parry\tParry\t[방어]"
+  },
+  {
+    "id": "karate__nagashi-uke",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__parry",
+    "reason": "공격을 흘리는 손 막기로 패리와 같다.",
+    "evidence": "catalog-muay-thai: kickboxing__parry\tParry\t[펀치 방어]"
+  },
+  {
+    "id": "karate__nagashi-uke",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "나가시우케는 태권도 막기 목록에 없는 가라테 막기다.",
+    "evidence": "catalog-taekwondo [막기]"
+  },
+  {
+    "id": "karate__osae-uke",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "boxing__downward-parry",
+    "reason": "아래로 눌러 막는 동작으로 Downward Parry와 같다.",
+    "evidence": "catalog-boxing: boxing__downward-parry\tDownward Parry\t[방어]"
+  },
+  {
+    "id": "karate__osae-uke",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "오사에우케는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__osae-uke",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "오사에우케는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__osae-uke",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "taekwondo__바탕손",
+    "reason": "태권도 바탕손누르기와 같은 기술이다.",
+    "evidence": "catalog-taekwondo: taekwondo__바탕손\t바탕손 / 바탕손밀기 / 바탕손누르기\t[손기술]"
+  },
+  {
+    "id": "karate__sukui-uke",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱은 주먹 외 타격(발차기·팔꿈치·무릎)이 금지된다.",
+    "evidence": "Boxing rules: 주먹 타격만 허용"
+  },
+  {
+    "id": "karate__sukui-uke",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "퍼올리는 막기는 킥 캐치와 다른 가라테 기본 막기다.",
+    "evidence": "catalog-kickboxing: kickboxing__catch"
+  },
+  {
+    "id": "karate__sukui-uke",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "퍼올리는 막기는 무에타이 킥 캐치와 다른 가라테 막기다.",
+    "evidence": "catalog-muay-thai: kickboxing__catch"
+  },
+  {
+    "id": "karate__sukui-uke",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "스쿠이우케는 태권도 막기 목록에 없다.",
+    "evidence": "catalog-taekwondo [막기]"
+  },
+  {
+    "id": "karate__distance-control",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "boxing__거리-관리",
+    "reason": "복싱 링 제너럴십의 거리 관리로 이미 있다.",
+    "evidence": "catalog-boxing: boxing__거리-관리\t거리 관리 / 거리 관리\t[링 제너럴십 (Ring Generalship)]"
+  },
+  {
+    "id": "karate__distance-control",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "거리 통제는 일반 전술 개념으로 개별 기술이 아니다.",
+    "evidence": "catalog-kickboxing [기본 개념]: 장/중/근거리"
+  },
+  {
+    "id": "karate__distance-control",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "거리 통제는 일반 전술 개념으로 개별 기술이 아니다.",
+    "evidence": "catalog-muay-thai [기본 개념]"
+  },
+  {
+    "id": "karate__distance-control",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "거리 통제는 일반 전술 개념으로 개별 기술이 아니다.",
+    "evidence": "catalog-taekwondo [거리별 전술]"
+  },
+  {
+    "id": "karate__counter-punch",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "포괄적 카운터 펀치는 개별 카운터 기술들로 이미 나뉘어 있다.",
+    "evidence": "catalog-boxing [카운터]"
+  },
+  {
+    "id": "karate__counter-punch",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "포괄적 카운터 펀치는 개별 카운터 기술들로 이미 나뉘어 있다.",
+    "evidence": "catalog-kickboxing [카운터]"
+  },
+  {
+    "id": "karate__counter-punch",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "포괄적 카운터 펀치는 개별 카운터 기술들로 이미 나뉘어 있다.",
+    "evidence": "catalog-muay-thai [카운터 종합]"
+  },
+  {
+    "id": "karate__counter-punch",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 겨루기는 발 중심이며 포괄 카운터 펀치 항목이 맞지 않는다.",
+    "evidence": "WT competition rules: 주먹은 몸통만"
+  },
+  {
+    "id": "karate__counter-kick",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱은 주먹 외 타격(발차기·팔꿈치·무릎)이 금지된다.",
+    "evidence": "Boxing rules: 주먹 타격만 허용"
+  },
+  {
+    "id": "karate__counter-kick",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "포괄적 카운터 킥은 개별 카운터 기술로 나뉘어 있다.",
+    "evidence": "catalog-kickboxing [카운터]"
+  },
+  {
+    "id": "karate__counter-kick",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "포괄적 카운터 킥은 개별 카운터 기술로 나뉘어 있다.",
+    "evidence": "catalog-muay-thai [카운터 종합]"
+  },
+  {
+    "id": "karate__counter-kick",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "포괄 항목이라 태권도 특정 받아차기 기술로 볼 수 없다.",
+    "evidence": "catalog-taekwondo [연결 기술]"
+  },
+  {
+    "id": "karate__combination-entry",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "콤비네이션 진입은 원리 설명으로 개별 기술이 아니다.",
+    "evidence": "catalog-boxing [조합]"
+  },
+  {
+    "id": "karate__combination-entry",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "콤비네이션 진입은 원리 설명으로 개별 기술이 아니다.",
+    "evidence": "catalog-kickboxing [대표적인 콤비네이션]"
+  },
+  {
+    "id": "karate__combination-entry",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "콤비네이션 진입은 원리 설명으로 개별 기술이 아니다.",
+    "evidence": "catalog-muay-thai"
+  },
+  {
+    "id": "karate__combination-entry",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "콤비네이션 진입은 원리 설명으로 개별 기술이 아니다.",
+    "evidence": "catalog-taekwondo [연결 기술]"
+  },
+  {
+    "id": "karate__irimi",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "이리미는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__irimi",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "이리미는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__irimi",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "이리미는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__irimi",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "이리미는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__nagashi",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "나가시는 가라테 타이사바키 개념으로 복싱은 슬립·롤로 따로 있다.",
+    "evidence": "catalog-boxing [방어]: Slip, Roll"
+  },
+  {
+    "id": "karate__nagashi",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "나가시는 가라테 타이사바키 개념이다.",
+    "evidence": "catalog-kickboxing [방어]"
+  },
+  {
+    "id": "karate__nagashi",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "나가시는 가라테 타이사바키 개념이다.",
+    "evidence": "catalog-muay-thai [펀치 방어]"
+  },
+  {
+    "id": "karate__nagashi",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "나가시는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__angle-exit",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__angle-step",
+    "reason": "각도로 빠지는 이동으로 Angle Step과 같다.",
+    "evidence": "catalog-boxing: kickboxing__angle-step\tAngle Step\t[풋워크]"
+  },
+  {
+    "id": "karate__angle-exit",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__angle-out",
+    "reason": "각도로 빠지는 방어로 Angle Out과 같다.",
+    "evidence": "catalog-kickboxing: kickboxing__angle-out\tAngle Out\t[방어]"
+  },
+  {
+    "id": "karate__angle-exit",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__angle-out",
+    "reason": "각도로 빠지는 방어로 Angle Out과 같다.",
+    "evidence": "catalog-muay-thai: kickboxing__angle-out\tAngle Out\t[킥 방어]"
+  },
+  {
+    "id": "karate__angle-exit",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 이동 목록에 각도 이탈은 별도 기술로 없다.",
+    "evidence": "catalog-taekwondo [이동 / 풋워크]"
+  },
+  {
+    "id": "karate__body-shift",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "포괄적 몸 이동은 개별 방어·풋워크로 이미 나뉘어 있다.",
+    "evidence": "catalog-boxing [방어]/[풋워크]"
+  },
+  {
+    "id": "karate__body-shift",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "포괄적 몸 이동은 개별 기술이 아니다.",
+    "evidence": "catalog-kickboxing [풋워크]"
+  },
+  {
+    "id": "karate__body-shift",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "포괄적 몸 이동은 개별 기술이 아니다.",
+    "evidence": "catalog-muay-thai [풋워크]"
+  },
+  {
+    "id": "karate__body-shift",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "포괄적 몸 이동은 개별 기술이 아니다.",
+    "evidence": "catalog-taekwondo [이동 / 풋워크]"
+  },
+  {
+    "id": "karate__kizami-zuki-counter",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__jab-counter",
+    "reason": "잽 카운터로 이미 있다.",
+    "evidence": "catalog-boxing: kickboxing__jab-counter\tJab Counter\t[상대 펀치별 방어]"
+  },
+  {
+    "id": "karate__kizami-zuki-counter",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__jab-counter",
+    "reason": "잽 카운터로 이미 있다.",
+    "evidence": "catalog-kickboxing: kickboxing__jab-counter\tJab Counter\t[카운터]"
+  },
+  {
+    "id": "karate__kizami-zuki-counter",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__jab-counter",
+    "reason": "잽 카운터로 이미 있다.",
+    "evidence": "catalog-muay-thai: kickboxing__jab-counter\tJab Counter\t[카운터 종합]"
+  },
+  {
+    "id": "karate__kizami-zuki-counter",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "얼굴 지르기 카운터는 태권도 겨루기 기술이 아니다.",
+    "evidence": "WT competition rules: 얼굴 주먹 공격 금지"
+  },
+  {
+    "id": "karate__gyaku-zuki-counter",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__cross-counter",
+    "reason": "크로스 카운터로 이미 있다.",
+    "evidence": "catalog-boxing: kickboxing__cross-counter\tCross Counter\t[카운터]"
+  },
+  {
+    "id": "karate__gyaku-zuki-counter",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__cross-counter",
+    "reason": "크로스 카운터로 이미 있다.",
+    "evidence": "catalog-kickboxing: kickboxing__cross-counter\tCross Counter\t[카운터]"
+  },
+  {
+    "id": "karate__gyaku-zuki-counter",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__cross-counter",
+    "reason": "크로스 카운터로 이미 있다.",
+    "evidence": "catalog-muay-thai: kickboxing__cross-counter\tCross Counter\t[카운터 종합]"
+  },
+  {
+    "id": "karate__gyaku-zuki-counter",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "역찌르기 카운터는 태권도 별도 기술로 다루지 않는다.",
+    "evidence": "catalog-taekwondo [연결 기술]"
+  },
+  {
+    "id": "karate__mae-geri-counter",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱은 주먹 외 타격(발차기·팔꿈치·무릎)이 금지된다.",
+    "evidence": "Boxing rules: 주먹 타격만 허용"
+  },
+  {
+    "id": "karate__mae-geri-counter",
+    "art": "kickboxing",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "앞차기 카운터가 킥복싱 티프/스톱킥과 같은 항목인지 불확실하다.",
+    "evidence": "catalog-kickboxing: kickboxing__teep, kickboxing__front-kick"
+  },
+  {
+    "id": "karate__mae-geri-counter",
+    "art": "muay-thai",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "무에타이 Teep Stop과 같은 기술인지 불확실하다.",
+    "evidence": "catalog-muay-thai: muay-thai__teep-stop"
+  },
+  {
+    "id": "karate__mae-geri-counter",
+    "art": "taekwondo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 밀어차기 받아차기와 같은 기술인지 불확실하다.",
+    "evidence": "catalog-taekwondo: taekwondo__앞발-밀어차기"
+  },
+  {
+    "id": "karate__mawashi-geri-counter",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱은 주먹 외 타격(발차기·팔꿈치·무릎)이 금지된다.",
+    "evidence": "Boxing rules: 주먹 타격만 허용"
+  },
+  {
+    "id": "karate__mawashi-geri-counter",
+    "art": "kickboxing",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "돌려차기 카운터가 킥복싱 카운터 항목과 같은지 불확실하다.",
+    "evidence": "catalog-kickboxing [카운터]: Check and Return 등"
+  },
+  {
+    "id": "karate__mawashi-geri-counter",
+    "art": "muay-thai",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "무에타이 카운터 킥 항목과 같은지 불확실하다.",
+    "evidence": "catalog-muay-thai [카운터 종합]"
+  },
+  {
+    "id": "karate__mawashi-geri-counter",
+    "art": "taekwondo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 돌려차기 받아차기와 같은 기술인지 불확실하다.",
+    "evidence": "catalog-taekwondo: taekwondo__뒷발-돌려차기"
+  },
+  {
+    "id": "karate__uchi-uke-gyaku-zuki-soto-uke-gyaku-zuki",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "전완 막기-역찌르기 조합는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__uchi-uke-gyaku-zuki-soto-uke-gyaku-zuki",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "전완 막기-역찌르기 조합는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__uchi-uke-gyaku-zuki-soto-uke-gyaku-zuki",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "전완 막기-역찌르기 조합는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__uchi-uke-gyaku-zuki-soto-uke-gyaku-zuki",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "가라테 키혼 막기-반격 조합으로 태권도 카탈로그 기술이 아니다.",
+    "evidence": "catalog-taekwondo [연결 기술]"
+  },
+  {
+    "id": "karate__age-uke-counter",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "상단막기-반격 조합는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__age-uke-counter",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "상단막기-반격 조합는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__age-uke-counter",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "상단막기-반격 조합는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__age-uke-counter",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "가라테 키혼 막기-반격 조합으로 태권도 카탈로그 기술이 아니다.",
+    "evidence": "catalog-taekwondo [연결 기술]"
+  },
+  {
+    "id": "karate__tai-sabaki-counter",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "타이사바키 카운터 원리는 복싱 개별 카운터로 나뉘어 있다.",
+    "evidence": "catalog-boxing: boxing__pivot-hook"
+  },
+  {
+    "id": "karate__tai-sabaki-counter",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__angle-counter",
+    "reason": "각도로 빠지며 반격하는 Angle Counter와 같다.",
+    "evidence": "catalog-kickboxing: kickboxing__angle-counter\tAngle Counter\t[카운터]"
+  },
+  {
+    "id": "karate__tai-sabaki-counter",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "타이사바키 카운터 원리는 무에타이 개별 기술이 아니다.",
+    "evidence": "catalog-muay-thai [카운터 종합]"
+  },
+  {
+    "id": "karate__tai-sabaki-counter",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "타이사바키 카운터는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__kizami-zuki-gyaku-zuki",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "boxing__1-2",
+    "reason": "잽-크로스 1-2와 같다.",
+    "evidence": "catalog-boxing: boxing__1-2\t1--2\t[조합]"
+  },
+  {
+    "id": "karate__kizami-zuki-gyaku-zuki",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "muay-thai__jab-to-cross",
+    "reason": "잽-크로스와 같다.",
+    "evidence": "catalog-kickboxing: muay-thai__jab-to-cross\tJab → Cross\t[펀치]"
+  },
+  {
+    "id": "karate__kizami-zuki-gyaku-zuki",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "muay-thai__jab-to-cross",
+    "reason": "잽-크로스와 같다.",
+    "evidence": "catalog-muay-thai: muay-thai__jab-to-cross\tJab → Cross\t[중거리 펀치]"
+  },
+  {
+    "id": "karate__kizami-zuki-gyaku-zuki",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "얼굴 잽-역찌르기 조합은 태권도 겨루기 기술이 아니다.",
+    "evidence": "WT competition rules: 얼굴 주먹 공격 금지"
+  },
+  {
+    "id": "karate__oi-zuki-gyaku-zuki",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "오이즈키-역찌르기 조합는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__oi-zuki-gyaku-zuki",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "오이즈키-역찌르기 조합는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__oi-zuki-gyaku-zuki",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "오이즈키-역찌르기 조합는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__oi-zuki-gyaku-zuki",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "가라테식 전진 찌르기 조합으로 태권도 연결 기술에 없다.",
+    "evidence": "catalog-taekwondo [연결 기술]"
+  },
+  {
+    "id": "karate__gyaku-zuki-mawashi-geri",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱은 주먹 외 타격(발차기·팔꿈치·무릎)이 금지된다.",
+    "evidence": "Boxing rules: 주먹 타격만 허용"
+  },
+  {
+    "id": "karate__gyaku-zuki-mawashi-geri",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__kick-after-punch",
+    "reason": "펀치 후 킥 연결로 Kick After Punch에 포함된다.",
+    "evidence": "catalog-kickboxing: kickboxing__kick-after-punch\tKick After Punch\t[카운터]"
+  },
+  {
+    "id": "karate__gyaku-zuki-mawashi-geri",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "muay-thai__cross-body-kick",
+    "reason": "크로스 후 돌려차기로 Cross--Body Kick과 같다.",
+    "evidence": "catalog-muay-thai: muay-thai__cross-body-kick\tCross--Body Kick\t[중거리 펀치]"
+  },
+  {
+    "id": "karate__gyaku-zuki-mawashi-geri",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "주먹 후 돌려차기는 태권도 카탈로그 연결 기술이 아니다.",
+    "evidence": "catalog-taekwondo [연결 기술]"
+  },
+  {
+    "id": "karate__kizami-zuki-mawashi-geri",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱은 주먹 외 타격(발차기·팔꿈치·무릎)이 금지된다.",
+    "evidence": "Boxing rules: 주먹 타격만 허용"
+  },
+  {
+    "id": "karate__kizami-zuki-mawashi-geri",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__jab-body-kick",
+    "reason": "잽 후 돌려차기로 Jab → Body Kick과 같다.",
+    "evidence": "catalog-kickboxing: kickboxing__jab-body-kick\tJab → Body Kick\t[대표적인 콤비네이션 (연결)]"
+  },
+  {
+    "id": "karate__kizami-zuki-mawashi-geri",
+    "art": "muay-thai",
+    "decision": "add",
+    "confidence": "B",
+    "category": "중거리 펀치",
+    "duplicateOf": null,
+    "reason": "잽으로 반응을 끌어낸 뒤 라운드킥은 무에타이 기본 조합이다.",
+    "evidence": "Muay Thai jab → round kick; catalog-muay-thai [중거리 펀치]에 Jab → Low Kick만 있음"
+  },
+  {
+    "id": "karate__kizami-zuki-mawashi-geri",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "얼굴 잽 후 돌려차기는 태권도 겨루기 기술이 아니다.",
+    "evidence": "WT competition rules: 얼굴 주먹 공격 금지"
+  },
+  {
+    "id": "karate__mae-geri-gyaku-zuki",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱은 주먹 외 타격(발차기·팔꿈치·무릎)이 금지된다.",
+    "evidence": "Boxing rules: 주먹 타격만 허용"
+  },
+  {
+    "id": "karate__mae-geri-gyaku-zuki",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__punch-after-kick",
+    "reason": "킥 후 펀치 연결로 Punch After Kick에 포함된다.",
+    "evidence": "catalog-kickboxing: kickboxing__punch-after-kick\tPunch After Kick\t[카운터]"
+  },
+  {
+    "id": "karate__mae-geri-gyaku-zuki",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "가라테 앞차기-역찌르기 조합은 무에타이 카탈로그 기술이 아니다.",
+    "evidence": "catalog-muay-thai: 티프 조합만 존재"
+  },
+  {
+    "id": "karate__mae-geri-gyaku-zuki",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "앞차기-역찌르기는 태권도 겨루기 연결 기술에 없다.",
+    "evidence": "catalog-taekwondo [연결 기술]"
+  },
+  {
+    "id": "karate__mawashi-geri-gyaku-zuki",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱은 주먹 외 타격(발차기·팔꿈치·무릎)이 금지된다.",
+    "evidence": "Boxing rules: 주먹 타격만 허용"
+  },
+  {
+    "id": "karate__mawashi-geri-gyaku-zuki",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__punch-after-kick",
+    "reason": "킥 후 펀치 연결로 Punch After Kick에 포함된다.",
+    "evidence": "catalog-kickboxing: kickboxing__punch-after-kick\tPunch After Kick\t[카운터]"
+  },
+  {
+    "id": "karate__mawashi-geri-gyaku-zuki",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "돌려차기-역찌르기 조합은 무에타이 카탈로그 기술이 아니다.",
+    "evidence": "catalog-muay-thai [중거리 펀치]"
+  },
+  {
+    "id": "karate__mawashi-geri-gyaku-zuki",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "taekwondo__돌려차기-주먹-반대지르기",
+    "reason": "태권도 돌려차기 → 주먹(반대지르기)과 같은 조합이다.",
+    "evidence": "catalog-taekwondo: taekwondo__돌려차기-주먹-반대지르기\t돌려차기 → 주먹(반대지르기) / 돌려차기 → 주먹(반대지르기)\t[연결 기술 (콤비네이션)]"
+  },
+  {
+    "id": "karate__feint-gyaku-zuki",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "boxing__jab-feint-cross",
+    "reason": "페인트 후 크로스로 Jab Feint → Cross와 같다.",
+    "evidence": "catalog-boxing: boxing__jab-feint-cross\tJab Feint → Cross\t[조합]"
+  },
+  {
+    "id": "karate__feint-gyaku-zuki",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "boxing__feint-entry",
+    "reason": "페인트 후 진입 타격으로 Feint → Entry에 포함된다.",
+    "evidence": "catalog-kickboxing: boxing__feint-entry\tFeint → Entry\t[페인트 (Feint)]"
+  },
+  {
+    "id": "karate__feint-gyaku-zuki",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "페인트-역찌르기 조합은 무에타이 별도 기술이 아니다.",
+    "evidence": "catalog-muay-thai"
+  },
+  {
+    "id": "karate__feint-gyaku-zuki",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "페인트-역찌르기 조합은 태권도 연결 기술이 아니다.",
+    "evidence": "catalog-taekwondo [연결 기술]"
+  },
+  {
+    "id": "karate__step-kizami-zuki",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__jab",
+    "reason": "스텝을 동반한 잽은 기본 잽과 같다.",
+    "evidence": "catalog-boxing: kickboxing__jab\tJab / 잽\t[거리별 포지션]"
+  },
+  {
+    "id": "karate__step-kizami-zuki",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__jab",
+    "reason": "스텝을 동반한 잽은 기본 잽과 같다.",
+    "evidence": "catalog-kickboxing: kickboxing__jab\tJab / 잽\t[펀치]"
+  },
+  {
+    "id": "karate__step-kizami-zuki",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__jab",
+    "reason": "스텝을 동반한 잽은 기본 잽과 같다.",
+    "evidence": "catalog-muay-thai: kickboxing__jab\tJab / 잽\t[중거리 펀치]"
+  },
+  {
+    "id": "karate__step-kizami-zuki",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "얼굴 잽 진입은 태권도 겨루기 기술이 아니다.",
+    "evidence": "WT competition rules: 얼굴 주먹 공격 금지"
+  },
+  {
+    "id": "karate__sen",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "선노센는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__sen",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "선노센는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__sen",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "선노센는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__sen",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "선노센는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__tai-no-sen",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "타이노센는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__tai-no-sen",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "타이노센는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__tai-no-sen",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "타이노센는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__tai-no-sen",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "타이노센는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__go-no-sen",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "고노센는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__go-no-sen",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "고노센는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__go-no-sen",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "고노센는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__go-no-sen",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "고노센는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__deai",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "데아이는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__deai",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "데아이는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__deai",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "데아이는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__deai",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "데아이는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__tobi-komi",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "도약해 뛰어드는 토비코미는 복싱 기술이 아니다.",
+    "evidence": "catalog-boxing [풋워크]"
+  },
+  {
+    "id": "karate__tobi-komi",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__블리츠",
+    "reason": "포인트 스파링의 블리츠와 같은 돌진 진입이다.",
+    "evidence": "catalog-kickboxing: kickboxing__블리츠\t블리츠 / 블리츠\t[포인트 스파링 특유 전술]"
+  },
+  {
+    "id": "karate__tobi-komi",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "토비코미식 돌진 진입은 무에타이 기술이 아니다.",
+    "evidence": "catalog-muay-thai"
+  },
+  {
+    "id": "karate__tobi-komi",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "토비코미는 태권도 이동 목록에 없는 가라테 진입이다.",
+    "evidence": "catalog-taekwondo [이동 / 풋워크]"
+  },
+  {
+    "id": "karate__maai-유지-전술",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "boxing__거리-관리",
+    "reason": "복싱 거리 관리로 이미 있다.",
+    "evidence": "catalog-boxing: boxing__거리-관리\t거리 관리 / 거리 관리\t[링 제너럴십 (Ring Generalship)]"
+  },
+  {
+    "id": "karate__maai-유지-전술",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "마아이 유지 전술는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__maai-유지-전술",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "마아이 유지 전술는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__maai-유지-전술",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "마아이 유지 전술는 가라테 쿠미테의 개념/원리로 대상 무술의 개별 기술이 아니다.",
+    "evidence": "karate kumite 원리; 대상 무술 카탈로그에 기술로 없음"
+  },
+  {
+    "id": "karate__bunkai",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "분카이는 가타 해석으로 대상 무술의 기술이 아니다.",
+    "evidence": "karate kata bunkai"
+  },
+  {
+    "id": "karate__bunkai",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "분카이는 가타 해석으로 대상 무술의 기술이 아니다.",
+    "evidence": "karate kata bunkai"
+  },
+  {
+    "id": "karate__bunkai",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "분카이는 가타 해석으로 대상 무술의 기술이 아니다.",
+    "evidence": "karate kata bunkai"
+  },
+  {
+    "id": "karate__bunkai",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "분카이는 가라테 가타 해석이며 태권도 품새 기술이 아니다.",
+    "evidence": "karate kata bunkai"
+  },
+  {
+    "id": "karate__kuzushi",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "균형 무너뜨리기는 복싱 기술이 아니다.",
+    "evidence": "Boxing rules: 밀기·잡아 넘기기 반칙"
+  },
+  {
+    "id": "karate__kuzushi",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "kickboxing__off-balance",
+    "reason": "클린치 Off-Balance와 같다.",
+    "evidence": "catalog-kickboxing: kickboxing__off-balance\tOff-Balance\t[클린치 / 근거리 제어]"
+  },
+  {
+    "id": "karate__kuzushi",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "잡아서 무너뜨리기는 태권도 겨루기 기술이 아니다.",
+    "evidence": "WT competition rules: 잡기 금지"
+  },
+  {
+    "id": "karate__hiki-te",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "히키테는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__hiki-te",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "히키테는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__hiki-te",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "히키테는 가라테 기본기(키혼) 형태로 대상 무술에서 별도 기술로 쓰지 않는다.",
+    "evidence": "karate kihon; 대상 무술 카탈로그에 동일 기술 없음"
+  },
+  {
+    "id": "karate__hiki-te",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "당기는 손은 지르기의 구성 동작일 뿐 별도 기술 항목이 아니다.",
+    "evidence": "catalog-taekwondo [손기술]: 지르기"
+  },
+  {
+    "id": "karate__osae",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "누르기 제압은 복싱 기술이 아니다.",
+    "evidence": "Boxing rules: 홀딩 반칙"
+  },
+  {
+    "id": "karate__osae",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "누르기 제압은 킥복싱 기술이 아니다.",
+    "evidence": "catalog-kickboxing [클린치]"
+  },
+  {
+    "id": "karate__osae",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "가라테 분카이식 누르기는 무에타이 기술이 아니다.",
+    "evidence": "catalog-muay-thai [클린치]"
+  },
+  {
+    "id": "karate__osae",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "가라테 분카이식 누르기는 태권도 기술이 아니다.",
+    "evidence": "catalog-taekwondo"
+  },
+  {
+    "id": "karate__kote-gaeshi",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "관절기는 복싱에서 금지다.",
+    "evidence": "Boxing rules"
+  },
+  {
+    "id": "karate__kote-gaeshi",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "관절기는 킥복싱에서 금지다.",
+    "evidence": "K-1/Glory rules"
+  },
+  {
+    "id": "karate__kote-gaeshi",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "관절기는 무에타이에서 금지다.",
+    "evidence": "Muay Thai rules: 관절기 금지"
+  },
+  {
+    "id": "karate__kote-gaeshi",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "손목 꺾기 자기방어 응용은 태권도 카탈로그 기술이 아니다.",
+    "evidence": "catalog-taekwondo: taekwondo__손목-잡힘-대응(별개)"
+  },
+  {
+    "id": "karate__ashi-barai",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "발 걸기는 복싱 반칙이다.",
+    "evidence": "Boxing rules: tripping 금지"
+  },
+  {
+    "id": "karate__ashi-barai",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "발 걸어 넘기기는 K-1/Glory 규칙에서 허용되지 않는다.",
+    "evidence": "K-1/Glory rules: sweeps 금지"
+  },
+  {
+    "id": "karate__ashi-barai",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "muay-thai__sweep-foot-sweep",
+    "reason": "무에타이 Sweep / Foot Sweep과 같다.",
+    "evidence": "catalog-muay-thai: muay-thai__sweep-foot-sweep\tSweep / Foot Sweep\t[클린치 (Clinch)]"
+  },
+  {
+    "id": "karate__ashi-barai",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "다리 걸기는 태권도 겨루기 반칙이다.",
+    "evidence": "WT competition rules: 넘어뜨리기 금지"
+  },
+  {
+    "id": "karate__ibuki",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "이부키는 가라테 고유 호흡법으로 대상 무술 기술이 아니다.",
+    "evidence": "karate kokyu-ho"
+  },
+  {
+    "id": "karate__ibuki",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "이부키는 가라테 고유 호흡법이다.",
+    "evidence": "karate kokyu-ho"
+  },
+  {
+    "id": "karate__ibuki",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "이부키는 가라테 고유 호흡법이다.",
+    "evidence": "karate kokyu-ho"
+  },
+  {
+    "id": "karate__ibuki",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "이부키는 가라테 고유 호흡법이다.",
+    "evidence": "karate kokyu-ho"
+  },
+  {
+    "id": "karate__nogare",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "노가레는 가라테 고유 호흡법으로 대상 무술 기술이 아니다.",
+    "evidence": "karate kokyu-ho"
+  },
+  {
+    "id": "karate__nogare",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "노가레는 가라테 고유 호흡법이다.",
+    "evidence": "karate kokyu-ho"
+  },
+  {
+    "id": "karate__nogare",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "노가레는 가라테 고유 호흡법이다.",
+    "evidence": "karate kokyu-ho"
+  },
+  {
+    "id": "karate__nogare",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "노가레는 가라테 고유 호흡법이다.",
+    "evidence": "karate kokyu-ho"
+  },
+  {
+    "id": "karate__특징",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유파 설명 제목으로 기술이 아니다.",
+    "evidence": "heading: 유파별 대표 기술과 가타"
+  },
+  {
+    "id": "karate__특징",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유파 설명 제목으로 기술이 아니다.",
+    "evidence": "heading: 유파별 대표 기술과 가타"
+  },
+  {
+    "id": "karate__특징",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유파 설명 제목으로 기술이 아니다.",
+    "evidence": "heading: 유파별 대표 기술과 가타"
+  }
+]

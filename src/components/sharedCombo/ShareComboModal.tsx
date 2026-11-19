@@ -1,3 +1,4 @@
+import Icon from '../Icon';
 import { useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
@@ -76,7 +77,7 @@ export default function ShareComboModal(props: { source: ShareSource; onClose: (
 
   return createPortal(
     <BottomSheet onClose={props.onClose} className="share-combo-modal">
-      <h3 style={{ marginTop: 0 }}>🧑‍🤝‍🧑 사용자 콤보·셋업에 공유</h3>
+      <h3 style={{ marginTop: 0 }}><Icon name="users" /> 사용자 콤보·셋업에 공유</h3>
       {!user ? (
         <p data-testid="share-combo-login">
           공유하려면 로그인이 필요합니다. <Link to="/login">로그인하기</Link>

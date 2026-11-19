@@ -1,0 +1,103 @@
+/* MARTIALDEX brand — base: document, type, rhythm. Loaded after every legacy sheet. */
+@import '@fontsource/bebas-neue/400.css';
+@import '@fontsource/cinzel/500.css';
+@import '@fontsource/cinzel/700.css';
+@import '@fontsource/barlow/400.css';
+@import '@fontsource/barlow/500.css';
+@import '@fontsource/barlow/600.css';
+@import '@fontsource/barlow/700.css';
+@import '@fontsource/barlow-condensed/500.css';
+@import '@fontsource/barlow-condensed/600.css';
+@import '@fontsource/barlow-condensed/700.css';
+@import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
+
+html {
+  background: var(--mx-bg);
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  background: var(--mx-bg);
+  color: var(--mx-fg);
+  font-family: var(--mx-font-ui);
+  font-size: var(--mx-fs-body);
+  line-height: 1.6;
+  letter-spacing: 0.005em;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'tnum' 0, 'kern' 1;
+}
+/* the legacy sheets paint textures / gradients on body — the brand ground is a flat field */
+body::before,
+body::after {
+  display: none !important;
+}
+
+::selection {
+  background: var(--mx-accent);
+  color: var(--mx-accent-fg);
+}
+
+h1, h2, h3, h4 {
+  color: var(--mx-fg);
+  font-family: var(--mx-font-ui);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--mx-line-2);
+  text-underline-offset: 3px;
+  transition: color var(--mx-dur-1) var(--mx-ease), text-decoration-color var(--mx-dur-1) var(--mx-ease);
+}
+a:hover {
+  color: var(--mx-accent);
+  text-decoration-color: currentColor;
+}
+
+:focus-visible {
+  outline: 1px solid var(--mx-accent);
+  outline-offset: 3px;
+}
+
+hr {
+  border: 0;
+  border-top: var(--mx-hair);
+}
+
+/* numbers read like a scoreboard everywhere they're set in tabular contexts */
+.mx-num,
+.eco-metric__value,
+.eco-bar__value,
+.stat-row strong {
+  font-family: var(--mx-font-num);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+
+/* scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--mx-steel) transparent;
+}
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-thumb { background: var(--mx-steel); }
+*::-webkit-scrollbar-track { background: transparent; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Bebas Neue / Cinzel have no Hangul: Korean in display contexts falls back to Pretendard, which should be bold —
+   weight 700 + font-synthesis:none gives Pretendard Bold for Hangul while Bebas keeps its single true weight. */
+.mx-display, .mx-cover__title, .section-title h2, .section-title h3, .eco-page-head h2, .detail-hero h1,
+.mx-page-masthead h1, .mx-auth h1, .mx-auth h2, .modal-panel h3, .mx-shelf__head h2, .mx-index-menu__title,
+.mx-tile__title, .mx-art-plate .art-card__name-en, .mx-footer__head, .eco-metric__value, .mx-figures strong,
+.mx-side-item__value, .mx-cover__stats dd, .mx-page-masthead__figure strong {
+  font-weight: 700 !important;
+  font-synthesis: none;
+}

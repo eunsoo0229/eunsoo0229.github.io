@@ -1,3 +1,4 @@
+import Icon from './Icon';
 import { useState } from 'react';
 import type { Technique } from '../types';
 import { analyzeGiNoGi, saveLocalGiNoGi } from '../lib/grappling/analyzeNewTechnique';
@@ -25,7 +26,7 @@ export default function GiNoGiResearch({ technique, failedReason }: { technique:
 
   return (
     <div className="card info-card" data-testid="gi-nogi-research">
-      <h3>🥋 Gi / No-Gi 수행 방식</h3>
+      <h3><Icon name="gi" /> Gi / No-Gi 수행 방식</h3>
       <p className="video-status-message">
         {failedReason ?? '새로 추가된 그래플링 기술이라 아직 Gi / No-Gi 구분이 조사되지 않았습니다.'} 웹 자료를 근거로 Gi와 No-Gi에서 각각 어떻게 하는지 조사할 수 있습니다.
       </p>

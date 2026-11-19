@@ -1,25 +1,13 @@
-import type { TrainingHistoryEntry, TrainingSource } from '../lib/trainingHistory/types';
+import Icon from './Icon';
+import type { TrainingHistoryEntry } from '../lib/trainingHistory/types';
 import { getMartialArt } from '../lib/loadData';
 import { GYM_MARTIAL_ART_ID } from '../lib/gymTraining/library';
 import { WEEKDAY_LABEL } from '../lib/dateUtil';
 import { deriveEntryCurriculumTitle, deriveEntryMartialArt, deriveEntrySetsReps, deriveEntryTechniqueNames } from '../lib/trainingAnalytics/historyView';
+import { SourceIcon } from './icons/BrandAssets';
 
-// Same "Record<T, string> icon constant" convention as MASTERY_ICON/
-// REVIEW_TIER_ICON — a small visual cue for source, per spec item 12's
-// "🥊 체육관 복싱 수업 / 🏋 하체 근력 루틴" style examples.
-const SOURCE_ICON: Record<TrainingSource, string> = {
-  curriculum: '📘',
-  coach_today: '🔥',
-  sparring: '🥊',
-  review: '🔁',
-  combo: '🔗',
-  shadow: '🌀',
-  free_training: '🏃',
-  gym_class: '🥋',
-  sparring_session: '🤼',
-  ground_battle: '⚔️', // removed feature — past entries only
-  visual_mitt: '🥊',
-};
+// The source cue in front of each title is the Forge 'sources' glyph (SourceIcon) — the
+// "🥊 체육관 복싱 수업 / 🏋 하체 근력 루틴" examples of spec item 12, as icons.
 
 // One real TrainingHistoryEntry rendered as a clickable row — the exact
 // markup previously duplicated across TrainingAnalytics.tsx (recent list +
@@ -48,8 +36,6 @@ export default function TrainingEntryRow({
   const techniqueNames = deriveEntryTechniqueNames(entry);
   const setsReps = deriveEntrySetsReps(entry);
   const duration = entry.actualMinutes ?? entry.estimatedMinutes;
-  const icon =
-    entry.source === 'gym_class' && derivedMartialArt === GYM_MARTIAL_ART_ID ? '🏋' : SOURCE_ICON[entry.source] ?? '🥋';
   const baseTitle = entry.gymClassMeta
     ? `체육관 · ${entry.gymClassMeta.classTitle}`
     : entry.visualMitt
@@ -57,7 +43,12 @@ export default function TrainingEntryRow({
       : entry.gymRoutine
         ? `${entry.gymRoutine.routineName} · ${WEEKDAY_LABEL[entry.gymRoutine.weekday]}요일 루틴${entry.gymRoutine.substituted ? ' 기반' : ''}`
       : curriculumTitle ?? martialArtName ?? '훈련';
-  const title = `${icon} ${baseTitle}`;
+  const fitness = entry.source === 'gym_class' && derivedMartialArt === GYM_MARTIAL_ART_ID;
+  const title = (
+    <>
+      <SourceIcon source={entry.source} fitness={fitness} /> {baseTitle}
+    </>
+  );
 
   if (compact) {
     return (
@@ -68,7 +59,7 @@ export default function TrainingEntryRow({
         </button>
         {onDelete && (
           <button type="button" className="icon-action-btn" aria-label="삭제" onClick={onDelete}>
-            ✕
+            <Icon name="close" />
           </button>
         )}
       </div>
@@ -92,7 +83,7 @@ export default function TrainingEntryRow({
       </button>
       {onDelete && (
         <button type="button" className="icon-action-btn" aria-label="삭제" onClick={onDelete}>
-          ✕
+          <Icon name="close" />
         </button>
       )}
     </div>

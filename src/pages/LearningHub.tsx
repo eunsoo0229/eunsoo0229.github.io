@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { Link } from 'react-router-dom';
 import { martialArtSummaries } from '../lib/loadData';
 import { getOfficialCurriculum } from '../lib/curriculum/officialData';
@@ -30,7 +31,7 @@ export default function LearningHub() {
 
         <section>
           <Link to="/ai-curriculum" className="card info-card" style={{ display: 'block' }}>
-            <h3>🧠 AI 맞춤 커리큘럼</h3>
+            <h3><Icon name="brain" /> AI 맞춤 커리큘럼</h3>
             <p style={{ margin: 0 }}>목표나 부족한 부분을 자유롭게 입력하면 AI가 나에게 맞는 커리큘럼을 만들어줍니다.</p>
           </Link>
         </section>

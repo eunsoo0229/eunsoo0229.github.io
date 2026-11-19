@@ -1,0 +1,2405 @@
+{
+ "version": 1,
+ "generatedAt": "2026-11-01T02:17:02.694Z",
+ "about": "Per art: the encyclopedia sections (= the official categories, in the encyclopedia order) with the sub-headings inside them and the records under each. Built by scripts/build-knowledge-curation.mjs from data/raw; record ids are unchanged. New sub-categories are added only through approved candidates.",
+ "arts": {
+  "bjj": [
+   {
+    "category": "기본 움직임과 연결 기술",
+    "order": 2,
+    "section": 2,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#2",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 15
+   },
+   {
+    "category": "스탠딩 / 테이크다운",
+    "order": 3,
+    "section": 3,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#3",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "오소독스/레슬링 계열",
+      "order": 7,
+      "techniqueIds": [
+       "wrestling__ankle-pick",
+       "bjj__knee-tap",
+       "bjj__arm-drag",
+       "wrestling__snap-down",
+       "bjj__duck-under",
+       "sambo__fireman-s-carry",
+       "bjj__russian-tie-takedown"
+      ]
+     },
+     {
+      "title": "유도/기 계열",
+      "order": 8,
+      "techniqueIds": [
+       "judo__osoto-gari",
+       "judo__ouchi-gari",
+       "judo__kouchi-gari",
+       "judo__harai-goshi",
+       "judo__uchi-mata",
+       "judo__sasae-tsurikomi-ashi"
+      ]
+     }
+    ],
+    "count": 29
+   },
+   {
+    "category": "클로즈드 가드 (Closed Guard)",
+    "order": 4,
+    "section": 4,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#4",
+    "paragraph": "상대의 허리를 다리로 감싼 기본 가드.",
+    "subcategories": [
+     {
+      "title": "기본 컨트롤",
+      "order": 1,
+      "techniqueIds": [
+       "bjj__collar-sleeve",
+       "bjj__double-sleeve",
+       "bjj__overhook",
+       "bjj__underhook",
+       "bjj__wrist-control",
+       "bjj__head-control",
+       "bjj__hip-control"
+      ]
+     },
+     {
+      "title": "클로즈드 가드 스윕",
+      "order": 3,
+      "techniqueIds": [
+       "bjj__hip-bump-sweep",
+       "bjj__scissor-sweep",
+       "bjj__pendulum-sweep",
+       "bjj__flower-sweep",
+       "bjj__lumberjack-sweep",
+       "bjj__sit-up-sweep",
+       "bjj__tripod-계열-스윕",
+       "bjj__shoulder-clamp-sweep"
+      ]
+     }
+    ],
+    "count": 27
+   },
+   {
+    "category": "오픈 가드 (Open Guard)",
+    "order": 5,
+    "section": 5,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#5",
+    "paragraph": "다리를 상대에게 자유롭게 연결하면서 거리와 균형을 조절하는 가드. 대표적인 형태: - Feet on Hips - Collar & Sleeve - Double Sleeve - Spider Guard - Lasso Guard - Butterfly Guard - De La Riva - Reverse De La Riva - X Guard - Single Leg X",
+    "subcategories": [
+     {
+      "title": "오픈 가드 기본 공격",
+      "order": 1,
+      "techniqueIds": [
+       "bjj__technical-stand-up",
+       "bjj__off-balancing",
+       "bjj__tripod-sweep",
+       "bjj__balloon-sweep",
+       "bjj__single-leg-entry",
+       "bjj__back-take"
+      ]
+     }
+    ],
+    "count": 14
+   },
+   {
+    "category": "버터플라이 가드 (Butterfly Guard)",
+    "order": 6,
+    "section": 6,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#6",
+    "paragraph": "양쪽 발을 상대 허벅지 안쪽에 넣는 가드.",
+    "subcategories": [
+     {
+      "title": "기본 기술",
+      "order": 1,
+      "techniqueIds": [
+       "bjj__butterfly-sweep",
+       "bjj__elevation",
+       "bjj__sit-up-guard"
+      ]
+     },
+     {
+      "title": "스윕",
+      "order": 2,
+      "techniqueIds": [
+       "bjj__butterfly-sweep",
+       "bjj__double-under-butterfly-sweep",
+       "bjj__arm-drag-sweep",
+       "bjj__shoulder-crunch-sweep",
+       "bjj__underhook-sweep",
+       "bjj__tripod-style-butterfly-sweep",
+       "bjj__hook-sweep"
+      ]
+     }
+    ],
+    "count": 9
+   },
+   {
+    "category": "스파이더 가드 (Spider Guard)",
+    "order": 7,
+    "section": 7,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#7",
+    "paragraph": "소매를 잡고 발을 상대의 팔/이두근 주변에 사용하는 가드. 주요 기술: - Spider Sweep - Balloon Sweep - Triangle Entry - Omoplata Entry - De La Riva Transition - Lasso Transition - Spider to X Guard - Spider to Single Leg",
+    "subcategories": [],
+    "count": 7
+   },
+   {
+    "category": "라쏘 가드 (Lasso Guard)",
+    "order": 8,
+    "section": 8,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#8",
+    "paragraph": "다리를 상대 팔 주위에 감아 팔의 움직임을 제한하는 가드. 주요 기술: - Lasso Sweep - Lasso to Spider - Lasso to Omoplata - Lasso to Triangle - Lasso to X Guard - Lasso to Back Take",
+    "subcategories": [],
+    "count": 6
+   },
+   {
+    "category": "데 라 히바 (De La Riva Guard)",
+    "order": 9,
+    "section": 9,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#9",
+    "paragraph": "상대 다리 바깥쪽에서 다리를 걸어 균형을 제어하는 가드.",
+    "subcategories": [
+     {
+      "title": "기본 기술",
+      "order": 1,
+      "techniqueIds": [
+       "bjj__dlr-hook",
+       "bjj__grip-fighting",
+       "bjj__berimbolo-entry",
+       "bjj__kiss-of-the-dragon",
+       "bjj__x-guard-entry"
+      ]
+     },
+     {
+      "title": "스윕",
+      "order": 2,
+      "techniqueIds": [
+       "bjj__technical-stand-up-sweep",
+       "bjj__dlr-technical-sweep",
+       "bjj__baby-bolo-sweep",
+       "bjj__dlr-to-x-guard-sweep"
+      ]
+     },
+     {
+      "title": "백 테이크",
+      "order": 3,
+      "techniqueIds": [
+       "bjj__berimbolo",
+       "bjj__kiss-of-the-dragon"
+      ]
+     }
+    ],
+    "count": 12
+   },
+   {
+    "category": "X 가드 (X-Guard)",
+    "order": 10,
+    "section": 10,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#10",
+    "paragraph": "상대의 한쪽 다리를 여러 방향에서 제어하는 가드. 주요 기술: - Technical Stand-Up Sweep - Tripod Sweep - X Guard Sweep - Back Sweep - Ankle Pick - Single Leg Transition - SLX Transition - Back Take",
+    "subcategories": [],
+    "count": 4
+   },
+   {
+    "category": "싱글 레그 X (SLX / Single Leg X)",
+    "order": 11,
+    "section": 11,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#11",
+    "paragraph": "상대의 한쪽 다리를 집중적으로 제어하는 포지션. 주요 기술: - Technical Stand-Up - SLX Sweep - Technical Sweep - Outside Sweep - Inside Sweep - X Guard Transition - Ashi Garami Transition - Back Take Transition",
+    "subcategories": [],
+    "count": 7
+   },
+   {
+    "category": "하프 가드 (Half Guard)",
+    "order": 12,
+    "section": 12,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#12",
+    "paragraph": "상대의 한쪽 다리를 자신의 두 다리 사이에서 제어하는 포지션.",
+    "subcategories": [
+     {
+      "title": "기본 형태",
+      "order": 1,
+      "techniqueIds": [
+       "bjj__knee-shield-half-guard",
+       "bjj__z-guard",
+       "bjj__deep-half-guard",
+       "bjj__lockdown",
+       "bjj__dogfight",
+       "bjj__underhook-half-guard",
+       "bjj__butterfly-half-guard"
+      ]
+     },
+     {
+      "title": "하프 가드 스윕",
+      "order": 2,
+      "techniqueIds": [
+       "bjj__old-school-sweep",
+       "bjj__electric-chair-sweep",
+       "bjj__plan-b-sweep",
+       "bjj__john-wayne-sweep",
+       "bjj__dogfight-sweep",
+       "bjj__single-leg-finish"
+      ]
+     }
+    ],
+    "count": 17
+   },
+   {
+    "category": "딥 하프 가드 (Deep Half Guard)",
+    "order": 13,
+    "section": 13,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#13",
+    "paragraph": "상대의 다리 깊숙이 들어가 하체와 중심을 제어하는 가드. 대표 기술: - Old School - Homer Simpson - Electric Chair - Backdoor Escape - Deep Half Sweep - Wrestle-Up - Back Take",
+    "subcategories": [],
+    "count": 6
+   },
+   {
+    "category": "패스 가드 (Guard Passing)",
+    "order": 14,
+    "section": 14,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#14",
+    "paragraph": "상대 가드를 통과하여 상위 포지션을 확보하는 기술군.",
+    "subcategories": [
+     {
+      "title": "기본 패스",
+      "order": 1,
+      "techniqueIds": [
+       "bjj__knee-cut-pass",
+       "bjj__torreando-pass",
+       "bjj__leg-drag",
+       "bjj__over-under-pass",
+       "bjj__double-under-pass",
+       "bjj__body-lock-pass",
+       "bjj__stack-pass",
+       "bjj__smash-pass",
+       "bjj__long-step",
+       "bjj__x-pass",
+       "bjj__headquarters-pass",
+       "bjj__folding-pass",
+       "bjj__leg-weave-pass"
+      ]
+     },
+     {
+      "title": "패스에서 중요한 컨트롤",
+      "order": 2,
+      "techniqueIds": [
+       "wrestling__crossface",
+       "bjj__leg-control",
+       "bjj__pant-grip"
+      ]
+     }
+    ],
+    "count": 16
+   },
+   {
+    "category": "사이드 컨트롤 (Side Control)",
+    "order": 15,
+    "section": 15,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#15",
+    "paragraph": "상대의 상체를 옆에서 제어하는 대표적인 탑 포지션.",
+    "subcategories": [
+     {
+      "title": "기본 컨트롤",
+      "order": 1,
+      "techniqueIds": [
+       "bjj__far-side-underhook",
+       "bjj__near-side-underhook",
+       "bjj__shoulder-pressure",
+       "judo__kesa-gatame",
+       "bjj__reverse-kesa-gatame"
+      ]
+     },
+     {
+      "title": "사이드 컨트롤 공격",
+      "order": 2,
+      "techniqueIds": [
+       "bjj__paper-cutter-choke",
+       "bjj__baseball-bat-choke",
+       "bjj__north-south-choke",
+       "bjj__d-arce-choke",
+       "bjj__anaconda-choke",
+       "bjj__arm-triangle",
+       "bjj__straight-armbar"
+      ]
+     }
+    ],
+    "count": 12
+   },
+   {
+    "category": "니 온 벨리 (Knee on Belly)",
+    "order": 16,
+    "section": 16,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#16",
+    "paragraph": "무릎을 상대의 몸통에 두어 이동성과 압박을 동시에 확보하는 포지션. 주요 기술: - Knee on Belly Control - Technical Mount Transition - Mount Transition - Back Take - Armbar - Kimura - Baseball Bat Choke - Cross Collar Choke - Ezekiel - Knee-on-Belly to Side Control",
+    "subcategories": [],
+    "count": 4
+   },
+   {
+    "category": "노스 사우스 (North-South)",
+    "order": 17,
+    "section": 17,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#17",
+    "paragraph": "상대 머리와 반대 방향으로 위치하여 상체를 제어하는 포지션. 주요 기술: - North-South Control - North-South Choke - Kimura - Americana - Armbar - Side Control Transition - Backstep - Mount Transition",
+    "subcategories": [],
+    "count": 3
+   },
+   {
+    "category": "마운트 (Mount)",
+    "order": 18,
+    "section": 18,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#18",
+    "paragraph": "상대의 몸통 위에 올라가 상위권을 확보하는 핵심 포지션.",
+    "subcategories": [
+     {
+      "title": "마운트 형태",
+      "order": 1,
+      "techniqueIds": [
+       "bjj__low-mount",
+       "bjj__high-mount",
+       "bjj__technical-mount",
+       "bjj__s-mount",
+       "bjj__knee-mount"
+      ]
+     },
+     {
+      "title": "마운트 탈출",
+      "order": 3,
+      "techniqueIds": [
+       "bjj__elbow-knee-escape",
+       "bjj__knee-elbow-escape",
+       "bjj__half-guard-recovery"
+      ]
+     },
+     {
+      "title": "마운트 공격",
+      "order": 4,
+      "techniqueIds": [
+       "bjj__gift-wrap",
+       "bjj__s-mount-armbar",
+       "bjj__double-armbar",
+       "bjj__mounted-triangle",
+       "bjj__head-and-arm-choke"
+      ]
+     }
+    ],
+    "count": 13
+   },
+   {
+    "category": "백 컨트롤 (Back Control)",
+    "order": 19,
+    "section": 19,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#19",
+    "paragraph": "상대의 등 뒤를 확보하는 매우 강력한 포지션.",
+    "subcategories": [
+     {
+      "title": "기본 컨트롤",
+      "order": 1,
+      "techniqueIds": [
+       "bjj__seatbelt",
+       "judo__two-on-one",
+       "bjj__body-triangle",
+       "bjj__hooks",
+       "bjj__trap-and-roll-prevention",
+       "bjj__hand-fighting"
+      ]
+     },
+     {
+      "title": "백 테이크",
+      "order": 2,
+      "techniqueIds": [
+       "bjj__chair-sit",
+       "bjj__technical-mount-back",
+       "bjj__turtle-back",
+       "bjj__arm-drag-back",
+       "bjj__gift-wrap-back",
+       "bjj__crucifix-back",
+       "bjj__truck-back"
+      ]
+     },
+     {
+      "title": "백에서의 대표 공격",
+      "order": 3,
+      "techniqueIds": [
+       "bjj__rear-naked-choke",
+       "bjj__short-choke",
+       "bjj__bow-and-arrow-choke",
+       "bjj__collar-choke",
+       "bjj__crucifix-attacks"
+      ]
+     }
+    ],
+    "count": 19
+   },
+   {
+    "category": "터틀 (Turtle)",
+    "order": 20,
+    "section": 20,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#20",
+    "paragraph": "상대가 네 발에 가까운 방어 자세를 취한 상태.",
+    "subcategories": [
+     {
+      "title": "탑에서",
+      "order": 1,
+      "techniqueIds": [
+       "wrestling__spiral-ride",
+       "bjj__breakdown",
+       "wrestling__mat-return",
+       "wrestling__front-headlock",
+       "bjj__crucifix",
+       "bjj__clock-choke",
+       "bjj__bow-and-arrow-entry",
+       "bjj__armbar-entry"
+      ]
+     },
+     {
+      "title": "바텀에서",
+      "order": 2,
+      "techniqueIds": [
+       "wrestling__sit-out",
+       "wrestling__granby-roll",
+       "judo__guard-recovery",
+       "wrestling__stand-up"
+      ]
+     }
+    ],
+    "count": 12
+   },
+   {
+    "category": "프론트 헤드락 (Front Headlock)",
+    "order": 21,
+    "section": 21,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#21",
+    "paragraph": "상대의 머리와 팔을 앞에서 제어하는 포지션. 주요 기술: - Snap Down - Go-Behind - Spin Behind - Anaconda Choke - D'Arce Choke - Guillotine - Japanese Necktie - Peruvian Necktie - Arm-In Guillotine - Front Headlock to Back",
+    "subcategories": [],
+    "count": 7
+   },
+   {
+    "category": "크루시픽스 (Crucifix)",
+    "order": 22,
+    "section": 22,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#22",
+    "paragraph": "상대의 팔을 다리와 팔로 고정하는 포지션. 주요 연결: - Turtle → Crucifix - Side Control → Crucifix - Back Control → Crucifix - Crucifix Choke - Armbar - Transition to Back",
+    "subcategories": [],
+    "count": 5
+   },
+   {
+    "category": "아시 가라미 (Ashi Garami)",
+    "order": 23,
+    "section": 23,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#23",
+    "paragraph": "하체를 제어하는 대표적인 포지션군. 주요 형태: - Standard Ashi - Outside Ashi - Inside Ashi - Single Leg X - 50/50 - Saddle - Inside Sankaku - Outside Sankaku > 하체 관절기는 위험도가 높으므로 반드시 지도자의 감독과 해당 체육관의 > 규칙에 따라 연습한다.",
+    "subcategories": [],
+    "count": 7
+   },
+   {
+    "category": "50/50 가드",
+    "order": 24,
+    "section": 24,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#24",
+    "paragraph": "양쪽이 서로 비슷한 다리 포지션을 갖는 대칭적 하체 포지션. 대표 기술: - 50/50 Sweep - Technical Stand-Up - Backside 50/50 - Leg Drag - Transition to SLX - Transition to X Guard - Back Take",
+    "subcategories": [],
+    "count": 4
+   },
+   {
+    "category": "레그락 계열",
+    "order": 25,
+    "section": 25,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#25",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "대표적인 하체 서브미션",
+      "order": 1,
+      "techniqueIds": [
+       "bjj__straight-ankle-lock",
+       "bjj__outside-ankle-lock",
+       "bjj__inside-ankle-lock",
+       "bjj__toe-hold",
+       "bjj__kneebar",
+       "bjj__heel-hook",
+       "bjj__calf-slicer"
+      ]
+     }
+    ],
+    "count": 7
+   },
+   {
+    "category": "암바 계열",
+    "order": 27,
+    "section": 27,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#27",
+    "paragraph": "대표적인 암바 진입 포지션: - Closed Guard - Mount - S-Mount - Side Control - Knee on Belly - Back Control - Spider Guard - Triangle 대표 연결: - Triangle → Armbar - Kimura → Armbar - Omoplata → Armbar - Mount → S-Mount → Armbar - Side Control → Armbar",
+    "subcategories": [],
+    "count": 11
+   },
+   {
+    "category": "트라이앵글 계열",
+    "order": 28,
+    "section": 28,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#28",
+    "paragraph": "대표적인 형태: - Arm Triangle - Triangle Choke - Mounted Triangle - Reverse Triangle - Side Triangle - Inverted Triangle 주요 진입: - Closed Guard - Spider Guard - Mount - Side Control - Back Control",
+    "subcategories": [],
+    "count": 4
+   },
+   {
+    "category": "김우라 계열",
+    "order": 29,
+    "section": 29,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#29",
+    "paragraph": "대표적인 진입: - Closed Guard - Side Control - Half Guard - North-South - Turtle - Mount 주요 활용: - Kimura - Kimura Trap - Kimura Sweep - Kimura Back Take - Kimura Control - Kimura → Armbar - Kimura → Triangle",
+    "subcategories": [],
+    "count": 8
+   },
+   {
+    "category": "암 드래그 (Arm Drag)",
+    "order": 30,
+    "section": 30,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#30",
+    "paragraph": "상대 팔을 끌어 몸의 옆이나 뒤쪽으로 이동하는 기술. 주요 연결: - Arm Drag → Back Take - Arm Drag → Single Leg - Arm Drag → Butterfly Sweep - Arm Drag → Closed Guard - Arm Drag → Turtle Attack",
+    "subcategories": [],
+    "count": 5
+   },
+   {
+    "category": "백 테이크 기술 모음",
+    "order": 31,
+    "section": 31,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#31",
+    "paragraph": "대표적인 백 테이크: - Arm Drag Back Take - Technical Stand-Up Back Take - Turtle Back Take - Seatbelt Back Take - Chair Sit - Granby Counter - Berimbolo - Kiss of the Dragon - Truck → Back - Crucifix → Back - Gift Wrap → Back - Kimura Trap → Back",
+    "subcategories": [],
+    "count": 5
+   },
+   {
+    "category": "스윕 기술 모음",
+    "order": 32,
+    "section": 32,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#32",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "가드에서 자주 사용하는 스윕",
+      "order": 1,
+      "techniqueIds": [
+       "bjj__dlr-sweep"
+      ]
+     }
+    ],
+    "count": 1
+   },
+   {
+    "category": "탈출 기술 모음",
+    "order": 33,
+    "section": 33,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#33",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "마운트",
+      "order": 1,
+      "techniqueIds": [
+       "bjj__bridge-and-roll"
+      ]
+     },
+     {
+      "title": "사이드 컨트롤",
+      "order": 2,
+      "techniqueIds": [
+       "judo__bridge",
+       "bjj__underhook-escape",
+       "bjj__knee-elbow-recovery",
+       "judo__turtle-recovery"
+      ]
+     },
+     {
+      "title": "백 컨트롤",
+      "order": 3,
+      "techniqueIds": [
+       "bjj__shoulder-to-mat-escape",
+       "bjj__turn-in-escape"
+      ]
+     },
+     {
+      "title": "하프 가드",
+      "order": 5,
+      "techniqueIds": [
+       "bjj__butterfly-recovery",
+       "bjj__full-guard-recovery"
+      ]
+     }
+    ],
+    "count": 11
+   },
+   {
+    "category": "가드 패스 기술 모음",
+    "order": 34,
+    "section": 34,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#34",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "레그 컨트롤형",
+      "order": 3,
+      "techniqueIds": [
+       "bjj__outside-pass",
+       "bjj__inside-pass"
+      ]
+     }
+    ],
+    "count": 2
+   },
+   {
+    "category": "노기(No-Gi)에서 자주 등장하는 포지션",
+    "order": 40,
+    "section": 40,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#40",
+    "paragraph": "노기는 도복 그립이 없기 때문에 다음 컨트롤의 중요도가 높다.",
+    "subcategories": [],
+    "count": 4
+   },
+   {
+    "category": "기(Gi)에서 특히 중요한 기술",
+    "order": 41,
+    "section": 41,
+    "source": "data/raw/bjj_포지션별_기술_백과사전.md#41",
+    "paragraph": "도복을 활용한 그립과 초크가 가능하다. 대표적인 기술: - Cross Collar Choke - Bow and Arrow Choke - Baseball Bat Choke - Loop Choke - Ezekiel - Spider Guard - Lasso Guard - Worm Guard - Collar Drag - Sleeve Drag - Collar & Sleeve Sweep",
+    "subcategories": [],
+    "count": 5
+   }
+  ],
+  "karate": [
+   {
+    "category": "기본 자세 (Kihon Dachi)",
+    "order": 1,
+    "section": 1,
+    "source": "data/raw/가라테_포지션별_기술_백과사전.md#1",
+    "paragraph": "자세는 그 자체로 기술이 아니라 다음 동작을 위한 준비 상태다. 어떤 자세를 쓰는지는 \"지금 내가 무엇을 하려는가\"에 따라 달라진다.",
+    "subcategories": [],
+    "count": 11
+   },
+   {
+    "category": "이동 (Shintai / 풋워크)",
+    "order": 2,
+    "section": 2,
+    "source": "data/raw/가라테_포지션별_기술_백과사전.md#2",
+    "paragraph": "이동은 거리(Maai)를 관리하는 도구다. 가타에서 배우는 정형화된 이동과, 자유 쿠미테에서 쓰는 실전 이동은 목적이 다르다.",
+    "subcategories": [],
+    "count": 10
+   },
+   {
+    "category": "손기술 (Te-waza)",
+    "order": 3,
+    "section": 3,
+    "source": "data/raw/가라테_포지션별_기술_백과사전.md#3",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "주먹",
+      "order": 1,
+      "techniqueIds": [
+       "karate__choku-zuki",
+       "karate__oi-zuki",
+       "karate__gyaku-zuki",
+       "kickboxing__jab",
+       "karate__kagi-zuki",
+       "boxing__backfist",
+       "karate__tettsui-uchi",
+       "karate__mawashi-zuki"
+      ]
+     },
+     {
+      "title": "손날 / 손",
+      "order": 2,
+      "techniqueIds": [
+       "karate__shuto-uchi",
+       "karate__haito-uchi",
+       "karate__teisho"
+      ]
+     }
+    ],
+    "count": 17
+   },
+   {
+    "category": "팔꿈치 (Empi / Hiji)",
+    "order": 4,
+    "section": 4,
+    "source": "data/raw/가라테_포지션별_기술_백과사전.md#4",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 6
+   },
+   {
+    "category": "발차기 (Geri)",
+    "order": 5,
+    "section": 5,
+    "source": "data/raw/가라테_포지션별_기술_백과사전.md#5",
+    "paragraph": "발차기는 사거리가 길어 장거리에서 먼저 던지는 기술이자, 회전력을 이용해 큰 파괴력을 내는 기술이다. 룰셋에 따라 선호되는 발차기가 크게 다르다.",
+    "subcategories": [],
+    "count": 11
+   },
+   {
+    "category": "막기 (Uke)",
+    "order": 6,
+    "section": 6,
+    "source": "data/raw/가라테_포지션별_기술_백과사전.md#6",
+    "paragraph": "막기는 단순 방어가 아니라 다음 반격(카운터)으로 이어지는 다리다.",
+    "subcategories": [],
+    "count": 13
+   },
+   {
+    "category": "장거리 (To-ma)",
+    "order": 7,
+    "section": 7,
+    "source": "data/raw/가라테_포지션별_기술_백과사전.md#7",
+    "paragraph": "서로의 기술이 닿지 않는 안전거리. 이 거리의 목적은 정보 수집과 진입 준비다.",
+    "subcategories": [],
+    "count": 4
+   },
+   {
+    "category": "중거리 (Ma)",
+    "order": 8,
+    "section": 8,
+    "source": "data/raw/가라테_포지션별_기술_백과사전.md#8",
+    "paragraph": "손기술과 대부분의 발차기가 닿는 실질적인 주 전투 거리.",
+    "subcategories": [],
+    "count": 3
+   },
+   {
+    "category": "근거리 (Chika-ma)",
+    "order": 9,
+    "section": 9,
+    "source": "data/raw/가라테_포지션별_기술_백과사전.md#9",
+    "paragraph": "몸이 거의 맞붙는 거리. 큰 동작보다 짧고 빠른 기술, 그리고 규칙에 따른 제약이 중요해진다.",
+    "subcategories": [],
+    "count": 3
+   },
+   {
+    "category": "타이사바키 / 회피 (Tai Sabaki)",
+    "order": 10,
+    "section": 10,
+    "source": "data/raw/가라테_포지션별_기술_백과사전.md#10",
+    "paragraph": "회피의 목적은 \"도망\"이 아니라 각도를 만들어 안전하게 반격 위치를 차지하는 것이다.",
+    "subcategories": [],
+    "count": 6
+   },
+   {
+    "category": "카운터 (Go no Sen 응용)",
+    "order": 11,
+    "section": 11,
+    "source": "data/raw/가라테_포지션별_기술_백과사전.md#11",
+    "paragraph": "카운터는 상대의 공격을 막거나 흘린 뒤 반격하는 Go no Sen의 구체적인 실행 예시다.",
+    "subcategories": [],
+    "count": 7
+   },
+   {
+    "category": "조합 (Renzoku-waza)",
+    "order": 12,
+    "section": 12,
+    "source": "data/raw/가라테_포지션별_기술_백과사전.md#12",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 8
+   },
+   {
+    "category": "쿠미테 --- 판정 규칙과 타이밍",
+    "order": 13,
+    "section": 13,
+    "source": "data/raw/가라테_포지션별_기술_백과사전.md#13",
+    "paragraph": "쿠미테를 이해하려면 \"무엇이 점수/승패로 인정되는가\"와 \"언제 공격하는가(타이밍 이론)\"를 함께 알아야 한다.",
+    "subcategories": [
+     {
+      "title": "타이밍 이론: Sen / Tai no Sen / Go no Sen / Deai",
+      "order": 3,
+      "techniqueIds": [
+       "karate__sen",
+       "karate__tai-no-sen",
+       "karate__go-no-sen",
+       "karate__deai"
+      ]
+     },
+     {
+      "title": "진입과 이동: Tobi-komi, Okuri-ashi, Maai 유지 전술",
+      "order": 4,
+      "techniqueIds": [
+       "karate__tobi-komi",
+       "karate__maai-유지-전술"
+      ]
+     }
+    ],
+    "count": 6
+   },
+   {
+    "category": "전통 가라테의 응용 (자기방어 / Bunkai)",
+    "order": 14,
+    "section": 14,
+    "source": "data/raw/가라테_포지션별_기술_백과사전.md#14",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "Kansetsu-waza (관절기)",
+      "order": 1,
+      "techniqueIds": [
+       "karate__kansetsu-geri",
+       "karate__kote-gaeshi"
+      ]
+     },
+     {
+      "title": "Nage-waza (던지기)",
+      "order": 2,
+      "techniqueIds": [
+       "karate__ashi-barai"
+      ]
+     }
+    ],
+    "count": 10
+   },
+   {
+    "category": "호흡법 (Kokyu-ho): Ibuki와 Nogare",
+    "order": 15,
+    "section": 15,
+    "source": "data/raw/가라테_포지션별_기술_백과사전.md#15",
+    "paragraph": "가라테, 특히 Naha-te 계열(Goju-Ryu)에서는 호흡을 단순한 산소 공급이 아니라 타격을 견디고 힘을 응축하는 훈련으로 다룬다.",
+    "subcategories": [],
+    "count": 2
+   },
+   {
+    "category": "유파별 대표 기술과 가타",
+    "order": 16,
+    "section": 16,
+    "source": "data/raw/가라테_포지션별_기술_백과사전.md#16",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "Shotokan",
+      "order": 1,
+      "techniqueIds": [
+       "karate__특징",
+       "karate__대표-가타"
+      ]
+     },
+     {
+      "title": "Goju-Ryu",
+      "order": 2,
+      "techniqueIds": [
+       "karate__특징",
+       "karate__대표-가타"
+      ]
+     },
+     {
+      "title": "Shito-Ryu",
+      "order": 3,
+      "techniqueIds": [
+       "karate__특징",
+       "karate__대표-가타"
+      ]
+     },
+     {
+      "title": "Wado-Ryu",
+      "order": 4,
+      "techniqueIds": [
+       "karate__특징",
+       "karate__대표-가타"
+      ]
+     },
+     {
+      "title": "Kyokushin",
+      "order": 5,
+      "techniqueIds": [
+       "karate__특징",
+       "karate__대표-가타"
+      ]
+     }
+    ],
+    "count": 2
+   }
+  ],
+  "wrestling": [
+   {
+    "category": "기본 자세와 움직임",
+    "order": 1,
+    "section": 1,
+    "source": "data/raw/레슬링_포지션별_기술_백과사전.md#1",
+    "paragraph": "레슬링의 모든 기술은 낮은 무게중심과 즉각적인 방향 전환 능력에서 시작된다. 이 섹션의 움직임은 특정 기술이 아니라 모든 공격·방어·탈출의 기반이 되는 신체 조작이며, 스탠딩(중립)에서는 진입과 스프롤의 기초가, 바텀에서는 탈출과 리버설의 기초가 된다. 코치들이 초심자에게 가장 먼저 반복시키는 것도 바로 이 movement drills다.",
+    "subcategories": [],
+    "count": 16
+   },
+   {
+    "category": "스탠딩 포지션 / 그립",
+    "order": 2,
+    "section": 2,
+    "source": "data/raw/레슬링_포지션별_기술_백과사전.md#2",
+    "paragraph": "스탠딩에서 점수를 내는 모든 테이크다운은 그립 싸움에서 시작된다. 손과 팔의 위치를 먼저 장악해야 레벨 체인지와 페네트레이션 스텝을 안전하게 실행할 수 있고, 반대로 그립을 빼앗기면 상대의 스냅다운이나 언더훅 진입에 노출된다. 아래 두 소분류는 \"누가 먼저 컨트롤을 잡는가\"와 \"그 컨트롤로 어떤 포지션을 만드는가\"를 다룬다.",
+    "subcategories": [
+     {
+      "title": "손싸움",
+      "order": 1,
+      "techniqueIds": [
+       "wrestling__collar-tie",
+       "wrestling__inside-tie",
+       "wrestling__wrist-control",
+       "judo__two-on-one",
+       "wrestling__russian-tie",
+       "wrestling__elbow-control",
+       "wrestling__biceps-control",
+       "wrestling__head-and-arm-control",
+       "bjj__underhook",
+       "bjj__overhook",
+       "wrestling__inside-control",
+       "wrestling__snap-control"
+      ]
+     },
+     {
+      "title": "주요 자세",
+      "order": 2,
+      "techniqueIds": [
+       "wrestling__neutral",
+       "wrestling__square-stance",
+       "wrestling__staggered-stance",
+       "wrestling__low-stance",
+       "wrestling__front-headlock",
+       "wrestling__single-leg-position",
+       "wrestling__double-leg-position",
+       "wrestling__body-lock"
+      ]
+     }
+    ],
+    "count": 20
+   },
+   {
+    "category": "공격 진입 (셋업 / 페이크 / 피더링)",
+    "order": 3,
+    "section": 3,
+    "source": "data/raw/레슬링_포지션별_기술_백과사전.md#3",
+    "paragraph": "진입 기술은 상대의 반응을 유도하거나 거리를 좁혀 실제 테이크다운 시도(싱글, 더블, 바디락)로 넘어가기 위한 다리·상체 움직임이다. 상대가 그립을 강하게 잡거나 스탠스가 높아졌을 때가 진입의 최적 타이밍이며, 목적은 상대의 균형을 무너뜨리거나 반응을 끌어내 다음 동작의 각도를 여는 것이다. 페이크/피더링은 실제 공격 없이 상대의 방어 반응(스프롤, 백스텝, 그립 강화)을 미리 끌어내 진짜 공격의 타이밍을 감추는 데 쓰인다. 상대가 페이크에 반응해 무게중심이 흔들리면 즉시 실제 샷으로 전환한다.",
+    "subcategories": [],
+    "count": 14
+   },
+   {
+    "category": "싱글 레그",
+    "order": 4,
+    "section": 4,
+    "source": "data/raw/레슬링_포지션별_기술_백과사전.md#4",
+    "paragraph": "싱글 레그는 상대의 한쪽 다리만 통제해 균형을 무너뜨리는 테이크다운으로, 상대가 스탠스를 넓게 벌리거나 한쪽 다리에 체중을 오래 싣고 있을 때, 또는 손싸움에서 상체 그립을 뺏겼을 때 주로 진입한다. 목적은 다리를 고정한 상태에서 상대를 눕히거나(테이크다운) 다리를 놓치지 않고 등 뒤로 돌아가는 것(고-비하인드)이다. 상대가 다리를 빼거나 스프롤로 저항하면 크랙다운 포지션이나 프론트 헤드락으로, 다리를 강하게 당겨 저항하면 더블 레그나 백테이크로 전환한다.",
+    "subcategories": [],
+    "count": 19
+   },
+   {
+    "category": "더블 레그",
+    "order": 5,
+    "section": 5,
+    "source": "data/raw/레슬링_포지션별_기술_백과사전.md#5",
+    "paragraph": "더블 레그는 양쪽 다리를 동시에 통제해 상대를 정면으로 눕히는 가장 기본적인 테이크다운으로, 상대가 상체를 세우고 있거나 손싸움에서 밀려 레벨 체인지를 허용했을 때 진입한다. 목적은 빠르게 다리 사이로 들어가(페네트레이션) 상대의 힙을 앞으로 밀어붙여 등을 매트에 닿게 하는 것이다. 상대가 스프롤로 힙을 뒤로 빼면 그 자세 그대로 완성하는 피니시(코너/리프트/컷백)로 전환하고, 완전히 막히면 프론트 헤드락이나 재진입(Reshot)으로 이어간다.",
+    "subcategories": [],
+    "count": 12
+   },
+   {
+    "category": "바디락 / 클린치",
+    "order": 6,
+    "section": 6,
+    "source": "data/raw/레슬링_포지션별_기술_백과사전.md#6",
+    "paragraph": "바디락은 손이 아닌 몸통(허리) 전체를 감싸 상대의 다리 공격 방어를 무력화하는 클린치 기술로, 상대가 손싸움에서 다리 공격을 강하게 방어하거나 그레코로만형처럼 다리 공격이 금지된 규칙에서 특히 중요하다. 목적은 상대를 몸 전체로 들어 올리거나 트립을 걸어 눕히는 것이며, 팔로 저항하는 상대에게는 아웃사이드/인사이드 트립으로, 뒤로 버티는 상대에게는 니탭이나 매트 리턴으로 연결한다.",
+    "subcategories": [],
+    "count": 12
+   },
+   {
+    "category": "발목·무릎 공격",
+    "order": 7,
+    "section": 7,
+    "source": "data/raw/레슬링_포지션별_기술_백과사전.md#7",
+    "paragraph": "발목·무릎 공격은 상체 그립을 유지한 채 손이나 발로 상대의 발목·무릎을 걷어채거나 당겨 균형만 무너뜨리는 저부담 테이크다운이다. 상대가 손싸움 중 체중을 앞으로 싣거나 스텝이 좁아졌을 때 순간적으로 시도하며, 큰 힘보다 타이밍이 중요하다. 성공하면 바로 탑 포지션으로 이어지고, 상대가 다리를 빼며 버티면 로우 싱글이나 스윕 싱글로 자연스럽게 전환된다.",
+    "subcategories": [],
+    "count": 3
+   },
+   {
+    "category": "던지기 / 투사 (상체 던지기 포함)",
+    "order": 8,
+    "section": 8,
+    "source": "data/raw/레슬링_포지션별_기술_백과사전.md#8",
+    "paragraph": "던지기 계열은 다리 공격 없이 상체 컨트롤(언더훅, 헤드락, 바디락)만으로 상대를 공중에 띄워 넘기는 기술로, 클린치가 밀착된 상황이나 상대가 다리 공격을 완전히 차단해 상체만 남았을 때 주로 나온다. 목적은 큰 낙차로 상대를 등으로 눕혀 테이크다운 점수와 동시에 강한 임팩트를 주는 것이다.",
+    "subcategories": [
+     {
+      "title": "그레코로만형 상체 던지기",
+      "order": 1,
+      "techniqueIds": [
+       "wrestling__bear-hug",
+       "wrestling__gut-wrench",
+       "wrestling__suplex",
+       "wrestling__headlock",
+       "wrestling__lift",
+       "wrestling__body-lock-lift",
+       "wrestling__front-headlock-exposure"
+      ]
+     }
+    ],
+    "count": 19
+   },
+   {
+    "category": "프론트 헤드락",
+    "order": 9,
+    "section": 9,
+    "source": "data/raw/레슬링_포지션별_기술_백과사전.md#9",
+    "paragraph": "프론트 헤드락은 상대의 머리와 목을 팔로 감싸 앞으로 눌러 자세를 무너뜨리는 포지션으로, 스냅다운이 성공했을 때, 싱글/더블 레그 시도가 막혀 상체가 낮아졌을 때, 또는 스프롤 이후 상대의 머리가 낮게 노출됐을 때 자연스럽게 만들어진다. 목적은 상대의 시야와 방향을 차단한 채 다리를 잡거나 등 뒤로 돌아가는 것이다. 상대가 목을 빼려고 버티면 니탭이나 고-비하인드로, 완전히 방향을 잃으면 백테이크로 이어진다.",
+    "subcategories": [],
+    "count": 6
+   },
+   {
+    "category": "탑 포지션",
+    "order": 10,
+    "section": 10,
+    "source": "data/raw/레슬링_포지션별_기술_백과사전.md#10",
+    "paragraph": "탑 포지션은 테이크다운 이후 또는 파테르(Par Terre) 상황에서 상대를 바닥에 두고 컨트롤을 유지하는 모든 상태를 말한다. 목적은 단순 점수 유지가 아니라 상대를 계속 무너뜨려(브레이크다운) 노출(턴/틸트)이나 핀(폴)으로 발전시키는 것이다. 상대가 베이스를 잘 잡으면 컨트롤 → 브레이크다운을 반복하고, 베이스가 무너지는 순간 턴 기술로 전환한다.",
+    "subcategories": [
+     {
+      "title": "기본 컨트롤",
+      "order": 1,
+      "techniqueIds": [
+       "wrestling__spiral-ride",
+       "wrestling__tight-waist",
+       "wrestling__wrist-ride",
+       "wrestling__claw-ride",
+       "wrestling__chop",
+       "wrestling__ankle-ride",
+       "wrestling__leg-ride",
+       "wrestling__half-nelson",
+       "wrestling__power-half-nelson",
+       "wrestling__bar-arm",
+       "wrestling__cross-wrist"
+      ]
+     },
+     {
+      "title": "턴 / 노출 기술 (Tilt 계열)",
+      "order": 2,
+      "techniqueIds": [
+       "wrestling__wrist-tilt",
+       "wrestling__two-on-one-tilt",
+       "wrestling__near-wrist-tilt",
+       "wrestling__far-wrist-tilt",
+       "wrestling__guillotine-tilt",
+       "wrestling__tight-waist-tilt",
+       "wrestling__turk-tilt",
+       "wrestling__ankle-tilt",
+       "wrestling__navy-ride-tilt"
+      ]
+     },
+     {
+      "title": "크레이들 세부",
+      "order": 3,
+      "techniqueIds": [
+       "wrestling__near-side-cradle",
+       "wrestling__far-side-cradle",
+       "wrestling__guillotine-cradle",
+       "wrestling__cross-face-cradle",
+       "wrestling__reverse-cradle"
+      ]
+     },
+     {
+      "title": "핀 콤비네이션",
+      "order": 4,
+      "techniqueIds": [
+       "wrestling__half-nelson-to-cradle",
+       "wrestling__half-nelson-to-bar-arm",
+       "wrestling__double-half-nelson",
+       "wrestling__turk-to-half-nelson",
+       "wrestling__chicken-wing",
+       "wrestling__guillotine-pin-combination",
+       "wrestling__tight-waist-and-half-nelson"
+      ]
+     }
+    ],
+    "count": 32
+   },
+   {
+    "category": "바텀 포지션",
+    "order": 11,
+    "section": 11,
+    "source": "data/raw/레슬링_포지션별_기술_백과사전.md#11",
+    "paragraph": "바텀 포지션은 파테르 상황이나 테이크다운을 당한 뒤 상대의 컨트롤 아래에 놓인 상태다. 목적은 즉시 베이스를 회복해 브레이크다운을 막고, 가능하면 탈출(중립 복귀)이나 리버설(컨트롤 역전)로 상황을 바꾸는 것이다. 상대의 컨트롤 지점(손목, 허리, 다리)에 따라 사용할 탈출/리버설 움직임이 달라진다.",
+    "subcategories": [],
+    "count": 9
+   },
+   {
+    "category": "탈출 (Escape)",
+    "order": 12,
+    "section": 12,
+    "source": "data/raw/레슬링_포지션별_기술_백과사전.md#12",
+    "paragraph": "탈출은 바텀에서 상대의 컨트롤을 완전히 풀고 중립(스탠딩) 상태로 돌아가는 것을 목표로 한다. 점수 규정상 탈출은 컨트롤을 가져오지 않고 단순히 \"분리\"만 이루어낸 상태를 말하며, 이는 다음 섹션의 리버설(상대의 컨트롤을 역전해 자신이 탑이 되는 것)과 구분된다. 상대가 손목이나 허리를 강하게 통제하면 손목을 먼저 풀어내는 기술을, 다리(레그 라이드)로 통제하면 힙을 먼저 회복하는 기술을 우선한다.",
+    "subcategories": [
+     {
+      "title": "상대가 허리/손목을 제어할 때",
+      "order": 1,
+      "techniqueIds": [
+       "wrestling__hand-control",
+       "wrestling__wrist-peel",
+       "wrestling__quadpod-escape"
+      ]
+     },
+     {
+      "title": "레그 라이드 방어",
+      "order": 2,
+      "techniqueIds": [
+       "judo__turn-in"
+      ]
+     }
+    ],
+    "count": 4
+   },
+   {
+    "category": "리버설 (Reversal)",
+    "order": 13,
+    "section": 13,
+    "source": "data/raw/레슬링_포지션별_기술_백과사전.md#13",
+    "paragraph": "리버설은 탈출과 동일한 바텀 움직임(스위치, 시트아웃, 그랜비, 피터슨 등)에서 출발하지만, 단순히 분리되는 데서 멈추지 않고 그 동작을 끝까지 이어가 상대의 컨트롤을 빼앗아 자신이 탑이 되는 것을 목표로 한다. 상대의 체중이 한쪽으로 쏠리거나 컨트롤 손이 느슨해지는 순간이 리버설의 타이밍이며, 폴크스타일 규정에서는 탈출(1점)보다 높은 점수(2점)가 주어진다. 상대가 리버설을 예측해 몸을 눌러 버티면 다시 베이스 회복 → 탈출 시도로 되돌아간다.",
+    "subcategories": [],
+    "count": 7
+   },
+   {
+    "category": "리샷 / 카운터",
+    "order": 14,
+    "section": 14,
+    "source": "data/raw/레슬링_포지션별_기술_백과사전.md#14",
+    "paragraph": "리샷과 카운터는 상대의 테이크다운 시도를 무력화한 뒤, 그 자세 그대로 방어에서 끝내지 않고 즉시 자신의 공격으로 되돌리는 기술이다. 상대의 샷이 짧거나 각도가 어긋났을 때, 혹은 스프롤로 상대의 머리가 낮아졌을 때가 리샷/카운터의 타이밍이다. 목적은 상대의 실패한 공격을 자신의 테이크다운이나 백테이크로 바로 전환하는 것이다.",
+    "subcategories": [],
+    "count": 9
+   },
+   {
+    "category": "방어",
+    "order": 15,
+    "section": 15,
+    "source": "data/raw/레슬링_포지션별_기술_백과사전.md#15",
+    "paragraph": "방어는 점수를 내지 않고 현재 포지션을 지키는 데 집중하는 기술군으로, 상대가 테이크다운 진입을 시도하는 순간(레벨 체인지, 언더훅, 클린치)에 반응해 사용한다. 목적은 상대의 공격을 무효화해 다시 중립 상태로 돌아가거나, 상대가 무리하게 압박할 때 위 섹션의 리샷/카운터로 넘어갈 기회를 만드는 것이다.",
+    "subcategories": [],
+    "count": 7
+   }
+  ],
+  "muay-thai": [
+   {
+    "category": "기본 개념 --- 거리(Range)와 자세",
+    "order": 1,
+    "section": 1,
+    "source": "data/raw/무에타이_포지션별_기술_백과사전.md#1",
+    "paragraph": "무에타이에서 \"포지션\"은 주짓수처럼 몸을 얽는 자세가 아니라, 거리(Range)와 클린치 여부에 따라 어떤 무기(펀치/킥/니/엘보)를 쓸 수 있는지가 달라지는 구조를 의미한다. 즉 거리 = 무에타이의 포지션이다.",
+    "subcategories": [
+     {
+      "title": "기본 자세",
+      "order": 2,
+      "techniqueIds": [
+       "muay-thai__muay-thai-stance",
+       "muay-thai__shell",
+       "muay-thai__dutch-guard",
+       "muay-thai__elbow-guard",
+       "muay-thai__teep-guard",
+       "muay-thai__basic-footwork"
+      ]
+     }
+    ],
+    "count": 11
+   },
+   {
+    "category": "장거리 --- 티프 (Teep, ถีบ)",
+    "order": 3,
+    "section": 3,
+    "source": "data/raw/무에타이_포지션별_기술_백과사전.md#3",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "기술 목록",
+      "order": 2,
+      "techniqueIds": [
+       "muay-thai__side-teep",
+       "muay-thai__jumping-teep",
+       "muay-thai__push-teep",
+       "muay-thai__face-level-teep",
+       "muay-thai__teep-to-leg",
+       "muay-thai__teep-counter"
+      ]
+     },
+     {
+      "title": "티프 캐치 이후 (Teep Catch → Sweep/Knee)",
+      "order": 4,
+      "techniqueIds": [
+       "muay-thai__잡힌-다리를-빠르게-접어-빼기",
+       "muay-thai__회수가-늦으면-한-발로-뛰어-균형-유지-반대손-가드"
+      ]
+     }
+    ],
+    "count": 12
+   },
+   {
+    "category": "장거리 킥 (Round Kick / Low Kick 계열)",
+    "order": 4,
+    "section": 4,
+    "source": "data/raw/무에타이_포지션별_기술_백과사전.md#4",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "기술 목록",
+      "order": 2,
+      "techniqueIds": [
+       "muay-thai__switch-kick",
+       "muay-thai__step-up-kick",
+       "muay-thai__spinning-back-kick"
+      ]
+     }
+    ],
+    "count": 12
+   },
+   {
+    "category": "중거리 펀치",
+    "order": 5,
+    "section": 5,
+    "source": "data/raw/무에타이_포지션별_기술_백과사전.md#5",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "기술 목록",
+      "order": 2,
+      "techniqueIds": [
+       "muay-thai__jab-to-cross",
+       "mixed-martial-arts__overhand",
+       "muay-thai__superman-punch",
+       "muay-thai__spinning-backfist",
+       "boxing__backfist",
+       "muay-thai__long-guard-punch"
+      ]
+     },
+     {
+      "title": "조합",
+      "order": 3,
+      "techniqueIds": [
+       "muay-thai__jab-cross-hook",
+       "kickboxing__jab-cross-body-kick",
+       "muay-thai__hook-low-kick",
+       "muay-thai__cross-body-kick"
+      ]
+     }
+    ],
+    "count": 22
+   },
+   {
+    "category": "엘보 (Sok, ศอก)",
+    "order": 6,
+    "section": 6,
+    "source": "data/raw/무에타이_포지션별_기술_백과사전.md#6",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "기술 목록 (태국어 세부 명칭 포함)",
+      "order": 2,
+      "techniqueIds": [
+       "kickboxing__horizontal-elbow",
+       "kickboxing__downward-elbow",
+       "kickboxing__upward-elbow",
+       "muay-thai__sok-phung",
+       "muay-thai__back-elbow"
+      ]
+     }
+    ],
+    "count": 9
+   },
+   {
+    "category": "니 (Khao, เข่า)",
+    "order": 7,
+    "section": 7,
+    "source": "data/raw/무에타이_포지션별_기술_백과사전.md#7",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "기술 목록",
+      "order": 2,
+      "techniqueIds": [
+       "kickboxing__straight-knee",
+       "kickboxing__flying-knee",
+       "kickboxing__jumping-knee",
+       "muay-thai__step-up-knee",
+       "muay-thai__clinch-knee"
+      ]
+     }
+    ],
+    "count": 9
+   },
+   {
+    "category": "로우킥 (Low Kick)",
+    "order": 8,
+    "section": 8,
+    "source": "data/raw/무에타이_포지션별_기술_백과사전.md#8",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "기술 목록",
+      "order": 2,
+      "techniqueIds": [
+       "muay-thai__switch-low-kick"
+      ]
+     }
+    ],
+    "count": 9
+   },
+   {
+    "category": "클린치 (Clinch)",
+    "order": 9,
+    "section": 9,
+    "source": "data/raw/무에타이_포지션별_기술_백과사전.md#9",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "기본 클린치 컨트롤",
+      "order": 2,
+      "techniqueIds": [
+       "wrestling__body-lock",
+       "wrestling__head-and-arm-control"
+      ]
+     },
+     {
+      "title": "클린치 공격",
+      "order": 3,
+      "techniqueIds": [
+       "muay-thai__elbow-entry"
+      ]
+     },
+     {
+      "title": "클린치 스윕/뎀프 (Off-balance, Sweep, Dump)",
+      "order": 4,
+      "techniqueIds": [
+       "muay-thai__tud",
+       "muay-thai__sweep-foot-sweep"
+      ]
+     }
+    ],
+    "count": 19
+   },
+   {
+    "category": "킥 캐치 / 방어",
+    "order": 10,
+    "section": 10,
+    "source": "data/raw/무에타이_포지션별_기술_백과사전.md#10",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "기술 목록",
+      "order": 2,
+      "techniqueIds": [
+       "muay-thai__catch-and-return",
+       "muay-thai__catch-and-sweep",
+       "muay-thai__catch-and-dump"
+      ]
+     }
+    ],
+    "count": 8
+   },
+   {
+    "category": "펀치 방어",
+    "order": 11,
+    "section": 11,
+    "source": "data/raw/무에타이_포지션별_기술_백과사전.md#11",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "기술 목록",
+      "order": 2,
+      "techniqueIds": [
+       "muay-thai__shoulder-block"
+      ]
+     }
+    ],
+    "count": 9
+   },
+   {
+    "category": "킥 방어",
+    "order": 12,
+    "section": 12,
+    "source": "data/raw/무에타이_포지션별_기술_백과사전.md#12",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 6
+   },
+   {
+    "category": "카운터 종합",
+    "order": 13,
+    "section": 13,
+    "source": "data/raw/무에타이_포지션별_기술_백과사전.md#13",
+    "paragraph": "카운터는 무에타이 득점의 핵심이다. 대부분의 상급 기술은 \"먼저 맞아주는 것\"이 아니라 \"상대의 공격 타이밍을 정확히 읽고 그 순간에 겹쳐 치는 것\" 이다.",
+    "subcategories": [],
+    "count": 8
+   },
+   {
+    "category": "스피닝 기술 모음",
+    "order": 14,
+    "section": 14,
+    "source": "data/raw/무에타이_포지션별_기술_백과사전.md#14",
+    "paragraph": "스피닝 기술은 예측하기 어렵지만 회전 중 잠시 시야와 균형을 잃는 리스크가 있어, 상대의 리듬을 완전히 읽었을 때나 이미 각을 확보한 상황에서 쓰는 고위험/고보상 기술이다.",
+    "subcategories": [
+     {
+      "title": "턴잉 킥 세부 (Round Kick / Turning Kick)",
+      "order": 1,
+      "techniqueIds": [
+       "muay-thai__tae-chiang"
+      ]
+     }
+    ],
+    "count": 3
+   }
+  ],
+  "boxing": [
+   {
+    "category": "기본 자세",
+    "order": 1,
+    "section": 1,
+    "source": "data/raw/복싱_포지션별_기술_백과사전.md#1",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 8
+   },
+   {
+    "category": "풋워크",
+    "order": 2,
+    "section": 2,
+    "source": "data/raw/복싱_포지션별_기술_백과사전.md#2",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 13
+   },
+   {
+    "category": "거리별 포지션",
+    "order": 3,
+    "section": 3,
+    "source": "data/raw/복싱_포지션별_기술_백과사전.md#3",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "장거리",
+      "order": 1,
+      "techniqueIds": [
+       "kickboxing__jab",
+       "boxing__feint"
+      ]
+     },
+     {
+      "title": "중거리",
+      "order": 2,
+      "techniqueIds": [
+       "kickboxing__jab",
+       "kickboxing__cross",
+       "boxing__hook",
+       "boxing__uppercut",
+       "boxing__combination"
+      ]
+     },
+     {
+      "title": "근거리",
+      "order": 3,
+      "techniqueIds": [
+       "boxing__short-hook",
+       "boxing__short-uppercut",
+       "boxing__body-hook",
+       "boxing__infighting",
+       "boxing__clinch"
+      ]
+     }
+    ],
+    "count": 11
+   },
+   {
+    "category": "기본 펀치",
+    "order": 4,
+    "section": 4,
+    "source": "data/raw/복싱_포지션별_기술_백과사전.md#4",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 12
+   },
+   {
+    "category": "특수 펀치",
+    "order": 5,
+    "section": 5,
+    "source": "data/raw/복싱_포지션별_기술_백과사전.md#5",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 5
+   },
+   {
+    "category": "페인트 (Feint)",
+    "order": 6,
+    "section": 6,
+    "source": "data/raw/복싱_포지션별_기술_백과사전.md#6",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 5
+   },
+   {
+    "category": "조합",
+    "order": 7,
+    "section": 7,
+    "source": "data/raw/복싱_포지션별_기술_백과사전.md#7",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 14
+   },
+   {
+    "category": "방어",
+    "order": 8,
+    "section": 8,
+    "source": "data/raw/복싱_포지션별_기술_백과사전.md#8",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "블록 / 커버",
+      "order": 1,
+      "techniqueIds": [
+       "boxing__double-forearm-guard",
+       "muay-thai__shell",
+       "boxing__elbow-block",
+       "boxing__body-cover"
+      ]
+     },
+     {
+      "title": "회피",
+      "order": 2,
+      "techniqueIds": [
+       "kickboxing__slip",
+       "boxing__double-slip",
+       "kickboxing__lean-back",
+       "boxing__duck",
+       "boxing__side-step"
+      ]
+     },
+     {
+      "title": "패링",
+      "order": 3,
+      "techniqueIds": [
+       "boxing__lead-hand-parry",
+       "boxing__rear-hand-parry",
+       "boxing__double-parry",
+       "boxing__downward-parry",
+       "boxing__catch"
+      ]
+     }
+    ],
+    "count": 14
+   },
+   {
+    "category": "상대 펀치별 방어",
+    "order": 9,
+    "section": 9,
+    "source": "data/raw/복싱_포지션별_기술_백과사전.md#9",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "Jab",
+      "order": 1,
+      "techniqueIds": [
+       "kickboxing__parry",
+       "boxing__slip-outside",
+       "boxing__slip-inside",
+       "kickboxing__pull",
+       "kickboxing__jab-counter"
+      ]
+     },
+     {
+      "title": "Cross",
+      "order": 2,
+      "techniqueIds": [
+       "boxing__block",
+       "kickboxing__parry",
+       "kickboxing__roll",
+       "boxing__step-out"
+      ]
+     },
+     {
+      "title": "Hook",
+      "order": 3,
+      "techniqueIds": [
+       "kickboxing__roll",
+       "boxing__step-away"
+      ]
+     },
+     {
+      "title": "Uppercut",
+      "order": 4,
+      "techniqueIds": [
+       "boxing__elbow-guard",
+       "kickboxing__pull",
+       "boxing__frame-guard"
+      ]
+     }
+    ],
+    "count": 11
+   },
+   {
+    "category": "카운터",
+    "order": 10,
+    "section": 10,
+    "source": "data/raw/복싱_포지션별_기술_백과사전.md#10",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 11
+   },
+   {
+    "category": "근거리 / 인파이팅",
+    "order": 11,
+    "section": 11,
+    "source": "data/raw/복싱_포지션별_기술_백과사전.md#11",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 4
+   },
+   {
+    "category": "클린치",
+    "order": 12,
+    "section": 12,
+    "source": "data/raw/복싱_포지션별_기술_백과사전.md#12",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 7
+   },
+   {
+    "category": "코너 / 로프 포지션",
+    "order": 13,
+    "section": 13,
+    "source": "data/raw/복싱_포지션별_기술_백과사전.md#13",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "공격",
+      "order": 1,
+      "techniqueIds": [
+       "boxing__body-attack",
+       "boxing__jab-to-body",
+       "boxing__hook-to-body",
+       "boxing__straight-punches",
+       "boxing__combination-pressure"
+      ]
+     }
+    ],
+    "count": 5
+   },
+   {
+    "category": "링 제너럴십 (Ring Generalship)",
+    "order": 16,
+    "section": 16,
+    "source": "data/raw/복싱_포지션별_기술_백과사전.md#16",
+    "paragraph": "경기 전체를 놓고 거리·각도·링 공간을 관리하는 상위 개념의 전술이다.",
+    "subcategories": [],
+    "count": 4
+   },
+   {
+    "category": "사우스포 vs 오소독스 매치업 전술",
+    "order": 17,
+    "section": 17,
+    "source": "data/raw/복싱_포지션별_기술_백과사전.md#17",
+    "paragraph": "리드 손·발이 반대인 두 선수가 만나면 센터라인 구조 자체가 달라져 동형(오소독스 vs 오소독스) 매치업과는 다른 전술이 필요하다.",
+    "subcategories": [],
+    "count": 3
+   },
+   {
+    "category": "아마추어(포인트) vs 프로 스코어링과 전술",
+    "order": 18,
+    "section": 18,
+    "source": "data/raw/복싱_포지션별_기술_백과사전.md#18",
+    "paragraph": "경기 규칙과 채점 방식이 다르면 같은 기술도 우선순위가 달라진다.",
+    "subcategories": [],
+    "count": 3
+   }
+  ],
+  "sambo": [
+   {
+    "category": "기본 자세와 거리(Дистанция)",
+    "order": 2,
+    "section": 2,
+    "source": "data/raw/삼보_포지션별_기술_백과사전.md#2",
+    "paragraph": "삼보는 재킷을 잡는 스포츠이므로 유도보다 그립 교환이 더 빠르고 격렬하게 일어난다. 거리 개념을 먼저 익혀야 어떤 기술이 그 순간에 유효한지 판단할 수 있다.",
+    "subcategories": [],
+    "count": 6
+   },
+   {
+    "category": "그립 파이팅(Захват) --- 재킷·벨트 중심",
+    "order": 3,
+    "section": 3,
+    "source": "data/raw/삼보_포지션별_기술_백과사전.md#3",
+    "paragraph": "BJJ의 라펠/저지 그립과 달리 삼보는 벨트(пояс)가 항상 규정상 그립 가능한 지점이라는 점이 가장 큰 차이다. 벨트 그립은 상대의 중심(重心)에 가장 가깝기 때문에 삼보 던지기 다수가 이 그립에서 시작된다.",
+    "subcategories": [],
+    "count": 15
+   },
+   {
+    "category": "균형 무너뜨리기(Выведение из равновесия)",
+    "order": 4,
+    "section": 4,
+    "source": "data/raw/삼보_포지션별_기술_백과사전.md#4",
+    "paragraph": "삼보 지도서는 균형 무너뜨리기를 세 가지 힘의 방향으로 명확히 구분한다. 이것이 곧 \"어떤 던지기를 쓸지 결정하는 신호\"가 된다.",
+    "subcategories": [],
+    "count": 3
+   },
+   {
+    "category": "테이크다운 진입 (레슬링 계열)",
+    "order": 5,
+    "section": 5,
+    "source": "data/raw/삼보_포지션별_기술_백과사전.md#5",
+    "paragraph": "컴뱃 삼보와 노기 스파링에서 특히 자주 쓰이는, 다리를 잡는 계열의 진입이다.",
+    "subcategories": [],
+    "count": 10
+   },
+   {
+    "category": "다리 기술 --- 포드쎗카(Подсечка) 계열: 발쓸기(Sweep)",
+    "order": 6,
+    "section": 6,
+    "source": "data/raw/삼보_포지션별_기술_백과사전.md#6",
+    "paragraph": "Подсечка는 \"베어내다·쓸어내다\"라는 어원으로, 유도의 아시바라이·오우치 가리와 유사하지만 삼보식 분류는 방향별로 더 세분화되어 있다.",
+    "subcategories": [],
+    "count": 5
+   },
+   {
+    "category": "다리 기술 --- 자쳅(Зацеп)·오트하바트(Отхват)·포드핫(Подхват)· 포드사드(Подсад)",
+    "order": 7,
+    "section": 7,
+    "source": "data/raw/삼보_포지션별_기술_백과사전.md#7",
+    "paragraph": "포드사드(Подсад) 유도 기술명을 그대로 쓰면 삼보 특유의 세부 구분이 사라진다. 아래는 삼보 고유 분류다.",
+    "subcategories": [],
+    "count": 6
+   },
+   {
+    "category": "허리/몸통 던지기 --- 브로속 체레즈 베드로(Бросок через бедро)",
+    "order": 8,
+    "section": 8,
+    "source": "data/raw/삼보_포지션별_기술_백과사전.md#8",
+    "paragraph": "유도의 오고시·우키고시 계열에 대응한다.",
+    "subcategories": [],
+    "count": 4
+   },
+   {
+    "category": "등으로 던지기 --- 브로속 체레즈 스피누(Бросок через спину)",
+    "order": 9,
+    "section": 9,
+    "source": "data/raw/삼보_포지션별_기술_백과사전.md#9",
+    "paragraph": "유도의 세오이나게·타이오토시 계열에 대응하는 삼보식 백 스로우.",
+    "subcategories": [],
+    "count": 6
+   },
+   {
+    "category": "어깨·팔로 던지기 --- 멜니차(Мельница)와 베르투쉬카(Вертушка)",
+    "order": 10,
+    "section": 10,
+    "source": "data/raw/삼보_포지션별_기술_백과사전.md#10",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 6
+   },
+   {
+    "category": "카운터(Контрприем)",
+    "order": 11,
+    "section": 11,
+    "source": "data/raw/삼보_포지션별_기술_백과사전.md#11",
+    "paragraph": "카운터는 \"상대가 기술을 걸어오는 그 순간의 무게중심 이동을 역이용\" 하는 것이다.",
+    "subcategories": [],
+    "count": 5
+   },
+   {
+    "category": "희생 기술 --- 브로속 체레즈 골로부(Бросок через голову)· 체레즈 그루지(Бросок через грудь)",
+    "order": 12,
+    "section": 12,
+    "source": "data/raw/삼보_포지션별_기술_백과사전.md#12",
+    "paragraph": "체레즈 그루지(Бросок через грудь)",
+    "subcategories": [],
+    "count": 6
+   },
+   {
+    "category": "스탠딩 → 파르테르(Партер) 전환",
+    "order": 13,
+    "section": 13,
+    "source": "data/raw/삼보_포지션별_기술_백과사전.md#13",
+    "paragraph": "삼보 심판 용어로 바닥 포지션은 партер(파르테르)라 부른다.",
+    "subcategories": [],
+    "count": 5
+   },
+   {
+    "category": "탑 포지션과 홀드다운 --- 우제르자니예(Удержание)",
+    "order": 14,
+    "section": 14,
+    "source": "data/raw/삼보_포지션별_기술_백과사전.md#14",
+    "paragraph": "이 섹션이 삼보를 유도·BJJ와 가장 다르게 만드는 부분이다. 스포츠 삼보는 초크가 금지되어 있는 대신, 상대를 일정 시간 이상 등이 바닥에 닿은 채로 제압(핀)하면 점수를 얻는 홀드다운(Удержание, \"Retention\") 규정이 있다. 즉, BJJ의 사이드컨트롤·마운트가 \"다음 공격을 위한 경유 포지션\"인 것과 달리, 삼보에서는 그 자체가 독립적인 득점 수단이다.",
+    "subcategories": [],
+    "count": 7
+   },
+   {
+    "category": "바텀 포지션과 탈출",
+    "order": 15,
+    "section": 15,
+    "source": "data/raw/삼보_포지션별_기술_백과사전.md#15",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 16
+   },
+   {
+    "category": "스윕 / 전환",
+    "order": 16,
+    "section": 16,
+    "source": "data/raw/삼보_포지션별_기술_백과사전.md#16",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 9
+   },
+   {
+    "category": "상체 관절기 --- 뤄착(Рычаг)과 우젤(Узел)",
+    "order": 17,
+    "section": 17,
+    "source": "data/raw/삼보_포지션별_기술_백과사전.md#17",
+    "paragraph": "삼보의 상체 관절기는 크게 레버(rычаг, \"지렛대\")형과 노트 (узел, \"매듭\")형으로 나뉜다. 레버형(рычаг) --- 직선으로 펴는 락",
+    "subcategories": [],
+    "count": 10
+   },
+   {
+    "category": "하체 관절기 --- 삼보의 전통적 강점",
+    "order": 18,
+    "section": 18,
+    "source": "data/raw/삼보_포지션별_기술_백과사전.md#18",
+    "paragraph": "삼보는 역사적으로 레그락이 가장 발달한 그래플링 종목 중 하나다. 단, 규정상 \"관절이 자연스럽게 굽는 방향\"의 락만 허용되고, 비트는 방향(회전)의 락은 금지된다는 원칙을 항상 함께 기억해야 한다. 허용되는 레버형/압박형 레그락",
+    "subcategories": [],
+    "count": 7
+   },
+   {
+    "category": "목/조르기 계열 --- 컴뱃 삼보 한정",
+    "order": 19,
+    "section": 19,
+    "source": "data/raw/삼보_포지션별_기술_백과사전.md#19",
+    "paragraph": "스포츠 삼보에서는 완전히 금지(경고 대상)이며, 컴뱃 삼보에서만 허용된다.",
+    "subcategories": [],
+    "count": 6
+   },
+   {
+    "category": "컴뱃 삼보 타격 범주",
+    "order": 20,
+    "section": 20,
+    "source": "data/raw/삼보_포지션별_기술_백과사전.md#20",
+    "paragraph": "규칙상 허용되는 경우에 한해:",
+    "subcategories": [],
+    "count": 10
+   }
+  ],
+  "judo": [
+   {
+    "category": "기본 자세와 이동",
+    "order": 1,
+    "section": 1,
+    "source": "data/raw/유도_포지션별_기술_백과사전.md#1",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 7
+   },
+   {
+    "category": "유도의 핵심 원리 --- Kuzushi · Tsukuri · Kake",
+    "order": 2,
+    "section": 2,
+    "source": "data/raw/유도_포지션별_기술_백과사전.md#2",
+    "paragraph": "모든 던지기는 이론적으로 세 단계로 이루어진다.",
+    "subcategories": [],
+    "count": 8
+   },
+   {
+    "category": "잡기 / 그립 --- Kumi Kata",
+    "order": 3,
+    "section": 3,
+    "source": "data/raw/유도_포지션별_기술_백과사전.md#3",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 12
+   },
+   {
+    "category": "발기술 --- Ashi Waza",
+    "order": 4,
+    "section": 4,
+    "source": "data/raw/유도_포지션별_기술_백과사전.md#4",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 13
+   },
+   {
+    "category": "손기술 --- Te Waza",
+    "order": 5,
+    "section": 5,
+    "source": "data/raw/유도_포지션별_기술_백과사전.md#5",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 16
+   },
+   {
+    "category": "허리기술 --- Koshi Waza",
+    "order": 6,
+    "section": 6,
+    "source": "data/raw/유도_포지션별_기술_백과사전.md#6",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 11
+   },
+   {
+    "category": "바로 누우며 던지기 --- Ma Sutemi Waza",
+    "order": 7,
+    "section": 7,
+    "source": "data/raw/유도_포지션별_기술_백과사전.md#7",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 5
+   },
+   {
+    "category": "옆으로 누우며 던지기 --- Yoko Sutemi Waza",
+    "order": 8,
+    "section": 8,
+    "source": "data/raw/유도_포지션별_기술_백과사전.md#8",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 12
+   },
+   {
+    "category": "연속·연결·변화 기술 --- Renraku Waza / Henka Waza",
+    "order": 9,
+    "section": 9,
+    "source": "data/raw/유도_포지션별_기술_백과사전.md#9",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "연속 기술 (Renraku Waza --- 같은 방향으로 몰아가는 콤비네이션)",
+      "order": 1,
+      "techniqueIds": [
+       "judo__ouchi-gari-uchi-mata",
+       "judo__ouchi-gari-seoi-nage",
+       "judo__kouchi-gari-seoi-nage",
+       "judo__kouchi-gari-tai-otoshi",
+       "judo__osoto-gari-uchi-mata",
+       "judo__osoto-gari-ouchi-gari",
+       "judo__de-ashi-barai-sasae-tsurikomi-ashi",
+       "judo__sasae-tsurikomi-ashi-osoto-gari",
+       "judo__uchi-mata-ouchi-gari",
+       "judo__kouchi-gari-uchi-mata"
+      ]
+     }
+    ],
+    "count": 10
+   },
+   {
+    "category": "카운터 --- Kaeshi Waza",
+    "order": 10,
+    "section": 10,
+    "source": "data/raw/유도_포지션별_기술_백과사전.md#10",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 9
+   },
+   {
+    "category": "네와자 / 바닥 포지션",
+    "order": 11,
+    "section": 11,
+    "source": "data/raw/유도_포지션별_기술_백과사전.md#11",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 10
+   },
+   {
+    "category": "굳히기 --- Osaekomi Waza",
+    "order": 12,
+    "section": 12,
+    "source": "data/raw/유도_포지션별_기술_백과사전.md#12",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "Kesa Gatame 계열",
+      "order": 1,
+      "techniqueIds": [
+       "judo__ushiro-kesa-gatame"
+      ]
+     }
+    ],
+    "count": 1
+   },
+   {
+    "category": "탈출",
+    "order": 13,
+    "section": 13,
+    "source": "data/raw/유도_포지션별_기술_백과사전.md#13",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 10
+   },
+   {
+    "category": "관절기 --- Kansetsu Waza",
+    "order": 14,
+    "section": 14,
+    "source": "data/raw/유도_포지션별_기술_백과사전.md#14",
+    "paragraph": "경기에서 대표적으로 허용되는 팔꿈치 관절기:",
+    "subcategories": [],
+    "count": 3
+   },
+   {
+    "category": "조르기 --- Shime Waza",
+    "order": 15,
+    "section": 15,
+    "source": "data/raw/유도_포지션별_기술_백과사전.md#15",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 10
+   }
+  ],
+  "kickboxing": [
+   {
+    "category": "기본 개념",
+    "order": 1,
+    "section": 1,
+    "source": "data/raw/킥복싱_포지션별_기술_백과사전.md#1",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 5
+   },
+   {
+    "category": "규칙 체계 (가장 먼저 알아야 할 것)",
+    "order": 2,
+    "section": 2,
+    "source": "data/raw/킥복싱_포지션별_기술_백과사전.md#2",
+    "paragraph": "킥복싱은 \"하나의 스포츠\"가 아니라 여러 룰셋의 집합이다. 같은 이름의 기술도 어떤 룰에서는 핵심 무기이고 어떤 룰에서는 반칙이다.",
+    "subcategories": [
+     {
+      "title": "대표적인 룰 체계",
+      "order": 1,
+      "techniqueIds": [
+       "kickboxing__k-1-rules",
+       "kickboxing__glory-rules",
+       "kickboxing__아메리칸-킥복싱"
+      ]
+     }
+    ],
+    "count": 5
+   },
+   {
+    "category": "스탠스",
+    "order": 3,
+    "section": 3,
+    "source": "data/raw/킥복싱_포지션별_기술_백과사전.md#3",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 8
+   },
+   {
+    "category": "풋워크",
+    "order": 4,
+    "section": 4,
+    "source": "data/raw/킥복싱_포지션별_기술_백과사전.md#4",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 11
+   },
+   {
+    "category": "펀치",
+    "order": 5,
+    "section": 5,
+    "source": "data/raw/킥복싱_포지션별_기술_백과사전.md#5",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 13
+   },
+   {
+    "category": "킥",
+    "order": 6,
+    "section": 6,
+    "source": "data/raw/킥복싱_포지션별_기술_백과사전.md#6",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "기본",
+      "order": 1,
+      "techniqueIds": [
+       "kickboxing__front-kick",
+       "kickboxing__teep",
+       "kickboxing__round-kick",
+       "kickboxing__low-kick",
+       "kickboxing__body-kick",
+       "kickboxing__high-kick",
+       "kickboxing__side-kick",
+       "kickboxing__back-kick"
+      ]
+     },
+     {
+      "title": "변형",
+      "order": 2,
+      "techniqueIds": [
+       "muay-thai__switch-kick",
+       "muay-thai__question-mark-kick",
+       "kickboxing__axe-kick",
+       "kickboxing__crescent-kick",
+       "kickboxing__wheel-kick",
+       "muay-thai__spinning-back-kick",
+       "kickboxing__jumping-kick",
+       "muay-thai__step-up-kick"
+      ]
+     }
+    ],
+    "count": 17
+   },
+   {
+    "category": "니 (무릎)",
+    "order": 7,
+    "section": 7,
+    "source": "data/raw/킥복싱_포지션별_기술_백과사전.md#7",
+    "paragraph": "규칙상 허용되는 경기에서:",
+    "subcategories": [],
+    "count": 7
+   },
+   {
+    "category": "엘보",
+    "order": 8,
+    "section": 8,
+    "source": "data/raw/킥복싱_포지션별_기술_백과사전.md#8",
+    "paragraph": "> 엘보는 경기 규칙에 따라 금지될 수 있다.",
+    "subcategories": [],
+    "count": 6
+   },
+   {
+    "category": "페인트 (Feint)",
+    "order": 9,
+    "section": 9,
+    "source": "data/raw/킥복싱_포지션별_기술_백과사전.md#9",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 7
+   },
+   {
+    "category": "클린치 / 근거리 제어",
+    "order": 10,
+    "section": 10,
+    "source": "data/raw/킥복싱_포지션별_기술_백과사전.md#10",
+    "paragraph": "규칙상 허용되는 경우:",
+    "subcategories": [],
+    "count": 9
+   },
+   {
+    "category": "방어",
+    "order": 14,
+    "section": 14,
+    "source": "data/raw/킥복싱_포지션별_기술_백과사전.md#14",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "펀치",
+      "order": 1,
+      "techniqueIds": [
+       "kickboxing__parry",
+       "kickboxing__slip",
+       "kickboxing__roll",
+       "kickboxing__pull",
+       "kickboxing__cover",
+       "kickboxing__shoulder-roll"
+      ]
+     },
+     {
+      "title": "킥",
+      "order": 2,
+      "techniqueIds": [
+       "kickboxing__check",
+       "kickboxing__catch",
+       "kickboxing__lean-back",
+       "kickboxing__angle-out",
+       "kickboxing__shin-block"
+      ]
+     }
+    ],
+    "count": 11
+   },
+   {
+    "category": "카운터",
+    "order": 15,
+    "section": 15,
+    "source": "data/raw/킥복싱_포지션별_기술_백과사전.md#15",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 10
+   },
+   {
+    "category": "포인트 스파링 특유 전술",
+    "order": 17,
+    "section": 17,
+    "source": "data/raw/킥복싱_포지션별_기술_백과사전.md#17",
+    "paragraph": "세미/라이트 컨택트 포인트 스파링은 풀컨택트 킥복싱과 승부 구조가 근본적으로 다르다. 강한 데미지 축적이 아니라 정확하고 통제된 한 타격이 즉시 포인트로 이어지고, 심판이 콜과 동시에 액션을 정지시킨다.",
+    "subcategories": [],
+    "count": 3
+   },
+   {
+    "category": "대표적인 콤비네이션 (연결)",
+    "order": 18,
+    "section": 18,
+    "source": "data/raw/킥복싱_포지션별_기술_백과사전.md#18",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 17
+   }
+  ],
+  "taekwondo": [
+   {
+    "category": "기본 서기 / 자세",
+    "order": 2,
+    "section": 2,
+    "source": "data/raw/태권도_포지션별_기술_백과사전.md#2",
+    "paragraph": "기본 서기는 품새와 기본 동작에서 사용하는 정형화된 자세이며, 실제 겨루기에서는 이를 변형한 겨루기 자세를 사용한다. 두 가지를 구분해서 이해해야 한다.",
+    "subcategories": [
+     {
+      "title": "품새 / 기본동작용 서기 [공통]",
+      "order": 1,
+      "techniqueIds": [
+       "taekwondo__나란히서기",
+       "taekwondo__준비서기-준비자세",
+       "karate__kiba-dachi",
+       "taekwondo__앞서기",
+       "karate__zenkutsu-dachi",
+       "karate__kokutsu-dachi",
+       "karate__neko-ashi-dachi",
+       "taekwondo__학다리서기"
+      ]
+     },
+     {
+      "title": "겨루기 준비자세 [WT][ITF]",
+      "order": 2,
+      "techniqueIds": [
+       "taekwondo__겨루기준비자세"
+      ]
+     }
+    ],
+    "count": 9
+   },
+   {
+    "category": "이동 / 풋워크",
+    "order": 3,
+    "section": 3,
+    "source": "data/raw/태권도_포지션별_기술_백과사전.md#3",
+    "paragraph": "이동은 거리와 타이밍을 만드는 기술이다. 발차기 자체보다 어떻게 그 발차기가 나올 거리를 만드는가가 겨루기 승패를 가른다.",
+    "subcategories": [],
+    "count": 9
+   },
+   {
+    "category": "손기술",
+    "order": 4,
+    "section": 4,
+    "source": "data/raw/태권도_포지션별_기술_백과사전.md#4",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "ITF 스타링 / 기본 동작에서의 손기술 [ITF][공통]",
+      "order": 2,
+      "techniqueIds": [
+       "boxing__backfist",
+       "karate__tettsui-uchi",
+       "karate__shuto-uchi",
+       "karate__haito-uchi",
+       "taekwondo__바탕손",
+       "taekwondo__팔굽치기",
+       "taekwondo__편손끝"
+      ]
+     }
+    ],
+    "count": 16
+   },
+   {
+    "category": "막기",
+    "order": 5,
+    "section": 5,
+    "source": "data/raw/태권도_포지션별_기술_백과사전.md#5",
+    "paragraph": "막기는 맞지 않기 위한 기술이 아니라 다음 반격을 위한 위치 선점 기술로 이해해야 한다. 특히 ITF 기본기·품새에서는 막기 자체가 공격 전환의 시작점이다.",
+    "subcategories": [],
+    "count": 12
+   },
+   {
+    "category": "기본 발차기 (세부 명칭)",
+    "order": 6,
+    "section": 6,
+    "source": "data/raw/태권도_포지션별_기술_백과사전.md#6",
+    "paragraph": "발차기는 태권도의 핵심 무기다. 아래는 기본 발차기의 세부 명칭과 \"어떤 상황에 쓰는가\"를 정리한 것이다.",
+    "subcategories": [],
+    "count": 11
+   },
+   {
+    "category": "겨루기 발차기 [WT 중심]",
+    "order": 8,
+    "section": 8,
+    "source": "data/raw/태권도_포지션별_기술_백과사전.md#8",
+    "paragraph": "WT 겨루기는 전자호구 채점 구조상 회전이 들어간 발차기와 앞발 기술의 반복 사용이 전술의 핵심이다.",
+    "subcategories": [],
+    "count": 6
+   },
+   {
+    "category": "회전 발차기",
+    "order": 9,
+    "section": 9,
+    "source": "data/raw/태권도_포지션별_기술_백과사전.md#9",
+    "paragraph": "몸을 완전히 돌려서 차는 발차기군으로, WT에서는 고배점, ITF·시범에서는 파괴력·화려함 때문에 중요하게 다뤄진다.",
+    "subcategories": [],
+    "count": 4
+   },
+   {
+    "category": "점프 / 공중 발차기",
+    "order": 10,
+    "section": 10,
+    "source": "data/raw/태권도_포지션별_기술_백과사전.md#10",
+    "paragraph": "체공 시간을 이용해 거리·표적을 바꾸거나 위력을 극대화하는 기술. 격파·시범에서 특히 비중이 크다.",
+    "subcategories": [],
+    "count": 10
+   },
+   {
+    "category": "연결 기술 (콤비네이션)",
+    "order": 11,
+    "section": 11,
+    "source": "data/raw/태권도_포지션별_기술_백과사전.md#11",
+    "paragraph": "단일 기술보다 기술 → 상대 반응 → 다음 기술의 연결이 실제 득점을 만든다.",
+    "subcategories": [],
+    "count": 8
+   },
+   {
+    "category": "거리별 전술",
+    "order": 12,
+    "section": 12,
+    "source": "data/raw/태권도_포지션별_기술_백과사전.md#12",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 1
+   },
+   {
+    "category": "품새 (Poomsae / Tul)",
+    "order": 15,
+    "section": 15,
+    "source": "data/raw/태권도_포지션별_기술_백과사전.md#15",
+    "paragraph": null,
+    "subcategories": [],
+    "count": 8
+   },
+   {
+    "category": "격파 (Kyokpa)",
+    "order": 16,
+    "section": 16,
+    "source": "data/raw/태권도_포지션별_기술_백과사전.md#16",
+    "paragraph": "격파는 정확한 타점·힘의 집중을 검증하는 수련이며 아래처럼 분류한다.",
+    "subcategories": [],
+    "count": 3
+   },
+   {
+    "category": "낙법과 호신술 [ITF 중심]",
+    "order": 17,
+    "section": 17,
+    "source": "data/raw/태권도_포지션별_기술_백과사전.md#17",
+    "paragraph": null,
+    "subcategories": [
+     {
+      "title": "낙법",
+      "order": 1,
+      "techniqueIds": [
+       "taekwondo__굴러-낙법"
+      ]
+     },
+     {
+      "title": "호신술 (Hoshinsul)",
+      "order": 2,
+      "techniqueIds": [
+       "taekwondo__손목-잡힘-대응",
+       "taekwondo__옷깃-어깨-잡힘-대응",
+       "taekwondo__뒤에서-안겼을-때-대응"
+      ]
+     }
+    ],
+    "count": 7
+   }
+  ]
+ }
+}

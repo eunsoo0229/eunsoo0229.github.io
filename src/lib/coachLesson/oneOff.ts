@@ -1,4 +1,6 @@
 import type { Technique } from '../../types';
+import { fighterProfileContext } from '../fighterProfile/coachContext';
+import { userCoachContextBlock } from '../coachContext/userContext';
 import { askGeminiForJson } from '../fighterStyle/geminiJson';
 import { aiProvider } from '../ai/provider';
 import { searchTechniques } from '../search';
@@ -16,7 +18,10 @@ import { getLearningRecord, listLearningRecords } from './records';
 import { buildTrainingAiContext } from '../trainingAnalytics/aiContext';
 import { parseWorkoutSpec, planErrors, type WorkoutSpec } from './workoutPlan';
 import { geminiCoach, type CoachBackend } from '../coachProvider/backend';
-import { exactTechniquesInText, lookupTechnique } from '../coachKnowledge/lookup';
+import { exactTechniquesInText, genericTexts, lookupTechnique } from '../coachKnowledge/lookup';
+import { domainOf as trainingDomainOf, planOwnLesson, type OwnLessonPlan } from '../coachKnowledge/coachPlan';
+import { artIn } from '../coachKnowledge/featureCatalog';
+import { learnedInfo, readLearnerState } from '../coachKnowledge/learnerState';
 import { classifyIntent } from './intent';
 import { createLessonState, gradeChoice, lessonStep, type LessonContext } from './engine';
 import { lessonContextFor, lessonPositionContext } from './service';
@@ -91,7 +96,7 @@ export interface OneOffLesson {
 
 export type BuildOneOffResult =
   | { ok: true; lesson: OneOffLesson; classification: OneOffClassification }
-  | { ok: false; code: 'EMPTY' | 'INSUFFICIENT_WEB_EVIDENCE' | 'SEARCH_UNAVAILABLE' | 'AI_FAILED' | 'NOT_IN_DB' | 'CHOOSE_TECHNIQUE'; message: string; classification?: OneOffClassification; candidates?: { techniqueId: string; name: string; martialArt: string }[] };
+  | { ok: false; code: 'EMPTY' | 'INSUFFICIENT_WEB_EVIDENCE' | 'SEARCH_UNAVAILABLE' | 'AI_FAILED' | 'NOT_IN_DB' | 'CHOOSE_TECHNIQUE' | 'NEED_INFO'; message: string; classification?: OneOffClassification; candidates?: { techniqueId: string; name: string; martialArt: string }[] };
 
 // ---------------------------------------------------------------- classification
 
@@ -359,8 +364,10 @@ function newLessonId(): string {
  * still not understood and questions the student asked. Aggregates only —
  * no email, name or user id.
  */
-export function personalLessonContext(): { lines: string[]; summary: string[] } {
+export function personalLessonContext(martialArt: string | null = null, topic: string | null = null): { lines: string[]; summary: string[] } {
   const training = buildTrainingAiContext();
+  // 개인 파이터 프로필 — only the items that matter for this art / topic.
+  const profile = martialArt && isSyntheticTrainingDomain(martialArt) ? null : fighterProfileContext({ martialArt, topic });
   const records = listLearningRecords().slice(0, 8);
   const weak = records.filter((r) => r.needsReview.length).map((r) => `${r.techniqueName}: ${r.needsReview.slice(0, 2).join(', ')}`).slice(0, 5);
   const questions = records.flatMap((r) => r.questions).slice(-5);
@@ -368,8 +375,14 @@ export function personalLessonContext(): { lines: string[]; summary: string[] } 
     ...(training.hasAnyData ? training.contextLines : ['훈련 기록: 아직 없음']),
     weak.length ? `이전 AI 코치 수업에서 아직 어려워한 부분: ${weak.join(' / ')}` : '',
     questions.length ? `학생이 이전 수업에서 한 질문: ${questions.join(' / ')}` : '',
+    profile?.text ?? '',
   ].filter(Boolean);
-  const summary = [training.hasAnyData ? '최근 훈련 기록' : '', weak.length ? `이전 수업에서 어려워한 부분 ${weak.length}개` : '', questions.length ? `이전 질문 ${questions.length}개` : ''].filter(Boolean);
+  const summary = [
+    training.hasAnyData ? '최근 훈련 기록' : '',
+    weak.length ? `이전 수업에서 어려워한 부분 ${weak.length}개` : '',
+    questions.length ? `이전 질문 ${questions.length}개` : '',
+    profile?.text ? `개인 파이터 프로필${profile.summary ? ` (${profile.summary})` : ''}` : '',
+  ].filter(Boolean);
   return { lines, summary };
 }
 
@@ -399,7 +412,7 @@ export async function buildOneOffLesson(request: string, selectedArt: string | n
   // Live web search ALWAYS runs — whether or not a technique was named.
   // A named technique's MARTIALDEX data is only added alongside the search
   // material; there is no DB-only lesson.
-  const dbConcepts = technique ? buildConcepts(technique) : [];
+  const dbConcepts = technique ? buildConcepts(technique, { genericTexts: genericTexts() }) : [];
   const dbScenarios = technique ? buildScenarios(technique) : [];
   const queries = classification.searchQueries.length ? classification.searchQueries : defaultQueries(classification.topic, artLabel, technique);
   const research = await runExpandedWebResearch([queries.slice(0, 2), queries.slice(2)]);
@@ -423,7 +436,7 @@ export async function buildOneOffLesson(request: string, selectedArt: string | n
     .slice(0, 15)
     .map((e) => ({ id: e.technique.id, name: e.technique.koreanName || e.technique.name }));
 
-  const personal = personalLessonContext();
+  const personal = personalLessonContext(classification.martialArt, `${classification.topic} ${technique ? `${technique.name} ${technique.category}` : ''}`);
 
   // --- lesson from the search material (+ the named technique's MARTIALDEX data, if any)
   const plan = await askGeminiForJson<RawLesson>({
@@ -543,6 +556,12 @@ export async function buildOneOffLesson(request: string, selectedArt: string | n
 // ---------------------------------------------------------------- MARTIALDEX 자체 AI 코치: data-only lesson
 
 const LOCAL_PRACTICE = '자세 설명의 단계와 핵심 포인트를 떠올리며 천천히 반복해 주세요. 연습 시간과 세트는 직접 정해 주세요.';
+/** A lesson about a topic / the student's own state rather than one named technique. */
+const TOPIC_LESSON = /(수업|레슨|훈련|배우|가르쳐|연습)/;
+/** "내 기록/수준에 맞춰", "다음 단계", "복습" — asks for a lesson planned from the student's own records. */
+/** "오늘 수업 해줘", "목표에 맞는 수업" — a lesson the saved goal can decide. */
+const GOAL_LESSON = /(오늘|목표|맞는|알아서)\s*.{0,6}(수업|레슨|훈련)/;
+const PERSONAL = /(내\s*(기록|수준|실력|상태|학습)|나에게\s*맞|맞춤|다음\s*(단계|기술)|복습)/;
 
 /**
  * The 자체 AI 코치's lesson: no web search and no model — only a technique
@@ -591,6 +610,17 @@ export function buildLocalOneOffLesson(request: string, selectedArt: string | nu
     classification.martialArt = technique.martialArt;
     classification.mode = classification.mode === 'topic' ? 'technique' : classification.mode;
   }
+  // A topic lesson ("MMA 타격 수업 하고 싶어", "내 기록으로 복싱 수업") → planned from this user's records + the data (coachPlan.ts).
+  let plan: OwnLessonPlan | null = null;
+  if (!technique && !opts.techniqueId && TOPIC_LESSON.test(text) && (artIn(text) || trainingDomainOf(text) !== 'any' || PERSONAL.test(text) || GOAL_LESSON.test(text))) {
+    const p = planOwnLesson(text, readLearnerState(), selectedArt);
+    if (!p.ok) return { ok: false, code: 'NEED_INFO', classification, message: p.message };
+    plan = p;
+    technique = p.main;
+    classification.techniqueId = technique.id;
+    classification.martialArt = p.martialArt;
+    classification.mode = 'technique';
+  }
   if (!technique) {
     const look = lookupTechnique({ query: classification.topic, martialArt: classification.martialArt });
     const candidates = look.status === 'found' ? [] : look.candidates;
@@ -605,6 +635,16 @@ export function buildLocalOneOffLesson(request: string, selectedArt: string | nu
   const context = lessonContextFor(technique);
   const name = lessonName(technique);
   const goal = classification.mode === 'technique_goal' ? ` 요청하신 내용 중 실전 활용·전략처럼 기술 자료에 없는 부분은 다루지 않고, 자료에 있는 범위에서만 진행합니다.` : '';
+  // What this device's records say about the technique — stated as recorded, never as "mastered" from one entry.
+  const known = plan ? null : learnedInfo(readLearnerState(), technique.id);
+  const personal = plan
+    ? [plan.review ? `복습 ${lessonName(plan.review.technique)}` : '', plan.next ? `새 기술 ${lessonName(plan.next.technique)}` : '', plan.usedRecords ? '학습 기록 반영' : '학습 기록 없음', plan.goalUsed ? '저장된 목표 반영' : ''].filter(Boolean)
+    : known
+      ? [`기록상 ${known.statusLabel} (${known.basis})`]
+      : [];
+  const planned = plan ? ` 오늘 계획: ${plan.summary}` : known ? ` 이 기기의 기록에서 이 기술은 "${known.statusLabel}"(${known.basis})입니다.` : '';
+  // the practice text names the planned techniques, so the existing practice step (oneOffMitt.ts) puts them on the mitt
+  const practice = plan ? `${LOCAL_PRACTICE} 오늘 연습할 기술: ${[plan.review?.technique, plan.next?.technique].filter((x): x is Technique => !!x).map(lessonName).join(', ')}.` : LOCAL_PRACTICE;
   const material = `[MARTIALDEX 기술 데이터]\n${techniqueData(technique)}`;
   return {
     ok: true,
@@ -616,16 +656,16 @@ export function buildLocalOneOffLesson(request: string, selectedArt: string | nu
       title: name,
       martialArt: technique.martialArt,
       techniqueId: technique.id,
-      intro: `오늘은 ${name} 수업입니다. 이 수업은 MARTIALDEX 기술 자료만으로 진행하고, 자료에 없는 내용은 추측하지 않습니다.${goal}`,
+      intro: `오늘은 ${name} 수업입니다. 이 수업은 MARTIALDEX 기술 자료만으로 진행하고, 자료에 없는 내용은 추측하지 않습니다.${goal}${planned}`,
       context,
       sources: [],
       webSearch: { called: false, queries: [], resultCount: 0, used: false, note: '자체 AI 코치는 실시간 웹 검색을 사용하지 않습니다.' },
       linkedLearned: [],
-      practice: LOCAL_PRACTICE,
-      workout: reconcileWorkout(LOCAL_PRACTICE, null),
+      practice,
+      workout: reconcileWorkout(practice, null),
       videoQueries: [],
       videoTerms: [technique.name, technique.koreanName ?? ''].filter(Boolean),
-      personalization: [],
+      personalization: personal,
       material,
       createdAt: new Date().toISOString(),
     },
@@ -659,7 +699,7 @@ export async function respondOneOff(lesson: OneOffLesson, state: CoachLessonStat
   if (intent === 'question') {
     const res = await aiProvider.ask({
       systemInstruction: `${COACH_SYSTEM_INSTRUCTION}\n- ${ONE_OFF_RULE}`,
-      contextText: `[수업 자료]\n${lesson.material}\n\n${lessonPositionContext(state, ctx)}`,
+      contextText: `[수업 자료]\n${lesson.material}\n\n${lessonPositionContext(state, ctx)}${userCoachContextBlock({ martialArt: lesson.martialArt, topic: lesson.title, budget: { profile: 600, goals: 600, learning: 700 }, detailBudget: 700 })}`,
       history: history.slice(-8).map((m) => ({ role: m.role === 'user' ? 'user' : 'model', text: m.text })),
       question: text,
     });
@@ -677,6 +717,6 @@ export async function respondOneOff(lesson: OneOffLesson, state: CoachLessonStat
   return lessonStep(state, ctx, { type: 'STUDENT', text, intent });
 }
 
-export function oneOffEvent(lesson: OneOffLesson, state: CoachLessonState, event: { type: 'VIDEO_DONE' } | { type: 'PRACTICE_DONE'; completed: boolean }): LessonStepResult {
+export function oneOffEvent(lesson: OneOffLesson, state: CoachLessonState, event: { type: 'VIDEO_DONE'; watched?: boolean } | { type: 'PRACTICE_DONE'; completed: boolean }): LessonStepResult {
   return lessonStep(state, lesson.context, event);
 }

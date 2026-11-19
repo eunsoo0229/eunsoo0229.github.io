@@ -1,3 +1,4 @@
+import Icon from './Icon';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../lib/auth/AuthProvider';
@@ -34,11 +35,10 @@ function sourceDomain(url: string): string {
 
 /**
  * Spec "MARTIALDEX — 신규 무술 미등록 기술 요청 기능 Part B" — works identically
- * for ANY martial art (official, add_teq-only, or brand-new custom), always
- * with the martial art's own name/id included in every search query (spec
- * section 5), reusing the SAME Tavily-evidence-based verification pipeline
- * martialArtDiscovery/service.ts already built for the "신규 무술 추가"
- * flow — not a parallel implementation. Rendered as an inline card (same
+ * for any managed martial art, always with the martial art's own name/id
+ * included in every search query (spec section 5), using the
+ * Tavily-evidence-based verification in martialArtDiscovery/service.ts.
+ * Rendered as an inline card (same
  * pattern as VideoPickerModal.tsx) rather than a separate route, since it's
  * always entered from a specific martial art's technique list.
  */
@@ -268,7 +268,7 @@ export default function RequestMissingTechnique({ martialArtId, martialArtNameKo
 
       {step === 'done' && (
         <>
-          <div className="banner banner--success">✓ "{registeredName}" 기술이 추가되었습니다.</div>
+          <div className="banner banner--success"><Icon name="check" /> "{registeredName}" 기술이 추가되었습니다.</div>
           <div className="modal-actions modal-actions--start" style={{ marginTop: 8 }}>
             <button className="btn btn-primary" onClick={onClose}>
               닫기

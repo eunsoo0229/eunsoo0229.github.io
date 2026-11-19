@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import type { Technique } from '../types';
@@ -6,6 +7,9 @@ import { getCurriculum } from '../lib/curriculum/curriculumService';
 import { useCurriculumProgress } from '../lib/curriculum/useCurriculum';
 import DifficultyBadge from '../components/DifficultyBadge';
 import RelatedVideos from '../components/RelatedVideos';
+import SelfVideoSearch from '../components/video/SelfVideoSearch';
+import { getMartialArt } from '../lib/loadData';
+import DayDrills from '../components/curriculum/DayDrills';
 import AiAskModal from '../components/AiAskModal';
 import PoseAnalysisModal from '../components/PoseAnalysisModal';
 import EmptyState from '../components/EmptyState';
@@ -28,7 +32,7 @@ function TechniqueAnalyzeButton({ technique, onOpen }: { technique: Technique; o
         onOpen(technique);
       }}
     >
-      📷 {summary.analysisCount > 0 ? `최근 분석 ${summary.latestScore}점` : '자세 분석'}
+      <Icon name="camera" /> {summary.analysisCount > 0 ? `최근 분석 ${summary.latestScore}점` : '자세 분석'}
     </button>
   );
 }
@@ -84,8 +88,8 @@ export default function CurriculumDayDetail() {
             </h1>
             <div className="chip-row">
               <DifficultyBadge difficulty={day.difficulty} />
-              <span className="chip">⏱ 약 {day.estimatedMinutes}분</span>
-              {isComplete && <span className="chip active">완료됨 ✓</span>}
+              <span className="chip"><Icon name="timer" /> 약 {day.estimatedMinutes}분</span>
+              {isComplete && <span className="chip active">완료됨 <Icon name="check" /></span>}
             </div>
           </div>
           <div className="detail-actions">
@@ -110,10 +114,10 @@ export default function CurriculumDayDetail() {
                 }
               }}
             >
-              {isComplete ? '✓ 학습 완료됨 (취소하기)' : '학습 완료로 표시'}
+              {isComplete ? <><Icon name="check" /> 학습 완료됨 (취소하기)</> : '학습 완료로 표시'}
             </button>
             <button className="btn btn-secondary" onClick={() => setAiOpen(true)}>
-              ✦ AI에게 질문
+              <Icon name="spark" /> AI에게 질문
             </button>
           </div>
         </div>
@@ -122,14 +126,14 @@ export default function CurriculumDayDetail() {
           <div>
             {day.description && (
               <div className="card info-card">
-                <h3>📖 오늘의 학습</h3>
+                <h3><Icon name="book" /> 오늘의 학습</h3>
                 <p>{day.description}</p>
               </div>
             )}
 
             {day.learningGoals.length > 0 && (
               <div className="card info-card">
-                <h3>🎯 학습 목표</h3>
+                <h3><Icon name="target" /> 학습 목표</h3>
                 <ul>
                   {day.learningGoals.map((g, i) => (
                     <li key={i}>{g}</li>
@@ -140,7 +144,7 @@ export default function CurriculumDayDetail() {
 
             {techniques.length > 0 && (
               <div className="card info-card">
-                <h3>🥋 오늘 배울 기술</h3>
+                <h3><Icon name="gi" /> 오늘 배울 기술</h3>
                 <div className="stack gap-2">
                   {techniques.map((t) => (
                     <Link key={t.id} to={`/arts/${t.martialArt}/techniques/${t.id}`} className="technique-row">
@@ -167,12 +171,17 @@ export default function CurriculumDayDetail() {
               </div>
             )}
 
+            <DayDrills drills={day.drills} />
+
             {techniques.length === 0 && (
               <EmptyState icon="🔁" text="오늘은 새 기술 없이 이전 내용을 복습하는 날입니다." />
             )}
 
             {techniques.map((t) => (
-              <RelatedVideos key={t.id} technique={t} />
+              <div key={t.id}>
+                <RelatedVideos technique={t} />
+                <SelfVideoSearch technique={t} artNameKo={getMartialArt(t.martialArt)?.nameKo} />
+              </div>
             ))}
 
             <div className="modal-note">
@@ -185,7 +194,7 @@ export default function CurriculumDayDetail() {
           <div>
             {reviewTechniques.length > 0 && (
               <div className="card info-card">
-                <h3>🔁 이전 학습 내용 복습</h3>
+                <h3><Icon name="repeat" /> 이전 학습 내용 복습</h3>
                 <div className="related-link-list">
                   {reviewTechniques.map((t) => (
                     <Link key={t.id} to={`/arts/${t.martialArt}/techniques/${t.id}`} className="related-link">
@@ -199,7 +208,7 @@ export default function CurriculumDayDetail() {
                 {reviewKeyPoints.length > 0 && (
                   <>
                     <div className="field-label" style={{ marginTop: 12 }}>
-                      🔑 핵심 포인트
+                      <Icon name="key" /> 핵심 포인트
                     </div>
                     <ul style={{ marginTop: 4 }}>
                       {reviewKeyPoints.map((kp, i) => (
@@ -212,7 +221,7 @@ export default function CurriculumDayDetail() {
             )}
 
             <div className="card info-card">
-              <h3>📅 Day 이동</h3>
+              <h3><Icon name="calendar" /> Day 이동</h3>
               <div className="stack gap-1">
                 {prevDay ? (
                   <Link to={`${linkBase}/day/${prevDay.day}`} className="btn btn-secondary">

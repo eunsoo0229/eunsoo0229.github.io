@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { confirmTossPayment, reportTossPaymentFailure } from '../lib/payments/paymentService';
+import { tossReturnParams } from '../lib/payments/tossCheckout';
 import EmptyState from '../components/EmptyState';
 import BackButton from '../components/BackButton';
 
@@ -16,7 +17,8 @@ type ResultState = { phase: 'processing' } | { phase: 'success' } | { phase: 'fa
  * own read of the URL as proof of anything.
  */
 export default function MarketplacePaymentResult() {
-  const [searchParams] = useSearchParams();
+  const [hashParams] = useSearchParams();
+  const searchParams = tossReturnParams(hashParams);
   const navigate = useNavigate();
   const [state, setState] = useState<ResultState>({ phase: 'processing' });
 
@@ -69,7 +71,7 @@ export default function MarketplacePaymentResult() {
             <p className="ai-error" role="alert">
               결제를 완료하지 못했습니다: {state.message}
             </p>
-            <a className="btn btn-primary" href="/marketplace">
+            <a className="btn btn-primary" href="#/marketplace">
               마켓플레이스로 돌아가기
             </a>
           </div>

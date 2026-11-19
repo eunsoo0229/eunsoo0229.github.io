@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { resolveTechnique as getTechnique } from '../lib/userTechniques/service';
@@ -61,7 +62,7 @@ export default function AiCoach() {
         </div>
 
         <div className="section-title">
-          <h2>🥋 AI 코치</h2>
+          <h2><Icon name="gi" /> AI 코치</h2>
         </div>
         <p className="video-status-message" style={{ marginTop: -8 }}>
           MARTIALDEX의 AI 기능을 모두 이곳에서 시작할 수 있습니다. 수업·코칭부터 기술·콤보, 커리큘럼, 분석, 홈트·영양까지 — 실제 학습 기록을 바탕으로 한 추천이며, 실제 전문 지도자를 대체하지 않습니다.
@@ -96,7 +97,7 @@ export default function AiCoach() {
               {loading ? '분석 중…' : recommendation ? '오늘의 코칭 다시 받기' : '오늘의 코칭 받기'}
             </button>
             <Link to="/today-training" className="btn btn-secondary">
-              🔥 오늘의 훈련 보기
+              <Icon name="flame" /> 오늘의 훈련 보기
             </Link>
           </div>
         </div>
@@ -109,7 +110,7 @@ export default function AiCoach() {
             <div className="stack gap-2">
               {recommendation.priority && (
                 <div className="chip-row">
-                  <span className="field-label">🎯 우선 학습</span>
+                  <span className="field-label"><Icon name="target" /> 우선 학습</span>
                   <Link to={techniqueLink(recommendation.priority.techniqueId)} className="chip active">
                     {recommendation.priority.techniqueName}
                   </Link>
@@ -117,7 +118,7 @@ export default function AiCoach() {
               )}
               {recommendation.review && (
                 <div className="chip-row">
-                  <span className="field-label">🔄 복습</span>
+                  <span className="field-label"><Icon name="repeat" /> 복습</span>
                   <Link to={techniqueLink(recommendation.review.techniqueId)} className="chip">
                     {recommendation.review.techniqueName}
                   </Link>
@@ -125,7 +126,7 @@ export default function AiCoach() {
               )}
               {recommendation.newTechnique && (
                 <div className="chip-row">
-                  <span className="field-label">📚 새로운 기술</span>
+                  <span className="field-label"><Icon name="book" /> 새로운 기술</span>
                   <Link to={techniqueLink(recommendation.newTechnique.techniqueId)} className="chip">
                     {recommendation.newTechnique.techniqueName}
                   </Link>
@@ -133,7 +134,7 @@ export default function AiCoach() {
               )}
               {recommendation.recommendedCurriculumDay && (
                 <div className="chip-row">
-                  <span className="field-label">📘 추천 커리큘럼 Day</span>
+                  <span className="field-label"><Icon name="book" /> 추천 커리큘럼 Day</span>
                   <Link
                     to={`/learning/${getTechnique(recommendation.priority?.techniqueId ?? '')?.martialArt ?? ''}/${recommendation.recommendedCurriculumDay.curriculumId}/day/${recommendation.recommendedCurriculumDay.day}`}
                     className="chip"
@@ -143,7 +144,7 @@ export default function AiCoach() {
                 </div>
               )}
               <div className="chip-row">
-                <span className="field-label">⏱ 예상 시간</span>
+                <span className="field-label"><Icon name="timer" /> 예상 시간</span>
                 <span className="chip">{recommendation.estimatedMinutes}분</span>
               </div>
             </div>
@@ -157,7 +158,7 @@ export default function AiCoach() {
         )}
 
         <div className="card info-card">
-          <h3>🔻 개선이 필요한 기술 TOP 5</h3>
+          <h3><Icon name="down" /> 개선이 필요한 기술 TOP 5</h3>
           {weakness.length === 0 ? (
             <EmptyState icon="✅" text="아직 개선이 필요하다고 판단할 만한 분석 기록이 없습니다. 카메라 자세 분석을 먼저 진행해보세요." />
           ) : (
@@ -183,7 +184,7 @@ export default function AiCoach() {
 
         {reviewActionableCount > 0 && (
           <div className="card info-card">
-            <h3>🔁 이번 주 복습</h3>
+            <h3><Icon name="repeat" /> 이번 주 복습</h3>
             <p className="video-status-message">
               복습이 필요한 기술 {reviewActionableCount}개가 있습니다. 학습 기록과 점수 변화를 바탕으로 계산한 우선순위입니다.
             </p>

@@ -1,0 +1,5 @@
+{
+ "version": 1,
+ "about": "Decisions of a person on curation candidates. Approved entries carry their own text and sources (the app reads only this file). Written by scripts/review-knowledge-candidates.mjs.",
+ "decisions": []
+}

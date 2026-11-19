@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useMemo } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import BackButton from '../components/BackButton';
@@ -36,7 +37,7 @@ export default function Favorites() {
           <span>즐겨찾기</span>
         </div>
         <div className="section-title">
-          <h2>★ 즐겨찾기</h2>
+          <h2><Icon name="check" /> 즐겨찾기</h2>
         </div>
         <div className="chip-row" role="tablist" aria-label="즐겨찾기 종류">
           <button type="button" role="tab" aria-selected={tab === 'techniques'} className={`chip${tab === 'techniques' ? ' active' : ''}`} onClick={() => select('techniques')} data-testid="fav-tab-techniques">
@@ -71,7 +72,7 @@ export default function Favorites() {
                       {c.name}
                     </Link>
                   </div>
-                  <p className="shared-combo-card__purpose">🎯 {c.purpose}</p>
+                  <p className="shared-combo-card__purpose"><Icon name="target" /> {c.purpose}</p>
                   <p className="shared-combo-card__flow">{c.stepNames.map((n) => n.replace(/\s*\(.*\)$/, '')).join(' → ')}</p>
                   <div className="shared-combo-card__foot">
                     <span className="technique-row__sub">by {c.authorNickname || '익명'}</span>
@@ -79,7 +80,7 @@ export default function Favorites() {
                         removeFavoriteCombo(c.id);
                         removeSharedCopy(c.id);
                       }} data-testid="fav-combo-remove">
-                      ★ 즐겨찾기 해제
+                      <Icon name="star-filled" /> 즐겨찾기 해제
                     </button>
                   </div>
                 </div>

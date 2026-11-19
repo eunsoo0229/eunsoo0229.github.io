@@ -1,0 +1,1598 @@
+{
+ "blend": "wrestling-double-leg-m2m-v1.blend",
+ "keys": [
+  {
+   "key": 0,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0008,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 1,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0008,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 2,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0008,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 3,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0008,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 4,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0008,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 5,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0008,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 6,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0008,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 7,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0008,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 8,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0008,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 9,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0008,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 10,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0008,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 11,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0008,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 12,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0008,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 13,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0008,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0033,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 14,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0008,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0096,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 15,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0008,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0155,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 16,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0009,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0206,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 17,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0009,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0246,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 18,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0009,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0275,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 19,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.001,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0289,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 20,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.001,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0289,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 21,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0011,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0275,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 22,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0011,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0246,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 23,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0011,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0206,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 24,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0012,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0155,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 25,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0012,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0096,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 26,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0012,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0033,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 27,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0012,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0087,
+    "B": 0.0014
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 28,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0012,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0255,
+    "B": 0.004
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 29,
+   "interBodyPairs": {
+    "A.head~B.hand": 59
+   },
+   "lowestSkin": {
+    "A": 0.0012,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0406,
+    "B": 0.0063
+   },
+   "gripContact": 59,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 30,
+   "interBodyPairs": {
+    "A.head~B.hand": 275
+   },
+   "lowestSkin": {
+    "A": 0.0013,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.053,
+    "B": 0.0079
+   },
+   "gripContact": 275,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 31,
+   "interBodyPairs": {
+    "A.head~B.hand": 160
+   },
+   "lowestSkin": {
+    "A": 0.0013,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0617,
+    "B": 0.0087
+   },
+   "gripContact": 160,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 32,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0013,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0662,
+    "B": 0.0087
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 33,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0013,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0662,
+    "B": 0.0079
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 34,
+   "interBodyPairs": {
+    "A.head~B.torso": 27
+   },
+   "lowestSkin": {
+    "A": 0.0013,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0617,
+    "B": 0.0063
+   },
+   "gripContact": 0,
+   "bodyPenetration": 27
+  },
+  {
+   "key": 35,
+   "interBodyPairs": {
+    "A.hand~B.leg": 129,
+    "A.hand~B.thigh": 3,
+    "A.torso~B.hand": 59,
+    "A.head~B.arm": 27,
+    "A.head~B.torso": 51
+   },
+   "lowestSkin": {
+    "A": 0.0013,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.053,
+    "B": 0.004
+   },
+   "gripContact": 191,
+   "bodyPenetration": 78
+  },
+  {
+   "key": 36,
+   "interBodyPairs": {
+    "A.torso~B.hand": 143,
+    "A.head~B.arm": 38,
+    "A.head~B.torso": 53,
+    "A.head~B.hand": 11
+   },
+   "lowestSkin": {
+    "A": 0.0013,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0406,
+    "B": 0.0014
+   },
+   "gripContact": 154,
+   "bodyPenetration": 91
+  },
+  {
+   "key": 37,
+   "interBodyPairs": {
+    "A.torso~B.hand": 123,
+    "A.head~B.arm": 31,
+    "A.head~B.torso": 42,
+    "A.head~B.hand": 37,
+    "A.arm~B.thigh": 20
+   },
+   "lowestSkin": {
+    "A": 0.0013,
+    "B": 0.0008
+   },
+   "pelvisStepM": {
+    "A": 0.0255,
+    "B": 0.0031
+   },
+   "gripContact": 160,
+   "bodyPenetration": 93
+  },
+  {
+   "key": 38,
+   "interBodyPairs": {
+    "A.torso~B.hand": 144,
+    "A.head~B.arm": 29,
+    "A.head~B.torso": 10,
+    "A.head~B.hand": 40,
+    "A.arm~B.thigh": 35
+   },
+   "lowestSkin": {
+    "A": 0.0013,
+    "B": 0.0009
+   },
+   "pelvisStepM": {
+    "A": 0.0087,
+    "B": 0.0091
+   },
+   "gripContact": 184,
+   "bodyPenetration": 74
+  },
+  {
+   "key": 39,
+   "interBodyPairs": {
+    "A.torso~B.hand": 154,
+    "A.head~B.arm": 28,
+    "A.head~B.hand": 34,
+    "A.arm~B.thigh": 4
+   },
+   "lowestSkin": {
+    "A": 0.0013,
+    "B": 0.0011
+   },
+   "pelvisStepM": {
+    "A": 0.0055,
+    "B": 0.0147
+   },
+   "gripContact": 188,
+   "bodyPenetration": 32
+  },
+  {
+   "key": 40,
+   "interBodyPairs": {
+    "A.hand~B.leg": 217,
+    "A.torso~B.hand": 90,
+    "A.head~B.arm": 10,
+    "A.head~B.hand": 24
+   },
+   "lowestSkin": {
+    "A": 0.0013,
+    "B": 0.0013
+   },
+   "pelvisStepM": {
+    "A": 0.0161,
+    "B": 0.0196
+   },
+   "gripContact": 331,
+   "bodyPenetration": 10
+  },
+  {
+   "key": 41,
+   "interBodyPairs": {
+    "A.hand~B.leg": 235,
+    "A.torso~B.hand": 66,
+    "A.head~B.hand": 5
+   },
+   "lowestSkin": {
+    "A": 0.0013,
+    "B": 0.0013
+   },
+   "pelvisStepM": {
+    "A": 0.0256,
+    "B": 0.0235
+   },
+   "gripContact": 306,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 42,
+   "interBodyPairs": {
+    "A.hand~B.leg": 268
+   },
+   "lowestSkin": {
+    "A": 0.0013,
+    "B": 0.0013
+   },
+   "pelvisStepM": {
+    "A": 0.0334,
+    "B": 0.0261
+   },
+   "gripContact": 268,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 43,
+   "interBodyPairs": {
+    "A.head~B.arm": 22,
+    "A.hand~B.leg": 289
+   },
+   "lowestSkin": {
+    "A": 0.0014,
+    "B": 0.0014
+   },
+   "pelvisStepM": {
+    "A": 0.0389,
+    "B": 0.0275
+   },
+   "gripContact": 289,
+   "bodyPenetration": 22
+  },
+  {
+   "key": 44,
+   "interBodyPairs": {
+    "A.head~B.arm": 81,
+    "A.hand~B.leg": 324,
+    "A.hand~B.thigh": 58
+   },
+   "lowestSkin": {
+    "A": 0.0014,
+    "B": 0.0015
+   },
+   "pelvisStepM": {
+    "A": 0.0417,
+    "B": 0.0275
+   },
+   "gripContact": 382,
+   "bodyPenetration": 81
+  },
+  {
+   "key": 45,
+   "interBodyPairs": {
+    "A.hand~B.leg": 245,
+    "A.hand~B.thigh": 194,
+    "A.head~B.arm": 97
+   },
+   "lowestSkin": {
+    "A": 0.0014,
+    "B": 0.0016
+   },
+   "pelvisStepM": {
+    "A": 0.0417,
+    "B": 0.0261
+   },
+   "gripContact": 439,
+   "bodyPenetration": 97
+  },
+  {
+   "key": 46,
+   "interBodyPairs": {
+    "A.hand~B.leg": 228,
+    "A.hand~B.thigh": 249,
+    "A.head~B.arm": 100
+   },
+   "lowestSkin": {
+    "A": 0.0014,
+    "B": 0.0017
+   },
+   "pelvisStepM": {
+    "A": 0.0389,
+    "B": 0.0235
+   },
+   "gripContact": 477,
+   "bodyPenetration": 100
+  },
+  {
+   "key": 47,
+   "interBodyPairs": {
+    "A.leg~B.leg": 10,
+    "A.hand~B.leg": 169,
+    "A.hand~B.thigh": 155,
+    "A.head~B.arm": 99
+   },
+   "lowestSkin": {
+    "A": 0.0015,
+    "B": 0.0018
+   },
+   "pelvisStepM": {
+    "A": 0.0334,
+    "B": 0.0196
+   },
+   "gripContact": 324,
+   "bodyPenetration": 109
+  },
+  {
+   "key": 48,
+   "interBodyPairs": {
+    "A.leg~B.leg": 22,
+    "A.hand~B.leg": 240,
+    "A.hand~B.thigh": 140,
+    "A.torso~B.thigh": 32,
+    "A.head~B.arm": 91
+   },
+   "lowestSkin": {
+    "A": 0.0015,
+    "B": 0.0019
+   },
+   "pelvisStepM": {
+    "A": 0.0256,
+    "B": 0.0147
+   },
+   "gripContact": 380,
+   "bodyPenetration": 145
+  },
+  {
+   "key": 49,
+   "interBodyPairs": {
+    "A.leg~B.leg": 32,
+    "A.hand~B.leg": 124,
+    "A.hand~B.thigh": 228,
+    "A.torso~B.thigh": 47,
+    "A.head~B.arm": 90
+   },
+   "lowestSkin": {
+    "A": 0.0015,
+    "B": 0.002
+   },
+   "pelvisStepM": {
+    "A": 0.0161,
+    "B": 0.0091
+   },
+   "gripContact": 352,
+   "bodyPenetration": 169
+  },
+  {
+   "key": 50,
+   "interBodyPairs": {
+    "A.leg~B.leg": 34,
+    "A.hand~B.leg": 97,
+    "A.hand~B.thigh": 257,
+    "A.torso~B.thigh": 55,
+    "A.head~B.arm": 89
+   },
+   "lowestSkin": {
+    "A": 0.0015,
+    "B": 0.002
+   },
+   "pelvisStepM": {
+    "A": 0.0055,
+    "B": 0.0031
+   },
+   "gripContact": 354,
+   "bodyPenetration": 178
+  },
+  {
+   "key": 51,
+   "interBodyPairs": {
+    "A.leg~B.leg": 35,
+    "A.hand~B.leg": 92,
+    "A.hand~B.thigh": 287,
+    "A.torso~B.thigh": 75,
+    "A.head~B.arm": 87
+   },
+   "lowestSkin": {
+    "A": 0.0015,
+    "B": 0.0114
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0053
+   },
+   "gripContact": 379,
+   "bodyPenetration": 197
+  },
+  {
+   "key": 52,
+   "interBodyPairs": {
+    "A.leg~B.leg": 10,
+    "A.hand~B.leg": 93,
+    "A.hand~B.thigh": 298,
+    "A.torso~B.thigh": 82,
+    "A.torso~B.leg": 10,
+    "A.head~B.arm": 86
+   },
+   "lowestSkin": {
+    "A": 0.0015,
+    "B": 0.0399
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0155
+   },
+   "gripContact": 391,
+   "bodyPenetration": 188
+  },
+  {
+   "key": 53,
+   "interBodyPairs": {
+    "A.thigh~B.leg": 18,
+    "A.leg~B.leg": 8,
+    "A.torso~B.leg": 28,
+    "A.hand~B.thigh": 216,
+    "A.hand~B.leg": 92,
+    "A.torso~B.thigh": 76,
+    "A.head~B.arm": 77
+   },
+   "lowestSkin": {
+    "A": 0.0015,
+    "B": 0.0864
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0247
+   },
+   "gripContact": 308,
+   "bodyPenetration": 207
+  },
+  {
+   "key": 54,
+   "interBodyPairs": {
+    "A.leg~B.leg": 122,
+    "A.thigh~B.leg": 48,
+    "A.torso~B.leg": 52,
+    "A.hand~B.leg": 78,
+    "A.hand~B.thigh": 304,
+    "A.torso~B.thigh": 80,
+    "A.head~B.arm": 66
+   },
+   "lowestSkin": {
+    "A": 0.0015,
+    "B": 0.1492
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0322
+   },
+   "gripContact": 382,
+   "bodyPenetration": 368
+  },
+  {
+   "key": 55,
+   "interBodyPairs": {
+    "A.thigh~B.leg": 75,
+    "A.torso~B.leg": 48,
+    "A.leg~B.leg": 111,
+    "A.torso~B.thigh": 83,
+    "A.hand~B.thigh": 514,
+    "A.hand~B.leg": 69,
+    "A.head~B.arm": 61
+   },
+   "lowestSkin": {
+    "A": 0.0015,
+    "B": 0.2044
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0375
+   },
+   "gripContact": 583,
+   "bodyPenetration": 378
+  },
+  {
+   "key": 56,
+   "interBodyPairs": {
+    "A.thigh~B.leg": 75,
+    "A.torso~B.leg": 56,
+    "A.leg~B.leg": 65,
+    "A.torso~B.thigh": 79,
+    "A.hand~B.thigh": 455,
+    "A.hand~B.leg": 27,
+    "A.arm~B.hand": 15,
+    "A.torso~B.hand": 19,
+    "A.head~B.hand": 25,
+    "A.head~B.arm": 56
+   },
+   "lowestSkin": {
+    "A": 0.0015,
+    "B": 0.2506
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0402
+   },
+   "gripContact": 541,
+   "bodyPenetration": 331
+  },
+  {
+   "key": 57,
+   "interBodyPairs": {
+    "A.thigh~B.leg": 84,
+    "A.torso~B.leg": 59,
+    "A.torso~B.thigh": 76,
+    "A.hand~B.thigh": 279,
+    "A.torso~B.hand": 17,
+    "A.arm~B.hand": 13,
+    "A.head~B.hand": 59,
+    "A.head~B.arm": 40
+   },
+   "lowestSkin": {
+    "A": 0.0015,
+    "B": 0.3018
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0402
+   },
+   "gripContact": 368,
+   "bodyPenetration": 259
+  },
+  {
+   "key": 58,
+   "interBodyPairs": {
+    "A.thigh~B.leg": 77,
+    "A.torso~B.leg": 64,
+    "A.hand~B.thigh": 281,
+    "A.torso~B.thigh": 76,
+    "A.head~B.hand": 82,
+    "A.head~B.arm": 22,
+    "A.torso~B.hand": 7,
+    "A.arm~B.hand": 18
+   },
+   "lowestSkin": {
+    "A": 0.0015,
+    "B": 0.3532
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0375
+   },
+   "gripContact": 388,
+   "bodyPenetration": 239
+  },
+  {
+   "key": 59,
+   "interBodyPairs": {
+    "A.thigh~B.leg": 49,
+    "A.hand~B.thigh": 212,
+    "A.torso~B.leg": 54,
+    "A.torso~B.thigh": 46,
+    "A.head~B.hand": 47,
+    "A.arm~B.hand": 57
+   },
+   "lowestSkin": {
+    "A": 0.0015,
+    "B": 0.4001
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0322
+   },
+   "gripContact": 316,
+   "bodyPenetration": 149
+  },
+  {
+   "key": 60,
+   "interBodyPairs": {
+    "A.thigh~B.leg": 42,
+    "A.hand~B.thigh": 183,
+    "A.torso~B.leg": 19,
+    "A.torso~B.thigh": 35,
+    "A.arm~B.hand": 45
+   },
+   "lowestSkin": {
+    "A": 0.0015,
+    "B": 0.419
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0247
+   },
+   "gripContact": 228,
+   "bodyPenetration": 96
+  },
+  {
+   "key": 61,
+   "interBodyPairs": {
+    "A.thigh~B.leg": 41,
+    "A.hand~B.thigh": 144,
+    "A.arm~B.hand": 19
+   },
+   "lowestSkin": {
+    "A": 0.0015,
+    "B": 0.4039
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0155
+   },
+   "gripContact": 163,
+   "bodyPenetration": 41
+  },
+  {
+   "key": 62,
+   "interBodyPairs": {
+    "A.thigh~B.leg": 27,
+    "A.hand~B.thigh": 141,
+    "A.arm~B.hand": 11
+   },
+   "lowestSkin": {
+    "A": 0.0015,
+    "B": 0.3987
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0053
+   },
+   "gripContact": 152,
+   "bodyPenetration": 27
+  },
+  {
+   "key": 63,
+   "interBodyPairs": {
+    "A.thigh~B.leg": 27,
+    "A.hand~B.thigh": 133,
+    "A.arm~B.hand": 14
+   },
+   "lowestSkin": {
+    "A": 0.0015,
+    "B": 0.3952
+   },
+   "pelvisStepM": {
+    "A": 0.0047,
+    "B": 0.0039
+   },
+   "gripContact": 147,
+   "bodyPenetration": 27
+  },
+  {
+   "key": 64,
+   "interBodyPairs": {
+    "A.thigh~B.leg": 21,
+    "A.hand~B.thigh": 192,
+    "A.torso~B.hand": 4,
+    "A.arm~B.hand": 26
+   },
+   "lowestSkin": {
+    "A": 0.0016,
+    "B": 0.3843
+   },
+   "pelvisStepM": {
+    "A": 0.0139,
+    "B": 0.0116
+   },
+   "gripContact": 222,
+   "bodyPenetration": 21
+  },
+  {
+   "key": 65,
+   "interBodyPairs": {
+    "A.thigh~B.leg": 21,
+    "A.hand~B.thigh": 211,
+    "A.arm~B.hand": 26
+   },
+   "lowestSkin": {
+    "A": 0.0018,
+    "B": 0.3662
+   },
+   "pelvisStepM": {
+    "A": 0.0224,
+    "B": 0.0187
+   },
+   "gripContact": 237,
+   "bodyPenetration": 21
+  },
+  {
+   "key": 66,
+   "interBodyPairs": {
+    "A.thigh~B.leg": 16,
+    "A.hand~B.thigh": 318,
+    "A.arm~B.hand": 22
+   },
+   "lowestSkin": {
+    "A": 0.002,
+    "B": 0.3422
+   },
+   "pelvisStepM": {
+    "A": 0.0297,
+    "B": 0.0248
+   },
+   "gripContact": 340,
+   "bodyPenetration": 16
+  },
+  {
+   "key": 67,
+   "interBodyPairs": {
+    "A.hand~B.thigh": 197
+   },
+   "lowestSkin": {
+    "A": 0.0023,
+    "B": 0.3136
+   },
+   "pelvisStepM": {
+    "A": 0.0356,
+    "B": 0.0298
+   },
+   "gripContact": 197,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 68,
+   "interBodyPairs": {
+    "A.hand~B.thigh": 59
+   },
+   "lowestSkin": {
+    "A": 0.0028,
+    "B": 0.2818
+   },
+   "pelvisStepM": {
+    "A": 0.0397,
+    "B": 0.0332
+   },
+   "gripContact": 59,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 69,
+   "interBodyPairs": {
+    "A.arm~B.hand": 16
+   },
+   "lowestSkin": {
+    "A": 0.0032,
+    "B": 0.2324
+   },
+   "pelvisStepM": {
+    "A": 0.0418,
+    "B": 0.0349
+   },
+   "gripContact": 16,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 70,
+   "interBodyPairs": {
+    "A.hand~B.thigh": 328,
+    "A.arm~B.hand": 80
+   },
+   "lowestSkin": {
+    "A": 0.0036,
+    "B": 0.1802
+   },
+   "pelvisStepM": {
+    "A": 0.0418,
+    "B": 0.0349
+   },
+   "gripContact": 408,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 71,
+   "interBodyPairs": {
+    "A.hand~B.thigh": 225,
+    "A.arm~B.hand": 97
+   },
+   "lowestSkin": {
+    "A": 0.0041,
+    "B": 0.1313
+   },
+   "pelvisStepM": {
+    "A": 0.0397,
+    "B": 0.0332
+   },
+   "gripContact": 322,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 72,
+   "interBodyPairs": {
+    "A.hand~B.thigh": 42,
+    "A.arm~B.hand": 141
+   },
+   "lowestSkin": {
+    "A": 0.0045,
+    "B": 0.0881
+   },
+   "pelvisStepM": {
+    "A": 0.0356,
+    "B": 0.0298
+   },
+   "gripContact": 183,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 73,
+   "interBodyPairs": {
+    "A.arm~B.hand": 88
+   },
+   "lowestSkin": {
+    "A": 0.0049,
+    "B": 0.0526
+   },
+   "pelvisStepM": {
+    "A": 0.0297,
+    "B": 0.0248
+   },
+   "gripContact": 88,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 74,
+   "interBodyPairs": {
+    "A.arm~B.hand": 59
+   },
+   "lowestSkin": {
+    "A": 0.0052,
+    "B": 0.0261
+   },
+   "pelvisStepM": {
+    "A": 0.0224,
+    "B": 0.0187
+   },
+   "gripContact": 59,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 75,
+   "interBodyPairs": {
+    "A.arm~B.hand": 31
+   },
+   "lowestSkin": {
+    "A": 0.0054,
+    "B": 0.0097
+   },
+   "pelvisStepM": {
+    "A": 0.0139,
+    "B": 0.0116
+   },
+   "gripContact": 31,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 76,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0054,
+    "B": 0.0042
+   },
+   "pelvisStepM": {
+    "A": 0.0047,
+    "B": 0.0039
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 77,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0054,
+    "B": 0.0042
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 78,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0054,
+    "B": 0.0042
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 79,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0054,
+    "B": 0.0042
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 80,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0054,
+    "B": 0.0042
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 81,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0054,
+    "B": 0.0042
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 82,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0054,
+    "B": 0.0042
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 83,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0054,
+    "B": 0.0042
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 84,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0054,
+    "B": 0.0042
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 85,
+   "interBodyPairs": {},
+   "lowestSkin": {
+    "A": 0.0054,
+    "B": 0.0042
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 0,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 86,
+   "interBodyPairs": {
+    "A.hand~B.torso": 18
+   },
+   "lowestSkin": {
+    "A": 0.0054,
+    "B": 0.0042
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 18,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 87,
+   "interBodyPairs": {
+    "A.hand~B.torso": 30
+   },
+   "lowestSkin": {
+    "A": 0.0054,
+    "B": 0.0042
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 30,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 88,
+   "interBodyPairs": {
+    "A.hand~B.torso": 80,
+    "A.arm~B.hand": 30
+   },
+   "lowestSkin": {
+    "A": 0.0054,
+    "B": 0.0042
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 110,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 89,
+   "interBodyPairs": {
+    "A.hand~B.torso": 64,
+    "A.arm~B.hand": 30
+   },
+   "lowestSkin": {
+    "A": 0.0054,
+    "B": 0.0042
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 94,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 90,
+   "interBodyPairs": {
+    "A.hand~B.torso": 24,
+    "A.arm~B.hand": 30
+   },
+   "lowestSkin": {
+    "A": 0.0054,
+    "B": 0.0042
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 54,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 91,
+   "interBodyPairs": {
+    "A.arm~B.hand": 30
+   },
+   "lowestSkin": {
+    "A": 0.0054,
+    "B": 0.0042
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 30,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 92,
+   "interBodyPairs": {
+    "A.arm~B.hand": 26
+   },
+   "lowestSkin": {
+    "A": 0.0054,
+    "B": 0.0042
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 26,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 93,
+   "interBodyPairs": {
+    "A.arm~B.hand": 34
+   },
+   "lowestSkin": {
+    "A": 0.0054,
+    "B": 0.0042
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 34,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 94,
+   "interBodyPairs": {
+    "A.arm~B.hand": 34
+   },
+   "lowestSkin": {
+    "A": 0.0054,
+    "B": 0.0042
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 34,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 95,
+   "interBodyPairs": {
+    "A.arm~B.hand": 34
+   },
+   "lowestSkin": {
+    "A": 0.0054,
+    "B": 0.0042
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 34,
+   "bodyPenetration": 0
+  },
+  {
+   "key": 96,
+   "interBodyPairs": {
+    "A.arm~B.hand": 34
+   },
+   "lowestSkin": {
+    "A": 0.0054,
+    "B": 0.0042
+   },
+   "pelvisStepM": {
+    "A": 0.0,
+    "B": 0.0
+   },
+   "gripContact": 34,
+   "bodyPenetration": 0
+  }
+ ]
+}

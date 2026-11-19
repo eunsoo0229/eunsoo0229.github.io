@@ -1,14 +1,16 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useParams, useSearchParams, Navigate } from 'react-router-dom';
+import Icon from '../components/Icon';
 import TechniqueRow from '../components/TechniqueRow';
 import EmptyState from '../components/EmptyState';
 import { techniqueTypeTags, uniqueSorted } from '../lib/search';
 import { isTechniqueInArt, techniqueCategoryInArt } from '../lib/techniqueCanonical';
 import { getUnifiedAllTechniques, getUnifiedMartialArt, getUnifiedMartialArtSummaries, searchAllTechniques } from '../lib/userTechniques/service';
 import { ADD_TEQ_CACHE_EVENT } from '../lib/addTeq/repository';
-import { useCustomMartialArtLibraryVersion } from '../lib/customMartialArt/useCustomMartialArtLibrary';
 import BackButton from '../components/BackButton';
 import RequestMissingTechnique from '../components/RequestMissingTechnique';
+import { findTaxonomyNodesInText, getArtTaxonomy, purposeTagsOf, tagOptions, taxonomyBreadcrumb, techniqueIdsForNode } from '../lib/techniqueTaxonomy';
+import { getPositionTree, hasPositionTaxonomy, positionLabel, reviewIds, techniqueIdsInPosition } from '../lib/positionTaxonomy';
 
 const RESULT_LIMIT = 2000; // effectively "no limit" for a corpus of ~1,100 techniques
 // Confirmed real mobile-performance issue (perf audit): landing on this page
@@ -25,19 +27,12 @@ export default function TechniqueList() {
   const { martialArtId } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
 
-  // Re-renders the filter dropdown immediately when a custom martial art is
-  // registered (spec "MARTIALDEX 긴급 안정화" 문제 D) — same hook AddMartialArt/
-  // AiGoalCurriculum already use for this exact purpose.
-  useCustomMartialArtLibraryVersion();
-  // Canonical martial-art list (official + custom_martial_arts) — was
-  // previously hardcoded to the static `martialArtSummaries` (official 9/10
-  // only), so a newly-added martial art never appeared in this screen's own
-  // filter even though it existed everywhere else in the app.
+  // Managed martial-art list with unified (shared-library) technique counts.
   const availableMartialArts = getUnifiedMartialArtSummaries();
 
-  // getUnifiedMartialArt (not the official-only getMartialArt) so a
-  // custom-added martial art (spec "MARTIALDEX 신규 무술 추가 시스템") resolves
-  // here too — otherwise its technique list would 404-redirect immediately.
+  // getUnifiedMartialArt (not the official-only getMartialArt) so the
+  // unified technique counts are used; an unknown or retired art id
+  // (우슈·택견 — the 무술 추가 feature was removed) redirects to the list.
   const art = martialArtId ? getUnifiedMartialArt(martialArtId) : undefined;
   if (martialArtId && !art) return <Navigate to="/arts" replace />;
 
@@ -64,6 +59,12 @@ export default function TechniqueList() {
   const position = searchParams.get('position') ?? '';
   const difficulty = searchParams.get('difficulty') ?? '';
   const type = searchParams.get('type') ?? '';
+  // 계층형 분류 (techniqueTaxonomy): a node id ("bjj/half-guard/sweep") and a purpose / type tag ("sweep")
+  const nodeParam = searchParams.get('node') ?? '';
+  // 포지션 중심 분류 (positionTaxonomy, BJJ · MMA): ?pos=<position>[&purpose=<purpose>]; pos=_review = 미분류 검토
+  const posParam = searchParams.get('pos') ?? '';
+  const purposeParam = searchParams.get('purpose') ?? '';
+  const tag = searchParams.get('tag') ?? '';
 
   // Re-renders when the user adds/removes a "기술 추가 요청" technique, or
   // when the shared add_teq library changes (a fresh login-time pull, or a
@@ -120,11 +121,36 @@ export default function TechniqueList() {
     [q, martialArtParam, category, position, difficulty, type, userTechniquesTick]
   );
 
+  // the taxonomy of the art in scope (memoized in the module); a node from another art is ignored
+  const taxonomy = useMemo(
+    () => (martialArtParam ? getArtTaxonomy(martialArtParam) : null),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [martialArtParam, userTechniquesTick]
+  );
+  const node = taxonomy && nodeParam ? taxonomy.nodes.get(nodeParam) ?? null : null;
+  const tagChoices = useMemo(() => (martialArtParam ? tagOptions(martialArtParam) : []), [martialArtParam, taxonomy]);
+  const filteredByTaxonomy = useMemo(() => {
+    let out = filtered;
+    if (node) {
+      const ids = techniqueIdsForNode(node.id);
+      out = out.filter((t) => ids.has(t.id));
+    }
+    if (tag && martialArtParam) out = out.filter((t) => purposeTagsOf(t.id, martialArtParam).some((e) => e.dim === tag));
+    if (posParam && martialArtParam && hasPositionTaxonomy(martialArtParam)) {
+      const ids = posParam === '_review' ? reviewIds(martialArtParam) : techniqueIdsInPosition(martialArtParam, posParam, purposeParam || null);
+      out = out.filter((t) => ids.has(t.id));
+    }
+    return out;
+  }, [filtered, node, tag, martialArtParam, posParam, purposeParam]);
+  const posLabel = posParam && martialArtParam ? (posParam === '_review' ? '미분류 검토' : positionLabel(martialArtParam, posParam, purposeParam || null)) : null;
+  // "하프 가드 스윕" typed into the search box → offer the matching categories themselves
+  const matchingNodes = useMemo(() => (q.trim().length >= 2 ? findTaxonomyNodesInText(q, martialArtParam ? [martialArtParam] : undefined).slice(0, 6) : []), [q, martialArtParam]);
+
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   useEffect(() => {
     setVisibleCount(PAGE_SIZE);
-  }, [q, martialArtParam, category, position, difficulty, type]);
-  const visibleResults = useMemo(() => filtered.slice(0, visibleCount), [filtered, visibleCount]);
+  }, [q, martialArtParam, category, position, difficulty, type, nodeParam, tag, posParam, purposeParam]);
+  const visibleResults = useMemo(() => filteredByTaxonomy.slice(0, visibleCount), [filteredByTaxonomy, visibleCount]);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
@@ -142,11 +168,18 @@ export default function TechniqueList() {
 
   function clearFilters() {
     const next = new URLSearchParams(searchParams);
-    for (const key of ['q', 'category', 'position', 'difficulty', 'type', 'martialArt']) next.delete(key);
+    for (const key of ['q', 'category', 'position', 'difficulty', 'type', 'martialArt', 'node', 'tag', 'pos', 'purpose']) next.delete(key);
     setSearchParams(next);
   }
 
-  const hasActiveFilters = Boolean(q || category || position || difficulty || type || (!martialArtId && martialArtParam));
+  const hasActiveFilters = Boolean(q || category || position || difficulty || type || nodeParam || tag || posParam || (!martialArtId && martialArtParam));
+  const trail = node ? taxonomyBreadcrumb(node.id) : [];
+  const nodeLink = (id: string) => {
+    const next = new URLSearchParams(searchParams);
+    next.set('node', id);
+    next.delete('category');
+    return `?${next.toString()}`;
+  };
 
   return (
     <div className="page">
@@ -161,7 +194,19 @@ export default function TechniqueList() {
               <span>/</span>
               <Link to={`/arts/${art.id}`}>{art.nameKo}</Link>
               <span>/</span>
-              <span>전체 기술</span>
+              {trail.length === 0 ? (
+                <span>전체 기술</span>
+              ) : (
+                <>
+                  <Link to={`/arts/${art.id}/techniques`}>전체 기술</Link>
+                  {trail.map((n, i) => (
+                    <span key={n.id} style={{ display: 'contents' }}>
+                      <span>/</span>
+                      {i === trail.length - 1 ? <span data-testid="taxonomy-crumb-current">{n.ko}</span> : <Link to={nodeLink(n.id)}>{n.ko}</Link>}
+                    </span>
+                  ))}
+                </>
+              )}
             </>
           ) : (
             <span>전체 기술 검색</span>
@@ -169,7 +214,7 @@ export default function TechniqueList() {
         </div>
 
         <div className="section-title">
-          <h2>{art ? `${art.nameKo} 기술 목록` : '전체 기술 검색'}</h2>
+          <h2>{node ? `${art?.nameKo ?? ''} · ${node.fullKo}` : posLabel ? `${art?.nameKo ?? ''} · ${posLabel}` : art ? `${art.nameKo} 기술 목록` : '전체 기술 검색'}</h2>
           <div className="chip-row" style={{ gap: 12 }}>
             {martialArtId && art && (
               <button type="button" className="see-all" style={{ background: 'none', border: 'none', cursor: 'pointer' }} onClick={() => setMissingTechniqueOpen((v) => !v)}>
@@ -190,6 +235,68 @@ export default function TechniqueList() {
             onClose={() => setMissingTechniqueOpen(false)}
             onRegistered={() => {}}
           />
+        )}
+
+        {posLabel && martialArtParam && (
+          <div className="taxonomy-node-bar" data-testid="position-filter-bar" data-pos={posParam} data-purpose={purposeParam}>
+            {purposeParam && (
+              <Link className="chip" to={`/arts/${martialArtParam}/techniques?pos=${encodeURIComponent(posParam)}`}>
+                ↑ {positionLabel(martialArtParam, posParam)} 전체
+              </Link>
+            )}
+            {getPositionTree(martialArtParam)
+              ?.positions.find((x) => x.id === posParam)
+              ?.purposes.filter((u) => u.id !== purposeParam)
+              .map((u) => (
+                <Link key={u.id} className="chip" to={`/arts/${martialArtParam}/techniques?pos=${encodeURIComponent(posParam)}&purpose=${encodeURIComponent(u.id)}`} data-testid="position-sibling">
+                  {u.ko} ({u.techniqueIds.length})
+                </Link>
+              ))}
+            <button
+              type="button"
+              className="chip"
+              onClick={() => {
+                const next = new URLSearchParams(searchParams);
+                next.delete('pos');
+                next.delete('purpose');
+                setSearchParams(next);
+              }}
+            >
+              분류 해제 <Icon name="close" />
+            </button>
+          </div>
+        )}
+
+        {node && (
+          <div className="taxonomy-node-bar" data-testid="taxonomy-node-bar">
+            {node.parentId && (
+              <Link className="chip" to={nodeLink(node.parentId)}>
+                ↑ {taxonomyBreadcrumb(node.parentId).slice(-1)[0]?.ko}
+              </Link>
+            )}
+            {node.children.map((cid) => {
+              const c = taxonomy!.nodes.get(cid)!;
+              return (
+                <Link key={cid} className="chip" to={nodeLink(cid)} data-testid="taxonomy-child">
+                  {c.ko} ({c.count})
+                </Link>
+              );
+            })}
+            <button type="button" className="chip" onClick={() => updateParam('node', '')}>
+              분류 해제 <Icon name="close" />
+            </button>
+          </div>
+        )}
+        {matchingNodes.length > 0 && !node && (
+          <div className="taxonomy-node-bar" data-testid="taxonomy-suggestions">
+            <span className="technique-row__sub">카테고리로 보기:</span>
+            {matchingNodes.map((n) => (
+              <Link key={n.id} className="chip" to={`/arts/${n.art}/techniques?node=${encodeURIComponent(n.id)}`}>
+                {!martialArtParam ? `${getUnifiedMartialArt(n.art)?.nameKo ?? n.art} · ` : ''}
+                {n.fullKo} ({n.count})
+              </Link>
+            ))}
+          </div>
         )}
 
         <div className="filter-bar">
@@ -217,6 +324,8 @@ export default function TechniqueList() {
                   next.delete('category');
                   next.delete('position');
                   next.delete('type');
+                  next.delete('node');
+                  next.delete('tag');
                   setSearchParams(next);
                 }}
               >
@@ -262,6 +371,16 @@ export default function TechniqueList() {
               <option value="intermediate">중급</option>
               <option value="advanced">고급</option>
             </select>
+            {tagChoices.length > 0 && (
+              <select className="select" value={tag} onChange={(e) => updateParam('tag', e.target.value)} data-testid="taxonomy-tag-filter">
+                <option value="">전체 목적·유형</option>
+                {tagChoices.map((t) => (
+                  <option key={t.id} value={t.id}>
+                    {t.ko} ({t.count})
+                  </option>
+                ))}
+              </select>
+            )}
             <select className="select" value={type} onChange={(e) => updateParam('type', e.target.value)}>
               <option value="">전체 기술 유형</option>
               {typeOptions.map((t) => (
@@ -276,10 +395,10 @@ export default function TechniqueList() {
               </button>
             )}
           </div>
-          <span className="result-count">{filtered.length}개 기술</span>
+          <span className="result-count">{filteredByTaxonomy.length}개 기술</span>
         </div>
 
-        {filtered.length === 0 ? (
+        {filteredByTaxonomy.length === 0 ? (
           <EmptyState
             icon="🔍"
             text={
@@ -295,10 +414,10 @@ export default function TechniqueList() {
                 <TechniqueRow key={t.id} technique={t} contextArt={martialArtParam || undefined} />
               ))}
             </div>
-            {visibleCount < filtered.length && (
+            {visibleCount < filteredByTaxonomy.length && (
               <div className="modal-actions" style={{ justifyContent: 'center', marginTop: 12 }}>
                 <button className="btn btn-secondary" onClick={() => setVisibleCount((n) => n + PAGE_SIZE)}>
-                  더 보기 ({visibleResults.length}/{filtered.length})
+                  더 보기 ({visibleResults.length}/{filteredByTaxonomy.length})
                 </button>
               </div>
             )}

@@ -1,0 +1,35 @@
+{
+  "at": "2026-11-01T07:31:06.531Z",
+  "swapBefore": "total = 6144.00M  used = 4185.75M  free = 1958.25M  (encrypted)",
+  "codeTurnMs": {
+    "내 레슬링 실력에서 부족한 부분을 분석해 줘.": 2524,
+    "레슬링 솔로 드릴 훈련을 하고 싶어.": 959,
+    "복싱 솔로 드릴 수업 만들어 줘.": 737,
+    "내가 배운 기술로 만들 수 있는 레슬링 콤보는?": 1217
+  },
+  "heapMB": {
+    "before40": 103,
+    "after40": 104
+  },
+  "fortyTurnsMs": 41445,
+  "model": {
+    "안녕하세요": {
+      "totalMs": 10803,
+      "firstTokenMs": 9250,
+      "outputTokens": 13
+    },
+    "요즘 훈련이 너무 힘들어서 그만두고 싶어": {
+      "totalMs": 18768,
+      "firstTokenMs": 6038,
+      "outputTokens": 135
+    }
+  },
+  "electronWorkingSetMB": 444,
+  "ollama": [
+    {
+      "name": "qwen2.5:3b",
+      "sizeGB": 2.17
+    }
+  ],
+  "swapAfter": "total = 5120.00M  used = 4122.75M  free = 997.25M  (encrypted)"
+}

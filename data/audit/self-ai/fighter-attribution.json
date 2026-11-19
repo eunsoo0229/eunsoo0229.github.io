@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-16T07:57:02.148Z",
+  "note": "labelled sentences written for the test (not collected from real pages)",
+  "total": 28,
+  "oldRule": {
+    "correct": 17,
+    "notHisCountedAsHis": 11
+  },
+  "newRule": {
+    "correct": 28,
+    "notHisCountedAsHis": 0
+  },
+  "wrong": []
+}

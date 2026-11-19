@@ -1,10 +1,11 @@
 import type { CameraFacing } from './types';
+import { ensureCameraAccess } from '../media/cameraAccess';
 
 // Reuses the same navigator.mediaDevices.getUserMedia() approach as the
 // existing camera feature (components/PoseAnalysisModal.tsx) — same
-// permission flow (standard browser prompt, no separate pre-consent UI),
-// just with an explicit facingMode constraint that modal doesn't need
-// (it never distinguishes front/back).
+// permission flow (media/cameraAccess.ts for the macOS TCC step, then the
+// standard browser prompt), just with an explicit facingMode constraint
+// that modal doesn't need (it never distinguishes front/back).
 
 export interface CameraStreamHandle {
   stream: MediaStream;
@@ -12,6 +13,9 @@ export interface CameraStreamHandle {
 }
 
 export async function openCamera(facing: CameraFacing): Promise<CameraStreamHandle> {
+  // macOS(Electron)는 앱이 TCC로 요청하기 전까지 비디오 장치를 숨긴다 — 먼저 묻지 않으면 NotFoundError
+  const access = await ensureCameraAccess();
+  if (!access.ok) throw new DOMException(access.message, 'NotAllowedError');
   const stream = await navigator.mediaDevices.getUserMedia({
     video: { facingMode: facing },
     audio: true,
@@ -37,6 +41,8 @@ export function stopCameraStream(handle: CameraStreamHandle | null): void {
 export async function detectDualCameraSupport(): Promise<boolean> {
   let front: MediaStream | null = null;
   let back: MediaStream | null = null;
+  // 권한을 먼저 확보하지 않으면 이 탐지가 항상 "미지원"으로 떨어진다 (장치가 아예 안 보이므로)
+  if (!(await ensureCameraAccess()).ok) return false;
   try {
     front = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' } });
   } catch {

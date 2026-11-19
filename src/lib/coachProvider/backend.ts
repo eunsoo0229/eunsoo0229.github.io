@@ -6,9 +6,24 @@ import { keyPointsReference } from '../coachLesson/concepts';
 import type { RecapPlan } from '../coachLesson/engine';
 import { evidenceAnalysis, gradeByEvidence, recapHitsByEvidence, reconcileAnalysis } from '../coachLesson/evidenceGrader';
 import type { AnswerAnalysis, ScenarioItem } from '../coachLesson/types';
-import { answerFromEvidence } from '../coachKnowledge/answer';
+import { answerCoachQuestion, dialogAfterAction, type CoachDialogContext } from '../coachKnowledge/questions';
+import type { CoachAction } from '../coachKnowledge/featureCatalog';
+
+/** The 자체 코치's conversation context inside the current lesson (which technique a short follow-up refers to). */
+let lessonDialog: { lessonTechniqueId: string | null; context: CoachDialogContext } = { lessonTechniqueId: null, context: { focusId: null, listedIds: [] } };
+/** A training the student opened from this lesson (for a later "왜?" / "끝났어"). */
+export function rememberLessonAction(lessonTechniqueId: string, action: CoachAction): void {
+  if (!action.ok) return;
+  const base = lessonDialog.lessonTechniqueId === lessonTechniqueId ? lessonDialog.context : { focusId: lessonTechniqueId, listedIds: [] };
+  lessonDialog = { lessonTechniqueId, context: dialogAfterAction(base, action) };
+}
+
+/** Techniques the 자체 코치 last listed in this lesson ("그거 연습하고 싶어"). */
+export function lastListedTechniqueIds(lessonTechniqueId: string): string[] {
+  return lessonDialog.lessonTechniqueId === lessonTechniqueId ? lessonDialog.context.listedIds : [];
+}
 import { namesOf } from '../coachKnowledge/lookup';
-import { localModelSupported } from './localModel';
+import { localModelEnabled } from './localModel';
 import type { CoachKind } from './types';
 
 // One lesson engine, two coaches. Everything a lesson asks a "coach" to do
@@ -17,8 +32,8 @@ import type { CoachKind } from './types';
 // are split per coach:
 //   gemini     → the existing Gemini functions, unchanged (grading is then
 //                bounded by the deterministic grade — reconcileAnalysis).
-//   martialdex → technique evidence + deterministic grading; the local model
-//                only rewords grounded answers. No Gemini module is called.
+//   martialdex → technique evidence + deterministic grading. The local model
+//                is off by default (localModelEnabled). No Gemini module is called.
 
 export interface CoachAnswer {
   ok: true;
@@ -68,23 +83,29 @@ function deterministic(input: CoachGradeInput) {
 export const geminiCoach: CoachBackend = {
   kind: 'gemini',
   async answerQuestion({ technique, question, dayContext, history, place }) {
-    const r = await askCoach(technique, dayContext, history, question, place);
+    // the user picked the Gemini coach for this lesson — an explicit choice, so these calls go to Gemini
+    const r = await askCoach(technique, dayContext, history, question, place, 'gemini');
     return r.ok ? { ok: true, text: r.text, source: 'gemini' } : r;
   },
   async gradeAnswer(input) {
     const grade = deterministic(input);
-    const model = await analyzeAnswer(input);
+    const model = await analyzeAnswer({ ...input, engine: 'gemini' });
     return reconcileAnalysis(grade, model, input.answer);
   },
-  gradeRecap: (technique, plan, answer) => gradeRecapWithGemini(technique, plan, answer),
-  gradeQuiz: (t, question, answer) => gradeQuizAnswer(t, question, answer),
+  gradeRecap: (technique, plan, answer) => gradeRecapWithGemini(technique, plan, answer, 'gemini'),
+  gradeQuiz: (t, question, answer) => gradeQuizAnswer(t, question, answer, 'gemini'),
 };
 
 export const martialdexCoach: CoachBackend = {
   kind: 'martialdex',
   async answerQuestion({ technique, question }) {
-    const a = await answerFromEvidence(technique, question, { useModel: localModelSupported() });
-    return { ok: true, text: a.modelNote ? `${a.text} (${a.modelNote})` : a.text, source: a.source };
+    // comparison / situation / practice-feature / single-technique questions, all from the data (questions.ts);
+    // the lesson's own technique is the focus, the last listed techniques let "그거" be resolved.
+    const ctx = lessonDialog.lessonTechniqueId === technique.id ? lessonDialog.context : { focusId: technique.id, listedIds: [] };
+    const a = await answerCoachQuestion(technique, question, { useModel: localModelEnabled(), context: ctx });
+    lessonDialog = { lessonTechniqueId: technique.id, context: a.context ?? ctx };
+    const g = a.grounded;
+    return { ok: true, text: g?.modelNote ? `${a.text} (${g.modelNote})` : a.text, source: g?.source ?? 'evidence' };
   },
   async gradeAnswer(input) {
     return evidenceAnalysis(deterministic(input));

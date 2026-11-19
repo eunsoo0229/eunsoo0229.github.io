@@ -1,0 +1,180 @@
+/* =====================================================================
+   MARTIALDEX — Brand Design System (2026-11 "Index" identity)
+   Loaded LAST (main.tsx), so these tokens replace the legacy palette everywhere.
+
+   Philosophy (from the KO STYLE case-study analysis, re-authored for MARTIALDEX):
+   - Black fields, one metal. Colour enters only through gold, and gold is rationed:
+     active state, the single primary action of a view, index numerals, hairlines.
+   - Three voices of type: CONDENSED DISPLAY (Bebas Neue) for impact,
+     ceremonial serif (Cinzel) for ranks / chapter titles / certificates,
+     technical sans (Barlow + Pretendard for Hangul) for everything you read and operate.
+   - MARTIALDEX's own motif is the INDEX: a numbered, ruled, catalogued world
+     (01 / 02 …, registration corners, hairline rules, the rotated-square "mat" mark).
+   ===================================================================== */
+
+:root {
+  /* ---- raw palette ---- */
+  --mx-ink: #0a0a0b;
+  --mx-carbon: #141416;
+  --mx-graphite: #1d1e22;
+  --mx-graphite-2: #242529;
+  --mx-steel: #3a3c41;
+  --mx-steel-2: #5a5d64;
+  --mx-ash: #8c8f96;
+  --mx-gold: #c4ad7c;
+  --mx-gold-bright: #d9c399;
+  --mx-gold-deep: #9c8659;
+  --mx-ivory: #f4f1ea;
+  --mx-bone: #e8e3d8;
+  --mx-signal: #b5473c; /* errors / destructive only */
+  --mx-moss: #7f9a7a; /* success only */
+
+  /* ---- type ---- */
+  --mx-font-display: 'Bebas Neue', 'Barlow Condensed', 'Pretendard Variable', Pretendard, sans-serif;
+  --mx-font-ceremonial: 'Cinzel', 'Times New Roman', serif;
+  --mx-font-ui: 'Barlow', 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --mx-font-cond: 'Barlow Condensed', 'Pretendard Variable', Pretendard, sans-serif;
+  --mx-font-num: 'Barlow Condensed', 'Barlow', sans-serif;
+
+  --mx-fs-mega: clamp(64px, 11vw, 168px);
+  --mx-fs-hero: clamp(48px, 7.2vw, 112px);
+  --mx-fs-h1: clamp(36px, 4.6vw, 64px);
+  --mx-fs-h2: clamp(26px, 2.8vw, 38px);
+  --mx-fs-h3: 20px;
+  --mx-fs-body: 15px;
+  --mx-fs-small: 13px;
+  --mx-fs-micro: 11px;
+  --mx-track-display: 0.01em;
+  --mx-track-label: 0.18em;
+  --mx-track-ceremonial: 0.12em;
+
+  /* ---- spacing / layout ---- */
+  --mx-gutter: clamp(16px, 4vw, 56px);
+  --mx-max: 1360px;
+  --mx-read: 760px;
+  --mx-rail: 248px;
+  --mx-bar: 64px;
+  --mx-tab: 64px;
+
+  /* ---- lines / radius / depth ---- */
+  --mx-hair: 1px solid rgba(244, 241, 234, 0.1);
+  --mx-hair-strong: 1px solid rgba(244, 241, 234, 0.2);
+  --mx-hair-gold: 1px solid rgba(196, 173, 124, 0.55);
+  --mx-r0: 0px;
+  --mx-r1: 2px;
+  --mx-r2: 4px;
+  --mx-shadow-plate: 0 30px 80px rgba(0, 0, 0, 0.55);
+
+  /* ---- motion ---- */
+  --mx-ease: cubic-bezier(0.2, 0.7, 0.1, 1);
+  --mx-ease-in: cubic-bezier(0.55, 0, 0.75, 0.2);
+  --mx-dur-1: 140ms;
+  --mx-dur-2: 260ms;
+  --mx-dur-3: 520ms;
+  --mx-dur-4: 900ms;
+
+  /* ---- responsive (documented; CSS media queries use the literal values) ----
+     phone ≤ 640 · tablet ≤ 1024 · desktop > 1024 · wide ≥ 1440 */
+}
+
+/* ---------- legacy variable bridge (both themes) — every existing page reads these ---------- */
+:root:not([data-mx-off]) {
+  --bg: var(--mx-bg);
+  --bg-2: var(--mx-surface);
+  --bg-elevated: var(--mx-surface);
+  --bg-subtle: var(--mx-surface-2);
+  --bg-hover: var(--mx-surface-3);
+  --surface-raised: var(--mx-surface-2);
+  --text: var(--mx-fg);
+  --text-muted: var(--mx-fg-2);
+  --text-faint: var(--mx-fg-3);
+  --border: var(--mx-line);
+  --border-strong: var(--mx-line-2);
+  --accent: var(--mx-accent);
+  --accent-strong: var(--mx-accent-strong);
+  --accent-deep: var(--mx-accent-strong);
+  --accent-contrast: var(--mx-accent-fg);
+  --accent-soft: var(--mx-accent-soft);
+  --gold: var(--mx-accent);
+  --gold-soft: var(--mx-accent-soft);
+  --silver: var(--mx-ash);
+  --silver-soft: rgba(140, 143, 150, 0.14);
+  --beginner: var(--mx-moss);
+  --beginner-soft: rgba(127, 154, 122, 0.14);
+  --intermediate: var(--mx-accent);
+  --intermediate-soft: var(--mx-accent-soft);
+  --advanced: #c9826f;
+  --advanced-soft: rgba(201, 130, 111, 0.13);
+  --danger: var(--mx-signal);
+  --danger-strong: #c95a4e;
+  --danger-soft: rgba(181, 71, 60, 0.14);
+  --warning: var(--mx-accent);
+  --warning-soft: var(--mx-accent-soft);
+  --success: var(--mx-moss);
+  --success-soft: rgba(127, 154, 122, 0.14);
+  --shadow: none;
+  --shadow-lg: var(--mx-shadow-plate);
+  --metal-surface: var(--mx-surface);
+  --metal-edge: var(--mx-line-2);
+  --metal-sheen: transparent;
+  --scrim: linear-gradient(180deg, rgba(10, 10, 11, 0.7) 0%, rgba(10, 10, 11, 0.2) 45%, rgba(10, 10, 11, 0.92) 100%);
+  --scrim-solid: rgba(10, 10, 11, 0.72);
+  --ring: 0 0 0 1px var(--mx-accent), 0 0 0 4px rgba(196, 173, 124, 0.18);
+  --radius-sm: var(--mx-r1);
+  --radius: var(--mx-r1);
+  --radius-lg: var(--mx-r2);
+  --font-serif: var(--mx-font-ui);
+  --font-sans: var(--mx-font-ui);
+  --fs-page-title: var(--mx-fs-h1);
+  --fs-section-title: 22px;
+  --mdx-icon-accent: var(--mx-accent);
+}
+
+/* ---------- semantic tokens: INK (default — dark, and system) ----------
+   (:not() lifts specificity to match the legacy sheets' theme selectors; this file loads last, so it wins) */
+:root:not([data-theme='light']) {
+  --mx-bg: var(--mx-ink);
+  --mx-surface: var(--mx-carbon);
+  --mx-surface-2: var(--mx-graphite);
+  --mx-surface-3: var(--mx-graphite-2);
+  --mx-fg: var(--mx-ivory);
+  --mx-fg-2: rgba(244, 241, 234, 0.72);
+  --mx-fg-3: rgba(244, 241, 234, 0.48);
+  --mx-line: rgba(244, 241, 234, 0.1);
+  --mx-line-2: rgba(244, 241, 234, 0.2);
+  --mx-accent: var(--mx-gold);
+  --mx-accent-fg: var(--mx-ink);
+  --mx-accent-soft: rgba(196, 173, 124, 0.12);
+  --mx-accent-strong: var(--mx-gold-bright);
+
+  color-scheme: dark;
+}
+
+/* ---------- semantic tokens: BONE (light theme — editorial paper) ---------- */
+:root[data-theme='light'] {
+  --mx-bg: var(--mx-ivory);
+  --mx-surface: #fbf9f4;
+  --mx-surface-2: var(--mx-bone);
+  --mx-surface-3: #ddd6c7;
+  --mx-fg: var(--mx-ink);
+  --mx-fg-2: rgba(10, 10, 11, 0.7);
+  --mx-fg-3: rgba(10, 10, 11, 0.5);
+  --mx-line: rgba(10, 10, 11, 0.12);
+  --mx-line-2: rgba(10, 10, 11, 0.24);
+  --mx-accent: #8a7442;
+  --mx-accent-fg: var(--mx-ivory);
+  --mx-accent-soft: rgba(138, 116, 66, 0.12);
+  --mx-hair: 1px solid rgba(10, 10, 11, 0.12);
+  --mx-hair-strong: 1px solid rgba(10, 10, 11, 0.24);
+  --mx-hair-gold: 1px solid rgba(138, 116, 66, 0.6);
+  color-scheme: light;
+  --mx-accent-strong: #6f5c33;
+  --mdx-icon-accent: #8a7442;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    /* "system" on a light OS still opens on ink: the brand is black-first. The Bone theme is opt-in. */
+    color-scheme: dark;
+  }
+}

@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { martialArtSummaries } from '../lib/loadData';
@@ -197,7 +198,7 @@ function FreeTrainingBuilder() {
           <span>자유훈련</span>
         </div>
         <div className="section-title">
-          <h2>🥋 자유훈련</h2>
+          <h2><Icon name="gi" /> 자유훈련</h2>
         </div>
         <p className="video-status-message" style={{ marginTop: -8 }}>
           AI 커리큘럼 없이 원하는 기술을 직접 골라 순서와 훈련량을 정해 훈련합니다.
@@ -207,7 +208,7 @@ function FreeTrainingBuilder() {
         <div className="chip-row" style={{ marginBottom: 12 }}>
           <span className="chip active">일반 훈련</span>
           <Link to="/free-training/sparring" className="chip">
-            🤼 스파링 기록
+            <Icon name="grapple" /> 스파링 기록
           </Link>
         </div>
 
@@ -229,7 +230,7 @@ function FreeTrainingBuilder() {
         </div>
 
         <div className="card info-card">
-          <h3>🏋️ 헬스 운동 추가</h3>
+          <h3><Icon name="dumbbell" /> 헬스 운동 추가</h3>
           <p className="video-status-message">
             무술 기술과 별개로, 벤치프레스/스쿼트 같은 헬스 운동도 같은 자유훈련 세션에 추가할 수 있습니다. 위에서 고른 무술과 무관하게 추가됩니다.
           </p>
@@ -251,7 +252,7 @@ function FreeTrainingBuilder() {
 
         <div className="card info-card">
           <h3>오늘의 자유훈련</h3>
-          <p className="video-status-message">기술을 드래그하거나 ◀ ▶ 버튼으로 순서를 바꿀 수 있습니다. 기술을 클릭하면 상세 정보를 볼 수 있습니다.</p>
+          <p className="video-status-message">기술을 드래그하거나 <Icon name="prev" /> <Icon name="next" /> 버튼으로 순서를 바꿀 수 있습니다. 기술을 클릭하면 상세 정보를 볼 수 있습니다.</p>
           {techniques.length === 0 ? (
             <p className="video-status-message">아직 추가된 기술이 없습니다.</p>
           ) : (
@@ -283,7 +284,7 @@ function FreeTrainingBuilder() {
                           className="btn btn-ghost btn-sm"
                           onClick={() => setDraft(reorderDraftEntries(i, i - 1) ?? draft)}
                         >
-                          ◀
+                          <Icon name="prev" />
                         </button>
                         <button
                           aria-label="아래로 이동"
@@ -291,10 +292,10 @@ function FreeTrainingBuilder() {
                           className="btn btn-ghost btn-sm"
                           onClick={() => setDraft(reorderDraftEntries(i, i + 1) ?? draft)}
                         >
-                          ▶
+                          <Icon name="next" />
                         </button>
                         <button className="btn btn-ghost btn-sm" onClick={() => setDraft(removeDraftEntry(t.id) ?? draft)}>
-                          × 삭제
+                          <Icon name="close" /> 삭제
                         </button>
                       </div>
                     </div>
@@ -373,7 +374,7 @@ function FreeTrainingCompletedScreen({ session }: { session: FreeTrainingSession
           <span>자유훈련</span>
         </div>
         <div className="section-title">
-          <h2>🎉 자유훈련 완료</h2>
+          <h2><Icon name="celebrate" /> 자유훈련 완료</h2>
         </div>
         <div className="curriculum-stat-row">
           <div>
@@ -399,7 +400,7 @@ function FreeTrainingCompletedScreen({ session }: { session: FreeTrainingSession
         </div>
         {estimatedBurnKcal != null && (
           <p className="video-status-message">
-            🔥 이번 훈련 예상 소모량: 약 {formatKcal(estimatedBurnKcal)} (체중 기반 추정치 — <Link to="/nutrition">영양 화면에서 확인 →</Link>)
+            <Icon name="flame" /> 이번 훈련 예상 소모량: 약 {formatKcal(estimatedBurnKcal)} (체중 기반 추정치 — <Link to="/nutrition">영양 화면에서 확인 →</Link>)
           </p>
         )}
         <div className="modal-actions modal-actions--start">
@@ -431,7 +432,7 @@ function FreeTrainingCompletedScreen({ session }: { session: FreeTrainingSession
 
         {techniques.length >= 2 && (
           <div className="card info-card">
-            <h3>🔗 콤보로 저장</h3>
+            <h3><Icon name="link" /> 콤보로 저장</h3>
             <p className="video-status-message">
               방금 수행한 기술 순서({techniques.map((t) => t.name).join(' → ')})를 그대로 콤보 북에 저장합니다.
             </p>
@@ -535,7 +536,7 @@ export default function FreeTraining() {
             {detail.currentExerciseIndex + 1}/{detail.exercises.length}
           </span>
           <button className="btn btn-ghost btn-sm" onClick={() => (detail.paused ? resumeSession() : pauseSession())} style={{ marginLeft: 'auto' }}>
-            {detail.paused ? '▶ 재개' : '⏸ 일시정지'}
+            {detail.paused ? <><Icon name="play" /> 재개</> : <><Icon name="pause" /> 일시정지</>}
           </button>
         </div>
 
@@ -555,7 +556,7 @@ export default function FreeTraining() {
             <p>진행 상황은 그대로 저장되어 있습니다. 준비되면 재개하세요.</p>
             <div className="modal-actions" style={{ justifyContent: 'center' }}>
               <button className="btn btn-primary" onClick={resumeSession}>
-                ▶ 재개
+                <Icon name="play" /> 재개
               </button>
             </div>
           </div>
@@ -606,7 +607,7 @@ export default function FreeTraining() {
                 <ul style={{ listStyle: 'none', padding: 0, marginBottom: 12 }}>
                   {exercise.sets.map((s, i) => (
                     <li key={i}>
-                      {s.completed ? '☑' : i === activeSetIndex ? '▶' : '☐'} SET {i + 1}
+                      <Icon name={s.completed ? 'check-square' : i === activeSetIndex ? 'play' : 'square'} /> SET {i + 1}
                       {s.completed && technique?.gymBodyPart && s.weightKg != null && s.actualReps !== null
                         ? ` — ${s.calculatedWeightKg != null && s.calculatedWeightKg !== s.weightKg ? `${s.calculatedWeightKg}kg (${s.weightKg}kg)` : `${s.weightKg}kg`} × ${s.actualReps}회${s.rpe != null ? ` (RPE ${s.rpe})` : ''}`
                         : ''}

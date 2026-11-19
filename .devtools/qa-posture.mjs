@@ -19,6 +19,8 @@ async function main() {
   const app = await electron.launch({ executablePath: electronBin, args: [APP_DIR], env: cleanEnv, timeout: 30000 });
   const page = app.windows().find((w) => w.url().startsWith('http://localhost:5173')) ?? (await app.firstWindow());
   await page.waitForLoadState('load');
+  // QA_BASE=http://localhost:<port>/ tests that server (e.g. this repo's `vite preview`) instead of whatever holds :5173.
+  if (process.env.QA_BASE) await page.goto(process.env.QA_BASE, { waitUntil: 'load' });
   await new Promise((r) => setTimeout(r, 900));
 
   const consoleErrors = [];
@@ -45,12 +47,24 @@ async function main() {
   await page.waitForLoadState('load');
   await new Promise((r) => setTimeout(r, 800));
 
-  // ============ Confirm 3D viewer is fully gone ============
+  // ============ Default state: no 3D on the technique detail page ============
+  // The old HUMAN.fbx viewer was removed on request (2026-08-15) and stays removed. The Phase-1 3D demo
+  // (src/components/motion3d) is closed by default — a <canvas> is allowed ONLY after the user opens it.
   await goto('#/arts/boxing/techniques/boxing__jab');
   const canvasCount = await page.evaluate(() => document.querySelectorAll('canvas').length);
-  check('No <canvas> (3D viewer) anywhere on the technique detail page', canvasCount === 0, `canvasCount=${canvasCount}`);
+  check('No <canvas> (3D viewer) on the technique detail page by default', canvasCount === 0, `canvasCount=${canvasCount}`);
   const modelViewerEl = await page.$('.human-model-viewer');
   check('No .human-model-viewer element remains in the DOM', modelViewerEl === null);
+  const demoOpen = await page.$('[data-testid="motion3d-open"]');
+  if (demoOpen) {
+    await demoOpen.click();
+    await page.waitForSelector('[data-testid="motion3d-stage"][data-loaded="true"], [data-testid="motion3d-error"]', { timeout: 30000 });
+    const openCanvas = await page.evaluate(() => document.querySelectorAll('canvas').length);
+    check('3D demo explicitly opened → exactly one <canvas>', openCanvas === 1, `canvasCount=${openCanvas}`);
+    await page.click('[data-testid="motion3d-close"]');
+    const closedCanvas = await page.evaluate(() => document.querySelectorAll('canvas').length);
+    check('3D demo closed → <canvas> gone again', closedCanvas === 0, `canvasCount=${closedCanvas}`);
+  }
 
   // ============ Representative techniques across 5 categories ============
   const cases = [

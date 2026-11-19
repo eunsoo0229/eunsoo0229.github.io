@@ -5,6 +5,10 @@ import TechniqueRow from '../components/TechniqueRow';
 import { techniqueCategoryInArt } from '../lib/techniqueCanonical';
 import DifficultyBadge from '../components/DifficultyBadge';
 import BackButton from '../components/BackButton';
+import TaxonomyTree from '../components/TaxonomyTree';
+import { getArtTaxonomy } from '../lib/techniqueTaxonomy';
+import PositionTree from '../components/PositionTree';
+import { getPositionTree } from '../lib/positionTaxonomy';
 
 export default function MartialArtDetail() {
   const { martialArtId = '' } = useParams();
@@ -21,6 +25,10 @@ export default function MartialArtDetail() {
     categoryCounts.set(c, (categoryCounts.get(c) ?? 0) + 1);
   }
   const categories = Array.from(categoryCounts.entries()).sort((a, b) => b[1] - a[1]);
+  // 계층형 분류 — built from the same techniques and the same per-art categories as above
+  const taxonomy = getArtTaxonomy(martialArtId, techniques);
+  // BJJ / MMA: position first (position → purpose → techniques); the hierarchy above stays available below it
+  const positionTree = getPositionTree(martialArtId, techniques);
 
   const preview = techniques.slice(0, 8);
 
@@ -42,7 +50,10 @@ export default function MartialArtDetail() {
             <div className="detail-hero__korean">{art.nameEn ?? art.id}</div>
             <div className="chip-row">
               <span className="chip active">{art.techniqueCount}개 기술</span>
-              <span className="chip active">{categories.length}개 카테고리</span>
+              <span className="chip active">
+                {positionTree ? `${positionTree.stats.positions}개 포지션 · ` : ''}
+                {taxonomy.roots.length}개 분류 · 기존 {categories.length}개 카테고리
+              </span>
               {Object.entries(art.difficultyCounts)
                 .filter(([k]) => k !== 'unknown')
                 .map(([level, count]) => (
@@ -63,17 +74,27 @@ export default function MartialArtDetail() {
           <div className="section-title">
             <h2>카테고리</h2>
           </div>
-          <div className="chip-row">
-            {categories.map(([category, count]) => (
-              <Link
-                key={category}
-                to={`/arts/${art.id}/techniques?category=${encodeURIComponent(category)}`}
-                className="chip"
-              >
-                {category} ({count})
-              </Link>
-            ))}
-          </div>
+          {positionTree ? (
+            <>
+              <PositionTree key={martialArtId} tree={positionTree} techniques={techniques} />
+              <details className="taxonomy-legacy" data-testid="taxonomy-hierarchy-legacy">
+                <summary>기존 계층 분류 보기 ({taxonomy.roots.length})</summary>
+                <TaxonomyTree tax={taxonomy} />
+              </details>
+            </>
+          ) : (
+            <TaxonomyTree tax={taxonomy} />
+          )}
+          <details className="taxonomy-legacy">
+            <summary>기존 카테고리 목록 ({categories.length})</summary>
+            <div className="chip-row">
+              {categories.map(([category, count]) => (
+                <Link key={category} to={`/arts/${art.id}/techniques?category=${encodeURIComponent(category)}`} className="chip">
+                  {category} ({count})
+                </Link>
+              ))}
+            </div>
+          </details>
         </section>
 
         <section>

@@ -1,3 +1,4 @@
+import Icon from '../Icon';
 import type { NutritionFoodItem } from '../../lib/nutrition/types';
 import NumberField from '../NumberField';
 
@@ -35,7 +36,7 @@ export default function FoodItemRows({ foods, onChange }: { foods: NutritionFood
               onChange={(e) => updateRow(idx, { amount: e.target.value })}
             />
             <button type="button" className="icon-action-btn food-item-row__remove" aria-label="삭제" onClick={() => removeRow(idx)}>
-              ✕
+              <Icon name="close" />
             </button>
           </div>
           <div className="food-item-row__macros">

@@ -1,0 +1,75 @@
+{
+  "at": "2026-11-01T07:30:41.792Z",
+  "device": "Android emulator Pixel_3a_API_33_x86_64 (headless) — not a real phone",
+  "results": [
+    {
+      "name": "[A0] 실행 환경: Android 에뮬레이터(실기기 아님)",
+      "pass": true
+    },
+    {
+      "name": "[A1] Android 앱(서버 미연결): 로컬 모델·검색 미지원 표시 + 서버 연결 설정",
+      "pass": true
+    },
+    {
+      "name": "[A2] Android 앱 → 자체 AI 서버 연결(토큰 인증, 사용자 android-emulator)",
+      "pass": true
+    },
+    {
+      "name": "[A3] 상태: 자체 AI 서버 · qwen2.5:3b · 자체 검색 사용 가능",
+      "pass": true
+    },
+    {
+      "name": "[A4] Android에서 영상 검색(서버) → 카드",
+      "pass": true
+    },
+    {
+      "name": "[A5] Android 앱 안 플레이어 iframe 열림(YouTube embed)",
+      "pass": true
+    },
+    {
+      "name": "[A6] 검색 결과 출처(원본 링크) 보존",
+      "pass": true
+    },
+    {
+      "name": "[A7] 기술 계열 질문 → 같은 코드 답변(레슬링 싱글 레그 기록)",
+      "pass": true
+    },
+    {
+      "name": "[A8] 모델 답변이 서버의 qwen2.5:3b로(폰에서 모델 실행 안 함)",
+      "pass": true
+    },
+    {
+      "name": "[A9] 서버 종료 → 연결 실패를 그대로 안내(지어낸 결과 없음)",
+      "pass": true
+    },
+    {
+      "name": "[A10] 서버 재시작 → 앱에서 바로 복구",
+      "pass": true
+    },
+    {
+      "name": "[A13] (4차) Android: 레슬링 솔로 드릴 → 레슬링 수업 계획, 다른 무술 기술 없음, 수업 시작 버튼",
+      "pass": true
+    },
+    {
+      "name": "[A14] (4차) Android: 토푸리아 → 서버 검색으로 Ilia Topuria 분석",
+      "pass": true
+    },
+    {
+      "name": "[A11] 폰 화면 폭에서 가로 스크롤 없음",
+      "pass": true
+    },
+    {
+      "name": "[A12] 진행 중 페이지 에러 없음",
+      "pass": true
+    }
+  ],
+  "timings": {
+    "android_video": 11107,
+    "android_technique": 27604,
+    "android_model": 154506,
+    "android_down": 13290,
+    "android_up": 22063,
+    "android_solo": 13191,
+    "android_topuria": 24497
+  }
+}

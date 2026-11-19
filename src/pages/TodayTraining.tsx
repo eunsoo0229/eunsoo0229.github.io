@@ -1,3 +1,5 @@
+import SafetyChecklistCard from '../components/safety/SafetyChecklistCard';
+import Icon from '../components/Icon';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { Technique } from '../types';
@@ -11,6 +13,7 @@ import { computeSessionActuals, computeSessionStats, getActiveSetElapsedMs, getR
 import { isPoseAnalysisSupported } from '../lib/poseAnalysis/poseAnalysisConfig';
 import { formatLastSessionSets } from '../lib/gymTraining/records';
 import { applyActualsToExercise, getGymRoutine } from '../lib/gymRoutine/service';
+import TrainerPanel from '../components/gymTrainer/TrainerPanel';
 import { getTrainingHistoryEntry } from '../lib/trainingHistory/service';
 import { estimateSessionCalories } from '../lib/nutrition/trainingEnergy';
 import { getNutritionProfileWithPrefill } from '../lib/nutrition/profileService';
@@ -104,7 +107,7 @@ export default function TodayTraining() {
             <span>오늘의 훈련</span>
           </div>
           <div className="section-title">
-            <h2>🔥 오늘의 훈련</h2>
+            <h2><Icon name="flame" /> 오늘의 훈련</h2>
           </div>
           <LoginToBackupBanner featureName="훈련 기록" />
           {plan.curriculumTitle && <p className="detail-hero__korean">{plan.curriculumTitle}</p>}
@@ -141,6 +144,8 @@ export default function TodayTraining() {
               </div>
             )}
           </div>
+          {/* 사양 §5-3: 훈련 전 안전 체크 (건너뛰어도 훈련은 시작할 수 있음) */}
+          <SafetyChecklistCard techniqueIds={plan.techniqueIds} compact />
           <div className="modal-actions modal-actions--start">
             <button className="btn btn-primary" onClick={() => start()}>
               훈련 시작
@@ -185,7 +190,7 @@ export default function TodayTraining() {
             <span>오늘의 훈련</span>
           </div>
           <div className="section-title">
-            <h2>🎉 오늘의 훈련 완료</h2>
+            <h2><Icon name="celebrate" /> 오늘의 훈련 완료</h2>
           </div>
           {session.plan.day !== null && <p className="detail-hero__korean">Day {session.plan.day} · 완료율 100%</p>}
           {loadedRoutineChip && <div className="chip-row">{loadedRoutineChip}</div>}
@@ -214,7 +219,7 @@ export default function TodayTraining() {
           <p className="video-status-message">오늘의 훈련을 완료했습니다.</p>
           {estimatedBurnKcal != null && (
             <p className="video-status-message">
-              🔥 이번 훈련 예상 소모량: 약 {formatKcal(estimatedBurnKcal)} (체중 기반 추정치 —{' '}
+              <Icon name="flame" /> 이번 훈련 예상 소모량: 약 {formatKcal(estimatedBurnKcal)} (체중 기반 추정치 —{' '}
               <Link to="/nutrition">영양 화면에서 확인 →</Link>)
             </p>
           )}
@@ -274,7 +279,7 @@ export default function TodayTraining() {
                   if (t) setPoseTechnique(t);
                 }}
               >
-                📷 자세 분석하기
+                <Icon name="camera" /> 자세 분석하기
               </button>
             )}
             <Link to="/my-skills" className="btn btn-secondary">
@@ -344,7 +349,7 @@ export default function TodayTraining() {
             {detail.currentExerciseIndex + 1}/{detail.exercises.length}
           </span>
           <button className="btn btn-ghost btn-sm" onClick={() => (detail.paused ? resumeSession() : pauseSession())} style={{ marginLeft: 'auto' }}>
-            {detail.paused ? '▶ 재개' : '⏸ 일시정지'}
+            {detail.paused ? <><Icon name="play" /> 재개</> : <><Icon name="pause" /> 일시정지</>}
           </button>
           <button
             className="btn btn-ghost btn-sm"
@@ -374,7 +379,7 @@ export default function TodayTraining() {
             <p>진행 상황은 그대로 저장되어 있습니다. 준비되면 재개하세요.</p>
             <div className="modal-actions" style={{ justifyContent: 'center' }}>
               <button className="btn btn-primary" onClick={resumeSession}>
-                ▶ 재개
+                <Icon name="play" /> 재개
               </button>
             </div>
           </div>
@@ -414,6 +419,17 @@ export default function TodayTraining() {
                     </>
                   )}
                 </div>
+                {/* 헬스 운동이면: 쉬는 시간에 트레이너에게 자극·통증·자세를 물어본다 */}
+                {technique?.gymBodyPart && (
+                  <TrainerPanel
+                    technique={technique}
+                    sessionKey={session.startedAt}
+                    set={(() => {
+                      const done = exercise.sets[restTimer.setIndex];
+                      return { setNumber: restTimer.setIndex + 1, totalSets: exercise.config.sets, weightKg: done?.calculatedWeightKg ?? done?.weightKg ?? null, reps: done?.actualReps ?? null, rpe: done?.rpe ?? null };
+                    })()}
+                  />
+                )}
               </div>
             ) : (
               <div className="card info-card">
@@ -425,7 +441,7 @@ export default function TodayTraining() {
                 <ul style={{ listStyle: 'none', padding: 0, marginBottom: 12 }}>
                   {exercise.sets.map((s, i) => (
                     <li key={i}>
-                      {s.completed ? '☑' : i === activeSetIndex ? '▶' : '☐'} SET {i + 1}
+                      <Icon name={s.completed ? 'check-square' : i === activeSetIndex ? 'play' : 'square'} /> SET {i + 1}
                       {s.completed && technique?.gymBodyPart && s.weightKg != null && s.actualReps !== null
                         ? ` — ${s.calculatedWeightKg != null && s.calculatedWeightKg !== s.weightKg ? `${s.calculatedWeightKg}kg (${s.weightKg}kg)` : `${s.weightKg}kg`} × ${s.actualReps}회${s.rpe != null ? ` (RPE ${s.rpe})` : ''}`
                         : ''}

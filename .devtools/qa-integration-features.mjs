@@ -4,6 +4,10 @@ import { _electron as electron } from 'playwright-core';
 import path from 'node:path';
 import fs from 'node:fs';
 import os from 'node:os';
+import { requireAccountQaTarget } from './lib/prodGuard.mjs';
+
+// Creates / signs in Supabase accounts — blocked against the production project unless separately approved.
+requireAccountQaTarget('qa-integration-features');
 
 const APP_DIR = '/Users/swcho/Documents/MARTIALDEX';
 const electronBin = path.join(APP_DIR, 'node_modules/electron/dist/Electron.app/Contents/MacOS/Electron');

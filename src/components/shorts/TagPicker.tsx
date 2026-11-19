@@ -1,3 +1,4 @@
+import Icon from '../Icon';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { PostTag } from '../../lib/communityPost/types';
 import { MAX_POST_TAGS } from '../../lib/communityPost/types';
@@ -35,14 +36,14 @@ export default function TagPicker({ value, onChange, viewerId }: { value: PostTa
   const full = value.length >= MAX_POST_TAGS;
   return (
     <div className="tag-picker" data-testid="tag-picker">
-      <label className="field-label" htmlFor="tag-picker-q">🏷 영상 속 기술·콤보/셋업 태그 (선택)</label>
+      <label className="field-label" htmlFor="tag-picker-q"><Icon name="tag" /> 영상 속 기술·콤보/셋업 태그 (선택)</label>
       {value.length > 0 && (
         <div className="chip-row" style={{ margin: '4px 0' }}>
           {value.map((t) => (
             <span key={`${t.type}:${t.id}`} className="chip active" data-testid="tag-picked">
               {TAG_KIND_LABEL(t)} · {t.name}
               <button type="button" className="tag-picker__remove" aria-label={`${t.name} 태그 빼기`} onClick={() => onChange(value.filter((v) => !(v.type === t.type && v.id === t.id)))}>
-                ✕
+                <Icon name="close" />
               </button>
             </span>
           ))}

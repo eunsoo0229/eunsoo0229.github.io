@@ -1,26 +1,35 @@
+import { motionClipsFor } from '../../lib/motion3d/catalog';
+import { hasLocalMedia } from '../../lib/formCompare/types';
+import Icon from '../Icon';
+import { ensureCameraAccess } from '../../lib/media/cameraAccess';
+import { SkillStatusGlyph, VerdictGlyph } from '../StatusGlyph';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { Technique } from '../../types';
 import { createPoseLandmarker, type PoseLandmarker } from '../../lib/poseAnalysis/poseEstimator';
 import { LiveClipCollector, sampleVideoBlob } from '../../lib/formCompare/clipCapture';
-import { blockingIssues, isFullBodyFrame, isUsableFrame, VIEW_LABEL } from '../../lib/formCompare/motion';
+import { blockingIssues, estimateCameraView, isFullBodyFrame, isUsableFrame, VIEW_LABEL } from '../../lib/formCompare/motion';
+import { ANGLE_GUIDE, ANGLE_NAME, CAPTURE_CHECKLIST, localViewRelation, referenceAngle, type LocalViewRelation } from '../../lib/formCompare/captureAngle';
+import type { PoseFrame } from '../../lib/poseAnalysis/types';
 import { deleteReference, FORM_COMPARE_EVENT, getMedia, listCompareRecords, listReferences } from '../../lib/formCompare/referenceStore';
 import { compareAttempt, ensureProfile, MAX_REFERENCE_SECONDS, registerFileReference, registerYoutubeReference, type CompareOutcome } from '../../lib/formCompare/service';
+import Motion3dReferenceRecorder from './Motion3dReferenceRecorder';
 import { RELIABILITY_LABEL } from '../../lib/formCompare/scoring';
 import { ASPECT_LABEL, CAPTURE_ISSUE_LABEL, type CameraView, type CaptureIssue, type PreparedClip, type ReferenceVideo } from '../../lib/formCompare/types';
-import { STATUS_ICON, STATUS_LABEL, classifyScore } from '../../lib/poseAnalysis/scoring';
+import { STATUS_LABEL, classifyScore } from '../../lib/poseAnalysis/scoring';
 import ScoreHistoryChart from '../ScoreHistoryChart';
+import YouTubeSegment from './YouTubeSegment';
+import CaptureGauge from '../timedCapture/CaptureGauge';
+import { referenceFromVideo } from '../../lib/timedCapture/reference';
+import { useTimedCapture } from '../../lib/timedCapture/useTimedCapture';
 
 // 🎬 기준 영상 비교 자세 평가 — reference video ↔ the user's attempt.
 // Steps: reference (pick / register — criteria built automatically) →
 // capture (camera or a video file) → AI comparison → result + history.
 // The user's video stays in memory for playback on this screen only.
 
-const IFRAME_ALLOW = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
 const VERDICT_LABEL = { match: '일치', partial: '부분 일치', mismatch: '다름', not_observable: '판단 불가' } as const;
-const VERDICT_ICON = { match: '🟢', partial: '🟡', mismatch: '🔴', not_observable: '⚪' } as const;
 const IMPORTANCE_LABEL = { core: '핵심', support: '중요', minor: '세부' } as const;
 const VIEW_OPTIONS: CameraView[] = ['front', 'side', 'diagonal', 'back', 'unknown'];
-const RECORD_SECONDS = [4, 6, 10];
 
 /** "1:05" / "65" / "65.5" → seconds */
 export function parseTime(s: string): number | null {
@@ -32,20 +41,6 @@ export function parseTime(s: string): number | null {
   return Number.isFinite(n) && n >= 0 ? n : null;
 }
 const fmtTime = (s: number) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}${s % 1 ? `.${Math.round((s % 1) * 10)}` : ''}`;
-
-function YouTubeSegment({ videoId, start, end, title }: { videoId: string; start: number; end: number; title: string }) {
-  return (
-    <div className="video-embed form-compare__embed" data-testid="form-ref-embed">
-      <iframe
-        src={`https://www.youtube.com/embed/${videoId}?start=${Math.floor(start)}&end=${Math.ceil(end)}&rel=0`}
-        title={title}
-        allow={IFRAME_ALLOW}
-        referrerPolicy="strict-origin-when-cross-origin"
-        allowFullScreen
-      />
-    </div>
-  );
-}
 
 function useReferences(techniqueId: string) {
   const [refs, setRefs] = useState(() => listReferences(techniqueId));
@@ -59,12 +54,20 @@ function useReferences(techniqueId: string) {
 
 type Step = 'reference' | 'capture' | 'analyzing' | 'result';
 
-export default function FormCompareModal({ technique, onClose }: { technique: Technique; onClose: () => void }) {
+export default function FormCompareModal(props: { technique: Technique; onClose: () => void }) {
+  // Keyed by technique: switching technique starts a fresh modal, so the previous technique's
+  // reference, angle or step can never be applied to the new one.
+  return <FormCompareModalInner key={props.technique.id} {...props} />;
+}
+
+function FormCompareModalInner({ technique, onClose }: { technique: Technique; onClose: () => void }) {
   const refs = useReferences(technique.id);
   const [refId, setRefId] = useState<string | null>(() => refs.find((r) => r.profile)?.id ?? refs[0]?.id ?? null);
   const reference = refs.find((r) => r.id === refId) ?? null;
   const [step, setStep] = useState<Step>('reference');
   const [registering, setRegistering] = useState(refs.length === 0);
+  // "다른 각도로 기준 다시 녹화" opens the registration directly on the 3D recorder.
+  const [registerKind, setRegisterKind] = useState<'youtube' | 'file' | 'motion3d' | null>(null);
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [outcome, setOutcome] = useState<CompareOutcome | null>(null);
@@ -75,7 +78,7 @@ export default function FormCompareModal({ technique, onClose }: { technique: Te
   // Reference file playback (file references keep the file on this device).
   useEffect(() => {
     let url: string | null = null;
-    if (reference?.source.kind === 'file') {
+    if (reference && hasLocalMedia(reference.source)) {
       void getMedia(reference.id).then((m) => {
         if (m?.file) {
           url = URL.createObjectURL(m.file);
@@ -125,7 +128,7 @@ export default function FormCompareModal({ technique, onClose }: { technique: Te
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-panel pose-modal form-compare" onClick={(e) => e.stopPropagation()} data-testid="form-compare" data-step={step}>
-        <h3>🎬 {technique.name} — 기준 영상과 비교해 자세 평가</h3>
+        <h3><Icon name="video" /> {technique.name} — 기준 영상과 비교해 자세 평가</h3>
         <div className="modal-note" style={{ marginTop: 0, marginBottom: 12 }}>
           기준 시연 영상과 내 수행 영상을 AI가 단계·평가 기준별로 비교합니다. 배경·복장·체격 차이는 평가하지 않습니다. 참고용 결과이며 실제 지도자의 피드백을 대신하지 않습니다. 내 영상은 이 화면에서만 재생되고 저장되지 않으며, 분석에 쓰인 몇 장의 정지 프레임만 AI에 전달됩니다.
         </div>
@@ -144,6 +147,7 @@ export default function FormCompareModal({ technique, onClose }: { technique: Te
             onRegistered={async (r) => {
               setRefId(r.id);
               setRegistering(false);
+              setRegisterKind(null);
               await buildCriteria(r);
             }}
             onRebuild={(r) => void buildCriteria(r, true)}
@@ -153,6 +157,7 @@ export default function FormCompareModal({ technique, onClose }: { technique: Te
               setRefId(null);
             }}
             onNext={() => setStep('capture')}
+            initialKind={registerKind}
             refFileUrl={refFileUrl}
             busy={busy}
             setBusy={setBusy}
@@ -165,8 +170,16 @@ export default function FormCompareModal({ technique, onClose }: { technique: Te
             reference={reference}
             retake={retake}
             onClip={runCompare}
+            refFileUrl={refFileUrl}
             onBack={() => {
               setRetake(null);
+              setStep('reference');
+            }}
+            onReangle={() => {
+              setRetake(null);
+              setError(null);
+              setRegisterKind('motion3d');
+              setRegistering(true);
               setStep('reference');
             }}
           />
@@ -189,6 +202,16 @@ export default function FormCompareModal({ technique, onClose }: { technique: Te
               setOutcome(null);
               setStep('capture');
             }}
+            onReangle={
+              reference.source.kind === 'motion3d'
+                ? () => {
+                    setOutcome(null);
+                    setRegisterKind('motion3d');
+                    setRegistering(true);
+                    setStep('reference');
+                  }
+                : undefined
+            }
           />
         )}
 
@@ -225,13 +248,16 @@ function ReferenceStep(props: {
   onRebuild: (r: ReferenceVideo) => void;
   onDelete: (r: ReferenceVideo) => Promise<void>;
   onNext: () => void;
+  initialKind: 'youtube' | 'file' | 'motion3d' | null;
   refFileUrl: string | null;
   busy: string | null;
   setBusy: (v: string | null) => void;
   setError: (v: string | null) => void;
 }) {
   const { technique, refs, reference } = props;
-  const [kind, setKind] = useState<'youtube' | 'file'>('youtube');
+  // 3D 녹화는 이 기술에 시연 클립이 있을 때만 제시한다 (§4: 없는 기술은 기존 방식 유지).
+  const has3dClips = motionClipsFor(technique.id).length > 0;
+  const [kind, setKind] = useState<'youtube' | 'file' | 'motion3d'>(() => (props.initialKind === 'motion3d' && !has3dClips ? 'youtube' : (props.initialKind ?? 'youtube')));
   const [url, setUrl] = useState('');
   const [file, setFile] = useState<File | null>(null);
   const [filePreview, setFilePreview] = useState<string | null>(null);
@@ -283,8 +309,24 @@ function ReferenceStep(props: {
           <button type="button" className={`chip${kind === 'file' ? ' active' : ''}`} onClick={() => setKind('file')} data-testid="form-ref-kind-file">
             영상 파일 (사용 권한이 있는 영상)
           </button>
+          {has3dClips && (
+            <button type="button" className={`chip${kind === 'motion3d' ? ' active' : ''}`} onClick={() => setKind('motion3d')} data-testid="form-ref-kind-motion3d">
+              3D 시연 녹화
+            </button>
+          )}
         </div>
-        {kind === 'youtube' ? (
+        {kind === 'motion3d' ? (
+          <Motion3dReferenceRecorder
+            technique={technique}
+            replaceId={replaceId}
+            currentAngle={reference?.source.kind === 'motion3d' ? referenceAngle(reference).view : null}
+            onError={props.setError}
+            onRegistered={async (ref) => {
+              setReplaceId(null);
+              await props.onRegistered(ref);
+            }}
+          />
+        ) : kind === 'youtube' ? (
           <>
             <input className="select" style={{ marginTop: 8 }} value={url} onChange={(e) => setUrl(e.target.value)} placeholder="https://www.youtube.com/watch?v=..." data-testid="form-ref-url" />
             {curatedVideos.length > 0 && (
@@ -351,15 +393,16 @@ function ReferenceStep(props: {
         <div className="chip-row" style={{ marginBottom: 8 }}>
           {refs.map((r) => (
             <button key={r.id} type="button" className={`chip${r.id === reference?.id ? ' active' : ''}`} onClick={() => props.onPick(r.id)} data-testid="form-ref-pick">
-              {r.source.kind === 'youtube' ? `▶ ${r.source.title.slice(0, 24)}` : `📁 ${r.source.fileName.slice(0, 24)}`} · {fmtTime(r.startSeconds)}~{fmtTime(r.endSeconds)}
+              {r.source.kind === 'youtube' ? <><Icon name="play" /> {r.source.title.slice(0, 24)}</> : r.source.kind === 'motion3d' ? <><Icon name="video" /> 3D 시연</> : <><Icon name="file" /> {r.source.fileName.slice(0, 24)}</>} · {ANGLE_NAME[referenceAngle(r).view]}{r.source.kind === 'motion3d' ? '' : ` · ${fmtTime(r.startSeconds)}~${fmtTime(r.endSeconds)}`}
             </button>
           ))}
         </div>
       )}
       {reference && (
-        <div className="card info-card" data-testid="form-ref-current" data-has-profile={String(!!reference.profile)}>
+        <div className="card info-card" data-testid="form-ref-current" data-has-profile={String(!!reference.profile)} data-angle={referenceAngle(reference).view}>
           <h4 style={{ marginTop: 0 }}>
-            기준 영상: {reference.source.kind === 'youtube' ? `${reference.source.title} (${reference.source.channel})` : reference.source.fileName} · {fmtTime(reference.startSeconds)}~{fmtTime(reference.endSeconds)} · {VIEW_LABEL[reference.profile?.cameraView ?? reference.cameraView]}
+            기준 영상: {reference.source.kind === 'youtube' ? `${reference.source.title} (${reference.source.channel})` : reference.source.kind === 'motion3d' ? '3D 시연 녹화' : reference.source.fileName} · {fmtTime(reference.startSeconds)}~{fmtTime(reference.endSeconds)} ·{' '}
+            <span data-testid="form-ref-angle">{reference.source.kind === 'motion3d' ? `내가 고른 각도: ${ANGLE_NAME[referenceAngle(reference).view]}` : ANGLE_NAME[referenceAngle(reference).view]}</span>
           </h4>
           {reference.source.kind === 'youtube' ? (
             <YouTubeSegment videoId={reference.source.videoId} start={reference.startSeconds} end={reference.endSeconds} title={reference.source.title} />
@@ -442,12 +485,43 @@ function parseYoutubeIdForPreview(url: string): string | null {
 
 // ---------------------------------------------------------------- capture step
 
-function CaptureStep({ reference, retake, onClip, onBack }: { reference: ReferenceVideo; retake: CaptureIssue[] | null; onClip: (clip: PreparedClip, blob: Blob | null) => void; onBack: () => void }) {
+const LIVE_VIEW_TEXT: Record<LocalViewRelation, string> = {
+  consistent: '기준 영상과 비슷한 방향으로 보입니다.',
+  unclear: '기준 각도와 같은지 판단하기 어렵습니다. 위 배치 그림대로 섰는지 확인해 주세요.',
+  mismatch: '기준 영상과 다른 방향으로 보입니다. 카메라 위치를 기준 각도에 맞춰 주세요.',
+  unknown: '방향을 확인할 수 없습니다. 위 배치 그림대로 섰는지 직접 확인해 주세요.',
+};
+
+/** Top-down sketch: the user (facing up), the direction they face, and where the camera goes. */
+function AngleDiagram({ view }: { view: CameraView }) {
+  // camera position around the user, degrees clockwise from "in front"; the 3D side/diagonal
+  // presets are on the character's LEFT (lead-hand side for orthodox), i.e. screen-left here.
+  const deg = { front: 0, diagonal: -45, side: -90, back: 180, unknown: null }[view];
+  const cx = 60, cy = 62, r = 44;
+  const cam = deg === null ? null : { x: cx + r * Math.sin((deg * Math.PI) / 180), y: cy - r * Math.cos((deg * Math.PI) / 180) };
+  return (
+    <svg viewBox="0 0 120 120" width="120" height="120" role="img" aria-label={`카메라 배치: ${ANGLE_NAME[view]}`} data-testid="form-capture-angle-diagram" style={{ flex: '0 0 auto' }}>
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke="currentColor" strokeOpacity="0.2" strokeDasharray="3 4" />
+      <circle cx={cx} cy={cy} r="11" fill="currentColor" fillOpacity="0.85" />
+      <path d={`M${cx} ${cy - 13} L${cx} ${cy - 30} M${cx - 5} ${cy - 24} L${cx} ${cy - 31} L${cx + 5} ${cy - 24}`} stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+      <text x={cx} y={cy + 28} textAnchor="middle" fontSize="9" fill="currentColor" fillOpacity="0.75">나</text>
+      <text x={cx} y="10" textAnchor="middle" fontSize="8" fill="currentColor" fillOpacity="0.6">바라보는 방향</text>
+      {cam && (
+        <g transform={`translate(${cam.x} ${cam.y}) rotate(${deg! + 180})`}>
+          <rect x="-9" y="-6" width="18" height="12" rx="2" fill="var(--accent, #e5484d)" />
+          <path d="M-4 -6 L4 -6 L2 -10 L-2 -10 Z" fill="var(--accent, #e5484d)" />
+        </g>
+      )}
+    </svg>
+  );
+}
+
+function CaptureStep({ reference, retake, onClip, onBack, onReangle, refFileUrl }: { reference: ReferenceVideo; retake: CaptureIssue[] | null; onClip: (clip: PreparedClip, blob: Blob | null) => void; onBack: () => void; onReangle: () => void; refFileUrl: string | null }) {
   const [mode, setMode] = useState<'camera' | 'file'>('camera');
   const [phase, setPhase] = useState<'idle' | 'starting' | 'ready' | 'countdown' | 'recording' | 'processing' | 'error'>('idle');
   const [message, setMessage] = useState<string | null>(null);
-  const [seconds, setSeconds] = useState(6);
-  const [count, setCount] = useState(0);
+  // the capture is as long as the designated reference segment (one repetition) — no fixed length to pick
+  const length = useMemo(() => referenceFromVideo(reference), [reference]);
   const [live, setLive] = useState<{ person: boolean; full: boolean }>({ person: false, full: false });
   const videoRef = useRef<HTMLVideoElement>(null);
   const streamRef = useRef<MediaStream | null>(null);
@@ -456,8 +530,40 @@ function CaptureStep({ reference, retake, onClip, onBack }: { reference: Referen
   const collectorRef = useRef<LiveClipCollector | null>(null);
   const recorderRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<Blob[]>([]);
-  const endAtRef = useRef(0);
-  const view = reference.profile?.cameraView ?? reference.cameraView;
+  const { view, source: viewSource } = referenceAngle(reference);
+  // The user re-confirms the angle before filming (it is their camera placement, not ours).
+  const [angleConfirmed, setAngleConfirmed] = useState(false);
+  // Live direction hint: the same local estimator, compared with its reading of the reference.
+  const [liveView, setLiveView] = useState<{ relation: LocalViewRelation; estimate: CameraView } | null>(null);
+  const refEstimateRef = useRef<CameraView>(view);
+  const recentPosesRef = useRef<PoseFrame[]>([]);
+  const frameCountRef = useRef(0);
+  useEffect(() => {
+    let alive = true;
+    if (hasLocalMedia(reference.source))
+      void getMedia(reference.id).then((m) => {
+        if (alive && m?.signals.cameraView && m.signals.cameraView !== 'unknown') refEstimateRef.current = m.signals.cameraView;
+      });
+    return () => {
+      alive = false;
+    };
+  }, [reference.id]);
+  const capture = useTimedCapture({
+    durationMs: length.ok ? length.reference.durationMs : 0,
+    onRecordStart: () => startRecording(),
+    onRecordEnd: () => finishRecording(),
+    onCancel: () => {
+      collectorRef.current = null;
+      const rec = recorderRef.current;
+      recorderRef.current = null;
+      if (rec && rec.state !== 'inactive') rec.stop();
+      chunksRef.current = [];
+      setPhase('ready');
+      setMessage('촬영을 취소했습니다. 결과는 저장되지 않았습니다.');
+    },
+  });
+  const recordingRef = capture.recordingRef;
+  const clockRef = capture.clockRef;
 
   const stopAll = useCallback(() => {
     if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
@@ -476,13 +582,18 @@ function CaptureStep({ reference, retake, onClip, onBack }: { reference: Referen
       const now = performance.now();
       const pose = lm.detect(v, now);
       setLive({ person: !!pose && isUsableFrame(pose), full: !!pose && isFullBodyFrame(pose) });
-      if (collectorRef.current) {
-        collectorRef.current.add(v, pose, now);
-        if (now >= endAtRef.current) {
-          finishRecording();
-          return;
-        }
+      if (pose && isUsableFrame(pose)) {
+        const buf = recentPosesRef.current;
+        buf.push(pose);
+        if (buf.length > 30) buf.shift();
       }
+      // re-estimate about twice a second (not every frame)
+      if (++frameCountRef.current % 15 === 0 && !recordingRef.current) {
+        const estimate = estimateCameraView(recentPosesRef.current);
+        setLiveView({ relation: localViewRelation(refEstimateRef.current, estimate), estimate });
+      }
+      // only inside the recording window (the end time is fixed by the capture clock, not by this loop)
+      if (collectorRef.current && recordingRef.current && clockRef.current && now <= clockRef.current.endAt) collectorRef.current.add(v, pose, now);
     }
     rafRef.current = requestAnimationFrame(loop);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -492,6 +603,8 @@ function CaptureStep({ reference, retake, onClip, onBack }: { reference: Referen
     setPhase('starting');
     setMessage(null);
     try {
+      const access = await ensureCameraAccess();
+      if (!access.ok) throw new DOMException(access.message, 'NotAllowedError');
       const stream = await navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480 }, audio: false });
       streamRef.current = stream;
       if (videoRef.current) {
@@ -511,17 +624,9 @@ function CaptureStep({ reference, retake, onClip, onBack }: { reference: Referen
   }
 
   function startCountdown() {
+    setMessage(null);
     setPhase('countdown');
-    let n = 3;
-    setCount(n);
-    const id = window.setInterval(() => {
-      n -= 1;
-      setCount(n);
-      if (n <= 0) {
-        window.clearInterval(id);
-        startRecording();
-      }
-    }, 1000);
+    capture.start();
   }
 
   function startRecording() {
@@ -537,7 +642,6 @@ function CaptureStep({ reference, retake, onClip, onBack }: { reference: Referen
     } catch {
       recorderRef.current = null; // playback is optional; the analysis does not need it
     }
-    endAtRef.current = performance.now() + seconds * 1000;
     setPhase('recording');
   }
 
@@ -574,10 +678,59 @@ function CaptureStep({ reference, retake, onClip, onBack }: { reference: Referen
 
   return (
     <div data-testid="form-capture" data-phase={phase}>
-      <div className="card info-card">
-        <p style={{ margin: 0 }} data-testid="form-capture-guide">
-          📐 기준 영상은 <strong>{VIEW_LABEL[view]}</strong>에서 촬영되었습니다. 같은 방향에서, 머리부터 발까지 몸 전체가 화면에 들어오게 서 주세요. 준비 자세({reference.profile?.phases[0]?.name ?? '시작 자세'})에서 시작해 기술을 {reference.profile ? '기준 영상처럼' : ''} 수행하고, 끝난 뒤 자세를 회복해 주세요.
-        </p>
+      <div className="card info-card" data-testid="form-capture-angle" data-angle={view} data-angle-source={viewSource}>
+        <h4 style={{ marginTop: 0 }}>
+          <Icon name="camera" /> 기준 각도: <strong data-testid="form-capture-angle-name">{ANGLE_NAME[view]}</strong>
+          {viewSource === 'motion3d' && <span className="video-status-message"> (3D 기준 영상을 녹화할 때 내가 고른 각도)</span>}
+        </h4>
+        <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', flexWrap: 'wrap' }}>
+          <AngleDiagram view={view} />
+          <div style={{ flex: '1 1 200px', minWidth: 0 }}>
+            {view !== 'unknown' ? (
+              <>
+                <p style={{ margin: '0 0 4px' }} data-testid="form-capture-placement">
+                  <strong>카메라 배치</strong> — {ANGLE_GUIDE[view].placement}
+                </p>
+                <p className="video-status-message" style={{ margin: 0 }}>
+                  제대로 놓였다면: {ANGLE_GUIDE[view].onScreen}
+                </p>
+              </>
+            ) : (
+              <p style={{ margin: 0 }} data-testid="form-capture-placement">
+                기준 영상의 촬영 방향을 알 수 없습니다. 아래 기준 영상을 보고 같은 방향에서 촬영해 주세요.
+              </p>
+            )}
+          </div>
+        </div>
+        {(refFileUrl || reference.source.kind === 'youtube') && (
+          <div style={{ marginTop: 8 }} data-testid="form-capture-ref-preview">
+            <div className="field-label">기준 영상 미리보기 — 이 화면과 같은 방향에서 찍히도록 서 주세요</div>
+            {reference.source.kind === 'youtube' ? (
+              <YouTubeSegment videoId={reference.source.videoId} start={reference.startSeconds} end={reference.endSeconds} title={reference.source.title} />
+            ) : (
+              <video src={`${refFileUrl}#t=${reference.startSeconds},${reference.endSeconds}`} autoPlay loop muted playsInline className="form-compare__video" />
+            )}
+          </div>
+        )}
+        <p style={{ margin: '8px 0 4px' }}><strong>촬영 전 확인</strong></p>
+        <ul style={{ margin: 0, paddingLeft: 18 }} data-testid="form-capture-checklist">
+          {CAPTURE_CHECKLIST.map((c) => (
+            <li key={c}>{c}</li>
+          ))}
+          <li>기준 영상의 첫 단계({reference.profile?.phases[0]?.name ?? '준비 자세'})에서 시작해 기술을 수행하고, 끝난 뒤 자세를 회복합니다.</li>
+        </ul>
+        <label style={{ display: 'flex', gap: 8, alignItems: 'center', marginTop: 8, cursor: 'pointer' }}>
+          <input type="checkbox" checked={angleConfirmed} onChange={(e) => setAngleConfirmed(e.target.checked)} data-testid="form-capture-angle-confirm" />
+          <span>카메라를 <strong>{ANGLE_NAME[view]}</strong> 각도에 맞춰 배치했습니다</span>
+        </label>
+        {reference.source.kind === 'motion3d' && (
+          <p className="video-status-message" style={{ margin: '6px 0 0' }}>
+            다른 각도로 촬영하고 싶다면 기준 영상부터 그 각도로 다시 녹화해야 합니다.{' '}
+            <button type="button" className="btn btn-ghost btn-sm" onClick={onReangle} disabled={phase === 'countdown' || phase === 'recording' || phase === 'processing'} data-testid="form-capture-reangle">
+              다른 각도로 기준 영상 다시 녹화
+            </button>
+          </p>
+        )}
       </div>
       {retake && (
         <div className="ai-error" role="alert" data-testid="form-retake">
@@ -586,7 +739,7 @@ function CaptureStep({ reference, retake, onClip, onBack }: { reference: Referen
       )}
       <div className="chip-row" style={{ margin: '8px 0' }}>
         <button type="button" className={`chip${mode === 'camera' ? ' active' : ''}`} onClick={() => setMode('camera')} data-testid="form-capture-camera">
-          📷 카메라로 촬영
+          <Icon name="camera" /> 카메라로 촬영
         </button>
         <button
           type="button"
@@ -598,7 +751,7 @@ function CaptureStep({ reference, retake, onClip, onBack }: { reference: Referen
           }}
           data-testid="form-capture-file-mode"
         >
-          📁 촬영한 영상 파일 올리기
+          <Icon name="upload" /> 촬영한 영상 파일 올리기
         </button>
       </div>
       {mode === 'camera' ? (
@@ -608,13 +761,18 @@ function CaptureStep({ reference, retake, onClip, onBack }: { reference: Referen
             {phase === 'countdown' && (
               <div className="pose-countdown-overlay">
                 <div className="pose-countdown-overlay__label">곧 촬영을 시작합니다</div>
-                <div className="pose-countdown-overlay__number">{count > 0 ? count : '시작!'}</div>
+                <div className="pose-countdown-overlay__number">{capture.countdownLeft}</div>
               </div>
             )}
             {phase === 'recording' && <div className="pose-overlay-badge">● 촬영 중 — 지금 기술을 수행하세요</div>}
             {(phase === 'ready' || phase === 'recording') && (
               <div className="form-compare__live" data-testid="form-live-check" data-person={String(live.person)} data-full={String(live.full)}>
-                {live.full ? '✓ 전신이 보입니다' : live.person ? '⚠ 발까지 보이도록 조금 뒤로 가 주세요' : '⚠ 사람이 보이지 않습니다'}
+                {live.full ? <><Icon name="check" /> 전신이 보입니다</> : live.person ? <><Icon name="warn" /> 발까지 보이도록 조금 뒤로 가 주세요</> : <><Icon name="warn" /> 사람이 보이지 않습니다</>}
+                {phase === 'ready' && live.person && liveView && (
+                  <div data-testid="form-live-view" data-relation={liveView.relation}>
+                    {liveView.relation === 'consistent' ? <Icon name="check" /> : <Icon name="warn" />} 방향(추정): {LIVE_VIEW_TEXT[liveView.relation]}
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -624,35 +782,39 @@ function CaptureStep({ reference, retake, onClip, onBack }: { reference: Referen
                 카메라 켜기
               </button>
             ) : phase === 'ready' ? (
-              <>
-                <select className="select" value={seconds} onChange={(e) => setSeconds(Number(e.target.value))} data-testid="form-record-seconds">
-                  {RECORD_SECONDS.map((s) => (
-                    <option key={s} value={s}>
-                      {s}초 촬영
-                    </option>
-                  ))}
-                </select>
-                <button className="btn btn-primary" onClick={startCountdown} data-testid="form-record-start">
-                  ▶ 촬영 시작
-                </button>
-              </>
-            ) : phase === 'recording' ? (
-              <button className="btn btn-secondary" onClick={finishRecording} data-testid="form-record-stop">
-                ■ 촬영 끝
+              <button className="btn btn-primary" onClick={startCountdown} disabled={!length.ok || !angleConfirmed} title={angleConfirmed ? undefined : '기준 각도에 맞춰 배치했는지 먼저 확인해 주세요'} data-testid="form-record-start" data-capture-ms={length.ok ? length.reference.durationMs : ''}>
+                <Icon name="play" /> 촬영 시작{length.ok ? ` (${(length.reference.durationMs / 1000).toFixed(2)}초 자동 촬영)` : ''}
+              </button>
+            ) : phase === 'countdown' || phase === 'recording' ? (
+              <button className="btn btn-secondary" onClick={capture.cancel} data-testid="form-record-cancel">
+                <Icon name="close" /> 촬영 취소
               </button>
             ) : null}
           </div>
         </>
       ) : (
         <div className="card info-card">
-          <input type="file" accept="video/*" capture="environment" onChange={(e) => e.target.files?.[0] && void useFile(e.target.files[0])} data-testid="form-capture-file" />
+          <input type="file" accept="video/*" capture="environment" disabled={!angleConfirmed} onChange={(e) => e.target.files?.[0] && void useFile(e.target.files[0])} data-testid="form-capture-file" />
           <p className="video-status-message" style={{ margin: '6px 0 0' }}>
-            휴대폰 카메라 앱 등으로 촬영한 영상을 올릴 수 있습니다. 영상은 이 기기에서만 처리됩니다.
+            휴대폰 카메라 앱 등으로 촬영한 영상을 올릴 수 있습니다. <strong>{ANGLE_NAME[view]}</strong> 각도에서 촬영한 영상이어야 합니다. 영상은 이 기기에서만 처리됩니다.
+            {!angleConfirmed && ' 위에서 각도를 확인하면 파일을 고를 수 있습니다.'}
           </p>
         </div>
       )}
+      {mode === 'camera' && phase === 'recording' && <CaptureGauge remainingMs={capture.remainingMs} durationMs={capture.durationMs} />}
+      {mode === 'camera' && !length.ok && (
+        <div className="ai-error" role="alert" data-testid="form-capture-length-error">
+          {length.message} 촬영 길이를 정할 수 없어 카메라 촬영을 시작하지 않습니다.
+        </div>
+      )}
       {message && <p className="video-status-message">{message}</p>}
-      <button className="btn btn-ghost btn-sm" onClick={onBack}>
+      <button
+        className="btn btn-ghost btn-sm"
+        onClick={() => {
+          if (capture.phase === 'countdown' || capture.phase === 'recording') capture.cancel();
+          onBack();
+        }}
+      >
         ← 기준 영상으로
       </button>
     </div>
@@ -661,7 +823,9 @@ function CaptureStep({ reference, retake, onClip, onBack }: { reference: Referen
 
 // ---------------------------------------------------------------- result
 
-function ResultView({ technique, reference, outcome, userVideoUrl, refFileUrl, onRetry }: { technique: Technique; reference: ReferenceVideo; outcome: CompareOutcome; userVideoUrl: string | null; refFileUrl: string | null; onRetry: () => void }) {
+const VIEW_STATUS_TEXT = { match: '기준 영상과 같은 방향에서 촬영된 것으로 확인되었습니다.', mismatch: '촬영 방향이 기준 영상과 다를 수 있습니다', unknown: '촬영 방향을 확인할 수 없습니다' } as const;
+
+function ResultView({ technique, reference, outcome, userVideoUrl, refFileUrl, onRetry, onReangle }: { technique: Technique; reference: ReferenceVideo; outcome: CompareOutcome; userVideoUrl: string | null; refFileUrl: string | null; onRetry: () => void; onReangle?: () => void }) {
   const { record, userFrames, refFrames } = outcome;
   const b = record.breakdown;
   const j = record.judgement;
@@ -688,7 +852,7 @@ function ResultView({ technique, reference, outcome, userVideoUrl, refFileUrl, o
               {b.score} / 100
             </div>
             <div className="pose-result__status">
-              {STATUS_ICON[classifyScore(b.score)]} {STATUS_LABEL[classifyScore(b.score)]}
+              <SkillStatusGlyph status={classifyScore(b.score)} /> {STATUS_LABEL[classifyScore(b.score)]}
               {prev?.breakdown.score != null && ` · 지난번 ${prev.breakdown.score}점 (${b.score - prev.breakdown.score >= 0 ? '+' : ''}${b.score - prev.breakdown.score})`}
             </div>
           </>
@@ -708,10 +872,43 @@ function ResultView({ technique, reference, outcome, userVideoUrl, refFileUrl, o
           {r}
         </p>
       ))}
-      {record.viewWarning && (
-        <div className="ai-error" role="alert" data-testid="form-view-warning">
-          {record.viewWarning}
+      {record.viewCheck ? (
+        <div
+          className={record.viewCheck.status === 'match' ? 'video-status-message' : 'ai-error'}
+          role={record.viewCheck.status === 'mismatch' ? 'alert' : undefined}
+          data-testid="form-view-check"
+          data-status={record.viewCheck.status}
+          data-local={record.viewCheck.local}
+          data-ai={record.viewCheck.ai ?? ''}
+        >
+          <p style={{ margin: 0 }}>
+            {record.viewCheck.status === 'match' ? <Icon name="check" /> : <Icon name="warn" />} <strong>촬영 방향:</strong> 기준 {ANGLE_NAME[record.viewCheck.referenceView]} · {VIEW_STATUS_TEXT[record.viewCheck.status]}
+          </p>
+          {record.viewCheck.message && <p style={{ margin: '4px 0 0' }} data-testid={record.viewCheck.status === 'mismatch' ? 'form-view-warning' : 'form-view-unknown'}>{record.viewCheck.message}</p>}
+          {(record.judgement.viewLimitedCriteria?.length ?? 0) > 0 && (
+            <p style={{ margin: '4px 0 0' }} data-testid="form-view-limited">
+              촬영 방향 때문에 확인하지 못해 틀린 것으로 판정하지 않은 기준: {record.judgement.viewLimitedCriteria!.map((id) => crit.get(id)?.description ?? id).join(' / ')}
+            </p>
+          )}
+          {record.viewCheck.status !== 'match' && (
+            <div className="modal-actions modal-actions--start" style={{ marginTop: 6 }}>
+              <button className="btn btn-secondary btn-sm" onClick={onRetry} data-testid="form-view-retake">
+                {ANGLE_NAME[record.viewCheck.referenceView]} 각도에 맞춰 다시 촬영
+              </button>
+              {onReangle && (
+                <button className="btn btn-ghost btn-sm" onClick={onReangle}>
+                  다른 각도로 기준 영상 다시 녹화
+                </button>
+              )}
+            </div>
+          )}
         </div>
+      ) : (
+        record.viewWarning && (
+          <div className="ai-error" role="alert" data-testid="form-view-warning">
+            {record.viewWarning}
+          </div>
+        )
       )}
 
       {b.phaseScores.some((p) => p.score !== null) && (
@@ -764,7 +961,7 @@ function ResultView({ technique, reference, outcome, userVideoUrl, refFileUrl, o
           const def = crit.get(c.criterionId);
           return (
             <li key={c.criterionId} data-verdict={c.verdict}>
-              {VERDICT_ICON[c.verdict]} <strong>{VERDICT_LABEL[c.verdict]}</strong> · {def ? `${IMPORTANCE_LABEL[def.importance]} · ${def.description}` : c.criterionId}
+              <VerdictGlyph verdict={c.verdict} /> <strong>{VERDICT_LABEL[c.verdict]}</strong> · {def ? `${IMPORTANCE_LABEL[def.importance]} · ${def.description}` : c.criterionId}
               {def?.phaseId && phasesById.get(def.phaseId) ? ` (${phasesById.get(def.phaseId)!.name})` : ''}
               <div className="video-status-message">
                 나: {c.observation}
@@ -774,10 +971,10 @@ function ResultView({ technique, reference, outcome, userVideoUrl, refFileUrl, o
           );
         })}
       </ul>
-      {j.strengths.length > 0 && <p className="pose-result__line" data-testid="form-strengths">✓ 잘한 부분: {j.strengths.join(' / ')}</p>}
+      {j.strengths.length > 0 && <p className="pose-result__line" data-testid="form-strengths"><Icon name="check" /> 잘한 부분: {j.strengths.join(' / ')}</p>}
       {j.differences.length > 0 && (
         <div data-testid="form-differences">
-          <p className="pose-result__line">△ 기준 영상과 다른 부분</p>
+          <p className="pose-result__line"><Icon name="warn" /> 기준 영상과 다른 부분</p>
           <ul>
             {j.differences.map((d, i) => (
               <li key={i}>
@@ -788,8 +985,8 @@ function ResultView({ technique, reference, outcome, userVideoUrl, refFileUrl, o
           </ul>
         </div>
       )}
-      {j.focus.length > 0 && <p className="pose-result__line" data-testid="form-focus">🎯 다음에 집중할 점: {j.focus.join(' / ')}</p>}
-      {j.drills.length > 0 && <p className="pose-result__line" data-testid="form-drills">🏋 연습 제안: {j.drills.join(' / ')}</p>}
+      {j.focus.length > 0 && <p className="pose-result__line" data-testid="form-focus"><Icon name="target" /> 다음에 집중할 점: {j.focus.join(' / ')}</p>}
+      {j.drills.length > 0 && <p className="pose-result__line" data-testid="form-drills"><Icon name="dumbbell" /> 연습 제안: {j.drills.join(' / ')}</p>}
       {j.limitations.length > 0 && <p className="video-status-message">평가 한계: {j.limitations.join(' / ')}</p>}
       {(record.poseHints?.length ?? 0) > 0 && (
         <p className="video-status-message" data-testid="form-pose-hints">

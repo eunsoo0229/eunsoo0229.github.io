@@ -1,0 +1,5182 @@
+{
+  "generatedAt": "2026-10-31T18:47:28.782Z",
+  "arts": [
+    {
+      "art": "karate",
+      "nameKo": "가라테",
+      "techniqueCount": 121,
+      "oldCategoryCount": 17,
+      "newGroupCount": 10,
+      "newNodeCount": 22,
+      "levelCounts": {
+        "l2": 10,
+        "l3": 11,
+        "l4": 0
+      },
+      "reclassifiedCount": 61,
+      "multiClassifiedCount": 0,
+      "reviewCount": 0,
+      "categoryMapping": {
+        "기본 자세 (Kihon Dachi)": "karate/stances",
+        "이동 (Shintai / 풋워크)": "karate/movement/m-shintai",
+        "전통 가라테의 응용 (자기방어 / Bunkai)": "karate/tradition/m-bunkai",
+        "타이사바키 / 회피 (Tai Sabaki)": "karate/movement/m-tai-sabaki",
+        "손기술 (Te-waza)": "karate/hand",
+        "팔꿈치 (Empi / Hiji)": "karate/hand/m-empi-hiji",
+        "발차기 (Geri)": "karate/kicks",
+        "막기 (Uke)": "karate/blocks",
+        "장거리 (To-ma)": "karate/ranges/m-to-ma",
+        "중거리 (Ma)": "karate/ranges/m-ma",
+        "근거리 (Chika-ma)": "karate/ranges/m-chika-ma",
+        "카운터 (Go no Sen 응용)": "karate/counters-combos/m-go-no-sen",
+        "조합 (Renzoku-waza)": "karate/counters-combos/m-renzoku-waza",
+        "쿠미테 --- 판정 규칙과 타이밍": "karate/kumite",
+        "호흡법 (Kokyu-ho): Ibuki와 Nogare": "karate/tradition/m-kokyu-ho-ibuki-nogare",
+        "유파별 대표 기술과 가타": "karate/tradition/m-2",
+        "킥": "karate/auto-0"
+      },
+      "tree": [
+        {
+          "id": "karate/stances",
+          "level": 2,
+          "kind": "group",
+          "ko": "서기 (Dachi)",
+          "en": "Stances (Dachi)",
+          "count": 11,
+          "children": []
+        },
+        {
+          "id": "karate/movement",
+          "level": 2,
+          "kind": "group",
+          "ko": "이동 · 회피",
+          "en": "Movement & Evasion",
+          "count": 16,
+          "children": [
+            {
+              "id": "karate/movement/m-shintai",
+              "level": 3,
+              "kind": "member",
+              "ko": "이동",
+              "en": "Shintai / 풋워크",
+              "count": 10,
+              "children": []
+            },
+            {
+              "id": "karate/movement/m-tai-sabaki",
+              "level": 3,
+              "kind": "member",
+              "ko": "타이사바키 / 회피",
+              "en": "Tai Sabaki",
+              "count": 6,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "karate/hand",
+          "level": 2,
+          "kind": "group",
+          "ko": "손기술 · 팔꿈치",
+          "en": "Hand Strikes & Elbows",
+          "count": 23,
+          "children": [
+            {
+              "id": "karate/hand/m-empi-hiji",
+              "level": 3,
+              "kind": "member",
+              "ko": "팔꿈치",
+              "en": "Empi / Hiji",
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": "karate/hand/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 17,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "karate/kicks",
+          "level": 2,
+          "kind": "group",
+          "ko": "발차기 (Geri)",
+          "en": "Kicks (Geri)",
+          "count": 11,
+          "children": []
+        },
+        {
+          "id": "karate/blocks",
+          "level": 2,
+          "kind": "group",
+          "ko": "막기 (Uke)",
+          "en": "Blocks (Uke)",
+          "count": 13,
+          "children": []
+        },
+        {
+          "id": "karate/ranges",
+          "level": 2,
+          "kind": "group",
+          "ko": "거리별 기술 (Maai)",
+          "en": "Techniques by Range (Maai)",
+          "count": 10,
+          "children": [
+            {
+              "id": "karate/ranges/m-to-ma",
+              "level": 3,
+              "kind": "member",
+              "ko": "장거리",
+              "en": "To-ma",
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": "karate/ranges/m-ma",
+              "level": 3,
+              "kind": "member",
+              "ko": "중거리",
+              "en": "Ma",
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": "karate/ranges/m-chika-ma",
+              "level": 3,
+              "kind": "member",
+              "ko": "근거리",
+              "en": "Chika-ma",
+              "count": 3,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "karate/counters-combos",
+          "level": 2,
+          "kind": "group",
+          "ko": "카운터 · 연속기",
+          "en": "Counters & Combinations",
+          "count": 15,
+          "children": [
+            {
+              "id": "karate/counters-combos/m-go-no-sen",
+              "level": 3,
+              "kind": "member",
+              "ko": "카운터",
+              "en": "Go no Sen 응용",
+              "count": 7,
+              "children": []
+            },
+            {
+              "id": "karate/counters-combos/m-renzoku-waza",
+              "level": 3,
+              "kind": "member",
+              "ko": "조합",
+              "en": "Renzoku-waza",
+              "count": 8,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "karate/kumite",
+          "level": 2,
+          "kind": "group",
+          "ko": "쿠미테 전술",
+          "en": "Kumite Tactics",
+          "count": 6,
+          "children": []
+        },
+        {
+          "id": "karate/tradition",
+          "level": 2,
+          "kind": "group",
+          "ko": "응용 · 호흡 · 유파",
+          "en": "Bunkai, Breathing & Styles",
+          "count": 14,
+          "children": [
+            {
+              "id": "karate/tradition/m-bunkai",
+              "level": 3,
+              "kind": "member",
+              "ko": "전통 가라테의 응용",
+              "en": "자기방어 / Bunkai",
+              "count": 10,
+              "children": []
+            },
+            {
+              "id": "karate/tradition/m-kokyu-ho-ibuki-nogare",
+              "level": 3,
+              "kind": "member",
+              "ko": "호흡법 (Kokyu-ho): Ibuki와 Nogare",
+              "en": "호흡법 (Kokyu-ho): Ibuki와 Nogare",
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": "karate/tradition/m-2",
+              "level": 3,
+              "kind": "member",
+              "ko": "유파별 대표 기술과 가타",
+              "en": "유파별 대표 기술과 가타",
+              "count": 2,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "karate/auto-0",
+          "level": 2,
+          "kind": "group",
+          "ko": "킥",
+          "en": "킥",
+          "count": 2,
+          "children": []
+        }
+      ],
+      "multiClassified": [],
+      "review": [],
+      "integrityIssues": []
+    },
+    {
+      "art": "wrestling",
+      "nameKo": "레슬링",
+      "techniqueCount": 190,
+      "oldCategoryCount": 16,
+      "newGroupCount": 11,
+      "newNodeCount": 37,
+      "levelCounts": {
+        "l2": 11,
+        "l3": 20,
+        "l4": 2
+      },
+      "reclassifiedCount": 153,
+      "multiClassifiedCount": 1,
+      "reviewCount": 11,
+      "categoryMapping": {
+        "기본 자세와 움직임": "wrestling/basics",
+        "스탠딩 포지션 / 그립": "wrestling/ties",
+        "공격 진입 (셋업 / 페이크 / 피더링)": "wrestling/setups",
+        "싱글 레그": "wrestling/leg-attacks/m-0",
+        "더블 레그": "wrestling/leg-attacks/m-1",
+        "바디락 / 클린치": "wrestling/body-lock",
+        "발목·무릎 공격": "wrestling/leg-attacks/m-2",
+        "던지기 / 투사 (상체 던지기 포함)": "wrestling/throws",
+        "프론트 헤드락": "wrestling/front-headlock",
+        "탑 포지션": "wrestling/top",
+        "바텀 포지션": "wrestling/bottom/m-0",
+        "탈출 (Escape)": "wrestling/bottom/m-escape",
+        "리버설 (Reversal)": "wrestling/bottom/m-reversal",
+        "리샷 / 카운터": "wrestling/defense/m-1",
+        "방어": "wrestling/defense/m-0",
+        "터틀 (Turtle)": "wrestling/auto-turtle"
+      },
+      "tree": [
+        {
+          "id": "wrestling/basics",
+          "level": 2,
+          "kind": "group",
+          "ko": "기본 자세와 움직임",
+          "en": "Stance & Motion",
+          "count": 16,
+          "children": [
+            {
+              "id": "wrestling/basics/footwork",
+              "level": 3,
+              "kind": "split",
+              "ko": "풋워크·이동",
+              "en": "Footwork",
+              "count": 5,
+              "children": []
+            },
+            {
+              "id": "wrestling/basics/escape",
+              "level": 3,
+              "kind": "split",
+              "ko": "탈출",
+              "en": "Escapes",
+              "count": 5,
+              "children": []
+            },
+            {
+              "id": "wrestling/basics/defense",
+              "level": 3,
+              "kind": "split",
+              "ko": "방어",
+              "en": "Defense",
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": "wrestling/basics/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 4,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "wrestling/ties",
+          "level": 2,
+          "kind": "group",
+          "ko": "스탠딩 그립 · 타이",
+          "en": "Standing Ties & Grips",
+          "count": 20,
+          "children": [
+            {
+              "id": "wrestling/ties/grip",
+              "level": 3,
+              "kind": "split",
+              "ko": "그립·타이",
+              "en": "Grips & Ties",
+              "count": 13,
+              "children": []
+            },
+            {
+              "id": "wrestling/ties/stance",
+              "level": 3,
+              "kind": "split",
+              "ko": "스탠스·자세",
+              "en": "Stances",
+              "count": 5,
+              "children": []
+            },
+            {
+              "id": "wrestling/ties/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 2,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "wrestling/setups",
+          "level": 2,
+          "kind": "group",
+          "ko": "공격 진입 (셋업 · 페이크)",
+          "en": "Setups & Entries",
+          "count": 14,
+          "children": [
+            {
+              "id": "wrestling/setups/setup",
+              "level": 3,
+              "kind": "split",
+              "ko": "셋업·페인트",
+              "en": "Setups & Feints",
+              "count": 9,
+              "children": []
+            },
+            {
+              "id": "wrestling/setups/back_take",
+              "level": 3,
+              "kind": "split",
+              "ko": "백 테이크",
+              "en": "Back Takes",
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": "wrestling/setups/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 3,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "wrestling/leg-attacks",
+          "level": 2,
+          "kind": "group",
+          "ko": "레그 어택",
+          "en": "Leg Attacks",
+          "count": 34,
+          "children": [
+            {
+              "id": "wrestling/leg-attacks/m-0",
+              "level": 3,
+              "kind": "member",
+              "ko": "싱글 레그",
+              "en": "싱글 레그",
+              "count": 19,
+              "children": [
+                {
+                  "id": "wrestling/leg-attacks/m-0/finish",
+                  "level": 4,
+                  "kind": "split",
+                  "ko": "마무리 (피니시)",
+                  "en": "Finishes",
+                  "count": 7,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "wrestling/leg-attacks/m-1",
+              "level": 3,
+              "kind": "member",
+              "ko": "더블 레그",
+              "en": "더블 레그",
+              "count": 12,
+              "children": [
+                {
+                  "id": "wrestling/leg-attacks/m-1/finish",
+                  "level": 4,
+                  "kind": "split",
+                  "ko": "마무리 (피니시)",
+                  "en": "Finishes",
+                  "count": 4,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "wrestling/leg-attacks/m-2",
+              "level": 3,
+              "kind": "member",
+              "ko": "발목·무릎 공격",
+              "en": "발목·무릎 공격",
+              "count": 3,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "wrestling/body-lock",
+          "level": 2,
+          "kind": "group",
+          "ko": "바디락 · 클린치",
+          "en": "Body Lock & Clinch",
+          "count": 12,
+          "children": [
+            {
+              "id": "wrestling/body-lock/grip",
+              "level": 3,
+              "kind": "split",
+              "ko": "그립·타이",
+              "en": "Grips & Ties",
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": "wrestling/body-lock/takedown",
+              "level": 3,
+              "kind": "split",
+              "ko": "테이크다운",
+              "en": "Takedowns",
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": "wrestling/body-lock/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 2,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "wrestling/throws",
+          "level": 2,
+          "kind": "group",
+          "ko": "던지기 · 투사",
+          "en": "Throws & Lifts",
+          "count": 19,
+          "children": []
+        },
+        {
+          "id": "wrestling/front-headlock",
+          "level": 2,
+          "kind": "group",
+          "ko": "프론트 헤드락",
+          "en": "Front Headlock",
+          "count": 6,
+          "children": []
+        },
+        {
+          "id": "wrestling/defense",
+          "level": 2,
+          "kind": "group",
+          "ko": "테이크다운 방어 · 리샷",
+          "en": "Takedown Defense & Re-Shots",
+          "count": 16,
+          "children": [
+            {
+              "id": "wrestling/defense/m-0",
+              "level": 3,
+              "kind": "member",
+              "ko": "방어",
+              "en": "방어",
+              "count": 7,
+              "children": []
+            },
+            {
+              "id": "wrestling/defense/m-1",
+              "level": 3,
+              "kind": "member",
+              "ko": "리샷 / 카운터",
+              "en": "리샷 / 카운터",
+              "count": 9,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "wrestling/top",
+          "level": 2,
+          "kind": "group",
+          "ko": "탑 포지션 (라이드 · 턴 · 핀)",
+          "en": "Top: Rides, Turns & Pins",
+          "count": 32,
+          "children": [
+            {
+              "id": "wrestling/top/ride",
+              "level": 3,
+              "kind": "split",
+              "ko": "라이드",
+              "en": "Rides",
+              "count": 8,
+              "children": []
+            },
+            {
+              "id": "wrestling/top/turn",
+              "level": 3,
+              "kind": "split",
+              "ko": "턴·틸트",
+              "en": "Turns & Tilts",
+              "count": 18,
+              "children": []
+            },
+            {
+              "id": "wrestling/top/pin",
+              "level": 3,
+              "kind": "split",
+              "ko": "핀·크레이들",
+              "en": "Pins & Cradles",
+              "count": 7,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "wrestling/bottom",
+          "level": 2,
+          "kind": "group",
+          "ko": "바텀 · 탈출 · 리버설",
+          "en": "Bottom, Escapes & Reversals",
+          "count": 20,
+          "children": [
+            {
+              "id": "wrestling/bottom/m-0",
+              "level": 3,
+              "kind": "member",
+              "ko": "바텀 포지션",
+              "en": "바텀 포지션",
+              "count": 9,
+              "children": []
+            },
+            {
+              "id": "wrestling/bottom/m-escape",
+              "level": 3,
+              "kind": "member",
+              "ko": "탈출",
+              "en": "Escape",
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": "wrestling/bottom/m-reversal",
+              "level": 3,
+              "kind": "member",
+              "ko": "리버설",
+              "en": "Reversal",
+              "count": 7,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "wrestling/auto-turtle",
+          "level": 2,
+          "kind": "group",
+          "ko": "터틀",
+          "en": "Turtle",
+          "count": 1,
+          "children": []
+        }
+      ],
+      "multiClassified": [
+        {
+          "id": "wrestling__tight-waist-and-half-nelson",
+          "nodes": [
+            "라이드",
+            "턴·틸트"
+          ]
+        }
+      ],
+      "review": [
+        {
+          "id": "wrestling__wrestling-stance",
+          "name": "Wrestling Stance",
+          "group": "기본 자세와 움직임",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "wrestling__level-change",
+          "name": "Level Change",
+          "group": "기본 자세와 움직임",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "footwork:LOW"
+          ]
+        },
+        {
+          "id": "wrestling__base-building",
+          "name": "Base Building",
+          "group": "기본 자세와 움직임",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "wrestling__hand-fighting",
+          "name": "Hand Fighting",
+          "group": "기본 자세와 움직임",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "wrestling__inside-control",
+          "name": "Inside Control",
+          "group": "스탠딩 그립 · 타이",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "grip:LOW"
+          ]
+        },
+        {
+          "id": "wrestling__neutral",
+          "name": "Neutral",
+          "group": "스탠딩 그립 · 타이",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "grip:LOW",
+            "stance:LOW"
+          ]
+        },
+        {
+          "id": "wrestling__russian-tie-entry",
+          "name": "Russian Tie Entry",
+          "group": "공격 진입 (셋업 · 페이크)",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "wrestling__underhook-entry",
+          "name": "Underhook Entry",
+          "group": "공격 진입 (셋업 · 페이크)",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "wrestling__body-lock-entry",
+          "name": "Body Lock Entry",
+          "group": "공격 진입 (셋업 · 페이크)",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "wrestling__locking-hands-position",
+          "name": "Locking Hands Position",
+          "group": "바디락 · 클린치",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "grip:LOW"
+          ]
+        },
+        {
+          "id": "wrestling__bear-hug-style-control",
+          "name": "Bear-Hug Style Control",
+          "group": "바디락 · 클린치",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        }
+      ],
+      "integrityIssues": []
+    },
+    {
+      "art": "muay-thai",
+      "nameKo": "무에타이",
+      "techniqueCount": 141,
+      "oldCategoryCount": 14,
+      "newGroupCount": 9,
+      "newNodeCount": 23,
+      "levelCounts": {
+        "l2": 9,
+        "l3": 12,
+        "l4": 0
+      },
+      "reclassifiedCount": 99,
+      "multiClassifiedCount": 0,
+      "reviewCount": 16,
+      "categoryMapping": {
+        "풋워크": "muay-thai/auto-0",
+        "중거리 펀치": "muay-thai/punches",
+        "장거리 킥 (Round Kick / Low Kick 계열)": "muay-thai/kicks/m-round-kick-low-kick",
+        "기본 개념 --- 거리(Range)와 자세": "muay-thai/basics",
+        "니 (Khao, เข่า)": "muay-thai/elbows-knees/m-khao",
+        "펀치 방어": "muay-thai/defense/m-1",
+        "클린치 (Clinch)": "muay-thai/clinch",
+        "장거리 --- 티프 (Teep, ถีบ)": "muay-thai/kicks/m-teep",
+        "엘보 (Sok, ศอก)": "muay-thai/elbows-knees/m-sok",
+        "스피닝 기술 모음": "muay-thai/spinning",
+        "로우킥 (Low Kick)": "muay-thai/kicks/m-low-kick",
+        "킥 방어": "muay-thai/defense/m-2",
+        "킥 캐치 / 방어": "muay-thai/defense/m-0",
+        "카운터 종합": "muay-thai/counters"
+      },
+      "tree": [
+        {
+          "id": "muay-thai/basics",
+          "level": 2,
+          "kind": "group",
+          "ko": "거리와 자세",
+          "en": "Range & Stance",
+          "count": 11,
+          "children": []
+        },
+        {
+          "id": "muay-thai/kicks",
+          "level": 2,
+          "kind": "group",
+          "ko": "킥 · 티프",
+          "en": "Kicks & Teeps",
+          "count": 33,
+          "children": [
+            {
+              "id": "muay-thai/kicks/m-round-kick-low-kick",
+              "level": 3,
+              "kind": "member",
+              "ko": "장거리 킥",
+              "en": "Round Kick / Low Kick 계열",
+              "count": 12,
+              "children": []
+            },
+            {
+              "id": "muay-thai/kicks/m-teep",
+              "level": 3,
+              "kind": "member",
+              "ko": "장거리",
+              "en": "티프 (Teep, ถีบ)",
+              "count": 12,
+              "children": []
+            },
+            {
+              "id": "muay-thai/kicks/m-low-kick",
+              "level": 3,
+              "kind": "member",
+              "ko": "로우킥",
+              "en": "Low Kick",
+              "count": 9,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "muay-thai/punches",
+          "level": 2,
+          "kind": "group",
+          "ko": "펀치",
+          "en": "Punches",
+          "count": 22,
+          "children": [
+            {
+              "id": "muay-thai/punches/combination",
+              "level": 3,
+              "kind": "split",
+              "ko": "콤비네이션",
+              "en": "Combinations",
+              "count": 10,
+              "children": []
+            },
+            {
+              "id": "muay-thai/punches/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 12,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "muay-thai/elbows-knees",
+          "level": 2,
+          "kind": "group",
+          "ko": "엘보 · 니",
+          "en": "Elbows & Knees",
+          "count": 18,
+          "children": [
+            {
+              "id": "muay-thai/elbows-knees/m-sok",
+              "level": 3,
+              "kind": "member",
+              "ko": "엘보",
+              "en": "Sok, ศอก",
+              "count": 9,
+              "children": []
+            },
+            {
+              "id": "muay-thai/elbows-knees/m-khao",
+              "level": 3,
+              "kind": "member",
+              "ko": "니",
+              "en": "Khao, เข่า",
+              "count": 9,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "muay-thai/spinning",
+          "level": 2,
+          "kind": "group",
+          "ko": "스피닝 기술",
+          "en": "Spinning Techniques",
+          "count": 3,
+          "children": []
+        },
+        {
+          "id": "muay-thai/clinch",
+          "level": 2,
+          "kind": "group",
+          "ko": "클린치",
+          "en": "Clinch",
+          "count": 19,
+          "children": [
+            {
+              "id": "muay-thai/clinch/grip",
+              "level": 3,
+              "kind": "split",
+              "ko": "그립·타이",
+              "en": "Grips & Ties",
+              "count": 10,
+              "children": []
+            },
+            {
+              "id": "muay-thai/clinch/knee",
+              "level": 3,
+              "kind": "split",
+              "ko": "니 (무릎)",
+              "en": "Knees",
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": "muay-thai/clinch/trip",
+              "level": 3,
+              "kind": "split",
+              "ko": "트립·발 걸기",
+              "en": "Trips & Foot Sweeps",
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": "muay-thai/clinch/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 4,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "muay-thai/defense",
+          "level": 2,
+          "kind": "group",
+          "ko": "방어",
+          "en": "Defense",
+          "count": 23,
+          "children": [
+            {
+              "id": "muay-thai/defense/m-0",
+              "level": 3,
+              "kind": "member",
+              "ko": "킥 캐치 / 방어",
+              "en": "킥 캐치 / 방어",
+              "count": 8,
+              "children": []
+            },
+            {
+              "id": "muay-thai/defense/m-1",
+              "level": 3,
+              "kind": "member",
+              "ko": "펀치 방어",
+              "en": "펀치 방어",
+              "count": 9,
+              "children": []
+            },
+            {
+              "id": "muay-thai/defense/m-2",
+              "level": 3,
+              "kind": "member",
+              "ko": "킥 방어",
+              "en": "킥 방어",
+              "count": 6,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "muay-thai/counters",
+          "level": 2,
+          "kind": "group",
+          "ko": "카운터",
+          "en": "Counters",
+          "count": 8,
+          "children": []
+        },
+        {
+          "id": "muay-thai/auto-0",
+          "level": 2,
+          "kind": "group",
+          "ko": "풋워크",
+          "en": "풋워크",
+          "count": 4,
+          "children": []
+        }
+      ],
+      "multiClassified": [],
+      "review": [
+        {
+          "id": "kickboxing__jab",
+          "name": "Jab",
+          "group": "펀치",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "boxing__backfist",
+          "name": "Backfist",
+          "group": "펀치",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "karate__short-punch",
+          "name": "Short Punch",
+          "group": "펀치",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "kickboxing__cross",
+          "name": "Cross",
+          "group": "펀치",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "kickboxing__lead-hook",
+          "name": "Lead Hook",
+          "group": "펀치",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "kickboxing__rear-hook",
+          "name": "Rear Hook",
+          "group": "펀치",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "kickboxing__lead-uppercut",
+          "name": "Lead Uppercut",
+          "group": "펀치",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "kickboxing__rear-uppercut",
+          "name": "Rear Uppercut",
+          "group": "펀치",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "mixed-martial-arts__overhand",
+          "name": "Overhand",
+          "group": "펀치",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "muay-thai__superman-punch",
+          "name": "Superman Punch",
+          "group": "펀치",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "muay-thai__spinning-backfist",
+          "name": "Spinning Backfist",
+          "group": "펀치",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "muay-thai__long-guard-punch",
+          "name": "Long Guard Punch",
+          "group": "펀치",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "muay-thai__outside-control",
+          "name": "Outside Control",
+          "group": "클린치",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "muay-thai__elbow-entry",
+          "name": "Elbow Entry",
+          "group": "클린치",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "grip:LOW"
+          ]
+        },
+        {
+          "id": "muay-thai__turn",
+          "name": "Turn",
+          "group": "클린치",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "kickboxing__off-balance",
+          "name": "Off-Balance",
+          "group": "클린치",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "grip:LOW",
+            "knee:LOW"
+          ]
+        }
+      ],
+      "integrityIssues": []
+    },
+    {
+      "art": "boxing",
+      "nameKo": "복싱",
+      "techniqueCount": 130,
+      "oldCategoryCount": 16,
+      "newGroupCount": 9,
+      "newNodeCount": 31,
+      "levelCounts": {
+        "l2": 9,
+        "l3": 19,
+        "l4": 0
+      },
+      "reclassifiedCount": 93,
+      "multiClassifiedCount": 0,
+      "reviewCount": 3,
+      "categoryMapping": {
+        "풋워크": "boxing/footwork",
+        "상대 펀치별 방어": "boxing/defense",
+        "방어": "boxing/defense",
+        "거리별 포지션": "boxing/range",
+        "특수 펀치": "boxing/punches/m-0",
+        "기본 자세": "boxing/stance",
+        "클린치": "boxing/inside/m-1",
+        "기본 펀치": "boxing/punches",
+        "카운터": "boxing/counters",
+        "페인트 (Feint)": "boxing/combos/m-feint",
+        "조합": "boxing/combos/m-0",
+        "근거리 / 인파이팅": "boxing/inside/m-0",
+        "코너 / 로프 포지션": "boxing/inside/m-2",
+        "링 제너럴십 (Ring Generalship)": "boxing/tactics/m-ring-generalship",
+        "사우스포 vs 오소독스 매치업 전술": "boxing/tactics/m-vs",
+        "아마추어(포인트) vs 프로 스코어링과 전술": "boxing/tactics/m-vs"
+      },
+      "tree": [
+        {
+          "id": "boxing/stance",
+          "level": 2,
+          "kind": "group",
+          "ko": "기본 자세 · 가드",
+          "en": "Stances & Guards",
+          "count": 8,
+          "children": []
+        },
+        {
+          "id": "boxing/footwork",
+          "level": 2,
+          "kind": "group",
+          "ko": "풋워크",
+          "en": "Footwork",
+          "count": 13,
+          "children": []
+        },
+        {
+          "id": "boxing/range",
+          "level": 2,
+          "kind": "group",
+          "ko": "거리별 기술",
+          "en": "Techniques by Range",
+          "count": 11,
+          "children": []
+        },
+        {
+          "id": "boxing/punches",
+          "level": 2,
+          "kind": "group",
+          "ko": "펀치",
+          "en": "Punches",
+          "count": 17,
+          "children": [
+            {
+              "id": "boxing/punches/m-0",
+              "level": 3,
+              "kind": "member",
+              "ko": "특수 펀치",
+              "en": "특수 펀치",
+              "count": 5,
+              "children": []
+            },
+            {
+              "id": "boxing/punches/straight",
+              "level": 3,
+              "kind": "split",
+              "ko": "스트레이트·크로스",
+              "en": "Straights & Crosses",
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": "boxing/punches/hook",
+              "level": 3,
+              "kind": "split",
+              "ko": "훅",
+              "en": "Hooks",
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": "boxing/punches/uppercut",
+              "level": 3,
+              "kind": "split",
+              "ko": "어퍼컷",
+              "en": "Uppercuts",
+              "count": 5,
+              "children": []
+            },
+            {
+              "id": "boxing/punches/special_punch",
+              "level": 3,
+              "kind": "split",
+              "ko": "특수 펀치",
+              "en": "Special Punches",
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": "boxing/punches/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 1,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "boxing/combos",
+          "level": 2,
+          "kind": "group",
+          "ko": "콤비네이션 · 페인트",
+          "en": "Combinations & Feints",
+          "count": 19,
+          "children": [
+            {
+              "id": "boxing/combos/m-0",
+              "level": 3,
+              "kind": "member",
+              "ko": "조합",
+              "en": "조합",
+              "count": 14,
+              "children": []
+            },
+            {
+              "id": "boxing/combos/m-feint",
+              "level": 3,
+              "kind": "member",
+              "ko": "페인트",
+              "en": "Feint",
+              "count": 5,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "boxing/defense",
+          "level": 2,
+          "kind": "group",
+          "ko": "방어",
+          "en": "Defense",
+          "count": 25,
+          "children": [
+            {
+              "id": "boxing/defense/block",
+              "level": 3,
+              "kind": "split",
+              "ko": "블로킹·가드",
+              "en": "Blocks & Covers",
+              "count": 7,
+              "children": []
+            },
+            {
+              "id": "boxing/defense/parry",
+              "level": 3,
+              "kind": "split",
+              "ko": "패링·캐치",
+              "en": "Parries & Catches",
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": "boxing/defense/slip_roll",
+              "level": 3,
+              "kind": "split",
+              "ko": "슬립·롤링·더킹",
+              "en": "Slips, Rolls & Ducks",
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": "boxing/defense/evasion",
+              "level": 3,
+              "kind": "split",
+              "ko": "거리 회피",
+              "en": "Evasion by Distance",
+              "count": 5,
+              "children": []
+            },
+            {
+              "id": "boxing/defense/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 1,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "boxing/counters",
+          "level": 2,
+          "kind": "group",
+          "ko": "카운터",
+          "en": "Counter Punching",
+          "count": 11,
+          "children": [
+            {
+              "id": "boxing/counters/slip_roll",
+              "level": 3,
+              "kind": "split",
+              "ko": "슬립·롤링·더킹",
+              "en": "Slips, Rolls & Ducks",
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": "boxing/counters/parry",
+              "level": 3,
+              "kind": "split",
+              "ko": "패링·캐치",
+              "en": "Parries & Catches",
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": "boxing/counters/evasion",
+              "level": 3,
+              "kind": "split",
+              "ko": "거리 회피",
+              "en": "Evasion by Distance",
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": "boxing/counters/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 3,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "boxing/inside",
+          "level": 2,
+          "kind": "group",
+          "ko": "근거리 · 클린치",
+          "en": "Inside Fighting & Clinch",
+          "count": 16,
+          "children": [
+            {
+              "id": "boxing/inside/m-0",
+              "level": 3,
+              "kind": "member",
+              "ko": "근거리 / 인파이팅",
+              "en": "근거리 / 인파이팅",
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": "boxing/inside/m-1",
+              "level": 3,
+              "kind": "member",
+              "ko": "클린치",
+              "en": "클린치",
+              "count": 7,
+              "children": []
+            },
+            {
+              "id": "boxing/inside/m-2",
+              "level": 3,
+              "kind": "member",
+              "ko": "코너 / 로프 포지션",
+              "en": "코너 / 로프 포지션",
+              "count": 5,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "boxing/tactics",
+          "level": 2,
+          "kind": "group",
+          "ko": "링 전술",
+          "en": "Ring Tactics",
+          "count": 10,
+          "children": [
+            {
+              "id": "boxing/tactics/m-ring-generalship",
+              "level": 3,
+              "kind": "member",
+              "ko": "링 제너럴십",
+              "en": "Ring Generalship",
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": "boxing/tactics/m-vs",
+              "level": 3,
+              "kind": "member",
+              "ko": "아마추어(포인트) vs 프로 스코어링과 전술",
+              "en": "아마추어(포인트) vs 프로 스코어링과 전술",
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": "boxing/tactics/m-vs",
+              "level": 3,
+              "kind": "member",
+              "ko": "아마추어(포인트) vs 프로 스코어링과 전술",
+              "en": "아마추어(포인트) vs 프로 스코어링과 전술",
+              "count": 6,
+              "children": []
+            }
+          ]
+        }
+      ],
+      "multiClassified": [],
+      "review": [
+        {
+          "id": "kickboxing__jab-counter",
+          "name": "Jab Counter",
+          "group": "방어",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "parry:LOW"
+          ]
+        },
+        {
+          "id": "kickboxing__cross-counter",
+          "name": "Cross Counter",
+          "group": "카운터",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "slip_roll:LOW",
+            "parry:LOW"
+          ]
+        },
+        {
+          "id": "boxing__pivot-hook",
+          "name": "Pivot → Hook",
+          "group": "카운터",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        }
+      ],
+      "integrityIssues": []
+    },
+    {
+      "art": "sambo",
+      "nameKo": "삼보",
+      "techniqueCount": 147,
+      "oldCategoryCount": 22,
+      "newGroupCount": 9,
+      "newNodeCount": 26,
+      "levelCounts": {
+        "l2": 9,
+        "l3": 17,
+        "l4": 0
+      },
+      "reclassifiedCount": 127,
+      "multiClassifiedCount": 0,
+      "reviewCount": 0,
+      "categoryMapping": {
+        "컴뱃 삼보 타격 범주": "sambo/combat-striking",
+        "기본 자세와 거리(Дистанция)": "sambo/basics-grips/m-0",
+        "바텀 포지션과 탈출": "sambo/parter/m-2",
+        "그립 파이팅(Захват) --- 재킷·벨트 중심": "sambo/basics-grips/m-1",
+        "테이크다운 진입 (레슬링 계열)": "sambo/throws/m-0",
+        "균형 무너뜨리기(Выведение из равновесия)": "sambo/basics-grips/m-2",
+        "다리 기술 --- 포드쎗카(Подсечка) 계열: 발쓸기(Sweep)": "sambo/throws/m-sweep",
+        "다리 기술 --- 자쳅(Зацеп)·오트하바트(Отхват)·포드핫(Подхват)· 포드사드(Подсад)": "sambo/throws/m-2",
+        "허리/몸통 던지기 --- 브로속 체레즈 베드로(Бросок через бедро)": "sambo/throws/m-3",
+        "등으로 던지기 --- 브로속 체레즈 스피누(Бросок через спину)": "sambo/throws/m-4",
+        "어깨·팔로 던지기 --- 멜니차(Мельница)와 베르투쉬카(Вертушка)": "sambo/throws/m-5",
+        "카운터(Контрприем)": "sambo/counters",
+        "희생 기술 --- 브로속 체레즈 골로부(Бросок через голову)· 체레즈 그루지(Бросок через грудь)": "sambo/throws/m-6",
+        "스탠딩 → 파르테르(Партер) 전환": "sambo/parter/m-0",
+        "탑 포지션과 홀드다운 --- 우제르자니예(Удержание)": "sambo/parter/m-1",
+        "스윕 / 전환": "sambo/parter/m-3",
+        "상체 관절기 --- 뤄착(Рычаг)과 우젤(Узел)": "sambo/submissions/m-1",
+        "하체 관절기 --- 삼보의 전통적 강점": "sambo/submissions/m-0",
+        "목/조르기 계열 --- 컴뱃 삼보 한정": "sambo/submissions/m-2",
+        "네와자 / 바닥 포지션": "sambo/auto-0",
+        "클로즈드 가드 (Closed Guard)": "sambo/auto-closed-guard",
+        "암바 계열": "sambo/auto-2"
+      },
+      "tree": [
+        {
+          "id": "sambo/basics-grips",
+          "level": 2,
+          "kind": "group",
+          "ko": "자세 · 그립 · 균형 무너뜨리기",
+          "en": "Stance, Grips & Off-Balancing",
+          "count": 24,
+          "children": [
+            {
+              "id": "sambo/basics-grips/m-0",
+              "level": 3,
+              "kind": "member",
+              "ko": "기본 자세와 거리(Дистанция)",
+              "en": "기본 자세와 거리(Дистанция)",
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": "sambo/basics-grips/m-1",
+              "level": 3,
+              "kind": "member",
+              "ko": "그립 파이팅(Захват)",
+              "en": "재킷·벨트 중심",
+              "count": 15,
+              "children": []
+            },
+            {
+              "id": "sambo/basics-grips/m-2",
+              "level": 3,
+              "kind": "member",
+              "ko": "균형 무너뜨리기(Выведение из равновесия)",
+              "en": "균형 무너뜨리기(Выведение из равновесия)",
+              "count": 3,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "sambo/throws",
+          "level": 2,
+          "kind": "group",
+          "ko": "테이크다운 · 던지기",
+          "en": "Takedowns & Throws",
+          "count": 43,
+          "children": [
+            {
+              "id": "sambo/throws/m-0",
+              "level": 3,
+              "kind": "member",
+              "ko": "테이크다운 진입 (레슬링 계열)",
+              "en": "테이크다운 진입 (레슬링 계열)",
+              "count": 10,
+              "children": []
+            },
+            {
+              "id": "sambo/throws/m-sweep",
+              "level": 3,
+              "kind": "member",
+              "ko": "다리 기술",
+              "en": "포드쎗카(Подсечка) 계열: 발쓸기(Sweep)",
+              "count": 5,
+              "children": []
+            },
+            {
+              "id": "sambo/throws/m-2",
+              "level": 3,
+              "kind": "member",
+              "ko": "다리 기술",
+              "en": "자쳅(Зацеп)·오트하바트(Отхват)·포드핫(Подхват)· 포드사드(Подсад)",
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": "sambo/throws/m-3",
+              "level": 3,
+              "kind": "member",
+              "ko": "허리/몸통 던지기",
+              "en": "브로속 체레즈 베드로(Бросок через бедро)",
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": "sambo/throws/m-4",
+              "level": 3,
+              "kind": "member",
+              "ko": "등으로 던지기",
+              "en": "브로속 체레즈 스피누(Бросок через спину)",
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": "sambo/throws/m-5",
+              "level": 3,
+              "kind": "member",
+              "ko": "어깨·팔로 던지기",
+              "en": "멜니차(Мельница)와 베르투쉬카(Вертушка)",
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": "sambo/throws/m-6",
+              "level": 3,
+              "kind": "member",
+              "ko": "희생 기술",
+              "en": "브로속 체레즈 골로부(Бросок через голову)· 체레즈 그루지(Бросок через грудь)",
+              "count": 6,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "sambo/counters",
+          "level": 2,
+          "kind": "group",
+          "ko": "카운터",
+          "en": "Counters",
+          "count": 5,
+          "children": []
+        },
+        {
+          "id": "sambo/parter",
+          "level": 2,
+          "kind": "group",
+          "ko": "파르테르 포지션",
+          "en": "Parter Positions",
+          "count": 37,
+          "children": [
+            {
+              "id": "sambo/parter/m-0",
+              "level": 3,
+              "kind": "member",
+              "ko": "스탠딩 → 파르테르(Партер) 전환",
+              "en": "스탠딩 → 파르테르(Партер) 전환",
+              "count": 5,
+              "children": []
+            },
+            {
+              "id": "sambo/parter/m-1",
+              "level": 3,
+              "kind": "member",
+              "ko": "탑 포지션과 홀드다운",
+              "en": "우제르자니예(Удержание)",
+              "count": 7,
+              "children": []
+            },
+            {
+              "id": "sambo/parter/m-2",
+              "level": 3,
+              "kind": "member",
+              "ko": "바텀 포지션과 탈출",
+              "en": "바텀 포지션과 탈출",
+              "count": 16,
+              "children": []
+            },
+            {
+              "id": "sambo/parter/m-3",
+              "level": 3,
+              "kind": "member",
+              "ko": "스윕 / 전환",
+              "en": "스윕 / 전환",
+              "count": 9,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "sambo/submissions",
+          "level": 2,
+          "kind": "group",
+          "ko": "관절기 · 조르기",
+          "en": "Locks & Chokes",
+          "count": 23,
+          "children": [
+            {
+              "id": "sambo/submissions/m-0",
+              "level": 3,
+              "kind": "member",
+              "ko": "하체 관절기",
+              "en": "삼보의 전통적 강점",
+              "count": 7,
+              "children": []
+            },
+            {
+              "id": "sambo/submissions/m-1",
+              "level": 3,
+              "kind": "member",
+              "ko": "상체 관절기",
+              "en": "뤄착(Рычаг)과 우젤(Узел)",
+              "count": 10,
+              "children": []
+            },
+            {
+              "id": "sambo/submissions/m-2",
+              "level": 3,
+              "kind": "member",
+              "ko": "목/조르기 계열",
+              "en": "컴뱃 삼보 한정",
+              "count": 6,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "sambo/combat-striking",
+          "level": 2,
+          "kind": "group",
+          "ko": "컴뱃 삼보 타격",
+          "en": "Combat Sambo Striking",
+          "count": 10,
+          "children": []
+        },
+        {
+          "id": "sambo/auto-0",
+          "level": 2,
+          "kind": "group",
+          "ko": "네와자 / 바닥 포지션",
+          "en": "네와자 / 바닥 포지션",
+          "count": 1,
+          "children": []
+        },
+        {
+          "id": "sambo/auto-closed-guard",
+          "level": 2,
+          "kind": "group",
+          "ko": "클로즈드 가드",
+          "en": "Closed Guard",
+          "count": 3,
+          "children": []
+        },
+        {
+          "id": "sambo/auto-2",
+          "level": 2,
+          "kind": "group",
+          "ko": "암바 계열",
+          "en": "암바 계열",
+          "count": 1,
+          "children": []
+        }
+      ],
+      "multiClassified": [],
+      "review": [],
+      "integrityIssues": []
+    },
+    {
+      "art": "judo",
+      "nameKo": "유도",
+      "techniqueCount": 137,
+      "oldCategoryCount": 15,
+      "newGroupCount": 7,
+      "newNodeCount": 19,
+      "levelCounts": {
+        "l2": 7,
+        "l3": 12,
+        "l4": 0
+      },
+      "reclassifiedCount": 114,
+      "multiClassifiedCount": 0,
+      "reviewCount": 0,
+      "categoryMapping": {
+        "기본 자세와 이동": "judo/basics/m-0",
+        "발기술 --- Ashi Waza": "judo/nage-waza/m-ashi-waza",
+        "잡기 / 그립 --- Kumi Kata": "judo/kumi-kata",
+        "손기술 --- Te Waza": "judo/nage-waza/m-te-waza",
+        "옆으로 누우며 던지기 --- Yoko Sutemi Waza": "judo/nage-waza/m-yoko-sutemi-waza",
+        "바로 누우며 던지기 --- Ma Sutemi Waza": "judo/nage-waza/m-ma-sutemi-waza",
+        "탈출": "judo/escapes",
+        "조르기 --- Shime Waza": "judo/shime-kansetsu/m-shime-waza",
+        "유도의 핵심 원리 --- Kuzushi · Tsukuri · Kake": "judo/basics/m-kuzushi-tsukuri-kake",
+        "허리기술 --- Koshi Waza": "judo/nage-waza/m-koshi-waza",
+        "연속·연결·변화 기술 --- Renraku Waza / Henka Waza": "judo/combinations/m-renraku-waza-henka-waza",
+        "카운터 --- Kaeshi Waza": "judo/combinations/m-kaeshi-waza",
+        "네와자 / 바닥 포지션": "judo/osaekomi",
+        "굳히기 --- Osaekomi Waza": "judo/osaekomi",
+        "관절기 --- Kansetsu Waza": "judo/shime-kansetsu/m-kansetsu-waza"
+      },
+      "tree": [
+        {
+          "id": "judo/basics",
+          "level": 2,
+          "kind": "group",
+          "ko": "자세 · 이동 · 원리",
+          "en": "Posture, Movement & Principles",
+          "count": 15,
+          "children": [
+            {
+              "id": "judo/basics/m-0",
+              "level": 3,
+              "kind": "member",
+              "ko": "기본 자세와 이동",
+              "en": "기본 자세와 이동",
+              "count": 7,
+              "children": []
+            },
+            {
+              "id": "judo/basics/m-kuzushi-tsukuri-kake",
+              "level": 3,
+              "kind": "member",
+              "ko": "유도의 핵심 원리",
+              "en": "Kuzushi · Tsukuri · Kake",
+              "count": 8,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "judo/kumi-kata",
+          "level": 2,
+          "kind": "group",
+          "ko": "그립 (Kumi Kata)",
+          "en": "Gripping (Kumi Kata)",
+          "count": 12,
+          "children": []
+        },
+        {
+          "id": "judo/nage-waza",
+          "level": 2,
+          "kind": "group",
+          "ko": "메치기 (Nage-waza)",
+          "en": "Throws (Nage-waza)",
+          "count": 57,
+          "children": [
+            {
+              "id": "judo/nage-waza/m-te-waza",
+              "level": 3,
+              "kind": "member",
+              "ko": "손기술",
+              "en": "Te Waza",
+              "count": 16,
+              "children": []
+            },
+            {
+              "id": "judo/nage-waza/m-koshi-waza",
+              "level": 3,
+              "kind": "member",
+              "ko": "허리기술",
+              "en": "Koshi Waza",
+              "count": 11,
+              "children": []
+            },
+            {
+              "id": "judo/nage-waza/m-ashi-waza",
+              "level": 3,
+              "kind": "member",
+              "ko": "발기술",
+              "en": "Ashi Waza",
+              "count": 13,
+              "children": []
+            },
+            {
+              "id": "judo/nage-waza/m-ma-sutemi-waza",
+              "level": 3,
+              "kind": "member",
+              "ko": "바로 누우며 던지기",
+              "en": "Ma Sutemi Waza",
+              "count": 5,
+              "children": []
+            },
+            {
+              "id": "judo/nage-waza/m-yoko-sutemi-waza",
+              "level": 3,
+              "kind": "member",
+              "ko": "옆으로 누우며 던지기",
+              "en": "Yoko Sutemi Waza",
+              "count": 12,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "judo/combinations",
+          "level": 2,
+          "kind": "group",
+          "ko": "연결 · 되치기",
+          "en": "Combinations & Counters",
+          "count": 19,
+          "children": [
+            {
+              "id": "judo/combinations/m-renraku-waza-henka-waza",
+              "level": 3,
+              "kind": "member",
+              "ko": "연속·연결·변화 기술",
+              "en": "Renraku Waza / Henka Waza",
+              "count": 10,
+              "children": []
+            },
+            {
+              "id": "judo/combinations/m-kaeshi-waza",
+              "level": 3,
+              "kind": "member",
+              "ko": "카운터",
+              "en": "Kaeshi Waza",
+              "count": 9,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "judo/osaekomi",
+          "level": 2,
+          "kind": "group",
+          "ko": "누르기 · 바닥 포지션",
+          "en": "Pins & Ground Positions (Osaekomi)",
+          "count": 11,
+          "children": []
+        },
+        {
+          "id": "judo/shime-kansetsu",
+          "level": 2,
+          "kind": "group",
+          "ko": "조르기 · 관절기",
+          "en": "Chokes & Joint Locks",
+          "count": 13,
+          "children": [
+            {
+              "id": "judo/shime-kansetsu/m-shime-waza",
+              "level": 3,
+              "kind": "member",
+              "ko": "조르기",
+              "en": "Shime Waza",
+              "count": 10,
+              "children": []
+            },
+            {
+              "id": "judo/shime-kansetsu/m-kansetsu-waza",
+              "level": 3,
+              "kind": "member",
+              "ko": "관절기",
+              "en": "Kansetsu Waza",
+              "count": 3,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "judo/escapes",
+          "level": 2,
+          "kind": "group",
+          "ko": "탈출",
+          "en": "Escapes",
+          "count": 10,
+          "children": [
+            {
+              "id": "judo/escapes/escape",
+              "level": 3,
+              "kind": "split",
+              "ko": "탈출",
+              "en": "Escapes",
+              "count": 10,
+              "children": []
+            }
+          ]
+        }
+      ],
+      "multiClassified": [],
+      "review": [],
+      "integrityIssues": []
+    },
+    {
+      "art": "bjj",
+      "nameKo": "주짓수",
+      "techniqueCount": 319,
+      "oldCategoryCount": 35,
+      "newGroupCount": 26,
+      "newNodeCount": 85,
+      "levelCounts": {
+        "l2": 26,
+        "l3": 47,
+        "l4": 0
+      },
+      "reclassifiedCount": 256,
+      "multiClassifiedCount": 4,
+      "reviewCount": 35,
+      "categoryMapping": {
+        "스탠딩 / 테이크다운": "bjj/standing",
+        "기본 움직임과 연결 기술": "bjj/escapes/m-0",
+        "터틀 (Turtle)": "bjj/turtle",
+        "백 컨트롤 (Back Control)": "bjj/back-control",
+        "노기(No-Gi)에서 자주 등장하는 포지션": "bjj/gi-nogi/m-no-gi",
+        "클로즈드 가드 (Closed Guard)": "bjj/closed-guard",
+        "프론트 헤드락 (Front Headlock)": "bjj/front-headlock",
+        "패스 가드 (Guard Passing)": "bjj/guard-passing",
+        "리샷 / 카운터": "bjj/auto-0",
+        "김우라 계열": "bjj/submissions/m-2",
+        "오픈 가드 (Open Guard)": "bjj/open-guard",
+        "탈출 기술 모음": "bjj/escapes",
+        "하프 가드 (Half Guard)": "bjj/half-guard",
+        "버터플라이 가드 (Butterfly Guard)": "bjj/butterfly",
+        "데 라 히바 (De La Riva Guard)": "bjj/de-la-riva",
+        "딥 하프 가드 (Deep Half Guard)": "bjj/half-guard/m-deep-half-guard",
+        "암바 계열": "bjj/submissions/m-0",
+        "레그락 계열": "bjj/submissions/m-3",
+        "사이드 컨트롤 (Side Control)": "bjj/side-control",
+        "트라이앵글 계열": "bjj/submissions/m-1",
+        "스파이더 가드 (Spider Guard)": "bjj/spider",
+        "라쏘 가드 (Lasso Guard)": "bjj/lasso",
+        "X 가드 (X-Guard)": "bjj/x-guard",
+        "싱글 레그 X (SLX / Single Leg X)": "bjj/slx",
+        "니 온 벨리 (Knee on Belly)": "bjj/knee-on-belly",
+        "노스 사우스 (North-South)": "bjj/north-south",
+        "마운트 (Mount)": "bjj/mount",
+        "크루시픽스 (Crucifix)": "bjj/crucifix",
+        "아시 가라미 (Ashi Garami)": "bjj/ashi-garami",
+        "50/50 가드": "bjj/fifty-fifty",
+        "암 드래그 (Arm Drag)": "bjj/arm-drag",
+        "백 테이크 기술 모음": "bjj/back-control",
+        "스윕 기술 모음": "bjj/de-la-riva",
+        "가드 패스 기술 모음": "bjj/guard-passing",
+        "기(Gi)에서 특히 중요한 기술": "bjj/gi-nogi/m-gi"
+      },
+      "tree": [
+        {
+          "id": "bjj/standing",
+          "level": 2,
+          "kind": "group",
+          "ko": "스탠딩 · 테이크다운",
+          "en": "Standing & Takedowns",
+          "count": 29,
+          "children": [
+            {
+              "id": "bjj/standing/grip",
+              "level": 3,
+              "kind": "split",
+              "ko": "그립·타이",
+              "en": "Grips & Ties",
+              "count": 5,
+              "children": []
+            },
+            {
+              "id": "bjj/standing/takedown",
+              "level": 3,
+              "kind": "split",
+              "ko": "테이크다운",
+              "en": "Takedowns",
+              "count": 14,
+              "children": []
+            },
+            {
+              "id": "bjj/standing/throw",
+              "level": 3,
+              "kind": "split",
+              "ko": "던지기",
+              "en": "Throws",
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": "bjj/standing/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 4,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bjj/arm-drag",
+          "level": 2,
+          "kind": "group",
+          "ko": "암 드래그",
+          "en": "Arm Drag",
+          "count": 5,
+          "children": []
+        },
+        {
+          "id": "bjj/closed-guard",
+          "level": 2,
+          "kind": "group",
+          "ko": "클로즈드 가드",
+          "en": "Closed Guard",
+          "count": 27,
+          "children": [
+            {
+              "id": "bjj/closed-guard/grip",
+              "level": 3,
+              "kind": "split",
+              "ko": "그립·타이",
+              "en": "Grips & Ties",
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": "bjj/closed-guard/control",
+              "level": 3,
+              "kind": "split",
+              "ko": "컨트롤·유지",
+              "en": "Control & Pins",
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": "bjj/closed-guard/guard_break",
+              "level": 3,
+              "kind": "split",
+              "ko": "가드 오프닝",
+              "en": "Guard Opening",
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": "bjj/closed-guard/sweep",
+              "level": 3,
+              "kind": "split",
+              "ko": "스윕",
+              "en": "Sweeps",
+              "count": 8,
+              "children": []
+            },
+            {
+              "id": "bjj/closed-guard/submission",
+              "level": 3,
+              "kind": "split",
+              "ko": "서브미션",
+              "en": "Submissions",
+              "count": 7,
+              "children": []
+            },
+            {
+              "id": "bjj/closed-guard/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 1,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bjj/open-guard",
+          "level": 2,
+          "kind": "group",
+          "ko": "오픈 가드",
+          "en": "Open Guard",
+          "count": 14,
+          "children": [
+            {
+              "id": "bjj/open-guard/guard_variant",
+              "level": 3,
+              "kind": "split",
+              "ko": "가드 종류",
+              "en": "Guard Variations",
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": "bjj/open-guard/sweep",
+              "level": 3,
+              "kind": "split",
+              "ko": "스윕",
+              "en": "Sweeps",
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": "bjj/open-guard/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 6,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bjj/half-guard",
+          "level": 2,
+          "kind": "group",
+          "ko": "하프 가드",
+          "en": "Half Guard",
+          "count": 23,
+          "children": [
+            {
+              "id": "bjj/half-guard/m-deep-half-guard",
+              "level": 3,
+              "kind": "member",
+              "ko": "딥 하프 가드",
+              "en": "Deep Half Guard",
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": "bjj/half-guard/guard_variant",
+              "level": 3,
+              "kind": "split",
+              "ko": "가드 종류",
+              "en": "Guard Variations",
+              "count": 8,
+              "children": []
+            },
+            {
+              "id": "bjj/half-guard/sweep",
+              "level": 3,
+              "kind": "split",
+              "ko": "스윕",
+              "en": "Sweeps",
+              "count": 8,
+              "children": []
+            },
+            {
+              "id": "bjj/half-guard/retention",
+              "level": 3,
+              "kind": "split",
+              "ko": "가드 회복·리텐션",
+              "en": "Guard Retention & Recovery",
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": "bjj/half-guard/escape",
+              "level": 3,
+              "kind": "split",
+              "ko": "탈출",
+              "en": "Escapes",
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": "bjj/half-guard/control",
+              "level": 3,
+              "kind": "split",
+              "ko": "컨트롤·유지",
+              "en": "Control & Pins",
+              "count": 3,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bjj/butterfly",
+          "level": 2,
+          "kind": "group",
+          "ko": "버터플라이 가드",
+          "en": "Butterfly Guard",
+          "count": 9,
+          "children": [
+            {
+              "id": "bjj/butterfly/sweep",
+              "level": 3,
+              "kind": "split",
+              "ko": "스윕",
+              "en": "Sweeps",
+              "count": 8,
+              "children": []
+            },
+            {
+              "id": "bjj/butterfly/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 1,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bjj/de-la-riva",
+          "level": 2,
+          "kind": "group",
+          "ko": "데 라 히바 가드",
+          "en": "De La Riva Guard",
+          "count": 13,
+          "children": [
+            {
+              "id": "bjj/de-la-riva/sweep",
+              "level": 3,
+              "kind": "split",
+              "ko": "스윕",
+              "en": "Sweeps",
+              "count": 5,
+              "children": []
+            },
+            {
+              "id": "bjj/de-la-riva/entry",
+              "level": 3,
+              "kind": "split",
+              "ko": "진입·엔트리",
+              "en": "Entries",
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": "bjj/de-la-riva/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 4,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bjj/spider",
+          "level": 2,
+          "kind": "group",
+          "ko": "스파이더 가드",
+          "en": "Spider Guard",
+          "count": 7,
+          "children": [
+            {
+              "id": "bjj/spider/transition",
+              "level": 3,
+              "kind": "split",
+              "ko": "전환",
+              "en": "Transitions",
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": "bjj/spider/entry",
+              "level": 3,
+              "kind": "split",
+              "ko": "진입·엔트리",
+              "en": "Entries",
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": "bjj/spider/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 1,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bjj/lasso",
+          "level": 2,
+          "kind": "group",
+          "ko": "라쏘 가드",
+          "en": "Lasso Guard",
+          "count": 6,
+          "children": [
+            {
+              "id": "bjj/lasso/transition",
+              "level": 3,
+              "kind": "split",
+              "ko": "전환",
+              "en": "Transitions",
+              "count": 5,
+              "children": []
+            },
+            {
+              "id": "bjj/lasso/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 1,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bjj/x-guard",
+          "level": 2,
+          "kind": "group",
+          "ko": "X 가드",
+          "en": "X-Guard",
+          "count": 4,
+          "children": []
+        },
+        {
+          "id": "bjj/slx",
+          "level": 2,
+          "kind": "group",
+          "ko": "싱글 레그 X",
+          "en": "Single Leg X",
+          "count": 7,
+          "children": [
+            {
+              "id": "bjj/slx/sweep",
+              "level": 3,
+              "kind": "split",
+              "ko": "스윕",
+              "en": "Sweeps",
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": "bjj/slx/transition",
+              "level": 3,
+              "kind": "split",
+              "ko": "전환",
+              "en": "Transitions",
+              "count": 3,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bjj/fifty-fifty",
+          "level": 2,
+          "kind": "group",
+          "ko": "50/50 가드",
+          "en": "50/50 Guard",
+          "count": 4,
+          "children": []
+        },
+        {
+          "id": "bjj/ashi-garami",
+          "level": 2,
+          "kind": "group",
+          "ko": "아시 가라미 · 레그 엔탱글먼트",
+          "en": "Ashi Garami & Leg Entanglements",
+          "count": 7,
+          "children": []
+        },
+        {
+          "id": "bjj/guard-passing",
+          "level": 2,
+          "kind": "group",
+          "ko": "가드 패스",
+          "en": "Guard Passing",
+          "count": 18,
+          "children": [
+            {
+              "id": "bjj/guard-passing/pass",
+              "level": 3,
+              "kind": "split",
+              "ko": "가드 패스",
+              "en": "Guard Passing",
+              "count": 17,
+              "children": []
+            },
+            {
+              "id": "bjj/guard-passing/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 1,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bjj/side-control",
+          "level": 2,
+          "kind": "group",
+          "ko": "사이드 컨트롤",
+          "en": "Side Control",
+          "count": 12,
+          "children": [
+            {
+              "id": "bjj/side-control/control",
+              "level": 3,
+              "kind": "split",
+              "ko": "컨트롤·유지",
+              "en": "Control & Pins",
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": "bjj/side-control/submission",
+              "level": 3,
+              "kind": "split",
+              "ko": "서브미션",
+              "en": "Submissions",
+              "count": 7,
+              "children": []
+            },
+            {
+              "id": "bjj/side-control/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 2,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bjj/knee-on-belly",
+          "level": 2,
+          "kind": "group",
+          "ko": "니 온 벨리",
+          "en": "Knee on Belly",
+          "count": 4,
+          "children": []
+        },
+        {
+          "id": "bjj/north-south",
+          "level": 2,
+          "kind": "group",
+          "ko": "노스 사우스",
+          "en": "North-South",
+          "count": 3,
+          "children": []
+        },
+        {
+          "id": "bjj/mount",
+          "level": 2,
+          "kind": "group",
+          "ko": "마운트",
+          "en": "Mount",
+          "count": 13,
+          "children": [
+            {
+              "id": "bjj/mount/control",
+              "level": 3,
+              "kind": "split",
+              "ko": "컨트롤·유지",
+              "en": "Control & Pins",
+              "count": 5,
+              "children": []
+            },
+            {
+              "id": "bjj/mount/escape",
+              "level": 3,
+              "kind": "split",
+              "ko": "탈출",
+              "en": "Escapes",
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": "bjj/mount/submission",
+              "level": 3,
+              "kind": "split",
+              "ko": "서브미션",
+              "en": "Submissions",
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": "bjj/mount/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 1,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bjj/back-control",
+          "level": 2,
+          "kind": "group",
+          "ko": "백 컨트롤",
+          "en": "Back Control",
+          "count": 24,
+          "children": [
+            {
+              "id": "bjj/back-control/control",
+              "level": 3,
+              "kind": "split",
+              "ko": "컨트롤·유지",
+              "en": "Control & Pins",
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": "bjj/back-control/back_take",
+              "level": 3,
+              "kind": "split",
+              "ko": "백 테이크",
+              "en": "Back Takes",
+              "count": 10,
+              "children": []
+            },
+            {
+              "id": "bjj/back-control/submission",
+              "level": 3,
+              "kind": "split",
+              "ko": "서브미션",
+              "en": "Submissions",
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": "bjj/back-control/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 6,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bjj/turtle",
+          "level": 2,
+          "kind": "group",
+          "ko": "터틀",
+          "en": "Turtle",
+          "count": 12,
+          "children": [
+            {
+              "id": "bjj/turtle/control",
+              "level": 3,
+              "kind": "split",
+              "ko": "컨트롤·유지",
+              "en": "Control & Pins",
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": "bjj/turtle/submission",
+              "level": 3,
+              "kind": "split",
+              "ko": "서브미션",
+              "en": "Submissions",
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": "bjj/turtle/escape",
+              "level": 3,
+              "kind": "split",
+              "ko": "탈출",
+              "en": "Escapes",
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": "bjj/turtle/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 2,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bjj/front-headlock",
+          "level": 2,
+          "kind": "group",
+          "ko": "프론트 헤드락",
+          "en": "Front Headlock",
+          "count": 7,
+          "children": [
+            {
+              "id": "bjj/front-headlock/submission",
+              "level": 3,
+              "kind": "split",
+              "ko": "서브미션",
+              "en": "Submissions",
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": "bjj/front-headlock/back_take",
+              "level": 3,
+              "kind": "split",
+              "ko": "백 테이크",
+              "en": "Back Takes",
+              "count": 3,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bjj/crucifix",
+          "level": 2,
+          "kind": "group",
+          "ko": "크루시픽스",
+          "en": "Crucifix",
+          "count": 5,
+          "children": []
+        },
+        {
+          "id": "bjj/escapes",
+          "level": 2,
+          "kind": "group",
+          "ko": "탈출 · 가드 회복",
+          "en": "Escapes & Guard Recovery",
+          "count": 26,
+          "children": [
+            {
+              "id": "bjj/escapes/m-0",
+              "level": 3,
+              "kind": "member",
+              "ko": "기본 움직임과 연결 기술",
+              "en": "기본 움직임과 연결 기술",
+              "count": 15,
+              "children": []
+            },
+            {
+              "id": "bjj/escapes/escape",
+              "level": 3,
+              "kind": "split",
+              "ko": "탈출",
+              "en": "Escapes",
+              "count": 12,
+              "children": []
+            },
+            {
+              "id": "bjj/escapes/retention",
+              "level": 3,
+              "kind": "split",
+              "ko": "가드 회복·리텐션",
+              "en": "Guard Retention & Recovery",
+              "count": 5,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bjj/submissions",
+          "level": 2,
+          "kind": "group",
+          "ko": "서브미션 계열",
+          "en": "Submission Families",
+          "count": 30,
+          "children": [
+            {
+              "id": "bjj/submissions/m-0",
+              "level": 3,
+              "kind": "member",
+              "ko": "암바 계열",
+              "en": "암바 계열",
+              "count": 11,
+              "children": []
+            },
+            {
+              "id": "bjj/submissions/m-1",
+              "level": 3,
+              "kind": "member",
+              "ko": "트라이앵글 계열",
+              "en": "트라이앵글 계열",
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": "bjj/submissions/m-2",
+              "level": 3,
+              "kind": "member",
+              "ko": "김우라 계열",
+              "en": "김우라 계열",
+              "count": 8,
+              "children": []
+            },
+            {
+              "id": "bjj/submissions/m-3",
+              "level": 3,
+              "kind": "member",
+              "ko": "레그락 계열",
+              "en": "레그락 계열",
+              "count": 7,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bjj/gi-nogi",
+          "level": 2,
+          "kind": "group",
+          "ko": "Gi / No-Gi 특화",
+          "en": "Gi / No-Gi Specific",
+          "count": 9,
+          "children": [
+            {
+              "id": "bjj/gi-nogi/m-gi",
+              "level": 3,
+              "kind": "member",
+              "ko": "기(Gi)에서 특히 중요한 기술",
+              "en": "기(Gi)에서 특히 중요한 기술",
+              "count": 5,
+              "children": []
+            },
+            {
+              "id": "bjj/gi-nogi/m-no-gi",
+              "level": 3,
+              "kind": "member",
+              "ko": "노기(No-Gi)에서 자주 등장하는 포지션",
+              "en": "노기(No-Gi)에서 자주 등장하는 포지션",
+              "count": 4,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bjj/auto-0",
+          "level": 2,
+          "kind": "group",
+          "ko": "리샷 / 카운터",
+          "en": "리샷 / 카운터",
+          "count": 1,
+          "children": []
+        }
+      ],
+      "multiClassified": [
+        {
+          "id": "bjj__hip-pressure-guard-break",
+          "nodes": [
+            "컨트롤·유지",
+            "가드 오프닝"
+          ]
+        },
+        {
+          "id": "bjj__deep-half-guard",
+          "nodes": [
+            "가드 종류",
+            "컨트롤·유지"
+          ]
+        },
+        {
+          "id": "bjj__dogfight",
+          "nodes": [
+            "가드 종류",
+            "컨트롤·유지"
+          ]
+        },
+        {
+          "id": "bjj__kimura-trap-back",
+          "nodes": [
+            "백 테이크",
+            "서브미션"
+          ]
+        }
+      ],
+      "review": [
+        {
+          "id": "wrestling__snap-down",
+          "name": "Snap Down",
+          "group": "스탠딩 · 테이크다운",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "grip:LOW",
+            "takedown:LOW"
+          ]
+        },
+        {
+          "id": "bjj__duck-under",
+          "name": "Duck Under",
+          "group": "스탠딩 · 테이크다운",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "grip:LOW"
+          ]
+        },
+        {
+          "id": "judo__kouchi-gari",
+          "name": "Kouchi Gari",
+          "group": "스탠딩 · 테이크다운",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "grip:LOW"
+          ]
+        },
+        {
+          "id": "judo__uchi-mata",
+          "name": "Uchi Mata",
+          "group": "스탠딩 · 테이크다운",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "grip:LOW",
+            "throw:LOW"
+          ]
+        },
+        {
+          "id": "bjj__posture-break",
+          "name": "Posture Break",
+          "group": "클로즈드 가드",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "grip:LOW",
+            "sweep:LOW",
+            "submission:LOW"
+          ]
+        },
+        {
+          "id": "bjj__feet-on-hips",
+          "name": "Feet on Hips",
+          "group": "오픈 가드",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__reverse-de-la-riva",
+          "name": "Reverse De La Riva",
+          "group": "오픈 가드",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "sweep:LOW",
+            "back_take:LOW"
+          ]
+        },
+        {
+          "id": "bjj__off-balancing",
+          "name": "Off-balancing",
+          "group": "오픈 가드",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "sweep:LOW",
+            "entry:LOW"
+          ]
+        },
+        {
+          "id": "bjj__old-school",
+          "name": "Old School",
+          "group": "하프 가드",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "sweep:LOW"
+          ]
+        },
+        {
+          "id": "bjj__electric-chair",
+          "name": "Electric Chair",
+          "group": "하프 가드",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "sweep:LOW"
+          ]
+        },
+        {
+          "id": "bjj__sit-up-guard",
+          "name": "Sit-Up Guard",
+          "group": "버터플라이 가드",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "sweep:LOW"
+          ]
+        },
+        {
+          "id": "bjj__dlr-hook",
+          "name": "DLR Hook",
+          "group": "데 라 히바 가드",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "sweep:LOW",
+            "back_take:LOW"
+          ]
+        },
+        {
+          "id": "bjj__kiss-of-the-dragon",
+          "name": "Kiss of the Dragon",
+          "group": "데 라 히바 가드",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "sweep:LOW",
+            "back_take:LOW"
+          ]
+        },
+        {
+          "id": "bjj__spider-sweep",
+          "name": "Spider Sweep",
+          "group": "스파이더 가드",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "transition:LOW"
+          ]
+        },
+        {
+          "id": "bjj__lasso-sweep",
+          "name": "Lasso Sweep",
+          "group": "라쏘 가드",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "transition:LOW"
+          ]
+        },
+        {
+          "id": "bjj__far-side-underhook",
+          "name": "Far-side Underhook",
+          "group": "사이드 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "control:LOW"
+          ]
+        },
+        {
+          "id": "bjj__near-side-underhook",
+          "name": "Near-side Underhook",
+          "group": "사이드 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "control:LOW",
+            "submission:LOW"
+          ]
+        },
+        {
+          "id": "bjj__gift-wrap",
+          "name": "Gift Wrap",
+          "group": "마운트",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "judo__two-on-one",
+          "name": "Two-on-One",
+          "group": "백 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__hooks",
+          "name": "Hooks",
+          "group": "백 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__trap-and-roll-prevention",
+          "name": "Trap and Roll Prevention",
+          "group": "백 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "control:LOW",
+            "back_take:LOW"
+          ]
+        },
+        {
+          "id": "bjj__hand-fighting",
+          "name": "Hand Fighting",
+          "group": "백 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "control:LOW",
+            "submission:LOW"
+          ]
+        },
+        {
+          "id": "bjj__crucifix-attacks",
+          "name": "Crucifix Attacks",
+          "group": "백 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "submission:LOW"
+          ]
+        },
+        {
+          "id": "bjj__granby-counter",
+          "name": "Granby Counter",
+          "group": "백 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "back_take:LOW"
+          ]
+        },
+        {
+          "id": "wrestling__front-headlock",
+          "name": "Front Headlock",
+          "group": "터틀",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "wrestling__mat-return",
+          "name": "Mat Return",
+          "group": "터틀",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__상대의-중심-이동",
+          "name": "상대의 중심 이동",
+          "group": "탈출 · 가드 회복",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__스크램블-시작",
+          "name": "스크램블 시작",
+          "group": "탈출 · 가드 회복",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__스탠딩-복귀",
+          "name": "스탠딩 복귀",
+          "group": "탈출 · 가드 회복",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "retention:LOW"
+          ]
+        },
+        {
+          "id": "bjj__거리-확보",
+          "name": "거리 확보",
+          "group": "탈출 · 가드 회복",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "retention:LOW"
+          ]
+        },
+        {
+          "id": "bjj__mma-상황에서의-일어나기",
+          "name": "MMA 상황에서의 일어나기",
+          "group": "탈출 · 가드 회복",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__목-프레임",
+          "name": "목 프레임",
+          "group": "탈출 · 가드 회복",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "escape:LOW"
+          ]
+        },
+        {
+          "id": "bjj__어깨-프레임",
+          "name": "어깨 프레임",
+          "group": "탈출 · 가드 회복",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__엉덩이-프레임",
+          "name": "엉덩이 프레임",
+          "group": "탈출 · 가드 회복",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__무릎-프레임",
+          "name": "무릎 프레임",
+          "group": "탈출 · 가드 회복",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "retention:LOW"
+          ]
+        }
+      ],
+      "integrityIssues": []
+    },
+    {
+      "art": "kickboxing",
+      "nameKo": "킥복싱",
+      "techniqueCount": 129,
+      "oldCategoryCount": 14,
+      "newGroupCount": 9,
+      "newNodeCount": 33,
+      "levelCounts": {
+        "l2": 9,
+        "l3": 21,
+        "l4": 0
+      },
+      "reclassifiedCount": 105,
+      "multiClassifiedCount": 2,
+      "reviewCount": 3,
+      "categoryMapping": {
+        "풋워크": "kickboxing/stance-footwork/m-1",
+        "펀치": "kickboxing/punches",
+        "킥": "kickboxing/kicks",
+        "스탠스": "kickboxing/stance-footwork/m-0",
+        "니 (무릎)": "kickboxing/knees-elbows/m-0",
+        "클린치 / 근거리 제어": "kickboxing/clinch",
+        "대표적인 콤비네이션 (연결)": "kickboxing/combos/m-0",
+        "엘보": "kickboxing/knees-elbows/m-1",
+        "방어": "kickboxing/defense",
+        "카운터": "kickboxing/counters",
+        "페인트 (Feint)": "kickboxing/combos/m-feint",
+        "기본 개념": "kickboxing/concepts/m-0",
+        "규칙 체계 (가장 먼저 알아야 할 것)": "kickboxing/concepts/m-1",
+        "포인트 스파링 특유 전술": "kickboxing/concepts/m-2"
+      },
+      "tree": [
+        {
+          "id": "kickboxing/concepts",
+          "level": 2,
+          "kind": "group",
+          "ko": "기본 개념 · 규칙",
+          "en": "Concepts & Rules",
+          "count": 13,
+          "children": [
+            {
+              "id": "kickboxing/concepts/m-0",
+              "level": 3,
+              "kind": "member",
+              "ko": "기본 개념",
+              "en": "기본 개념",
+              "count": 5,
+              "children": []
+            },
+            {
+              "id": "kickboxing/concepts/m-1",
+              "level": 3,
+              "kind": "member",
+              "ko": "규칙 체계 (가장 먼저 알아야 할 것)",
+              "en": "규칙 체계 (가장 먼저 알아야 할 것)",
+              "count": 5,
+              "children": []
+            },
+            {
+              "id": "kickboxing/concepts/m-2",
+              "level": 3,
+              "kind": "member",
+              "ko": "포인트 스파링 특유 전술",
+              "en": "포인트 스파링 특유 전술",
+              "count": 3,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "kickboxing/stance-footwork",
+          "level": 2,
+          "kind": "group",
+          "ko": "스탠스 · 풋워크",
+          "en": "Stance & Footwork",
+          "count": 19,
+          "children": [
+            {
+              "id": "kickboxing/stance-footwork/m-0",
+              "level": 3,
+              "kind": "member",
+              "ko": "스탠스",
+              "en": "스탠스",
+              "count": 8,
+              "children": []
+            },
+            {
+              "id": "kickboxing/stance-footwork/m-1",
+              "level": 3,
+              "kind": "member",
+              "ko": "풋워크",
+              "en": "풋워크",
+              "count": 11,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "kickboxing/punches",
+          "level": 2,
+          "kind": "group",
+          "ko": "펀치",
+          "en": "Punches",
+          "count": 13,
+          "children": [
+            {
+              "id": "kickboxing/punches/straight",
+              "level": 3,
+              "kind": "split",
+              "ko": "스트레이트·크로스",
+              "en": "Straights & Crosses",
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": "kickboxing/punches/hook",
+              "level": 3,
+              "kind": "split",
+              "ko": "훅",
+              "en": "Hooks",
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": "kickboxing/punches/uppercut",
+              "level": 3,
+              "kind": "split",
+              "ko": "어퍼컷",
+              "en": "Uppercuts",
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": "kickboxing/punches/special_punch",
+              "level": 3,
+              "kind": "split",
+              "ko": "특수 펀치",
+              "en": "Special Punches",
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": "kickboxing/punches/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 1,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "kickboxing/kicks",
+          "level": 2,
+          "kind": "group",
+          "ko": "킥",
+          "en": "Kicks",
+          "count": 17,
+          "children": [
+            {
+              "id": "kickboxing/kicks/teep",
+              "level": 3,
+              "kind": "split",
+              "ko": "앞차기·티프",
+              "en": "Front Kicks & Teeps",
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": "kickboxing/kicks/round_kick",
+              "level": 3,
+              "kind": "split",
+              "ko": "돌려차기·라운드킥",
+              "en": "Round Kicks",
+              "count": 7,
+              "children": []
+            },
+            {
+              "id": "kickboxing/kicks/side_back_kick",
+              "level": 3,
+              "kind": "split",
+              "ko": "옆차기·뒤차기",
+              "en": "Side & Back Kicks",
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": "kickboxing/kicks/axe_kick",
+              "level": 3,
+              "kind": "split",
+              "ko": "내려차기·반달차기",
+              "en": "Axe & Crescent Kicks",
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": "kickboxing/kicks/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 3,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "kickboxing/knees-elbows",
+          "level": 2,
+          "kind": "group",
+          "ko": "니 · 엘보",
+          "en": "Knees & Elbows",
+          "count": 13,
+          "children": [
+            {
+              "id": "kickboxing/knees-elbows/m-0",
+              "level": 3,
+              "kind": "member",
+              "ko": "니 (무릎)",
+              "en": "니 (무릎)",
+              "count": 7,
+              "children": []
+            },
+            {
+              "id": "kickboxing/knees-elbows/m-1",
+              "level": 3,
+              "kind": "member",
+              "ko": "엘보",
+              "en": "엘보",
+              "count": 6,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "kickboxing/combos",
+          "level": 2,
+          "kind": "group",
+          "ko": "콤비네이션 · 페인트",
+          "en": "Combinations & Feints",
+          "count": 24,
+          "children": [
+            {
+              "id": "kickboxing/combos/m-0",
+              "level": 3,
+              "kind": "member",
+              "ko": "대표적인 콤비네이션 (연결)",
+              "en": "대표적인 콤비네이션 (연결)",
+              "count": 17,
+              "children": []
+            },
+            {
+              "id": "kickboxing/combos/m-feint",
+              "level": 3,
+              "kind": "member",
+              "ko": "페인트",
+              "en": "Feint",
+              "count": 7,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "kickboxing/clinch",
+          "level": 2,
+          "kind": "group",
+          "ko": "클린치 · 근거리",
+          "en": "Clinch & Close Range",
+          "count": 9,
+          "children": []
+        },
+        {
+          "id": "kickboxing/defense",
+          "level": 2,
+          "kind": "group",
+          "ko": "방어",
+          "en": "Defense",
+          "count": 11,
+          "children": [
+            {
+              "id": "kickboxing/defense/parry",
+              "level": 3,
+              "kind": "split",
+              "ko": "패링·캐치",
+              "en": "Parries & Catches",
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": "kickboxing/defense/slip_roll",
+              "level": 3,
+              "kind": "split",
+              "ko": "슬립·롤링·더킹",
+              "en": "Slips, Rolls & Ducks",
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": "kickboxing/defense/evasion",
+              "level": 3,
+              "kind": "split",
+              "ko": "거리 회피",
+              "en": "Evasion by Distance",
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": "kickboxing/defense/kick_defense",
+              "level": 3,
+              "kind": "split",
+              "ko": "킥 방어 (체크·캐치)",
+              "en": "Kick Defense",
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": "kickboxing/defense/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 1,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "kickboxing/counters",
+          "level": 2,
+          "kind": "group",
+          "ko": "카운터",
+          "en": "Counters",
+          "count": 10,
+          "children": []
+        }
+      ],
+      "multiClassified": [
+        {
+          "id": "muay-thai__cross-to-hook",
+          "nodes": [
+            "스트레이트·크로스",
+            "훅"
+          ]
+        },
+        {
+          "id": "kickboxing__catch",
+          "nodes": [
+            "패링·캐치",
+            "킥 방어 (체크·캐치)"
+          ]
+        }
+      ],
+      "review": [
+        {
+          "id": "kickboxing__jab",
+          "name": "Jab",
+          "group": "펀치",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "muay-thai__step-up-kick",
+          "name": "Step-Up Kick",
+          "group": "킥",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "kickboxing__cover",
+          "name": "Cover",
+          "group": "방어",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        }
+      ],
+      "integrityIssues": []
+    },
+    {
+      "art": "taekwondo",
+      "nameKo": "태권도",
+      "techniqueCount": 104,
+      "oldCategoryCount": 13,
+      "newGroupCount": 6,
+      "newNodeCount": 18,
+      "levelCounts": {
+        "l2": 6,
+        "l3": 11,
+        "l4": 0
+      },
+      "reclassifiedCount": 85,
+      "multiClassifiedCount": 0,
+      "reviewCount": 0,
+      "categoryMapping": {
+        "기본 서기 / 자세": "taekwondo/stances/m-0",
+        "손기술": "taekwondo/hands-blocks/m-0",
+        "기본 발차기 (세부 명칭)": "taekwondo/kicks",
+        "겨루기 발차기 [WT 중심]": "taekwondo/sparring/m-wt",
+        "점프 / 공중 발차기": "taekwondo/kicks/m-1",
+        "막기": "taekwondo/hands-blocks/m-1",
+        "이동 / 풋워크": "taekwondo/stances/m-1",
+        "거리별 전술": "taekwondo/sparring/m-2",
+        "회전 발차기": "taekwondo/kicks/m-0",
+        "연결 기술 (콤비네이션)": "taekwondo/sparring/m-1",
+        "품새 (Poomsae / Tul)": "taekwondo/forms",
+        "격파 (Kyokpa)": "taekwondo/breaking-selfdefense/m-kyokpa",
+        "낙법과 호신술 [ITF 중심]": "taekwondo/breaking-selfdefense/m-itf"
+      },
+      "tree": [
+        {
+          "id": "taekwondo/stances",
+          "level": 2,
+          "kind": "group",
+          "ko": "서기 · 이동",
+          "en": "Stances & Movement",
+          "count": 18,
+          "children": [
+            {
+              "id": "taekwondo/stances/m-0",
+              "level": 3,
+              "kind": "member",
+              "ko": "기본 서기 / 자세",
+              "en": "기본 서기 / 자세",
+              "count": 9,
+              "children": []
+            },
+            {
+              "id": "taekwondo/stances/m-1",
+              "level": 3,
+              "kind": "member",
+              "ko": "이동 / 풋워크",
+              "en": "이동 / 풋워크",
+              "count": 9,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "taekwondo/hands-blocks",
+          "level": 2,
+          "kind": "group",
+          "ko": "손기술 · 막기",
+          "en": "Hand Techniques & Blocks",
+          "count": 28,
+          "children": [
+            {
+              "id": "taekwondo/hands-blocks/m-0",
+              "level": 3,
+              "kind": "member",
+              "ko": "손기술",
+              "en": "손기술",
+              "count": 16,
+              "children": []
+            },
+            {
+              "id": "taekwondo/hands-blocks/m-1",
+              "level": 3,
+              "kind": "member",
+              "ko": "막기",
+              "en": "막기",
+              "count": 12,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "taekwondo/kicks",
+          "level": 2,
+          "kind": "group",
+          "ko": "발차기",
+          "en": "Kicks",
+          "count": 25,
+          "children": [
+            {
+              "id": "taekwondo/kicks/m-0",
+              "level": 3,
+              "kind": "member",
+              "ko": "회전 발차기",
+              "en": "회전 발차기",
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": "taekwondo/kicks/m-1",
+              "level": 3,
+              "kind": "member",
+              "ko": "점프 / 공중 발차기",
+              "en": "점프 / 공중 발차기",
+              "count": 10,
+              "children": []
+            },
+            {
+              "id": "taekwondo/kicks/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 11,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "taekwondo/sparring",
+          "level": 2,
+          "kind": "group",
+          "ko": "겨루기",
+          "en": "Sparring",
+          "count": 15,
+          "children": [
+            {
+              "id": "taekwondo/sparring/m-wt",
+              "level": 3,
+              "kind": "member",
+              "ko": "겨루기 발차기 [WT 중심]",
+              "en": "겨루기 발차기 [WT 중심]",
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": "taekwondo/sparring/m-1",
+              "level": 3,
+              "kind": "member",
+              "ko": "연결 기술 (콤비네이션)",
+              "en": "연결 기술 (콤비네이션)",
+              "count": 8,
+              "children": []
+            },
+            {
+              "id": "taekwondo/sparring/m-2",
+              "level": 3,
+              "kind": "member",
+              "ko": "거리별 전술",
+              "en": "거리별 전술",
+              "count": 1,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "taekwondo/forms",
+          "level": 2,
+          "kind": "group",
+          "ko": "품새",
+          "en": "Poomsae",
+          "count": 8,
+          "children": []
+        },
+        {
+          "id": "taekwondo/breaking-selfdefense",
+          "level": 2,
+          "kind": "group",
+          "ko": "격파 · 낙법 · 호신술",
+          "en": "Breaking, Falls & Self-Defense",
+          "count": 10,
+          "children": [
+            {
+              "id": "taekwondo/breaking-selfdefense/m-kyokpa",
+              "level": 3,
+              "kind": "member",
+              "ko": "격파",
+              "en": "Kyokpa",
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": "taekwondo/breaking-selfdefense/m-itf",
+              "level": 3,
+              "kind": "member",
+              "ko": "낙법과 호신술 [ITF 중심]",
+              "en": "낙법과 호신술 [ITF 중심]",
+              "count": 7,
+              "children": []
+            }
+          ]
+        }
+      ],
+      "multiClassified": [],
+      "review": [],
+      "integrityIssues": []
+    },
+    {
+      "art": "mixed-martial-arts",
+      "nameKo": "MMA",
+      "techniqueCount": 545,
+      "oldCategoryCount": 12,
+      "newGroupCount": 12,
+      "newNodeCount": 64,
+      "levelCounts": {
+        "l2": 12,
+        "l3": 45,
+        "l4": 0
+      },
+      "reclassifiedCount": 438,
+      "multiClassifiedCount": 17,
+      "reviewCount": 93,
+      "categoryMapping": {
+        "스트라이킹 (Striking)": "mixed-martial-arts/striking",
+        "방어 (Defense)": "mixed-martial-arts/defense",
+        "MMA 복싱": "mixed-martial-arts/boxing",
+        "MMA 킥복싱": "mixed-martial-arts/kickboxing",
+        "클린치 (Clinch)": "mixed-martial-arts/clinch",
+        "테이크다운 (Takedown)": "mixed-martial-arts/takedown",
+        "그라운드 컨트롤 (Ground Control)": "mixed-martial-arts/ground-control",
+        "서브미션 (Submission)": "mixed-martial-arts/submission",
+        "그라운드 앤 파운드 (Ground & Pound)": "mixed-martial-arts/ground-and-pound",
+        "케이지 워크 (Cage Work)": "mixed-martial-arts/cage",
+        "스크램블 (Scramble)": "mixed-martial-arts/scramble",
+        "MMA 전환 동작 (Transitions)": "mixed-martial-arts/transitions"
+      },
+      "tree": [
+        {
+          "id": "mixed-martial-arts/striking",
+          "level": 2,
+          "kind": "group",
+          "ko": "스트라이킹",
+          "en": "Striking",
+          "count": 50,
+          "children": [
+            {
+              "id": "mixed-martial-arts/striking/footwork",
+              "level": 3,
+              "kind": "split",
+              "ko": "풋워크·이동",
+              "en": "Footwork",
+              "count": 17,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/striking/elbow",
+              "level": 3,
+              "kind": "split",
+              "ko": "엘보 (팔꿈치)",
+              "en": "Elbows",
+              "count": 10,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/striking/feint",
+              "level": 3,
+              "kind": "split",
+              "ko": "페인트",
+              "en": "Feints",
+              "count": 10,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/striking/stance",
+              "level": 3,
+              "kind": "split",
+              "ko": "스탠스·자세",
+              "en": "Stances",
+              "count": 7,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/striking/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 6,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "mixed-martial-arts/boxing",
+          "level": 2,
+          "kind": "group",
+          "ko": "MMA 복싱",
+          "en": "MMA Boxing",
+          "count": 51,
+          "children": [
+            {
+              "id": "mixed-martial-arts/boxing/jab",
+              "level": 3,
+              "kind": "split",
+              "ko": "잽",
+              "en": "Jabs",
+              "count": 5,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/boxing/straight",
+              "level": 3,
+              "kind": "split",
+              "ko": "스트레이트·크로스",
+              "en": "Straights & Crosses",
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/boxing/hook",
+              "level": 3,
+              "kind": "split",
+              "ko": "훅",
+              "en": "Hooks",
+              "count": 7,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/boxing/uppercut",
+              "level": 3,
+              "kind": "split",
+              "ko": "어퍼컷",
+              "en": "Uppercuts",
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/boxing/body_punch",
+              "level": 3,
+              "kind": "split",
+              "ko": "바디 공격",
+              "en": "Body Shots",
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/boxing/combination",
+              "level": 3,
+              "kind": "split",
+              "ko": "콤비네이션",
+              "en": "Combinations",
+              "count": 23,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/boxing/counter",
+              "level": 3,
+              "kind": "split",
+              "ko": "카운터·되치기",
+              "en": "Counters",
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/boxing/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 4,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "mixed-martial-arts/kickboxing",
+          "level": 2,
+          "kind": "group",
+          "ko": "MMA 킥복싱",
+          "en": "MMA Kickboxing",
+          "count": 69,
+          "children": [
+            {
+              "id": "mixed-martial-arts/kickboxing/teep",
+              "level": 3,
+              "kind": "split",
+              "ko": "앞차기·티프",
+              "en": "Front Kicks & Teeps",
+              "count": 11,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/kickboxing/round_kick",
+              "level": 3,
+              "kind": "split",
+              "ko": "돌려차기·라운드킥",
+              "en": "Round Kicks",
+              "count": 9,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/kickboxing/low_kick",
+              "level": 3,
+              "kind": "split",
+              "ko": "로우킥",
+              "en": "Low Kicks",
+              "count": 15,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/kickboxing/knee",
+              "level": 3,
+              "kind": "split",
+              "ko": "니 (무릎)",
+              "en": "Knees",
+              "count": 8,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/kickboxing/combination",
+              "level": 3,
+              "kind": "split",
+              "ko": "콤비네이션",
+              "en": "Combinations",
+              "count": 18,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/kickboxing/counter",
+              "level": 3,
+              "kind": "split",
+              "ko": "카운터·되치기",
+              "en": "Counters",
+              "count": 7,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/kickboxing/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 6,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "mixed-martial-arts/defense",
+          "level": 2,
+          "kind": "group",
+          "ko": "방어",
+          "en": "Defense",
+          "count": 70,
+          "children": [
+            {
+              "id": "mixed-martial-arts/defense/td_defense",
+              "level": 3,
+              "kind": "split",
+              "ko": "테이크다운 방어",
+              "en": "Takedown Defense",
+              "count": 12,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/defense/block",
+              "level": 3,
+              "kind": "split",
+              "ko": "블로킹·가드",
+              "en": "Blocks & Covers",
+              "count": 17,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/defense/parry",
+              "level": 3,
+              "kind": "split",
+              "ko": "패링·캐치",
+              "en": "Parries & Catches",
+              "count": 17,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/defense/slip_roll",
+              "level": 3,
+              "kind": "split",
+              "ko": "슬립·롤링·더킹",
+              "en": "Slips, Rolls & Ducks",
+              "count": 9,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/defense/evasion",
+              "level": 3,
+              "kind": "split",
+              "ko": "거리 회피",
+              "en": "Evasion by Distance",
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/defense/kick_defense",
+              "level": 3,
+              "kind": "split",
+              "ko": "킥 방어 (체크·캐치)",
+              "en": "Kick Defense",
+              "count": 10,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/defense/escape",
+              "level": 3,
+              "kind": "split",
+              "ko": "탈출",
+              "en": "Escapes",
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/defense/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 3,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "mixed-martial-arts/clinch",
+          "level": 2,
+          "kind": "group",
+          "ko": "클린치",
+          "en": "Clinch",
+          "count": 41,
+          "children": [
+            {
+              "id": "mixed-martial-arts/clinch/grip",
+              "level": 3,
+              "kind": "split",
+              "ko": "그립·타이",
+              "en": "Grips & Ties",
+              "count": 22,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/clinch/knee",
+              "level": 3,
+              "kind": "split",
+              "ko": "니 (무릎)",
+              "en": "Knees",
+              "count": 5,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/clinch/elbow",
+              "level": 3,
+              "kind": "split",
+              "ko": "엘보 (팔꿈치)",
+              "en": "Elbows",
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/clinch/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 12,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "mixed-martial-arts/takedown",
+          "level": 2,
+          "kind": "group",
+          "ko": "테이크다운",
+          "en": "Takedowns",
+          "count": 79,
+          "children": [
+            {
+              "id": "mixed-martial-arts/takedown/single_leg",
+              "level": 3,
+              "kind": "split",
+              "ko": "싱글 레그",
+              "en": "Single Legs",
+              "count": 21,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/takedown/double_leg",
+              "level": 3,
+              "kind": "split",
+              "ko": "더블 레그",
+              "en": "Double Legs",
+              "count": 8,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/takedown/body_lock_td",
+              "level": 3,
+              "kind": "split",
+              "ko": "바디락",
+              "en": "Body Locks",
+              "count": 5,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/takedown/trip",
+              "level": 3,
+              "kind": "split",
+              "ko": "트립·발 걸기",
+              "en": "Trips & Foot Sweeps",
+              "count": 11,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/takedown/throw",
+              "level": 3,
+              "kind": "split",
+              "ko": "던지기",
+              "en": "Throws",
+              "count": 10,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/takedown/setup",
+              "level": 3,
+              "kind": "split",
+              "ko": "셋업·페인트",
+              "en": "Setups & Feints",
+              "count": 12,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/takedown/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 15,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "mixed-martial-arts/cage",
+          "level": 2,
+          "kind": "group",
+          "ko": "케이지 워크",
+          "en": "Cage Work",
+          "count": 2,
+          "children": []
+        },
+        {
+          "id": "mixed-martial-arts/ground-control",
+          "level": 2,
+          "kind": "group",
+          "ko": "그라운드 컨트롤",
+          "en": "Ground Control",
+          "count": 138,
+          "children": [
+            {
+              "id": "mixed-martial-arts/ground-control/mount_pos",
+              "level": 3,
+              "kind": "split",
+              "ko": "마운트",
+              "en": "Mount",
+              "count": 10,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/ground-control/side_pos",
+              "level": 3,
+              "kind": "split",
+              "ko": "사이드 컨트롤",
+              "en": "Side Control",
+              "count": 15,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/ground-control/back_pos",
+              "level": 3,
+              "kind": "split",
+              "ko": "백 컨트롤",
+              "en": "Back Control",
+              "count": 11,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/ground-control/turtle_pos",
+              "level": 3,
+              "kind": "split",
+              "ko": "터틀",
+              "en": "Turtle",
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/ground-control/pass",
+              "level": 3,
+              "kind": "split",
+              "ko": "가드 패스",
+              "en": "Guard Passing",
+              "count": 11,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/ground-control/sweep",
+              "level": 3,
+              "kind": "split",
+              "ko": "스윕",
+              "en": "Sweeps",
+              "count": 10,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/ground-control/escape",
+              "level": 3,
+              "kind": "split",
+              "ko": "탈출",
+              "en": "Escapes",
+              "count": 26,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/ground-control/standup_pos",
+              "level": 3,
+              "kind": "split",
+              "ko": "일어서기·스탠드업",
+              "en": "Getting Up",
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/ground-control/_other",
+              "level": 3,
+              "kind": "other",
+              "ko": "기타 · 세부 분류 없음",
+              "en": "Other / Unsorted",
+              "count": 50,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "mixed-martial-arts/ground-and-pound",
+          "level": 2,
+          "kind": "group",
+          "ko": "그라운드 앤 파운드",
+          "en": "Ground & Pound",
+          "count": 3,
+          "children": []
+        },
+        {
+          "id": "mixed-martial-arts/submission",
+          "level": 2,
+          "kind": "group",
+          "ko": "서브미션",
+          "en": "Submissions",
+          "count": 36,
+          "children": [
+            {
+              "id": "mixed-martial-arts/submission/choke",
+              "level": 3,
+              "kind": "split",
+              "ko": "초크·조르기",
+              "en": "Chokes",
+              "count": 12,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/submission/armbar",
+              "level": 3,
+              "kind": "split",
+              "ko": "암바 계열",
+              "en": "Armbars",
+              "count": 8,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/submission/shoulder_lock",
+              "level": 3,
+              "kind": "split",
+              "ko": "숄더락·암락 (기무라·아메리카나)",
+              "en": "Shoulder Locks & Armlocks",
+              "count": 9,
+              "children": []
+            },
+            {
+              "id": "mixed-martial-arts/submission/leglock",
+              "level": 3,
+              "kind": "split",
+              "ko": "레그락",
+              "en": "Leg Locks",
+              "count": 7,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "mixed-martial-arts/transitions",
+          "level": 2,
+          "kind": "group",
+          "ko": "MMA 전환 동작",
+          "en": "MMA Transitions",
+          "count": 4,
+          "children": []
+        },
+        {
+          "id": "mixed-martial-arts/scramble",
+          "level": 2,
+          "kind": "group",
+          "ko": "스크램블",
+          "en": "Scramble",
+          "count": 2,
+          "children": []
+        }
+      ],
+      "multiClassified": [
+        {
+          "id": "muay-thai__jab-to-cross",
+          "nodes": [
+            "잽",
+            "스트레이트·크로스",
+            "콤비네이션"
+          ]
+        },
+        {
+          "id": "muay-thai__jab-to-hook",
+          "nodes": [
+            "잽",
+            "훅",
+            "콤비네이션"
+          ]
+        },
+        {
+          "id": "muay-thai__cross-to-hook",
+          "nodes": [
+            "스트레이트·크로스",
+            "훅",
+            "콤비네이션"
+          ]
+        },
+        {
+          "id": "muay-thai__jab-to-low-kick",
+          "nodes": [
+            "로우킥",
+            "콤비네이션"
+          ]
+        },
+        {
+          "id": "muay-thai__cross-to-low-kick",
+          "nodes": [
+            "로우킥",
+            "콤비네이션"
+          ]
+        },
+        {
+          "id": "muay-thai__low-kick-after-teep",
+          "nodes": [
+            "앞차기·티프",
+            "로우킥"
+          ]
+        },
+        {
+          "id": "muay-thai__low-kick-counter",
+          "nodes": [
+            "로우킥",
+            "카운터·되치기"
+          ]
+        },
+        {
+          "id": "muay-thai__counter-knee",
+          "nodes": [
+            "니 (무릎)",
+            "카운터·되치기"
+          ]
+        },
+        {
+          "id": "wrestling__down-block",
+          "nodes": [
+            "테이크다운 방어",
+            "블로킹·가드"
+          ]
+        },
+        {
+          "id": "kickboxing__catch",
+          "nodes": [
+            "패링·캐치",
+            "킥 방어 (체크·캐치)"
+          ]
+        },
+        {
+          "id": "muay-thai__teep-catch",
+          "nodes": [
+            "패링·캐치",
+            "킥 방어 (체크·캐치)"
+          ]
+        },
+        {
+          "id": "muay-thai__catch-and-sweep",
+          "nodes": [
+            "패링·캐치",
+            "킥 방어 (체크·캐치)"
+          ]
+        },
+        {
+          "id": "muay-thai__catch-and-dump",
+          "nodes": [
+            "패링·캐치",
+            "킥 방어 (체크·캐치)"
+          ]
+        },
+        {
+          "id": "kickboxing__shin-block",
+          "nodes": [
+            "블로킹·가드",
+            "킥 방어 (체크·캐치)"
+          ]
+        },
+        {
+          "id": "boxing__catch",
+          "nodes": [
+            "패링·캐치",
+            "킥 방어 (체크·캐치)"
+          ]
+        },
+        {
+          "id": "sambo__single-leg-top-control-body-lock-throw-control",
+          "nodes": [
+            "싱글 레그",
+            "바디락",
+            "던지기"
+          ]
+        },
+        {
+          "id": "bjj__arm-drag-single-leg",
+          "nodes": [
+            "싱글 레그",
+            "셋업·페인트"
+          ]
+        }
+      ],
+      "review": [
+        {
+          "id": "muay-thai__spinning-backfist",
+          "name": "Spinning Backfist",
+          "group": "스트라이킹",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "stance:LOW"
+          ]
+        },
+        {
+          "id": "boxing__frame",
+          "name": "Frame",
+          "group": "스트라이킹",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "boxing__hand-fighting",
+          "name": "Hand Fighting",
+          "group": "스트라이킹",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "boxing__body-attack",
+          "name": "Body Attack",
+          "group": "스트라이킹",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "boxing__리드-핸드-컨트롤",
+          "name": "리드 핸드 컨트롤",
+          "group": "스트라이킹",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "mixed-martial-arts__range-management",
+          "name": "Range Management",
+          "group": "스트라이킹",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "footwork:LOW",
+            "stance:LOW"
+          ]
+        },
+        {
+          "id": "boxing__backfist",
+          "name": "Backfist",
+          "group": "MMA 복싱",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "karate__tettsui-uchi",
+          "name": "Tettsui-uchi",
+          "group": "MMA 복싱",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "straight:LOW",
+            "body_punch:LOW"
+          ]
+        },
+        {
+          "id": "muay-thai__superman-punch",
+          "name": "Superman Punch",
+          "group": "MMA 복싱",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "boxing__rear-overhand",
+          "name": "Rear Overhand",
+          "group": "MMA 복싱",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "kickboxing__side-kick",
+          "name": "Side Kick",
+          "group": "MMA 킥복싱",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "kickboxing__back-kick",
+          "name": "Back Kick",
+          "group": "MMA 킥복싱",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "muay-thai__잡힌-다리를-빠르게-접어-빼기",
+          "name": "잡힌 다리를 빠르게 접어 빼기",
+          "group": "MMA 킥복싱",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "teep:LOW"
+          ]
+        },
+        {
+          "id": "muay-thai__step-up-kick",
+          "name": "Step-Up Kick",
+          "group": "MMA 킥복싱",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "muay-thai__spinning-back-kick",
+          "name": "Spinning Back Kick",
+          "group": "MMA 킥복싱",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "kickboxing__kick-feint",
+          "name": "Kick Feint",
+          "group": "MMA 킥복싱",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "karate__kansetsu-geri",
+          "name": "Kansetsu Geri",
+          "group": "방어",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "block:LOW"
+          ]
+        },
+        {
+          "id": "wrestling__head-position",
+          "name": "Head Position",
+          "group": "방어",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "escape:LOW"
+          ]
+        },
+        {
+          "id": "muay-thai__elbow-shield",
+          "name": "Elbow Shield",
+          "group": "방어",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "wrestling__inside-control",
+          "name": "Inside Control",
+          "group": "클린치",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "grip:LOW"
+          ]
+        },
+        {
+          "id": "wrestling__double-leg-position",
+          "name": "Double-Leg Position",
+          "group": "클린치",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "wrestling__mat-return",
+          "name": "Mat Return",
+          "group": "클린치",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "muay-thai__outside-control",
+          "name": "Outside Control",
+          "group": "클린치",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "muay-thai__turn",
+          "name": "Turn",
+          "group": "클린치",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "kickboxing__off-balance",
+          "name": "Off-Balance",
+          "group": "클린치",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "grip:LOW",
+            "knee:LOW"
+          ]
+        },
+        {
+          "id": "boxing__clinch",
+          "name": "Clinch",
+          "group": "클린치",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "boxing__shoulder-control",
+          "name": "Shoulder Control",
+          "group": "클린치",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "kickboxing__break-and-strike",
+          "name": "Break and Strike",
+          "group": "클린치",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "grip:LOW"
+          ]
+        },
+        {
+          "id": "mixed-martial-arts__dirty-boxing",
+          "name": "Dirty Boxing",
+          "group": "클린치",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "grip:LOW"
+          ]
+        },
+        {
+          "id": "wrestling__go-behind",
+          "name": "Go-Behind",
+          "group": "테이크다운",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "wrestling__russian-tie-entry",
+          "name": "Russian Tie Entry",
+          "group": "테이크다운",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "wrestling__underhook-entry",
+          "name": "Underhook Entry",
+          "group": "테이크다운",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "wrestling__lift-and-return",
+          "name": "Lift and Return",
+          "group": "테이크다운",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "single_leg:LOW"
+          ]
+        },
+        {
+          "id": "wrestling__single-to-back-take",
+          "name": "Single to Back Take",
+          "group": "테이크다운",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "single_leg:LOW"
+          ]
+        },
+        {
+          "id": "wrestling__corner-finish",
+          "name": "Corner Finish",
+          "group": "테이크다운",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "double_leg:LOW"
+          ]
+        },
+        {
+          "id": "wrestling__lift-finish",
+          "name": "Lift Finish",
+          "group": "테이크다운",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "double_leg:LOW"
+          ]
+        },
+        {
+          "id": "wrestling__rear-lift-return",
+          "name": "Rear Lift / Return",
+          "group": "테이크다운",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "body_lock_td:LOW"
+          ]
+        },
+        {
+          "id": "wrestling__front-headlock-to-single",
+          "name": "Front Headlock to Single",
+          "group": "테이크다운",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "single_leg:LOW"
+          ]
+        },
+        {
+          "id": "sambo__grip-fight-takedown-leg-lock-entry",
+          "name": "Grip Fight → Takedown → Leg Lock Entry",
+          "group": "테이크다운",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__손목-그립",
+          "name": "손목 그립",
+          "group": "테이크다운",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__russian-tie-takedown",
+          "name": "Russian Tie Takedown",
+          "group": "테이크다운",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "trip:LOW"
+          ]
+        },
+        {
+          "id": "mixed-martial-arts__reactive-takedown",
+          "name": "Reactive Takedown",
+          "group": "테이크다운",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "mixed-martial-arts__sprawl-to-strikes",
+          "name": "Sprawl to Strikes",
+          "group": "테이크다운",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "counter:LOW"
+          ]
+        },
+        {
+          "id": "wrestling__wrestling-stance",
+          "name": "Wrestling Stance",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "wrestling__level-change",
+          "name": "Level Change",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "wrestling__penetration-step",
+          "name": "Penetration Step",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "wrestling__back-step",
+          "name": "Back Step",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "wrestling__base-building",
+          "name": "Base Building",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "wrestling__hand-fighting",
+          "name": "Hand Fighting",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "wrestling__front-headlock-to-back",
+          "name": "Front Headlock to Back",
+          "group": "그라운드 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "back_pos:LOW"
+          ]
+        },
+        {
+          "id": "sambo__перевод-в-партер-파르테르로-전환시키기",
+          "name": "Перевод в партер(파르테르로 전환시키기)",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "sambo__удержание-со-стороны-головы",
+          "name": "Удержание со стороны головы",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "sambo__guard",
+          "name": "Guard (클로즈드/오픈)",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__half-guard",
+          "name": "Half Guard",
+          "group": "그라운드 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "back_pos:LOW"
+          ]
+        },
+        {
+          "id": "sambo__ground-striking",
+          "name": "Ground Striking",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "judo__kata-gatame",
+          "name": "Kata Gatame",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "judo__tate-shiho-gatame",
+          "name": "Tate Shiho Gatame",
+          "group": "그라운드 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "mount_pos:LOW",
+            "sweep:LOW"
+          ]
+        },
+        {
+          "id": "bjj__스크램블-시작",
+          "name": "스크램블 시작",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__포지션-회복",
+          "name": "포지션 회복",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__하프-가드-회복",
+          "name": "하프 가드 회복",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__가드-회복",
+          "name": "가드 회복",
+          "group": "그라운드 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "side_pos:LOW",
+            "sweep:LOW"
+          ]
+        },
+        {
+          "id": "bjj__거리-확보",
+          "name": "거리 확보",
+          "group": "그라운드 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "standup_pos:LOW"
+          ]
+        },
+        {
+          "id": "bjj__목-프레임",
+          "name": "목 프레임",
+          "group": "그라운드 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "escape:LOW"
+          ]
+        },
+        {
+          "id": "bjj__어깨-프레임",
+          "name": "어깨 프레임",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__엉덩이-프레임",
+          "name": "엉덩이 프레임",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__무릎-프레임",
+          "name": "무릎 프레임",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__wrist-control",
+          "name": "Wrist Control",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__head-control",
+          "name": "Head Control",
+          "group": "그라운드 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "sweep:LOW"
+          ]
+        },
+        {
+          "id": "bjj__posture-break",
+          "name": "Posture Break",
+          "group": "그라운드 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "sweep:LOW"
+          ]
+        },
+        {
+          "id": "bjj__feet-on-hips",
+          "name": "Feet on Hips",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__butterfly-guard",
+          "name": "Butterfly Guard",
+          "group": "그라운드 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "sweep:LOW"
+          ]
+        },
+        {
+          "id": "bjj__sit-up-guard",
+          "name": "Sit-Up Guard",
+          "group": "그라운드 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "sweep:LOW"
+          ]
+        },
+        {
+          "id": "bjj__knee-shield-half-guard",
+          "name": "Knee Shield Half Guard",
+          "group": "그라운드 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "sweep:LOW"
+          ]
+        },
+        {
+          "id": "bjj__z-guard",
+          "name": "Z Guard",
+          "group": "그라운드 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "sweep:LOW"
+          ]
+        },
+        {
+          "id": "bjj__dogfight",
+          "name": "Dogfight",
+          "group": "그라운드 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "sweep:LOW"
+          ]
+        },
+        {
+          "id": "bjj__underhook-half-guard",
+          "name": "Underhook Half Guard",
+          "group": "그라운드 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "sweep:LOW"
+          ]
+        },
+        {
+          "id": "bjj__knee-shield",
+          "name": "Knee Shield",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__recover-full-guard",
+          "name": "Recover Full Guard",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__recover-butterfly-guard",
+          "name": "Recover Butterfly Guard",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__far-side-underhook",
+          "name": "Far-side Underhook",
+          "group": "그라운드 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "side_pos:LOW"
+          ]
+        },
+        {
+          "id": "bjj__near-side-underhook",
+          "name": "Near-side Underhook",
+          "group": "그라운드 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "side_pos:LOW"
+          ]
+        },
+        {
+          "id": "bjj__gift-wrap",
+          "name": "Gift Wrap",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__body-triangle",
+          "name": "Body Triangle",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__gift-wrap-back",
+          "name": "Gift Wrap → Back",
+          "group": "그라운드 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "back_pos:LOW"
+          ]
+        },
+        {
+          "id": "bjj__crucifix-attacks",
+          "name": "Crucifix Attacks",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__crucifix",
+          "name": "Crucifix",
+          "group": "그라운드 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "turtle_pos:LOW"
+          ]
+        },
+        {
+          "id": "bjj__standard-ashi",
+          "name": "Standard Ashi",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__saddle",
+          "name": "Saddle",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__inside-sankaku",
+          "name": "Inside Sankaku",
+          "group": "그라운드 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "side_pos:LOW"
+          ]
+        },
+        {
+          "id": "bjj__closed-guard",
+          "name": "Closed Guard",
+          "group": "그라운드 컨트롤",
+          "reason": "근거가 약함 (LOW) — 자동 확정하지 않음",
+          "candidates": [
+            "back_pos:LOW",
+            "sweep:LOW"
+          ]
+        },
+        {
+          "id": "bjj__butterfly-recovery",
+          "name": "Butterfly Recovery",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__leg-entanglement",
+          "name": "Leg Entanglement",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        },
+        {
+          "id": "bjj__leg-locks",
+          "name": "Leg Locks",
+          "group": "그라운드 컨트롤",
+          "reason": "세부 분류 근거 없음",
+          "candidates": []
+        }
+      ],
+      "integrityIssues": []
+    }
+  ]
+}

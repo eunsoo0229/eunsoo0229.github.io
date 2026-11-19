@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useMemo, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { getTechniquesByMartialArt, martialArtSummaries } from '../lib/loadData';
@@ -159,7 +160,7 @@ export default function SkillTree() {
           <span>비주얼 기술 트리</span>
         </div>
         <div className="section-title">
-          <h2>🌳 비주얼 기술 트리</h2>
+          <h2><Icon name="tree" /> 비주얼 기술 트리</h2>
         </div>
         <p className="video-status-message" style={{ marginTop: -8 }}>
           난이도(기초→중급→고급) 순으로 기술을 배치하고, 실제 선행/연결/전환 기술 데이터로 이어줍니다. 노드

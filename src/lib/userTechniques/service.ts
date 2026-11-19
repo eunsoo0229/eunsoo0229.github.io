@@ -10,7 +10,6 @@ import { passesVerificationGate, verifyTechnique } from './verification';
 import { generateTechniqueRecord } from './recordGenerator';
 import type { DuplicateCheckResult, UserTechniqueRecord, VerificationResult } from './types';
 import { addTeqRepository } from '../addTeq/repository';
-import { customMartialArtRepository } from '../customMartialArt/repository';
 import { isTechniqueInArt, libraryLinksOf, libraryTechniques, redirectedTechnique, techniqueCategoryInArt } from '../techniqueCanonical';
 
 export function listMyUserTechniques(): UserTechniqueRecord[] {
@@ -198,12 +197,9 @@ export function getUnifiedTechniqueCount(): number {
 
 /** martialArtSummaries with techniqueCount (and only techniqueCount —
  * categories/difficultyCounts stay as the official file computed them)
- * augmented by add_teq entries for that art, PLUS any user-added martial
- * arts from the custom_martial_arts registry (spec "MARTIALDEX 신규 무술
- * 추가 시스템" — a genuinely new id like "wushu" has no entry in the
- * static 9-art array at all, so it must be appended here, not merged into
- * an existing row). Official data is never mutated; this returns new
- * objects each call. */
+ * augmented by add_teq entries for that art. Only the managed official arts
+ * are listed — the user-added art registry (custom_martial_arts) was
+ * removed. Official data is never mutated. */
 export function getUnifiedMartialArtSummaries(): MartialArtSummary[] {
   // Counted per canonical technique: library duplicates/link records are not
   // extra techniques, but a link does add the linked technique to that art.
@@ -211,31 +207,11 @@ export function getUnifiedMartialArtSummaries(): MartialArtSummary[] {
   for (const t of libraryTechniques().addTeq) extra.set(t.martialArt, (extra.get(t.martialArt) ?? 0) + 1);
   for (const t of allTechniques) for (const l of libraryLinksOf(t.id)) extra.set(l.martialArt, (extra.get(l.martialArt) ?? 0) + 1);
 
-  const official = extra.size === 0 ? martialArtSummaries : martialArtSummaries.map((a) => (extra.has(a.id) ? { ...a, techniqueCount: a.techniqueCount + (extra.get(a.id) ?? 0) } : a));
-
-  const customArts = customMartialArtRepository.list();
-  if (customArts.length === 0) return official;
-  const custom: MartialArtSummary[] = customArts.map((c) => {
-    const techniqueCount = extra.get(c.id) ?? 0;
-    const techniques = libraryTechniques().addTeq.filter((t) => t.martialArt === c.id);
-    return {
-      id: c.id,
-      nameKo: c.nameKo,
-      nameEn: c.nameEn,
-      techniqueCount,
-      categories: Array.from(new Set(techniques.map((t) => t.category))),
-      difficultyCounts: techniques.reduce<Record<string, number>>((acc, t) => {
-        const key = t.difficulty ?? 'unknown';
-        acc[key] = (acc[key] ?? 0) + 1;
-        return acc;
-      }, {}),
-    };
-  });
-  return [...official, ...custom];
+  return extra.size === 0 ? martialArtSummaries : martialArtSummaries.map((a) => (extra.has(a.id) ? { ...a, techniqueCount: a.techniqueCount + (extra.get(a.id) ?? 0) } : a));
 }
 
-/** `getUnifiedMartialArtSummaries()`'s array deliberately stays the 9 real
- * combat arts (+ any custom martial arts, see above) only — many pages
+/** `getUnifiedMartialArtSummaries()`'s array deliberately stays the real
+ * combat arts only — many pages
  * iterate that array as a picker/dropdown and must never see a "홈트"
  * option there — but `MartialArtDetail.tsx` looks up a SINGLE id via this
  * function, so home-training gets a direct special-case here instead of

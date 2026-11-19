@@ -7,6 +7,7 @@ import { getCurriculumsForMartialArt, resolveTodayDay } from '../lib/curriculum/
 import { useCurriculumProgress, useMyCurricula } from '../lib/curriculum/useCurriculum';
 import EmptyState from '../components/EmptyState';
 import BackButton from '../components/BackButton';
+import Icon from '../components/Icon';
 import type { Curriculum } from '../lib/curriculum/types';
 
 function OfficialCurriculumCard({ curriculum }: { curriculum: Curriculum }) {
@@ -16,7 +17,7 @@ function OfficialCurriculumCard({ curriculum }: { curriculum: Curriculum }) {
   return (
     <div className="card info-card curriculum-hero">
       <h3>
-        <span aria-hidden="true">🏆</span> {curriculum.title}
+        <Icon name="trophy" /> {curriculum.title}
       </h3>
       <div className="chip-row">
         <span className="chip active">Martialdex 추천 학습 순서</span>
@@ -46,14 +47,14 @@ function OfficialCurriculumCard({ curriculum }: { curriculum: Curriculum }) {
         </div>
       )}
       <Link to={`/learning/${curriculum.martialArt}/${curriculum.id}/train`} className="btn btn-primary">
-        🔥 훈련하기
+        <Icon name="flame" /> 훈련하기
       </Link>{' '}
       <Link
         to={`/learning/${curriculum.martialArt}/${curriculum.id}/day/${todayDay}`}
         className="btn btn-secondary"
         onClick={start}
       >
-        ▶ 오늘 학습하기 (Day {todayDay})
+        <Icon name="play" /> 오늘 학습하기 (Day {todayDay})
       </Link>{' '}
       <Link to={`/learning/${curriculum.martialArt}/${curriculum.id}`} className="btn btn-secondary">
         전체 Day 목록 보기
@@ -190,6 +191,7 @@ export default function CurriculumList() {
                   </label>
                 ) : (
                 <Link key={c.id} to={`/learning/${c.martialArt}/${c.id}`} className="technique-row">
+                  <span className="cover-thumb" aria-hidden="true" />
                   <div className="technique-row__main">
                     <div className="technique-row__name">
                       {c.coverIcon ? `${c.coverIcon} ` : ''}

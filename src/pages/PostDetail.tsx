@@ -6,6 +6,8 @@ import type { CommunityPost } from '../lib/communityPost/types';
 import PostCard from '../components/community/PostCard';
 import EmptyState from '../components/EmptyState';
 import BackButton from '../components/BackButton';
+import EvaluationPanel from '../components/techniqueEvaluation/EvaluationPanel';
+import { usePostEvaluation } from '../components/techniqueEvaluation/EvaluationPreview';
 
 export default function PostDetail() {
   const { postId } = useParams<{ postId: string }>();
@@ -13,6 +15,7 @@ export default function PostDetail() {
   const { user, profile } = useAuth();
   const [post, setPost] = useState<CommunityPost | null | undefined>(undefined);
   const [error, setError] = useState<string | null>(null);
+  const evaluation = usePostEvaluation(postId ?? '');
 
   useEffect(() => {
     if (!postId) return;
@@ -57,8 +60,10 @@ export default function PostDetail() {
             currentUserNickname={profile?.nickname ?? null}
             onDeleted={() => setPost(null)}
             onHashtagClick={(tag) => navigate('/community', { state: { hashtag: tag } })}
+            hideEvaluation
           />
         )}
+        {post && evaluation && <EvaluationPanel evaluation={evaluation} />}
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import { askGeminiForJson } from '../fighterStyle/geminiJson';
+import { profileContextBlock } from '../fighterProfile/coachContext';
 import type { CoachRecommendation } from './types';
 import { buildBaseRecommendation, templateReason, type BaseCoachRecommendation } from './coachEngine';
 import { computeBaseHash, getCachedCoaching, setCachedCoaching } from './coachCache';
@@ -30,7 +31,7 @@ async function narrateWithAi(base: BaseCoachRecommendation, contextText: string)
       `오늘의 추천 - 새로운 기술: ${base.newTechnique?.techniqueName ?? '(없음)'}`,
       '',
       contextText,
-    ].join('\n'),
+    ].join('\n') + profileContextBlock(null),
     question: '위 추천 이유를 설명해줘.',
     validate: isAiReasonResponse,
   });

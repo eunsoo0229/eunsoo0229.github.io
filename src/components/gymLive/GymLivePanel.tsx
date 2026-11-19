@@ -1,3 +1,4 @@
+import Icon from '../Icon';
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { searchTechniques } from '../../lib/search';
@@ -133,7 +134,7 @@ export default function GymLivePanel({ gymId }: { gymId: string }) {
     <>
       {active.length > 0 && (
         <div className="card info-card" data-testid="live-overview">
-          <h3>⏱ 실시간 훈련</h3>
+          <h3><Icon name="timer" /> 실시간 훈련</h3>
           <div className="stack gap-2">
             {active.map(({ session, participants }) => (
               <button key={session.id} type="button" className="live-overview-row" onClick={() => navigate(`/gym/admin/live/${session.id}`)}>
@@ -170,7 +171,7 @@ export default function GymLivePanel({ gymId }: { gymId: string }) {
           <div className="chip-row">
             {students.map((s) => (
               <button key={s.userId} type="button" className={`chip${selected.includes(s.userId) ? ' active' : ''}`} onClick={() => toggle(s.userId)} data-testid="live-student-chip">
-                {selected.includes(s.userId) ? '● ' : '○ '}
+                <Icon name={selected.includes(s.userId) ? 'check-square' : 'square'} />{' '}
                 {s.nickname}
               </button>
             ))}
@@ -191,7 +192,7 @@ export default function GymLivePanel({ gymId }: { gymId: string }) {
               <span className="chip active">
                 {technique.koreanName || technique.name}{' '}
                 <button type="button" aria-label="변경" onClick={() => setTechnique(null)} style={{ marginLeft: 4 }}>
-                  ✕
+                  <Icon name="close" />
                 </button>
               </span>
             ) : (

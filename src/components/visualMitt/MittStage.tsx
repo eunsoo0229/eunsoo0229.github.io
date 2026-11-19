@@ -233,6 +233,93 @@ function incomingRoute(inc: NonNullable<MotionArchetype['incoming']>, hs: number
 }
 const routeAt = (r: { from: Pt; to: Pt; c: Pt | null }, t: number): Pt => (r.c ? quad(r.from, r.c, r.to, t) : lerpPt(r.from, r.to, t));
 
+const SHOT_RESULT: Record<string, string> = { sprawl: '스프롤 — 슛을 끊었다!', downBlock: '다운 블락 — 막았다!', jumpSprawl: '점프 스프롤 — 끊고 일어났다!', whizzer: '위저 — 떼어 냈다!' };
+const SHOT_DIR: Record<string, string> = { sprawl: '다리 뒤로 · 골반은 매트로', downBlock: '두 손으로 머리·어깨를 아래로', jumpSprawl: '스프롤 → 점프하며 일어나기', whizzer: '팔 위로 감고 골반 밀어 넣기' };
+
+/**
+ * The holder drops levels and shoots in at your legs (drawn coming closer and lower); you answer:
+ * sprawl / jump sprawl (legs back, chest and hips down on them — the view sinks onto their back),
+ * down block (both hands drive the head and shoulders down before the shot lands), whizzer (on a
+ * single leg: overhook their arm from above and drive the hip in).
+ */
+function ShotDefenseView({ archetype: a, st, p, back }: { archetype: MotionArchetype; st: number; p: number; back: number }) {
+  const ret = 1 - ease(back);
+  const g = a.guard ?? 'sprawl';
+  const single = g === 'whizzer';
+  const lead = yourX('lead', st);
+  // how far the shot gets before your answer stops it (a down block meets it earliest)
+  const reach = g === 'downBlock' ? 0.58 : single ? 0.92 : 0.76;
+  const atk = Math.min(ease(clamp01(p / 0.92)), reach) * ret;
+  const resp = ease(clamp01((p - (g === 'downBlock' ? 0.22 : 0.32)) / 0.55)) * ret;
+  // jump sprawl: sprawl first, then pop back up with a jump (stays up at the end)
+  const up = g === 'jumpSprawl' ? clamp01((p - 0.72) / 0.28) * ret : 0;
+  const hop = g === 'jumpSprawl' ? Math.sin(Math.PI * up) : 0;
+  // the holder: head travels down to your hips (a single goes to the side of your lead leg), closer = bigger
+  const head: Pt = { x: 160 + (single ? lead * 46 : 0) * atk, y: 96 + 112 * atk };
+  const hsc = 1 + 0.55 * atk;
+  // the view: sprawls sink onto the holder's back (scene up + a little away), the jump sprawl hops first
+  const down = g === 'jumpSprawl' ? resp * (1 - ease(up)) : resp; // how far you are down in the sprawl
+  const k = g === 'sprawl' || g === 'jumpSprawl' ? 1 - 0.18 * down : 1;
+  const dy = (g === 'sprawl' || g === 'jumpSprawl' ? -40 * down : g === 'downBlock' ? -14 * resp : -10 * resp) + 30 * hop;
+  const dx = single ? lead * -18 * resp : 0;
+  const sp = (q: Pt): Pt => ({ x: 160 + (q.x - 160) * k + dx, y: 120 + (q.y - 120) * k + dy });
+  const H = sp(head);
+  const guardPt = (side: number): Pt => ({ x: 160 + side * 86, y: 226 });
+  const glove = (side: number) => (side === -1 ? 'var(--pov-glove-left)' : 'var(--pov-glove-right)');
+  const gloves: Record<number, Pt> = { [-1]: guardPt(-1), [1]: guardPt(1) };
+  let overhook: { from: Pt; to: Pt } | null = null;
+  if (g === 'whizzer') {
+    const armpit = { x: H.x + lead * 44 * hsc, y: H.y + 30 * hsc };
+    gloves[lead] = lerpPt(guardPt(lead), armpit, resp);
+    gloves[-lead] = lerpPt(guardPt(-lead), { x: H.x - lead * 6, y: H.y - 8 }, resp); // the other hand frames on the head
+    overhook = { from: { x: 160 + lead * 128, y: 250 }, to: gloves[lead] };
+  } else {
+    gloves[-1] = lerpPt(guardPt(-1), { x: H.x - 24 * hsc, y: H.y - (g === 'downBlock' ? 16 : 4) }, resp);
+    gloves[1] = lerpPt(guardPt(1), { x: H.x + 30 * hsc, y: H.y + (g === 'downBlock' ? -10 : 26) }, resp);
+  }
+  const contact = p >= 0.9 && back === 0;
+  const holder = `translate(${head.x} ${head.y}) scale(${hsc}) translate(-160 -96)`;
+  const scene = `translate(${dx} ${dy}) translate(160 120) scale(${k}) translate(-160 -120)`;
+  return (
+    <svg viewBox="0 0 320 240" className="mitt-view mitt-view--front mitt-view--pov" role="img" aria-label={`1인칭: 상대 ${single ? '싱글 레그' : '태클(더블 레그)'} → ${a.label}`} data-testid="mitt-front" data-kind="defense" data-path="shot" data-guard={g} data-side={a.side} data-hit={contact ? 'true' : 'false'}>
+      <rect width="320" height="240" className="pov-wall" />
+      <g transform={scene}>
+        <path d="M -160 196 L 480 196 L 480 320 L -160 320 Z" className="pov-floor" />
+        <g transform={holder} data-testid="mitt-incoming">
+          {/* arms reaching for your legs */}
+          <path d={`M 100 166 L ${118 - (single ? 0 : 6)} ${196 + 40 * atk}`} className="pov-holder__arm" />
+          <path d={`M 220 166 L ${202 + (single ? 0 : 6)} ${196 + 40 * atk}`} className="pov-holder__arm" />
+          <path d="M 96 160 Q 160 138 224 160 L 248 250 L 72 250 Z" className="pov-holder__shirt" />
+          <rect x="149" y="118" width="22" height="28" rx="6" className="pov-holder__skin" />
+          <ellipse cx="160" cy="96" rx="25" ry="30" className="pov-holder__skin" />
+          <circle cx="151" cy="94" r="2" className="pov-holder__eye" />
+          <circle cx="169" cy="94" r="2" className="pov-holder__eye" />
+        </g>
+      </g>
+      {/* your legs / hips — what the shot is going for */}
+      <ellipse cx={160 + (single ? lead * 52 : 0)} cy={232} rx={single ? 34 : 70} ry="14" className="pov-self-zone" data-testid="mitt-self-zone" />
+      {overhook && <line x1={overhook.from.x} y1={overhook.from.y} x2={overhook.to.x} y2={overhook.to.y} className="pov-glove__arm" strokeWidth={30} strokeLinecap="round" data-testid="mitt-overhook" />}
+      {[-1, 1].map((side) => {
+        const moved = gloves[side].x !== guardPt(side).x || gloves[side].y !== guardPt(side).y;
+        return <Glove key={`g${side}`} p={gloves[side]} scale={moved ? 0.92 : 1} s={side} color={glove(side)} />;
+      })}
+      {resp > 0.05 && (
+        <g className="mitt-level" data-testid="mitt-evade" data-dir={SHOT_DIR[g]}>
+          <text x="160" y="214" textAnchor="middle">{SHOT_DIR[g]}</text>
+        </g>
+      )}
+      <text x="160" y="22" textAnchor="middle" className="pov-label" data-testid="mitt-incoming-label">
+        상대 {single ? '싱글 레그' : '태클(더블 레그)'} → {a.label}
+      </text>
+      {contact && (
+        <text x="160" y="62" textAnchor="middle" className="pov-pow" data-testid="mitt-defense-result">
+          {SHOT_RESULT[g]}
+        </text>
+      )}
+    </svg>
+  );
+}
+
 function DefenseView({ archetype: a, stance, p, back }: { archetype: MotionArchetype; stance: Stance; p: number; back: number }) {
   const st = stance === 'orthodox' ? 1 : -1;
   const ret = 1 - ease(back);
@@ -277,6 +364,9 @@ function DefenseView({ archetype: a, stance, p, back }: { archetype: MotionArche
       </svg>
     );
   }
+
+  // ---------- takedown defense: the holder shoots at your legs
+  if (a.incoming?.path === 'shot') return <ShotDefenseView archetype={a} st={st} p={p} back={back} />;
 
   // ---------- defense
   const inc = a.incoming ?? { side: 'lead' as const, path: 'straight' as const, target: 'head' as const };

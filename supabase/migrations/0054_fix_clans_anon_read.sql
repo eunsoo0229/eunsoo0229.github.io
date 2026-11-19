@@ -1,0 +1,13 @@
+-- 0053 회귀 수정 — 비로그인 사용자가 공개 클랜을 전혀 못 읽게 된 문제.
+--
+-- 0053이 clans의 SELECT 정책에 has_clan_invitation()을 추가하면서 EXECUTE를
+-- authenticated 에게만 줬다. 정책은 anon 에게도 평가되므로, 로그아웃 상태의
+-- 모든 clans / clan_members 조회가 아래 오류로 401이 되었다:
+--   permission denied for function has_clan_invitation
+-- 실제 영향: 비로그인 상태에서 클랜 탐색 목록이 통째로 비었다.
+--
+-- 0047의 is_clan_member / can_manage_clan 은 같은 이유로 처음부터
+-- `to anon, authenticated` 였다. 같은 규칙을 맞춘다. 비로그인 사용자의
+-- auth.uid()는 null이므로 이 함수는 언제나 false를 돌려주며, 비공개 클랜이
+-- 탐색에 노출되지는 않는다.
+grant execute on function public.has_clan_invitation(uuid, uuid) to anon;

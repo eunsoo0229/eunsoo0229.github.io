@@ -1,0 +1,2232 @@
+[
+ {
+  "id": "judo__gyaku-juji-jime",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": "bjj__cross-collar-choke",
+  "reason": "BJJ 카탈로그에 크로스 칼라 초크(손바닥 위 그립 변형 포함)로 이미 존재함",
+  "evidence": "BJJ \"Cross Collar Choke\" (palms-up cross choke) = judo Gyaku-juji-jime; catalog-bjj: bjj__cross-collar-choke"
+ },
+ {
+  "id": "judo__gyaku-juji-jime",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링 규칙상 조르기와 깃 잡기가 금지되어 있음",
+  "evidence": "UWW wrestling rules: chokes/strangles prohibited; no gi/lapel"
+ },
+ {
+  "id": "judo__gyaku-juji-jime",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "스포츠 삼보 규칙상 조르기 기술이 금지되어 있음",
+  "evidence": "FIAS sport sambo rules: choking techniques prohibited (combat sambo only)"
+ },
+ {
+  "id": "judo__nami-juji-jime",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": "bjj__cross-collar-choke",
+  "reason": "BJJ 카탈로그에 크로스 칼라 초크(엄지 안쪽 그립)로 이미 존재함",
+  "evidence": "BJJ \"Cross Collar Choke\" (thumbs-in) = judo Nami-juji-jime; catalog-bjj: bjj__cross-collar-choke"
+ },
+ {
+  "id": "judo__nami-juji-jime",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링 규칙상 조르기와 깃 잡기가 금지되어 있음",
+  "evidence": "UWW wrestling rules: chokes/strangles prohibited; no gi/lapel"
+ },
+ {
+  "id": "judo__nami-juji-jime",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "스포츠 삼보 규칙상 조르기 기술이 금지되어 있음",
+  "evidence": "FIAS sport sambo rules: choking techniques prohibited (combat sambo only)"
+ },
+ {
+  "id": "judo__sode-guruma-jime",
+  "art": "bjj",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": "bjj__ezekiel-choke",
+  "reason": "소데구루마지메는 BJJ의 에제키엘 초크와 같은 기술로 이미 카탈로그에 있음",
+  "evidence": "Kodokan Sode-guruma-jime = BJJ \"Ezekiel Choke\"; catalog-bjj: bjj__ezekiel-choke"
+ },
+ {
+  "id": "judo__sode-guruma-jime",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링 규칙상 조르기와 깃 잡기가 금지되어 있음",
+  "evidence": "UWW wrestling rules: chokes/strangles prohibited; no gi/lapel"
+ },
+ {
+  "id": "judo__sode-guruma-jime",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "스포츠 삼보 규칙상 조르기 기술이 금지되어 있음",
+  "evidence": "FIAS sport sambo rules: choking techniques prohibited (combat sambo only)"
+ },
+ {
+  "id": "judo__ryote-jime",
+  "art": "bjj",
+  "decision": "review",
+  "confidence": "C",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "기 경기에서 합법이나 BJJ 커리큘럼에서 독립 기술로 거의 다뤄지지 않아 판단 보류",
+  "evidence": "Kodokan shime-waza Ryote-jime; no named BJJ equivalent in catalog-bjj"
+ },
+ {
+  "id": "judo__ryote-jime",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링 규칙상 조르기와 깃 잡기가 금지되어 있음",
+  "evidence": "UWW wrestling rules: chokes/strangles prohibited; no gi/lapel"
+ },
+ {
+  "id": "judo__ryote-jime",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "스포츠 삼보 규칙상 조르기 기술이 금지되어 있음",
+  "evidence": "FIAS sport sambo rules: choking techniques prohibited (combat sambo only)"
+ },
+ {
+  "id": "judo__tsukkomi-jime",
+  "art": "bjj",
+  "decision": "review",
+  "confidence": "C",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "기 BJJ에서 유사 칼라 초크 변형은 쓰이나 독립된 표준 기술인지 불확실",
+  "evidence": "Kodokan shime-waza Tsukkomi-jime; no exact match in catalog-bjj"
+ },
+ {
+  "id": "judo__tsukkomi-jime",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링 규칙상 조르기와 깃 잡기가 금지되어 있음",
+  "evidence": "UWW wrestling rules: chokes/strangles prohibited; no gi/lapel"
+ },
+ {
+  "id": "judo__tsukkomi-jime",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "스포츠 삼보 규칙상 조르기 기술이 금지되어 있음",
+  "evidence": "FIAS sport sambo rules: choking techniques prohibited (combat sambo only)"
+ },
+ {
+  "id": "bjj__상대의-중심-이동",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "설명 없는 일반 원리 표제로 독립 기술이 아님",
+  "evidence": "heading/principle without description; judo kuzushi / sambo Выведение из равновесия cover the concept separately"
+ },
+ {
+  "id": "bjj__상대의-중심-이동",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "설명 없는 일반 원리 표제로 독립 기술이 아님",
+  "evidence": "heading/principle without description; judo kuzushi / sambo Выведение из равновесия cover the concept separately"
+ },
+ {
+  "id": "bjj__상대의-중심-이동",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "설명 없는 일반 원리 표제로 독립 기술이 아님",
+  "evidence": "heading/principle without description; judo kuzushi / sambo Выведение из равновесия cover the concept separately"
+ },
+ {
+  "id": "bjj__pant-grip",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 규칙상 바지(하의) 잡기가 금지되어 있음",
+  "evidence": "IJF refereeing rules: gripping the trousers is penalized (shido)"
+ },
+ {
+  "id": "bjj__pant-grip",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없어 바지 그립이 존재하지 않음",
+  "evidence": "wrestling singlet, no gi grips"
+ },
+ {
+  "id": "bjj__pant-grip",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보 복장은 쿠르트카와 반바지라 바지 그립이 없음",
+  "evidence": "FIAS sambo uniform: kurtka + shorts (no trousers)"
+ },
+ {
+  "id": "bjj__collar-sleeve",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__collar-sleeve",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__collar-sleeve",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "하위 클로즈드 가드에서의 BJJ 그립으로 삼보 표준 기술이 아님",
+  "evidence": "sambo grip fighting is standing kurtka/belt grips (catalog-sambo 그립 파이팅 category)"
+ },
+ {
+  "id": "bjj__double-sleeve",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__double-sleeve",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__double-sleeve",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "하위 클로즈드 가드에서의 BJJ 그립으로 삼보 표준 기술이 아님",
+  "evidence": "sambo grip fighting is standing kurtka/belt grips (catalog-sambo 그립 파이팅 category)"
+ },
+ {
+  "id": "bjj__hip-control",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__hip-control",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__hip-control",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__knee-in-the-middle",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__knee-in-the-middle",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__knee-in-the-middle",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__double-under-guard-break",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__double-under-guard-break",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__double-under-guard-break",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__hip-pressure-guard-break",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__hip-pressure-guard-break",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__hip-pressure-guard-break",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__scissor-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__scissor-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__scissor-sweep",
+  "art": "sambo",
+  "decision": "review",
+  "confidence": "C",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "삼보 바닥에서 가드 스윕이 쓰이기는 하나 시저 스윕이 표준 기술인지 불확실",
+  "evidence": "catalog-sambo has sambo__guard-sweep / bjj__hip-bump-sweep under 스윕 / 전환; no named scissor sweep"
+ },
+ {
+  "id": "bjj__pendulum-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__pendulum-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__pendulum-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__flower-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__flower-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__flower-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__lumberjack-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__lumberjack-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__lumberjack-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__tripod-계열-스윕",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__tripod-계열-스윕",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__tripod-계열-스윕",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__shoulder-clamp-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__shoulder-clamp-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__shoulder-clamp-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__cross-collar-choke",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": "judo__nami-juji-jime",
+  "reason": "유도에 십자 조르기(나미/갸쿠 주지지메)로 이미 존재함",
+  "evidence": "Kodokan Nami-juji-jime / Gyaku-juji-jime; catalog-judo: judo__nami-juji-jime"
+ },
+ {
+  "id": "bjj__cross-collar-choke",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__cross-collar-choke",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "스포츠 삼보 규칙상 조르기가 금지되어 있음",
+  "evidence": "FIAS sport sambo rules: choking techniques prohibited"
+ },
+ {
+  "id": "bjj__ezekiel-choke",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": "judo__sode-guruma-jime",
+  "reason": "유도에 소데구루마지메로 이미 존재함",
+  "evidence": "Kodokan Sode-guruma-jime = Ezekiel; catalog-judo: judo__sode-guruma-jime"
+ },
+ {
+  "id": "bjj__ezekiel-choke",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__ezekiel-choke",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "스포츠 삼보 규칙상 조르기가 금지되어 있음",
+  "evidence": "FIAS sport sambo rules: choking techniques prohibited"
+ },
+ {
+  "id": "bjj__spider-guard",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__spider-guard",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__spider-guard",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__lasso-guard",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__lasso-guard",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__lasso-guard",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__de-la-riva",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__de-la-riva",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__de-la-riva",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__reverse-de-la-riva",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__reverse-de-la-riva",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__reverse-de-la-riva",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__x-guard",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__x-guard",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__x-guard",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__off-balancing",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__off-balancing",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__off-balancing",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__tripod-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__tripod-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__tripod-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__balloon-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__balloon-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__balloon-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__double-under-butterfly-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__double-under-butterfly-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__double-under-butterfly-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__shoulder-crunch-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__shoulder-crunch-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__shoulder-crunch-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__tripod-style-butterfly-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__tripod-style-butterfly-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__tripod-style-butterfly-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__spider-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__spider-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__spider-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__triangle-entry",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__triangle-entry",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__triangle-entry",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "스포츠 삼보 규칙상 조르기가 금지되어 있음",
+  "evidence": "FIAS sport sambo rules: choking techniques prohibited"
+ },
+ {
+  "id": "bjj__omoplata-entry",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 관절기는 팔꿈치만 허용되어 오모플라타(어깨 관절기)는 금지됨",
+  "evidence": "IJF rules: only elbow joint locks (kansetsu-waza) allowed"
+ },
+ {
+  "id": "bjj__omoplata-entry",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__omoplata-entry",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__de-la-riva-transition",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__de-la-riva-transition",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__de-la-riva-transition",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__lasso-transition",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__lasso-transition",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__lasso-transition",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__spider-to-x-guard",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__spider-to-x-guard",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__spider-to-x-guard",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__spider-to-single-leg",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__spider-to-single-leg",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__spider-to-single-leg",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__lasso-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__lasso-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__lasso-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__lasso-to-spider",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__lasso-to-spider",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__lasso-to-spider",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__lasso-to-omoplata",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "유도 관절기는 팔꿈치만 허용되어 오모플라타(어깨 관절기)는 금지됨",
+  "evidence": "IJF rules: only elbow joint locks (kansetsu-waza) allowed"
+ },
+ {
+  "id": "bjj__lasso-to-omoplata",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__lasso-to-omoplata",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__lasso-to-triangle",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__lasso-to-triangle",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__lasso-to-triangle",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "스포츠 삼보 규칙상 조르기가 금지되어 있음",
+  "evidence": "FIAS sport sambo rules: choking techniques prohibited"
+ },
+ {
+  "id": "bjj__lasso-to-x-guard",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__lasso-to-x-guard",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__lasso-to-x-guard",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__lasso-to-back-take",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__lasso-to-back-take",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__lasso-to-back-take",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__dlr-hook",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__dlr-hook",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__dlr-hook",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__grip-fighting",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "소매·깃 그립 싸움은 도복 기반으로 레슬링에 해당하지 않음(핸드 파이팅은 별개)",
+  "evidence": "wrestling has no gi; catalog-wrestling wrestling__hand-fighting is a different no-gi skill"
+ },
+ {
+  "id": "bjj__berimbolo-entry",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__berimbolo-entry",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__berimbolo-entry",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__kiss-of-the-dragon",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__kiss-of-the-dragon",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__kiss-of-the-dragon",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__x-guard-entry",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__x-guard-entry",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__x-guard-entry",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__dlr-technical-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__dlr-technical-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__dlr-technical-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__baby-bolo-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__baby-bolo-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__baby-bolo-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__dlr-to-x-guard-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__dlr-to-x-guard-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__dlr-to-x-guard-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__berimbolo",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__berimbolo",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__berimbolo",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__backstep-entry",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__backstep-entry",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__backstep-entry",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__inversion-entry",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__inversion-entry",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__inversion-entry",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__x-guard-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__x-guard-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__x-guard-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__back-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__back-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__back-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__single-leg-transition",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__single-leg-transition",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__single-leg-transition",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__slx-transition",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__slx-transition",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__slx-transition",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__slx-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__slx-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__slx-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__technical-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__technical-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__technical-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__outside-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__outside-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__outside-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__inside-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__inside-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__inside-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__x-guard-transition",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__x-guard-transition",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__x-guard-transition",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__back-take-transition",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__back-take-transition",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__back-take-transition",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__deep-half-guard",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__deep-half-guard",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__deep-half-guard",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__lockdown",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__lockdown",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__lockdown",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__old-school-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__old-school-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__old-school-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__electric-chair-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__electric-chair-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__electric-chair-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__plan-b-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__plan-b-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__plan-b-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__john-wayne-sweep",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__john-wayne-sweep",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__john-wayne-sweep",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__old-school",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__old-school",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__old-school",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__homer-simpson",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__homer-simpson",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__homer-simpson",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ },
+ {
+  "id": "bjj__electric-chair",
+  "art": "judo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 유도 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "not in Kodokan waza; judo newaza scores via osaekomi/shime/kansetsu, not guard sweeps/positions"
+ },
+ {
+  "id": "bjj__electric-chair",
+  "art": "wrestling",
+  "decision": "none",
+  "confidence": "A",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "레슬링은 도복이 없고 조르기·가드 하위 플레이가 없어 해당되지 않음",
+  "evidence": "Wrestling scores exposure/pins; no guard play or gi grips (UWW rules)"
+ },
+ {
+  "id": "bjj__electric-chair",
+  "art": "sambo",
+  "decision": "none",
+  "confidence": "B",
+  "category": null,
+  "duplicateOf": null,
+  "reason": "BJJ 가드 특유의 기술로 삼보 커리큘럼·경기에서 표준 기술이 아님",
+  "evidence": "sambo ground game centers on holds (Удержание) and leg/arm locks; not in catalog-sambo"
+ }
+]

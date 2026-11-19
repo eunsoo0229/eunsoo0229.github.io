@@ -93,6 +93,25 @@ export function updateCoachDayRun(mutate: (run: CoachDayRun) => CoachDayRun): Co
   return next;
 }
 
+/**
+ * Adds techniques to the running lesson WITHOUT touching what is in progress:
+ * new ids go after every existing one (so the current index, step, practice and
+ * finished outcomes stay exactly as they are) and ids already in the run are
+ * skipped. Returns the ids actually added.
+ */
+export function appendTechniquesToCoachDayRun(techniqueIds: string[]): string[] {
+  const run = getCoachDayRun();
+  if (!run || run.finishedAt) return [];
+  const added = [...new Set(techniqueIds)].filter((id) => !run.techniqueIds.includes(id));
+  if (!added.length) return [];
+  write({
+    ...run,
+    techniqueIds: [...run.techniqueIds, ...added],
+    outcomes: { ...run.outcomes, ...Object.fromEntries(added.map((id) => [id, { practicedSeconds: 0, completed: false, quiz: null }])) },
+  });
+  return added;
+}
+
 export function appendMessages(messages: Omit<CoachMessage, 'id' | 'at'>[]): CoachDayRun | null {
   const at = new Date().toISOString();
   return updateCoachDayRun((r) => ({ ...r, messages: [...r.messages, ...messages.map((m) => ({ ...m, id: newId(), at }))] }));

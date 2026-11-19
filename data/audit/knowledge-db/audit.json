@@ -1,0 +1,2610 @@
+{
+ "at": "2026-11-01T02:10:30.502Z",
+ "total": 1138,
+ "official": 1138,
+ "fieldRates": {
+  "name": {
+   "applicable": 1138,
+   "empty": 0,
+   "emptyPct": 0
+  },
+  "koreanName": {
+   "applicable": 1138,
+   "empty": 835,
+   "emptyPct": 73.4
+  },
+  "koreanNameFromData": {
+   "applicable": 1138,
+   "empty": 342,
+   "emptyPct": 30.1
+  },
+  "englishName": {
+   "applicable": 1138,
+   "empty": 182,
+   "emptyPct": 16
+  },
+  "martialArt": {
+   "applicable": 1138,
+   "empty": 0,
+   "emptyPct": 0
+  },
+  "category": {
+   "applicable": 1138,
+   "empty": 0,
+   "emptyPct": 0
+  },
+  "subcategory(positions)": {
+   "applicable": 1138,
+   "empty": 905,
+   "emptyPct": 79.5
+  },
+  "description": {
+   "applicable": 1138,
+   "empty": 756,
+   "emptyPct": 66.4
+  },
+  "overview(posture)": {
+   "applicable": 1138,
+   "empty": 148,
+   "emptyPct": 13
+  },
+  "purpose": {
+   "applicable": 1138,
+   "empty": 283,
+   "emptyPct": 24.9
+  },
+  "steps": {
+   "applicable": 1138,
+   "empty": 149,
+   "emptyPct": 13.1
+  },
+  "keyPoints": {
+   "applicable": 1138,
+   "empty": 149,
+   "emptyPct": 13.1
+  },
+  "commonMistakes": {
+   "applicable": 1138,
+   "empty": 149,
+   "emptyPct": 13.1
+  },
+  "difficulty": {
+   "applicable": 1138,
+   "empty": 134,
+   "emptyPct": 11.8
+  },
+  "prerequisite": {
+   "applicable": 1138,
+   "empty": 1100,
+   "emptyPct": 96.7
+  },
+  "setups": {
+   "applicable": 720,
+   "empty": 720,
+   "emptyPct": 100
+  },
+  "combos": {
+   "applicable": 720,
+   "empty": 666,
+   "emptyPct": 92.5
+  },
+  "transitions/next": {
+   "applicable": 1138,
+   "empty": 712,
+   "emptyPct": 62.6
+  },
+  "counters/defenses": {
+   "applicable": 720,
+   "empty": 706,
+   "emptyPct": 98.1
+  },
+  "videos": {
+   "applicable": 1138,
+   "empty": 970,
+   "emptyPct": 85.2
+  },
+  "source/verification": {
+   "applicable": 1138,
+   "empty": 1138,
+   "emptyPct": 100
+  }
+ },
+ "byArt": {
+  "bjj": {
+   "count": 274,
+   "name": 0,
+   "koreanName": 93.4,
+   "koreanNameFromData": 33.6,
+   "englishName": 5.5,
+   "martialArt": 0,
+   "category": 0,
+   "subcategory(positions)": 62.4,
+   "description": 98.2,
+   "overview(posture)": 1.8,
+   "purpose": 14.6,
+   "steps": 2.2,
+   "keyPoints": 2.2,
+   "commonMistakes": 2.2,
+   "difficulty": 0.7,
+   "prerequisite": 94.5,
+   "setups": 100,
+   "combos": 89.8,
+   "transitions/next": 71.9,
+   "counters/defenses": 100,
+   "videos": 83.2,
+   "source/verification": 100
+  },
+  "boxing": {
+   "count": 99,
+   "name": 0,
+   "koreanName": 88.9,
+   "koreanNameFromData": 20.2,
+   "englishName": 19.2,
+   "martialArt": 0,
+   "category": 0,
+   "subcategory(positions)": 88.9,
+   "description": 86.9,
+   "overview(posture)": 4,
+   "purpose": 84.8,
+   "steps": 4,
+   "keyPoints": 4,
+   "commonMistakes": 4,
+   "difficulty": 0,
+   "prerequisite": 99,
+   "setups": 100,
+   "combos": 98.5,
+   "transitions/next": 87.9,
+   "counters/defenses": 100,
+   "videos": 88.9,
+   "source/verification": 100
+  },
+  "judo": {
+   "count": 125,
+   "name": 0,
+   "koreanName": 31.2,
+   "koreanNameFromData": 12,
+   "englishName": 0,
+   "martialArt": 0,
+   "category": 0,
+   "subcategory(positions)": 80.8,
+   "description": 30.4,
+   "overview(posture)": 6.4,
+   "purpose": 6.4,
+   "steps": 6.4,
+   "keyPoints": 6.4,
+   "commonMistakes": 6.4,
+   "difficulty": 6.4,
+   "prerequisite": 94.4,
+   "setups": 100,
+   "combos": 91.9,
+   "transitions/next": 30.4,
+   "counters/defenses": 100,
+   "videos": 80.8,
+   "source/verification": 100
+  },
+  "karate": {
+   "count": 91,
+   "name": 0,
+   "koreanName": 57.1,
+   "koreanNameFromData": 45.1,
+   "englishName": 2.2,
+   "martialArt": 0,
+   "category": 0,
+   "subcategory(positions)": 87.9,
+   "description": 46.2,
+   "overview(posture)": 42.9,
+   "purpose": 58.2,
+   "steps": 42.9,
+   "keyPoints": 42.9,
+   "commonMistakes": 42.9,
+   "difficulty": 42.9,
+   "prerequisite": 98.9,
+   "setups": 100,
+   "combos": 93.2,
+   "transitions/next": 57.1,
+   "counters/defenses": 100,
+   "videos": 85.7,
+   "source/verification": 100
+  },
+  "kickboxing": {
+   "count": 99,
+   "name": 0,
+   "koreanName": 78.8,
+   "koreanNameFromData": 25.3,
+   "englishName": 5.1,
+   "martialArt": 0,
+   "category": 0,
+   "subcategory(positions)": 63.6,
+   "description": 67.7,
+   "overview(posture)": 0,
+   "purpose": 13.1,
+   "steps": 0,
+   "keyPoints": 0,
+   "commonMistakes": 0,
+   "difficulty": 0,
+   "prerequisite": 90.9,
+   "setups": 100,
+   "combos": 74.4,
+   "transitions/next": 44.4,
+   "counters/defenses": 96.3,
+   "videos": 75.8,
+   "source/verification": 100
+  },
+  "mixed-martial-arts": {
+   "count": 29,
+   "name": 0,
+   "koreanName": 0,
+   "koreanNameFromData": 0,
+   "englishName": 0,
+   "martialArt": 0,
+   "category": 0,
+   "subcategory(positions)": 93.1,
+   "description": 0,
+   "overview(posture)": 0,
+   "purpose": 0,
+   "steps": 0,
+   "keyPoints": 0,
+   "commonMistakes": 0,
+   "difficulty": 0,
+   "prerequisite": 100,
+   "setups": 100,
+   "combos": 100,
+   "transitions/next": 17.2,
+   "counters/defenses": 83.3,
+   "videos": 100,
+   "source/verification": 100
+  },
+  "muay-thai": {
+   "count": 78,
+   "name": 0,
+   "koreanName": 73.1,
+   "koreanNameFromData": 53.8,
+   "englishName": 2.6,
+   "martialArt": 0,
+   "category": 0,
+   "subcategory(positions)": 85.9,
+   "description": 56.4,
+   "overview(posture)": 46.2,
+   "purpose": 46.2,
+   "steps": 46.2,
+   "keyPoints": 46.2,
+   "commonMistakes": 46.2,
+   "difficulty": 46.2,
+   "prerequisite": 96.2,
+   "setups": 100,
+   "combos": 98.5,
+   "transitions/next": 12.8,
+   "counters/defenses": 92.5,
+   "videos": 82.1,
+   "source/verification": 100
+  },
+  "sambo": {
+   "count": 86,
+   "name": 0,
+   "koreanName": 72.1,
+   "koreanNameFromData": 68.6,
+   "englishName": 66.3,
+   "martialArt": 0,
+   "category": 0,
+   "subcategory(positions)": 96.5,
+   "description": 26.7,
+   "overview(posture)": 22.1,
+   "purpose": 23.3,
+   "steps": 22.1,
+   "keyPoints": 22.1,
+   "commonMistakes": 22.1,
+   "difficulty": 23.3,
+   "prerequisite": 98.8,
+   "setups": 100,
+   "combos": 96.6,
+   "transitions/next": 73.3,
+   "counters/defenses": 100,
+   "videos": 94.2,
+   "source/verification": 100
+  },
+  "taekwondo": {
+   "count": 82,
+   "name": 0,
+   "koreanName": 35.4,
+   "koreanNameFromData": 32.9,
+   "englishName": 100,
+   "martialArt": 0,
+   "category": 0,
+   "subcategory(positions)": 97.6,
+   "description": 19.5,
+   "overview(posture)": 45.1,
+   "purpose": 35.4,
+   "steps": 45.1,
+   "keyPoints": 45.1,
+   "commonMistakes": 45.1,
+   "difficulty": 35.4,
+   "prerequisite": 98.8,
+   "setups": 100,
+   "combos": 92.6,
+   "transitions/next": 59.8,
+   "counters/defenses": 100,
+   "videos": 91.5,
+   "source/verification": 100
+  },
+  "wrestling": {
+   "count": 175,
+   "name": 0,
+   "koreanName": 99.4,
+   "koreanNameFromData": 12,
+   "englishName": 0,
+   "martialArt": 0,
+   "category": 0,
+   "subcategory(positions)": 82.9,
+   "description": 97.7,
+   "overview(posture)": 0,
+   "purpose": 0,
+   "steps": 0,
+   "keyPoints": 0,
+   "commonMistakes": 0,
+   "difficulty": 0,
+   "prerequisite": 100,
+   "setups": 100,
+   "combos": 97.8,
+   "transitions/next": 95.4,
+   "counters/defenses": 97.8,
+   "videos": 86.3,
+   "source/verification": 100
+  }
+ },
+ "descGap": {
+  "total": 756,
+  "hasPostureOverview": 641,
+  "noOverview": [
+   "karate__musubi-dachi",
+   "karate__fudo-dachi",
+   "karate__kumite-dachi",
+   "karate__tenkan",
+   "karate__step-in",
+   "karate__retreat",
+   "karate__forward-step",
+   "karate__tate-zuki",
+   "karate__age-zuki",
+   "karate__nukite",
+   "karate__ippon-ken",
+   "karate__nihon-nukite",
+   "karate__yoko-empi",
+   "karate__age-empi",
+   "karate__ushiro-empi",
+   "karate__mawashi-empi",
+   "karate__otoshi-empi",
+   "karate__nidan-geri",
+   "karate__tobi-geri",
+   "karate__soto-uke",
+   "karate__uchi-uke",
+   "karate__feint",
+   "karate__distance-control",
+   "karate__counter-punch",
+   "karate__counter-kick",
+   "karate__short-punch",
+   "karate__angle-exit",
+   "karate__body-shift",
+   "karate__bunkai",
+   "karate__kuzushi",
+   "karate__hiki-te",
+   "karate__osae",
+   "karate__특징",
+   "karate__대표-가타",
+   "muay-thai__guard",
+   "muay-thai__lead-teep",
+   "muay-thai__rear-teep",
+   "muay-thai__body-teep",
+   "muay-thai__hip-teep",
+   "muay-thai__lead-round-kick",
+   "muay-thai__rear-round-kick",
+   "muay-thai__jab-to-cross",
+   "muay-thai__jab-to-hook",
+   "muay-thai__cross-to-hook",
+   "muay-thai__jab-to-low-kick",
+   "muay-thai__cross-to-low-kick",
+   "muay-thai__side-knee",
+   "muay-thai__inside-low-kick",
+   "muay-thai__outside-low-kick",
+   "muay-thai__thigh-kick",
+   "muay-thai__lead-low-kick",
+   "muay-thai__rear-low-kick",
+   "muay-thai__low-kick-after-punch",
+   "muay-thai__low-kick-after-teep",
+   "muay-thai__outside-control",
+   "muay-thai__curving-knee",
+   "muay-thai__diagonal-knee",
+   "muay-thai__teep-catch",
+   "muay-thai__body-kick-check",
+   "muay-thai__kick-parry",
+   "muay-thai__elbow-shield",
+   "muay-thai__teep-stop",
+   "muay-thai__evade",
+   "muay-thai__low-kick-counter",
+   "muay-thai__kick-catch-to-counter",
+   "muay-thai__counter-elbow",
+   "muay-thai__counter-knee",
+   "sambo__footwork",
+   "sambo__break-step",
+   "sambo__leg-grip",
+   "sambo__single-leg",
+   "sambo__drop-seoi",
+   "sambo__arm-drag-to-throw",
+   "sambo__shoulder-entry",
+   "sambo__flying-entry",
+   "sambo__허리기술-counter",
+   "sambo__다리걸기-counter",
+   "sambo__guard",
+   "sambo__defensive-shell",
+   "sambo__frame-escape",
+   "sambo__back-escape",
+   "sambo__guard-sweep",
+   "sambo__reversal",
+   "sambo__single-leg-from-guard",
+   "sambo__front-headlock-choke",
+   "sambo__collar-choke",
+   "judo__kuzushi-mae",
+   "judo__kuzushi-ushiro",
+   "judo__kuzushi-migi",
+   "judo__kuzushi-hidari",
+   "judo__kuzushi-migi-mae",
+   "judo__kuzushi-hidari-mae",
+   "judo__kuzushi-migi-ushiro",
+   "judo__kuzushi-hidari-ushiro",
+   "bjj__상대의-중심-이동",
+   "bjj__스크램블-시작",
+   "bjj__포지션-회복",
+   "bjj__backstep-entry",
+   "bjj__inversion-entry",
+   "taekwondo__바로지르기",
+   "taekwondo__반대지르기",
+   "taekwondo__지르기",
+   "taekwondo__돌려지르기",
+   "taekwondo__옆지르기",
+   "taekwondo__내려지르기",
+   "taekwondo__한손날막기",
+   "taekwondo__두손목막기",
+   "taekwondo__엇걸어막기",
+   "taekwondo__가위막기",
+   "taekwondo__산틀막기",
+   "taekwondo__회전-내려차기",
+   "taekwondo__회전-옆차기",
+   "taekwondo__앞낙법",
+   "taekwondo__뒤낙법",
+   "taekwondo__옆낙법"
+  ]
+ },
+ "readiness": {
+  "ready": 989,
+  "thin": 0,
+  "insufficient": 149
+ },
+ "insufficientMissing": {
+  "기술 설명": 132,
+  "동작 단계": 149,
+  "핵심 포인트": 149,
+  "흔한 실수": 149
+ },
+ "insufficient": [
+  {
+   "id": "karate__musubi-dachi",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__fudo-dachi",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__kumite-dachi",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__tenkan",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__step-in",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__retreat",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__forward-step",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__tate-zuki",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__age-zuki",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__nukite",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__ippon-ken",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__nihon-nukite",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__yoko-empi",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__age-empi",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__ushiro-empi",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__mawashi-empi",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__otoshi-empi",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__nidan-geri",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__tobi-geri",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__soto-uke",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__uchi-uke",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__feint",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__distance-control",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__counter-punch",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__counter-kick",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__short-punch",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__clinch",
+   "missing": [
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__angle-exit",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__body-shift",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__kizami-zuki-counter",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__gyaku-zuki-counter",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__mae-geri-counter",
+   "missing": [
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__mawashi-geri-counter",
+   "missing": [
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__bunkai",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__kuzushi",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__hiki-te",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__osae",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__특징",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "karate__대표-가타",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__guard",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__lead-teep",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__rear-teep",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__body-teep",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__hip-teep",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__lead-round-kick",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__rear-round-kick",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__jab-to-cross",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__jab-to-hook",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__cross-to-hook",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__jab-to-low-kick",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__cross-to-low-kick",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__long-elbow",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__short-elbow",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__side-knee",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__inside-low-kick",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__outside-low-kick",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__thigh-kick",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__lead-low-kick",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__rear-low-kick",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__low-kick-after-punch",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__low-kick-after-teep",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__outside-control",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__curving-knee",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__diagonal-knee",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__turn",
+   "missing": [
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__teep-catch",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__body-kick-check",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__kick-parry",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__elbow-shield",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__teep-stop",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__evade",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__low-kick-counter",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__kick-catch-to-counter",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__counter-elbow",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "muay-thai__counter-knee",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "boxing__센터라인-리스크",
+   "missing": [
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": [
+    "purpose"
+   ]
+  },
+  {
+   "id": "boxing__아마추어",
+   "missing": [
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": [
+    "purpose"
+   ]
+  },
+  {
+   "id": "boxing__프로",
+   "missing": [
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": [
+    "purpose"
+   ]
+  },
+  {
+   "id": "boxing__실전-함의",
+   "missing": [
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": [
+    "purpose"
+   ]
+  },
+  {
+   "id": "sambo__footwork",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "sambo__break-step",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "sambo__leg-grip",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "sambo__single-leg",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "sambo__drop-seoi",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "sambo__arm-drag-to-throw",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "sambo__shoulder-entry",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "sambo__flying-entry",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "sambo__허리기술-counter",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "sambo__다리걸기-counter",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "sambo__guard",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "sambo__defensive-shell",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "sambo__frame-escape",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "sambo__back-escape",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "sambo__guard-sweep",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "sambo__reversal",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "sambo__single-leg-from-guard",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "sambo__front-headlock-choke",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "sambo__collar-choke",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "judo__kuzushi-mae",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "judo__kuzushi-ushiro",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "judo__kuzushi-migi",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "judo__kuzushi-hidari",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "judo__kuzushi-migi-mae",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "judo__kuzushi-hidari-mae",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "judo__kuzushi-migi-ushiro",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "judo__kuzushi-hidari-ushiro",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "bjj__상대의-중심-이동",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": [
+    "purpose"
+   ]
+  },
+  {
+   "id": "bjj__스크램블-시작",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": [
+    "purpose"
+   ]
+  },
+  {
+   "id": "bjj__포지션-회복",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": [
+    "purpose"
+   ]
+  },
+  {
+   "id": "bjj__backstep-entry",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "bjj__inversion-entry",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "bjj__double-armbar",
+   "missing": [
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": [
+    "purpose"
+   ]
+  },
+  {
+   "id": "taekwondo__전진",
+   "missing": [
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "taekwondo__후진",
+   "missing": [
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "taekwondo__끌기",
+   "missing": [
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "taekwondo__밀기",
+   "missing": [
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "taekwondo__바로지르기",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "taekwondo__반대지르기",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "taekwondo__지르기",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "taekwondo__돌려지르기",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "taekwondo__옆지르기",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "taekwondo__내려지르기",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "taekwondo__한손날막기",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "taekwondo__두손목막기",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "taekwondo__엇걸어막기",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "taekwondo__가위막기",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "taekwondo__산틀막기",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "taekwondo__앞발-밀어차기",
+   "missing": [
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "taekwondo__뒷발-밀어차기",
+   "missing": [
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "taekwondo__회전-내려차기",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "taekwondo__회전-옆차기",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "taekwondo__뛰어앞차기",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": [
+    "description"
+   ]
+  },
+  {
+   "id": "taekwondo__뛰어돌려차기",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": [
+    "description"
+   ]
+  },
+  {
+   "id": "taekwondo__뛰어옆차기",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": [
+    "description"
+   ]
+  },
+  {
+   "id": "taekwondo__뛰어뒤차기",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": [
+    "description"
+   ]
+  },
+  {
+   "id": "taekwondo__뛰어내려차기",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": [
+    "description"
+   ]
+  },
+  {
+   "id": "taekwondo__공중회전-발차기",
+   "missing": [
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "taekwondo__다단-점프-발차기",
+   "missing": [
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "taekwondo__태극-1장",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": [
+    "purpose"
+   ]
+  },
+  {
+   "id": "taekwondo__태극-2장",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": [
+    "purpose"
+   ]
+  },
+  {
+   "id": "taekwondo__태극-3장",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": [
+    "purpose"
+   ]
+  },
+  {
+   "id": "taekwondo__태극-4장",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": [
+    "purpose"
+   ]
+  },
+  {
+   "id": "taekwondo__태극-5장",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": [
+    "purpose"
+   ]
+  },
+  {
+   "id": "taekwondo__태극-6장",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": [
+    "purpose"
+   ]
+  },
+  {
+   "id": "taekwondo__태극-7장",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": [
+    "purpose"
+   ]
+  },
+  {
+   "id": "taekwondo__태극-8장",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": [
+    "purpose"
+   ]
+  },
+  {
+   "id": "taekwondo__앞낙법",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "taekwondo__뒤낙법",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  },
+  {
+   "id": "taekwondo__옆낙법",
+   "missing": [
+    "기술 설명",
+    "동작 단계",
+    "핵심 포인트",
+    "흔한 실수"
+   ],
+   "rejected": []
+  }
+ ],
+ "duplicates": {
+  "inArt": [
+   {
+    "key": "스피닝기술",
+    "art": "muay-thai",
+    "ids": [
+     "muay-thai__spinning-back-kick",
+     "muay-thai__spinning-backfist"
+    ]
+   },
+   {
+    "key": "counter",
+    "art": "sambo",
+    "ids": [
+     "sambo__отхват-подсечка-counter",
+     "sambo__бросок-через-спину-counter"
+    ]
+   }
+  ],
+  "acrossArtsUnlinked": [
+   {
+    "key": "backstep",
+    "ids": [
+     "wrestling__back-step",
+     "bjj__backstep"
+    ]
+   },
+   {
+    "key": "bridge",
+    "ids": [
+     "wrestling__bridge",
+     "judo__bridge"
+    ]
+   },
+   {
+    "key": "handfighting",
+    "ids": [
+     "wrestling__hand-fighting",
+     "boxing__hand-fighting",
+     "bjj__hand-fighting"
+    ]
+   },
+   {
+    "key": "squarestance",
+    "ids": [
+     "wrestling__square-stance",
+     "kickboxing__square-stance"
+    ]
+   },
+   {
+    "key": "거리관리",
+    "ids": [
+     "boxing__거리-관리",
+     "mixed-martial-arts__range-management"
+    ]
+   },
+   {
+    "key": "collarchoke",
+    "ids": [
+     "sambo__collar-choke",
+     "bjj__collar-choke"
+    ]
+   },
+   {
+    "key": "gripfighting",
+    "ids": [
+     "judo__grip-fighting",
+     "bjj__grip-fighting"
+    ]
+   }
+  ]
+ },
+ "categories": {
+  "bjj": {
+   "클로즈드 가드 (Closed Guard)": 26,
+   "스탠딩 / 테이크다운": 10,
+   "김우라 계열": 8,
+   "오픈 가드 (Open Guard)": 14,
+   "하프 가드 (Half Guard)": 17,
+   "버터플라이 가드 (Butterfly Guard)": 9,
+   "데 라 히바 (De La Riva Guard)": 12,
+   "딥 하프 가드 (Deep Half Guard)": 6,
+   "레그락 계열": 7,
+   "백 컨트롤 (Back Control)": 17,
+   "프론트 헤드락 (Front Headlock)": 4,
+   "사이드 컨트롤 (Side Control)": 11,
+   "트라이앵글 계열": 4,
+   "기본 움직임과 연결 기술": 14,
+   "패스 가드 (Guard Passing)": 15,
+   "스파이더 가드 (Spider Guard)": 7,
+   "라쏘 가드 (Lasso Guard)": 6,
+   "X 가드 (X-Guard)": 4,
+   "싱글 레그 X (SLX / Single Leg X)": 7,
+   "니 온 벨리 (Knee on Belly)": 4,
+   "노스 사우스 (North-South)": 3,
+   "마운트 (Mount)": 13,
+   "탈출 기술 모음": 7,
+   "터틀 (Turtle)": 5,
+   "크루시픽스 (Crucifix)": 5,
+   "아시 가라미 (Ashi Garami)": 7,
+   "50/50 가드": 4,
+   "암바 계열": 8,
+   "암 드래그 (Arm Drag)": 5,
+   "백 테이크 기술 모음": 5,
+   "스윕 기술 모음": 1,
+   "가드 패스 기술 모음": 2,
+   "노기(No-Gi)에서 자주 등장하는 포지션": 2,
+   "기(Gi)에서 특히 중요한 기술": 5
+  },
+  "boxing": {
+   "상대 펀치별 방어": 7,
+   "방어": 11,
+   "특수 펀치": 4,
+   "기본 자세": 5,
+   "풋워크": 6,
+   "클린치": 4,
+   "거리별 포지션": 9,
+   "기본 펀치": 6,
+   "페인트 (Feint)": 4,
+   "조합": 14,
+   "카운터": 10,
+   "근거리 / 인파이팅": 4,
+   "코너 / 로프 포지션": 5,
+   "링 제너럴십 (Ring Generalship)": 4,
+   "사우스포 vs 오소독스 매치업 전술": 3,
+   "아마추어(포인트) vs 프로 스코어링과 전술": 3
+  },
+  "judo": {
+   "기본 자세와 이동": 7,
+   "발기술 --- Ashi Waza": 13,
+   "잡기 / 그립 --- Kumi Kata": 8,
+   "옆으로 누우며 던지기 --- Yoko Sutemi Waza": 12,
+   "바로 누우며 던지기 --- Ma Sutemi Waza": 5,
+   "탈출": 9,
+   "유도의 핵심 원리 --- Kuzushi · Tsukuri · Kake": 8,
+   "손기술 --- Te Waza": 13,
+   "허리기술 --- Koshi Waza": 11,
+   "연속·연결·변화 기술 --- Renraku Waza / Henka Waza": 10,
+   "카운터 --- Kaeshi Waza": 9,
+   "네와자 / 바닥 포지션": 10,
+   "굳히기 --- Osaekomi Waza": 1,
+   "관절기 --- Kansetsu Waza": 1,
+   "조르기 --- Shime Waza": 8
+  },
+  "karate": {
+   "기본 자세 (Kihon Dachi)": 9,
+   "이동 (Shintai / 풋워크)": 6,
+   "손기술 (Te-waza)": 14,
+   "팔꿈치 (Empi / Hiji)": 5,
+   "발차기 (Geri)": 3,
+   "막기 (Uke)": 11,
+   "장거리 (To-ma)": 2,
+   "중거리 (Ma)": 3,
+   "근거리 (Chika-ma)": 2,
+   "타이사바키 / 회피 (Tai Sabaki)": 4,
+   "카운터 (Go no Sen 응용)": 7,
+   "조합 (Renzoku-waza)": 8,
+   "쿠미테 --- 판정 규칙과 타이밍": 6,
+   "전통 가라테의 응용 (자기방어 / Bunkai)": 7,
+   "호흡법 (Kokyu-ho): Ibuki와 Nogare": 2,
+   "유파별 대표 기술과 가타": 2
+  },
+  "kickboxing": {
+   "풋워크": 8,
+   "펀치": 6,
+   "킥": 12,
+   "니 (무릎)": 5,
+   "스탠스": 6,
+   "대표적인 콤비네이션 (연결)": 14,
+   "엘보": 4,
+   "클린치 / 근거리 제어": 5,
+   "방어": 11,
+   "카운터": 9,
+   "페인트 (Feint)": 6,
+   "기본 개념": 5,
+   "규칙 체계 (가장 먼저 알아야 할 것)": 5,
+   "포인트 스파링 특유 전술": 3
+  },
+  "mixed-martial-arts": {
+   "MMA 복싱": 2,
+   "MMA 킥복싱": 2,
+   "스트라이킹 (Striking)": 2,
+   "클린치 (Clinch)": 2,
+   "테이크다운 (Takedown)": 3,
+   "그라운드 컨트롤 (Ground Control)": 2,
+   "그라운드 앤 파운드 (Ground & Pound)": 3,
+   "서브미션 (Submission)": 2,
+   "케이지 워크 (Cage Work)": 2,
+   "방어 (Defense)": 3,
+   "스크램블 (Scramble)": 2,
+   "MMA 전환 동작 (Transitions)": 4
+  },
+  "muay-thai": {
+   "기본 개념 --- 거리(Range)와 자세": 7,
+   "장거리 --- 티프 (Teep, ถีบ)": 12,
+   "장거리 킥 (Round Kick / Low Kick 계열)": 6,
+   "중거리 펀치": 11,
+   "스피닝 기술 모음": 3,
+   "엘보 (Sok, ศอก)": 5,
+   "니 (Khao, เข่า)": 4,
+   "로우킥 (Low Kick)": 8,
+   "클린치 (Clinch)": 7,
+   "킥 캐치 / 방어": 7,
+   "펀치 방어": 2,
+   "킥 방어": 2,
+   "카운터 종합": 4
+  },
+  "sambo": {
+   "테이크다운 진입 (레슬링 계열)": 2,
+   "기본 자세와 거리(Дистанция)": 4,
+   "그립 파이팅(Захват) --- 재킷·벨트 중심": 7,
+   "균형 무너뜨리기(Выведение из равновесия)": 3,
+   "다리 기술 --- 포드쎗카(Подсечка) 계열: 발쓸기(Sweep)": 5,
+   "다리 기술 --- 자쳅(Зацеп)·오트하바트(Отхват)·포드핫(Подхват)· 포드사드(Подсад)": 4,
+   "허리/몸통 던지기 --- 브로속 체레즈 베드로(Бросок через бедро)": 4,
+   "등으로 던지기 --- 브로속 체레즈 스피누(Бросок через спину)": 6,
+   "어깨·팔로 던지기 --- 멜니차(Мельница)와 베르투쉬카(Вертушка)": 6,
+   "카운터(Контрприем)": 5,
+   "희생 기술 --- 브로속 체레즈 골로부(Бросок через голову)· 체레즈 그루지(Бросок через грудь)": 2,
+   "스탠딩 → 파르테르(Партер) 전환": 5,
+   "탑 포지션과 홀드다운 --- 우제르자니예(Удержание)": 7,
+   "바텀 포지션과 탈출": 4,
+   "스윕 / 전환": 4,
+   "상체 관절기 --- 뤄착(Рычаг)과 우젤(Узел)": 9,
+   "하체 관절기 --- 삼보의 전통적 강점": 5,
+   "목/조르기 계열 --- 컴뱃 삼보 한정": 3,
+   "컴뱃 삼보 타격 범주": 1
+  },
+  "taekwondo": {
+   "기본 서기 / 자세": 5,
+   "손기술": 8,
+   "겨루기 발차기 [WT 중심]": 6,
+   "기본 발차기 (세부 명칭)": 5,
+   "이동 / 풋워크": 9,
+   "거리별 전술": 1,
+   "막기": 9,
+   "회전 발차기": 4,
+   "점프 / 공중 발차기": 9,
+   "연결 기술 (콤비네이션)": 8,
+   "품새 (Poomsae / Tul)": 8,
+   "격파 (Kyokpa)": 3,
+   "낙법과 호신술 [ITF 중심]": 7
+  },
+  "wrestling": {
+   "기본 자세와 움직임": 16,
+   "스탠딩 포지션 / 그립": 17,
+   "공격 진입 (셋업 / 페이크 / 피더링)": 12,
+   "싱글 레그": 13,
+   "더블 레그": 12,
+   "바디락 / 클린치": 11,
+   "발목·무릎 공격": 3,
+   "던지기 / 투사 (상체 던지기 포함)": 18,
+   "프론트 헤드락": 6,
+   "탑 포지션": 32,
+   "바텀 포지션": 9,
+   "탈출 (Escape)": 3,
+   "리버설 (Reversal)": 7,
+   "리샷 / 카운터": 9,
+   "방어": 7
+  }
+ },
+ "categoryIssues": [],
+ "badRefs": [],
+ "koreanNameMissing": [
+  "karate__musubi-dachi",
+  "karate__yori-ashi",
+  "karate__tenkan",
+  "kickboxing__pivot",
+  "karate__step-in",
+  "boxing__step-out",
+  "boxing__side-step",
+  "karate__retreat",
+  "karate__forward-step",
+  "karate__nukite",
+  "karate__ippon-ken",
+  "karate__nihon-nukite",
+  "karate__yoko-empi",
+  "karate__age-empi",
+  "karate__ushiro-empi",
+  "karate__mawashi-empi",
+  "karate__otoshi-empi",
+  "karate__distance-control",
+  "karate__counter-punch",
+  "karate__counter-kick",
+  "karate__combination-entry",
+  "karate__short-punch",
+  "karate__angle-exit",
+  "karate__body-shift",
+  "karate__kizami-zuki-counter",
+  "karate__gyaku-zuki-counter",
+  "karate__mae-geri-counter",
+  "karate__mawashi-geri-counter",
+  "karate__uchi-uke-gyaku-zuki-soto-uke-gyaku-zuki",
+  "karate__age-uke-counter",
+  "karate__tai-sabaki-counter",
+  "karate__kizami-zuki-gyaku-zuki",
+  "karate__oi-zuki-gyaku-zuki",
+  "karate__gyaku-zuki-mawashi-geri",
+  "karate__kizami-zuki-mawashi-geri",
+  "karate__mae-geri-gyaku-zuki",
+  "karate__mawashi-geri-gyaku-zuki",
+  "karate__feint-gyaku-zuki",
+  "karate__step-kizami-zuki",
+  "karate__maai-유지-전술",
+  "karate__osae",
+  "karate__kansetsu-geri",
+  "karate__특징",
+  "karate__대표-가타",
+  "wrestling__wrestling-stance",
+  "wrestling__motion-circle",
+  "wrestling__pivot",
+  "wrestling__single-leg-position",
+  "wrestling__double-leg-position",
+  "wrestling__throw-by",
+  "wrestling__near-ankle",
+  "wrestling__high-double",
+  "wrestling__locking-hands-position",
+  "bjj__knee-tap",
+  "wrestling__rear-lift-return",
+  "wrestling__head-and-arm-throw",
+  "wrestling__arm-throw",
+  "wrestling__front-headlock-to-single",
+  "wrestling__front-headlock-to-ankle",
+  "wrestling__front-headlock-to-back",
+  "wrestling__tight-waist",
+  "wrestling__tight-waist-tilt",
+  "wrestling__half-nelson-to-bar-arm",
+  "wrestling__tight-waist-and-half-nelson",
+  "wrestling__roll-through",
+  "wrestling__head-hands",
+  "kickboxing__orthodox",
+  "kickboxing__southpaw",
+  "muay-thai__guard",
+  "muay-thai__basic-footwork",
+  "muay-thai__lead-teep",
+  "muay-thai__rear-teep",
+  "muay-thai__body-teep",
+  "muay-thai__hip-teep",
+  "muay-thai__lead-round-kick",
+  "muay-thai__rear-round-kick",
+  "muay-thai__jab-to-cross",
+  "muay-thai__jab-to-hook",
+  "muay-thai__cross-to-hook",
+  "muay-thai__jab-to-low-kick",
+  "muay-thai__cross-to-low-kick",
+  "muay-thai__jab-cross-hook",
+  "kickboxing__jab-cross-body-kick",
+  "muay-thai__hook-low-kick",
+  "muay-thai__cross-body-kick",
+  "muay-thai__long-elbow",
+  "muay-thai__short-elbow",
+  "muay-thai__elbow-from-clinch",
+  "kickboxing__lead-knee",
+  "kickboxing__rear-knee",
+  "muay-thai__side-knee",
+  "muay-thai__inside-low-kick",
+  "muay-thai__outside-low-kick",
+  "muay-thai__thigh-kick",
+  "muay-thai__lead-low-kick",
+  "muay-thai__rear-low-kick",
+  "muay-thai__low-kick-after-punch",
+  "muay-thai__low-kick-after-teep",
+  "muay-thai__outside-control",
+  "muay-thai__diagonal-knee",
+  "muay-thai__elbow-entry",
+  "muay-thai__turn",
+  "kickboxing__off-balance",
+  "muay-thai__sweep-foot-sweep",
+  "muay-thai__teep-catch",
+  "muay-thai__body-kick-check",
+  "muay-thai__elbow-shield",
+  "muay-thai__teep-stop",
+  "muay-thai__evade",
+  "muay-thai__low-kick-counter",
+  "muay-thai__kick-catch-to-counter",
+  "muay-thai__counter-elbow",
+  "muay-thai__counter-knee",
+  "muay-thai__spinning-knee",
+  "boxing__l-step",
+  "kickboxing__switch-step",
+  "kickboxing__circle-out",
+  "boxing__1-2",
+  "boxing__1-1-2",
+  "boxing__1-1-1",
+  "boxing__1-2-3",
+  "boxing__1-2-3-2",
+  "boxing__1-1-2-3",
+  "boxing__2-3-2",
+  "boxing__1-2-5",
+  "boxing__1-2-3-6",
+  "boxing__body-head-combination",
+  "boxing__head-body-combination",
+  "boxing__duck",
+  "boxing__frame-guard",
+  "boxing__roll-hook",
+  "boxing__block-counter",
+  "boxing__step-back-cross",
+  "boxing__straight-punches",
+  "sambo__footwork",
+  "sambo__break-step",
+  "sambo__захват-за-рукав-куртки-зацеп-изнутри",
+  "sambo__wrist-grip-кисть-제어",
+  "sambo__leg-grip",
+  "sambo__single-leg",
+  "sambo__передняя-подсечка",
+  "sambo__задняя-подсечка",
+  "sambo__боковая-подсечка",
+  "sambo__подсечка-изнутри",
+  "sambo__подсечка-с-заведением",
+  "sambo__бросок-через-бедро",
+  "sambo__боковой",
+  "sambo__с-захватом-пояса",
+  "sambo__с-захватом-шеи",
+  "sambo__drop-seoi",
+  "sambo__arm-drag-to-throw",
+  "sambo__shoulder-entry",
+  "sambo__flying-entry",
+  "sambo__отхват-подсечка-counter",
+  "sambo__бросок-через-спину-counter",
+  "sambo__허리기술-counter",
+  "sambo__다리걸기-counter",
+  "sambo__희생기술-counter",
+  "sambo__бросок-через-голову",
+  "sambo__бросок-через-грудь",
+  "sambo__throw-side-control-mount-turtle-control",
+  "sambo__single-leg-top-control-body-lock-throw-control",
+  "sambo__grip-fight-takedown-leg-lock-entry",
+  "sambo__удержание-сбоку",
+  "sambo__удержание-верхом",
+  "sambo__удержание-поперек",
+  "sambo__удержание-со-стороны-головы",
+  "sambo__удержание-со-стороны-ног",
+  "sambo__удержание-спиной-поперек",
+  "sambo__추가-탑-컨트롤",
+  "bjj__half-guard",
+  "bjj__turtle",
+  "sambo__defensive-shell",
+  "judo__guard-recovery",
+  "bjj__technical-stand-up",
+  "sambo__frame-escape",
+  "sambo__back-escape",
+  "sambo__guard-sweep",
+  "sambo__reversal",
+  "sambo__single-leg-from-guard",
+  "sambo__заваливание",
+  "sambo__рычаг-локтя",
+  "sambo__рычаг-плеча",
+  "sambo__рычаг-кисти",
+  "sambo__узел-плеча",
+  "sambo__узел-плеча-поперек",
+  "sambo__узел-плеча-ногой",
+  "sambo__узел-плеча-обратный",
+  "bjj__kneebar",
+  "sambo__рычаг-бедра",
+  "sambo__рычаг-стопы",
+  "sambo__ущемление-икроножной-мышцы",
+  "sambo__двойной-зацеп",
+  "sambo__узел-стопы",
+  "sambo__удушающий-прием-удушающий-захват",
+  "sambo__front-headlock-choke",
+  "sambo__collar-choke",
+  "sambo__ground-striking",
+  "judo__ouchi-gari-uchi-mata",
+  "judo__ouchi-gari-seoi-nage",
+  "judo__kouchi-gari-seoi-nage",
+  "judo__kouchi-gari-tai-otoshi",
+  "judo__osoto-gari-uchi-mata",
+  "judo__osoto-gari-ouchi-gari",
+  "judo__de-ashi-barai-sasae-tsurikomi-ashi",
+  "judo__sasae-tsurikomi-ashi-osoto-gari",
+  "judo__uchi-mata-ouchi-gari",
+  "judo__kouchi-gari-uchi-mata",
+  "judo__kesa-escape",
+  "judo__yoko-shiho-escape",
+  "judo__kami-shiho-escape",
+  "judo__tate-shiho-escape",
+  "bjj__wrist-control",
+  "bjj__scissor-sweep",
+  "bjj__tripod-계열-스윕",
+  "bjj__x-guard",
+  "bjj__single-leg-x",
+  "bjj__elevation",
+  "bjj__spider-to-x-guard",
+  "bjj__lasso-to-x-guard",
+  "bjj__dlr-hook",
+  "bjj__x-guard-entry",
+  "bjj__dlr-technical-sweep",
+  "bjj__dlr-to-x-guard-sweep",
+  "bjj__backstep-entry",
+  "bjj__inversion-entry",
+  "bjj__x-guard-sweep",
+  "bjj__back-sweep",
+  "bjj__single-leg-transition",
+  "bjj__slx-transition",
+  "bjj__slx-sweep",
+  "bjj__technical-sweep",
+  "bjj__outside-sweep",
+  "bjj__inside-sweep",
+  "bjj__x-guard-transition",
+  "bjj__ashi-garami-transition",
+  "bjj__back-take-transition",
+  "bjj__z-guard",
+  "bjj__plan-b-sweep",
+  "bjj__single-leg-finish",
+  "bjj__recover-full-guard",
+  "bjj__recover-butterfly-guard",
+  "bjj__x-pass",
+  "bjj__north-south-choke",
+  "bjj__d-arce-choke",
+  "bjj__straight-armbar",
+  "bjj__technical-mount-transition",
+  "bjj__mount-transition",
+  "bjj__knee-on-belly-to-side-control",
+  "bjj__north-south-control",
+  "bjj__side-control-transition",
+  "bjj__backstep",
+  "bjj__high-mount",
+  "bjj__s-mount",
+  "bjj__elbow-knee-escape",
+  "bjj__knee-elbow-escape",
+  "bjj__half-guard-recovery",
+  "bjj__s-mount-armbar",
+  "bjj__double-armbar",
+  "bjj__trap-and-roll-prevention",
+  "bjj__chair-sit",
+  "bjj__technical-mount-back",
+  "bjj__turtle-back",
+  "bjj__arm-drag-back",
+  "bjj__gift-wrap-back",
+  "bjj__crucifix-back",
+  "bjj__truck-back",
+  "bjj__short-choke",
+  "bjj__collar-choke",
+  "bjj__crucifix-attacks",
+  "bjj__crucifix",
+  "bjj__bow-and-arrow-entry",
+  "bjj__armbar-entry",
+  "bjj__turtle-crucifix",
+  "bjj__side-control-crucifix",
+  "bjj__back-control-crucifix",
+  "bjj__transition-to-back",
+  "bjj__50-50",
+  "bjj__50-50-sweep",
+  "bjj__backside-50-50",
+  "bjj__transition-to-slx",
+  "bjj__transition-to-x-guard",
+  "bjj__side-control",
+  "bjj__knee-on-belly",
+  "bjj__triangle-armbar",
+  "bjj__kimura-armbar",
+  "bjj__omoplata-armbar",
+  "bjj__mount-s-mount-armbar",
+  "bjj__side-control-armbar",
+  "bjj__north-south",
+  "bjj__kimura-triangle",
+  "bjj__arm-drag-back-take",
+  "bjj__arm-drag-single-leg",
+  "bjj__arm-drag-butterfly-sweep",
+  "bjj__arm-drag-closed-guard",
+  "bjj__arm-drag-turtle-attack",
+  "bjj__kimura-trap-back",
+  "bjj__dlr-sweep",
+  "bjj__knee-elbow-recovery",
+  "kickboxing__k-1-rules",
+  "kickboxing__glory-rules",
+  "kickboxing__switch-stance",
+  "kickboxing__short-knee",
+  "kickboxing__jab-cross-low-kick",
+  "kickboxing__jab-hook-low-kick",
+  "kickboxing__cross-hook-high-kick",
+  "kickboxing__jab-body-kick",
+  "kickboxing__low-kick-cross",
+  "kickboxing__teep-jab",
+  "kickboxing__check-return-kick",
+  "kickboxing__parry-jab-cross",
+  "kickboxing__hand-feint-body-kick",
+  "kickboxing__level-change-feint-high-kick",
+  "kickboxing__kick-feint-low-kick",
+  "kickboxing__switch-kick-cross",
+  "taekwondo__전진",
+  "taekwondo__후진",
+  "taekwondo__밀기",
+  "taekwondo__바로지르기",
+  "taekwondo__반대지르기",
+  "taekwondo__지르기",
+  "taekwondo__돌려지르기",
+  "taekwondo__옆지르기",
+  "taekwondo__내려지르기",
+  "taekwondo__한손날막기",
+  "taekwondo__두손목막기",
+  "taekwondo__엇걸어막기",
+  "taekwondo__가위막기",
+  "taekwondo__산틀막기",
+  "taekwondo__앞발-밀어차기",
+  "taekwondo__뒷발-밀어차기",
+  "taekwondo__회전-내려차기",
+  "taekwondo__회전-옆차기",
+  "taekwondo__뛰어앞차기",
+  "taekwondo__뛰어돌려차기",
+  "taekwondo__뛰어옆차기",
+  "taekwondo__뛰어뒤차기",
+  "taekwondo__뛰어내려차기",
+  "taekwondo__공중회전-발차기",
+  "taekwondo__앞낙법",
+  "taekwondo__뒤낙법",
+  "taekwondo__옆낙법"
+ ]
+}

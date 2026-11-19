@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { getCombo } from '../lib/combo/service';
@@ -44,7 +45,7 @@ export default function ComboTraining() {
             <span>{combo.name}</span>
           </div>
           <div className="section-title">
-            <h2>🔥 콤보 훈련 시작</h2>
+            <h2><Icon name="flame" /> 콤보 훈련 시작</h2>
           </div>
           <div className="card info-card">
             <h3>{combo.name}</h3>
@@ -105,7 +106,7 @@ export default function ComboTraining() {
             <span>{combo.name}</span>
           </div>
           <div className="section-title">
-            <h2>🎉 콤보 훈련 완료</h2>
+            <h2><Icon name="celebrate" /> 콤보 훈련 완료</h2>
           </div>
           <div className="curriculum-stat-row">
             <div>
@@ -163,7 +164,7 @@ export default function ComboTraining() {
             onClick={() => (session.paused ? resumeComboSession() : pauseComboSession())}
             style={{ marginLeft: 'auto' }}
           >
-            {session.paused ? '▶ 재개' : '⏸ 일시정지'}
+            {session.paused ? <><Icon name="play" /> 재개</> : <><Icon name="pause" /> 일시정지</>}
           </button>
         </div>
 
@@ -173,7 +174,7 @@ export default function ComboTraining() {
             <p>진행 상황은 그대로 저장되어 있습니다. 준비되면 재개하세요.</p>
             <div className="modal-actions" style={{ justifyContent: 'center' }}>
               <button className="btn btn-primary" onClick={resumeComboSession}>
-                ▶ 재개
+                <Icon name="play" /> 재개
               </button>
             </div>
           </div>
@@ -211,7 +212,7 @@ export default function ComboTraining() {
               <div className="chip-row" style={{ marginBottom: 10, flexWrap: 'wrap' }}>
                 {session.techniqueIds.map((id, i) => (
                   <span key={`${id}-${i}`} className={`chip${i === session.currentTechniqueIndex ? ' active' : ''}`}>
-                    {i < session.currentTechniqueIndex ? '☑ ' : i === session.currentTechniqueIndex ? '▶ ' : '☐ '}
+                    <Icon name={i < session.currentTechniqueIndex ? 'check-square' : i === session.currentTechniqueIndex ? 'play' : 'square'} />{' '}
                     {resolveTechniquesByIds([id])[0]?.name ?? id}
                   </span>
                 ))}

@@ -1,11 +1,17 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import Icon from '../components/Icon';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../lib/auth/AuthProvider';
 import { getPost, likePost, listFeed, savePost, unlikePost, unsavePost } from '../lib/communityPost/service';
 import type { CommunityPost, PostTag } from '../lib/communityPost/types';
 import CommentsSheet, { timeAgo } from '../components/community/CommentsSheet';
 import LearnSheet from '../components/shorts/LearnSheet';
+import Avatar from '../components/Avatar';
 import { TAG_KIND_LABEL } from '../lib/shorts/learn';
+import { EvaluationPreview, EvaluationSheet, usePostEvaluation } from '../components/techniqueEvaluation/EvaluationPreview';
+import EvaluationAction from '../components/techniqueEvaluation/EvaluationAction';
+import ShareButton from '../components/social/ShareButton';
+import { postShareTitle } from '../lib/social/shareTitle';
 
 /** The post's first video (a post can mix photos and videos). */
 const videoOf = (p: CommunityPost) => p.media.find((m) => m.type === 'video') ?? null;
@@ -44,6 +50,8 @@ function ShortSlide({
   const [burst, setBurst] = useState(0);
   const [expanded, setExpanded] = useState(false);
   const video = videoOf(post);
+  const evaluation = usePostEvaluation(post.id);
+  const [evalOpen, setEvalOpen] = useState(false);
 
   useEffect(() => {
     const v = ref.current;
@@ -79,36 +87,38 @@ function ShortSlide({
         ) : (
           <div className="short__placeholder" aria-hidden="true" />
         )}
-        {paused && active && <span className="short__paused" aria-label="일시정지됨">▶</span>}
+        {paused && active && <span className="short__paused"><Icon name="play" label="일시정지됨" /></span>}
         {burst > 0 && (
           <span key={burst} className="short__burst" aria-hidden="true">
-            ♥
+            <Icon name="heart-filled" />
           </span>
         )}
       </div>
 
       <div className="short__rail">
-        <span className="short__avatar" aria-hidden="true">{(post.authorNickname.trim()[0] ?? '?').toUpperCase()}</span>
-        <button type="button" className={`short__act${post.viewerHasLiked ? ' is-on' : ''}`} onClick={() => onLike(post)} aria-pressed={post.viewerHasLiked} data-testid="short-like">
-          <span aria-hidden="true">{post.viewerHasLiked ? '♥' : '♡'}</span>
+        <Link to={`/u/${post.authorId}`}><Avatar className="short__avatar" seed={post.authorId} nickname={post.authorNickname} /></Link>
+        <button type="button" className={`short__act${post.viewerHasLiked ? ' is-on' : ''}`} onClick={() => onLike(post)} aria-pressed={post.viewerHasLiked} data-testid="short-like" aria-label={`좋아요 ${post.likeCount.toLocaleString()}`}>
+          <Icon name={post.viewerHasLiked ? 'heart-filled' : 'heart'} />
           <small>{post.likeCount.toLocaleString()}</small>
         </button>
-        <button type="button" className="short__act" onClick={() => onComments(post)} data-testid="short-comments">
-          <span aria-hidden="true">💬</span>
+        <button type="button" className="short__act" onClick={() => onComments(post)} data-testid="short-comments" aria-label={`댓글 ${post.commentCount.toLocaleString()}`}>
+          <Icon name="comment" />
           <small>{post.commentCount.toLocaleString()}</small>
         </button>
         <button type="button" className={`short__act${post.viewerHasSaved ? ' is-on' : ''}`} onClick={() => onSave(post)} aria-pressed={post.viewerHasSaved} data-testid="short-save" disabled={!userId}>
-          <span aria-hidden="true">{post.viewerHasSaved ? '🔖' : '📑'}</span>
+          <Icon name={post.viewerHasSaved ? 'bookmark-filled' : 'bookmark'} />
           <small>저장</small>
         </button>
         {post.tags.length > 0 && (
           <button type="button" className="short__act short__act--learn" onClick={() => onLearn(post)} data-testid="short-learn">
-            <span aria-hidden="true">🎓</span>
+            <Icon name="grad" />
             <small>배우기</small>
           </button>
         )}
+        <EvaluationAction postId={post.id} authorId={post.authorId} currentUserId={userId} hasVideo tags={post.tags} evaluation={evaluation} variant="rail" />
+        <ShareButton variant="rail" attachment={() => ({ kind: 'post', id: post.id, title: postShareTitle(post, '숏폼') })} />
         <button type="button" className="short__act" onClick={onMute} aria-label={muted ? '소리 켜기' : '소리 끄기'} data-testid="short-mute">
-          <span aria-hidden="true">{muted ? '🔇' : '🔊'}</span>
+          <Icon name={muted ? 'sound-off' : 'sound'} />
         </button>
       </div>
 
@@ -125,7 +135,7 @@ function ShortSlide({
           <div className="short__tags" data-testid="short-tags">
             {post.tags.map((t) => (
               <button key={`${t.type}:${t.id}`} type="button" className="short__tag" onClick={() => onLearn(post, t)} data-testid="short-tag">
-                {t.type === 'technique' ? '🥋' : t.kind === 'setup' ? '🧩' : '🔗'} {t.name}
+                <Icon name={t.type === 'technique' ? 'gi' : t.kind === 'setup' ? 'puzzle' : 'link'} /> {t.name}
                 <small> {TAG_KIND_LABEL(t)}</small>
               </button>
             ))}
@@ -133,10 +143,12 @@ function ShortSlide({
         )}
         {post.tags.length > 0 && (
           <button type="button" className="short__learn-cta" onClick={() => onLearn(post)} data-testid="short-learn-cta">
-            🎓 영상에 나온 내용 배우기
+            <Icon name="grad" /> 영상에 나온 내용 배우기
           </button>
         )}
+        {evaluation && near && <EvaluationPreview evaluation={evaluation} onOpen={() => setEvalOpen(true)} dark />}
       </div>
+      {evalOpen && evaluation && <EvaluationSheet evaluation={evaluation} onClose={() => setEvalOpen(false)} />}
     </section>
   );
 }
@@ -240,7 +252,7 @@ export default function Shorts() {
     <div className="shorts" data-testid="shorts">
       <div className="shorts__top">
         <button type="button" className="shorts__back" onClick={() => (window.history.length > 1 ? navigate(-1) : navigate('/community'))} aria-label="뒤로">
-          ←
+          <Icon name="back" />
         </button>
         <strong>숏폼</strong>
         <Link to="/community" className="shorts__link">

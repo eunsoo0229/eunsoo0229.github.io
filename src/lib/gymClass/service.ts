@@ -94,11 +94,24 @@ export async function createGym(name: string, ownerUserId: string, ownerNickname
   }
 }
 
-/** Student joins a gym by its 6-character code. Idempotent — re-joining an already-joined gym just succeeds. */
-export async function joinGymByCode(code: string, userId: string, nickname: string): Promise<AuthResult<Gym>> {
+/**
+ * Student joins a gym by its 6-character code. Idempotent. Uses the 0055 RPC (which also handles
+ * 승인제 체육관 → 가입 신청), and falls back to the original direct insert on a server that has not
+ * run 0055 yet. `pending: true` = a join request was left for the gym to approve.
+ */
+export async function joinGymByCode(code: string, userId: string, nickname: string): Promise<AuthResult<Gym & { pending?: boolean }>> {
   if (!supabase) return { ok: false, message: NOT_CONFIGURED };
   try {
-    // A prospective student isn't a member yet, so gyms' normal RLS
+    const { data: rpcRows, error: rpcError } = await supabase.rpc('join_gym_with_code', { p_code: normalizeJoinCode(code), p_nickname: nickname, p_message: '' });
+    if (!rpcError) {
+      const row = rpcRows?.[0];
+      if (!row) return { ok: false, message: '체육관 코드를 찾을 수 없습니다.' };
+      return { ok: true, data: { id: row.gym_id, name: row.gym_name, ownerUserId: '', joinCode: normalizeJoinCode(code), createdAt: '', pending: row.outcome === 'requested' } };
+    }
+    if (/gym not found/.test(rpcError.message)) return { ok: false, message: '체육관 코드를 찾을 수 없습니다.' };
+    if (!/function|PGRST202|schema cache/i.test(`${rpcError.code ?? ''} ${rpcError.message}`)) return { ok: false, message: toKoreanAuthMessage(rpcError) };
+
+    // Older server (no 0055): a prospective student isn't a member yet, so gyms' normal RLS
     // (member-only select) would hide the row — find_gym_by_join_code()
     // (migration 0024) is a SECURITY DEFINER lookup that still requires
     // knowing the exact code, preserving the invite-code security model.

@@ -1,0 +1,522 @@
+/* =====================================================================
+   MARTIALDEX "Forge" design layer — premium combat-sports system.
+   Loaded AFTER global.css (main.tsx) and wins by order, so the 4.6k-line base sheet keeps
+   its layout rules while colour, surface, type and component finish come from here.
+   Palette: charcoal black ground, metallic silver, restrained red (CTA / active / key metric).
+   Geometry: small radii, 45° chamfers on hero surfaces and primary actions (the M-mark's cut).
+   ===================================================================== */
+
+/* ---------- tokens: steel light (base / system-light) ---------- */
+:root {
+  --bg: #eceef1;
+  --bg-2: #e3e6ea;
+  --bg-elevated: #f8f9fa;
+  --bg-subtle: #e3e6ea;
+  --bg-hover: #d9dde2;
+  --surface-raised: #ffffff;
+  --border: #cdd2d8;
+  --border-strong: #aeb3ba;
+  --text: #121417;
+  --text-muted: #565c65;
+  --text-faint: #646a72;
+  --accent: #c33a32;
+  --accent-strong: #a92e2a;
+  --accent-deep: #8a2420;
+  --accent-contrast: #ffffff;
+  --accent-soft: rgba(195, 58, 50, 0.1);
+  --silver: #5c6168;
+  --silver-soft: rgba(92, 97, 104, 0.1);
+  --metal-surface: linear-gradient(180deg, #ffffff 0%, #e9ecef 100%);
+  --metal-edge: #c5cbd2;
+  --metal-sheen: rgba(255, 255, 255, 0.7);
+  --metal-brushed: repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.012) 0 1px, transparent 1px 3px);
+  --red-glow: radial-gradient(60% 70% at 0% 0%, rgba(195, 58, 50, 0.07), transparent 70%);
+  --cage-mesh: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M0 12L12 0L24 12L12 24Z' fill='none' stroke='%23000000' stroke-opacity='0.035'/%3E%3C/svg%3E");
+  --ring: 0 0 0 2px var(--bg-elevated), 0 0 0 4px rgba(195, 58, 50, 0.5);
+  --mdx-icon-accent: #c33a32;
+  --header-bg: rgba(248, 249, 250, 0.96);
+
+  --radius-sm: 4px;
+  --radius: 6px;
+  --radius-lg: 10px;
+  --chamfer: 9px;
+  --clip-chamfer: polygon(var(--chamfer) 0, 100% 0, 100% calc(100% - var(--chamfer)), calc(100% - var(--chamfer)) 100%, 0 100%, 0 var(--chamfer));
+  --clip-chamfer-sm: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+  --tracking-eyebrow: 0.16em;
+}
+
+/* ---------- tokens: charcoal dark (brand theme; default when nothing is stored) ---------- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --bg: #0b0c0e;
+    --bg-2: #111316;
+    --bg-elevated: #181a1e;
+    --bg-subtle: #111316;
+    --bg-hover: #202328;
+    --surface-raised: #202328;
+    --border: #30343a;
+    --border-strong: #454a52;
+    --text: #f0efec;
+    --text-muted: #969ba3;
+    --text-faint: #888d95;
+    --accent: #e34f46;
+    --accent-strong: #ec675f;
+    --accent-deep: #a92e2a;
+    --accent-contrast: #ffffff;
+    --accent-soft: rgba(227, 79, 70, 0.12);
+    --silver: #aeb3ba;
+    --silver-soft: rgba(174, 179, 186, 0.12);
+    --gold: #c9a24c;
+    --gold-soft: rgba(201, 162, 76, 0.14);
+    --beginner: #4fb57e;
+    --beginner-soft: rgba(79, 181, 126, 0.13);
+    --intermediate: #c9a24c;
+    --intermediate-soft: rgba(201, 162, 76, 0.14);
+    --advanced: #e34f46;
+    --advanced-soft: rgba(227, 79, 70, 0.13);
+    --shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035), 0 1px 2px rgba(0, 0, 0, 0.55), 0 8px 24px rgba(0, 0, 0, 0.42);
+    --shadow-lg: 0 18px 50px rgba(0, 0, 0, 0.65);
+    --metal-surface: linear-gradient(180deg, #25282e 0%, #181a1e 100%);
+    --metal-edge: #3a3f46;
+    --metal-sheen: rgba(255, 255, 255, 0.07);
+    --metal-brushed: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.016) 0 1px, transparent 1px 3px);
+    --red-glow: radial-gradient(55% 60% at 0% 0%, rgba(227, 79, 70, 0.13), transparent 70%);
+    --cage-mesh: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M0 12L12 0L24 12L12 24Z' fill='none' stroke='%23ffffff' stroke-opacity='0.03'/%3E%3C/svg%3E");
+    --scrim: linear-gradient(180deg, rgba(5, 6, 8, 0.78) 0%, rgba(5, 6, 8, 0.3) 45%, rgba(5, 6, 8, 0.88) 100%);
+    --scrim-solid: rgba(5, 6, 8, 0.62);
+    --ring: 0 0 0 2px #0b0c0e, 0 0 0 4px rgba(227, 79, 70, 0.55);
+    --mdx-icon-accent: #e34f46;
+    --header-bg: rgba(11, 12, 14, 0.94);
+  }
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0b0c0e;
+  --bg-2: #111316;
+  --bg-elevated: #181a1e;
+  --bg-subtle: #111316;
+  --bg-hover: #202328;
+  --surface-raised: #202328;
+  --border: #30343a;
+  --border-strong: #454a52;
+  --text: #f0efec;
+  --text-muted: #969ba3;
+  --text-faint: #888d95;
+  --accent: #e34f46;
+  --accent-strong: #ec675f;
+  --accent-deep: #a92e2a;
+  --accent-contrast: #ffffff;
+  --accent-soft: rgba(227, 79, 70, 0.12);
+  --silver: #aeb3ba;
+  --silver-soft: rgba(174, 179, 186, 0.12);
+  --gold: #c9a24c;
+  --gold-soft: rgba(201, 162, 76, 0.14);
+  --beginner: #4fb57e;
+  --beginner-soft: rgba(79, 181, 126, 0.13);
+  --intermediate: #c9a24c;
+  --intermediate-soft: rgba(201, 162, 76, 0.14);
+  --advanced: #e34f46;
+  --advanced-soft: rgba(227, 79, 70, 0.13);
+  --shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035), 0 1px 2px rgba(0, 0, 0, 0.55), 0 8px 24px rgba(0, 0, 0, 0.42);
+  --shadow-lg: 0 18px 50px rgba(0, 0, 0, 0.65);
+  --metal-surface: linear-gradient(180deg, #25282e 0%, #181a1e 100%);
+  --metal-edge: #3a3f46;
+  --metal-sheen: rgba(255, 255, 255, 0.07);
+  --metal-brushed: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.016) 0 1px, transparent 1px 3px);
+  --red-glow: radial-gradient(55% 60% at 0% 0%, rgba(227, 79, 70, 0.13), transparent 70%);
+  --cage-mesh: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M0 12L12 0L24 12L12 24Z' fill='none' stroke='%23ffffff' stroke-opacity='0.03'/%3E%3C/svg%3E");
+  --scrim: linear-gradient(180deg, rgba(5, 6, 8, 0.78) 0%, rgba(5, 6, 8, 0.3) 45%, rgba(5, 6, 8, 0.88) 100%);
+  --scrim-solid: rgba(5, 6, 8, 0.62);
+  --ring: 0 0 0 2px #0b0c0e, 0 0 0 4px rgba(227, 79, 70, 0.55);
+  --mdx-icon-accent: #e34f46;
+  --header-bg: rgba(11, 12, 14, 0.94);
+}
+
+/* ---------- base ---------- */
+body {
+  background-color: var(--bg);
+  /* one restrained red light in the corner + a barely-there cage mesh; fixed so it doesn't scroll-paint */
+  background-image: var(--red-glow), var(--cage-mesh);
+  background-attachment: fixed, fixed;
+  letter-spacing: -0.005em;
+}
+h1,
+h2,
+h3 {
+  letter-spacing: -0.015em;
+}
+h1 {
+  font-weight: 800;
+}
+::selection {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+}
+* {
+  scrollbar-color: var(--border-strong) transparent;
+}
+
+/* eyebrow label (small caps over a title) */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.eyebrow::before {
+  content: '';
+  width: 18px;
+  height: 2px;
+  background: var(--accent);
+}
+
+/* ---------- icons ---------- */
+.ui-icon,
+.mdx-icon {
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+.mdx-icon .mdx-a {
+  stroke: var(--mdx-icon-accent, currentColor);
+}
+.mdx-icon .mdx-a[fill='currentColor'] {
+  fill: var(--mdx-icon-accent, currentColor);
+}
+h2 .ui-icon,
+h3 .ui-icon,
+h4 .ui-icon {
+  color: var(--silver);
+}
+.feature-icon {
+  width: 30px;
+  height: 30px;
+  padding: 6px;
+  margin-right: 4px;
+  box-sizing: content-box;
+  color: var(--text);
+  background: var(--metal-surface);
+  border: 1px solid var(--metal-edge);
+  clip-path: var(--clip-chamfer-sm);
+  vertical-align: middle;
+}
+.art-icon {
+  color: var(--text);
+}
+
+/* ---------- header ---------- */
+.site-header {
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+}
+.site-header::after {
+  /* thin brushed-metal line under the bar */
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--metal-edge) 20%, var(--metal-edge) 80%, transparent);
+  pointer-events: none;
+}
+.nav-links a {
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.01em;
+}
+.nav-links a.active {
+  color: var(--text);
+}
+.icon-btn {
+  border-radius: var(--radius-sm);
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.01em;
+}
+.btn-primary {
+  background: linear-gradient(180deg, #c9403a 0%, var(--accent-deep) 140%); /* white text ≥ 4.9:1 (AA) */
+  color: var(--accent-contrast);
+  border-color: transparent;
+  clip-path: var(--clip-chamfer-sm);
+  border-radius: 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+.btn-primary:hover {
+  background: linear-gradient(180deg, #c43b35 0%, #8f2622 140%);
+}
+.btn-primary:active {
+  background: var(--accent-deep);
+}
+.btn-secondary {
+  background: var(--metal-surface);
+  border-color: var(--metal-edge);
+  color: var(--text);
+  box-shadow: inset 0 1px 0 var(--metal-sheen);
+}
+.btn-secondary:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-hover);
+}
+.btn-ghost:hover {
+  background: var(--bg-hover);
+}
+.btn:disabled,
+.btn[disabled] {
+  filter: grayscale(0.6);
+  opacity: 0.55;
+}
+
+/* ---------- cards & surfaces ---------- */
+.card {
+  background: var(--bg-elevated);
+  background-image: linear-gradient(180deg, var(--metal-sheen), transparent 38px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+a.card:hover,
+.card.clickable:hover,
+.art-card:hover,
+.marketplace-card:hover {
+  border-color: var(--border-strong);
+}
+.info-card h3 {
+  letter-spacing: -0.01em;
+}
+.technique-row {
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  position: relative;
+}
+.technique-row:hover {
+  background: var(--bg-hover);
+  border-color: var(--border);
+  transform: none;
+}
+.technique-row:hover::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: var(--accent);
+}
+.progress-track {
+  background: var(--bg-hover);
+  border-radius: 0;
+}
+.progress-fill {
+  background: linear-gradient(90deg, var(--accent-deep), var(--accent));
+  border-radius: 0;
+}
+
+/* ---------- chips ---------- */
+.chip {
+  border-radius: var(--radius-sm);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  letter-spacing: 0.01em;
+}
+.chip:hover {
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+.chip.active {
+  background: var(--accent-soft);
+  border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  color: var(--text);
+}
+.chip .ui-icon {
+  color: inherit;
+}
+
+/* ---------- section titles ---------- */
+.section-title h2 {
+  position: relative;
+  padding-left: 14px;
+  font-weight: 800;
+}
+.section-title h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  bottom: 0.2em;
+  width: 3px;
+  background: var(--accent);
+  clip-path: polygon(0 0, 100% 3px, 100% 100%, 0 calc(100% - 3px));
+}
+.see-all {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.see-all:hover {
+  color: var(--accent);
+}
+
+/* ---------- inputs ---------- */
+input[type='text'],
+input[type='search'],
+input[type='email'],
+input[type='password'],
+input[type='number'],
+input[type='url'],
+select,
+textarea,
+.search-box input {
+  background-color: var(--bg-2);
+  border-color: var(--border);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: color-mix(in srgb, var(--accent) 60%, var(--border));
+}
+
+/* ---------- empty / error states ---------- */
+.empty-state {
+  padding: 44px 20px 48px;
+}
+.empty-state__art {
+  width: min(176px, 56vw);
+  margin: 0 auto 14px;
+  color: var(--silver);
+}
+.empty-state__art svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.empty-state__art .mdx-a {
+  stroke: var(--mdx-icon-accent);
+}
+.empty-state__art .mdx-a[fill='currentColor'],
+.empty-state__art [fill='currentColor'].mdx-a {
+  fill: var(--mdx-icon-accent);
+}
+.empty-state p {
+  max-width: 34em;
+  margin-inline: auto;
+}
+
+/* ---------- achievements / rank ---------- */
+.achievement-row {
+  justify-content: flex-start;
+}
+.achievement-badge {
+  flex: 0 0 auto;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
+}
+.achievement-badge--locked {
+  filter: grayscale(1) brightness(0.75);
+  opacity: 0.7;
+}
+.achievement-row--locked .technique-row__name {
+  color: var(--text-muted);
+}
+.rank-chip {
+  gap: 6px;
+  padding-left: 6px;
+}
+.rank-emblem {
+  display: block;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+}
+
+/* ---------- modal / sheet ---------- */
+.modal-panel {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+.modal-overlay {
+  background: rgba(5, 6, 8, 0.72);
+}
+
+/* ---------- avatars ---------- */
+.avatar {
+  box-shadow: 0 0 0 1px var(--metal-edge), 0 0 0 3px var(--bg-elevated);
+}
+
+/* ---------- brand imagery (Forge renders in assets/forge) ---------- */
+.hero {
+  padding: 76px 20px 52px;
+  border-color: var(--metal-edge);
+  border-radius: 0;
+  clip-path: polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
+  background-color: #08090b;
+  margin-bottom: 28px;
+}
+.hero::before {
+  background: url('../assets/forge/home-hero.webp') center / cover no-repeat;
+  opacity: 1;
+}
+.hero::after {
+  /* calm centre for the wordmark + search; the cage stays visible at the edges */
+  background: radial-gradient(70% 85% at 50% 48%, rgba(8, 9, 11, 0.82), rgba(8, 9, 11, 0.35) 70%, rgba(8, 9, 11, 0.1));
+}
+.hero__logo {
+  filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.7));
+}
+.profile-banner {
+  background-image: url('../assets/forge/profile-banner.webp');
+}
+.profile-banner--clan {
+  background-image: url('../assets/forge/clan-banner.webp');
+  position: relative;
+}
+.clan-crest {
+  position: absolute;
+  right: 18px;
+  bottom: 14px;
+  width: 64px;
+  height: 64px;
+  background: url('../assets/forge/clan-emblem.png') center / contain no-repeat;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6));
+}
+.profile-banner--gym {
+  background-image: url('../assets/forge/gym-banner.webp');
+}
+.cover-art,
+.cover-thumb {
+  background-image: url('../assets/forge/curriculum-cover.webp');
+}
+.gym-logo {
+  background: url('../assets/forge/gym-logo.png') center / 88% no-repeat;
+  -webkit-mask: none;
+  mask: none;
+  border-radius: 0;
+}
+
+/* Martial-art cards: the art's Forge mark on a metal chamfer tile instead of a hangul initial. */
+.art-card__initial--mark {
+  width: 48px;
+  height: 48px;
+  color: var(--text);
+  background: var(--metal-surface);
+  border: 1px solid var(--metal-edge);
+  border-radius: 0;
+  clip-path: var(--clip-chamfer-sm);
+}
+.art-card:hover .art-card__initial--mark {
+  --mdx-icon-accent: var(--accent);
+  border-color: var(--border-strong);
+}

@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getMartialArt, getTechnique, martialArtSummaries } from '../lib/loadData';
@@ -87,7 +88,7 @@ export default function SituationRecommend() {
         </div>
 
         <div className="section-title">
-          <h2>🎯 상황별 기술 추천</h2>
+          <h2><Icon name="target" /> 상황별 기술 추천</h2>
         </div>
         <p className="video-status-message" style={{ marginTop: -8 }}>
           스파링/훈련 중 마주친 상황을 설명하면, 실제 Martialdex 기술 데이터에서 관련 기술을
@@ -173,7 +174,7 @@ export default function SituationRecommend() {
                       )}
                       {isPoseAnalysisSupported(r.techniqueId) && (
                         <button className="btn btn-secondary btn-sm" onClick={() => setPoseTechniqueId(r.techniqueId)}>
-                          📷 자세 분석
+                          <Icon name="camera" /> 자세 분석
                         </button>
                       )}
                       <button className="btn btn-secondary btn-sm" onClick={() => handleAddToToday(r.techniqueId)}>

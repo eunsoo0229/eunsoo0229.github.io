@@ -25,7 +25,13 @@ const inflight = new Map();
 
 function preferredModel() {
   const m = (process.env.OLLAMA_MODEL || '').trim();
-  return MODEL_NAME.test(m) ? m : DEFAULT_MODEL;
+  if (MODEL_NAME.test(m)) return m;
+  // same model as every other local AI feature (설정 > 로컬 AI 엔진); DEFAULT_MODEL only if that module is unavailable
+  try {
+    return require('./localEngine.cjs').selectedModel();
+  } catch {
+    return DEFAULT_MODEL;
+  }
 }
 
 /** fetch + JSON with a timeout; `outer` (optional AbortSignal) cancels it. Throws Error named 'TimeoutError' / 'CancelError' / network error. */

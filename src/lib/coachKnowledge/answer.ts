@@ -3,7 +3,7 @@ import { getUnifiedAllTechniques } from '../userTechniques/service';
 import { askLocalModel } from '../coachProvider/localModel';
 import { evidenceAnswerText, judgeAnswerability, needsOf, type Answerability } from './answerability';
 import type { TechniqueEvidence } from './evidence';
-import { evidenceFor } from './lookup';
+import { evidenceFor, namesOf } from './lookup';
 import { guardModelText, localPrompt, LOCAL_SYSTEM_PROMPT } from './modelGuard';
 
 // 자체 AI 코치의 질문 답변:
@@ -70,9 +70,13 @@ function knownNames(): Set<string> {
   return names;
 }
 
-export async function answerFromEvidence(t: Technique, question: string, opts: { useModel: boolean }): Promise<GroundedAnswer> {
+export async function answerFromEvidence(t: Technique, question: string, opts: { useModel: boolean; ignore?: string[] }): Promise<GroundedAnswer> {
   const evidence = evidenceFor(t);
-  const answerability = judgeAnswerability(evidence, needsOf(question));
+  // the technique's own names are not "something else asked" (needsOf → unclear)
+  // the technique's own name is not part of what is asked ("잡은 다리를 밀어 넘어뜨리기 어케 함" does not ask about the legs)
+  const names = [...namesOf(t), ...(opts.ignore ?? [])].filter((n) => n.trim().length >= 2).sort((a, b) => b.length - a.length);
+  const asked = names.reduce((q, n) => q.split(n).join(' '), question);
+  const answerability = judgeAnswerability(evidence, needsOf(asked, { ignore: names }));
   const base = evidenceAnswerText(evidence, answerability);
   if (answerability.status === 'unanswerable' || !opts.useModel) {
     return { text: base, answerability, source: 'evidence', modelCalled: false, modelNote: null, evidence };

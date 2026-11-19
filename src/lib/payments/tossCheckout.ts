@@ -37,10 +37,28 @@ export async function loadTossWidgets(customerKey: string) {
   return tossPayments.widgets({ customerKey });
 }
 
+/**
+ * The app runs on a HashRouter, so the return route must live in the hash (`…/#/marketplace/payment/result`).
+ * The old value (`<origin>/marketplace/payment/result`) put the route in the path, which the HashRouter
+ * never matches — after paying, Toss sent the user back to the home screen instead of the confirm page.
+ */
+export function hashRouteUrl(route: string, params: Record<string, string>): string {
+  const q = new URLSearchParams(params).toString();
+  return `${window.location.origin}${window.location.pathname}#${route}${q ? `?${q}` : ''}`;
+}
+
 export function buildTossResultUrl(curriculumId: string): string {
-  const resultUrl = new URL('/marketplace/payment/result', window.location.origin);
-  resultUrl.searchParams.set('curriculumId', curriculumId);
-  return resultUrl.toString();
+  return hashRouteUrl('/marketplace/payment/result', { curriculumId });
+}
+
+/**
+ * Toss appends paymentKey/orderId/amount (or code/message) to successUrl/failUrl. Depending on how it joins
+ * them with a hash URL they land either in the hash query or in `location.search` — read both.
+ */
+export function tossReturnParams(hashParams: URLSearchParams): URLSearchParams {
+  const merged = new URLSearchParams(window.location.search);
+  hashParams.forEach((v, k) => merged.set(k, v));
+  return merged;
 }
 
 /** requestPayment() itself rejected before any redirect happened (e.g. the user closed the widget's checkout overlay, or a validation error) — mark the order failed server-side so it never lingers as 'pending'. */

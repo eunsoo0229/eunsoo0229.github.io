@@ -17,21 +17,23 @@ import { getPostureInfo } from '../posture/postureConfig';
 // These names only feed the coach's lookup; technique ids and records are unchanged.
 
 const INITIAL = ['K', 'K', 'N', 'T', 'T', 'L', 'M', 'P', 'P', 'S', 'S', '', 'S', 'S', 'S', 'K', 'T', 'P', 'H'];
-const FINAL = ['', 'K', 'K', 'K', 'N', 'N', 'N', 'T', 'L', 'K', 'M', 'L', 'L', 'L', 'P', 'L', 'M', 'P', 'P', 'S', 'S', 'N', 'S', 'S', 'K', 'T', 'P', 'H'];
+// final ㅅ/ㅆ (19, 20) = the "t" sound in loanwords (아웃 = out, 브릿지 = bridge)
+const FINAL = ['', 'K', 'K', 'K', 'N', 'N', 'N', 'T', 'L', 'K', 'M', 'L', 'L', 'L', 'P', 'L', 'M', 'P', 'P', 'T', 'T', 'N', 'S', 'S', 'K', 'T', 'P', 'H'];
 
 /** Consonant skeleton of a Hangul name (initial + final consonant classes, ㅎ dropped). */
-export function hangulSkeleton(s: string): string {
+export function hangulSkeleton(s: string, collapse = true): string {
   let out = '';
   for (const ch of s) {
     const c = ch.charCodeAt(0) - 0xac00;
     if (c < 0 || c > 11171) continue;
     out += INITIAL[Math.floor(c / 588)] + FINAL[c % 28];
   }
-  return out.replace(/H/g, '').replace(/(.)\1+/g, '$1');
+  out = out.replace(/H/g, '');
+  return collapse ? out.replace(/(.)\1+/g, '$1') : out;
 }
 
 /** Consonant skeleton of a romanized name, in the same classes (b/p/f/v → P, l/r → L, …). */
-export function latinSkeleton(s: string): string {
+export function latinSkeleton(s: string, collapse = true): string {
   const t = s
     .toLowerCase()
     .replace(/[^a-z]/g, '')
@@ -40,12 +42,13 @@ export function latinSkeleton(s: string): string {
     .replace(/ck|qu?/g, 'k')
     .replace(/x/g, 'ks')
     .replace(/th/g, 't')
-    .replace(/ng/g, 'n');
+    .replace(/dg(?=[eiy])/g, 'ts') // bridge → 브릿지
+    .replace(/ng(?![aeiouylr])/g, 'n'); // final "ng" = ㅇ; "angle" keeps its g (앵글)
   let out = '';
   for (const ch of t) {
     out += /[bpfv]/.test(ch) ? 'P' : /[kgc]/.test(ch) ? 'K' : /[dt]/.test(ch) ? 'T' : /[szj]/.test(ch) ? 'S' : /[lr]/.test(ch) ? 'L' : ch === 'm' ? 'M' : ch === 'n' ? 'N' : '';
   }
-  return out.replace(/(.)\1+/g, '$1');
+  return collapse ? out.replace(/(.)\1+/g, '$1') : out;
 }
 
 function lcs(a: string, b: string): number {
@@ -81,6 +84,9 @@ export function overviewSubject(overview: string | null | undefined): string | n
   return subject.join(' ');
 }
 
+/** One-syllable everyday words a sentence uses all the time — never a technique name from data ("무슨 뜻이야?" ≠ Tud). */
+const COMMON_WORDS = new Set(['뜻', '풀', '덕', '줄', '말', '일', '수', '때', '곳', '것', '거', '등', '팔', '손', '발', '목', '몸', '배', '힘', '탭', '킥', '런', '팁']);
+
 /**
  * Korean names the data gives this technique (rule 2 above): the overview
  * subject of the technique and of every record merged into it (mergedIds),
@@ -92,7 +98,7 @@ export function dataKoreanNames(t: Technique): string[] {
   const out: string[] = [];
   for (const id of t.mergedIds ?? [t.id]) {
     const subject = overviewSubject(getPostureInfo(id)?.overview);
-    if (subject && latin.some((n) => soundsLike(subject, n))) out.push(subject);
+    if (subject && !COMMON_WORDS.has(subject) && latin.some((n) => soundsLike(subject, n))) out.push(subject);
   }
   return [...new Set(out)];
 }

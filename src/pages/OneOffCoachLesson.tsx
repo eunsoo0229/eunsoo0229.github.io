@@ -1,4 +1,6 @@
+import Icon, { Glyph } from '../components/Icon';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import ProfileLessonNotes from '../components/fighterProfile/ProfileLessonNotes';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import BackButton from '../components/BackButton';
 import AutoGrowTextarea from '../components/AutoGrowTextarea';
@@ -12,14 +14,23 @@ import { recordTrainingSession } from '../lib/trainingHistory/service';
 import { actionsToMessages } from '../lib/coachLesson/service';
 import { saveLearningRecord } from '../lib/coachLesson/records';
 import { questionAnswerPairs, saveLessonLog, techniqueSummary } from '../lib/coachLesson/lessonLog';
+import LessonAssessmentCard from '../components/coach/LessonAssessmentCard';
 import { toLearningRecord } from '../lib/coachLesson/engine';
-import { isReadyIntent } from '../lib/coachLesson/intent';
+import { isPracticeDoneIntent, isReadyIntent, isRepeatedPracticeDone } from '../lib/coachLesson/intent';
+import PoseSuggestCard from '../components/coach/PoseSuggestCard';
+import LessonMotionPreview from '../components/motion3d/LessonMotionPreview';
 import { buildLocalOneOffLesson, buildOneOffLesson, oneOffEvent, respondOneOff, startOneOffLesson, type OneOffMode } from '../lib/coachLesson/oneOff';
 import CoachPicker from '../components/coach/CoachPicker';
 import LocalModelWaitNotice from '../components/coach/LocalModelWaitNotice';
+import CoachActionCard from '../components/coach/CoachActionCard';
+import { planCoachAction, type CoachAction } from '../lib/coachKnowledge/featureCatalog';
+import { answerCoachQuestion, dialogAfterAction, isTechniqueQuestion, loadDialog, saveDialog, type CoachDialogContext, type CoachQuestionAnswer } from '../lib/coachKnowledge/questions';
+import { lastListedTechniqueIds, rememberLessonAction } from '../lib/coachProvider/backend';
+import { localModelEnabled } from '../lib/coachProvider/localModel';
 import { coachBackend } from '../lib/coachProvider/backend';
 import { rememberedCoach } from '../lib/coachProvider/preference';
 import { COACH_LABEL, coachKindOf, type CoachKind } from '../lib/coachProvider/types';
+import { findSelfTechniqueVideos } from '../lib/techniqueVideo/selfTechniqueVideos';
 import { getTechniqueVideos } from '../lib/techniqueVideo/service';
 import { loadActiveOneOffSession, saveOneOffSession, type OneOffSession, type PlanDraft } from '../lib/coachLesson/oneOffSession';
 import { describePlan, draftFromSpec, getWorkoutSettings, hasWorkoutSpec, parseWorkoutSpec, planErrors, saveWorkoutSettings, type WorkoutSettings, type WorkoutSpec } from '../lib/coachLesson/workoutPlan';
@@ -88,6 +99,19 @@ export default function OneOffCoachLesson() {
   const [pickFor, setPickFor] = useState<string | null>(null);
   const [offerGemini, setOfferGemini] = useState<string | null>(null);
   /** 자체 AI 코치: techniques the request may mean — the student picks one (never chosen automatically). */
+  /** 자체 AI 코치: a feature request that needs a choice / can't run (entry box), or one to confirm during the lesson. */
+  const [coachAction, setCoachAction] = useState<CoachAction | null>(null);
+  /** 자체 AI 코치: a technique question asked in the entry box, answered in place from the data. */
+  const [entryAnswer, setEntryAnswer] = useState<CoachQuestionAnswer | null>(null);
+  /** The entry box's conversation ("잽 어떻게 해?" → "발은?") — only decides which technique a follow-up means. */
+  // kept for this app session: opening the mitt and coming back keeps "왜?" / "끝났어" / "다음 뭐 하지?" in context
+  const [entryDialog, setEntryDialogState] = useState<CoachDialogContext>(() => loadDialog());
+  const setEntryDialog = (d: CoachDialogContext) => {
+    saveDialog(d);
+    setEntryDialogState(d);
+  };
+  /** The entry box's recent turns (this screen only). */
+  const [entryLog, setEntryLog] = useState<{ who: 'user' | 'coach'; text: string }[]>([]);
   const [choices, setChoices] = useState<{ text: string; candidates: { techniqueId: string; name: string; martialArt: string }[] } | null>(null);
   const [switchTo, setSwitchTo] = useState<'pick' | CoachKind | null>(null);
   const bottom = useRef<HTMLDivElement>(null);
@@ -138,6 +162,27 @@ export default function OneOffCoachLesson() {
     setPickFor(null);
     setOfferGemini(null);
     setChoices(null);
+    setCoachAction(null);
+    setEntryAnswer(null);
+    // 자체 AI 코치: a training-feature request opens that feature; a technique question is answered here (no lesson built).
+    if (coachKind === 'martialdex' && !techniqueId) {
+      const listed = entryDialog.listedIds.map((id) => resolveTechnique(id)).filter((t): t is NonNullable<typeof t> => !!t);
+      const action = planCoachAction(text, { inLesson: false, current: entryDialog.focusId ? resolveTechnique(entryDialog.focusId) ?? null : null, listed });
+      if (action) {
+        if (action.ok) {
+          setEntryDialog(dialogAfterAction(entryDialog, action));
+          navigate(action.route);
+        } else setCoachAction(action);
+        return;
+      }
+      if (isTechniqueQuestion(text)) {
+        const a = await answerCoachQuestion(null, text, { useModel: localModelEnabled(), martialArt: art || null, context: entryDialog });
+        setEntryAnswer(a);
+        setEntryLog((log) => [...log, { who: 'user' as const, text }, { who: 'coach' as const, text: a.text }].slice(-6));
+        if (a.context) setEntryDialog(a.context);
+        return;
+      }
+    }
     setBuilding(true);
     setError(null);
     // 자체 AI 코치: technique data only (no web search, no Gemini); Gemini 코치: the existing builder.
@@ -291,10 +336,19 @@ export default function OneOffCoachLesson() {
     update((s) => ({ ...s, mitt: { phase: 'running', startedAt: Date.now(), result: null } }));
   }
 
-  function finishMitt(r: MittRunResult) {
+  /** `declared`: the student SAID the practice is over ("다 했어") — the same end as the runner's stop, with no rep count invented. */
+  function finishMitt(r: MittRunResult, opts: { declared?: boolean } = {}) {
     const seconds = Math.max(1, Math.round((Date.now() - (session?.mitt?.startedAt ?? Date.now())) / 1000));
-    const line = r.finished ? `Visualizing Mitt로 ${practice?.mitt?.name ?? ''} ${r.completedReps}회 모두 쳤습니다.` : `Visualizing Mitt는 ${r.completedReps}회까지 쳤습니다.`;
-    update((s) => ({ ...s, mitt: { phase: 'done', startedAt: s.mitt?.startedAt ?? null, result: { ...r, seconds } }, messages: [...s.messages, msg('coach', line, 'system')] }));
+    // a spoken "다 했어" ends the WHOLE practice: the timer part after the mitt is not started
+    const skipped = !!practice?.after && !!opts.declared;
+    const line = opts.declared ? `실습을 마쳤다고 하셔서 Visualizing Mitt(${practice?.mitt?.name ?? ''})를 종료했습니다.${skipped ? ' 이어서 할 예정이던 마무리 반복(타이머)은 시작하지 않았습니다.' : ''} (앱이 센 타격 횟수는 기록하지 않았습니다)` : r.finished ? `Visualizing Mitt로 ${practice?.mitt?.name ?? ''} ${r.completedReps}회 모두 쳤습니다.` : `Visualizing Mitt는 ${r.completedReps}회까지 쳤습니다.`;
+    // a spoken "다 했어" has no counted reps: no result rather than an invented count
+    update((s) => ({ ...s, mitt: { phase: 'done', startedAt: s.mitt?.startedAt ?? null, result: opts.declared ? null : { ...r, seconds } }, messages: [...s.messages, msg('coach', line, 'system')] }));
+    if (skipped) {
+      // the part not started is not recorded as completed
+      finishPractice(null, false);
+      return;
+    }
     if (practice?.after) {
       // takedown → submission: the finish is repeated on the lesson timer
       if (practice.timerText) addMessages([msg('coach', practice.timerText, 'system')]);
@@ -313,6 +367,34 @@ export default function OneOffCoachLesson() {
     if (s.mitt?.phase === 'posture' && isReadyIntent(text)) {
       addMessages([msg('user', text)]);
       startMitt();
+      return;
+    }
+    // "다 했어 / 실습 완료했어" while the lesson waits for its practice → the practice's own end (any coach):
+    // the mitt runner's stop (finishMitt), the timer's stop (stopTimer), or the manual "완료" (finishPractice) —
+    // each settles PRACTICE_DONE once (finishPractice applies it only while the lesson waits for practice).
+    if (s.directive === 'ready' && !s.state.practiceDone && isPracticeDoneIntent(text)) {
+      if (s.mitt?.phase === 'running') {
+        addMessages([msg('user', text)]);
+        finishMitt({ completedReps: 0, targetReps: practice?.mitt?.repetitions ?? 0, finished: true }, { declared: true });
+        return;
+      }
+      if (s.run && s.run.phase !== 'done') {
+        addMessages([msg('user', text), msg('coach', '실습을 마쳤다고 하셔서 타이머를 종료했습니다. (실제로 진행한 시간만 기록합니다)', 'system')]);
+        stopTimer();
+        return;
+      }
+      // no mitt / timer running: the same as the practice panel's manual "완료" (only when that panel allows it)
+      if (!s.run && !(practice?.mitt && s.mitt?.phase !== 'done')) {
+        // mitt done, its follow-up timer never started → that part is not recorded as completed
+        const timerSkipped = !!practice?.after && s.mitt?.phase === 'done';
+        addMessages([msg('user', text), ...(timerSkipped ? [msg('coach', '실습을 마쳤다고 하셔서 이어서 할 예정이던 마무리 반복(타이머)은 시작하지 않고 실습을 마칩니다.', 'system')] : [])]);
+        finishPractice(null, !timerSkipped);
+        return;
+      }
+    }
+    // …said again once the practice is settled: already handled — the post-practice question still waits
+    if (isRepeatedPracticeDone(text, s.state)) {
+      addMessages([msg('user', text), msg('coach', `실습은 이미 마친 것으로 처리했습니다. 이어서 질문에 답해 주세요: ${s.state.pending!.text}`, 'system')]);
       return;
     }
     const timerVisible = s.directive === 'ready' || planOpen || (!!s.run && s.run.phase !== 'done');
@@ -343,6 +425,15 @@ export default function OneOffCoachLesson() {
         messages: [...x.messages, msg('coach', `이 수업은 코치 정보가 없던 이전 수업입니다. 기억된 선택에 따라 지금부터 ${COACH_LABEL[remembered]}가 이어서 진행합니다.`, 'system')],
       }));
     }
+    // 자체 AI 코치 during the lesson: "레슬링 솔로 드릴 하고 싶어" → the app's feature, asked before leaving the lesson.
+    if (kind === 'martialdex') {
+      const action = planCoachAction(text, { current: s.lesson.techniqueId ? resolveTechnique(s.lesson.techniqueId) ?? null : null, inLesson: true, listed: s.lesson.techniqueId ? lastListedTechniqueIds(s.lesson.techniqueId).map((id) => resolveTechnique(id)).filter((t): t is NonNullable<typeof t> => !!t) : [] });
+      if (action) {
+        addMessages([msg('user', text), msg('coach', action.message, 'answer')]);
+        setCoachAction(action);
+        return;
+      }
+    }
     setThinking(true);
     try {
       apply(await respondOneOff(s.lesson, s.state, text, s.messages, coachBackend(kind)), text);
@@ -359,10 +450,20 @@ export default function OneOffCoachLesson() {
     setVideoProgress(null);
     const technique = lesson.techniqueId ? resolveTechnique(lesson.techniqueId) ?? null : null;
     if (coachKindOf(s) === 'martialdex') {
-      // Found videos are checked by Gemini — the 자체 AI 코치 shows MARTIALDEX's registered videos only.
+      // 등록 영상이 먼저, 없으면 기술 이름으로 자체 검색한다. 자체 코치가 못 하는 것은 영상 "내용" 확인이지
+      // 영상 찾기가 아니다 — 찾은 영상은 내용 미확인으로 표시한다.
       const saved = technique ? getTechniqueVideos(technique) : [];
       const videos = saved.map((v) => ({ videoId: v.videoId, title: v.title, channel: v.channel, thumbnailUrl: `https://i.ytimg.com/vi/${v.videoId}/hqdefault.jpg`, url: `https://www.youtube.com/watch?v=${v.videoId}`, source: 'saved' as const }));
-      setSession((cur) => (cur && cur.lesson.id === lesson.id ? { ...cur, videos: { status: videos.length ? 'found' : 'none', videos, queries: [], checked: 0, message: videos.length ? null : 'MARTIALDEX에 등록된 영상이 없습니다. 자체 AI 코치는 Gemini로 영상 내용을 확인하는 검색을 하지 않습니다.' } } : cur));
+      if (videos.length || !technique) {
+        setSession((cur) => (cur && cur.lesson.id === lesson.id ? { ...cur, videos: { status: videos.length ? 'found' : 'none', videos, queries: [], checked: 0, message: videos.length ? null : 'MARTIALDEX에 등록된 영상이 없고, 이 수업은 기술 하나로 좁혀지지 않아 영상을 찾지 못했습니다.' } } : cur));
+        return;
+      }
+      setVideoProgress('기술 이름으로 영상을 찾는 중입니다…');
+      void findSelfTechniqueVideos(technique).then((r) => {
+        setVideoProgress(null);
+        const found = r.videos.map((v) => ({ videoId: v.video.videoId, title: v.video.title, channel: v.video.channel, thumbnailUrl: `https://i.ytimg.com/vi/${v.video.videoId}/hqdefault.jpg`, url: `https://www.youtube.com/watch?v=${v.video.videoId}`, source: 'self_search' as const }));
+        setSession((cur) => (cur && cur.lesson.id === lesson.id ? { ...cur, videos: { status: found.length ? 'found' : 'none', videos: found, queries: r.queries, checked: 0, message: found.length ? '기술 이름으로 찾은 영상입니다. 제목·채널만 확인했고 영상 내용은 보지 않았습니다.' : r.note } } : cur));
+      });
       return;
     }
     void findLessonVideos(
@@ -423,6 +524,7 @@ export default function OneOffCoachLesson() {
 
   const lesson = session?.lesson;
   const state = session?.state;
+  const lessonTechnique = session?.lesson.techniqueId ? resolveTechnique(session.lesson.techniqueId) ?? null : null;
   const technique = lesson?.techniqueId ? resolveTechnique(lesson.techniqueId) : undefined;
   const hints = useMemo(() => (lesson ? [lesson.title, ...(technique ? [technique.name, technique.koreanName ?? ''] : []), ...lesson.context.concepts.map((c) => c.label)].filter(Boolean).slice(0, 10) : []), [lesson?.id]);
   const directive = session?.directive;
@@ -450,14 +552,14 @@ export default function OneOffCoachLesson() {
           <span>오늘의 수업</span>
         </div>
         <div className="section-title">
-          <h2>✍️ 수업하고 싶은 거 입력하기</h2>
+          <h2><Icon name="note" /> 수업하고 싶은 거 입력하기</h2>
         </div>
 
         {!session && (
           <>
             {params.get('mode') === 'analysis' && (
               <div className="card info-card" data-testid="personal-coach-hint">
-                <strong>내 기록 분석·추천</strong> — 아래 입력창에 궁금한 점(예: "풋워크가 부족한 것 같아")을 적거나 비워 둔 채 <strong>📊 내 기록으로 분석·추천 받기</strong>를 눌러 주세요. 저장된 훈련 기록을 근거로 분석합니다.
+                <strong>내 기록 분석·추천</strong> — 아래 입력창에 궁금한 점(예: "풋워크가 부족한 것 같아")을 적거나 비워 둔 채 <strong><Icon name="chart" /> 내 기록으로 분석·추천 받기</strong>를 눌러 주세요. 저장된 훈련 기록을 근거로 분석합니다.
               </div>
             )}
             {params.get('from') === 'personal-coach' && (
@@ -499,12 +601,26 @@ export default function OneOffCoachLesson() {
                   {building ? '자료를 찾아 오늘 수업을 만드는 중…' : '오늘 수업 만들기'}
                 </button>
                 <button className="btn btn-secondary" data-testid="personal-coach-analyze" onClick={() => void analyze()} disabled={building || analyzing}>
-                  {analyzing ? '내 기록을 분석하는 중…' : '📊 내 기록으로 분석·추천 받기'}
+                  {analyzing ? '내 기록을 분석하는 중…' : <><Icon name="chart" /> 내 기록으로 분석·추천 받기</>}
                 </button>
               </div>
               {error && (
                 <div className="ai-error" role="alert" data-testid="oneoff-error">
                   {error}
+                </div>
+              )}
+              {!session && coachAction && <CoachActionCard action={coachAction} onOpen={(route) => navigate(route)} onChoose={(t) => { setRequest(t); void build(t, 'martialdex'); }} onDismiss={() => setCoachAction(null)} />}
+              {entryAnswer && (
+                <div className="card info-card" data-testid="oneoff-entry-answer" data-kind={entryAnswer.kind} style={{ margin: '8px 0' }}>
+                  {entryLog.length > 2 && (
+                    <div className="video-status-message" data-testid="oneoff-entry-log" style={{ margin: '0 0 6px' }}>
+                      {entryLog.slice(0, -2).map((m, i) => (
+                        <div key={i}>{m.who === 'user' ? '나' : '코치'}: {m.text.length > 90 ? `${m.text.slice(0, 90)}…` : m.text}</div>
+                      ))}
+                    </div>
+                  )}
+                  <p style={{ margin: 0 }}>{entryAnswer.text}</p>
+                  {entryAnswer.candidates?.length ? <p className="video-status-message" style={{ margin: '6px 0 0' }}>무술 이름을 붙여 다시 물어봐 주세요 (예: "복싱 페인트는 어떻게 해?").</p> : null}
                 </div>
               )}
               {choices && (
@@ -527,7 +643,7 @@ export default function OneOffCoachLesson() {
               {offerGemini && (
                 <div className="modal-actions modal-actions--start">
                   <button type="button" className="btn btn-secondary btn-sm" data-testid="oneoff-use-gemini" onClick={() => void build(offerGemini, 'gemini')} disabled={building}>
-                    ✨ 이 요청은 Gemini AI 코치로 만들기 (웹 검색 사용)
+                    <Icon name="spark" /> 이 요청은 Gemini AI 코치로 만들기 (웹 검색 사용)
                   </button>
                 </div>
               )}
@@ -555,7 +671,7 @@ export default function OneOffCoachLesson() {
                   {MODE_LABEL[lesson.mode]}
                 </span>
                 <span className="chip" data-testid="coach-kind" data-coach={coachKindOf(session)}>
-                  {coachKindOf(session) === 'martialdex' ? '🥋' : coachKindOf(session) === 'gemini' ? '✨' : '❔'} {COACH_LABEL[coachKindOf(session)]}
+                  <Glyph set="misc" name={coachKindOf(session) === 'martialdex' ? 'coach-martialdex' : coachKindOf(session) === 'gemini' ? 'coach-external-ai' : 'coach-unknown'} /> {COACH_LABEL[coachKindOf(session)]}
                 </span>
                 {!complete && !switchTo && (
                   <button type="button" className="btn btn-ghost btn-sm" onClick={() => setSwitchTo('pick')} data-testid="coach-switch-open">
@@ -575,6 +691,7 @@ export default function OneOffCoachLesson() {
                 )}
               </div>
               {lesson.webSearch.note && <p className="technique-row__sub">{lesson.webSearch.note}</p>}
+              <ProfileLessonNotes martialArt={lesson.martialArt} technique={technique} topic={lesson.title} />
               <ol className="oneoff-outline" data-testid="oneoff-outline">
                 {lesson.context.concepts.map((c) => (
                   <li key={c.id} className={state.completedConcepts.includes(c.id) ? 'done' : ''}>
@@ -693,7 +810,7 @@ export default function OneOffCoachLesson() {
                     {m.text}
                     {offer && (
                       <button type="button" className="btn btn-ghost btn-sm oneoff-msg__action" onClick={() => setPlanFromText(m.text, 'coach')} data-testid="oneoff-plan-from-message">
-                        ⏱ 이 계획으로 타이머 설정
+                        <Icon name="timer" /> 이 계획으로 타이머 설정
                       </button>
                     )}
                   </div>
@@ -701,16 +818,34 @@ export default function OneOffCoachLesson() {
               })}
               {thinking && <div className="oneoff-msg oneoff-msg--coach">…</div>}
               {thinking && coachKindOf(session) === 'martialdex' && <LocalModelWaitNotice />}
+              {coachAction && (
+                <CoachActionCard
+                  action={coachAction}
+                  onOpen={(route) => {
+                    if (session?.lesson.techniqueId) rememberLessonAction(session.lesson.techniqueId, coachAction);
+                    setCoachAction(null);
+                    navigate(route);
+                  }}
+                  onChoose={(t) => {
+                    setCoachAction(null);
+                    void send(t);
+                  }}
+                  onDismiss={() => setCoachAction(null)}
+                />
+              )}
+              {/* 자세 측정 제안 — same card / rule as the regular lesson; only for the lesson's own technique */}
+              {lessonTechnique && <LessonMotionPreview key={lessonTechnique.id} technique={lessonTechnique} />}
+              {lessonTechnique && state && <PoseSuggestCard technique={lessonTechnique} sessionKey={`oneoff-${session.lesson.id}`} practiced={!!state.practiceDone} />}
               <div ref={bottom} />
 
               {!complete && pending && (
                 <p className="coach-turn__label" data-testid="oneoff-awaiting" style={{ margin: '4px 0 0' }}>
-                  🙋 답변 차례입니다 — 말하거나 아래에 적어 주세요.
+                  <Icon name="comment" /> 답변 차례입니다 — 말하거나 아래에 적어 주세요.
                 </p>
               )}
               {!complete && directive === 'video' && (
                 <div className="modal-actions modal-actions--start">
-                  <button className="btn btn-primary" data-testid="oneoff-video-done" onClick={() => apply(oneOffEvent(lesson, state, { type: 'VIDEO_DONE' }))}>
+                  <button className="btn btn-primary" data-testid="oneoff-video-done" onClick={() => apply(oneOffEvent(lesson, state, { type: 'VIDEO_DONE', watched: (session?.videos?.videos.length ?? 0) > 0 }))}>
                     {session.videos?.videos.length ? '영상 확인했어요' : lesson.sources.length ? '자료 확인했어요' : '다음으로'}
                   </button>
                 </div>
@@ -733,7 +868,7 @@ export default function OneOffCoachLesson() {
 
             {mittActive && practice && session.mitt?.phase === 'posture' && (
               <div className="card info-card" data-testid="oneoff-posture" data-mode={practice.mode}>
-                <h3 style={{ margin: 0 }}>🧍 실습 전 자세 설명</h3>
+                <h3 style={{ margin: 0 }}><Icon name="stance" /> 실습 전 자세 설명</h3>
                 <p className="video-status-message" style={{ margin: '4px 0 6px' }}>{practice.intro}</p>
                 <ol className="coach-class-steps">
                   {practice.briefing.slice(0, -1).map((line, i) => (
@@ -741,7 +876,7 @@ export default function OneOffCoachLesson() {
                   ))}
                 </ol>
                 <p className="video-status-message" style={{ margin: '6px 0 0' }} data-testid="oneoff-posture-mitt">
-                  🥊 이어서 Visualizing Mitt: {practice.mitt?.name} · {practice.mitt?.repetitions}회
+                  <Glyph set="ai" name="visual-mitt" /> 이어서 Visualizing Mitt: {practice.mitt?.name} · {practice.mitt?.repetitions}회
                 </p>
                 <div className="modal-actions modal-actions--start" style={{ marginTop: 10 }}>
                   <button className="btn btn-primary" onClick={startMitt} data-testid="oneoff-posture-start">
@@ -753,7 +888,7 @@ export default function OneOffCoachLesson() {
             {mittActive && practice?.mitt && mittCombo && session.mitt?.phase === 'running' && (
               <div data-testid="oneoff-mitt" data-ids={practice.mitt.techniqueIds.join(',')}>
                 <div className="card info-card" style={{ marginBottom: 8 }}>
-                  <h3 style={{ margin: 0 }}>🥊 AI Visualizing Mitt · {practice.mitt.name}</h3>
+                  <h3 style={{ margin: 0 }}><Icon name="glove" /> AI Visualizing Mitt · {practice.mitt.name}</h3>
                   <p className="video-status-message" style={{ margin: '4px 0 0' }}>
                     {practice.mitt.purpose} · {practice.mitt.reason}
                   </p>
@@ -783,7 +918,7 @@ export default function OneOffCoachLesson() {
             {showWorkout && !session.plan && (
               <div className="card info-card">
                 <button type="button" className="btn btn-secondary" onClick={() => update((s) => ({ ...s, plan: specToDraft(parseWorkoutSpec(''), 'user_edit', settings) }))} data-testid="workout-open">
-                  ⏱ 타이머 계획 직접 정하기
+                  <Icon name="timer" /> 타이머 계획 직접 정하기
                 </button>
               </div>
             )}
@@ -814,6 +949,7 @@ export default function OneOffCoachLesson() {
                 </div>
               </div>
             )}
+            {complete && session.recorded && session.lesson.techniqueId && <LessonAssessmentCard logId={`lesson_${session.lesson.id}`} />}
             {!complete && (
               <p className="video-status-message">
                 <button type="button" className="btn btn-ghost btn-sm" onClick={reset} data-testid="oneoff-abandon">

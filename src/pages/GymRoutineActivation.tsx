@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { GymRoutine, Weekday } from '../lib/gymRoutine/types';
@@ -79,7 +80,7 @@ export default function GymRoutineActivation() {
           <span>루틴 관리</span>
         </div>
         <div className="section-title">
-          <h2>🔀 훈련 루틴 관리</h2>
+          <h2><Icon name="repeat" /> 훈련 루틴 관리</h2>
         </div>
         <p className="video-status-message">
           활성 루틴 {activeCount}개 · 한 번에 하나의 루틴만 활성화할 수 있습니다 — 다른 루틴을 켜면 이전 루틴은 자동으로 꺼지고, 오늘의 훈련에는
@@ -93,7 +94,7 @@ export default function GymRoutineActivation() {
             {routines.map((r) => (
               <div key={r.id} className="card info-card routine-toggle-row">
                 <div className="routine-toggle-row__info">
-                  <div className="routine-toggle-row__name">🏋️ {r.name}</div>
+                  <div className="routine-toggle-row__name"><Icon name="dumbbell" /> {r.name}</div>
                   <div className="technique-row__sub">{summarizeRoutine(r)}</div>
                 </div>
                 <button

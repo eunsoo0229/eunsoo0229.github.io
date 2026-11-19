@@ -1,0 +1,256 @@
+{
+ "meta": {
+  "id": "boxing-hook-m2m-v4",
+  "techniqueIds": [
+   "boxing__hook"
+  ],
+  "title": "\ud6c5 (\uc624\uc18c\ub3c5\uc2a4, \uc67c\uc190 \ub9ac\ub4dc \ud6c5)",
+  "side": "left (lead hand), orthodox stance",
+  "fps": 30,
+  "lastKey": 40,
+  "phases": [
+   [
+    "prepare",
+    "\uc900\ube44",
+    0,
+    10
+   ],
+   [
+    "execute",
+    "\uc2e4\ud589",
+    10,
+    20
+   ],
+   [
+    "recover",
+    "\ud68c\uc218",
+    20,
+    28
+   ],
+   [
+    "guard_return",
+    "\uac00\ub4dc \ubcf5\uadc0",
+    28,
+    40
+   ]
+  ],
+  "contactKey": 18,
+  "stance": "orthodox",
+  "gazeTarget": {
+   "hand": "l",
+   "contactKey": 18,
+   "pointCharFrame": [
+    -1.542,
+    -1.062,
+    0.653
+   ]
+  }
+ },
+ "keys": [
+  {
+   "key": 0,
+   "strike": 0.0,
+   "gazeWeight": 0.0
+  },
+  {
+   "key": 1,
+   "strike": 0.0,
+   "gazeWeight": 0.0
+  },
+  {
+   "key": 2,
+   "strike": 0.0,
+   "gazeWeight": 0.0
+  },
+  {
+   "key": 3,
+   "strike": 0.0,
+   "gazeWeight": 0.0
+  },
+  {
+   "key": 4,
+   "strike": 0.0,
+   "gazeWeight": 0.0
+  },
+  {
+   "key": 5,
+   "strike": 0.0,
+   "gazeWeight": 0.0
+  },
+  {
+   "key": 6,
+   "strike": 0.0,
+   "gazeWeight": 0.0
+  },
+  {
+   "key": 7,
+   "strike": 0.0,
+   "gazeWeight": 0.0
+  },
+  {
+   "key": 8,
+   "strike": 0.0,
+   "gazeWeight": 0.0
+  },
+  {
+   "key": 9,
+   "strike": 0.0,
+   "gazeWeight": 0.034
+  },
+  {
+   "key": 10,
+   "strike": 0.0,
+   "gazeWeight": 0.126
+  },
+  {
+   "key": 11,
+   "strike": 0.0,
+   "gazeWeight": 0.259
+  },
+  {
+   "key": 12,
+   "strike": 0.0,
+   "gazeWeight": 0.417
+  },
+  {
+   "key": 13,
+   "strike": 0.0,
+   "gazeWeight": 0.583
+  },
+  {
+   "key": 14,
+   "strike": 0.0,
+   "gazeWeight": 0.741
+  },
+  {
+   "key": 15,
+   "strike": 0.0,
+   "gazeWeight": 0.874
+  },
+  {
+   "key": 16,
+   "strike": 0.0,
+   "gazeWeight": 0.966
+  },
+  {
+   "key": 17,
+   "strike": 0.0,
+   "gazeWeight": 1.0
+  },
+  {
+   "key": 18,
+   "strike": 0.0,
+   "gazeWeight": 1.0
+  },
+  {
+   "key": 19,
+   "strike": 0.0,
+   "gazeWeight": 1.0
+  },
+  {
+   "key": 20,
+   "strike": 0.0,
+   "gazeWeight": 1.0
+  },
+  {
+   "key": 21,
+   "strike": 0.0,
+   "gazeWeight": 1.0
+  },
+  {
+   "key": 22,
+   "strike": 0.0,
+   "gazeWeight": 0.966
+  },
+  {
+   "key": 23,
+   "strike": 0.0,
+   "gazeWeight": 0.874
+  },
+  {
+   "key": 24,
+   "strike": 0.0,
+   "gazeWeight": 0.741
+  },
+  {
+   "key": 25,
+   "strike": 0.0,
+   "gazeWeight": 0.583
+  },
+  {
+   "key": 26,
+   "strike": 0.0,
+   "gazeWeight": 0.417
+  },
+  {
+   "key": 27,
+   "strike": 0.0,
+   "gazeWeight": 0.259
+  },
+  {
+   "key": 28,
+   "strike": 0.0,
+   "gazeWeight": 0.126
+  },
+  {
+   "key": 29,
+   "strike": 0.0,
+   "gazeWeight": 0.034
+  },
+  {
+   "key": 30,
+   "strike": 0.0,
+   "gazeWeight": 0.0
+  },
+  {
+   "key": 31,
+   "strike": 0.0,
+   "gazeWeight": 0.0
+  },
+  {
+   "key": 32,
+   "strike": 0.0,
+   "gazeWeight": 0.0
+  },
+  {
+   "key": 33,
+   "strike": 0.0,
+   "gazeWeight": 0.0
+  },
+  {
+   "key": 34,
+   "strike": 0.0,
+   "gazeWeight": 0.0
+  },
+  {
+   "key": 35,
+   "strike": 0.0,
+   "gazeWeight": 0.0
+  },
+  {
+   "key": 36,
+   "strike": 0.0,
+   "gazeWeight": 0.0
+  },
+  {
+   "key": 37,
+   "strike": 0.0,
+   "gazeWeight": 0.0
+  },
+  {
+   "key": 38,
+   "strike": 0.0,
+   "gazeWeight": 0.0
+  },
+  {
+   "key": 39,
+   "strike": 0.0,
+   "gazeWeight": 0.0
+  },
+  {
+   "key": 40,
+   "strike": 0.0,
+   "gazeWeight": 0.0
+  }
+ ]
+}

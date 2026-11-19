@@ -1,3 +1,4 @@
+import Icon from '../Icon';
 import { useEffect, useRef, useState } from 'react';
 import { FootworkView, FrontView, POV_IMPACT_MS, povTiming, type Stance } from './MittStage';
 import type { MittCombo } from '../../lib/visualMitt/combos';
@@ -259,19 +260,19 @@ export default function MittRunner({
       <div className="mitt-controls" style={{ marginTop: 8 }}>
         {done ? (
           <button className="btn btn-secondary btn-sm" onClick={restart} data-testid="mitt-runner-restart">
-            ↺ 처음부터 다시
+            <Icon name="refresh" /> 처음부터 다시
           </button>
         ) : ready.left !== null ? (
           <button className="btn btn-secondary btn-sm" onClick={ready.cancel} data-testid="mitt-runner-cancel-ready">
-            ✕ 준비 취소
+            <Icon name="close" /> 준비 취소
           </button>
         ) : playing ? (
           <button className="btn btn-secondary btn-sm" onClick={() => setPlaying(false)} data-testid="mitt-runner-pause">
-            ⏸ 일시정지
+            <Icon name="pause" /> 일시정지
           </button>
         ) : (
           <button className="btn btn-primary btn-sm" onClick={() => (clock.current.t > 0 ? (unlockSound(), ready.start(3)) : beginFresh())} data-testid="mitt-runner-play">
-            ▶ {clock.current.t > 0 ? '계속' : '시작'}
+            <Icon name="play" /> {clock.current.t > 0 ? '계속' : '시작'}
           </button>
         )}
         <label className="chip" style={{ cursor: 'pointer' }}>
@@ -279,12 +280,12 @@ export default function MittRunner({
         </label>
         {canCall && (
           <label className="chip" style={{ cursor: 'pointer' }}>
-            <input type="checkbox" checked={callouts} onChange={(e) => setCallouts(e.target.checked)} data-testid="mitt-runner-callouts" /> 🗣 공격 콜
+            <input type="checkbox" checked={callouts} onChange={(e) => setCallouts(e.target.checked)} data-testid="mitt-runner-callouts" /> <Icon name="sound" /> 공격 콜
           </label>
         )}
         {!done && (
           <button className="btn btn-ghost btn-sm" onClick={stop} data-testid="mitt-runner-stop">
-            ■ 여기서 끝내기
+            <Icon name="stop" /> 여기서 끝내기
           </button>
         )}
       </div>

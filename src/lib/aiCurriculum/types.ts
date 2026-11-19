@@ -126,6 +126,12 @@ export interface GoalAnalysis {
    * 1-3 short phrases, empty if the goal is too vague to name a clean topic.
    */
   searchTopics: string[];
+  /**
+   * The request's separate learning parts, in order ("스탠딩 백 탈출" → "테이크다운 연결") — Gemini's own
+   * best-effort split from the same analyzeGoal call. Optional and never trusted as-is: subGoals.ts's
+   * resolveSubGoals() sanitizes it and falls back to a deterministic connector split.
+   */
+  subGoals?: RawSubGoal[];
   /** Set only when the user's text names a specific real fighter to emulate (spec section 11's tail). */
   referencedFighterName: string | null;
   /** Non-null only when the text is too vague to build a meaningful curriculum from (spec section 3). */
@@ -135,6 +141,15 @@ export interface GoalAnalysis {
   /** AI's own duration suggestion, used only when the user asked for "AI 추천" instead of a fixed day count. */
   suggestedDurationDays: number;
   durationReason: string;
+}
+
+/** One learning part as Gemini returned it (see GoalAnalysis.subGoals). */
+export interface RawSubGoal {
+  label: string;
+  role: 'core' | 'follow_up';
+  intents: GoalIntent[];
+  searchTopics: string[];
+  situation?: string;
 }
 
 export type GoalPhaseKey = 'fundamentals' | 'entries' | 'position' | 'connection' | 'situational';
@@ -149,6 +164,15 @@ export interface GoalTechniqueMatch {
   phase: GoalPhaseKey;
   /** How directly this technique IS what was asked for vs. a supporting skill (structureClassifier.ts) — always set, but only affects scoring when the goal's diversityRequested is true. */
   structureRole: TechniqueStructureRole;
+  /**
+   * 근거 등급 (web-evidence curricula only): A = verified by web sources, B = confirmed by MARTIALDEX's own
+   * curated posture data (never shown as web-verified), C = neither — C is never scheduled.
+   */
+  evidenceGrade?: 'A' | 'B' | 'C';
+  /** The learning part (SubGoal id) this technique is evidence for. */
+  evidencePartId?: string;
+  /** What the grade rests on: web source titles, or the DB posture sentence. */
+  evidenceNote?: string;
   /** Set only by discoverMissingDesiredTechniques for a genuinely-new registration where a real video-search result was found and persisted (techniqueDiscovery/service.ts's attachDiscoveredVideo) — undefined for every other match (existing techniques already have their own real video story, curated or not). */
   videoAttached?: boolean;
 }
@@ -164,4 +188,14 @@ export interface AiGoalCurriculumMeta {
   generatedAt: string;
   /** Each user-typed "다시 만들어달라" request, oldest first — passed back to Gemini as extra context on regenerate. */
   refinementHistory: string[];
+  /** Set when only the learning parts with evidence were built (부분 생성) — shown on the curriculum screen. */
+  partialScope?: { included: string[]; excluded: { label: string; reason: string }[] };
+  /** 근거 등급 summary (A web-verified / B MARTIALDEX DB) — see GoalCurriculumPreview.evidence. */
+  evidence?: {
+    counts: { A: number; B: number };
+    excludedC: { name: string; reason: string }[];
+    duplicatesMerged: { kept: string; dropped: string }[];
+    scheduleMode: 'standard' | 'focused';
+    fullScope: boolean;
+  };
 }

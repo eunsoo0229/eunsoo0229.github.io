@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useState } from 'react';
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { getUnifiedMartialArt } from '../lib/userTechniques/service';
@@ -90,7 +91,7 @@ export default function CurriculumTrainingStart() {
         </div>
 
         <div className="section-title">
-          <h2>🔥 훈련 시작</h2>
+          <h2><Icon name="flame" /> 훈련 시작</h2>
         </div>
         <p className="detail-hero__korean">{curriculum.title}</p>
 
@@ -114,11 +115,11 @@ export default function CurriculumTrainingStart() {
             {!coachChoice ? (
               <div className="day-start-options">
                 <button className="btn btn-primary day-start-option" onClick={() => beginTraining(chooserDay)}>
-                  🙋 혼자 하기
+                  <Icon name="user" /> 혼자 하기
                   <span className="day-start-option__desc">기존 방식대로 세트·타이머로 훈련합니다.</span>
                 </button>
                 <button className="btn btn-secondary day-start-option" onClick={() => setCoachChoice(true)}>
-                  🧑‍🏫 AI 코치와 하기
+                  <Icon name="coach" /> AI 코치와 하기
                   <span className="day-start-option__desc">코치가 기술을 설명하고 영상·질문·타이머로 연습을 이끌어 줍니다.</span>
                 </button>
               </div>
@@ -131,15 +132,15 @@ export default function CurriculumTrainingStart() {
                   {fixedPlace ? ' (이 수업의 장소)' : ''}
                 </p>
                 <details className="coach-voice-settings" data-testid="prestart-voice-settings">
-                  <summary>🔊 말로 대화할 때의 AI 튜터 음성 · 말하기 속도</summary>
+                  <summary><Icon name="sound" /> 말로 대화할 때의 AI 튜터 음성 · 말하기 속도</summary>
                   <TutorVoiceSettingsPanel autoSave />
                 </details>
                 <button className="btn btn-primary day-start-option" onClick={() => beginCoach(chooserDay, 'voice')}>
-                  🎙 말로 대화
+                  <Icon name="mic" /> 말로 대화
                   <span className="day-start-option__desc">마이크로 질문하고 코치의 답을 음성으로 듣습니다.</span>
                 </button>
                 <button className="btn btn-secondary day-start-option" onClick={() => beginCoach(chooserDay, 'text')}>
-                  ⌨️ 입력으로 대화
+                  <Icon name="keyboard" /> 입력으로 대화
                   <span className="day-start-option__desc">채팅처럼 입력하고 글로 답을 받습니다.</span>
                 </button>
                 <button className="btn btn-ghost btn-sm" onClick={() => (fixedPlace ? setCoachChoice(false) : setPlace(null))}>
@@ -165,7 +166,7 @@ export default function CurriculumTrainingStart() {
                   onClick={() => openChooser(d.day)}
                 >
                   Day {d.day}
-                  {completedSet.has(d.day) ? ' ✓' : ''}
+                  {completedSet.has(d.day) && <> <Icon name="check" label="완료" /></>}
                 </button>
               ))}
             </div>

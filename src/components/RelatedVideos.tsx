@@ -1,3 +1,4 @@
+import Icon from './Icon';
 import { useEffect, useState } from 'react';
 import type { CuratedVideo, Technique } from '../types';
 import { getMartialArt } from '../lib/loadData';
@@ -159,7 +160,7 @@ export default function RelatedVideos({ technique, liveSearchFallback = false, s
     return (
       <div className="card info-card" data-testid="related-videos" data-style={style ?? ''}>
         <h3>
-          <span aria-hidden="true">▶</span> {heading}
+          <Icon name="play" /> {heading}
         </h3>
         <div className="video-embed-grid">
           {videos.map((v) => (
@@ -198,7 +199,7 @@ export default function RelatedVideos({ technique, liveSearchFallback = false, s
     return (
       <div className="card info-card" data-testid="related-videos" data-style={style ?? ''}>
         <h3>
-          <span aria-hidden="true">▶</span> {heading}
+          <Icon name="play" /> {heading}
         </h3>
         <p className="video-status-message" data-testid={style ? 'style-videos-missing' : undefined}>
           {style
@@ -207,7 +208,7 @@ export default function RelatedVideos({ technique, liveSearchFallback = false, s
         </p>
         <div className="modal-actions modal-actions--start">
           <button className="btn btn-secondary" onClick={() => setPickerOpen(true)} disabled={!canAdd}>
-            🔎 {style ? `${STYLE_LABEL[style]} ` : ''}관련 영상 찾기
+            <Icon name="search" /> {style ? `${STYLE_LABEL[style]} ` : ''}관련 영상 찾기
           </button>
           <button
             className="btn btn-ghost"
@@ -216,7 +217,7 @@ export default function RelatedVideos({ technique, liveSearchFallback = false, s
               openExternal(youtubeSearchUrl(`${buildYoutubeQuery(technique, art)}${style === 'gi' ? ' gi' : style === 'nogi' ? ' no gi' : ''}`));
             }}
           >
-            ▶ YouTube에서 바로 보기
+            <Icon name="play" /> YouTube에서 바로 보기
           </button>
         </div>
         {addMessage && <p className="video-status-message">{addMessage}</p>}
@@ -228,7 +229,7 @@ export default function RelatedVideos({ technique, liveSearchFallback = false, s
   return (
     <div className="card info-card">
       <h3>
-        <span aria-hidden="true">🎥</span> 참고 영상
+        <Icon name="video" /> 참고 영상
       </h3>
       {searchState.status === 'loading' && <p className="video-status-message">영상을 검색하는 중...</p>}
       {searchState.status === 'error' && <p className="video-status-message">영상을 불러오지 못했습니다.</p>}
@@ -263,7 +264,7 @@ export default function RelatedVideos({ technique, liveSearchFallback = false, s
                   <div className="video-search-result__thumb-wrap">
                     <img src={v.thumbnailUrl} alt={v.title} className="video-search-result__thumb" loading="lazy" />
                     <span className="video-search-result__play" aria-hidden="true">
-                      ▶
+                      <Icon name="play" />
                     </span>
                   </div>
                   <div className="video-embed__title">{v.title}</div>
@@ -276,7 +277,7 @@ export default function RelatedVideos({ technique, liveSearchFallback = false, s
       )}
       <div className="modal-actions modal-actions--start" style={{ marginTop: 10 }}>
         <button className="btn btn-secondary" onClick={() => setPickerOpen(true)}>
-          📥 YouTube 영상 불러오기
+          <Icon name="download" /> YouTube 영상 불러오기
         </button>
       </div>
     </div>

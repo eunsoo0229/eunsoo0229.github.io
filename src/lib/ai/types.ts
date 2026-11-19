@@ -8,6 +8,11 @@ export type ChatRole = 'user' | 'model';
 export interface ChatMessage {
   role: ChatRole;
   text: string;
+  /** Web reference links shown under a "MARTIALDEX AI + 웹 검색" answer (martialdexAsk.ts). */
+  sources?: GroundingSource[];
+  webNote?: string | null;
+  /** MARTIALDEX 자체 AI answers: what the turn was about, so the next question can refer back ("아까 그거") — selfAi/conversationMemory.ts. */
+  coach?: { techniqueIds?: string[]; turn?: import('../selfAi/types').TurnMeta; lessonProposal?: import('../selfAi/types').LessonProposal; research?: import('../selfAi/types').TurnResearchInfo ; evidence?: Pick<import('../selfAi/types').CoachChatMessage, 'sources' | 'claims' | 'sourceConflicts' | 'model' | 'personalData' | 'guardNotes'> };
 }
 
 export type AiErrorCode =
@@ -17,7 +22,15 @@ export type AiErrorCode =
   | 'NETWORK'
   | 'EMPTY_RESPONSE'
   | 'UNAUTHORIZED'
-  | 'UNKNOWN';
+  | 'UNKNOWN'
+  /** 로컬 AI 엔진: engine off / model not installed / no engine on this device. */
+  | 'LOCAL_NOT_READY'
+  /** 로컬 AI 엔진: the request needs images / audio / video / web grounding, which the text-only local model cannot do. */
+  | 'LOCAL_UNSUPPORTED_INPUT'
+  | 'TIMEOUT'
+  | 'CANCELLED'
+  /** Gemini 사용 한도(FREE 하루 N회) 초과 — 서버(consume_gemini_use)가 판정. */
+  | 'QUOTA_EXCEEDED';
 
 export interface GroundingSource {
   title: string;
@@ -32,6 +45,8 @@ export interface AiImagePart {
 }
 
 export interface AskAiRequest {
+  /** Set by aiProvider (Gemini only): groups the calls of one user action into one counted use (0066). */
+  useId?: string;
   systemInstruction: string;
   contextText: string;
   history: ChatMessage[];
@@ -55,6 +70,14 @@ export interface AskAiRequest {
   maxOutputTokens?: number;
   /** Gemini thinking level — 'minimal' (default, fastest) unless a careful judgement needs 'low'/'medium'. */
   thinkingLevel?: 'minimal' | 'low' | 'medium';
+  /**
+   * Which engine answers — set only where the user explicitly picked one for this feature
+   * (AI에게 질문하기's engine radio, a lesson's coach picker). Omitted = the 설정 > AI 엔진
+   * choice (local by default). Never changed automatically after a failure.
+   */
+  engine?: 'local' | 'gemini';
+  /** 'json' = the caller parses the answer as JSON (the local engine then uses its JSON mode). */
+  responseFormat?: 'json';
 }
 
 export type AiMediaPart =

@@ -1,9 +1,10 @@
 import type { Technique } from '../../types';
 import canonicalData from '../../../data/curated/technique-canonical.json';
-import { canonicalOfficialId, categoryInArt, getTechnique, isSyntheticTrainingDomain } from '../loadData';
-import { addTeqRepository, ADD_TEQ_CACHE_KEY } from '../addTeq/repository';
-import { userTechniqueRepository } from '../userTechniques/repository';
+import { canonicalOfficialId, categoryInArt, getTechnique, isManagedMartialArt, isSyntheticTrainingDomain } from '../loadData';
+import { addTeqRepository, storeVersion as addTeqStoreVersion } from '../addTeq/repository';
+import { userTechniqueRepository, storeVersion as mineStoreVersion } from '../userTechniques/repository';
 import { canonicalCategoryFor, officialCategoriesOf, unifyCustomCategory } from './category';
+import { customCategoriesOf, customCategoriesVersion } from '../categoryRegistry/store';
 
 // Runtime half of canonical techniques. loadData.ts merges the OFFICIAL
 // duplicates statically; this layer adds what lives in the shared library
@@ -15,10 +16,11 @@ import { canonicalCategoryFor, officialCategoriesOf, unifyCustomCategory } from 
 //     technique exists but not yet in that art) → adds that art,
 //   - every other record gets its AI-written category filed into the art's
 //     canonical category (category.ts).
-// Every id that ever existed keeps resolving — nothing is deleted.
+// Every id that ever existed keeps resolving — nothing is deleted. A record
+// filed under an art the app no longer manages (우슈·택견, added through the
+// removed 무술 추가 feature) is left out of the library and adds no link.
 
 const ADD_TEQ_DUPLICATES = new Map((canonicalData as { addTeqDuplicates: { id: string; canonical: string }[] }).addTeqDuplicates.map((d) => [d.id, d.canonical]));
-const USER_TECHNIQUES_KEY = 'martialdex:user-techniques';
 
 export interface ArtLink {
   martialArt: string;
@@ -37,15 +39,9 @@ interface LibraryState {
   links: Map<string, ArtLink[]>;
 }
 
-let cache: { addTeqRaw: string | null; mineRaw: string | null; state: LibraryState } | null = null;
-
-function rawOf(key: string): string | null {
-  try {
-    return window.localStorage.getItem(key);
-  } catch {
-    return null;
-  }
-}
+// Rebuilt only when either store changed (their in-memory version numbers) — reading both raw
+// strings from localStorage and comparing them on EVERY lookup was the hot path on phones.
+let cache: { addTeqVersion: number; mineVersion: number; categoryVersion: number; state: LibraryState } | null = null;
 
 function linkCategory(art: string, canonical: Technique | undefined, recordCategory: string): string {
   if (canonical?.categoryByArt?.[art]) return canonical.categoryByArt[art];
@@ -61,16 +57,24 @@ function buildState(): LibraryState {
     if (!list.some((l) => l.martialArt === link.martialArt)) list.push(link);
     links.set(canonicalId, list);
   };
+  const addTeqRecords = addTeqRepository.list();
+  const mineRecords = userTechniqueRepository.list();
+  // Link targets can be library techniques too (a shared-library technique linked to a sibling art), not only official ones.
+  const libraryById = new Map<string, Technique>();
+  for (const r of [...addTeqRecords, ...mineRecords]) if (!r.technique.linkOf && !ADD_TEQ_DUPLICATES.has(r.technique.id)) libraryById.set(r.technique.id, r.technique);
   const normalize = (t: Technique): Technique | null => {
     const target = t.linkOf ?? ADD_TEQ_DUPLICATES.get(t.id);
     if (target) {
       const canonicalId = canonicalOfficialId(target);
-      const canonical = getTechnique(canonicalId);
+      const canonical = getTechnique(canonicalId) ?? libraryById.get(canonicalId);
       redirect.set(t.id, canonicalId);
-      if (canonical && !(canonical.martialArts ?? [canonical.martialArt]).includes(t.martialArt)) addLink(canonicalId, { martialArt: t.martialArt, category: linkCategory(t.martialArt, canonical, t.category), sourceId: t.id });
+      if (canonical && isManagedMartialArt(t.martialArt) && !(canonical.martialArts ?? [canonical.martialArt]).includes(t.martialArt)) addLink(canonicalId, { martialArt: t.martialArt, category: linkCategory(t.martialArt, canonical, t.category), sourceId: t.id });
       return null;
     }
+    if (!isManagedMartialArt(t.martialArt)) return null;
     if (isSyntheticTrainingDomain(t.martialArt)) return t;
+    // A category created in the category registry for this art is a real category, not an AI misspelling to remap.
+    if (customCategoriesOf(t.martialArt).some((c) => c.categoryString === t.category)) return t;
     if (officialCategoriesOf(t.martialArt).length > 0) {
       const category = canonicalCategoryFor(t.martialArt, t.category, t);
       return category && category !== t.category ? { ...t, category } : t;
@@ -80,15 +84,19 @@ function buildState(): LibraryState {
     if (!existing.includes(category)) customCategories.set(t.martialArt, [...existing, category]);
     return category !== t.category ? { ...t, category } : t;
   };
-  const addTeq = addTeqRepository.list().map((r) => normalize(r.technique)).filter((t): t is Technique => !!t);
-  const mine = userTechniqueRepository.list().map((r) => normalize(r.technique)).filter((t): t is Technique => !!t);
+  const addTeq = addTeqRecords.map((r) => normalize(r.technique)).filter((t): t is Technique => !!t);
+  const mine = mineRecords.map((r) => normalize(r.technique)).filter((t): t is Technique => !!t);
   return { addTeq, mine, redirect, links };
 }
 
 function state(): LibraryState {
-  const addTeqRaw = rawOf(ADD_TEQ_CACHE_KEY);
-  const mineRaw = rawOf(USER_TECHNIQUES_KEY);
-  if (!cache || cache.addTeqRaw !== addTeqRaw || cache.mineRaw !== mineRaw) cache = { addTeqRaw, mineRaw, state: buildState() };
+  const addTeqVersion = addTeqStoreVersion();
+  const mineVersion = mineStoreVersion();
+  if (!cache || cache.addTeqVersion !== addTeqVersion || cache.mineVersion !== mineVersion || cache.categoryVersion !== customCategoriesVersion()) {
+    const st = buildState();
+    // read the versions AFTER building: building reads (and so may load) the stores
+    cache = { addTeqVersion: addTeqStoreVersion(), mineVersion: mineStoreVersion(), categoryVersion: customCategoriesVersion(), state: st };
+  }
   return cache.state;
 }
 

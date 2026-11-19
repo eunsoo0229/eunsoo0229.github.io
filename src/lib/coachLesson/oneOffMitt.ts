@@ -5,6 +5,7 @@ import { motionForTechnique } from '../visualMitt/archetypes';
 import { listVisualizableTechniques } from '../visualMitt/combos';
 import { MMA_SOURCE_MARTIAL_ARTS } from '../mmaCurriculum/types';
 import { chain, isMmaContext, mittFor, planPractice, postureBriefing, type PracticeSetup } from '../aiCoachDay/practicePlan';
+import { artLessonMitt } from '../aiCoachDay/artMitt';
 import type { OneOffLesson } from './oneOff';
 
 // 「수업하고 싶은 거 입력하기」 → the lesson's practice on the Visualizing Mitt.
@@ -96,10 +97,17 @@ export function oneOffPractice(lesson: OneOffLesson): PracticeSetup | null {
   const seconds = lesson.workout?.spec?.exerciseDurationSeconds ?? 120;
   // Only the lesson's own technique → the same plan the AI coach uses (MMA mix, takedown → submission …).
   if (lead && found.length <= 1 && (found.length === 0 || canonicalTechniqueId(found[0].id) === canonicalTechniqueId(lead.id))) {
-    const setup = planPractice(lead, { location: null, mma, submissionGoal: /서브미션|submission/i.test(lesson.request), seconds });
+    const setup = planPractice(lead, { location: null, mma, submissionGoal: /서브미션|submission/i.test(lesson.request), seconds, art: lesson.martialArt });
     return setup.mitt ? setup : null;
   }
-  if (!found.length) return null;
+  if (!found.length) {
+    // Nothing drawable named (e.g. "거리 조절", "링 운영"): that art's pads, focused on the lesson topic (artMitt.ts).
+    const am = artLessonMitt({ name: lesson.title, category: lesson.request, keyPoint: lesson.context.concepts.find((c) => c.importance === 'core')?.label ?? null }, lesson.martialArt);
+    const mitt = am ? mittFor(am.ids, am.name, am.purpose) : null;
+    const focus = am ? resolveTechnique(am.ids[0]) : undefined;
+    if (!am || !mitt || !focus) return null;
+    return { techniqueId: focus.id, mode: 'art_mitt', mitt, after: null, drill: null, timerSeconds: seconds, timerText: null, intro: am.intro, briefing: postureBriefing(focus, am.ids, 'art_mitt') };
+  }
   // Combine: strikes in mention order, takedown entries last; drop from the end until the chain is natural.
   const strikes = found.filter((t) => motionForTechnique(t)!.archetype.kind !== 'entry');
   const entries = found.filter((t) => motionForTechnique(t)!.archetype.kind === 'entry');

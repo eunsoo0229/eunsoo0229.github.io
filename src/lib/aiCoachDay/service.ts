@@ -1,4 +1,6 @@
 import type { Technique } from '../../types';
+import { profileContextBlock } from '../fighterProfile/coachContext';
+import { userCoachContextBlock } from '../coachContext/userContext';
 import type { Curriculum, CurriculumDay } from '../curriculum/types';
 import { setDayComplete } from '../curriculum/curriculumService';
 import { aiProvider } from '../ai/provider';
@@ -118,23 +120,30 @@ export async function explainTechnique(t: Technique, dayContext: string, place =
   const placeAsk = place
     ? ' 마지막 한 문장으로 [운동 장소]와 [오늘 이 단계]에 맞게 지금 이 장소에서 어떻게 연습하는지 알려줘. 확인되지 않은 장비나 파트너는 있다고 가정하지 마.'
     : '';
+  // 공통 사용자 컨텍스트 (대화하기와 같은 계층): 프로필 · 목표 · 학습 기록 · 배운 기술 · 수업 과제 · 루틴 …
+  const profile = userCoachContextBlock({ martialArt: t.martialArt, topic: `${t.name} ${t.category}`, budget: { profile: 600, goals: 600, learning: 700 }, detailBudget: 700 });
+  // With a fighter profile: one more sentence fitted to this user (motion details still only from the technique data).
+  const profileAsk = profileContextBlock(t.martialArt, `${t.name} ${t.category}`)
+    ? ' 그다음 [개인 파이터 프로필]을 참고해 이 사용자에게 맞춘 연습 방법을 한 문장 덧붙이고, 무엇을 참고했는지 짧게 밝혀줘(예: "사우스포라고 하셨으니 …"). 동작 설명은 [기술 데이터]만, 개인화는 프로필에 적힌 것만 근거로 하고 프로필에 없는 수치나 사실은 지어내지 마.'
+    : '';
   const result = await aiProvider.ask({
     systemInstruction: COACH_SYSTEM_INSTRUCTION,
-    contextText: `[오늘 DAY]\n${dayContext}\n\n[기술 데이터]\n${techniqueData(t)}${place ? `\n\n${place}` : ''}`,
+    contextText: `[오늘 DAY]\n${dayContext}\n\n[기술 데이터]\n${techniqueData(t)}${place ? `\n\n${place}` : ''}${profile}`,
     history: [],
-    question: `오늘 배울 "${displayName(t)}"를 코치처럼 소개해줘. 기술 이름, 목적, 언제 쓰는지, 핵심 포인트 한 가지, 주의할 점 한 가지를 순서대로 4~5문장 안에 말해줘. 데이터에 없는 항목은 건너뛰어.${placeAsk}`,
+    question: `오늘 배울 "${displayName(t)}"를 코치처럼 소개해줘. 기술 이름, 목적, 언제 쓰는지, 핵심 포인트 한 가지, 주의할 점 한 가지를 순서대로 4~5문장 안에 말해줘. 데이터에 없는 항목은 건너뛰어.${profileAsk}${placeAsk}`,
   });
   if (result.ok && result.text.trim()) return { text: politeFix(result.text.trim()), fromAi: true };
   return { text: fallbackExplanation(t, item), fromAi: false };
 }
 
 /** Free-form question at any step (voice or text share this). */
-export async function askCoach(t: Technique, dayContext: string, history: CoachMessage[], question: string, place = ''): Promise<{ ok: true; text: string } | { ok: false; message: string }> {
+export async function askCoach(t: Technique, dayContext: string, history: CoachMessage[], question: string, place = '', engine?: 'local' | 'gemini'): Promise<{ ok: true; text: string } | { ok: false; message: string }> {
   const result = await aiProvider.ask({
     systemInstruction: COACH_SYSTEM_INSTRUCTION,
-    contextText: `[오늘 DAY]\n${dayContext}\n\n[지금 연습 중인 기술 데이터]\n${techniqueData(t)}${place ? `\n\n${place}` : ''}`,
+    contextText: `[오늘 DAY]\n${dayContext}\n\n[지금 연습 중인 기술 데이터]\n${techniqueData(t)}${place ? `\n\n${place}` : ''}${userCoachContextBlock({ martialArt: t.martialArt, topic: `${t.name} ${t.category}`, budget: { profile: 600, goals: 600, learning: 700 }, detailBudget: 700 })}`,
     history: history.slice(-8).map((m) => ({ role: m.role === 'user' ? 'user' : 'model', text: m.text })),
     question,
+    engine,
   });
   if (!result.ok) return { ok: false, message: result.message };
   return { ok: true, text: politeFix(result.text.trim()) };
@@ -199,7 +208,7 @@ function keywordGrade(t: Technique, answer: string): QuizGrade {
 }
 
 /** Meaning-based grading (정답 / 부분 정답 / 오답) against the technique's data; retries once, then falls back to an honest keyword check. */
-export async function gradeQuizAnswer(t: Technique, question: string, answer: string): Promise<QuizGrade> {
+export async function gradeQuizAnswer(t: Technique, question: string, answer: string, engine?: 'local' | 'gemini'): Promise<QuizGrade> {
   const ask = () =>
     askGeminiForJsonWithGrounding<RawGrade>({
       systemInstruction: [
@@ -215,6 +224,7 @@ export async function gradeQuizAnswer(t: Technique, question: string, answer: st
       question: `질문: ${question}\n사용자 답: ${answer}`,
       useSearchGrounding: false,
       validate: isRawGrade,
+      engine,
     });
   for (let attempt = 0; attempt < 2; attempt++) {
     const r = await ask();

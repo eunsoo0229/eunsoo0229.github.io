@@ -1,0 +1,157 @@
+{
+  "at": "2026-11-15T05:53:57.690Z",
+  "result": {
+    "technique": "kickboxing__jab",
+    "clipId": "boxing-jab-m2m-v2",
+    "recording": {
+      "angle": "diagonal",
+      "bytes": 147401,
+      "mime": "video/webm;codecs=vp9",
+      "clipMs": 1200,
+      "fileMs": 1419,
+      "leadInMs": 676
+    },
+    "refId": "ref_97c20b25-fe2d-4e7a-ab28-246c41e37f0a",
+    "sourceKind": "motion3d",
+    "profile": {
+      "matchesTechnique": true,
+      "observedTechnique": "Jab (잽)",
+      "techniqueVisible": true,
+      "cameraView": "diagonal",
+      "phases": [
+        "준비 자세",
+        "펀치 뻗기",
+        "회수 및 복귀"
+      ],
+      "active": {
+        "start": 0.23,
+        "end": 0.65
+      },
+      "criteria": [
+        "C1[core·start_posture] 양 손을 턱과 얼굴 높이로 올려 방어 가드를 유지한다.",
+        "C2[core·limb_motion] 앞손 주먹이 턱 높이에서 앞으로 일직선에 가깝게 뻗어나간다.",
+        "C3[core·body_position] 앞손을 뻗는 동안 반대편 뒷손은 턱 옆 가드 위치를 그대로 유지한다.",
+        "C4[core·trajectory] 임팩트 후 앞손 주먹이 아래로 떨어지지 않고 뻗었던 궤적 그대로 빠르게 돌아온다.",
+        "C5[support·finish] 동작이 끝난 후 양 손이 시작할 때와 동일한 가드 자세로 완전히 복귀한다."
+      ],
+      "excluded": [
+        {
+          "aspect": "limb_motion",
+          "reason": "사선 카메라 각도로 인해 펀치 도중 앞손 팔꿈치가 완전히 펴졌는지 관절 각도 오차나 깊이감을 정확히 평가할 수 없음."
+        },
+        {
+          "aspect": "weight_balance",
+          "reason": "발바닥의 지면 접지력 및 전후 체중 이동의 세부 양상이 2D 사선 시점 및 3D 모델 표현상 명확히 구분되지 않음."
+        }
+      ],
+      "summary": "대각선 시점에서 촬영된 잽 기술입니다. 기본 가드 상태에서 앞손이 일직선으로 뻗어나가고, 타격 직후 떨어짐 없이 즉시 원래 가드로 회수되는 동작을 중심으로 평가 기준이 구성되었습니다."
+    },
+    "profileReloaded": true,
+    "userClip": {
+      "frames": 50,
+      "poses": 50,
+      "durationSeconds": 4.084,
+      "segment": {
+        "startMs": 1250,
+        "endMs": 3667,
+        "peakMs": 2833
+      },
+      "cameraView": "front"
+    },
+    "record": {
+      "keys": [
+        "id",
+        "techniqueId",
+        "martialArt",
+        "referenceId",
+        "createdAt",
+        "breakdown",
+        "judgement",
+        "criteria",
+        "signals",
+        "alignment",
+        "viewWarning",
+        "poseHints",
+        "poseRecordId"
+      ],
+      "score": {
+        "phaseScores": [
+          {
+            "phaseId": "P1",
+            "name": "준비 자세",
+            "score": 100
+          },
+          {
+            "phaseId": "P2",
+            "name": "펀치 뻗기",
+            "score": 25
+          },
+          {
+            "phaseId": "P3",
+            "name": "회수 및 복귀",
+            "score": 70
+          }
+        ],
+        "coverage": 1,
+        "reliability": "high",
+        "reliabilityValue": 0.98,
+        "status": "scored",
+        "score": 50,
+        "rawScore": 57,
+        "cap": {
+          "value": 50,
+          "reason": "핵심 기준 1개가 기준 영상과 다르고 2개는 부분적으로만 맞습니다."
+        },
+        "reasons": []
+      },
+      "alignment": {
+        "method": "dtw",
+        "speedRatio": 1.93,
+        "phases": 3
+      },
+      "judgementCriteria": [
+        "C1:match/high",
+        "C2:mismatch/high",
+        "C3:partial/medium",
+        "C4:partial/medium",
+        "C5:match/high"
+      ],
+      "strengths": [
+        "동작 전 과정에서 뒷손 방어 가드가 떨어지지 않고 턱 옆을 견고하게 지켰습니다.",
+        "동작 마무리에 양 손이 원래 가드 위치로 정확히 복귀하였습니다."
+      ],
+      "differences": [
+        "정점(U4)에서 앞손을 앞으로 일직선으로 곧게 뻗지 않고 굽힌 채 멈추었습니다."
+      ],
+      "focus": [
+        "앞손 팔꿈치를 과감하게 펴서 타격 지점까지 주먹을 일직선으로 멀리 뻗기"
+      ],
+      "sameTechnique": true,
+      "techniquePerformed": true
+    }
+  },
+  "geminiCalls": [
+    {
+      "model": "gemini-3.6-flash",
+      "status": 200,
+      "ms": 14736,
+      "usage": {
+        "prompt": 12018,
+        "output": 1032,
+        "thoughts": null,
+        "total": 13050
+      }
+    },
+    {
+      "model": "gemini-3.6-flash",
+      "status": 200,
+      "ms": 11669,
+      "usage": {
+        "prompt": 13168,
+        "output": 1188,
+        "thoughts": null,
+        "total": 14356
+      }
+    }
+  ]
+}

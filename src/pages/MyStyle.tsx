@@ -1,4 +1,5 @@
-import { useMemo, useState } from 'react';
+import Icon from '../components/Icon';
+import { useMemo, useState, type ReactNode } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import type { FighterCandidate, FighterStyleAnalysis, Intensity, TechniqueMatch, UserLevel } from '../lib/fighterStyle/types';
 import { MAX_DURATION_DAYS, MIN_DURATION_DAYS } from '../lib/fighterStyle/types';
@@ -46,9 +47,13 @@ const INTENSITY_OPTIONS: { value: Intensity; label: string }[] = [
 ];
 const QUICK_DURATIONS = [7, 14, 30, 60, 90];
 
-function starLine(stars: number | null): string {
+function starLine(stars: number | null): ReactNode {
   if (stars === null) return '데이터 부족';
-  return '★'.repeat(stars) + '☆'.repeat(5 - stars);
+  return (
+    <span role="img" aria-label={`별 ${stars}개 / 5`}>
+      {Array.from({ length: 5 }, (_, i) => <Icon key={i} name={i < stars ? 'star-filled' : 'star'} />)}
+    </span>
+  );
 }
 
 export default function MyStyle() {
@@ -208,7 +213,7 @@ export default function MyStyle() {
         </div>
 
         <div className="section-title">
-          <h2>🥋 MY MARTIAL STYLE</h2>
+          <h2><Icon name="gi" /> MY MARTIAL STYLE</h2>
         </div>
         <LoginToBackupBanner featureName="나의 스타일 분석" />
 
@@ -287,7 +292,7 @@ export default function MyStyle() {
             )}
 
             <div className="card info-card">
-              <h3>🎯 목표 스타일</h3>
+              <h3><Icon name="target" /> 목표 스타일</h3>
               {targetMode === 'idle' && (
                 <>
                   <div className="field-label">선수/스타일 이름으로 검색</div>
@@ -402,7 +407,7 @@ export default function MyStyle() {
 
             {targetMode === 'ready' && (
               <div className="card info-card">
-                <h3>📘 목표 스타일 커리큘럼</h3>
+                <h3><Icon name="book" /> 목표 스타일 커리큘럼</h3>
                 <div className="field-label">현재 수준</div>
                 <div className="chip-row">
                   {LEVEL_OPTIONS.map((o) => (

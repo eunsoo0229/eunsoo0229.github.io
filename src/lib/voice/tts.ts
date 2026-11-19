@@ -1,3 +1,4 @@
+import { Capacitor, registerPlugin } from '@capacitor/core';
 import { getTutorVoiceSettings, type TutorVoiceSettings } from './tutorVoiceSettings';
 
 // Speech OUTPUT (TTS). Thin wrapper over the browser-native Web Speech API — no new dependency,
@@ -22,13 +23,38 @@ import { getTutorVoiceSettings, type TutorVoiceSettings } from './tutorVoiceSett
 //  - pause / resume / stop, and a watchdog that reports "the engine never
 //    started speaking" instead of failing silently.
 
-export function isTtsSupported(): boolean {
+// ---- Android: the System WebView has NO speechSynthesis, so every coach line and mitt call
+// was silent in the APK. There the device's own TextToSpeech engine speaks instead, through the
+// app's NativeTts plugin (android/.../NativeTtsPlugin.java). Same queue / interrupt / real
+// start-and-end tracking as the web path below.
+interface NativeTtsPlugin {
+  speak(o: { text: string; id: string; rate: number; flush: boolean }): Promise<{ done?: boolean; canceled?: boolean }>;
+  stop(): Promise<void>;
+  isAvailable(): Promise<{ available: boolean; initializing: boolean; korean: boolean }>;
+  addListener(event: 'start', cb: (ev: { id: string }) => void): Promise<{ remove: () => Promise<void> }>;
+}
+const NativeTts = registerPlugin<NativeTtsPlugin>('NativeTts');
+
+/** True in the Android app (the native engine is used there). */
+export function usesNativeTts(): boolean {
+  try {
+    return typeof window !== 'undefined' && Capacitor.getPlatform() === 'android' && Capacitor.isPluginAvailable('NativeTts');
+  } catch {
+    return false;
+  }
+}
+
+function webTts(): boolean {
   return typeof window !== 'undefined' && 'speechSynthesis' in window && typeof SpeechSynthesisUtterance !== 'undefined';
+}
+
+export function isTtsSupported(): boolean {
+  return usesNativeTts() || webTts();
 }
 
 /** The voices this device's TTS actually provides. Chromium loads them asynchronously, so this waits briefly for them. */
 export function listVoices(timeoutMs = 2000): Promise<SpeechSynthesisVoice[]> {
-  if (!isTtsSupported()) return Promise.resolve([]);
+  if (!webTts() || usesNativeTts()) return Promise.resolve([]); // Android: the device's default TTS voice
   const now = window.speechSynthesis.getVoices();
   if (now.length) return Promise.resolve(now);
   return new Promise((resolve) => {
@@ -47,7 +73,7 @@ export function isKoreanVoice(v: Pick<SpeechSynthesisVoice, 'lang'>): boolean {
 
 /** The voice to use for a saved choice — null (system default) when unset or not installed on this device. */
 export function resolveVoice(voiceURI: string | null): SpeechSynthesisVoice | null {
-  if (!voiceURI || !isTtsSupported()) return null;
+  if (!voiceURI || !webTts() || usesNativeTts()) return null;
   return window.speechSynthesis.getVoices().find((v) => v.voiceURI === voiceURI) ?? null;
 }
 
@@ -86,7 +112,9 @@ export const TTS_EVENT = 'martialdex:tts-state';
 
 interface Chunk {
   text: string;
-  utterance: SpeechSynthesisUtterance;
+  utterance: SpeechSynthesisUtterance | null;
+  /** Native (Android) utterance id. */
+  nativeId?: string;
   startedAt: number | null;
   settled: boolean;
   resolve: (o: SpeakOutcome) => void;
@@ -117,6 +145,7 @@ export function getTtsState(): TtsState {
 /** True while a line is being spoken or waits in the queue (also true for utterances queued by other code). */
 export function isSpeaking(): boolean {
   if (!isTtsSupported()) return false;
+  if (usesNativeTts()) return live.length > 0;
   return live.length > 0 || window.speechSynthesis.speaking || window.speechSynthesis.pending;
 }
 
@@ -171,7 +200,54 @@ export function splitForSpeech(text: string, max = 160): string[] {
   return out.length ? out : [text];
 }
 
-function speakChunk(text: string, settings: TutorVoiceSettings, lang: string | undefined): Promise<SpeakOutcome> {
+let nativeSeq = 0;
+let nativeListener: Promise<unknown> | null = null;
+function ensureNativeListener() {
+  nativeListener ??= NativeTts.addListener('start', (ev) => {
+    const c = live.find((x) => x.nativeId === ev.id);
+    if (c && c.startedAt === null) {
+      c.startedAt = Date.now();
+      publish();
+    }
+  }).catch(() => null);
+}
+
+/** Android: one chunk through the native engine (retries briefly while the engine is still starting up). */
+function speakChunkNative(text: string, settings: TutorVoiceSettings, flush: boolean): Promise<SpeakOutcome> {
+  ensureNativeListener();
+  return new Promise((resolve) => {
+    const chunk: Chunk = { text, utterance: null, nativeId: `t${Date.now().toString(36)}${(nativeSeq++).toString(36)}`, startedAt: null, settled: false, resolve };
+    live.push(chunk);
+    publish();
+    const attempt = (tries: number) => {
+      NativeTts.speak({ text, id: chunk.nativeId!, rate: settings.aiTutorSpeechRate, flush })
+        .then((r) => {
+          if (r.canceled) {
+            settle(chunk, { ok: false, reason: 'canceled' });
+            publish();
+            return;
+          }
+          const ms = chunk.startedAt === null ? 0 : Date.now() - chunk.startedAt;
+          settle(chunk, { ok: true, playedMs: ms });
+          publish({ lastError: null, lastPlayed: { text, ms, at: Date.now() }, playedCount: state.playedCount + 1 });
+        })
+        .catch((e: unknown) => {
+          const code = e instanceof Error ? e.message : String(e);
+          if (code === 'initializing' && tries < 15 && !chunk.settled) {
+            window.setTimeout(() => attempt(tries + 1), 250);
+            return;
+          }
+          const message = ERROR_MESSAGE[code] ?? '이 기기에서 음성을 재생하지 못했습니다. 기기 설정의 "텍스트 음성 변환(TTS)" 엔진을 확인해 주세요.';
+          settle(chunk, { ok: false, reason: 'failed', message });
+          publish({ lastError: message });
+        });
+    };
+    attempt(0);
+  });
+}
+
+function speakChunk(text: string, settings: TutorVoiceSettings, lang: string | undefined, flush = false): Promise<SpeakOutcome> {
+  if (usesNativeTts()) return speakChunkNative(text, settings, flush);
   return new Promise((resolve) => {
     const utterance = new SpeechSynthesisUtterance(text);
     const voice = resolveVoice(settings.aiTutorVoice);
@@ -225,6 +301,7 @@ function watchStart(chunk: Chunk) {
       window.setTimeout(check, START_TIMEOUT_MS);
       return;
     }
+    if (chunk.nativeId) return; // the native engine reports its own end / error
     const message = '음성이 재생되지 않았습니다(이 기기의 음성 엔진이 응답하지 않습니다). 화면의 글로 수업을 계속할 수 있습니다.';
     settle(chunk, { ok: false, reason: 'failed', message });
     publish({ lastError: message });
@@ -244,7 +321,8 @@ export function speak(text: string, opts: SpeakOptions | string = {}): Promise<S
   if (o.interrupt) stopSpeaking();
   const settings = o.settings ?? getTutorVoiceSettings();
   const parts = splitForSpeech(text);
-  const results = parts.map((p) => speakChunk(p, settings, o.lang));
+  // native: the first chunk of an interrupting line also flushes the engine's own queue
+  const results = parts.map((p, i) => speakChunk(p, settings, o.lang, !!o.interrupt && i === 0));
   return Promise.all(results).then((all) => {
     const failed = all.find((r) => !r.ok && r.reason === 'failed');
     if (failed) return failed;
@@ -258,12 +336,18 @@ export function stopSpeaking(): void {
   if (!isTtsSupported()) return;
   paused = false;
   for (const c of [...live]) settle(c, { ok: false, reason: 'canceled' });
-  window.speechSynthesis.cancel();
+  if (usesNativeTts()) void NativeTts.stop().catch(() => {});
+  else window.speechSynthesis.cancel();
   publish();
 }
 
 export function pauseSpeaking(): void {
   if (!isTtsSupported() || !live.length) return;
+  if (usesNativeTts()) {
+    // Android's engine cannot pause mid-line: pausing stops (the visible text stays)
+    stopSpeaking();
+    return;
+  }
   paused = true;
   window.speechSynthesis.pause();
   publish();
@@ -272,6 +356,6 @@ export function pauseSpeaking(): void {
 export function resumeSpeaking(): void {
   if (!isTtsSupported()) return;
   paused = false;
-  window.speechSynthesis.resume();
+  if (!usesNativeTts()) window.speechSynthesis.resume();
   publish();
 }

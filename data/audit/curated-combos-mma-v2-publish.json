@@ -1,0 +1,1190 @@
+{
+ "mode": "publish",
+ "tag": "mma-v2",
+ "techniques": [
+  {
+   "name": "Jump Sprawl",
+   "status": "inserted",
+   "id": "wrestling__jump-sprawl"
+  }
+ ],
+ "entries": 35,
+ "planned": 32,
+ "rejected": [
+  {
+   "art": "mixed-martial-arts",
+   "steps": [
+    "Jab",
+    "Cross",
+    "Lead Uppercut",
+    "Low Kick"
+   ],
+   "reason": "이미 공유된 같은 순서: \"Jab → Cross → Lead Uppercut → Low Kick\" (MARTIALDEX)"
+  },
+  {
+   "art": "mixed-martial-arts",
+   "steps": [
+    "Body Kick",
+    "Teep"
+   ],
+   "reason": "이미 공유된 같은 순서: \"Body Kick → Teep\" (MARTIALDEX)"
+  },
+  {
+   "art": "mixed-martial-arts",
+   "steps": [
+    "Jab",
+    "High Kick"
+   ],
+   "reason": "이미 공유된 같은 순서: \"Jab → High Kick\" (MARTIALDEX)"
+  }
+ ],
+ "published": 32,
+ "failed": [],
+ "byArtKind": {
+  "mixed-martial-arts/combo": 15,
+  "mixed-martial-arts/setup": 15,
+  "wrestling/combo": 2
+ },
+ "adminTotalAfter": 361,
+ "curatedTotalAfter": 258,
+ "plan": [
+  {
+   "kind": "combo",
+   "art": "mixed-martial-arts",
+   "name": "Slip → Rear Uppercut → Body Hook",
+   "purpose": "슬립 후 일어나며 어퍼, 이어 바디 훅으로 단단한 가드 열기",
+   "description": "상대 펀치를 슬립하고 올라오며 뒷손 어퍼, 이어 리드 바디 훅으로 낮은 쪽을 공략해 굳은 가드를 엽니다.\n\n참고: Evolve MMA — 20 Advanced MMA Striking Set-Ups And Combinations — https://evolve-mma.com/blog/20-advanced-mma-striking-set-ups-and-combinations-you-should-add-to-your-arsenal/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "kickboxing__slip",
+     "name": "Slip",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "kickboxing__rear-uppercut",
+     "name": "Rear Uppercut",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "boxing__body-hook",
+     "name": "Body Hook",
+     "martialArt": "mixed-martial-arts"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:kickboxing__slip>kickboxing__rear-uppercut>boxing__body-hook",
+   "update": false,
+   "tags": [
+    "body",
+    "tech:hook",
+    "tech:uppercut"
+   ]
+  },
+  {
+   "kind": "setup",
+   "art": "mixed-martial-arts",
+   "name": "Inside Low Kick → Switch Stance → Lead Hook",
+   "purpose": "인사이드 로우킥으로 반격을 유도하고 스위치 후 오른손 훅",
+   "description": "안쪽 로우킥이 상대 반격을 끌어내고, 스탠스를 바꾸며 오른손 훅을 넣습니다. 키 큰 상대에게 유용하다고 소개됩니다.\n\n참고: Evolve MMA — 20 Advanced MMA Striking Set-Ups And Combinations — https://evolve-mma.com/blog/20-advanced-mma-striking-set-ups-and-combinations-you-should-add-to-your-arsenal/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "muay-thai__inside-low-kick",
+     "name": "Inside Low Kick",
+     "martialArt": "mixed-martial-arts",
+     "opponentReaction": "안쪽 로우킥에 반격하려고 들어옴"
+    },
+    {
+     "techniqueId": "kickboxing__switch-stance",
+     "name": "Switch Stance",
+     "martialArt": "mixed-martial-arts",
+     "note": "킥을 내리며 스탠스 전환"
+    },
+    {
+     "techniqueId": "kickboxing__lead-hook",
+     "name": "Lead Hook",
+     "martialArt": "mixed-martial-arts",
+     "note": "스위치로 앞손이 된 오른손 훅"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:muay-thai__inside-low-kick>kickboxing__switch-stance>kickboxing__lead-hook",
+   "update": false,
+   "tags": [
+    "tech:hook",
+    "tech:low_kick"
+   ]
+  },
+  {
+   "kind": "combo",
+   "art": "mixed-martial-arts",
+   "name": "Shoulder Roll → Spinning Backfist",
+   "purpose": "숄더 롤로 크로스를 흘리고 그 회전으로 스피닝 백피스트",
+   "description": "크로스를 숄더 롤로 흘린 회전을 그대로 이어 스피닝 백피스트 — 예상하지 못한 각도에서 들어갑니다.\n\n참고: Evolve MMA — 20 Advanced MMA Striking Set-Ups And Combinations — https://evolve-mma.com/blog/20-advanced-mma-striking-set-ups-and-combinations-you-should-add-to-your-arsenal/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "kickboxing__shoulder-roll",
+     "name": "Shoulder Roll",
+     "martialArt": "kickboxing"
+    },
+    {
+     "techniqueId": "muay-thai__spinning-backfist",
+     "name": "Spinning Backfist",
+     "martialArt": "mixed-martial-arts"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:kickboxing__shoulder-roll>muay-thai__spinning-backfist",
+   "update": false,
+   "tags": [
+    "tech:cross"
+   ]
+  },
+  {
+   "kind": "setup",
+   "art": "mixed-martial-arts",
+   "name": "Kick Feint → Kick Feint → High Kick",
+   "purpose": "로우킥·바디킥 페인트로 손을 내리게 해 하이킥",
+   "description": "로우킥 페인트로 가드를 끌어내리고, 몸통 킥을 반쯤 보여 손을 더 내리게 한 뒤 열린 머리로 하이킥.\n\n참고: Evolve MMA — 20 Advanced MMA Striking Set-Ups And Combinations — https://evolve-mma.com/blog/20-advanced-mma-striking-set-ups-and-combinations-you-should-add-to-your-arsenal/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "kickboxing__kick-feint",
+     "name": "Kick Feint",
+     "martialArt": "mixed-martial-arts",
+     "note": "뒷발 로우킥 페인트",
+     "opponentReaction": "로우킥을 막으려 가드·다리를 내림"
+    },
+    {
+     "techniqueId": "kickboxing__kick-feint",
+     "name": "Kick Feint",
+     "martialArt": "mixed-martial-arts",
+     "note": "몸통 킥을 반쯤 보여 줌",
+     "opponentReaction": "몸통을 막으려 손을 내림"
+    },
+    {
+     "techniqueId": "kickboxing__high-kick",
+     "name": "High Kick",
+     "martialArt": "mixed-martial-arts",
+     "note": "비어 있는 머리로"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:kickboxing__kick-feint>kickboxing__kick-feint>kickboxing__high-kick",
+   "update": false,
+   "tags": [
+    "feint",
+    "body",
+    "tech:low_kick",
+    "tech:high_kick"
+   ]
+  },
+  {
+   "kind": "combo",
+   "art": "mixed-martial-arts",
+   "name": "Body Cross → Straight Knee → Horizontal Elbow",
+   "purpose": "근거리 몸통 크로스-니-엘보 연결",
+   "description": "오른손 몸통 크로스에서 오른 무릎, 오른 팔꿈치로 이어지는 근거리 연결 — 상대를 짧은 거리에 묶어 둡니다.\n\n참고: Evolve MMA — 20 Advanced MMA Striking Set-Ups And Combinations — https://evolve-mma.com/blog/20-advanced-mma-striking-set-ups-and-combinations-you-should-add-to-your-arsenal/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "boxing__body-cross",
+     "name": "Body Cross",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "kickboxing__straight-knee",
+     "name": "Straight Knee",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "kickboxing__horizontal-elbow",
+     "name": "Horizontal Elbow",
+     "martialArt": "mixed-martial-arts"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:boxing__body-cross>kickboxing__straight-knee>kickboxing__horizontal-elbow",
+   "update": false,
+   "tags": [
+    "distance",
+    "body",
+    "tech:cross",
+    "tech:elbow"
+   ]
+  },
+  {
+   "kind": "combo",
+   "art": "mixed-martial-arts",
+   "name": "Superman Punch → Lead Low Kick",
+   "purpose": "슈퍼맨 펀치로 가드를 올린 뒤 앞발 킥",
+   "description": "킥처럼 보이다 펀치가 되는 슈퍼맨 펀치에 상대가 가드를 올리면 몸통·다리가 비어 빠른 앞발 킥이 들어갑니다.\n\n참고: Evolve MMA — 20 Advanced MMA Striking Set-Ups And Combinations — https://evolve-mma.com/blog/20-advanced-mma-striking-set-ups-and-combinations-you-should-add-to-your-arsenal/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "muay-thai__superman-punch",
+     "name": "Superman Punch",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "muay-thai__lead-low-kick",
+     "name": "Lead Low Kick",
+     "martialArt": "mixed-martial-arts"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:muay-thai__superman-punch>muay-thai__lead-low-kick",
+   "update": false,
+   "tags": [
+    "body",
+    "tech:low_kick"
+   ]
+  },
+  {
+   "kind": "combo",
+   "art": "mixed-martial-arts",
+   "name": "Body Jab → Overhand",
+   "purpose": "바디 잽으로 시선을 아래로, 오버핸드를 머리에",
+   "description": "몸통 잽으로 상대가 아래를 의식하게 만든 뒤 오버핸드를 머리로. 레벨 체인지도 오버핸드 셋업에 도움이 됩니다.\n\n참고: Evolve MMA — 20 Advanced MMA Striking Set-Ups And Combinations — https://evolve-mma.com/blog/20-advanced-mma-striking-set-ups-and-combinations-you-should-add-to-your-arsenal/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "boxing__body-jab",
+     "name": "Body Jab",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "mixed-martial-arts__overhand",
+     "name": "Overhand",
+     "martialArt": "mixed-martial-arts"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:boxing__body-jab>mixed-martial-arts__overhand",
+   "update": false,
+   "tags": [
+    "body",
+    "tech:jab"
+   ]
+  },
+  {
+   "kind": "setup",
+   "art": "mixed-martial-arts",
+   "name": "Jab → Lead Teep → Flying Knee",
+   "purpose": "잽-앞발 팁으로 밀어낸 뒤 플라잉 니",
+   "description": "잽과 앞발 팁으로 거리를 재고 흔든 뒤, 무릎 페인트로 반응을 끌어내고 물러나는 상대에게 플라잉 니로 거리를 좁힙니다.\n\n참고: Evolve MMA — 20 Advanced MMA Striking Set-Ups And Combinations — https://evolve-mma.com/blog/20-advanced-mma-striking-set-ups-and-combinations-you-should-add-to-your-arsenal/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "kickboxing__jab",
+     "name": "Jab",
+     "martialArt": "mixed-martial-arts",
+     "note": "거리 재기"
+    },
+    {
+     "techniqueId": "muay-thai__lead-teep",
+     "name": "Lead Teep",
+     "martialArt": "mixed-martial-arts",
+     "opponentReaction": "밀려나며 뒤로 물러남"
+    },
+    {
+     "techniqueId": "kickboxing__flying-knee",
+     "name": "Flying Knee",
+     "martialArt": "mixed-martial-arts",
+     "note": "니 페인트 후, 물러나는 상대에게 — 공중에서도 가드 유지"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:kickboxing__jab>muay-thai__lead-teep>kickboxing__flying-knee",
+   "update": false,
+   "tags": [
+    "feint",
+    "distance",
+    "tech:jab",
+    "tech:knee"
+   ]
+  },
+  {
+   "kind": "combo",
+   "art": "mixed-martial-arts",
+   "name": "Clinch Knee → Elbow from Clinch",
+   "purpose": "클린치 니 뒤 떨어지며 엘보",
+   "description": "클린치에서 몸통·머리로 무릎을 넣고, 서로 떨어지는 순간 엘보를 넣습니다.\n\n참고: Evolve MMA — 20 Advanced MMA Striking Set-Ups And Combinations — https://evolve-mma.com/blog/20-advanced-mma-striking-set-ups-and-combinations-you-should-add-to-your-arsenal/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "muay-thai__clinch-knee",
+     "name": "Clinch Knee",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "muay-thai__elbow-from-clinch",
+     "name": "Elbow from Clinch",
+     "martialArt": "mixed-martial-arts"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:muay-thai__clinch-knee>muay-thai__elbow-from-clinch",
+   "update": false,
+   "tags": [
+    "clinch",
+    "body",
+    "tech:elbow"
+   ]
+  },
+  {
+   "kind": "combo",
+   "art": "mixed-martial-arts",
+   "name": "Jab → Overhand → High Kick",
+   "purpose": "스텝인 잽-오버핸드로 머리를 옆으로 빼게 해 하이킥",
+   "description": "스텝인 잽으로 거리를 좁히고 오버핸드로 상대 머리를 옆으로 움직이게 한 뒤, 그 머리로 하이킥.\n\n참고: Evolve MMA — 20 Advanced MMA Striking Set-Ups And Combinations — https://evolve-mma.com/blog/20-advanced-mma-striking-set-ups-and-combinations-you-should-add-to-your-arsenal/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "kickboxing__jab",
+     "name": "Jab",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "mixed-martial-arts__overhand",
+     "name": "Overhand",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "kickboxing__high-kick",
+     "name": "High Kick",
+     "martialArt": "mixed-martial-arts"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:kickboxing__jab>mixed-martial-arts__overhand>kickboxing__high-kick",
+   "update": false,
+   "tags": [
+    "distance",
+    "tech:jab",
+    "tech:high_kick"
+   ]
+  },
+  {
+   "kind": "setup",
+   "art": "mixed-martial-arts",
+   "name": "Jab → Feint → Body Hook",
+   "purpose": "잽 뒤 크로스 페인트로 가드를 올리고 몸통 공격",
+   "description": "잽-크로스를 예상하게 만든 뒤 크로스를 페인트로 바꾸고 몸통 공격으로 가드를 무너뜨립니다 (출처는 \"몸통 공격\"으로만 소개 — 여기서는 바디 훅).\n\n참고: Evolve MMA — 20 Advanced MMA Striking Set-Ups And Combinations — https://evolve-mma.com/blog/20-advanced-mma-striking-set-ups-and-combinations-you-should-add-to-your-arsenal/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "kickboxing__jab",
+     "name": "Jab",
+     "martialArt": "mixed-martial-arts",
+     "opponentReaction": "머리 쪽 공격에 반응"
+    },
+    {
+     "techniqueId": "boxing__feint",
+     "name": "Feint",
+     "martialArt": "mixed-martial-arts",
+     "note": "크로스 페인트",
+     "opponentReaction": "얼굴 가드를 올림"
+    },
+    {
+     "techniqueId": "boxing__body-hook",
+     "name": "Body Hook",
+     "martialArt": "mixed-martial-arts",
+     "note": "비어 있는 몸통 공격"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:kickboxing__jab>boxing__feint>boxing__body-hook",
+   "update": false,
+   "tags": [
+    "feint",
+    "body",
+    "tech:jab",
+    "tech:cross",
+    "tech:hook"
+   ]
+  },
+  {
+   "kind": "combo",
+   "art": "mixed-martial-arts",
+   "name": "Low Kick → High Kick",
+   "purpose": "로우킥 반응을 이용한 하이킥",
+   "description": "로우킥에 대한 자연스러운 방어 반응(다리 들기·손 내리기)으로 머리가 비는 순간 하이킥.\n\n참고: Evolve MMA — 20 Advanced MMA Striking Set-Ups And Combinations — https://evolve-mma.com/blog/20-advanced-mma-striking-set-ups-and-combinations-you-should-add-to-your-arsenal/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "kickboxing__low-kick",
+     "name": "Low Kick",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "kickboxing__high-kick",
+     "name": "High Kick",
+     "martialArt": "mixed-martial-arts"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:kickboxing__low-kick>kickboxing__high-kick",
+   "update": false,
+   "tags": [
+    "defense",
+    "tech:low_kick",
+    "tech:high_kick"
+   ]
+  },
+  {
+   "kind": "setup",
+   "art": "mixed-martial-arts",
+   "name": "Overhand → Level Change Double Leg",
+   "purpose": "오버핸드로 손을 올리게 해 테이크다운",
+   "description": "오버핸드를 막으려 상대가 손을 올리면 다리가 비어 테이크다운 기회가 생깁니다.\n\n참고: Evolve MMA — 20 Advanced MMA Striking Set-Ups And Combinations — https://evolve-mma.com/blog/20-advanced-mma-striking-set-ups-and-combinations-you-should-add-to-your-arsenal/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "mixed-martial-arts__overhand",
+     "name": "Overhand",
+     "martialArt": "mixed-martial-arts",
+     "opponentReaction": "두 손을 올려 막음"
+    },
+    {
+     "techniqueId": "mixed-martial-arts__level-change-double-leg",
+     "name": "Level Change Double Leg",
+     "martialArt": "mixed-martial-arts",
+     "note": "비어 있는 다리로"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:mixed-martial-arts__overhand>mixed-martial-arts__level-change-double-leg",
+   "update": false,
+   "tags": [
+    "takedown",
+    "defense",
+    "tech:double_leg"
+   ]
+  },
+  {
+   "kind": "combo",
+   "art": "mixed-martial-arts",
+   "name": "Cross → Rear Knee → Horizontal Elbow",
+   "purpose": "크로스-뒷무릎으로 거리를 좁히고 엘보",
+   "description": "크로스와 뒷무릎으로 거리를 좁히고 근거리 엘보로 마무리.\n\n참고: Evolve MMA — 20 Advanced MMA Striking Set-Ups And Combinations — https://evolve-mma.com/blog/20-advanced-mma-striking-set-ups-and-combinations-you-should-add-to-your-arsenal/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "kickboxing__cross",
+     "name": "Cross",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "kickboxing__rear-knee",
+     "name": "Rear Knee",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "kickboxing__horizontal-elbow",
+     "name": "Horizontal Elbow",
+     "martialArt": "mixed-martial-arts"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:kickboxing__cross>kickboxing__rear-knee>kickboxing__horizontal-elbow",
+   "update": false,
+   "tags": [
+    "distance",
+    "finish",
+    "tech:cross",
+    "tech:knee",
+    "tech:elbow"
+   ]
+  },
+  {
+   "kind": "setup",
+   "art": "mixed-martial-arts",
+   "name": "Body Lock → High Kick",
+   "purpose": "바디락으로 묶은 뒤 떨어지며 하이킥",
+   "description": "바디락으로 상대를 통제하다 하이킥으로 연결 — 경기를 끝내거나 후반 라운드를 대비해 체력을 빼앗습니다.\n\n참고: Evolve MMA — 20 Advanced MMA Striking Set-Ups And Combinations — https://evolve-mma.com/blog/20-advanced-mma-striking-set-ups-and-combinations-you-should-add-to-your-arsenal/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "wrestling__body-lock",
+     "name": "Body Lock",
+     "martialArt": "mixed-martial-arts",
+     "opponentReaction": "바디락에 붙잡혀 버팀"
+    },
+    {
+     "techniqueId": "kickboxing__high-kick",
+     "name": "High Kick",
+     "martialArt": "mixed-martial-arts",
+     "note": "떨어지는 순간"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:wrestling__body-lock>kickboxing__high-kick",
+   "update": false,
+   "tags": [
+    "body",
+    "finish",
+    "tech:high_kick"
+   ]
+  },
+  {
+   "kind": "setup",
+   "art": "mixed-martial-arts",
+   "name": "Jab → Cross → Jab Feint → Spinning Elbow",
+   "purpose": "원투 뒤 쉬었다 잽 페인트로 스피닝 엘보",
+   "description": "원투 뒤 잠깐 멈추고 잽 페인트로 반응을 끌어낸 뒤 스피닝 엘보로 균형이 흐트러진 상대를 노립니다.\n\n참고: Evolve MMA — 20 Advanced MMA Striking Set-Ups And Combinations — https://evolve-mma.com/blog/20-advanced-mma-striking-set-ups-and-combinations-you-should-add-to-your-arsenal/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "kickboxing__jab",
+     "name": "Jab",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "kickboxing__cross",
+     "name": "Cross",
+     "martialArt": "mixed-martial-arts",
+     "note": "원투 뒤 잠깐 멈춤"
+    },
+    {
+     "techniqueId": "boxing__jab-feint",
+     "name": "Jab Feint",
+     "martialArt": "mixed-martial-arts",
+     "opponentReaction": "잽을 막으려 반응"
+    },
+    {
+     "techniqueId": "muay-thai__spinning-elbow",
+     "name": "Spinning Elbow",
+     "martialArt": "mixed-martial-arts",
+     "note": "균형을 잃은 순간"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:kickboxing__jab>kickboxing__cross>boxing__jab-feint>muay-thai__spinning-elbow",
+   "update": false,
+   "tags": [
+    "feint",
+    "tech:jab",
+    "tech:elbow"
+   ]
+  },
+  {
+   "kind": "setup",
+   "art": "mixed-martial-arts",
+   "name": "Lead Hook → Basic Double Leg",
+   "purpose": "리드 훅으로 달려들게 해 더블레그 (GSP vs 세라)",
+   "description": "조르주 생피에르가 맷 세라를 상대로 쓴 연결: 리드 훅에 상대가 앞으로 달려들면 낮춘 어깨에 걸려 더블레그가 들어갑니다.\n\n참고: Evolve — Setting Up Takedowns With Strikes (GSP · Rashad Evans · Frankie Edgar · Josh Koscheck) — https://evolve-vacation.com/blog/setting-up-takedowns-with-strikes/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "kickboxing__lead-hook",
+     "name": "Lead Hook",
+     "martialArt": "mixed-martial-arts",
+     "opponentReaction": "훅을 맞받으려 앞으로 달려듦"
+    },
+    {
+     "techniqueId": "wrestling__basic-double-leg",
+     "name": "Basic Double Leg",
+     "martialArt": "mixed-martial-arts",
+     "note": "낮춘 어깨로 받아 더블레그"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:kickboxing__lead-hook>wrestling__basic-double-leg",
+   "update": false,
+   "tags": [
+    "takedown",
+    "submission",
+    "finish",
+    "tech:hook",
+    "tech:double_leg"
+   ]
+  },
+  {
+   "kind": "setup",
+   "art": "mixed-martial-arts",
+   "name": "Cross → Lead Hook → Level Change Double Leg",
+   "purpose": "빠른 연타로 커버하게 만들고 태클 (라샤드 에반스)",
+   "description": "빠르고 강한 펀치에 상대가 두 팔로 머리를 감싸면 시야가 가리고 몸이 굳어, 그 순간 태클을 들어갑니다.\n\n참고: Evolve — Setting Up Takedowns With Strikes (GSP · Rashad Evans · Frankie Edgar · Josh Koscheck) — https://evolve-vacation.com/blog/setting-up-takedowns-with-strikes/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "kickboxing__cross",
+     "name": "Cross",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "kickboxing__lead-hook",
+     "name": "Lead Hook",
+     "martialArt": "mixed-martial-arts",
+     "opponentReaction": "빠른 연타에 두 팔로 머리를 감싸 커버"
+    },
+    {
+     "techniqueId": "mixed-martial-arts__level-change-double-leg",
+     "name": "Level Change Double Leg",
+     "martialArt": "mixed-martial-arts",
+     "note": "시야가 가려진 순간"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:kickboxing__cross>kickboxing__lead-hook>mixed-martial-arts__level-change-double-leg",
+   "update": false,
+   "tags": [
+    "takedown",
+    "finish",
+    "tech:double_leg"
+   ]
+  },
+  {
+   "kind": "setup",
+   "art": "mixed-martial-arts",
+   "name": "Duck → Basic Double Leg",
+   "purpose": "돌진하는 펀치 아래로 덕킹해 더블레그 (프랭키 에드가)",
+   "description": "상대의 큰 펀치 아래로 덕킹해 그대로 골반이나 다리를 잡는 카운터 레슬링 — 프랭키 에드가가 그레이 메이나드 상대로 성공.\n\n참고: Evolve — Setting Up Takedowns With Strikes (GSP · Rashad Evans · Frankie Edgar · Josh Koscheck) — https://evolve-vacation.com/blog/setting-up-takedowns-with-strikes/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "boxing__duck",
+     "name": "Duck",
+     "martialArt": "mixed-martial-arts",
+     "opponentReaction": "크게 휘두르는 펀치로 돌진"
+    },
+    {
+     "techniqueId": "wrestling__basic-double-leg",
+     "name": "Basic Double Leg",
+     "martialArt": "mixed-martial-arts",
+     "note": "덕킹한 그대로 골반·다리를 잡음"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:boxing__duck>wrestling__basic-double-leg",
+   "update": false,
+   "tags": [
+    "takedown",
+    "counter",
+    "finish",
+    "tech:double_leg"
+   ]
+  },
+  {
+   "kind": "setup",
+   "art": "mixed-martial-arts",
+   "name": "Level Change Double Leg → Rear Uppercut",
+   "purpose": "막힌 태클 직후 어퍼컷 (에드가 vs 메이나드)",
+   "description": "에드가는 실패한 더블레그 직후 어퍼컷으로 메이나드를 KO 시켰습니다. 태클이 막혀도 바로 타격으로 전환.\n\n참고: Evolve — Setting Up Takedowns With Strikes (GSP · Rashad Evans · Frankie Edgar · Josh Koscheck) — https://evolve-vacation.com/blog/setting-up-takedowns-with-strikes/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "mixed-martial-arts__level-change-double-leg",
+     "name": "Level Change Double Leg",
+     "martialArt": "mixed-martial-arts",
+     "opponentReaction": "태클을 막으려 고개를 숙이고 버팀"
+    },
+    {
+     "techniqueId": "kickboxing__rear-uppercut",
+     "name": "Rear Uppercut",
+     "martialArt": "mixed-martial-arts",
+     "note": "막힌 태클 직후, 숙인 머리로"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:mixed-martial-arts__level-change-double-leg>kickboxing__rear-uppercut",
+   "update": false,
+   "tags": [
+    "takedown",
+    "defense",
+    "finish",
+    "tech:uppercut"
+   ]
+  },
+  {
+   "kind": "setup",
+   "art": "mixed-martial-arts",
+   "name": "Catch → High Single",
+   "purpose": "킥을 잡아 싱글 레그 (헨리 세후도)",
+   "description": "킥을 차는 순간 상대는 균형이 무너집니다. 킥 방향으로 비켜 힘을 죽이며 다리를 받아 잡고, 당기며 붙어 싱글 레그로 넘깁니다.\n\n참고: Dynamic Striking — Catching Kicks To Set Up A Takedown With Henry Cejudo — https://dynamicstriking.com/blogs/news/catching-kicks-to-set-up-a-takedown-with-henry-cejudo / Dynamic Striking — How To Catch Your Opponent's Leg And Take Them Down (Henry Cejudo) — https://dynamicstriking.com/blogs/news/how-to-catch-your-opponents-leg-and-take-them-down-by-henry-cejudo / Evolve — Setting Up Takedowns With Strikes (GSP · Rashad Evans · Frankie Edgar · Josh Koscheck) — https://evolve-vacation.com/blog/setting-up-takedowns-with-strikes/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "kickboxing__catch",
+     "name": "Catch",
+     "martialArt": "mixed-martial-arts",
+     "note": "킥 방향으로 옆으로 움직이며 다리를 받아 잡음",
+     "opponentReaction": "한 발로 서서 균형이 흔들림"
+    },
+    {
+     "techniqueId": "wrestling__high-single",
+     "name": "High Single",
+     "martialArt": "mixed-martial-arts",
+     "note": "잡은 다리를 당기며 붙어 싱글"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:kickboxing__catch>wrestling__high-single",
+   "update": false,
+   "tags": [
+    "takedown",
+    "finish",
+    "tech:single_leg"
+   ]
+  },
+  {
+   "kind": "setup",
+   "art": "mixed-martial-arts",
+   "name": "Catch → Outside Trip",
+   "purpose": "킥을 잡아 트립으로 넘기기",
+   "description": "세후도는 다리를 잡은 뒤 싱글·더블뿐 아니라 다리 걸기(트립)로도 넘길 수 있다고 설명합니다.\n\n참고: Dynamic Striking — How To Catch Your Opponent's Leg And Take Them Down (Henry Cejudo) — https://dynamicstriking.com/blogs/news/how-to-catch-your-opponents-leg-and-take-them-down-by-henry-cejudo\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "kickboxing__catch",
+     "name": "Catch",
+     "martialArt": "mixed-martial-arts",
+     "opponentReaction": "잡힌 다리로 한 발 서기"
+    },
+    {
+     "techniqueId": "wrestling__outside-trip",
+     "name": "Outside Trip",
+     "martialArt": "mixed-martial-arts",
+     "note": "디딤발을 바깥에서 걸어 넘김"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:kickboxing__catch>wrestling__outside-trip",
+   "update": false,
+   "tags": [
+    "takedown"
+   ]
+  },
+  {
+   "kind": "combo",
+   "art": "mixed-martial-arts",
+   "name": "Jab → Gazelle Punch",
+   "purpose": "자리 잡은 잽 뒤 가젤 펀치",
+   "description": "잽이 자리 잡으면 앞손 가젤 펀치(무릎을 굽혔다 튀어 오르며 치는 훅)로 연결할 수 있다고 소개됩니다.\n\n참고: Evolve University — 5 Of The Most Useful Counter Techniques And Combinations For MMA — https://evolve-university.com/blog/5-of-the-most-useful-counter-techniques-and-combinations-for-mma/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "kickboxing__jab",
+     "name": "Jab",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "boxing__gazelle-punch",
+     "name": "Gazelle Punch",
+     "martialArt": "boxing"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:kickboxing__jab>boxing__gazelle-punch",
+   "update": false,
+   "tags": [
+    "counter",
+    "tech:jab"
+   ]
+  },
+  {
+   "kind": "combo",
+   "art": "mixed-martial-arts",
+   "name": "Jab → Cross → Lead Hook → Low Kick → Superman Punch",
+   "purpose": "원투훅-로우킥 뒤 다리를 뒤로 뻗으며 슈퍼맨",
+   "description": "원투훅 뒤 뒷발 로우킥, 그 다리를 회수해 뒤로 쭉 뻗으며 크로스를 던지는 반 박자 공격 — 뻗은 다리가 균형을 잡아 줘 빗나가도 버틸 수 있습니다.\n\n참고: Evolve University — 5 Of The Most Useful Counter Techniques And Combinations For MMA — https://evolve-university.com/blog/5-of-the-most-useful-counter-techniques-and-combinations-for-mma/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "kickboxing__jab",
+     "name": "Jab",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "kickboxing__cross",
+     "name": "Cross",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "kickboxing__lead-hook",
+     "name": "Lead Hook",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "kickboxing__low-kick",
+     "name": "Low Kick",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "muay-thai__superman-punch",
+     "name": "Superman Punch",
+     "martialArt": "mixed-martial-arts"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:kickboxing__jab>kickboxing__cross>kickboxing__lead-hook>kickboxing__low-kick>muay-thai__superman-punch",
+   "update": false,
+   "tags": [
+    "counter",
+    "tech:hook",
+    "tech:low_kick"
+   ]
+  },
+  {
+   "kind": "setup",
+   "art": "mixed-martial-arts",
+   "name": "Cross → High Kick",
+   "purpose": "크로스를 패리하게 만들어 하이킥",
+   "description": "상대가 크로스를 계속 패리하면 그 동작이 킥이 들어갈 틈을 만듭니다. 오픈 스탠스(오소독스 vs 사우스포)에서 특히 잘 통합니다.\n\n참고: Evolve University — 5 Of The Most Useful Counter Techniques And Combinations For MMA — https://evolve-university.com/blog/5-of-the-most-useful-counter-techniques-and-combinations-for-mma/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "kickboxing__cross",
+     "name": "Cross",
+     "martialArt": "mixed-martial-arts",
+     "note": "맞히지 않아도 되는 크로스(페인트 가능)",
+     "opponentReaction": "크로스를 패리함"
+    },
+    {
+     "techniqueId": "kickboxing__high-kick",
+     "name": "High Kick",
+     "martialArt": "mixed-martial-arts",
+     "note": "패리로 생긴 빈틈으로"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:kickboxing__cross>kickboxing__high-kick",
+   "update": false,
+   "tags": [
+    "counter",
+    "tech:cross",
+    "tech:high_kick"
+   ]
+  },
+  {
+   "kind": "combo",
+   "art": "mixed-martial-arts",
+   "name": "Check → Superman Punch",
+   "purpose": "정강이 체크에서 발을 내리지 않고 슈퍼맨 펀치 (데너 싯반돈)",
+   "description": "킥을 정강이로 막은 다리를 땅에 내리지 않고 그대로 뒤로 차며 슈퍼맨 펀치로 이어 KO를 만든 장면에서 가져온 연결.\n\n참고: Evolve MMA — Explosive Superman Punch Combinations (Denner Sitbandon breakdown) — https://evolve-mma.com/blog/watch-knock-your-opponent-out-with-these-explosive-superman-punch-combinations-videos/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "kickboxing__check",
+     "name": "Check",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "muay-thai__superman-punch",
+     "name": "Superman Punch",
+     "martialArt": "mixed-martial-arts"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:kickboxing__check>muay-thai__superman-punch",
+   "update": false,
+   "tags": [
+    "defense",
+    "finish"
+   ]
+  },
+  {
+   "kind": "setup",
+   "art": "mixed-martial-arts",
+   "name": "Kick Feint → Superman Punch",
+   "purpose": "킥 페인트로 슈퍼맨 펀치 셋업",
+   "description": "슈퍼맨 펀치는 잘못 쓰면 훅 카운터를 맞기 쉬워 셋업이 필요합니다. 킥 페인트를 먼저 보여 준 뒤 던집니다.\n\n참고: Evolve MMA — Explosive Superman Punch Combinations (Denner Sitbandon breakdown) — https://evolve-mma.com/blog/watch-knock-your-opponent-out-with-these-explosive-superman-punch-combinations-videos/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "kickboxing__kick-feint",
+     "name": "Kick Feint",
+     "martialArt": "mixed-martial-arts",
+     "opponentReaction": "킥을 막으려 다리를 들거나 손을 내림"
+    },
+    {
+     "techniqueId": "muay-thai__superman-punch",
+     "name": "Superman Punch",
+     "martialArt": "mixed-martial-arts",
+     "note": "페인트한 다리를 뒤로 차며"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:kickboxing__kick-feint>muay-thai__superman-punch",
+   "update": false,
+   "tags": [
+    "counter",
+    "feint"
+   ]
+  },
+  {
+   "kind": "combo",
+   "art": "mixed-martial-arts",
+   "name": "Sprawl → Whizzer",
+   "purpose": "스프롤로 슛을 끊고, 다리를 잡히면 위저",
+   "description": "슛이 오면 스탠스를 넓히고 골반을 낮춰 체중을 상대 몸통에 싣는 스프롤, 그래도 다리를 잡히면 상대 팔을 위에서 감아 눌러 어깨에 압박을 주는 위저로 거리를 관리합니다.\n\n참고: Evolve University — How To Defend The Single Leg Takedown In MMA — https://evolve-university.com/blog/how-to-defend-the-single-leg-takedown-in-mma/ / Evolve MMA — What Is Sprawling In MMA? — https://evolve-mma.com/blog/what-is-sprawling-in-mma/\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "wrestling__sprawl",
+     "name": "Sprawl",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "wrestling__whizzer",
+     "name": "Whizzer",
+     "martialArt": "mixed-martial-arts"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:wrestling__sprawl>wrestling__whizzer",
+   "update": false,
+   "tags": [
+    "takedown",
+    "pressure",
+    "distance",
+    "body"
+   ]
+  },
+  {
+   "kind": "combo",
+   "art": "mixed-martial-arts",
+   "name": "Down Block → Go-Behind",
+   "purpose": "싱글을 다운 블락으로 막고 고 비하인드",
+   "description": "들어오는 싱글을 다운 블락으로 막고, 무릎을 미끄러뜨려 골반 옆을 축으로 돌아 상대 뒤로 갑니다.\n\n참고: Coaches Insider — Down Block Go Behind vs a Single (Austin DeVoe, Colorado School of Mines) — https://coachesinsider.com/wrestling/down-block-go-behind-vs-a-single-with-austin-devoe-colorado-school-of-mines\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "wrestling__down-block",
+     "name": "Down Block",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "wrestling__go-behind",
+     "name": "Go-Behind",
+     "martialArt": "mixed-martial-arts"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:wrestling__down-block>wrestling__go-behind",
+   "update": false,
+   "tags": [
+    "defense"
+   ]
+  },
+  {
+   "kind": "combo",
+   "art": "mixed-martial-arts",
+   "name": "Sprawl → Snap Down → Go-Behind",
+   "purpose": "스프롤로 머리를 끌어내린 뒤 스냅 다운에서 고 비하인드",
+   "description": "상대의 전진을 풀 스프롤로 받아 머리를 매트로 끌어내리고, 스냅 다운에서 돌아 뒤를 잡습니다.\n\n참고: USA Wrestling — Snapdowns to Takedowns — https://content.usawmembership.com/articles/3711\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "wrestling__sprawl",
+     "name": "Sprawl",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "wrestling__snap-down",
+     "name": "Snap Down",
+     "martialArt": "mixed-martial-arts"
+    },
+    {
+     "techniqueId": "wrestling__go-behind",
+     "name": "Go-Behind",
+     "martialArt": "mixed-martial-arts"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:mixed-martial-arts:wrestling__sprawl>wrestling__snap-down>wrestling__go-behind",
+   "update": false,
+   "tags": [
+    "takedown"
+   ]
+  },
+  {
+   "kind": "combo",
+   "art": "wrestling",
+   "name": "Sprawl → High Single",
+   "purpose": "스프롤 후 일어나 상대 앞다리로 싱글 (스프롤샷 드릴)",
+   "description": "파트너 신호에 스프롤, 바로 일어나 상대 스탠스를 읽고 앞다리 쪽으로 싱글 레그를 들어가는 드릴. 30초~1분 라운드로 반복합니다.\n\n참고: Digitsu — Sprawlshot Drill (Mason Fowler) — https://digitsu.com/v/sprawlshot-drill-mason-fowler\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "wrestling__sprawl",
+     "name": "Sprawl",
+     "martialArt": "wrestling"
+    },
+    {
+     "techniqueId": "wrestling__high-single",
+     "name": "High Single",
+     "martialArt": "wrestling"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:wrestling:wrestling__sprawl>wrestling__high-single",
+   "update": false,
+   "tags": [
+    "strike_setup",
+    "takedown"
+   ]
+  },
+  {
+   "kind": "combo",
+   "art": "wrestling",
+   "name": "Jump Sprawl → Basic Double Leg",
+   "purpose": "점프 스프롤로 끊고 일어나며 바로 더블레그",
+   "description": "스프롤로 슛을 끊고 점프하듯 일어나 자세를 되찾자마자 더블레그로 반격하는 반응·체력 드릴.\n\n참고: Digitsu — Sprawlshot Drill (Mason Fowler) — https://digitsu.com/v/sprawlshot-drill-mason-fowler / Freeletics — Sprawls (스프롤 후 일어나며 점프하는 동작) — https://freeletics.com/en/blog/posts/freeletics-exercises-sprawls\n등록: MARTIALDEX 운영자 큐레이션 mma-v2 (2026-10-25)",
+   "steps": [
+    {
+     "techniqueId": "wrestling__jump-sprawl",
+     "name": "Jump Sprawl",
+     "martialArt": "wrestling"
+    },
+    {
+     "techniqueId": "wrestling__basic-double-leg",
+     "name": "Basic Double Leg",
+     "martialArt": "wrestling"
+    }
+   ],
+   "sourceRef": "martialdex-curated:mma-v2:wrestling:wrestling__jump-sprawl>wrestling__basic-double-leg",
+   "update": false,
+   "tags": [
+    "takedown",
+    "tech:double_leg"
+   ]
+  }
+ ],
+ "publishedRows": [
+  {
+   "id": "sc_53421df9-304e-47dd-ac87-84706b86c4fa",
+   "name": "Slip → Rear Uppercut → Body Hook",
+   "art": "mixed-martial-arts",
+   "kind": "combo"
+  },
+  {
+   "id": "sc_f2cd34f2-c356-4711-8c68-9661df477126",
+   "name": "Inside Low Kick → Switch Stance → Lead Hook",
+   "art": "mixed-martial-arts",
+   "kind": "setup"
+  },
+  {
+   "id": "sc_ac175c45-181b-42bd-99ae-54ea81c1d637",
+   "name": "Shoulder Roll → Spinning Backfist",
+   "art": "mixed-martial-arts",
+   "kind": "combo"
+  },
+  {
+   "id": "sc_89014b5d-26e9-4a74-a3fa-6e325be8e21f",
+   "name": "Kick Feint → Kick Feint → High Kick",
+   "art": "mixed-martial-arts",
+   "kind": "setup"
+  },
+  {
+   "id": "sc_f324173c-180c-4af2-972f-b76a701278db",
+   "name": "Body Cross → Straight Knee → Horizontal Elbow",
+   "art": "mixed-martial-arts",
+   "kind": "combo"
+  },
+  {
+   "id": "sc_ba981488-aa55-4b02-8774-22db7d355165",
+   "name": "Superman Punch → Lead Low Kick",
+   "art": "mixed-martial-arts",
+   "kind": "combo"
+  },
+  {
+   "id": "sc_0f2eaaac-abca-4992-880d-fa9dc2c2c0a9",
+   "name": "Body Jab → Overhand",
+   "art": "mixed-martial-arts",
+   "kind": "combo"
+  },
+  {
+   "id": "sc_21a7b06e-a78a-41f7-ab88-6890eecfe2cc",
+   "name": "Jab → Lead Teep → Flying Knee",
+   "art": "mixed-martial-arts",
+   "kind": "setup"
+  },
+  {
+   "id": "sc_c8b60f16-6435-49df-8db2-c1d46f321162",
+   "name": "Clinch Knee → Elbow from Clinch",
+   "art": "mixed-martial-arts",
+   "kind": "combo"
+  },
+  {
+   "id": "sc_5ec9c425-c109-4bf1-9df9-7a72875711d9",
+   "name": "Jab → Overhand → High Kick",
+   "art": "mixed-martial-arts",
+   "kind": "combo"
+  },
+  {
+   "id": "sc_810f65c9-86a7-4cbf-b495-ab24169338fb",
+   "name": "Jab → Feint → Body Hook",
+   "art": "mixed-martial-arts",
+   "kind": "setup"
+  },
+  {
+   "id": "sc_e77612c6-f1ca-4294-98ef-97698c89ec0d",
+   "name": "Low Kick → High Kick",
+   "art": "mixed-martial-arts",
+   "kind": "combo"
+  },
+  {
+   "id": "sc_b3701ea8-2225-49c9-9ba8-492d1530a815",
+   "name": "Overhand → Level Change Double Leg",
+   "art": "mixed-martial-arts",
+   "kind": "setup"
+  },
+  {
+   "id": "sc_5f65e4df-bafd-4b57-b769-1d3e40c67218",
+   "name": "Cross → Rear Knee → Horizontal Elbow",
+   "art": "mixed-martial-arts",
+   "kind": "combo"
+  },
+  {
+   "id": "sc_43d630e2-64de-488c-8977-3bcb7f4885fa",
+   "name": "Body Lock → High Kick",
+   "art": "mixed-martial-arts",
+   "kind": "setup"
+  },
+  {
+   "id": "sc_8dd00b5f-4026-4a3d-ac08-4be88a4aec6f",
+   "name": "Jab → Cross → Jab Feint → Spinning Elbow",
+   "art": "mixed-martial-arts",
+   "kind": "setup"
+  },
+  {
+   "id": "sc_ad7bc44f-cfd7-47e1-a80e-23db21037912",
+   "name": "Lead Hook → Basic Double Leg",
+   "art": "mixed-martial-arts",
+   "kind": "setup"
+  },
+  {
+   "id": "sc_05730f3b-c6fd-429b-b87a-56043ba5a959",
+   "name": "Cross → Lead Hook → Level Change Double Leg",
+   "art": "mixed-martial-arts",
+   "kind": "setup"
+  },
+  {
+   "id": "sc_eb02606b-ee45-4eb7-8749-7c7410c82f5b",
+   "name": "Duck → Basic Double Leg",
+   "art": "mixed-martial-arts",
+   "kind": "setup"
+  },
+  {
+   "id": "sc_1ff2c1ec-329a-4407-97a6-dd5eac6fc4d3",
+   "name": "Level Change Double Leg → Rear Uppercut",
+   "art": "mixed-martial-arts",
+   "kind": "setup"
+  },
+  {
+   "id": "sc_0b293f13-8c97-4048-bda1-a44c3ef11bba",
+   "name": "Catch → High Single",
+   "art": "mixed-martial-arts",
+   "kind": "setup"
+  },
+  {
+   "id": "sc_8d94b561-60dc-4ecc-b661-4458a3f16aa9",
+   "name": "Catch → Outside Trip",
+   "art": "mixed-martial-arts",
+   "kind": "setup"
+  },
+  {
+   "id": "sc_2d458471-50aa-4401-be35-c1d8c4a03586",
+   "name": "Jab → Gazelle Punch",
+   "art": "mixed-martial-arts",
+   "kind": "combo"
+  },
+  {
+   "id": "sc_e3affaf4-d61e-4108-8c60-ef902c2be810",
+   "name": "Jab → Cross → Lead Hook → Low Kick → Superman Punch",
+   "art": "mixed-martial-arts",
+   "kind": "combo"
+  },
+  {
+   "id": "sc_79e4d45d-c5e8-42d1-9579-afee16362869",
+   "name": "Cross → High Kick",
+   "art": "mixed-martial-arts",
+   "kind": "setup"
+  },
+  {
+   "id": "sc_6f7405dd-dbae-4ab1-bce7-9e21d54c56a2",
+   "name": "Check → Superman Punch",
+   "art": "mixed-martial-arts",
+   "kind": "combo"
+  },
+  {
+   "id": "sc_06c46417-6726-426f-995f-f1e5e4106c23",
+   "name": "Kick Feint → Superman Punch",
+   "art": "mixed-martial-arts",
+   "kind": "setup"
+  },
+  {
+   "id": "sc_1d41b145-8198-44d5-869f-7fb26f27cc6a",
+   "name": "Sprawl → Whizzer",
+   "art": "mixed-martial-arts",
+   "kind": "combo"
+  },
+  {
+   "id": "sc_c98fbd94-59c0-45db-bedd-c6e6591b74d6",
+   "name": "Down Block → Go-Behind",
+   "art": "mixed-martial-arts",
+   "kind": "combo"
+  },
+  {
+   "id": "sc_7299db6c-874b-462b-a6ee-e6bc7be848e1",
+   "name": "Sprawl → Snap Down → Go-Behind",
+   "art": "mixed-martial-arts",
+   "kind": "combo"
+  },
+  {
+   "id": "sc_1f5fe99f-15bf-4bc2-871f-7d62609243ba",
+   "name": "Sprawl → High Single",
+   "art": "wrestling",
+   "kind": "combo"
+  },
+  {
+   "id": "sc_26ddb4b7-47e2-4668-9c03-09c8d8c41a28",
+   "name": "Jump Sprawl → Basic Double Leg",
+   "art": "wrestling",
+   "kind": "combo"
+  }
+ ],
+ "ranAt": "2026-10-25T02:40:22.327Z"
+}

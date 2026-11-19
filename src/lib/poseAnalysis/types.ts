@@ -34,6 +34,8 @@ export interface MetricResult {
   score: number;
   /** Short, honest note on what was actually measured — never a certainty claim. */
   detail: string;
+  /** false = the landmarks it needs were not seen: the score is a placeholder and is NOT counted (4차). */
+  measured?: boolean;
 }
 
 export interface PoseAnalysisMetricConfig {
@@ -54,7 +56,7 @@ export interface PoseAnalysisResult {
   techniqueId: string;
   overallScore: number;
   status: Exclude<SkillStatus, 'not_analyzed'>;
-  metricScores: { id: string; name: string; score: number; detail: string }[];
+  metricScores: { id: string; name: string; score: number; detail: string; measured?: boolean }[];
   strengths: string[];
   improvements: string[];
   /** How many usable pose frames (visible + confident enough) fed into this result. */
@@ -75,9 +77,11 @@ export interface PoseAnalysisRecord {
    * metricScores are then per-criterion (match 100 · partial 50 · mismatch 0)
    * and the full evaluation is in martialdex:form-compare-records.
    */
-  method?: 'landmark' | 'video_compare';
+  method?: 'landmark' | 'video_compare' | 'reference_3d';
   referenceId?: string;
   reliability?: 'high' | 'medium' | 'low';
+  /** The reference (3D clip / video segment) and the exact capture window (timedCapture/reference.ts). */
+  capture?: import('../timedCapture/reference').CaptureRecord;
 }
 
 export interface TechniqueSkillSummary {

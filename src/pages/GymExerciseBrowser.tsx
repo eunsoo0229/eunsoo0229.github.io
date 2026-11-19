@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import BackButton from '../components/BackButton';
@@ -25,7 +26,7 @@ export default function GymExerciseBrowser() {
           <span>헬스 운동 목록</span>
         </div>
         <div className="section-title">
-          <h2>🏋️ 헬스 운동 목록</h2>
+          <h2><Icon name="dumbbell" /> 헬스 운동 목록</h2>
           <Link to="/training/exercises/request" className="see-all">
             + 운동 추가 요청
           </Link>

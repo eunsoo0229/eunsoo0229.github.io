@@ -1,3 +1,4 @@
+import Icon from './Icon';
 // Deliberately its own small component rather than reusing
 // TrainingCalendarView — that component's CalendarDayData shape
 // (count/totalMinutes/totalVolume/intensity 0-3) is training-specific, and
@@ -39,13 +40,13 @@ export default function NutritionCalendarView({
     <div className="training-calendar">
       <div className="training-calendar__header">
         <button type="button" className="btn btn-ghost btn-sm" onClick={onPrevMonth} aria-label="이전 달">
-          ◀
+          <Icon name="prev" />
         </button>
         <strong>
           {year}년 {month + 1}월
         </strong>
         <button type="button" className="btn btn-ghost btn-sm" onClick={onNextMonth} aria-label="다음 달">
-          ▶
+          <Icon name="next" />
         </button>
       </div>
       <div className="training-calendar__weekdays">

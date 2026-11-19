@@ -1,6 +1,9 @@
+import Icon from '../Icon';
+import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import BottomSheet from '../BottomSheet';
+import Avatar from '../Avatar';
 import type { CommunityComment, CommunityPost } from '../../lib/communityPost/types';
 import { addComment, deleteComment, likeComment, listComments, listReplies, unlikeComment, type CommentSort } from '../../lib/communityPost/service';
 
@@ -23,7 +26,6 @@ export function timeAgo(iso: string, now = Date.now()): string {
   return iso.slice(0, 10);
 }
 
-const initialOf = (name: string) => (name.trim()[0] ?? '?').toUpperCase();
 
 interface ReplyTarget {
   /** the top-level comment the reply goes under (depth stays 1) */
@@ -51,7 +53,7 @@ function CommentLine({
 }) {
   return (
     <div className={`cmt${reply ? ' cmt--reply' : ''}`} data-testid={reply ? 'comment-reply' : 'comment'} data-id={c.id}>
-      <span className="cmt__avatar" aria-hidden="true">{initialOf(c.authorNickname)}</span>
+      <Link to={`/u/${c.authorId}`}><Avatar className="cmt__avatar" seed={c.authorId} nickname={c.authorNickname} /></Link>
       <div className="cmt__body">
         <div className="cmt__meta">
           <strong>{c.authorNickname}</strong>
@@ -73,7 +75,7 @@ function CommentLine({
         </div>
       </div>
       <button type="button" className={`cmt__like${c.viewerHasLiked ? ' is-on' : ''}`} onClick={() => onToggleLike(c)} aria-pressed={c.viewerHasLiked} aria-label={c.viewerHasLiked ? '좋아요 취소' : '좋아요'} data-testid="comment-like">
-        <span aria-hidden="true">{c.viewerHasLiked ? '♥' : '♡'}</span>
+        <Icon name={c.viewerHasLiked ? 'heart-filled' : 'heart'} />
         {c.likeCount > 0 && <small>{c.likeCount}</small>}
       </button>
     </div>
@@ -210,7 +212,7 @@ export default function CommentsSheet({ post, currentUserId, currentUserNickname
           ))}
         </div>
         <button type="button" className="cmt-head__close" onClick={onClose} aria-label="닫기">
-          ✕
+          <Icon name="close" />
         </button>
       </div>
 
@@ -259,12 +261,12 @@ export default function CommentsSheet({ post, currentUserId, currentUserNickname
                 }}
                 aria-label="답글 취소"
               >
-                ✕
+                <Icon name="close" />
               </button>
             </div>
           )}
           <div className="cmt-composer__row">
-            <span className="cmt__avatar" aria-hidden="true">{initialOf(currentUserNickname ?? '나')}</span>
+            <Avatar className="cmt__avatar" seed={currentUserId ?? 'me'} nickname={currentUserNickname ?? '나'} />
             <input
               ref={inputRef}
               className="cmt-composer__input"

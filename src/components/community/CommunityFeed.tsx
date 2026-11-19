@@ -1,3 +1,4 @@
+import Icon from '../Icon';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useAuth } from '../../lib/auth/AuthProvider';
@@ -101,7 +102,7 @@ export default function CommunityFeed() {
         </div>
         {user && profile && (
           <button type="button" className="btn btn-primary btn-sm" onClick={() => setComposerOpen(true)}>
-            ✍️ 새 게시물
+            <Icon name="edit" /> 새 게시물
           </button>
         )}
       </div>
@@ -110,7 +111,7 @@ export default function CommunityFeed() {
         <p className="video-status-message">
           #{hashtagFilter} 태그 게시물만 보는 중{' '}
           <button type="button" className="btn btn-ghost btn-sm" onClick={() => setHashtagFilter(null)}>
-            해제 ✕
+            해제 <Icon name="close" />
           </button>
         </p>
       )}

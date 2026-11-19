@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useAuth } from '../lib/auth/AuthProvider';
@@ -177,7 +178,7 @@ export default function GymClassSession() {
       <div className="page">
         <div className="container">
           <div className="card info-card" style={{ textAlign: 'center' }}>
-            <h2>🎉 수업 완료</h2>
+            <h2><Icon name="celebrate" /> 수업 완료</h2>
             <p>{gymName} · {gymClass.title}</p>
             <div className="modal-actions" style={{ justifyContent: 'center' }}>
               <Link className="btn btn-primary" to="/gym">
@@ -216,7 +217,7 @@ export default function GymClassSession() {
             <ul style={{ listStyle: 'none', padding: 0, marginBottom: 12 }}>
               {exercise.sets.map((s, i) => (
                 <li key={i}>
-                  {s.completed ? '☑' : i === activeSetIndex ? '▶' : '☐'} SET {i + 1}
+                  <Icon name={s.completed ? 'check-square' : i === activeSetIndex ? 'play' : 'square'} /> SET {i + 1}
                   {s.completed && s.weightKg != null && s.actualReps !== null ? ` — ${s.weightKg}kg × ${s.actualReps}회` : ''}
                   {s.completed && s.weightKg == null && s.actualReps !== null ? ` — ${s.actualReps}회` : ''}
                   {s.completed && s.actualSeconds !== null ? ` — ${s.actualSeconds}초` : ''}

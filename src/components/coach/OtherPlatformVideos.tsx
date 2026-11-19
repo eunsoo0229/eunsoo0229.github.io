@@ -1,3 +1,4 @@
+import Icon from '../Icon';
 import { useState } from 'react';
 import { openExternal } from '../../lib/externalLink';
 import { PLATFORM_LABEL, type PlatformVideo } from '../../lib/techniqueVideo/otherPlatformVideos';
@@ -37,7 +38,7 @@ export default function OtherPlatformVideos({ videos, testId = 'other-videos' }:
         <p className="video-status-message" style={{ margin: '4px 0 0' }}>
           {cur.reason} ·{' '}
           <button type="button" className="btn btn-ghost btn-sm" onClick={() => openExternal(cur.url)} data-testid={`${testId}-open`}>
-            새 창에서 보기 ↗
+            새 창에서 보기 <Icon name="external" />
           </button>
         </p>
       </div>

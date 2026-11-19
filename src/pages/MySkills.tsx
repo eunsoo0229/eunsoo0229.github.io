@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { martialArtSummaries } from '../lib/loadData';
@@ -99,7 +100,7 @@ export default function MySkills() {
         </div>
 
         <div className="section-title">
-          <h2>🥋 나의 기술</h2>
+          <h2><Icon name="gi" /> 나의 기술</h2>
         </div>
         <p className="video-status-message" style={{ marginTop: -8 }}>
           커리큘럼 학습 기록과 카메라 자세 분석 결과를 종합한 참고용 숙련도이며, 실제 무술 실력을 완전히
@@ -108,7 +109,7 @@ export default function MySkills() {
         <LoginToBackupBanner featureName="기술 숙련도" />
         <div className="modal-actions modal-actions--start" style={{ margin: '4px 0 8px' }}>
           <Link to="/learned-techniques" className="btn btn-secondary btn-sm">
-            📚 배운 기술 모아보기 · 숙련도 한 번에 바꾸기
+            <Icon name="book" /> 배운 기술 모아보기 · 숙련도 한 번에 바꾸기
           </Link>
         </div>
 
@@ -155,7 +156,7 @@ export default function MySkills() {
           <div className="stack gap-2">
             {byArt.map((a) => (
               <div key={a.martialArtId} className="card info-card">
-                <h3>🥊 {a.nameKo}</h3>
+                <h3><Icon name="glove" /> {a.nameKo}</h3>
                 <div className="curriculum-stat-row">
                   <div>
                     <strong>
@@ -266,7 +267,7 @@ export default function MySkills() {
         )}
 
         <div className="card info-card">
-          <h3>🔻 개선이 필요한 기술 TOP 5</h3>
+          <h3><Icon name="down" /> 개선이 필요한 기술 TOP 5</h3>
           {weakness.length === 0 ? (
             <EmptyState icon="✅" text="아직 개선이 필요하다고 판단할 만한 분석 기록이 없습니다." />
           ) : (

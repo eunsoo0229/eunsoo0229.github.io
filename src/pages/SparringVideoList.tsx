@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSparringVideos } from '../lib/sparringVideo/useSparringVideos';
@@ -245,9 +246,9 @@ function VideoCard({ video }: { video: SparringVideo }) {
             {video.cameraMode === 'dual' ? '전면+후면' : video.facing === 'user' ? '전면' : '후면'} · {formatFileSize(video.fileSizeBytes)}
             {video.notes ? ` · ${video.notes}` : ''}
           </p>
-          <p className="video-status-message">{previewable ? '✓ 미리보기 가능' : '⚠ 미리보기 제한됨'}</p>
+          <p className="video-status-message">{previewable ? <><Icon name="check" /> 미리보기 가능</> : <><Icon name="warn" /> 미리보기 제한됨</>}</p>
           <p className="video-status-message sparring-video-location" title={video.localUri}>
-            📁 {video.localUri}
+            <Icon name="folder" /> {video.localUri}
           </p>
           <div className="modal-actions modal-actions--start" style={{ gap: 4, marginTop: 4, flexWrap: 'wrap' }}>
             {previewable && (
@@ -256,7 +257,7 @@ function VideoCard({ video }: { video: SparringVideo }) {
               </button>
             )}
             <Link className="btn btn-secondary btn-sm" to={`/sparring?video=${encodeURIComponent(video.id)}`} data-testid="sparring-video-analyze">
-              🧠 AI 분석
+              <Icon name="brain" /> AI 분석
             </Link>
             <button className="btn btn-ghost btn-sm" onClick={() => setShowTrim((v) => !v)}>
               {showTrim ? '자르기 닫기' : '자르기'}
@@ -305,7 +306,7 @@ export default function SparringVideoList() {
           <span>촬영한 영상</span>
         </div>
         <div className="section-title">
-          <h2>🎥 촬영한 영상</h2>
+          <h2><Icon name="video" /> 촬영한 영상</h2>
           <Link to="/sparring/record" className="see-all">
             + 새로 촬영
           </Link>

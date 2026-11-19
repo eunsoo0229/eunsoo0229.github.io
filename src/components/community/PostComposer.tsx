@@ -1,3 +1,4 @@
+import Icon from '../Icon';
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import TagPicker from '../shorts/TagPicker';
@@ -8,6 +9,8 @@ import { listMyGyms } from '../../lib/gymClass/service';
 import type { MyGymMembership } from '../../lib/gymClass/types';
 import { buildCurriculumSnapshot, createPost } from '../../lib/communityPost/service';
 import type { CommunityPost } from '../../lib/communityPost/types';
+import EvaluationSettings, { emptyEvaluationDraft } from '../techniqueEvaluation/EvaluationSettings';
+import { createEvaluation, invalidateEvaluation } from '../../lib/techniqueEvaluation/service';
 
 const MAX_MEDIA_ITEMS = 6;
 
@@ -36,6 +39,7 @@ export default function PostComposer({ onClose, onCreated, currentUserId, curren
   const [selectedGymId, setSelectedGymId] = useState('');
   const [selectedCurriculumId, setSelectedCurriculumId] = useState('');
   const [tags, setTags] = useState<PostTag[]>([]);
+  const [evaluation, setEvaluation] = useState(emptyEvaluationDraft());
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -75,6 +79,10 @@ export default function PostComposer({ onClose, onCreated, currentUserId, curren
       setError('내용을 입력하거나 사진/영상/커리큘럼을 추가해주세요.');
       return;
     }
+    if (evaluation.enabled && (!evaluation.techniqueName.trim() || evaluation.criteria.length === 0)) {
+      setError('기술 평가를 켰다면 기술 이름과 평가 항목을 정해 주세요.');
+      return;
+    }
     setSubmitting(true);
     setError(null);
     const selectedGym = gyms.find((g) => g.gym.id === selectedGymId);
@@ -88,18 +96,30 @@ export default function PostComposer({ onClose, onCreated, currentUserId, curren
       curriculumSnapshot: selectedCurriculum ? buildCurriculumSnapshot(selectedCurriculum) : null,
       tags,
     });
-    setSubmitting(false);
     if (!result.ok) {
+      setSubmitting(false);
       setError(result.message);
       return;
     }
+    if (evaluation.enabled) {
+      const ev = await createEvaluation(result.data.id, currentUserId, evaluation);
+      invalidateEvaluation(result.data.id);
+      if (!ev.ok) {
+        setSubmitting(false);
+        // the post itself exists — say so instead of pretending nothing happened
+        setError(`게시물은 올라갔지만 기술 평가 설정을 저장하지 못했습니다: ${ev.message}`);
+        onCreated(result.data);
+        return;
+      }
+    }
+    setSubmitting(false);
     for (const m of media) URL.revokeObjectURL(m.previewUrl);
     onCreated(result.data);
   }
 
   return createPortal(
     <BottomSheet onClose={onClose} className="post-composer">
-      <h3>✍️ 새 게시물</h3>
+      <h3><Icon name="note" /> 새 게시물</h3>
 
       <textarea
         className="field-full"
@@ -116,7 +136,7 @@ export default function PostComposer({ onClose, onCreated, currentUserId, curren
             <div key={i} className="post-composer__media-preview-item">
               {m.type === 'image' ? <img src={m.previewUrl} alt="" /> : <video src={m.previewUrl} muted />}
               <button type="button" className="post-composer__media-remove" onClick={() => removeMedia(i)} aria-label="제거">
-                ✕
+                <Icon name="close" />
               </button>
             </div>
           ))}
@@ -125,7 +145,7 @@ export default function PostComposer({ onClose, onCreated, currentUserId, curren
 
       <div className="chip-row" style={{ marginTop: 8 }}>
         <label className="btn btn-secondary btn-sm" style={{ cursor: 'pointer' }}>
-          📷 사진/영상 추가
+          <Icon name="camera" /> 사진/영상 추가
           <input type="file" accept="image/*,video/*" multiple hidden onChange={handleFileChange} disabled={media.length >= MAX_MEDIA_ITEMS} />
         </label>
       </div>
@@ -134,10 +154,12 @@ export default function PostComposer({ onClose, onCreated, currentUserId, curren
         <TagPicker value={tags} onChange={setTags} viewerId={currentUserId} />
       </div>
 
+      <EvaluationSettings value={evaluation} onChange={setEvaluation} />
+
       <div className="chip-row" style={{ marginTop: 12 }}>
         {gyms.length > 0 && (
           <div>
-            <label className="field-label">📍 체육관 태그 (선택)</label>
+            <label className="field-label"><Icon name="pin" /> 체육관 태그 (선택)</label>
             <br />
             <select className="select" value={selectedGymId} onChange={(e) => setSelectedGymId(e.target.value)}>
               <option value="">태그 안 함</option>
@@ -151,7 +173,7 @@ export default function PostComposer({ onClose, onCreated, currentUserId, curren
         )}
         {myCurricula.length > 0 && (
           <div>
-            <label className="field-label">🧠 커리큘럼 공유 (선택)</label>
+            <label className="field-label"><Icon name="brain" /> 커리큘럼 공유 (선택)</label>
             <br />
             <select className="select" value={selectedCurriculumId} onChange={(e) => setSelectedCurriculumId(e.target.value)}>
               <option value="">공유 안 함</option>

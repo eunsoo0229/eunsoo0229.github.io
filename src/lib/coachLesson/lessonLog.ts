@@ -51,6 +51,8 @@ export interface LessonLogEntry {
   updatedAt: string;
   /** Which coach taught it (coachProvider/types.ts). Absent on logs saved before the coach choice — read with coachKindOf() as 'unknown', never assumed. */
   coachKind?: import('../coachProvider/types').StoredCoachKind;
+  /** End-of-lesson rating of each technique's understanding and proficiency (lessonAssessment.ts) — sets mastery. */
+  assessment?: import('./lessonAssessment').LessonAssessment;
 }
 
 const KEY = 'martialdex:coach-lesson-log';
@@ -89,8 +91,21 @@ export function replaceLessonLog(list: LessonLogEntry[]): void {
 
 /** Saves once per lesson id (finishing screens can re-render). */
 export function saveLessonLog(e: LessonLogEntry): void {
-  const list = read().filter((x) => x.id !== e.id);
-  write([e, ...list]);
+  const all = read();
+  const prior = all.find((x) => x.id === e.id);
+  const list = all.filter((x) => x.id !== e.id);
+  // a re-save of the same lesson (reload on the summary screen) keeps its end-of-lesson assessment
+  write([prior?.assessment && !e.assessment ? { ...e, assessment: prior.assessment } : e, ...list]);
+}
+
+/** Merges fields into one saved lesson (e.g. the end-of-lesson assessment). */
+export function updateLessonLog(id: string, patch: Partial<LessonLogEntry>): LessonLogEntry | null {
+  const list = read();
+  const i = list.findIndex((x) => x.id === id);
+  if (i < 0) return null;
+  list[i] = { ...list[i], ...patch, updatedAt: new Date().toISOString() };
+  write(list);
+  return list[i];
 }
 
 /** Student question → the coach's next answer line, from the lesson transcript. */

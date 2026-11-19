@@ -1,3 +1,4 @@
+import Icon from '../Icon';
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { generateMealPlan, type GeneratedMealPlan } from '../../lib/nutrition/aiMealGen';
@@ -65,7 +66,7 @@ export default function AiMealGenModal({ onClose, onSaved, profile }: { onClose:
 
   return createPortal(
     <BottomSheet onClose={onClose} className={`ai-modal${plan ? ' modal-panel--scrollable' : ''}`}>
-        <h3>🤖 AI 식단 생성</h3>
+        <h3><Icon name="bot" /> AI 식단 생성</h3>
         <p className="video-status-message">
           AI가 생성한 추정값입니다 — 그대로 사용하거나 저장 전에 자유롭게 수정할 수 있습니다.
         </p>

@@ -1,0 +1,2322 @@
+[
+  {
+    "id": "mixed-martial-arts__range-management",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "타격·클린치·테이크다운 동시 위협을 전제로 한 MMA 특유 거리 개념이라 이전되지 않는다.",
+    "evidence": "기술 설명: MMA 특유의 거리, 특정 동작이 아닌 자세"
+  },
+  {
+    "id": "mixed-martial-arts__range-management",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": "karate__distance-control",
+    "reason": "가라테에는 이미 거리 관리 기술이 있으며 MMA 특유 3중 위협 거리 개념은 이전되지 않는다.",
+    "evidence": "catalog-karate: karate__distance-control Distance Control [장거리 (To-ma)]"
+  },
+  {
+    "id": "mixed-martial-arts__range-management",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "타격·클린치·테이크다운 동시 위협을 전제로 한 MMA 특유 거리 개념이라 이전되지 않는다.",
+    "evidence": "기술 설명: MMA 특유의 거리, 특정 동작이 아닌 자세"
+  },
+  {
+    "id": "mixed-martial-arts__range-management",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "타격 거리 개념으로 그래플링 무술의 기술이 아니다.",
+    "evidence": "bjj 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__range-management",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "타격 거리 개념으로 그래플링 무술의 기술이 아니다.",
+    "evidence": "judo 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__range-management",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "타격 거리 개념으로 그래플링 무술의 기술이 아니다.",
+    "evidence": "wrestling 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__range-management",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "타격 거리 개념으로 그래플링 무술의 기술이 아니다.",
+    "evidence": "sambo 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__mma-boxing-combination",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "boxing__combination",
+    "reason": "복싱에는 이미 기본 콤비네이션이 있고 이 항목은 MMA 응용형이다.",
+    "evidence": "catalog-boxing: boxing__combination Combination [거리별 포지션]"
+  },
+  {
+    "id": "mixed-martial-arts__mma-boxing-combination",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "킥·테이크다운 위협을 전제로 낮은 스탠스를 쓰는 MMA 응용형으로 해당 무술 고유 기술이 아니다.",
+    "evidence": "기술 설명: MMA 거리 전용 응용"
+  },
+  {
+    "id": "mixed-martial-arts__mma-boxing-combination",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "킥·테이크다운 위협을 전제로 낮은 스탠스를 쓰는 MMA 응용형으로 해당 무술 고유 기술이 아니다.",
+    "evidence": "기술 설명: MMA 거리 전용 응용"
+  },
+  {
+    "id": "mixed-martial-arts__mma-boxing-combination",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "킥·테이크다운 위협을 전제로 낮은 스탠스를 쓰는 MMA 응용형으로 해당 무술 고유 기술이 아니다.",
+    "evidence": "기술 설명: MMA 거리 전용 응용"
+  },
+  {
+    "id": "mixed-martial-arts__mma-boxing-combination",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "킥·테이크다운 위협을 전제로 낮은 스탠스를 쓰는 MMA 응용형으로 해당 무술 고유 기술이 아니다.",
+    "evidence": "기술 설명: MMA 거리 전용 응용"
+  },
+  {
+    "id": "mixed-martial-arts__mma-boxing-combination",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "그래플링 무술 규칙상 타격이 허용되지 않아 해당 기술이 아니다.",
+    "evidence": "bjj 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__mma-boxing-combination",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "그래플링 무술 규칙상 타격이 허용되지 않아 해당 기술이 아니다.",
+    "evidence": "judo 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__mma-boxing-combination",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "그래플링 무술 규칙상 타격이 허용되지 않아 해당 기술이 아니다.",
+    "evidence": "wrestling 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__mma-boxing-combination",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "컴뱃 삼보 타격은 기본 펀치로 이미 수록되어 있고 이 MMA 응용 콤비네이션은 삼보 기술이 아니다.",
+    "evidence": "catalog-sambo: [컴뱃 삼보 타격 범주] jab/cross/hook"
+  },
+  {
+    "id": "mixed-martial-arts__oblique-kick",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱은 킥이 금지된다.",
+    "evidence": "복싱 규칙: 주먹 외 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__oblique-kick",
+    "art": "kickboxing",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "킥복싱에서 무릎 스톰프는 단체별로 허용/제한이 갈리고 드물어 판단 보류.",
+    "evidence": "K-1/Glory 규칙: 관절 스톰프 킥 취급 상이"
+  },
+  {
+    "id": "mixed-martial-arts__oblique-kick",
+    "art": "muay-thai",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "무에타이 Teep to Leg와 유사하나 무릎 관절 측면 스톰프라 동일성이 불확실하다.",
+    "evidence": "catalog-muay-thai: muay-thai__teep-to-leg Teep to Leg"
+  },
+  {
+    "id": "mixed-martial-arts__oblique-kick",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "karate__kansetsu-geri",
+    "reason": "가라테에는 같은 관절 차기가 Kansetsu Geri로 이미 있다.",
+    "evidence": "catalog-karate: karate__kansetsu-geri Kansetsu Geri"
+  },
+  {
+    "id": "mixed-martial-arts__oblique-kick",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "태권도 경기는 하체(벨트 아래) 공격이 금지된다.",
+    "evidence": "WT 경기 규칙: 벨트 아래 공격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__oblique-kick",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "그래플링 무술 규칙상 타격이 허용되지 않아 해당 기술이 아니다.",
+    "evidence": "bjj 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__oblique-kick",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "그래플링 무술 규칙상 타격이 허용되지 않아 해당 기술이 아니다.",
+    "evidence": "judo 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__oblique-kick",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "그래플링 무술 규칙상 타격이 허용되지 않아 해당 기술이 아니다.",
+    "evidence": "wrestling 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__oblique-kick",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "그래플링 무술 규칙상 타격이 허용되지 않아 해당 기술이 아니다.",
+    "evidence": "sambo 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__dirty-boxing",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "복싱은 잡고 치기(holding and hitting)가 반칙이다.",
+    "evidence": "복싱 규칙: holding and hitting 금지"
+  },
+  {
+    "id": "mixed-martial-arts__dirty-boxing",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "K-1·Glory 킥복싱은 클린치 중 연타가 제한·브레이크되어 해당 기술로 보기 어렵다.",
+    "evidence": "K-1/Glory 규칙: 클린치 즉시 브레이크, 1회 타격 제한"
+  },
+  {
+    "id": "mixed-martial-arts__dirty-boxing",
+    "art": "muay-thai",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "무에타이 클린치에서 펀치는 합법이나 니·엘보 중심이라 핵심 기술인지 불확실하다.",
+    "evidence": "무에타이 규칙: 클린치 중 타격 허용"
+  },
+  {
+    "id": "mixed-martial-arts__dirty-boxing",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "잡고 치기가 금지된 규칙이라 해당 무술 기술이 아니다.",
+    "evidence": "karate 경기 규칙: 잡기·클린치 금지"
+  },
+  {
+    "id": "mixed-martial-arts__dirty-boxing",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "잡고 치기가 금지된 규칙이라 해당 무술 기술이 아니다.",
+    "evidence": "taekwondo 경기 규칙: 잡기·클린치 금지"
+  },
+  {
+    "id": "mixed-martial-arts__dirty-boxing",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "그래플링 무술 규칙상 타격이 허용되지 않아 해당 기술이 아니다.",
+    "evidence": "bjj 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__dirty-boxing",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "그래플링 무술 규칙상 타격이 허용되지 않아 해당 기술이 아니다.",
+    "evidence": "judo 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__dirty-boxing",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "그래플링 무술 규칙상 타격이 허용되지 않아 해당 기술이 아니다.",
+    "evidence": "wrestling 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__dirty-boxing",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "컴뱃 삼보 타격 범주에 클린치 연타 기술로 정착된 것이 아니다.",
+    "evidence": "catalog-sambo: [컴뱃 삼보 타격 범주]"
+  },
+  {
+    "id": "mixed-martial-arts__clinch-takedown-entry",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "클린치 테이크다운이 허용되지 않는 타격 무술이다.",
+    "evidence": "boxing 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__clinch-takedown-entry",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "클린치 테이크다운이 허용되지 않는 타격 무술이다.",
+    "evidence": "kickboxing 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__clinch-takedown-entry",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "무에타이 클린치 던지기는 Tud·트립으로 이미 있고 테이크다운 후 그라운드 연결은 없다.",
+    "evidence": "catalog-muay-thai: muay-thai__tud Tud [클린치 (Clinch)]"
+  },
+  {
+    "id": "mixed-martial-arts__clinch-takedown-entry",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "클린치 테이크다운이 허용되지 않는 타격 무술이다.",
+    "evidence": "karate 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__clinch-takedown-entry",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "클린치 테이크다운이 허용되지 않는 타격 무술이다.",
+    "evidence": "taekwondo 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__clinch-takedown-entry",
+    "art": "bjj",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "타격-그라운드 연결을 전제로 한 포괄적 개념이라 개별 기술로 연결할지 불확실하다.",
+    "evidence": "catalog-bjj: underhook/overhook 그립 항목 존재"
+  },
+  {
+    "id": "mixed-martial-arts__clinch-takedown-entry",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "유도는 도복 그립 중심이며 이 노기 클린치 진입은 유도 기술이 아니다.",
+    "evidence": "유도 규칙: Kumi Kata 도복 그립"
+  },
+  {
+    "id": "mixed-martial-arts__clinch-takedown-entry",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": "wrestling__underhook-entry",
+    "reason": "레슬링에는 언더훅 진입·바디락 테이크다운 등 구체 기술로 이미 존재한다.",
+    "evidence": "catalog-wrestling: wrestling__underhook-entry Underhook Entry"
+  },
+  {
+    "id": "mixed-martial-arts__clinch-takedown-entry",
+    "art": "sambo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "타격-그라운드 연결을 전제로 한 포괄적 개념이라 개별 기술로 연결할지 불확실하다.",
+    "evidence": "catalog-sambo: underhook/overhook 그립 항목 존재"
+  },
+  {
+    "id": "mixed-martial-arts__level-change-double-leg",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "테이크다운이 금지된 타격 무술이다.",
+    "evidence": "boxing 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__level-change-double-leg",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "테이크다운이 금지된 타격 무술이다.",
+    "evidence": "kickboxing 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__level-change-double-leg",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "테이크다운이 금지된 타격 무술이다.",
+    "evidence": "muay-thai 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__level-change-double-leg",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "테이크다운이 금지된 타격 무술이다.",
+    "evidence": "karate 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__level-change-double-leg",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "테이크다운이 금지된 타격 무술이다.",
+    "evidence": "taekwondo 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__level-change-double-leg",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "wrestling__basic-double-leg",
+    "reason": "같은 더블레그가 이미 해당 무술 카탈로그에 있다.",
+    "evidence": "catalog-bjj: wrestling__basic-double-leg Basic Double Leg"
+  },
+  {
+    "id": "mixed-martial-arts__level-change-double-leg",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "wrestling__basic-double-leg",
+    "reason": "같은 더블레그가 이미 해당 무술 카탈로그에 있다.",
+    "evidence": "catalog-judo: wrestling__basic-double-leg Basic Double Leg"
+  },
+  {
+    "id": "mixed-martial-arts__level-change-double-leg",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "wrestling__basic-double-leg",
+    "reason": "같은 더블레그가 이미 해당 무술 카탈로그에 있다.",
+    "evidence": "catalog-wrestling: wrestling__basic-double-leg Basic Double Leg"
+  },
+  {
+    "id": "mixed-martial-arts__level-change-double-leg",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "wrestling__basic-double-leg",
+    "reason": "같은 더블레그가 이미 해당 무술 카탈로그에 있다.",
+    "evidence": "catalog-sambo: wrestling__basic-double-leg Basic Double Leg"
+  },
+  {
+    "id": "mixed-martial-arts__reactive-takedown",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "테이크다운이 금지된 타격 무술이다.",
+    "evidence": "boxing 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__reactive-takedown",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "테이크다운이 금지된 타격 무술이다.",
+    "evidence": "kickboxing 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__reactive-takedown",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "테이크다운이 금지된 타격 무술이다.",
+    "evidence": "muay-thai 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__reactive-takedown",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "테이크다운이 금지된 타격 무술이다.",
+    "evidence": "karate 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__reactive-takedown",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "테이크다운이 금지된 타격 무술이다.",
+    "evidence": "taekwondo 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__reactive-takedown",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "상대 타격 실패를 포착하는 MMA 판단 개념으로 정형 기술이 아니다.",
+    "evidence": "기술 설명: 정형화된 진입 동작이 아닌 반응·판단"
+  },
+  {
+    "id": "mixed-martial-arts__reactive-takedown",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "상대 타격 실패를 포착하는 MMA 판단 개념으로 정형 기술이 아니다.",
+    "evidence": "기술 설명: 정형화된 진입 동작이 아닌 반응·판단"
+  },
+  {
+    "id": "mixed-martial-arts__reactive-takedown",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "상대 타격 실패를 포착하는 MMA 판단 개념으로 정형 기술이 아니다.",
+    "evidence": "기술 설명: 정형화된 진입 동작이 아닌 반응·판단"
+  },
+  {
+    "id": "mixed-martial-arts__reactive-takedown",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "상대 타격 실패를 포착하는 MMA 판단 개념으로 정형 기술이 아니다.",
+    "evidence": "기술 설명: 정형화된 진입 동작이 아닌 반응·판단"
+  },
+  {
+    "id": "mixed-martial-arts__sprawl-to-strikes",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "boxing 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__sprawl-to-strikes",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "kickboxing 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__sprawl-to-strikes",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "muay-thai 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__sprawl-to-strikes",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "karate 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__sprawl-to-strikes",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "taekwondo 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__sprawl-to-strikes",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "bjj 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__sprawl-to-strikes",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "judo 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__sprawl-to-strikes",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "wrestling 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__sprawl-to-strikes",
+    "art": "sambo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "컴뱃 삼보는 그라운드 타격을 허용하나 스포츠 삼보와 구분되고 MMA 특유 변형이라 판단 보류.",
+    "evidence": "catalog-sambo: sambo__ground-striking [컴뱃 삼보 타격 범주]"
+  },
+  {
+    "id": "mixed-martial-arts__posture-control-in-mount",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "boxing 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__posture-control-in-mount",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "kickboxing 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__posture-control-in-mount",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "muay-thai 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__posture-control-in-mount",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "karate 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__posture-control-in-mount",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "taekwondo 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__posture-control-in-mount",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "파운드를 위한 MMA 특유 마운트 자세로 해당 무술 마운트와 목적이 다르다.",
+    "evidence": "catalog-bjj: [마운트 (Mount)] high/low mount 수록"
+  },
+  {
+    "id": "mixed-martial-arts__posture-control-in-mount",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "파운드를 위한 MMA 특유 마운트 자세로 해당 무술 마운트와 목적이 다르다.",
+    "evidence": "catalog-judo: mount 관련 항목"
+  },
+  {
+    "id": "mixed-martial-arts__posture-control-in-mount",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "파운드를 위한 MMA 특유 마운트 자세로 해당 무술 마운트와 목적이 다르다.",
+    "evidence": "catalog-wrestling: mount 관련 항목"
+  },
+  {
+    "id": "mixed-martial-arts__posture-control-in-mount",
+    "art": "sambo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "컴뱃 삼보 마운트 파운드 자세로 볼 수 있으나 MMA 특유 변형이라 판단 보류.",
+    "evidence": "catalog-sambo: sambo__ground-striking"
+  },
+  {
+    "id": "mixed-martial-arts__back-mount-hooks-control",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "boxing 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__back-mount-hooks-control",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "kickboxing 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__back-mount-hooks-control",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "muay-thai 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__back-mount-hooks-control",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "karate 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__back-mount-hooks-control",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "taekwondo 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__back-mount-hooks-control",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "bjj__hooks",
+    "reason": "BJJ에는 같은 백 컨트롤 훅 기술이 이미 있다.",
+    "evidence": "catalog-bjj: bjj__hooks Hooks [백 컨트롤 (Back Control)]"
+  },
+  {
+    "id": "mixed-martial-arts__back-mount-hooks-control",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": "judo__back-control",
+    "reason": "이미 같은 백 컨트롤 항목이 카탈로그에 있다.",
+    "evidence": "catalog-judo: judo__back-control Back Control"
+  },
+  {
+    "id": "mixed-martial-arts__back-mount-hooks-control",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링 라이딩은 훅 백마운트가 아니며 서브미션도 없다.",
+    "evidence": "레슬링 규칙: 서브미션 금지, 백 포인트 중심"
+  },
+  {
+    "id": "mixed-martial-arts__back-mount-hooks-control",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": "judo__back-control",
+    "reason": "이미 같은 백 컨트롤 항목이 카탈로그에 있다.",
+    "evidence": "catalog-sambo: judo__back-control Back Control"
+  },
+  {
+    "id": "mixed-martial-arts__ground-and-pound-from-mount",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "boxing 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__ground-and-pound-from-mount",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "kickboxing 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__ground-and-pound-from-mount",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "muay-thai 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__ground-and-pound-from-mount",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "karate 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__ground-and-pound-from-mount",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "taekwondo 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__ground-and-pound-from-mount",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "bjj 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__ground-and-pound-from-mount",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "judo 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__ground-and-pound-from-mount",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "wrestling 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__ground-and-pound-from-mount",
+    "art": "sambo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "컴뱃 삼보는 그라운드 타격을 허용하나 스포츠 삼보와 구분되고 MMA 특유 변형이라 판단 보류.",
+    "evidence": "catalog-sambo: sambo__ground-striking [컴뱃 삼보 타격 범주]"
+  },
+  {
+    "id": "mixed-martial-arts__elbow-strikes-from-top",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "boxing 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__elbow-strikes-from-top",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "kickboxing 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__elbow-strikes-from-top",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "muay-thai 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__elbow-strikes-from-top",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "karate 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__elbow-strikes-from-top",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "taekwondo 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__elbow-strikes-from-top",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "bjj 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__elbow-strikes-from-top",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "judo 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__elbow-strikes-from-top",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "wrestling 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__elbow-strikes-from-top",
+    "art": "sambo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "컴뱃 삼보는 그라운드 타격을 허용하나 스포츠 삼보와 구분되고 MMA 특유 변형이라 판단 보류.",
+    "evidence": "catalog-sambo: sambo__ground-striking [컴뱃 삼보 타격 범주]"
+  },
+  {
+    "id": "mixed-martial-arts__short-elbows-in-half-guard",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "boxing 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__short-elbows-in-half-guard",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "kickboxing 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__short-elbows-in-half-guard",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "muay-thai 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__short-elbows-in-half-guard",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "karate 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__short-elbows-in-half-guard",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "taekwondo 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__short-elbows-in-half-guard",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "bjj 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__short-elbows-in-half-guard",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "judo 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__short-elbows-in-half-guard",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "wrestling 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__short-elbows-in-half-guard",
+    "art": "sambo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "컴뱃 삼보는 그라운드 타격을 허용하나 스포츠 삼보와 구분되고 MMA 특유 변형이라 판단 보류.",
+    "evidence": "catalog-sambo: sambo__ground-striking [컴뱃 삼보 타격 범주]"
+  },
+  {
+    "id": "mixed-martial-arts__submission-off-strikes",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "boxing 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__submission-off-strikes",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "kickboxing 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__submission-off-strikes",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "muay-thai 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__submission-off-strikes",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "karate 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__submission-off-strikes",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "taekwondo 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__submission-off-strikes",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "bjj 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__submission-off-strikes",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "judo 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__submission-off-strikes",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "wrestling 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__submission-off-strikes",
+    "art": "sambo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "컴뱃 삼보는 그라운드 타격을 허용하나 스포츠 삼보와 구분되고 MMA 특유 변형이라 판단 보류.",
+    "evidence": "catalog-sambo: sambo__ground-striking [컴뱃 삼보 타격 범주]"
+  },
+  {
+    "id": "mixed-martial-arts__ground-and-pound-to-submission-transition",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "boxing 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__ground-and-pound-to-submission-transition",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "kickboxing 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__ground-and-pound-to-submission-transition",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "muay-thai 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__ground-and-pound-to-submission-transition",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "karate 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__ground-and-pound-to-submission-transition",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "taekwondo 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__ground-and-pound-to-submission-transition",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "bjj 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__ground-and-pound-to-submission-transition",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "judo 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__ground-and-pound-to-submission-transition",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "wrestling 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__ground-and-pound-to-submission-transition",
+    "art": "sambo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "컴뱃 삼보는 그라운드 타격을 허용하나 스포츠 삼보와 구분되고 MMA 특유 변형이라 판단 보류.",
+    "evidence": "catalog-sambo: sambo__ground-striking [컴뱃 삼보 타격 범주]"
+  },
+  {
+    "id": "mixed-martial-arts__cage-wrestling",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "boxing 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__cage-wrestling",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "kickboxing 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__cage-wrestling",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "muay-thai 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__cage-wrestling",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "karate 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__cage-wrestling",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "taekwondo 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__cage-wrestling",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "bjj 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__cage-wrestling",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "judo 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__cage-wrestling",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "wrestling 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__cage-wrestling",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "sambo 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__fence-takedown-defense",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "boxing 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__fence-takedown-defense",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "kickboxing 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__fence-takedown-defense",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "muay-thai 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__fence-takedown-defense",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "karate 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__fence-takedown-defense",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "taekwondo 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__fence-takedown-defense",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "bjj 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__fence-takedown-defense",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "judo 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__fence-takedown-defense",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "wrestling 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__fence-takedown-defense",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "sambo 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__framing",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "하위 포지션에서 파운드를 막는 그라운드 기술로 입식 타격 무술에 없다.",
+    "evidence": "catalog-boxing: boxing__frame은 스탠딩 프레임으로 다른 기술"
+  },
+  {
+    "id": "mixed-martial-arts__framing",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "하위 포지션에서 파운드를 막는 그라운드 기술로 입식 타격 무술에 없다.",
+    "evidence": "kickboxing 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__framing",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "하위 포지션에서 파운드를 막는 그라운드 기술로 입식 타격 무술에 없다.",
+    "evidence": "muay-thai 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__framing",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "하위 포지션에서 파운드를 막는 그라운드 기술로 입식 타격 무술에 없다.",
+    "evidence": "karate 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__framing",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "하위 포지션에서 파운드를 막는 그라운드 기술로 입식 타격 무술에 없다.",
+    "evidence": "taekwondo 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__framing",
+    "art": "bjj",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "BJJ 프레이밍은 핵심이나 이 항목은 파운드 방어 맥락이라 동일성이 불확실하다.",
+    "evidence": "catalog-bjj: frame 항목 없음, 탈출 기술 모음에 recovery 계열"
+  },
+  {
+    "id": "mixed-martial-arts__framing",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": "judo__frame",
+    "reason": "유도 카탈로그에 같은 프레임이 이미 있다.",
+    "evidence": "catalog-judo: judo__frame Frame [탈출]"
+  },
+  {
+    "id": "mixed-martial-arts__framing",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링에는 가드 회복 개념이 없다.",
+    "evidence": "레슬링 규칙: 가드 포지션 없음"
+  },
+  {
+    "id": "mixed-martial-arts__framing",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": "sambo__frame-escape",
+    "reason": "삼보 카탈로그에 같은 프레임 탈출이 이미 있다.",
+    "evidence": "catalog-sambo: sambo__frame-escape Frame Escape"
+  },
+  {
+    "id": "mixed-martial-arts__guard-recovery-under-strikes",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "boxing 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__guard-recovery-under-strikes",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "kickboxing 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__guard-recovery-under-strikes",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "muay-thai 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__guard-recovery-under-strikes",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "karate 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__guard-recovery-under-strikes",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "taekwondo 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__guard-recovery-under-strikes",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": "judo__guard-recovery",
+    "reason": "같은 가드 회복이 이미 있고 이 항목은 타격 방어 맥락의 MMA 변형이다.",
+    "evidence": "catalog-bjj: judo__guard-recovery Guard Recovery"
+  },
+  {
+    "id": "mixed-martial-arts__guard-recovery-under-strikes",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": "judo__guard-recovery",
+    "reason": "같은 가드 회복이 이미 있고 이 항목은 타격 방어 맥락의 MMA 변형이다.",
+    "evidence": "catalog-judo: judo__guard-recovery Guard Recovery"
+  },
+  {
+    "id": "mixed-martial-arts__guard-recovery-under-strikes",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레슬링에는 가드 포지션이 없다.",
+    "evidence": "레슬링 규칙: 가드 없음, 등 노출 시 실점"
+  },
+  {
+    "id": "mixed-martial-arts__guard-recovery-under-strikes",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": "judo__guard-recovery",
+    "reason": "같은 가드 회복이 이미 있고 이 항목은 타격 방어 맥락의 MMA 변형이다.",
+    "evidence": "catalog-sambo: judo__guard-recovery Guard Recovery"
+  },
+  {
+    "id": "mixed-martial-arts__takedown-defense-mma",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "테이크다운이 없는 타격 무술이다.",
+    "evidence": "boxing 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__takedown-defense-mma",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "테이크다운이 없는 타격 무술이다.",
+    "evidence": "kickboxing 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__takedown-defense-mma",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "테이크다운이 없는 타격 무술이다.",
+    "evidence": "muay-thai 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__takedown-defense-mma",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "테이크다운이 없는 타격 무술이다.",
+    "evidence": "karate 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__takedown-defense-mma",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "테이크다운이 없는 타격 무술이다.",
+    "evidence": "taekwondo 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__takedown-defense-mma",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "타격 반격까지 전제한 MMA 맥락 방어로 해당 무술 기술이 아니다.",
+    "evidence": "기술 설명: 방어 후 타격 반격 고려"
+  },
+  {
+    "id": "mixed-martial-arts__takedown-defense-mma",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "타격 반격까지 전제한 MMA 맥락 방어로 해당 무술 기술이 아니다.",
+    "evidence": "기술 설명: 방어 후 타격 반격 고려"
+  },
+  {
+    "id": "mixed-martial-arts__takedown-defense-mma",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": "wrestling__sprawl",
+    "reason": "레슬링에는 스프롤·위저 등 구체 방어가 이미 있고 이 항목은 타격 반격 전제의 MMA 변형이다.",
+    "evidence": "catalog-wrestling: wrestling__sprawl Sprawl"
+  },
+  {
+    "id": "mixed-martial-arts__takedown-defense-mma",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "타격 반격까지 전제한 MMA 맥락 방어로 해당 무술 기술이 아니다.",
+    "evidence": "기술 설명: 방어 후 타격 반격 고려"
+  },
+  {
+    "id": "mixed-martial-arts__scramble-to-back",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "boxing 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__scramble-to-back",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "kickboxing 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__scramble-to-back",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "muay-thai 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__scramble-to-back",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "karate 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__scramble-to-back",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "taekwondo 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__scramble-to-back",
+    "art": "bjj",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "스크램블 백테이크는 bjj에서도 쓰이나 포괄적 상황 개념이라 기존 백테이크와 동일성 불확실.",
+    "evidence": "catalog-bjj: bjj__turtle-back-take, bjj__back-take"
+  },
+  {
+    "id": "mixed-martial-arts__scramble-to-back",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "혼전 상황 개념으로 judo의 정형 기술이 아니다.",
+    "evidence": "기술 설명: 순간적인 전환 상황"
+  },
+  {
+    "id": "mixed-martial-arts__scramble-to-back",
+    "art": "wrestling",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "스크램블 백테이크는 wrestling에서도 쓰이나 포괄적 상황 개념이라 기존 백테이크와 동일성 불확실.",
+    "evidence": "catalog-wrestling: wrestling__single-to-back-take, wrestling__front-headlock-to-back"
+  },
+  {
+    "id": "mixed-martial-arts__scramble-to-back",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "혼전 상황 개념으로 sambo의 정형 기술이 아니다.",
+    "evidence": "기술 설명: 순간적인 전환 상황"
+  },
+  {
+    "id": "mixed-martial-arts__leg-entanglement-scramble",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "boxing 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__leg-entanglement-scramble",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "kickboxing 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__leg-entanglement-scramble",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "muay-thai 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__leg-entanglement-scramble",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "karate 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__leg-entanglement-scramble",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 무술에는 그라운드 포지션 공방이 없다.",
+    "evidence": "taekwondo 규칙: 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__leg-entanglement-scramble",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "B",
+    "category": null,
+    "duplicateOf": "bjj__leg-entanglement",
+    "reason": "BJJ에는 같은 레그 엔탱글먼트 항목이 이미 있다.",
+    "evidence": "catalog-bjj: bjj__leg-entanglement Leg Entanglement"
+  },
+  {
+    "id": "mixed-martial-arts__leg-entanglement-scramble",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레그락이 금지된 규칙이라 해당 무술 기술이 아니다.",
+    "evidence": "judo 규칙: 레그락 금지"
+  },
+  {
+    "id": "mixed-martial-arts__leg-entanglement-scramble",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "레그락이 금지된 규칙이라 해당 무술 기술이 아니다.",
+    "evidence": "wrestling 규칙: 레그락 금지"
+  },
+  {
+    "id": "mixed-martial-arts__leg-entanglement-scramble",
+    "art": "sambo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "삼보는 하체 관절기가 강점이나 스크램블 구간 개념이라 기술 동일성이 불확실하다.",
+    "evidence": "catalog-sambo: [하체 관절기 --- 삼보의 전통적 강점]"
+  },
+  {
+    "id": "mixed-martial-arts__strike-to-takedown-transition",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "테이크다운이 금지된 타격 무술이다.",
+    "evidence": "boxing 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__strike-to-takedown-transition",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "테이크다운이 금지된 타격 무술이다.",
+    "evidence": "kickboxing 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__strike-to-takedown-transition",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "테이크다운이 금지된 타격 무술이다.",
+    "evidence": "muay-thai 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__strike-to-takedown-transition",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "테이크다운이 금지된 타격 무술이다.",
+    "evidence": "karate 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__strike-to-takedown-transition",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "테이크다운이 금지된 타격 무술이다.",
+    "evidence": "taekwondo 규칙: 테이크다운 금지"
+  },
+  {
+    "id": "mixed-martial-arts__strike-to-takedown-transition",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "그래플링 무술 규칙상 타격이 허용되지 않아 해당 기술이 아니다.",
+    "evidence": "bjj 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__strike-to-takedown-transition",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "그래플링 무술 규칙상 타격이 허용되지 않아 해당 기술이 아니다.",
+    "evidence": "judo 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__strike-to-takedown-transition",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "그래플링 무술 규칙상 타격이 허용되지 않아 해당 기술이 아니다.",
+    "evidence": "wrestling 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__strike-to-takedown-transition",
+    "art": "sambo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "컴뱃 삼보는 타격과 테이크다운을 함께 허용하나 MMA 특유 전환이라 판단 보류.",
+    "evidence": "catalog-sambo: [컴뱃 삼보 타격 범주]"
+  },
+  {
+    "id": "mixed-martial-arts__takedown-to-ground-and-pound-transition",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "boxing 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__takedown-to-ground-and-pound-transition",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "kickboxing 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__takedown-to-ground-and-pound-transition",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "muay-thai 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__takedown-to-ground-and-pound-transition",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "karate 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__takedown-to-ground-and-pound-transition",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "taekwondo 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__takedown-to-ground-and-pound-transition",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "bjj 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__takedown-to-ground-and-pound-transition",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "judo 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__takedown-to-ground-and-pound-transition",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "wrestling 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__takedown-to-ground-and-pound-transition",
+    "art": "sambo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "컴뱃 삼보는 그라운드 타격을 허용하나 스포츠 삼보와 구분되고 MMA 특유 변형이라 판단 보류.",
+    "evidence": "catalog-sambo: sambo__ground-striking [컴뱃 삼보 타격 범주]"
+  },
+  {
+    "id": "mixed-martial-arts__submission-to-strikes-transition",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "boxing 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__submission-to-strikes-transition",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "kickboxing 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__submission-to-strikes-transition",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "muay-thai 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__submission-to-strikes-transition",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "karate 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__submission-to-strikes-transition",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "입식 타격 규칙상 그라운드 타격·그래플링 공방이 없다.",
+    "evidence": "taekwondo 규칙: 다운 상대 타격 금지, 그라운드 공방 없음"
+  },
+  {
+    "id": "mixed-martial-arts__submission-to-strikes-transition",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "bjj 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__submission-to-strikes-transition",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "judo 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__submission-to-strikes-transition",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "해당 그래플링 무술 규칙상 타격이 허용되지 않는다.",
+    "evidence": "wrestling 경기 규칙: 타격 금지"
+  },
+  {
+    "id": "mixed-martial-arts__submission-to-strikes-transition",
+    "art": "sambo",
+    "decision": "review",
+    "confidence": "C",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "컴뱃 삼보는 그라운드 타격을 허용하나 스포츠 삼보와 구분되고 MMA 특유 변형이라 판단 보류.",
+    "evidence": "catalog-sambo: sambo__ground-striking [컴뱃 삼보 타격 범주]"
+  },
+  {
+    "id": "mixed-martial-arts__clinch-to-cage-transition",
+    "art": "boxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "boxing 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__clinch-to-cage-transition",
+    "art": "kickboxing",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "kickboxing 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__clinch-to-cage-transition",
+    "art": "muay-thai",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "muay-thai 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__clinch-to-cage-transition",
+    "art": "karate",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "karate 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__clinch-to-cage-transition",
+    "art": "taekwondo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "taekwondo 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__clinch-to-cage-transition",
+    "art": "bjj",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "bjj 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__clinch-to-cage-transition",
+    "art": "judo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "judo 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__clinch-to-cage-transition",
+    "art": "wrestling",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "wrestling 경기장: 링/매트, 케이지 없음"
+  },
+  {
+    "id": "mixed-martial-arts__clinch-to-cage-transition",
+    "art": "sambo",
+    "decision": "none",
+    "confidence": "A",
+    "category": null,
+    "duplicateOf": null,
+    "reason": "케이지(펜스)를 지지대로 쓰는 MMA 특유 기술로 해당 무술 경기장에 없다.",
+    "evidence": "sambo 경기장: 링/매트, 케이지 없음"
+  }
+]

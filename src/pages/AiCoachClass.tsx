@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import BackButton from '../components/BackButton';
@@ -12,7 +13,14 @@ import type { Curriculum } from '../lib/curriculum/types';
 import type { CoachLocation } from '../lib/aiCoachCurriculum/types';
 import { equipmentLabel, LOCATION_ICON, LOCATION_LABEL } from '../lib/aiCoachCurriculum/location';
 import { buildLearnerProfile, latestKnownGoal, learnedCountsByArt } from '../lib/aiCoachCurriculum/profile';
-import { generateCoachClassCurriculum, ROLE_LABEL, type CoachClassResult } from '../lib/aiCoachCurriculum/service';
+import { FOCUS_LABEL, generateCoachClassCurriculum, ROLE_LABEL, type CoachClassResult } from '../lib/aiCoachCurriculum/service';
+import type { CoachClassFocus } from '../lib/aiCoachCurriculum/types';
+
+const FOCUS_DESC: Record<CoachClassFocus, string> = {
+  mixed: '배운 기술을 복습·연결하고, 필요한 새 기술을 하루 1개 정도 더합니다.',
+  review: '새 기술 없이, 지금까지 배운 기술만 숙련도가 낮은 것부터 복습·연결·응용합니다.',
+  new: '한 번이라도 학습한 기술은 계획·연결·설명에서 모두 빼고, 아직 배우지 않은 기술만으로 수업합니다.',
+};
 
 // "AI 코치 수업" — 장소(집/체육관) → 수업 설정 → AI 코치 전용 커리큘럼 생성 →
 // Day를 AI 코치(말로/입력으로)와 진행. The generated curriculum is a normal
@@ -29,6 +37,7 @@ export default function AiCoachClass() {
   const [goal, setGoal] = useState(latestKnownGoal);
   const [minutes, setMinutes] = useState(30);
   const [days, setDays] = useState(5);
+  const [focus, setFocus] = useState<CoachClassFocus>('mixed');
   const [generating, setGenerating] = useState(false);
   const [result, setResult] = useState<CoachClassResult | null>(null);
   const [startDay, setStartDay] = useState<number | null>(null);
@@ -44,7 +53,7 @@ export default function AiCoachClass() {
     if (!place) return;
     setGenerating(true);
     try {
-      const r = await generateCoachClassCurriculum({ martialArt, location: place.location, equipment: place.equipment, goal, sessionMinutes: minutes, days });
+      const r = await generateCoachClassCurriculum({ martialArt, location: place.location, equipment: place.equipment, goal, sessionMinutes: minutes, days, focus: focus === 'review' && profile.learned.length === 0 ? 'mixed' : focus });
       setResult(r);
     } finally {
       setGenerating(false);
@@ -69,7 +78,7 @@ export default function AiCoachClass() {
           <span>AI 코치 수업</span>
         </div>
         <div className="section-title">
-          <h2>🧑‍🏫 AI 코치 수업</h2>
+          <h2><Icon name="coach" /> AI 코치 수업</h2>
         </div>
         <p className="video-status-message" style={{ marginTop: -8 }}>
           운동 장소와 지금까지 배운 기술·숙련도를 바탕으로 AI 코치가 수업 커리큘럼을 만들고, 코치와 함께 진행합니다.
@@ -127,6 +136,20 @@ export default function AiCoachClass() {
                     disabled={generating}
                   />
                 </div>
+                <div className="field-block" data-testid="coach-class-focus" data-focus={focus}>
+                  <span className="field-label">수업 방향</span>
+                  <div className="chip-row">
+                    {(Object.keys(FOCUS_LABEL) as CoachClassFocus[]).map((f) => {
+                      const disabled = generating || (f === 'review' && profile.learned.length === 0);
+                      return (
+                        <button key={f} type="button" className={`chip ${focus === f ? 'active' : ''}`} onClick={() => setFocus(f)} disabled={disabled} data-testid={`coach-class-focus-${f}`} title={f === 'review' && profile.learned.length === 0 ? '이 무술에서 배운 기술이 없어 복습만 하는 수업은 만들 수 없습니다.' : undefined}>
+                          {FOCUS_LABEL[f]}
+                        </button>
+                      );
+                    })}
+                  </div>
+                  <div className="video-status-message">{FOCUS_DESC[focus]}</div>
+                </div>
                 <div className="chip-row">
                   <span className="field-label">하루 운동 시간</span>
                   {MINUTE_OPTIONS.map((m) => (
@@ -161,7 +184,7 @@ export default function AiCoachClass() {
             <p style={{ margin: '4px 0' }}>{curriculum.aiCoachMeta.summary}</p>
             <p className="video-status-message">
               {LOCATION_LABEL[curriculum.aiCoachMeta.location]} · 하루 {curriculum.aiCoachMeta.sessionMinutes}분 · {curriculum.totalDays}일 ·{' '}
-              {result.source === 'ai' ? 'AI 코치가 구성' : '기본 구성(AI 응답 없음)'}
+              {result.source === 'ai' ? 'AI 코치가 구성' : '기본 구성(AI 응답 없음)'} · <span data-testid="coach-class-result-focus">{FOCUS_LABEL[curriculum.aiCoachMeta.focus ?? 'mixed']}</span>
             </p>
             {result.notices.map((n) => (
               <div key={n} className="ai-inline-warning">
@@ -210,15 +233,15 @@ export default function AiCoachClass() {
             ) : (
               <div className="day-start-options" style={{ marginTop: 10 }}>
                 <details className="coach-voice-settings" data-testid="prestart-voice-settings">
-                  <summary>🔊 말로 대화할 때의 AI 튜터 음성 · 말하기 속도</summary>
+                  <summary><Icon name="sound" /> 말로 대화할 때의 AI 튜터 음성 · 말하기 속도</summary>
                   <TutorVoiceSettingsPanel autoSave />
                 </details>
                 <button className="btn btn-primary day-start-option" onClick={() => startCoach(curriculum, startDay, 'voice')}>
-                  🎙 말로 대화
+                  <Icon name="mic" /> 말로 대화
                   <span className="day-start-option__desc">마이크로 질문하고 코치의 답을 음성으로 듣습니다.</span>
                 </button>
                 <button className="btn btn-secondary day-start-option" onClick={() => startCoach(curriculum, startDay, 'text')}>
-                  ⌨️ 입력으로 대화
+                  <Icon name="keyboard" /> 입력으로 대화
                   <span className="day-start-option__desc">채팅처럼 입력하고 글로 답을 받습니다.</span>
                 </button>
                 <button className="btn btn-ghost btn-sm" onClick={() => setStartDay(null)}>

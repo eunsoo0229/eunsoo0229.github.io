@@ -1,3 +1,5 @@
+import { StoredIcon } from '../components/icons/BrandAssets';
+import Icon from '../components/Icon';
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { martialArtSummaries } from '../lib/loadData';
@@ -60,7 +62,7 @@ export default function Marketplace() {
         </div>
 
         <div className="section-title">
-          <h2>🛒 커리큘럼 마켓</h2>
+          <h2><Icon name="cart" /> 커리큘럼 마켓</h2>
         </div>
         <p className="video-status-message" style={{ marginTop: -8 }}>
           다른 사용자가 만든 커리큘럼을 무료로 받거나 구매할 수 있습니다. 현재는 테스트 결제만 지원됩니다.
@@ -131,17 +133,17 @@ export default function Marketplace() {
             ) : (
               <div className="stack gap-2">
                 {filtered.map((l) => (
-                  <Link key={l.id} to={`/marketplace/${l.id}`} className="card info-card" style={{ display: 'block' }}>
+                  <Link key={l.id} to={`/marketplace/${l.id}`} className="card info-card marketplace-card" style={{ display: 'block' }}>
+                    <div className="cover-art">
+                      <span className="cover-art__scrim" />
+                      <span className="cover-art__label">{l.coverIcon ? <><StoredIcon value={l.coverIcon} /> </> : ''}{l.title}</span>
+                    </div>
                     <div className="chip-row">
-                      <strong style={{ fontSize: 'var(--fs-card-title)' }}>
-                        {l.coverIcon ? `${l.coverIcon} ` : ''}
-                        {l.title}
-                      </strong>
                       {l.isFree ? <span className="chip active">무료</span> : <span className="chip">{l.priceKrw.toLocaleString()}원</span>}
                     </div>
                     <div className="technique-row__sub" style={{ marginTop: 4 }}>
                       제작자 {l.sellerNickname} · {l.martialArt}
-                      {l.ratingCount > 0 && ` · ⭐ ${l.ratingAvg.toFixed(1)} (${l.ratingCount})`}
+                      {l.ratingCount > 0 && <> · <Icon name="star-filled" /> {l.ratingAvg.toFixed(1)} ({l.ratingCount})</>}
                     </div>
                     <p style={{ margin: '8px 0' }}>{l.description || '(설명 없음)'}</p>
                     <div className="technique-row__sub">

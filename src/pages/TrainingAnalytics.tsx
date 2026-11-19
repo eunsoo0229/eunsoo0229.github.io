@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { listTrainingHistory } from '../lib/trainingHistory/service';
@@ -73,7 +74,7 @@ export default function TrainingAnalytics() {
         </div>
 
         <div className="section-title">
-          <h2>📊 훈련 분석</h2>
+          <h2><Icon name="chart" /> 훈련 분석</h2>
           <Link to="/training-analytics/history" className="see-all">
             전체 기록 보기 →
           </Link>
@@ -87,7 +88,7 @@ export default function TrainingAnalytics() {
         ) : (
           <>
             <div className="card info-card">
-              <h3>🕓 최근 훈련</h3>
+              <h3><Icon name="timer" /> 최근 훈련</h3>
               <div className="stack gap-2">
                 {recentGroups.map((group) => (
                   <div key={group.dateKey}>
@@ -105,7 +106,7 @@ export default function TrainingAnalytics() {
             </div>
 
             <div className="card info-card">
-              <h3>📅 훈련 캘린더</h3>
+              <h3><Icon name="calendar" /> 훈련 캘린더</h3>
               <TrainingCalendarView
                 year={calendarYear}
                 month={calendarMonth}
@@ -133,7 +134,7 @@ export default function TrainingAnalytics() {
 
             {martialArtBalance.length > 0 && (
               <div className="card info-card">
-                <h3>🥋 무술별 훈련 밸런스 (최근 30일)</h3>
+                <h3><Icon name="gi" /> 무술별 훈련 밸런스 (최근 30일)</h3>
                 <DonutChart
                   slices={martialArtBalance.map((s, i) => ({ key: s.martialArtId, label: s.nameKo, value: s.trainingCount, color: DONUT_COLORS[i % DONUT_COLORS.length] }))}
                 />
@@ -141,7 +142,7 @@ export default function TrainingAnalytics() {
             )}
 
             <div className="card info-card">
-              <h3>🗒 주간 / 월간 리포트</h3>
+              <h3><Icon name="list" /> 주간 / 월간 리포트</h3>
               <div className="chip-row">
                 <button className={`chip ${reportPeriod === '7d' ? 'active' : ''}`} onClick={() => setReportPeriod('7d')}>
                   주간
@@ -168,7 +169,7 @@ export default function TrainingAnalytics() {
               {report.topTechniques.length > 0 && (
                 <>
                   <div className="field-label" style={{ marginTop: 12 }}>
-                    🥋 가장 많이 훈련한 기술 TOP {report.topTechniques.length}
+                    <Icon name="gi" /> 가장 많이 훈련한 기술 TOP {report.topTechniques.length}
                   </div>
                   <ol className="top-trained-list">
                     {report.topTechniques.map((t) => (
@@ -183,7 +184,7 @@ export default function TrainingAnalytics() {
               {report.topGymExercises.length > 0 && (
                 <>
                   <div className="field-label" style={{ marginTop: 12 }}>
-                    🏋️ 가장 많이 훈련한 헬스 TOP {report.topGymExercises.length}
+                    <Icon name="dumbbell" /> 가장 많이 훈련한 헬스 TOP {report.topGymExercises.length}
                   </div>
                   <ol className="top-trained-list">
                     {report.topGymExercises.map((t) => (
@@ -231,7 +232,7 @@ export default function TrainingAnalytics() {
             </div>
 
             <div className="card info-card">
-              <h3>🤖 AI 훈련 분석</h3>
+              <h3><Icon name="bot" /> AI 훈련 분석</h3>
               <p className="video-status-message" style={{ marginTop: -6 }}>
                 실제 훈련 기록을 바탕으로 패턴을 분석합니다. 의료적 진단이나 부상 판단은 제공하지 않습니다.
               </p>

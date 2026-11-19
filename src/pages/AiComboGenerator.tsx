@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { martialArtSummaries } from '../lib/loadData';
@@ -111,7 +112,7 @@ export default function AiComboGenerator() {
           <span>AI 콤비네이션 생성</span>
         </div>
         <div className="section-title">
-          <h2>🧠 AI 목적 기반 콤비네이션 생성</h2>
+          <h2><Icon name="brain" /> AI 목적 기반 콤비네이션 생성</h2>
         </div>
         <p className="video-status-message" style={{ marginTop: -8 }}>
           원하는 목적이나 상황을 자유롭게 입력하면 AI가 논리적으로 연결된 기술 콤비네이션을 만들어줍니다. Martialdex
@@ -171,7 +172,7 @@ export default function AiComboGenerator() {
             </div>
 
             <div className="card info-card">
-              <h3>🔗 AI 콤비네이션</h3>
+              <h3><Icon name="link" /> AI 콤비네이션</h3>
               <div className="stack gap-2">
                 {preview.results.map((r, i) => (
                   <div key={i} className="card info-card info-card--muted">
@@ -185,12 +186,12 @@ export default function AiComboGenerator() {
                         ) : (
                           <span className="technique-row__name">{r.step.phrase} (기술을 찾지 못함)</span>
                         )}
-                        {r.discovered && <span className="chip" style={{ marginLeft: 6 }}>🔎 새로 발견됨</span>}
+                        {r.discovered && <span className="chip" style={{ marginLeft: 6 }}><Icon name="search" /> 새로 발견됨</span>}
                       </div>
                     </div>
                     <p className="video-status-message">↳ {r.reason}</p>
-                    {r.step.opponentReaction && <p className="video-status-message">🛡 상대 반응: {r.step.opponentReaction}</p>}
-                    {r.step.followUpIfReacts && <p className="video-status-message">➡ 다음 선택지: {r.step.followUpIfReacts}</p>}
+                    {r.step.opponentReaction && <p className="video-status-message"><Icon name="shield" /> 상대 반응: {r.step.opponentReaction}</p>}
+                    {r.step.followUpIfReacts && <p className="video-status-message"><Icon name="forward" /> 다음 선택지: {r.step.followUpIfReacts}</p>}
                   </div>
                 ))}
               </div>
@@ -198,7 +199,7 @@ export default function AiComboGenerator() {
 
             {(preview.analysis.pros.length > 0 || preview.analysis.cautions.length > 0) && (
               <div className="card info-card">
-                <h3>⚖️ 장점 &amp; 주의할 점</h3>
+                <h3><Icon name="scale" /> 장점 &amp; 주의할 점</h3>
                 {preview.analysis.pros.length > 0 && (
                   <>
                     <div className="field-label">장점</div>
@@ -224,7 +225,7 @@ export default function AiComboGenerator() {
 
             {(preview.complementaryFollowUps.length > 0 || preview.alternativeTechniques.length > 0) && (
               <div className="card info-card">
-                <h3>🔀 보완/대체 기술</h3>
+                <h3><Icon name="repeat" /> 보완/대체 기술</h3>
                 {preview.complementaryFollowUps.length > 0 && (
                   <>
                     <div className="field-label">성공 후 이어가면 좋은 기술</div>

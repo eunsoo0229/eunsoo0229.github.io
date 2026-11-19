@@ -136,6 +136,16 @@ export interface Technique {
    * data/curated/gi-nogi.json instead; this is absent for them.
    */
   giNoGi?: import('./lib/grappling/types').GiNoGiRecord;
+  /**
+   * Newly registered technique only: the taxonomy node it was filed under when registered — a built-in Level-3/4
+   * node (techniqueTaxonomy/) or a user/admin category (categoryRegistry/). `category` stays the art's category
+   * string, so every existing category filter keeps working.
+   */
+  taxonomyNodeId?: string;
+  /** Purpose / type tags chosen at registration (techniqueTaxonomy dimension ids, e.g. "sweep"). */
+  taxonomyTags?: string[];
+  /** Newly added technique only: the sibling arts researched at add time (techniqueCanonical/otherArts.ts) — the confirmed ones are in martialArts. */
+  otherArtsResearch?: import('./lib/techniqueCanonical/otherArts').OtherArtsResearch;
   /** Set only for techniques added via "기술 추가 요청" (src/lib/userTechniques/) or the new-martial-art / missing-technique web-research flow (src/lib/martialArtDiscovery/) — absent (undefined) for all 1,253 official techniques. */
   source?: 'user_added' | 'ai_web_research';
   /** Home-training / gym reference-data fields below — always undefined for the 1,283 official combat techniques. */
@@ -209,6 +219,8 @@ export interface Technique {
   splitFrom?: string[];
   /** Set on a record that is a heading the parser picked up, not a technique (kept resolvable, never listed). */
   notTechnique?: string;
+  /** Set only when a person approved a curation candidate for a field the record lacked (src/lib/knowledgeBase/approved.ts). */
+  curation?: { description?: import('./lib/knowledgeBase/approved').ApprovedCuration; koreanName?: import('./lib/knowledgeBase/approved').ApprovedCuration };
 }
 
 export interface MartialArtMeta {

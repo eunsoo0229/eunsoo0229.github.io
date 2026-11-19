@@ -1,3 +1,4 @@
+import Icon from '../Icon';
 import { useCallback, useEffect, useState } from 'react';
 import type { Technique } from '../../types';
 import type { LessonVideoResult } from '../../lib/coachLesson/lessonVideos';
@@ -42,7 +43,7 @@ export default function ComboVideoPanel({ techniques, comboName }: { techniques:
         연습 전에 영상 보기 · {comboName}
         {result?.status === 'found' ? ` (${result.videos.length}개)` : result?.status === 'none' ? ' (찾은 영상 없음)' : ''}
       </summary>
-      <LessonVideoPanel result={result} progress={progress} onRetry={() => run(true)} title={`▶ ${label} 영상`} testId="combo-videos-panel" subject={`이 ${label}`} />
+      <LessonVideoPanel result={result} progress={progress} onRetry={() => run(true)} title={<><Icon name="play" /> {label} 영상</>} testId="combo-videos-panel" subject={`이 ${label}`} />
     </details>
   );
 }

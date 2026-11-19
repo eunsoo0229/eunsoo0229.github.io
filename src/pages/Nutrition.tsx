@@ -1,3 +1,4 @@
+import Icon, { Glyph } from '../components/Icon';
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { todayDateKey } from '../lib/dateUtil';
@@ -128,7 +129,7 @@ export default function Nutrition() {
           <span>영양/식단</span>
         </div>
         <div className="section-title">
-          <h2>🍚 오늘의 영양</h2>
+          <h2><Icon name="bowl" /> 오늘의 영양</h2>
           <Link to="/nutrition/goals" className="see-all">
             목표 설정 →
           </Link>
@@ -166,7 +167,7 @@ export default function Nutrition() {
         </div>
 
         <div className="card info-card">
-          <h3>🔥 오늘의 에너지</h3>
+          <h3><Icon name="flame" /> 오늘의 에너지</h3>
           <p className="video-status-message">
             {bmr != null ? `기초대사량 ${formatKcal(bmr)}` : '기초대사량 계산에 필요한 정보(키/나이/성별/체중)가 부족합니다'}
             {' + 오늘 훈련 예상 소비 '}
@@ -217,13 +218,13 @@ export default function Nutrition() {
             + 직접 입력
           </button>
           <button className="btn btn-secondary btn-sm" onClick={() => setAiGenOpen(true)}>
-            🤖 AI 식단 생성
+            <Glyph set="ai" name="meal-gen" /> AI 식단 생성
           </button>
           <button className="btn btn-secondary btn-sm" onClick={() => setAiTextOpen(true)}>
-            📝 자연어 입력
+            <Glyph set="ai" name="meal-text" /> 자연어 입력
           </button>
           <button className="btn btn-secondary btn-sm" onClick={() => setAiPhotoOpen(true)}>
-            📷 사진 분석
+            <Glyph set="ai" name="meal-photo" /> 사진 분석
           </button>
         </div>
 
@@ -241,7 +242,7 @@ export default function Nutrition() {
         )}
 
         <div className="section-title" style={{ marginTop: 16 }}>
-          <h3>📅 영양 캘린더</h3>
+          <h3><Icon name="calendar" /> 영양 캘린더</h3>
         </div>
         <div className="card info-card">
           <NutritionCalendarView

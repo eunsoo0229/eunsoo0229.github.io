@@ -1,0 +1,125 @@
+{
+  "at": "2026-11-01T08:09:15.569Z",
+  "results": [
+    {
+      "id": "R3 실습 시작 직후(미완료)",
+      "expected": "no card",
+      "observed": "no card",
+      "match": true,
+      "detail": {
+        "step": "mitt",
+        "current": "kickboxing__jab",
+        "practiceDone": false,
+        "coachKind": "martialdex",
+        "runId": "9f006b01-c87e-4dcb-aa70-2d944d7859ad"
+      }
+    },
+    {
+      "id": "R1 대화로 \"실습 완료했어\"",
+      "expected": "card",
+      "observed": "no card",
+      "match": false,
+      "detail": {
+        "before": {
+          "step": "mitt",
+          "current": "kickboxing__jab",
+          "practiceDone": false,
+          "coachKind": "martialdex",
+          "runId": "9f006b01-c87e-4dcb-aa70-2d944d7859ad"
+        },
+        "after": {
+          "step": "mitt",
+          "current": "kickboxing__jab",
+          "practiceDone": false,
+          "coachKind": "martialdex",
+          "runId": "9f006b01-c87e-4dcb-aa70-2d944d7859ad"
+        },
+        "coachReply": "질문의 \"실습 완료했어\"에 해당하는 내용을 MARTIALDEX의 잽(Jab) 자료에서 찾지 못했습니다. 확인되지 않은 내용을 추측해서 말씀드리지 않겠습니다. 자료에 있는 것은 자세 개요 · 기술 설명 · 시작 자세 · 동작 단계입니다. 그중에서 궁금한 것을 물어봐 주세요."
+      }
+    },
+    {
+      "id": "R2 실습 화면의 종료 버튼",
+      "expected": "card",
+      "observed": "card",
+      "match": true,
+      "detail": {
+        "step": "review",
+        "current": "kickboxing__jab",
+        "practiceDone": true,
+        "coachKind": "martialdex",
+        "runId": "9f006b01-c87e-4dcb-aa70-2d944d7859ad"
+      }
+    },
+    {
+      "id": "R8 \"자세 측정하기\" → 기존 측정 화면, 수업 상태·학습 숙련도 불변",
+      "expected": "unchanged",
+      "observed": "unchanged",
+      "match": true,
+      "detail": {
+        "modal": true,
+        "learnBefore": {
+          "p": null,
+          "pose": null
+        },
+        "learnAfter": {
+          "p": null,
+          "pose": null
+        }
+      }
+    },
+    {
+      "id": "R4 \"나중에 하기\" 후 같은 수업",
+      "expected": "no card",
+      "observed": "no card",
+      "match": true,
+      "detail": {
+        "step": "review",
+        "current": "kickboxing__jab",
+        "practiceDone": true,
+        "coachKind": "martialdex",
+        "runId": "f10b38aa-f12f-4917-b1bc-636192914b53"
+      }
+    },
+    {
+      "id": "R5 새 잽 수업(이전 거절과 별개)",
+      "expected": "card",
+      "observed": "card",
+      "match": true,
+      "detail": {
+        "step": "review",
+        "current": "kickboxing__jab",
+        "practiceDone": true,
+        "coachKind": "martialdex",
+        "runId": "327649eb-b23d-406b-971c-cd4a551dea41",
+        "previousRun": "f10b38aa-f12f-4917-b1bc-636192914b53"
+      }
+    },
+    {
+      "id": "R6 하이 싱글 실습 완료(측정 기준 없음)",
+      "expected": "no card",
+      "observed": "no card",
+      "match": true,
+      "detail": {
+        "step": "review",
+        "current": "wrestling__high-single",
+        "practiceDone": true,
+        "coachKind": "martialdex",
+        "runId": "443dbe51-762d-4c3b-a94d-e925e55d60d2"
+      }
+    },
+    {
+      "id": "R7 Gemini 코치로 잽 실습 완료",
+      "expected": "card",
+      "observed": "no card",
+      "match": false,
+      "detail": {
+        "step": "review",
+        "current": "kickboxing__jab",
+        "practiceDone": true,
+        "coachKind": "gemini",
+        "runId": "b6452adc-dd4d-40fd-a58a-c403af1fb4e8"
+      }
+    }
+  ],
+  "pageErrors": []
+}
