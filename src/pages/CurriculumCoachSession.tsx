@@ -1,4 +1,5 @@
 import Icon, { Glyph } from '../components/Icon';
+import { openExternal } from '../lib/externalLink';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import ProfileLessonNotes from '../components/fighterProfile/ProfileLessonNotes';
 import { Link, Navigate, useNavigate, useParams, useSearchParams } from 'react-router-dom';
@@ -392,8 +393,9 @@ export default function CurriculumCoachSession() {
             videos: [...r.steps.flatMap((x) => x.videos), ...r.connection.videos],
             note: r.connection.videos.length ? null : r.connection.note,
             combo: r,
+            searchUrl: r.connection.searchUrl,
           }))
-        : findSelfTechniqueVideos(own).then((r) => ({ videos: r.videos, note: r.note, combo: null }));
+        : findSelfTechniqueVideos(own).then((r) => ({ videos: r.videos, note: r.note, combo: null, searchUrl: r.searchUrl }));
       void task.then((r) => {
         setVideoFind((v) => (v && v.techniqueId === own.id ? { ...v, status: 'done', progress: '', videos: r.videos } : v));
         const comboLine = r.combo
@@ -405,7 +407,9 @@ export default function CurriculumCoachSession() {
             kind: 'system',
             text: r.videos.length
               ? `기술 이름으로 찾은 영상 ${r.videos.length}개입니다. ${comboLine} 제목·채널만 확인했고 영상 내용은 보지 않았으므로, 위의 자세 설명과 다르면 설명을 따라 주세요.${r.note ? ` (${r.note})` : ''}`
+              // 앱이 못 찾았어도 사용자가 직접 볼 길은 남긴다 (웹 비로그인에서는 이게 유일한 길)
               : `${r.note ?? 'MARTIALDEX에 등록된 영상이 없습니다.'} 위의 자세 설명을 참고해 주세요.`,
+            ...(r.videos.length ? {} : { link: { url: r.searchUrl, label: 'YouTube에서 이 기술 찾아보기' } }),
           },
         ]);
       });
@@ -1123,6 +1127,17 @@ export default function CurriculumCoachSession() {
             {run.messages.map((m) => (
               <div key={m.id} className={`ai-msg ai-msg--${m.role === 'user' ? 'user' : 'model'}${m.kind === 'cue' ? ' coach-cue' : ''}${m.side ? ' ai-msg--side' : ''}`} data-kind={m.kind ?? ''} data-side={m.side ? 'true' : undefined} data-testid={m.side ? 'lesson-side-answer' : undefined}>
                 <div className="ai-msg__bubble">{m.text}</div>
+                {/* 앱이 자료를 못 찾았을 때 남기는 바깥 링크 — 웹 비로그인에서는 이게 유일한 길이다 */}
+                {m.link && (
+                  <button
+                    type="button"
+                    className="btn btn-ghost btn-sm"
+                    data-testid="lesson-video-search-link"
+                    onClick={() => openExternal(m.link!.url)}
+                  >
+                    {m.link.label}
+                  </button>
+                )}
                 {m.sources?.length && m.sources.every((x) => x.sourceType === 'video') ? (
                   <VideoResultCards videos={m.sources} testId="lesson-videos" />
                 ) : m.sources?.length ? (

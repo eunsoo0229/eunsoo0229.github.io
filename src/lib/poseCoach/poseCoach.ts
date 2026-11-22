@@ -65,8 +65,10 @@ export function captureGuide(t: Technique): CaptureGuide | null {
   };
 }
 
-const NOT_SINGLE = /(combo|combination|콤보|콤비네이션|top\s*\d+|best of|compilation|highlights?|하이라이트|\bvs\.?\b|knock ?outs?|\bko\b|ufc \d+|every|all\s+\w+\s+(kicks|punches)|drills? for|mistakes|reaction|sparring|스파링|모음)/i;
-const TUTORIAL = /(how to|tutorial|technique|basics?|beginner|강좌|기본|배우기|하는 법|방법)/i;
+/** 여러 기술을 모은 영상(콤보·하이라이트·모음)인가 — 단일 기술 자료가 아니다. */
+export const NOT_SINGLE = /(combo|combination|콤보|콤비네이션|top\s*\d+|best of|compilation|highlights?|하이라이트|\bvs\.?\b|knock ?outs?|\bko\b|ufc \d+|\bevery\b|all\s+\w+\s+(kicks|punches)|drills? for|mistakes|reaction|sparring|스파링|모음)/i;
+/** 설명·강좌형 제목인가 — 같은 조건이면 이쪽을 먼저 보여 준다. */
+export const TUTORIAL = /(how to|tutorial|technique|basics?|beginner|강좌|기본|배우기|하는 법|방법)/i;
 
 /** A single-technique demonstration: names the technique, not a combo / compilation, playable in the app, ≤ 10 min when the length is known. Judged from title / description only. */
 export function pickReferenceVideos(results: ChatSource[], t: Technique): { picked: ChatSource[]; rejected: { title: string; why: string }[] } {

@@ -62,6 +62,8 @@ export interface CoachMessage {
   proposal?: import('../selfAi/lessonSession').LessonAddProposal;
   /** 3D preview of the technique(s) the answer is about (selfAi/preview.ts). */
   preview?: import('../selfAi/types').TechniquePreview;
+  /** 앱이 자료를 찾지 못했을 때 사용자가 직접 볼 수 있는 바깥 링크 (예: YouTube 검색). */
+  link?: { url: string; label: string };
 }
 
 export interface PracticeRun {
