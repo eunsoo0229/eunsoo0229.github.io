@@ -1,4 +1,5 @@
 import SocialProfilePanel from '../components/social/SocialProfilePanel';
+import AutoSyncStatus from '../components/AutoSyncStatus';
 import Icon from '../components/Icon';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -200,14 +201,15 @@ export default function Profile() {
                     <span>가입일</span>
                   </div>
                 </div>
+                <AutoSyncStatus />
                 <div className="modal-actions modal-actions--start">
                   {hasLocalDataToBackup() && (
                     <button className="btn btn-secondary" onClick={handleBackup} disabled={syncing}>
-                      {syncing ? '처리 중…' : <><Icon name="cloud" /> 계정에 백업하기</>}
+                      {syncing ? '처리 중…' : <><Icon name="cloud" /> 백업본 만들기</>}
                     </button>
                   )}
                   <button className="btn btn-secondary" onClick={handleRestore} disabled={syncing}>
-                    {syncing ? '처리 중…' : '계정에서 복원하기'}
+                    {syncing ? '처리 중…' : '백업본으로 되돌리기'}
                   </button>
                   <button className="btn btn-ghost" onClick={handleLogout}>
                     로그아웃

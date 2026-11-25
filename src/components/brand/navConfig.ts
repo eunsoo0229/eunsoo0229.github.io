@@ -6,6 +6,8 @@ import { isAiCoachPath } from '../../lib/aiCoach/aiFeatureCatalog';
 export interface NavLinkItem {
   to: string;
   label: string;
+  /** 메뉴에서 눈에 띄게 표시할 항목 — 사용자가 만든 것이 모이는 곳이라 묻히면 안 된다. */
+  highlight?: boolean;
 }
 export interface Chapter {
   no: string;
@@ -25,13 +27,13 @@ export const CHAPTERS: Chapter[] = [
     match: ['/learning', '/arts', '/techniques', '/learned-techniques', '/graph', '/categories', '/user-combos', '/favorites', '/skill-tree', '/situation', '/fighter-style', '/ai-curriculum', '/marketplace', '/my-curriculum'],
     items: [
       { to: '/my-curriculum', label: '나의 학습 커리큘럼' },
+      { to: '/user-combos', label: '사용자 콤보·셋업', highlight: true },
       { to: '/learning', label: '학습 커리큘럼' },
       { to: '/arts', label: '무술 목록' },
       { to: '/techniques', label: '전체 기술' },
       { to: '/learned-techniques', label: '배운 기술' },
       { to: '/graph', label: '기술 그래프' },
       { to: '/skill-tree', label: '비주얼 기술 트리' },
-      { to: '/user-combos', label: '사용자 콤보·셋업' },
       { to: '/favorites', label: '즐겨찾기' },
       { to: '/techniques/request', label: '기술 요청' },
       { to: '/categories', label: '기술 카테고리 관리' },

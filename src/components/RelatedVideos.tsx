@@ -126,7 +126,10 @@ export default function RelatedVideos({ technique, liveSearchFallback = false, s
 
   const unclassifiedList =
     unclassified.length > 0 ? (
-      <details className="video-unclassified" data-testid="videos-unclassified" style={{ marginTop: 10 }}>
+      // 기본으로 펼쳐 둔다 — 영상이 있는데 버튼을 눌러야만 보이면 "영상이 없다"로 읽힌다. Gi/No-Gi 를
+      // 모른다는 것이지 영상이 없다는 뜻이 아니므로, 썸네일은 처음부터 보여 주고 스타일을 모른다는
+      // 사실만 글로 밝힌다.
+      <details className="video-unclassified" data-testid="videos-unclassified" style={{ marginTop: 10 }} open>
         <summary>스타일(Gi/No-Gi)이 확인되지 않은 영상 {unclassified.length}개</summary>
         <p className="video-status-message">영상 제목·설명에서 Gi인지 No-Gi인지 확인되지 않은 영상입니다. 어느 스타일의 영상으로도 표시하지 않습니다.</p>
         <div className="video-embed-grid">

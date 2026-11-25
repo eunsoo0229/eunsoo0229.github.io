@@ -75,8 +75,8 @@ export function IndexMenu({ open, onClose }: { open: boolean; onClose: () => voi
           </div>
           <ul className="mx-index-menu__links">
             {focus.items.map((it) => (
-              <li key={it.to}>
-                <NavLink to={it.to} end onClick={onClose} tabIndex={open ? 0 : -1}>
+              <li key={it.to} className={it.highlight ? 'mx-index-menu__link--highlight' : undefined}>
+                <NavLink to={it.to} end onClick={onClose} tabIndex={open ? 0 : -1} data-highlight={it.highlight ? 'true' : undefined}>
                   {it.label}
                   <Icon name="chevron-right" />
                 </NavLink>
@@ -91,7 +91,7 @@ export function IndexMenu({ open, onClose }: { open: boolean; onClose: () => voi
                 <div key={c.key}>
                   <div className="mx-index-menu__all-head"><IndexNo n={c.no} /> {c.label}</div>
                   {c.items.map((it) => (
-                    <NavLink key={it.to} to={it.to} end onClick={onClose} tabIndex={open ? 0 : -1}>{it.label}</NavLink>
+                    <NavLink key={it.to} to={it.to} end onClick={onClose} tabIndex={open ? 0 : -1} data-highlight={it.highlight ? 'true' : undefined}>{it.label}</NavLink>
                   ))}
                 </div>
               ))}
@@ -234,7 +234,7 @@ export function BrandFooter() {
           {CHAPTERS.slice(0, 6).map((c) => (
             <div key={c.key}>
               <div className="mx-footer__head"><IndexNo n={c.no} /> {c.title}</div>
-              {c.items.slice(0, 4).map((it) => <Link key={it.to} to={it.to}>{it.label}</Link>)}
+              {c.items.slice(0, 4).map((it) => <Link key={it.to} to={it.to} data-highlight={it.highlight ? 'true' : undefined}>{it.label}</Link>)}
             </div>
           ))}
         </div>

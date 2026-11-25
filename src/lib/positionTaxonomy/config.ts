@@ -45,8 +45,8 @@ const TOP = ['submission', 'control', 'transition', 'escape', 'guard_recovery'];
 const BJJ: PositionTaxonomyConfig = {
   positions: [
     P('standing', '스탠딩', 'Standing', /스탠딩|테이크다운|Takedown|그립|Grip|Kumi|잡기|던지기|투사|발기술|Ashi Waza|손기술|Te Waza|허리기술|Koshi Waza|Sutemi|싱글 레그|더블 레그|발목·무릎 공격|공격 진입|바디락|클린치|리샷|암 드래그|Arm Drag|테이크다운 진입|탑 포지션 \(레슬링\)/, ['takedown', 'clinch_control', 'standing_submission', 'standing_transition', 'td_defense'], /takedown|single leg(?! x)|double leg|snap ?down|duck ?under|ankle pick|테이크다운|싱글 ?레그(?! ?x)|더블 ?레그/i),
-    P('closed-guard', '클로즈드 가드', 'Closed Guard', /클로즈드 가드|Closed Guard/, GUARD, /closed guard|클로즈드 ?가드/i),
-    P('open-guard', '오픈 가드', 'Open Guard', /오픈 가드|Open Guard/, GUARD, /open guard|worm guard|lapel guard|오픈 ?가드|웜 ?가드/i),
+    P('closed-guard', '클로즈드 가드', 'Closed Guard', /클로즈드 가드|Closed Guard/, GUARD, /closed guard|loop choke|클로즈드 ?가드|루프 ?초크/i),
+    P('open-guard', '오픈 가드', 'Open Guard', /오픈 가드|Open Guard/, GUARD, /open guard|worm guard|lapel guard|collar drag|sleeve drag|collar ?(&|and) ?sleeve|오픈 ?가드|웜 ?가드|칼라 ?드래그|슬리브 ?드래그|칼라[ ·-]?슬리브/i),
     P('half-guard', '하프 가드', 'Half Guard', /(?<!딥 )하프 가드|(?<!Deep )Half Guard/, [...GUARD, 'guard_recovery'], /(?<!deep )half guard|(?<!딥 )하프 ?가드/i),
     P('deep-half', '딥 하프 가드', 'Deep Half Guard', /딥 하프|Deep Half/, GUARD, /deep half|딥 ?하프/i),
     P('butterfly', '버터플라이 가드', 'Butterfly Guard', /버터플라이|Butterfly/, GUARD, /butterfly|버터플라이/i),
@@ -63,7 +63,7 @@ const BJJ: PositionTaxonomyConfig = {
     P('knee-on-belly', '니 온 벨리', 'Knee on Belly', /니 온 벨리|Knee on Belly/, TOP, /knee on belly|니 ?온 ?벨리/i),
     P('north-south', '노스 사우스', 'North-South', /노스 사우스|North-South|North South/, TOP, /north[- ]south|kami shiho|со стороны головы|노스 ?사우스/i),
     P('turtle', '터틀', 'Turtle', /터틀|Turtle/, ['submission', 'control', 'transition', 'escape', 'guard_recovery'], /turtle|터틀/i),
-    P('front-headlock', '프론트 헤드락', 'Front Headlock', /프론트 헤드락|Front Headlock/, ['submission', 'control', 'transition', 'escape'], /front headlock|프론트 ?헤드락/i),
+    P('front-headlock', '프론트 헤드락', 'Front Headlock', /프론트 헤드락|Front Headlock/, ['submission', 'control', 'transition', 'escape'], /front headlock|loop choke|프론트 ?헤드락|루프 ?초크/i),
     P('crucifix', '크루시픽스', 'Crucifix', /크루시픽스|Crucifix/, ['control', 'submission', 'escape'], /crucifix|크루시픽스/i),
     P('basics', '기본 움직임 · 연결', 'Fundamental Movements', /기본 움직임과 연결|기본 자세와 움직임/, ['movement', 'escape', 'transition', 'retention']),
     // existing BJJ categories with no single position of their own — kept as their own entries (not dissolved)

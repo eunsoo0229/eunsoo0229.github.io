@@ -307,3 +307,26 @@
 body:has(.shorts) .mx-tabbar { display: none; }
 body:has(.shorts) { padding-bottom: 0; }
 body:has(.shorts) .notif-toast { bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
+
+/* 눈에 띄게 할 메뉴 항목 (navConfig 의 highlight) — 사용자가 직접 만든 것이 모이는 곳이라
+   다른 링크와 같은 무게로 두면 목록 속에 묻힌다. 금색은 이 디자인의 유일한 강조색이다. */
+.mx-index-menu__links > li.mx-index-menu__link--highlight > a,
+.mx-index-menu__all-grid a[data-highlight='true'],
+.mx-footer__cols a[data-highlight='true'] {
+  color: var(--mx-gold, var(--accent));
+  font-weight: 700;
+}
+.mx-index-menu__links > li.mx-index-menu__link--highlight > a {
+  border-left: 3px solid var(--mx-gold, var(--accent));
+  padding-left: 10px;
+}
+.mx-index-menu__links > li.mx-index-menu__link--highlight > a::after {
+  content: '내 기록';
+  margin-left: 8px;
+  font-size: 11px;
+  letter-spacing: .04em;
+  padding: 2px 6px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  opacity: .9;
+}

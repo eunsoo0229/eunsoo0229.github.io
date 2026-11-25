@@ -1,6 +1,7 @@
 import type { CuratedVideo, MartialArtFile, MartialArtSummary, Technique } from '../types';
 import curatedVideosData from '../../data/curated/videos.json';
 import canonicalData from '../../data/curated/technique-canonical.json';
+import notTechniquesData from '../../data/curated/not-techniques.json';
 import { mergeTechniqueGroup } from './techniqueCanonical/merge';
 import { getPostureInfo } from './posture/postureConfig';
 import { getDifficultyOverride } from './difficulty/difficultyConfig';
@@ -20,6 +21,27 @@ const modules = import.meta.glob(['../../data/processed/*.json', '!../../data/pr
 }) as Record<string, unknown>;
 
 const curatedVideos = curatedVideosData as Record<string, CuratedVideo[]>;
+
+// 원문의 문단 제목·규칙 해설이 기술 레코드로 잘못 만들어진 항목 (data/curated/not-techniques.json).
+// 목록·검색·커리큘럼에서 빼되, 지우지는 않는다 — 혹시 이 id 로 저장된 개인 기록이 있으면 그대로 풀려야 한다.
+const NOT_A_TECHNIQUE = new Set(Object.keys((notTechniquesData as { ids: Record<string, unknown> }).ids));
+
+/**
+ * 이 id 가 "기술이 아님"으로 검토된 항목인가.
+ *
+ * 레코드 자체는 지우지 않는다 — 이 id 들은 공식 커리큘럼(data/curriculum/official/*.json)과 큐레이션
+ * 영상·난이도 데이터에서 참조되고 있고, 개인 기록에도 남아 있을 수 있다. 지우면 그 참조가 전부 끊긴다.
+ * 대신 "둘러보기"에 해당하는 목록(무술별 기술 목록·전체 기술 수)에서만 빼고, id 로 찾는 경로는
+ * 그대로 둔다. 그래서 커리큘럼은 계속 동작하고, 기술 목록에는 문단 제목이 나타나지 않는다.
+ */
+export function isNotATechnique(id: string): boolean {
+  return NOT_A_TECHNIQUE.has(id);
+}
+
+/** 목록·검색에 보여 줄 기술만 (문단 제목·규칙 해설 제외). */
+export function browsable(list: Technique[]): Technique[] {
+  return list.filter((t) => !NOT_A_TECHNIQUE.has(t.id));
+}
 
 const martialArtFiles: MartialArtFile[] = Object.entries(modules)
   .filter(([path]) => !path.endsWith('_all.json') && !path.endsWith('_meta.json'))
@@ -351,11 +373,12 @@ export function getTechnique(id: string): Technique | undefined {
 }
 
 export function getTechniquesByMartialArt(martialArtId: string): Technique[] {
-  return techniquesByMartialArt.get(martialArtId) ?? [];
+  // 둘러보기용 — 문단 제목·규칙 해설은 빼고 준다. id 로 찾는 getTechnique 은 그대로 돌려준다.
+  return browsable(techniquesByMartialArt.get(martialArtId) ?? []);
 }
 
 export function getTechniquesByIds(ids: string[]): Technique[] {
   return ids.map((id) => techniqueById.get(id)).filter((t): t is Technique => Boolean(t));
 }
 
-export const totalTechniqueCount = allTechniques.length;
+export const totalTechniqueCount = browsable(allTechniques).length;

@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import AutoStateSyncWatcher from './components/AutoStateSyncWatcher';
 import { lazy, Suspense, useEffect } from 'react';
 import AppShell, { BrandFooter } from './components/brand/AppShell';
 import { MatMark } from './components/brand/BrandMarks';
@@ -189,6 +190,7 @@ export default function App() {
         <LocalDataMigrationPrompt />
         <LocalAiSetupPrompt />
         <GymLiveWatcher />
+        <AutoStateSyncWatcher />
         <Suspense fallback={<RouteLoadingFallback />}>
           <AppErrorBoundary>
           <Routes>

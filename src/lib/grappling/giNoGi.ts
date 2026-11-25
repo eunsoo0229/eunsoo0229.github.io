@@ -80,7 +80,10 @@ export function detectVideoStyle(text: string): VideoStyle {
   const both = /gi\s*(&|and|\/|or|vs\.?)\s*no[\s-]?gi|no[\s-]?gi\s*(&|and|\/|or|vs\.?)\s*gi/i.test(t);
   if (both) return 'both';
   if (/\bno[\s-]?gi\b|\bnogi\b|노\s?기/i.test(t)) return 'nogi';
-  if (/\bgi\b|kimono|도복|(collar|lapel|sleeve)\s?(grip|choke|drag)/i.test(t)) return 'gi';
+  // 기(Gi) 에서만 성립하는 표현들. 도복이 없으면 존재할 수 없는 그립·가드·용어라 "기 영상"의 근거가 된다.
+  // (2026-11-25 검수에서 확인: "Collar and Sleeve Guard", "Kumi Kata" 같은 제목이 규칙에 걸리지 않아
+  //  사람이 맞게 분류해 둔 영상이 재판정에서 unknown 으로 나왔다 — 규칙 쪽이 빠져 있었다.)
+  if (/\bgi\b|kimono|judogi|도복|기모노|kumi[-\s]?kata|\b(collar|lapel|sleeve)\b[^.]{0,20}\b(grip|choke|drag|guard|control)\b|collar[-\s]?(and[-\s]|&[-\s]?)?sleeve|(spider|lasso|worm|lapel)[-\s]?guard/i.test(t)) return 'gi';
   return 'unknown';
 }
 

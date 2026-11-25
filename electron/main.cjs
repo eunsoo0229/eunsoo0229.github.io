@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, session, shell, powerSaveBlocker, systemPreferences } = require('electron');
+const { app, BrowserWindow, dialog, ipcMain, session, shell, powerSaveBlocker, systemPreferences } = require('electron');
 const path = require('node:path');
 const fs = require('node:fs');
 
@@ -538,6 +538,59 @@ function flushStorage() {
   }
 }
 app.on('browser-window-created', (_e, win) => win.on('close', flushStorage));
+
+// 창을 닫기 전에 정말 나갈 것인지 묻는다. 수업·훈련 중에 실수로 닫으면 진행 중이던 흐름이 끊기고,
+// 아직 클라우드로 올라가지 않은 변경이 남아 있을 수 있다. "다음부터 묻지 않기"는 사용자 데이터
+// 폴더에 남는다(자체 검색 설정과 같은 방식). 대화상자를 띄울 수 없는 상황에서는 막지 않는다.
+const quitSettingsPath = () => path.join(app.getPath('userData'), 'quit-settings.json');
+function askBeforeQuit() {
+  try {
+    const raw = JSON.parse(fs.readFileSync(quitSettingsPath(), 'utf8'));
+    return raw.ask !== false;
+  } catch {
+    return true; // 설정이 없으면 묻는다
+  }
+}
+function setAskBeforeQuit(ask) {
+  try {
+    fs.writeFileSync(quitSettingsPath(), JSON.stringify({ ask: !!ask }));
+  } catch {
+    // 저장 실패는 기능을 막지 않는다 — 다음에 다시 묻게 될 뿐이다
+  }
+}
+/** 확인을 마친 창 — 두 번 묻지 않는다. */
+const confirmedClose = new WeakSet();
+app.on('browser-window-created', (_e, win) => {
+  win.on('close', (e) => {
+    if (confirmedClose.has(win) || win.isDestroyed() || !askBeforeQuit()) return;
+    e.preventDefault();
+    dialog
+      .showMessageBox(win, {
+        type: 'question',
+        buttons: ['취소', '종료'],
+        defaultId: 0,
+        cancelId: 0,
+        title: 'MARTIALDEX 종료',
+        message: 'MARTIALDEX를 종료할까요?',
+        detail: '진행 중인 수업·훈련이 있으면 중단됩니다. 기록은 기기에 저장되고 다음에 열 때 이어서 볼 수 있습니다.',
+        checkboxLabel: '다음부터 묻지 않기',
+        checkboxChecked: false,
+        noLink: true,
+      })
+      .then(({ response, checkboxChecked }) => {
+        if (checkboxChecked) setAskBeforeQuit(false);
+        if (response !== 1) return;
+        confirmedClose.add(win);
+        win.close();
+      })
+      .catch(() => {
+        // 대화상자를 띄우지 못하면 종료를 막지 않는다
+        confirmedClose.add(win);
+        win.close();
+      });
+  });
+});
+
 app.on('before-quit', flushStorage);
 // Quit: unload the model MARTIALDEX loaded and stop the Ollama it started (bounded to 5 s), then quit for real.
 let engineCleaned = false;
