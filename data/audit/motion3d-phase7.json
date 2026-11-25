@@ -1,0 +1,400 @@
+{
+ "generatedBy": "scripts/motion3d/phase7_report.py (Phase 7: RNC 재제작 + 신규 10종)",
+ "clips": {
+  "bjj-rear-naked-choke-m2m-v3": {
+   "techniqueIds": [
+    "bjj__rear-naked-choke"
+   ],
+   "title": "리어 네이키드 초크 (2인 안전 시연)",
+   "file": "public/motion3d/anims/bjj-rear-naked-choke-m2m-v3.glb",
+   "durationSec": 4.4,
+   "frames": 132,
+   "phases": [
+    "1 시작 자세: 백 컨트롤·시트벨트 0.00–0.80s",
+    "2 위치 관계: 머리 옆·팔 올리기 0.80–1.60s",
+    "3 형태 만들기: 이두 잡기·뒤 손 1.60–2.40s",
+    "4 유지 (압박 없음) 2.40–3.40s",
+    "5 시작 자세로 복귀 3.40–4.40s"
+   ],
+   "review": "data/audit/motion3d-bjj-rear-naked-choke-m2m-v3-duo-review.json",
+   "reviewImage": "data/audit/motion3d-phase7/bjj-rear-naked-choke-m2m-v3.png",
+   "reviewStats": {
+    "lowestSkinM": 0.0,
+    "plantedSlideMaxM": 0.0,
+    "plantedSlideTotalM": 0.0,
+    "pelvisStepMaxM": 0.0067,
+    "selfContactMax": {
+     "A": 456,
+     "B": 483
+    },
+    "bodyPenetrationMax": 1273,
+    "gripContactMax": 786
+   },
+   "knownIssues": [
+    "캐릭터가 분절형 마네킹이라 관절 링(어깨·팔꿈치·무릎 이음매)은 레스트에서도 겹침 — 자기 몸 교차 검사는 인접하지 않은 부위끼리만 셈",
+    "사람(코치·사용자)의 시각적 검수 전 — 자동 검사(관통·바닥·발 미끄러짐·순간이동·안전 간격)와 렌더 확인만 됨",
+    "자기 몸 부위 접촉(인접하지 않은 부위) 최대 A 456, B 483 삼각형 쌍 — 대부분 전환 중 손·팔이 스치는 순간 (data/audit 검수 JSON 키별 기록)",
+    "2인 밀착(가슴-등, 훅, 머리 옆) 부위 겹침 최대 1273 삼각형 쌍, 손 접촉 최대 786 — 분절형 마네킹 한계"
+   ],
+   "safety": {
+    "chokeArmToNeckMinM": 0.117,
+    "backHandToHeadMinM": 0.179,
+    "holdGripGapMaxM": 0.069,
+    "holdHeadToHeadMinM": 0.171
+   }
+  },
+  "boxing-rear-uppercut-m2m-v1": {
+   "techniqueIds": [
+    "boxing__rear-uppercut"
+   ],
+   "title": "리어 어퍼컷 (오소독스, 오른손)",
+   "file": "public/motion3d/anims/boxing-rear-uppercut-m2m-v1.glb",
+   "durationSec": 1.8667,
+   "frames": 56,
+   "phases": [
+    "준비·하중 싣기 0.00–0.60s",
+    "실행: 다리·골반으로 올려치기 0.60–1.00s",
+    "회수 1.00–1.33s",
+    "가드 복귀 1.33–1.87s"
+   ],
+   "review": "data/audit/motion3d-boxing-rear-uppercut-m2m-v1-duo-review.json",
+   "reviewImage": "data/audit/motion3d-phase7/boxing-rear-uppercut-m2m-v1.png",
+   "reviewStats": {
+    "lowestSkinM": -0.0006,
+    "plantedSlideMaxM": 0.0,
+    "plantedSlideTotalM": 0.0,
+    "pelvisStepMaxM": 0.0167,
+    "selfContactMax": {
+     "A": 51
+    },
+    "bodyPenetrationMax": 0,
+    "gripContactMax": 0
+   },
+   "knownIssues": [
+    "캐릭터가 분절형 마네킹이라 관절 링(어깨·팔꿈치·무릎 이음매)은 레스트에서도 겹침 — 자기 몸 교차 검사는 인접하지 않은 부위끼리만 셈",
+    "사람(코치·사용자)의 시각적 검수 전 — 자동 검사(관통·바닥·발 미끄러짐·순간이동·안전 간격)와 렌더 확인만 됨",
+    "자기 몸 부위 접촉(인접하지 않은 부위) 최대 A 51 삼각형 쌍 — 대부분 전환 중 손·팔이 스치는 순간 (data/audit 검수 JSON 키별 기록)"
+   ],
+   "art": "복싱",
+   "selectionReason": "기본 4펀치 중 3D 클립이 없던 마지막 펀치 — 아래에서 위로 올리는 궤적과 다리·골반 회전은 영상 한 각도로 보기 어려움"
+  },
+  "boxing-slip-m2m-v1": {
+   "techniqueIds": [
+    "boxing__slip"
+   ],
+   "title": "슬립 (오소독스, 바깥쪽·안쪽)",
+   "file": "public/motion3d/anims/boxing-slip-m2m-v1.glb",
+   "durationSec": 2.1333,
+   "frames": 64,
+   "phases": [
+    "준비: 가드 0.00–0.27s",
+    "바깥쪽 슬립 (오른쪽) 0.27–0.80s",
+    "중앙으로 0.80–1.13s",
+    "안쪽 슬립 (왼쪽) 1.13–1.67s",
+    "가드 복귀 1.67–2.13s"
+   ],
+   "review": "data/audit/motion3d-boxing-slip-m2m-v1-duo-review.json",
+   "reviewImage": "data/audit/motion3d-phase7/boxing-slip-m2m-v1.png",
+   "reviewStats": {
+    "lowestSkinM": -0.0006,
+    "plantedSlideMaxM": 0.0,
+    "plantedSlideTotalM": 0.0,
+    "pelvisStepMaxM": 0.0192,
+    "selfContactMax": {
+     "A": 0
+    },
+    "bodyPenetrationMax": 0,
+    "gripContactMax": 0
+   },
+   "knownIssues": [
+    "캐릭터가 분절형 마네킹이라 관절 링(어깨·팔꿈치·무릎 이음매)은 레스트에서도 겹침 — 자기 몸 교차 검사는 인접하지 않은 부위끼리만 셈",
+    "사람(코치·사용자)의 시각적 검수 전 — 자동 검사(관통·바닥·발 미끄러짐·순간이동·안전 간격)와 렌더 확인만 됨"
+   ],
+   "art": "복싱",
+   "selectionReason": "기본 방어. 머리 위치가 중심선에서 어떻게 빠지는지(허리가 아니라 어깨 회전·무릎) 360°로 확인하는 교육 효과가 큼"
+  },
+  "kickboxing-body-kick-m2m-v1": {
+   "techniqueIds": [
+    "kickboxing__body-kick"
+   ],
+   "title": "바디킥 (오소독스, 오른발 라운드킥)",
+   "file": "public/motion3d/anims/kickboxing-body-kick-m2m-v1.glb",
+   "durationSec": 2.4,
+   "frames": 72,
+   "phases": [
+    "준비·앞발 피벗 0.00–0.63s",
+    "실행: 골반 회전·정강이 타격 0.63–1.33s",
+    "회수·발 내리기 1.33–1.87s",
+    "가드 복귀 1.87–2.40s"
+   ],
+   "review": "data/audit/motion3d-kickboxing-body-kick-m2m-v1-duo-review.json",
+   "reviewImage": "data/audit/motion3d-phase7/kickboxing-body-kick-m2m-v1.png",
+   "reviewStats": {
+    "lowestSkinM": -0.0006,
+    "plantedSlideMaxM": 0.0,
+    "plantedSlideTotalM": 0.0,
+    "pelvisStepMaxM": 0.0269,
+    "selfContactMax": {
+     "A": 0
+    },
+    "bodyPenetrationMax": 0,
+    "gripContactMax": 0
+   },
+   "knownIssues": [
+    "캐릭터가 분절형 마네킹이라 관절 링(어깨·팔꿈치·무릎 이음매)은 레스트에서도 겹침 — 자기 몸 교차 검사는 인접하지 않은 부위끼리만 셈",
+    "사람(코치·사용자)의 시각적 검수 전 — 자동 검사(관통·바닥·발 미끄러짐·순간이동·안전 간격)와 렌더 확인만 됨"
+   ],
+   "art": "킥복싱",
+   "selectionReason": "가장 기본적인 라운드킥 — 앞발 피벗과 골반 회전, 정강이 타격면을 여러 각도에서 확인"
+  },
+  "kickboxing-straight-knee-m2m-v1": {
+   "techniqueIds": [
+    "kickboxing__straight-knee"
+   ],
+   "title": "스트레이트 니 (오소독스, 뒷무릎)",
+   "file": "public/motion3d/anims/kickboxing-straight-knee-m2m-v1.glb",
+   "durationSec": 1.9333,
+   "frames": 58,
+   "phases": [
+    "준비·손 뻗기 0.00–0.53s",
+    "실행: 골반 밀며 무릎 올리기 0.53–1.00s",
+    "회수·발 내리기 1.00–1.47s",
+    "가드 복귀 1.47–1.93s"
+   ],
+   "review": "data/audit/motion3d-kickboxing-straight-knee-m2m-v1-duo-review.json",
+   "reviewImage": "data/audit/motion3d-phase7/kickboxing-straight-knee-m2m-v1.png",
+   "reviewStats": {
+    "lowestSkinM": -0.0006,
+    "plantedSlideMaxM": 0.0,
+    "plantedSlideTotalM": 0.0,
+    "pelvisStepMaxM": 0.0281,
+    "selfContactMax": {
+     "A": 0
+    },
+    "bodyPenetrationMax": 0,
+    "gripContactMax": 0
+   },
+   "knownIssues": [
+    "캐릭터가 분절형 마네킹이라 관절 링(어깨·팔꿈치·무릎 이음매)은 레스트에서도 겹침 — 자기 몸 교차 검사는 인접하지 않은 부위끼리만 셈",
+    "사람(코치·사용자)의 시각적 검수 전 — 자동 검사(관통·바닥·발 미끄러짐·순간이동·안전 간격)와 렌더 확인만 됨"
+   ],
+   "art": "킥복싱 (무에타이 카오 트롱과 같은 기술로 병합)",
+   "selectionReason": "니 공격의 기본 — 무릎만 드는 것이 아니라 골반을 앞으로 미는 동작"
+  },
+  "kickboxing-horizontal-elbow-m2m-v1": {
+   "techniqueIds": [
+    "kickboxing__horizontal-elbow"
+   ],
+   "title": "호리즌털 엘보 (오소독스, 오른팔꿈치)",
+   "file": "public/motion3d/anims/kickboxing-horizontal-elbow-m2m-v1.glb",
+   "durationSec": 1.8,
+   "frames": 54,
+   "phases": [
+    "준비·팔꿈치 들기 0.00–0.53s",
+    "실행: 골반·어깨 회전, 수평으로 베기 0.53–0.93s",
+    "회수 0.93–1.33s",
+    "가드 복귀 1.33–1.80s"
+   ],
+   "review": "data/audit/motion3d-kickboxing-horizontal-elbow-m2m-v1-duo-review.json",
+   "reviewImage": "data/audit/motion3d-phase7/kickboxing-horizontal-elbow-m2m-v1.png",
+   "reviewStats": {
+    "lowestSkinM": -0.0006,
+    "plantedSlideMaxM": 0.0,
+    "plantedSlideTotalM": 0.0,
+    "pelvisStepMaxM": 0.0118,
+    "selfContactMax": {
+     "A": 21
+    },
+    "bodyPenetrationMax": 0,
+    "gripContactMax": 0
+   },
+   "knownIssues": [
+    "캐릭터가 분절형 마네킹이라 관절 링(어깨·팔꿈치·무릎 이음매)은 레스트에서도 겹침 — 자기 몸 교차 검사는 인접하지 않은 부위끼리만 셈",
+    "사람(코치·사용자)의 시각적 검수 전 — 자동 검사(관통·바닥·발 미끄러짐·순간이동·안전 간격)와 렌더 확인만 됨",
+    "자기 몸 부위 접촉(인접하지 않은 부위) 최대 A 21 삼각형 쌍 — 대부분 전환 중 손·팔이 스치는 순간 (data/audit 검수 JSON 키별 기록)"
+   ],
+   "art": "킥복싱 (무에타이 속 탓과 병합)",
+   "selectionReason": "엘보 계열 첫 클립 — 근거리에서 팔꿈치가 수평으로 지나가는 궤적"
+  },
+  "muaythai-push-teep-m2m-v1": {
+   "techniqueIds": [
+    "muay-thai__push-teep"
+   ],
+   "title": "푸시 티프 (오소독스, 뒷발)",
+   "file": "public/motion3d/anims/muaythai-push-teep-m2m-v1.glb",
+   "durationSec": 2.2,
+   "frames": 66,
+   "phases": [
+    "준비·무릎 들기 0.00–0.80s",
+    "실행: 골반 밀며 뻗기 0.80–1.20s",
+    "회수·발 내리기 1.20–1.73s",
+    "가드 복귀 1.73–2.20s"
+   ],
+   "review": "data/audit/motion3d-muaythai-push-teep-m2m-v1-duo-review.json",
+   "reviewImage": "data/audit/motion3d-phase7/muaythai-push-teep-m2m-v1.png",
+   "reviewStats": {
+    "lowestSkinM": -0.0006,
+    "plantedSlideMaxM": 0.0,
+    "plantedSlideTotalM": 0.0,
+    "pelvisStepMaxM": 0.0293,
+    "selfContactMax": {
+     "A": 0
+    },
+    "bodyPenetrationMax": 0,
+    "gripContactMax": 0
+   },
+   "knownIssues": [
+    "캐릭터가 분절형 마네킹이라 관절 링(어깨·팔꿈치·무릎 이음매)은 레스트에서도 겹침 — 자기 몸 교차 검사는 인접하지 않은 부위끼리만 셈",
+    "사람(코치·사용자)의 시각적 검수 전 — 자동 검사(관통·바닥·발 미끄러짐·순간이동·안전 간격)와 렌더 확인만 됨"
+   ],
+   "art": "무에타이",
+   "selectionReason": "무에타이의 대표 거리 조절 기술 — 무릎 들기 후 골반으로 미는 동작(스냅 킥과 구분)"
+  },
+  "mma-overhand-m2m-v1": {
+   "techniqueIds": [
+    "mixed-martial-arts__overhand"
+   ],
+   "title": "오버핸드 (오소독스, 오른손)",
+   "file": "public/motion3d/anims/mma-overhand-m2m-v1.glb",
+   "durationSec": 2.0,
+   "frames": 60,
+   "phases": [
+    "준비·머리를 중심선 밖으로 0.00–0.60s",
+    "실행: 위로 돌려 내려치기 0.60–1.07s",
+    "회수 1.07–1.47s",
+    "가드 복귀 1.47–2.00s"
+   ],
+   "review": "data/audit/motion3d-mma-overhand-m2m-v1-duo-review.json",
+   "reviewImage": "data/audit/motion3d-phase7/mma-overhand-m2m-v1.png",
+   "reviewStats": {
+    "lowestSkinM": -0.0006,
+    "plantedSlideMaxM": 0.0,
+    "plantedSlideTotalM": 0.0,
+    "pelvisStepMaxM": 0.0155,
+    "selfContactMax": {
+     "A": 0
+    },
+    "bodyPenetrationMax": 0,
+    "gripContactMax": 0
+   },
+   "knownIssues": [
+    "캐릭터가 분절형 마네킹이라 관절 링(어깨·팔꿈치·무릎 이음매)은 레스트에서도 겹침 — 자기 몸 교차 검사는 인접하지 않은 부위끼리만 셈",
+    "사람(코치·사용자)의 시각적 검수 전 — 자동 검사(관통·바닥·발 미끄러짐·순간이동·안전 간격)와 렌더 확인만 됨"
+   ],
+   "art": "MMA",
+   "selectionReason": "MMA 대표 펀치 — 머리를 중심선 밖으로 빼며 위에서 내려치는 궤적"
+  },
+  "wrestling-sprawl-m2m-v1": {
+   "techniqueIds": [
+    "wrestling__sprawl"
+   ],
+   "title": "스프롤 (태클 방어)",
+   "file": "public/motion3d/anims/wrestling-sprawl-m2m-v1.glb",
+   "durationSec": 2.4667,
+   "frames": 74,
+   "phases": [
+    "준비: 레슬링 자세 0.00–0.33s",
+    "실행: 다리를 뒤로 뻗으며 골반 내리기 0.33–0.87s",
+    "유지: 골반 무겁게·머리 들기 0.87–1.47s",
+    "회수: 발 당겨 일어나기 1.47–2.07s",
+    "자세 복귀 2.07–2.47s"
+   ],
+   "review": "data/audit/motion3d-wrestling-sprawl-m2m-v1-duo-review.json",
+   "reviewImage": "data/audit/motion3d-phase7/wrestling-sprawl-m2m-v1.png",
+   "reviewStats": {
+    "lowestSkinM": 0.0,
+    "plantedSlideMaxM": 0.0354,
+    "plantedSlideTotalM": 0.122,
+    "pelvisStepMaxM": 0.0752,
+    "selfContactMax": {
+     "A": 106
+    },
+    "bodyPenetrationMax": 0,
+    "gripContactMax": 0
+   },
+   "knownIssues": [
+    "캐릭터가 분절형 마네킹이라 관절 링(어깨·팔꿈치·무릎 이음매)은 레스트에서도 겹침 — 자기 몸 교차 검사는 인접하지 않은 부위끼리만 셈",
+    "사람(코치·사용자)의 시각적 검수 전 — 자동 검사(관통·바닥·발 미끄러짐·순간이동·안전 간격)와 렌더 확인만 됨",
+    "발이 딛거나 떼는 순간 발볼 이동 키당 최대 3.5 cm (클립 전체 12.2 cm)",
+    "자기 몸 부위 접촉(인접하지 않은 부위) 최대 A 106 삼각형 쌍 — 대부분 전환 중 손·팔이 스치는 순간 (data/audit 검수 JSON 키별 기록)"
+   ],
+   "art": "레슬링",
+   "selectionReason": "테이크다운 방어의 기본 — 기존 더블렉(공격) 클립과 짝을 이루는 방어 동작"
+  },
+  "bjj-hip-escape-m2m-v1": {
+   "techniqueIds": [
+    "bjj__hip-escape"
+   ],
+   "title": "힙 이스케이프 (새우빼기, 왼쪽으로 눕기)",
+   "file": "public/motion3d/anims/bjj-hip-escape-m2m-v1.glb",
+   "durationSec": 2.2,
+   "frames": 66,
+   "phases": [
+    "준비: 등 대고 누워 프레임 0.00–0.33s",
+    "옆으로 돌기·발 딛기 0.33–0.73s",
+    "실행: 발로 밀어 골반 빼기 0.73–1.20s",
+    "무릎 넣기 (가드 회복) 1.20–1.60s",
+    "다시 등 대고 눕기 1.60–2.20s"
+   ],
+   "review": "data/audit/motion3d-bjj-hip-escape-m2m-v1-duo-review.json",
+   "reviewImage": "data/audit/motion3d-phase7/bjj-hip-escape-m2m-v1.png",
+   "reviewStats": {
+    "lowestSkinM": -0.0108,
+    "plantedSlideMaxM": 0.0239,
+    "plantedSlideTotalM": 0.08,
+    "pelvisStepMaxM": 0.0468,
+    "selfContactMax": {
+     "A": 0
+    },
+    "bodyPenetrationMax": 0,
+    "gripContactMax": 0
+   },
+   "knownIssues": [
+    "캐릭터가 분절형 마네킹이라 관절 링(어깨·팔꿈치·무릎 이음매)은 레스트에서도 겹침 — 자기 몸 교차 검사는 인접하지 않은 부위끼리만 셈",
+    "사람(코치·사용자)의 시각적 검수 전 — 자동 검사(관통·바닥·발 미끄러짐·순간이동·안전 간격)와 렌더 확인만 됨",
+    "피부가 바닥 아래로 최대 11 mm 내려가는 순간 있음",
+    "발이 딛거나 떼는 순간 발볼 이동 키당 최대 2.4 cm (클립 전체 8.0 cm)"
+   ],
+   "art": "브라질리언 주짓수 (유도 새우빼기와 병합)",
+   "selectionReason": "하위 포지션 탈출의 기본 움직임 — 옆으로 누워 골반을 빼는 C자 모양"
+  },
+  "bjj-technical-stand-up-m2m-v1": {
+   "techniqueIds": [
+    "bjj__technical-stand-up"
+   ],
+   "title": "테크니컬 스탠드업 (오른손 짚고 왼발 딛기)",
+   "file": "public/motion3d/anims/bjj-technical-stand-up-m2m-v1.glb",
+   "durationSec": 2.8,
+   "frames": 84,
+   "phases": [
+    "준비: 앉은 자세·손 짚기 0.00–0.40s",
+    "엉덩이 들기 (손·발 지지) 0.40–0.80s",
+    "실행: 다리를 몸 아래로 빼서 뒤에 딛기 0.80–1.20s",
+    "일어서기: 손 들고 자세 1.20–1.80s",
+    "같은 길로 앉은 자세 복귀 1.80–2.80s"
+   ],
+   "review": "data/audit/motion3d-bjj-technical-stand-up-m2m-v1-duo-review.json",
+   "reviewImage": "data/audit/motion3d-phase7/bjj-technical-stand-up-m2m-v1.png",
+   "reviewStats": {
+    "lowestSkinM": -0.0062,
+    "plantedSlideMaxM": 0.011,
+    "plantedSlideTotalM": 0.031,
+    "pelvisStepMaxM": 0.0852,
+    "selfContactMax": {
+     "A": 43
+    },
+    "bodyPenetrationMax": 0,
+    "gripContactMax": 0
+   },
+   "knownIssues": [
+    "캐릭터가 분절형 마네킹이라 관절 링(어깨·팔꿈치·무릎 이음매)은 레스트에서도 겹침 — 자기 몸 교차 검사는 인접하지 않은 부위끼리만 셈",
+    "사람(코치·사용자)의 시각적 검수 전 — 자동 검사(관통·바닥·발 미끄러짐·순간이동·안전 간격)와 렌더 확인만 됨",
+    "피부가 바닥 아래로 최대 6 mm 내려가는 순간 있음",
+    "발이 딛거나 떼는 순간 발볼 이동 키당 최대 1.1 cm (클립 전체 3.1 cm)",
+    "자기 몸 부위 접촉(인접하지 않은 부위) 최대 A 43 삼각형 쌍 — 대부분 전환 중 손·팔이 스치는 순간 (data/audit 검수 JSON 키별 기록)"
+   ],
+   "art": "브라질리언 주짓수",
+   "selectionReason": "바닥에서 안전하게 일어서는 포지션 전환 — 손·발 지지와 다리를 몸 아래로 빼는 경로"
+  }
+ }
+}

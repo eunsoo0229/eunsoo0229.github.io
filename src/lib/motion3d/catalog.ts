@@ -5,7 +5,7 @@ import type { Motion3dCatalog, MotionClip, MotionPhaseName } from './types';
 // Same curated-merge pattern as poseAnalysis.json: a technique with no clip here simply has no 3D demo.
 // Entries are validated once; a broken entry is dropped (and reported) instead of reaching the viewer.
 
-const PHASES: MotionPhaseName[] = ['prepare', 'execute', 'finish', 'recover', 'guard_return', 'drive'];
+const PHASES: MotionPhaseName[] = ['prepare', 'execute', 'finish', 'recover', 'guard_return', 'drive', 'transition', 'hold'];
 const GLB_PATH = /^motion3d\/([\w.-]+\/)?[\w.-]+\.glb$/;
 
 export function validateClip(raw: unknown, catalog: Pick<Motion3dCatalog, 'rigs'> & Partial<Pick<Motion3dCatalog, 'characters'>> = { rigs: {} }): { clip: MotionClip | null; problems: string[] } {
@@ -18,6 +18,7 @@ export function validateClip(raw: unknown, catalog: Pick<Motion3dCatalog, 'rigs'
   if (!(typeof c.fps === 'number' && c.fps > 0 && c.fps <= 240)) problems.push('fps invalid');
   if (!(typeof c.durationSec === 'number' && c.durationSec > 0 && c.durationSec < 600)) problems.push('durationSec invalid');
   if (!(typeof c.frameCount === 'number' && c.frameCount >= 1)) problems.push('frameCount invalid');
+  if (c.cameraElevationDeg !== undefined && !(typeof c.cameraElevationDeg === 'number' && c.cameraElevationDeg >= 0 && c.cameraElevationDeg <= 60)) problems.push('cameraElevationDeg must be 0..60');
   if (!Array.isArray(c.actors) || !c.actors.length) problems.push('actors missing');
   else
     for (const a of c.actors) {

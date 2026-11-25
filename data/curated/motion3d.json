@@ -1139,12 +1139,12 @@
    "stance": "southpaw"
   },
   {
-   "clipId": "bjj-rear-naked-choke-m2m-v2",
+   "clipId": "bjj-rear-naked-choke-m2m-v3",
    "variant": "2인 시연",
    "techniqueIds": [
     "bjj__rear-naked-choke"
    ],
-   "title": "리어 네이키드 초크 (2인 안전 시연 · 팔 맞잡기)",
+   "title": "리어 네이키드 초크 (2인 안전 시연)",
    "actors": [
     {
      "id": "A",
@@ -1165,58 +1165,91 @@
      "color": "#9e2a24"
     }
    ],
-   "file": "motion3d/anims/bjj-rear-naked-choke-m2m-v2.glb",
+   "file": "motion3d/anims/bjj-rear-naked-choke-m2m-v3.glb",
    "embedsCharacter": false,
-   "animation": "bjj-rear-naked-choke-m2m-v2",
+   "animation": "bjj-rear-naked-choke-m2m-v3",
    "fps": 30,
-   "durationSec": 3,
-   "frameCount": 90,
+   "durationSec": 4.4,
+   "frameCount": 132,
    "phases": [
     {
      "name": "prepare",
-     "label": "준비·시트벨트",
-     "startSec": 0,
-     "endSec": 0.6667
+     "label": "1 시작 자세: 백 컨트롤·시트벨트",
+     "startSec": 0.0,
+     "endSec": 0.8
+    },
+    {
+     "name": "transition",
+     "label": "2 위치 관계: 머리 옆·팔 올리기",
+     "startSec": 0.8,
+     "endSec": 1.6
     },
     {
      "name": "execute",
-     "label": "자세 만들기·유지 (압박 없음)",
-     "startSec": 0.6667,
-     "endSec": 2.3333
+     "label": "3 형태 만들기: 이두 잡기·뒤 손",
+     "startSec": 1.6,
+     "endSec": 2.4
     },
     {
-     "name": "finish",
-     "label": "풀기",
-     "startSec": 2.3333,
-     "endSec": 3
+     "name": "hold",
+     "label": "4 유지 (압박 없음)",
+     "startSec": 2.4,
+     "endSec": 3.4
+    },
+    {
+     "name": "recover",
+     "label": "5 시작 자세로 복귀",
+     "startSec": 3.4,
+     "endSec": 4.4
     }
    ],
    "phaseKeys": {
     "prepare": [
      0,
-     20
+     24
+    ],
+    "transition": [
+     24,
+     48
     ],
     "execute": [
-     20,
-     70
+     48,
+     72
     ],
-    "finish": [
-     70,
-     90
+    "hold": [
+     72,
+     102
+    ],
+    "recover": [
+     102,
+     132
     ]
    },
    "cameraFront": "rest",
    "phaseMethod": "제작 시 정의한 키 구간 — 측정이 아니라 설계값",
-   "version": "2.0.0",
+   "cameraElevationDeg": 12,
+   "version": "3.0.0",
    "source": {
-    "motion": "MARTIALDEX 자체 제작 (Phase 5): 같은 캐릭터를 두 번 불러 각자 자기 기준 좌표계에 배치(rig_kit placement), 매 키 B 몸 → A 몸 → A 팔 → B 팔 순서로 IK를 풀어(손이 상대의 뼈 위치를 잡음) 회전 키 + 골반 위치 + 배치(root)를 기록, 뼈 이름에 A_/B_ 접두사를 붙여 한 애니메이션(한 타임라인)으로 내보냄. 모션 캡처·외부 애니메이션 미사용.",
-    "authoringScript": "scripts/motion3d/techniques/bjj_rear_naked_choke.py + scripts/motion3d/author_duo.py (grapple_kit.py, rig_kit.py)",
-    "blendSource": "assets/3d/motion-library/bjj/bjj-rear-naked-choke-m2m-v2.blend",
-    "glbSha256": "b125c71ffe623a885db11aa602591f5d1a42b0f36375526096e8cfbced6fa13a",
-    "review": "data/audit/motion3d-bjj-rear-naked-choke-m2m-v2-duo-review.json (scripts/motion3d/duo_review.py)",
-    "safety": "안전 시범: 조르는 팔(상완·전완 뼈)과 B의 목·머리 뼈 사이 거리 ≥ 0.111 m를 모든 키에서 측정·유지(피부 기준 약 1 cm 이상 간격), 조이는 움직임 없음, 뒤 손은 머리에 닿지 않음(≥ 0.165 m), B는 저항·강제 움직임 없음",
-    "replaces": "bjj-rear-naked-choke-m2m-v1 — 파일 유지, retiredClips",
-    "phase6": "상체만 재작업(하체·훅·골반·타임라인·색 유지): 팔 맞잡기(palm-to-palm) — 조르는 팔은 목 앞, 반대 팔은 B의 왼어깨 위로, 손은 목 옆에서 맞잡음; B의 손은 A의 팔 양 끝을 잡음(교차 없음); 안전 간격 유지(목 ≥ 0.118 m)"
+    "motion": "MARTIALDEX 자체 제작 (Phase 7): Blender 3.4에서 키 포즈 + 이징을 매 키 풀어(2-본 IK, 고정된 발·들린 다리, 가슴 기준 가드 손, 시선) 회전 키프레임으로 기록. 모션 캡처·외부 애니메이션 미사용, 공개된 기본 코칭 원리만 참고.",
+    "authoringScript": "scripts/motion3d/techniques/bjj_rear_naked_choke_v3.py + scripts/motion3d/author_duo.py (grapple_kit.py, rig_kit.py)",
+    "blendSource": "assets/3d/motion-library/bjj/bjj-rear-naked-choke-m2m-v3.blend",
+    "glbSha256": "12a409e2f5b8a2f8058f75fcd5914d93b966399975c7dc152d73bf3c0f32abfe",
+    "review": "data/audit/motion3d-bjj-rear-naked-choke-m2m-v3-duo-review.json (scripts/motion3d/duo_review.py)",
+    "reviewImage": "data/audit/motion3d-phase7/bjj-rear-naked-choke-m2m-v3.png",
+    "reviewStats": {
+     "lowestSkinM": 0.0,
+     "plantedSlideMaxM": 0.0,
+     "plantedSlideTotalM": 0.0,
+     "pelvisStepMaxM": 0.0067,
+     "selfContactMax": {
+      "A": 456,
+      "B": 483
+     },
+     "bodyPenetrationMax": 1273,
+     "gripContactMax": 786
+    },
+    "safety": "안전 시범: 조르는 팔(상완·전완 뼈)과 B의 목·머리 뼈 사이 거리 ≥ 0.117 m를 모든 키에서 측정·유지, 조이는 움직임 없음, 뒤 손은 머리에 닿지 않음(≥ 0.179 m), B의 머리·목 자세(시선·숙임)는 모든 키에서 같음, B는 저항·강제 움직임 없음",
+    "replaces": "bjj-rear-naked-choke-m2m-v2 — 파일 유지, retiredClips"
    },
    "license": {
     "motion": "MARTIALDEX 자체 제작 (외부 라이선스 없음)",
@@ -1225,24 +1258,1241 @@
    },
    "pipeline": {
     "name": "martialdex-keyframe",
-    "version": "3 + Phase 6",
+    "version": "4 (Phase 7)",
     "steps": [
-     "rig_kit placement (A/B)",
-     "technique states(key)",
-     "grapple_kit pose (body → legs → head → arms, partner references)",
-     "prefix A_/B_ → one glTF animation"
+     "technique states(key) (grapple_kit 상태)",
+     "author_duo.py: 몸 → 다리 → 머리 → 팔 순서로 IK",
+     "회전 키 + 골반 위치 → 애니메이션 전용 GLB (A_/B_ 접두사, 한 타임라인)"
     ],
-    "report": "data/audit/motion3d-phase6.json"
+    "report": "data/audit/motion3d-phase7.json"
    },
    "quality": {
     "status": "review",
     "verified": false,
     "knownIssues": [
-     "뒤에서 가슴을 붙인 자세라 몸통·훅·머리 옆 밀착이 겹침으로 잡힘 (약 1,000–1,250 삼각형 쌍) — 분절형 마네킹 한계",
-     "손을 맞잡는 순간(약 4키) A의 손목·전완 접촉 최대 약 300 삼각형 쌍, 유지 중 35",
-     "B의 팔이 잡는 위치를 옮기는 동안 잠깐 서로 스침 (최대 114 삼각형 쌍)",
-     "그립은 \"반대 팔 이두 잡기\" 대신 팔 맞잡기 변형 — 이 캐릭터 팔 길이에서 닿는 모양",
-     "사람의 시각적 검수 전"
+     "캐릭터가 분절형 마네킹이라 관절 링(어깨·팔꿈치·무릎 이음매)은 레스트에서도 겹침 — 자기 몸 교차 검사는 인접하지 않은 부위끼리만 셈",
+     "사람(코치·사용자)의 시각적 검수 전 — 자동 검사(관통·바닥·발 미끄러짐·순간이동·안전 간격)와 렌더 확인만 됨",
+     "자기 몸 부위 접촉(인접하지 않은 부위) 최대 A 456, B 483 삼각형 쌍 — 대부분 전환 중 손·팔이 스치는 순간 (data/audit 검수 JSON 키별 기록)",
+     "2인 밀착(가슴-등, 훅, 머리 옆) 부위 겹침 최대 1273 삼각형 쌍, 손 접촉 최대 786 — 분절형 마네킹 한계"
+    ]
+   }
+  },
+  {
+   "clipId": "boxing-rear-uppercut-m2m-v1",
+   "variant": "오소독스",
+   "techniqueIds": [
+    "boxing__rear-uppercut"
+   ],
+   "title": "리어 어퍼컷 (오소독스, 오른손)",
+   "actors": [
+    {
+     "id": "A",
+     "role": "performer",
+     "label": "시연자",
+     "rig": "m2m-human-v1",
+     "character": "m2m-human-base-v1",
+     "nodePrefix": null
+    }
+   ],
+   "file": "motion3d/anims/boxing-rear-uppercut-m2m-v1.glb",
+   "embedsCharacter": false,
+   "animation": "boxing-rear-uppercut-m2m-v1",
+   "fps": 30,
+   "durationSec": 1.8667,
+   "frameCount": 56,
+   "phases": [
+    {
+     "name": "prepare",
+     "label": "준비·하중 싣기",
+     "startSec": 0.0,
+     "endSec": 0.6
+    },
+    {
+     "name": "execute",
+     "label": "실행: 다리·골반으로 올려치기",
+     "startSec": 0.6,
+     "endSec": 1.0
+    },
+    {
+     "name": "recover",
+     "label": "회수",
+     "startSec": 1.0,
+     "endSec": 1.3333
+    },
+    {
+     "name": "guard_return",
+     "label": "가드 복귀",
+     "startSec": 1.3333,
+     "endSec": 1.8667
+    }
+   ],
+   "phaseKeys": {
+    "prepare": [
+     0,
+     18
+    ],
+    "execute": [
+     18,
+     30
+    ],
+    "recover": [
+     30,
+     40
+    ],
+    "guard_return": [
+     40,
+     56
+    ]
+   },
+   "contactKey": 27,
+   "side": "right (rear hand), orthodox stance",
+   "cameraFront": "rest",
+   "phaseMethod": "제작 시 정의한 키 구간 — 측정이 아니라 설계값",
+   "stance": "orthodox",
+   "leadHand": "left",
+   "rearHand": "right",
+   "version": "1.0.0",
+   "source": {
+    "motion": "MARTIALDEX 자체 제작 (Phase 7): Blender 3.4에서 키 포즈 + 이징을 매 키 풀어(2-본 IK, 고정된 발·들린 다리, 가슴 기준 가드 손, 시선) 회전 키프레임으로 기록. 모션 캡처·외부 애니메이션 미사용, 공개된 기본 코칭 원리만 참고.",
+    "authoringScript": "scripts/motion3d/techniques/boxing_rear_uppercut.py + scripts/motion3d/author_duo.py (grapple_kit.py, rig_kit.py, solo_kit.py)",
+    "blendSource": "assets/3d/motion-library/boxing/boxing-rear-uppercut-m2m-v1.blend",
+    "glbSha256": "3857682bf518946cbaacff0d50a746514ce9bc3bf5321b4213f4f51c260bff87",
+    "review": "data/audit/motion3d-boxing-rear-uppercut-m2m-v1-duo-review.json (scripts/motion3d/duo_review.py)",
+    "reviewImage": "data/audit/motion3d-phase7/boxing-rear-uppercut-m2m-v1.png",
+    "reviewStats": {
+     "lowestSkinM": -0.0006,
+     "plantedSlideMaxM": 0.0,
+     "plantedSlideTotalM": 0.0,
+     "pelvisStepMaxM": 0.0167,
+     "selfContactMax": {
+      "A": 51
+     },
+     "bodyPenetrationMax": 0,
+     "gripContactMax": 0
+    }
+   },
+   "license": {
+    "motion": "MARTIALDEX 자체 제작 (외부 라이선스 없음)",
+    "character": "CC0-1.0 (Mesh2Motion / Quaternius)",
+    "note": "동작·캐릭터 모두 공개 배포에 라이선스 제약 없음"
+   },
+   "pipeline": {
+    "name": "martialdex-keyframe",
+    "version": "4 (Phase 7)",
+    "steps": [
+     "technique states(key) (grapple_kit 상태)",
+     "author_duo.py: 몸 → 다리 → 머리 → 팔 순서로 IK",
+     "회전 키 + 골반 위치 → 애니메이션 전용 GLB"
+    ],
+    "report": "data/audit/motion3d-phase7.json"
+   },
+   "quality": {
+    "status": "review",
+    "verified": false,
+    "knownIssues": [
+     "캐릭터가 분절형 마네킹이라 관절 링(어깨·팔꿈치·무릎 이음매)은 레스트에서도 겹침 — 자기 몸 교차 검사는 인접하지 않은 부위끼리만 셈",
+     "사람(코치·사용자)의 시각적 검수 전 — 자동 검사(관통·바닥·발 미끄러짐·순간이동·안전 간격)와 렌더 확인만 됨",
+     "자기 몸 부위 접촉(인접하지 않은 부위) 최대 A 51 삼각형 쌍 — 대부분 전환 중 손·팔이 스치는 순간 (data/audit 검수 JSON 키별 기록)"
+    ]
+   }
+  },
+  {
+   "clipId": "boxing-slip-m2m-v1",
+   "variant": "오소독스",
+   "techniqueIds": [
+    "boxing__slip"
+   ],
+   "title": "슬립 (오소독스, 바깥쪽·안쪽)",
+   "actors": [
+    {
+     "id": "A",
+     "role": "performer",
+     "label": "시연자",
+     "rig": "m2m-human-v1",
+     "character": "m2m-human-base-v1",
+     "nodePrefix": null
+    }
+   ],
+   "file": "motion3d/anims/boxing-slip-m2m-v1.glb",
+   "embedsCharacter": false,
+   "animation": "boxing-slip-m2m-v1",
+   "fps": 30,
+   "durationSec": 2.1333,
+   "frameCount": 64,
+   "phases": [
+    {
+     "name": "prepare",
+     "label": "준비: 가드",
+     "startSec": 0.0,
+     "endSec": 0.2667
+    },
+    {
+     "name": "execute",
+     "label": "바깥쪽 슬립 (오른쪽)",
+     "startSec": 0.2667,
+     "endSec": 0.8
+    },
+    {
+     "name": "transition",
+     "label": "중앙으로",
+     "startSec": 0.8,
+     "endSec": 1.1333
+    },
+    {
+     "name": "finish",
+     "label": "안쪽 슬립 (왼쪽)",
+     "startSec": 1.1333,
+     "endSec": 1.6667
+    },
+    {
+     "name": "guard_return",
+     "label": "가드 복귀",
+     "startSec": 1.6667,
+     "endSec": 2.1333
+    }
+   ],
+   "phaseKeys": {
+    "prepare": [
+     0,
+     8
+    ],
+    "execute": [
+     8,
+     24
+    ],
+    "transition": [
+     24,
+     34
+    ],
+    "finish": [
+     34,
+     50
+    ],
+    "guard_return": [
+     50,
+     64
+    ]
+   },
+   "side": "both sides, orthodox stance",
+   "cameraFront": "rest",
+   "phaseMethod": "제작 시 정의한 키 구간 — 측정이 아니라 설계값",
+   "stance": "orthodox",
+   "leadHand": "left",
+   "rearHand": "right",
+   "version": "1.0.0",
+   "source": {
+    "motion": "MARTIALDEX 자체 제작 (Phase 7): Blender 3.4에서 키 포즈 + 이징을 매 키 풀어(2-본 IK, 고정된 발·들린 다리, 가슴 기준 가드 손, 시선) 회전 키프레임으로 기록. 모션 캡처·외부 애니메이션 미사용, 공개된 기본 코칭 원리만 참고.",
+    "authoringScript": "scripts/motion3d/techniques/boxing_slip.py + scripts/motion3d/author_duo.py (grapple_kit.py, rig_kit.py, solo_kit.py)",
+    "blendSource": "assets/3d/motion-library/boxing/boxing-slip-m2m-v1.blend",
+    "glbSha256": "7fdb01352fa7bb2e9f9353ce7cdb271e67ea4129989dc847de6969669533017b",
+    "review": "data/audit/motion3d-boxing-slip-m2m-v1-duo-review.json (scripts/motion3d/duo_review.py)",
+    "reviewImage": "data/audit/motion3d-phase7/boxing-slip-m2m-v1.png",
+    "reviewStats": {
+     "lowestSkinM": -0.0006,
+     "plantedSlideMaxM": 0.0,
+     "plantedSlideTotalM": 0.0,
+     "pelvisStepMaxM": 0.0192,
+     "selfContactMax": {
+      "A": 0
+     },
+     "bodyPenetrationMax": 0,
+     "gripContactMax": 0
+    }
+   },
+   "license": {
+    "motion": "MARTIALDEX 자체 제작 (외부 라이선스 없음)",
+    "character": "CC0-1.0 (Mesh2Motion / Quaternius)",
+    "note": "동작·캐릭터 모두 공개 배포에 라이선스 제약 없음"
+   },
+   "pipeline": {
+    "name": "martialdex-keyframe",
+    "version": "4 (Phase 7)",
+    "steps": [
+     "technique states(key) (grapple_kit 상태)",
+     "author_duo.py: 몸 → 다리 → 머리 → 팔 순서로 IK",
+     "회전 키 + 골반 위치 → 애니메이션 전용 GLB"
+    ],
+    "report": "data/audit/motion3d-phase7.json"
+   },
+   "quality": {
+    "status": "review",
+    "verified": false,
+    "knownIssues": [
+     "캐릭터가 분절형 마네킹이라 관절 링(어깨·팔꿈치·무릎 이음매)은 레스트에서도 겹침 — 자기 몸 교차 검사는 인접하지 않은 부위끼리만 셈",
+     "사람(코치·사용자)의 시각적 검수 전 — 자동 검사(관통·바닥·발 미끄러짐·순간이동·안전 간격)와 렌더 확인만 됨"
+    ]
+   }
+  },
+  {
+   "clipId": "kickboxing-body-kick-m2m-v1",
+   "variant": "오소독스",
+   "techniqueIds": [
+    "kickboxing__body-kick"
+   ],
+   "title": "바디킥 (오소독스, 오른발 라운드킥)",
+   "actors": [
+    {
+     "id": "A",
+     "role": "performer",
+     "label": "시연자",
+     "rig": "m2m-human-v1",
+     "character": "m2m-human-base-v1",
+     "nodePrefix": null
+    }
+   ],
+   "file": "motion3d/anims/kickboxing-body-kick-m2m-v1.glb",
+   "embedsCharacter": false,
+   "animation": "kickboxing-body-kick-m2m-v1",
+   "fps": 30,
+   "durationSec": 2.4,
+   "frameCount": 72,
+   "phases": [
+    {
+     "name": "prepare",
+     "label": "준비·앞발 피벗",
+     "startSec": 0.0,
+     "endSec": 0.6333
+    },
+    {
+     "name": "execute",
+     "label": "실행: 골반 회전·정강이 타격",
+     "startSec": 0.6333,
+     "endSec": 1.3333
+    },
+    {
+     "name": "recover",
+     "label": "회수·발 내리기",
+     "startSec": 1.3333,
+     "endSec": 1.8667
+    },
+    {
+     "name": "guard_return",
+     "label": "가드 복귀",
+     "startSec": 1.8667,
+     "endSec": 2.4
+    }
+   ],
+   "phaseKeys": {
+    "prepare": [
+     0,
+     19
+    ],
+    "execute": [
+     19,
+     40
+    ],
+    "recover": [
+     40,
+     56
+    ],
+    "guard_return": [
+     56,
+     72
+    ]
+   },
+   "contactKey": 36,
+   "side": "right (rear leg), orthodox stance",
+   "cameraFront": "rest",
+   "phaseMethod": "제작 시 정의한 키 구간 — 측정이 아니라 설계값",
+   "stance": "orthodox",
+   "leadHand": "left",
+   "rearHand": "right",
+   "version": "1.0.0",
+   "source": {
+    "motion": "MARTIALDEX 자체 제작 (Phase 7): Blender 3.4에서 키 포즈 + 이징을 매 키 풀어(2-본 IK, 고정된 발·들린 다리, 가슴 기준 가드 손, 시선) 회전 키프레임으로 기록. 모션 캡처·외부 애니메이션 미사용, 공개된 기본 코칭 원리만 참고.",
+    "authoringScript": "scripts/motion3d/techniques/kickboxing_body_kick.py + scripts/motion3d/author_duo.py (grapple_kit.py, rig_kit.py, solo_kit.py)",
+    "blendSource": "assets/3d/motion-library/kickboxing/kickboxing-body-kick-m2m-v1.blend",
+    "glbSha256": "b58cb9e07e4d0cd81852dd988c53061af7c303b146388ba867b310b34e32583c",
+    "review": "data/audit/motion3d-kickboxing-body-kick-m2m-v1-duo-review.json (scripts/motion3d/duo_review.py)",
+    "reviewImage": "data/audit/motion3d-phase7/kickboxing-body-kick-m2m-v1.png",
+    "reviewStats": {
+     "lowestSkinM": -0.0006,
+     "plantedSlideMaxM": 0.0,
+     "plantedSlideTotalM": 0.0,
+     "pelvisStepMaxM": 0.0269,
+     "selfContactMax": {
+      "A": 0
+     },
+     "bodyPenetrationMax": 0,
+     "gripContactMax": 0
+    }
+   },
+   "license": {
+    "motion": "MARTIALDEX 자체 제작 (외부 라이선스 없음)",
+    "character": "CC0-1.0 (Mesh2Motion / Quaternius)",
+    "note": "동작·캐릭터 모두 공개 배포에 라이선스 제약 없음"
+   },
+   "pipeline": {
+    "name": "martialdex-keyframe",
+    "version": "4 (Phase 7)",
+    "steps": [
+     "technique states(key) (grapple_kit 상태)",
+     "author_duo.py: 몸 → 다리 → 머리 → 팔 순서로 IK",
+     "회전 키 + 골반 위치 → 애니메이션 전용 GLB"
+    ],
+    "report": "data/audit/motion3d-phase7.json"
+   },
+   "quality": {
+    "status": "review",
+    "verified": false,
+    "knownIssues": [
+     "캐릭터가 분절형 마네킹이라 관절 링(어깨·팔꿈치·무릎 이음매)은 레스트에서도 겹침 — 자기 몸 교차 검사는 인접하지 않은 부위끼리만 셈",
+     "사람(코치·사용자)의 시각적 검수 전 — 자동 검사(관통·바닥·발 미끄러짐·순간이동·안전 간격)와 렌더 확인만 됨"
+    ]
+   }
+  },
+  {
+   "clipId": "kickboxing-straight-knee-m2m-v1",
+   "variant": "오소독스",
+   "techniqueIds": [
+    "kickboxing__straight-knee"
+   ],
+   "title": "스트레이트 니 (오소독스, 뒷무릎)",
+   "actors": [
+    {
+     "id": "A",
+     "role": "performer",
+     "label": "시연자",
+     "rig": "m2m-human-v1",
+     "character": "m2m-human-base-v1",
+     "nodePrefix": null
+    }
+   ],
+   "file": "motion3d/anims/kickboxing-straight-knee-m2m-v1.glb",
+   "embedsCharacter": false,
+   "animation": "kickboxing-straight-knee-m2m-v1",
+   "fps": 30,
+   "durationSec": 1.9333,
+   "frameCount": 58,
+   "phases": [
+    {
+     "name": "prepare",
+     "label": "준비·손 뻗기",
+     "startSec": 0.0,
+     "endSec": 0.5333
+    },
+    {
+     "name": "execute",
+     "label": "실행: 골반 밀며 무릎 올리기",
+     "startSec": 0.5333,
+     "endSec": 1.0
+    },
+    {
+     "name": "recover",
+     "label": "회수·발 내리기",
+     "startSec": 1.0,
+     "endSec": 1.4667
+    },
+    {
+     "name": "guard_return",
+     "label": "가드 복귀",
+     "startSec": 1.4667,
+     "endSec": 1.9333
+    }
+   ],
+   "phaseKeys": {
+    "prepare": [
+     0,
+     16
+    ],
+    "execute": [
+     16,
+     30
+    ],
+    "recover": [
+     30,
+     44
+    ],
+    "guard_return": [
+     44,
+     58
+    ]
+   },
+   "contactKey": 26,
+   "side": "right (rear knee), orthodox stance",
+   "cameraFront": "rest",
+   "phaseMethod": "제작 시 정의한 키 구간 — 측정이 아니라 설계값",
+   "stance": "orthodox",
+   "leadHand": "left",
+   "rearHand": "right",
+   "version": "1.0.0",
+   "source": {
+    "motion": "MARTIALDEX 자체 제작 (Phase 7): Blender 3.4에서 키 포즈 + 이징을 매 키 풀어(2-본 IK, 고정된 발·들린 다리, 가슴 기준 가드 손, 시선) 회전 키프레임으로 기록. 모션 캡처·외부 애니메이션 미사용, 공개된 기본 코칭 원리만 참고.",
+    "authoringScript": "scripts/motion3d/techniques/kickboxing_straight_knee.py + scripts/motion3d/author_duo.py (grapple_kit.py, rig_kit.py, solo_kit.py)",
+    "blendSource": "assets/3d/motion-library/kickboxing/kickboxing-straight-knee-m2m-v1.blend",
+    "glbSha256": "54960b1f3ea31b066d136178dcf6d823971f4a636350b2a6c652315ee43a8db4",
+    "review": "data/audit/motion3d-kickboxing-straight-knee-m2m-v1-duo-review.json (scripts/motion3d/duo_review.py)",
+    "reviewImage": "data/audit/motion3d-phase7/kickboxing-straight-knee-m2m-v1.png",
+    "reviewStats": {
+     "lowestSkinM": -0.0006,
+     "plantedSlideMaxM": 0.0,
+     "plantedSlideTotalM": 0.0,
+     "pelvisStepMaxM": 0.0281,
+     "selfContactMax": {
+      "A": 0
+     },
+     "bodyPenetrationMax": 0,
+     "gripContactMax": 0
+    }
+   },
+   "license": {
+    "motion": "MARTIALDEX 자체 제작 (외부 라이선스 없음)",
+    "character": "CC0-1.0 (Mesh2Motion / Quaternius)",
+    "note": "동작·캐릭터 모두 공개 배포에 라이선스 제약 없음"
+   },
+   "pipeline": {
+    "name": "martialdex-keyframe",
+    "version": "4 (Phase 7)",
+    "steps": [
+     "technique states(key) (grapple_kit 상태)",
+     "author_duo.py: 몸 → 다리 → 머리 → 팔 순서로 IK",
+     "회전 키 + 골반 위치 → 애니메이션 전용 GLB"
+    ],
+    "report": "data/audit/motion3d-phase7.json"
+   },
+   "quality": {
+    "status": "review",
+    "verified": false,
+    "knownIssues": [
+     "캐릭터가 분절형 마네킹이라 관절 링(어깨·팔꿈치·무릎 이음매)은 레스트에서도 겹침 — 자기 몸 교차 검사는 인접하지 않은 부위끼리만 셈",
+     "사람(코치·사용자)의 시각적 검수 전 — 자동 검사(관통·바닥·발 미끄러짐·순간이동·안전 간격)와 렌더 확인만 됨"
+    ]
+   }
+  },
+  {
+   "clipId": "kickboxing-horizontal-elbow-m2m-v1",
+   "variant": "오소독스",
+   "techniqueIds": [
+    "kickboxing__horizontal-elbow"
+   ],
+   "title": "호리즌털 엘보 (오소독스, 오른팔꿈치)",
+   "actors": [
+    {
+     "id": "A",
+     "role": "performer",
+     "label": "시연자",
+     "rig": "m2m-human-v1",
+     "character": "m2m-human-base-v1",
+     "nodePrefix": null
+    }
+   ],
+   "file": "motion3d/anims/kickboxing-horizontal-elbow-m2m-v1.glb",
+   "embedsCharacter": false,
+   "animation": "kickboxing-horizontal-elbow-m2m-v1",
+   "fps": 30,
+   "durationSec": 1.8,
+   "frameCount": 54,
+   "phases": [
+    {
+     "name": "prepare",
+     "label": "준비·팔꿈치 들기",
+     "startSec": 0.0,
+     "endSec": 0.5333
+    },
+    {
+     "name": "execute",
+     "label": "실행: 골반·어깨 회전, 수평으로 베기",
+     "startSec": 0.5333,
+     "endSec": 0.9333
+    },
+    {
+     "name": "recover",
+     "label": "회수",
+     "startSec": 0.9333,
+     "endSec": 1.3333
+    },
+    {
+     "name": "guard_return",
+     "label": "가드 복귀",
+     "startSec": 1.3333,
+     "endSec": 1.8
+    }
+   ],
+   "phaseKeys": {
+    "prepare": [
+     0,
+     16
+    ],
+    "execute": [
+     16,
+     28
+    ],
+    "recover": [
+     28,
+     40
+    ],
+    "guard_return": [
+     40,
+     54
+    ]
+   },
+   "contactKey": 25,
+   "side": "right (rear elbow), orthodox stance",
+   "cameraFront": "rest",
+   "phaseMethod": "제작 시 정의한 키 구간 — 측정이 아니라 설계값",
+   "stance": "orthodox",
+   "leadHand": "left",
+   "rearHand": "right",
+   "version": "1.0.0",
+   "source": {
+    "motion": "MARTIALDEX 자체 제작 (Phase 7): Blender 3.4에서 키 포즈 + 이징을 매 키 풀어(2-본 IK, 고정된 발·들린 다리, 가슴 기준 가드 손, 시선) 회전 키프레임으로 기록. 모션 캡처·외부 애니메이션 미사용, 공개된 기본 코칭 원리만 참고.",
+    "authoringScript": "scripts/motion3d/techniques/kickboxing_horizontal_elbow.py + scripts/motion3d/author_duo.py (grapple_kit.py, rig_kit.py, solo_kit.py)",
+    "blendSource": "assets/3d/motion-library/kickboxing/kickboxing-horizontal-elbow-m2m-v1.blend",
+    "glbSha256": "36f5a8860a1644158fd7a132440363fb79ef34cca804ff34264d08188caa5070",
+    "review": "data/audit/motion3d-kickboxing-horizontal-elbow-m2m-v1-duo-review.json (scripts/motion3d/duo_review.py)",
+    "reviewImage": "data/audit/motion3d-phase7/kickboxing-horizontal-elbow-m2m-v1.png",
+    "reviewStats": {
+     "lowestSkinM": -0.0006,
+     "plantedSlideMaxM": 0.0,
+     "plantedSlideTotalM": 0.0,
+     "pelvisStepMaxM": 0.0118,
+     "selfContactMax": {
+      "A": 21
+     },
+     "bodyPenetrationMax": 0,
+     "gripContactMax": 0
+    }
+   },
+   "license": {
+    "motion": "MARTIALDEX 자체 제작 (외부 라이선스 없음)",
+    "character": "CC0-1.0 (Mesh2Motion / Quaternius)",
+    "note": "동작·캐릭터 모두 공개 배포에 라이선스 제약 없음"
+   },
+   "pipeline": {
+    "name": "martialdex-keyframe",
+    "version": "4 (Phase 7)",
+    "steps": [
+     "technique states(key) (grapple_kit 상태)",
+     "author_duo.py: 몸 → 다리 → 머리 → 팔 순서로 IK",
+     "회전 키 + 골반 위치 → 애니메이션 전용 GLB"
+    ],
+    "report": "data/audit/motion3d-phase7.json"
+   },
+   "quality": {
+    "status": "review",
+    "verified": false,
+    "knownIssues": [
+     "캐릭터가 분절형 마네킹이라 관절 링(어깨·팔꿈치·무릎 이음매)은 레스트에서도 겹침 — 자기 몸 교차 검사는 인접하지 않은 부위끼리만 셈",
+     "사람(코치·사용자)의 시각적 검수 전 — 자동 검사(관통·바닥·발 미끄러짐·순간이동·안전 간격)와 렌더 확인만 됨",
+     "자기 몸 부위 접촉(인접하지 않은 부위) 최대 A 21 삼각형 쌍 — 대부분 전환 중 손·팔이 스치는 순간 (data/audit 검수 JSON 키별 기록)"
+    ]
+   }
+  },
+  {
+   "clipId": "muaythai-push-teep-m2m-v1",
+   "variant": "오소독스",
+   "techniqueIds": [
+    "muay-thai__push-teep"
+   ],
+   "title": "푸시 티프 (오소독스, 뒷발)",
+   "actors": [
+    {
+     "id": "A",
+     "role": "performer",
+     "label": "시연자",
+     "rig": "m2m-human-v1",
+     "character": "m2m-human-base-v1",
+     "nodePrefix": null
+    }
+   ],
+   "file": "motion3d/anims/muaythai-push-teep-m2m-v1.glb",
+   "embedsCharacter": false,
+   "animation": "muaythai-push-teep-m2m-v1",
+   "fps": 30,
+   "durationSec": 2.2,
+   "frameCount": 66,
+   "phases": [
+    {
+     "name": "prepare",
+     "label": "준비·무릎 들기",
+     "startSec": 0.0,
+     "endSec": 0.8
+    },
+    {
+     "name": "execute",
+     "label": "실행: 골반 밀며 뻗기",
+     "startSec": 0.8,
+     "endSec": 1.2
+    },
+    {
+     "name": "recover",
+     "label": "회수·발 내리기",
+     "startSec": 1.2,
+     "endSec": 1.7333
+    },
+    {
+     "name": "guard_return",
+     "label": "가드 복귀",
+     "startSec": 1.7333,
+     "endSec": 2.2
+    }
+   ],
+   "phaseKeys": {
+    "prepare": [
+     0,
+     24
+    ],
+    "execute": [
+     24,
+     36
+    ],
+    "recover": [
+     36,
+     52
+    ],
+    "guard_return": [
+     52,
+     66
+    ]
+   },
+   "contactKey": 32,
+   "side": "right (rear leg), orthodox stance",
+   "cameraFront": "rest",
+   "phaseMethod": "제작 시 정의한 키 구간 — 측정이 아니라 설계값",
+   "stance": "orthodox",
+   "leadHand": "left",
+   "rearHand": "right",
+   "version": "1.0.0",
+   "source": {
+    "motion": "MARTIALDEX 자체 제작 (Phase 7): Blender 3.4에서 키 포즈 + 이징을 매 키 풀어(2-본 IK, 고정된 발·들린 다리, 가슴 기준 가드 손, 시선) 회전 키프레임으로 기록. 모션 캡처·외부 애니메이션 미사용, 공개된 기본 코칭 원리만 참고.",
+    "authoringScript": "scripts/motion3d/techniques/muaythai_push_teep.py + scripts/motion3d/author_duo.py (grapple_kit.py, rig_kit.py, solo_kit.py)",
+    "blendSource": "assets/3d/motion-library/muay-thai/muaythai-push-teep-m2m-v1.blend",
+    "glbSha256": "8fecaee4542eeceb88bab4c07a5cdac6e6d3aa8edf1e4e488038c3892a67bf55",
+    "review": "data/audit/motion3d-muaythai-push-teep-m2m-v1-duo-review.json (scripts/motion3d/duo_review.py)",
+    "reviewImage": "data/audit/motion3d-phase7/muaythai-push-teep-m2m-v1.png",
+    "reviewStats": {
+     "lowestSkinM": -0.0006,
+     "plantedSlideMaxM": 0.0,
+     "plantedSlideTotalM": 0.0,
+     "pelvisStepMaxM": 0.0293,
+     "selfContactMax": {
+      "A": 0
+     },
+     "bodyPenetrationMax": 0,
+     "gripContactMax": 0
+    }
+   },
+   "license": {
+    "motion": "MARTIALDEX 자체 제작 (외부 라이선스 없음)",
+    "character": "CC0-1.0 (Mesh2Motion / Quaternius)",
+    "note": "동작·캐릭터 모두 공개 배포에 라이선스 제약 없음"
+   },
+   "pipeline": {
+    "name": "martialdex-keyframe",
+    "version": "4 (Phase 7)",
+    "steps": [
+     "technique states(key) (grapple_kit 상태)",
+     "author_duo.py: 몸 → 다리 → 머리 → 팔 순서로 IK",
+     "회전 키 + 골반 위치 → 애니메이션 전용 GLB"
+    ],
+    "report": "data/audit/motion3d-phase7.json"
+   },
+   "quality": {
+    "status": "review",
+    "verified": false,
+    "knownIssues": [
+     "캐릭터가 분절형 마네킹이라 관절 링(어깨·팔꿈치·무릎 이음매)은 레스트에서도 겹침 — 자기 몸 교차 검사는 인접하지 않은 부위끼리만 셈",
+     "사람(코치·사용자)의 시각적 검수 전 — 자동 검사(관통·바닥·발 미끄러짐·순간이동·안전 간격)와 렌더 확인만 됨"
+    ]
+   }
+  },
+  {
+   "clipId": "mma-overhand-m2m-v1",
+   "variant": "오소독스",
+   "techniqueIds": [
+    "mixed-martial-arts__overhand"
+   ],
+   "title": "오버핸드 (오소독스, 오른손)",
+   "actors": [
+    {
+     "id": "A",
+     "role": "performer",
+     "label": "시연자",
+     "rig": "m2m-human-v1",
+     "character": "m2m-human-base-v1",
+     "nodePrefix": null
+    }
+   ],
+   "file": "motion3d/anims/mma-overhand-m2m-v1.glb",
+   "embedsCharacter": false,
+   "animation": "mma-overhand-m2m-v1",
+   "fps": 30,
+   "durationSec": 2.0,
+   "frameCount": 60,
+   "phases": [
+    {
+     "name": "prepare",
+     "label": "준비·머리를 중심선 밖으로",
+     "startSec": 0.0,
+     "endSec": 0.6
+    },
+    {
+     "name": "execute",
+     "label": "실행: 위로 돌려 내려치기",
+     "startSec": 0.6,
+     "endSec": 1.0667
+    },
+    {
+     "name": "recover",
+     "label": "회수",
+     "startSec": 1.0667,
+     "endSec": 1.4667
+    },
+    {
+     "name": "guard_return",
+     "label": "가드 복귀",
+     "startSec": 1.4667,
+     "endSec": 2.0
+    }
+   ],
+   "phaseKeys": {
+    "prepare": [
+     0,
+     18
+    ],
+    "execute": [
+     18,
+     32
+    ],
+    "recover": [
+     32,
+     44
+    ],
+    "guard_return": [
+     44,
+     60
+    ]
+   },
+   "contactKey": 29,
+   "side": "right (rear hand), orthodox stance",
+   "cameraFront": "rest",
+   "phaseMethod": "제작 시 정의한 키 구간 — 측정이 아니라 설계값",
+   "stance": "orthodox",
+   "leadHand": "left",
+   "rearHand": "right",
+   "version": "1.0.0",
+   "source": {
+    "motion": "MARTIALDEX 자체 제작 (Phase 7): Blender 3.4에서 키 포즈 + 이징을 매 키 풀어(2-본 IK, 고정된 발·들린 다리, 가슴 기준 가드 손, 시선) 회전 키프레임으로 기록. 모션 캡처·외부 애니메이션 미사용, 공개된 기본 코칭 원리만 참고.",
+    "authoringScript": "scripts/motion3d/techniques/mma_overhand.py + scripts/motion3d/author_duo.py (grapple_kit.py, rig_kit.py, solo_kit.py)",
+    "blendSource": "assets/3d/motion-library/mma/mma-overhand-m2m-v1.blend",
+    "glbSha256": "b80e195581f7a1dfb9c93606d3fd7ed265d7c3c0584bce212faa16fff7ea9101",
+    "review": "data/audit/motion3d-mma-overhand-m2m-v1-duo-review.json (scripts/motion3d/duo_review.py)",
+    "reviewImage": "data/audit/motion3d-phase7/mma-overhand-m2m-v1.png",
+    "reviewStats": {
+     "lowestSkinM": -0.0006,
+     "plantedSlideMaxM": 0.0,
+     "plantedSlideTotalM": 0.0,
+     "pelvisStepMaxM": 0.0155,
+     "selfContactMax": {
+      "A": 0
+     },
+     "bodyPenetrationMax": 0,
+     "gripContactMax": 0
+    }
+   },
+   "license": {
+    "motion": "MARTIALDEX 자체 제작 (외부 라이선스 없음)",
+    "character": "CC0-1.0 (Mesh2Motion / Quaternius)",
+    "note": "동작·캐릭터 모두 공개 배포에 라이선스 제약 없음"
+   },
+   "pipeline": {
+    "name": "martialdex-keyframe",
+    "version": "4 (Phase 7)",
+    "steps": [
+     "technique states(key) (grapple_kit 상태)",
+     "author_duo.py: 몸 → 다리 → 머리 → 팔 순서로 IK",
+     "회전 키 + 골반 위치 → 애니메이션 전용 GLB"
+    ],
+    "report": "data/audit/motion3d-phase7.json"
+   },
+   "quality": {
+    "status": "review",
+    "verified": false,
+    "knownIssues": [
+     "캐릭터가 분절형 마네킹이라 관절 링(어깨·팔꿈치·무릎 이음매)은 레스트에서도 겹침 — 자기 몸 교차 검사는 인접하지 않은 부위끼리만 셈",
+     "사람(코치·사용자)의 시각적 검수 전 — 자동 검사(관통·바닥·발 미끄러짐·순간이동·안전 간격)와 렌더 확인만 됨"
+    ]
+   }
+  },
+  {
+   "clipId": "wrestling-sprawl-m2m-v1",
+   "variant": "1인 시연",
+   "techniqueIds": [
+    "wrestling__sprawl"
+   ],
+   "title": "스프롤 (태클 방어)",
+   "actors": [
+    {
+     "id": "A",
+     "role": "performer",
+     "label": "시연자",
+     "rig": "m2m-human-v1",
+     "character": "m2m-human-base-v1",
+     "nodePrefix": null
+    }
+   ],
+   "file": "motion3d/anims/wrestling-sprawl-m2m-v1.glb",
+   "embedsCharacter": false,
+   "animation": "wrestling-sprawl-m2m-v1",
+   "fps": 30,
+   "durationSec": 2.4667,
+   "frameCount": 74,
+   "phases": [
+    {
+     "name": "prepare",
+     "label": "준비: 레슬링 자세",
+     "startSec": 0.0,
+     "endSec": 0.3333
+    },
+    {
+     "name": "execute",
+     "label": "실행: 다리를 뒤로 뻗으며 골반 내리기",
+     "startSec": 0.3333,
+     "endSec": 0.8667
+    },
+    {
+     "name": "hold",
+     "label": "유지: 골반 무겁게·머리 들기",
+     "startSec": 0.8667,
+     "endSec": 1.4667
+    },
+    {
+     "name": "recover",
+     "label": "회수: 발 당겨 일어나기",
+     "startSec": 1.4667,
+     "endSec": 2.0667
+    },
+    {
+     "name": "guard_return",
+     "label": "자세 복귀",
+     "startSec": 2.0667,
+     "endSec": 2.4667
+    }
+   ],
+   "phaseKeys": {
+    "prepare": [
+     0,
+     10
+    ],
+    "execute": [
+     10,
+     26
+    ],
+    "hold": [
+     26,
+     44
+    ],
+    "recover": [
+     44,
+     62
+    ],
+    "guard_return": [
+     62,
+     74
+    ]
+   },
+   "side": "square wrestling stance (left foot slightly forward)",
+   "cameraFront": "rest",
+   "phaseMethod": "제작 시 정의한 키 구간 — 측정이 아니라 설계값",
+   "cameraElevationDeg": 20,
+   "version": "1.0.0",
+   "source": {
+    "motion": "MARTIALDEX 자체 제작 (Phase 7): Blender 3.4에서 키 포즈 + 이징을 매 키 풀어(2-본 IK, 고정된 발·들린 다리, 가슴 기준 가드 손, 시선) 회전 키프레임으로 기록. 모션 캡처·외부 애니메이션 미사용, 공개된 기본 코칭 원리만 참고.",
+    "authoringScript": "scripts/motion3d/techniques/wrestling_sprawl.py + scripts/motion3d/author_duo.py (grapple_kit.py, rig_kit.py, solo_kit.py)",
+    "blendSource": "assets/3d/motion-library/wrestling/wrestling-sprawl-m2m-v1.blend",
+    "glbSha256": "33e6f2a3757b33686a9ed9f1e2c7193786c29bb223ff04dcf420b3db2998a8a0",
+    "review": "data/audit/motion3d-wrestling-sprawl-m2m-v1-duo-review.json (scripts/motion3d/duo_review.py)",
+    "reviewImage": "data/audit/motion3d-phase7/wrestling-sprawl-m2m-v1.png",
+    "reviewStats": {
+     "lowestSkinM": 0.0,
+     "plantedSlideMaxM": 0.0354,
+     "plantedSlideTotalM": 0.122,
+     "pelvisStepMaxM": 0.0752,
+     "selfContactMax": {
+      "A": 106
+     },
+     "bodyPenetrationMax": 0,
+     "gripContactMax": 0
+    }
+   },
+   "license": {
+    "motion": "MARTIALDEX 자체 제작 (외부 라이선스 없음)",
+    "character": "CC0-1.0 (Mesh2Motion / Quaternius)",
+    "note": "동작·캐릭터 모두 공개 배포에 라이선스 제약 없음"
+   },
+   "pipeline": {
+    "name": "martialdex-keyframe",
+    "version": "4 (Phase 7)",
+    "steps": [
+     "technique states(key) (grapple_kit 상태)",
+     "author_duo.py: 몸 → 다리 → 머리 → 팔 순서로 IK",
+     "회전 키 + 골반 위치 → 애니메이션 전용 GLB"
+    ],
+    "report": "data/audit/motion3d-phase7.json"
+   },
+   "quality": {
+    "status": "review",
+    "verified": false,
+    "knownIssues": [
+     "캐릭터가 분절형 마네킹이라 관절 링(어깨·팔꿈치·무릎 이음매)은 레스트에서도 겹침 — 자기 몸 교차 검사는 인접하지 않은 부위끼리만 셈",
+     "사람(코치·사용자)의 시각적 검수 전 — 자동 검사(관통·바닥·발 미끄러짐·순간이동·안전 간격)와 렌더 확인만 됨",
+     "발이 딛거나 떼는 순간 발볼 이동 키당 최대 3.5 cm (클립 전체 12.2 cm)",
+     "자기 몸 부위 접촉(인접하지 않은 부위) 최대 A 106 삼각형 쌍 — 대부분 전환 중 손·팔이 스치는 순간 (data/audit 검수 JSON 키별 기록)"
+    ]
+   }
+  },
+  {
+   "clipId": "bjj-hip-escape-m2m-v1",
+   "variant": "1인 시연",
+   "techniqueIds": [
+    "bjj__hip-escape"
+   ],
+   "title": "힙 이스케이프 (새우빼기, 왼쪽으로 눕기)",
+   "actors": [
+    {
+     "id": "A",
+     "role": "performer",
+     "label": "시연자",
+     "rig": "m2m-human-v1",
+     "character": "m2m-human-base-v1",
+     "nodePrefix": null
+    }
+   ],
+   "file": "motion3d/anims/bjj-hip-escape-m2m-v1.glb",
+   "embedsCharacter": false,
+   "animation": "bjj-hip-escape-m2m-v1",
+   "fps": 30,
+   "durationSec": 2.2,
+   "frameCount": 66,
+   "phases": [
+    {
+     "name": "prepare",
+     "label": "준비: 등 대고 누워 프레임",
+     "startSec": 0.0,
+     "endSec": 0.3333
+    },
+    {
+     "name": "transition",
+     "label": "옆으로 돌기·발 딛기",
+     "startSec": 0.3333,
+     "endSec": 0.7333
+    },
+    {
+     "name": "execute",
+     "label": "실행: 발로 밀어 골반 빼기",
+     "startSec": 0.7333,
+     "endSec": 1.2
+    },
+    {
+     "name": "hold",
+     "label": "무릎 넣기 (가드 회복)",
+     "startSec": 1.2,
+     "endSec": 1.6
+    },
+    {
+     "name": "recover",
+     "label": "다시 등 대고 눕기",
+     "startSec": 1.6,
+     "endSec": 2.2
+    }
+   ],
+   "phaseKeys": {
+    "prepare": [
+     0,
+     10
+    ],
+    "transition": [
+     10,
+     22
+    ],
+    "execute": [
+     22,
+     36
+    ],
+    "hold": [
+     36,
+     48
+    ],
+    "recover": [
+     48,
+     66
+    ]
+   },
+   "side": "turning to the left side",
+   "cameraFront": "rest",
+   "phaseMethod": "제작 시 정의한 키 구간 — 측정이 아니라 설계값",
+   "cameraElevationDeg": 40,
+   "version": "1.0.0",
+   "source": {
+    "motion": "MARTIALDEX 자체 제작 (Phase 7): Blender 3.4에서 키 포즈 + 이징을 매 키 풀어(2-본 IK, 고정된 발·들린 다리, 가슴 기준 가드 손, 시선) 회전 키프레임으로 기록. 모션 캡처·외부 애니메이션 미사용, 공개된 기본 코칭 원리만 참고.",
+    "authoringScript": "scripts/motion3d/techniques/bjj_hip_escape.py + scripts/motion3d/author_duo.py (grapple_kit.py, rig_kit.py, solo_kit.py)",
+    "blendSource": "assets/3d/motion-library/bjj/bjj-hip-escape-m2m-v1.blend",
+    "glbSha256": "b68e6e5bc0c0cb116bff7e95c94c871203264e8b77aeca7d597832be7c247faa",
+    "review": "data/audit/motion3d-bjj-hip-escape-m2m-v1-duo-review.json (scripts/motion3d/duo_review.py)",
+    "reviewImage": "data/audit/motion3d-phase7/bjj-hip-escape-m2m-v1.png",
+    "reviewStats": {
+     "lowestSkinM": -0.0108,
+     "plantedSlideMaxM": 0.0239,
+     "plantedSlideTotalM": 0.08,
+     "pelvisStepMaxM": 0.0468,
+     "selfContactMax": {
+      "A": 0
+     },
+     "bodyPenetrationMax": 0,
+     "gripContactMax": 0
+    }
+   },
+   "license": {
+    "motion": "MARTIALDEX 자체 제작 (외부 라이선스 없음)",
+    "character": "CC0-1.0 (Mesh2Motion / Quaternius)",
+    "note": "동작·캐릭터 모두 공개 배포에 라이선스 제약 없음"
+   },
+   "pipeline": {
+    "name": "martialdex-keyframe",
+    "version": "4 (Phase 7)",
+    "steps": [
+     "technique states(key) (grapple_kit 상태)",
+     "author_duo.py: 몸 → 다리 → 머리 → 팔 순서로 IK",
+     "회전 키 + 골반 위치 → 애니메이션 전용 GLB"
+    ],
+    "report": "data/audit/motion3d-phase7.json"
+   },
+   "quality": {
+    "status": "review",
+    "verified": false,
+    "knownIssues": [
+     "캐릭터가 분절형 마네킹이라 관절 링(어깨·팔꿈치·무릎 이음매)은 레스트에서도 겹침 — 자기 몸 교차 검사는 인접하지 않은 부위끼리만 셈",
+     "사람(코치·사용자)의 시각적 검수 전 — 자동 검사(관통·바닥·발 미끄러짐·순간이동·안전 간격)와 렌더 확인만 됨",
+     "피부가 바닥 아래로 최대 11 mm 내려가는 순간 있음",
+     "발이 딛거나 떼는 순간 발볼 이동 키당 최대 2.4 cm (클립 전체 8.0 cm)"
+    ]
+   }
+  },
+  {
+   "clipId": "bjj-technical-stand-up-m2m-v1",
+   "variant": "1인 시연",
+   "techniqueIds": [
+    "bjj__technical-stand-up"
+   ],
+   "title": "테크니컬 스탠드업 (오른손 짚고 왼발 딛기)",
+   "actors": [
+    {
+     "id": "A",
+     "role": "performer",
+     "label": "시연자",
+     "rig": "m2m-human-v1",
+     "character": "m2m-human-base-v1",
+     "nodePrefix": null
+    }
+   ],
+   "file": "motion3d/anims/bjj-technical-stand-up-m2m-v1.glb",
+   "embedsCharacter": false,
+   "animation": "bjj-technical-stand-up-m2m-v1",
+   "fps": 30,
+   "durationSec": 2.8,
+   "frameCount": 84,
+   "phases": [
+    {
+     "name": "prepare",
+     "label": "준비: 앉은 자세·손 짚기",
+     "startSec": 0.0,
+     "endSec": 0.4
+    },
+    {
+     "name": "transition",
+     "label": "엉덩이 들기 (손·발 지지)",
+     "startSec": 0.4,
+     "endSec": 0.8
+    },
+    {
+     "name": "execute",
+     "label": "실행: 다리를 몸 아래로 빼서 뒤에 딛기",
+     "startSec": 0.8,
+     "endSec": 1.2
+    },
+    {
+     "name": "finish",
+     "label": "일어서기: 손 들고 자세",
+     "startSec": 1.2,
+     "endSec": 1.8
+    },
+    {
+     "name": "recover",
+     "label": "같은 길로 앉은 자세 복귀",
+     "startSec": 1.8,
+     "endSec": 2.8
+    }
+   ],
+   "phaseKeys": {
+    "prepare": [
+     0,
+     12
+    ],
+    "transition": [
+     12,
+     24
+    ],
+    "execute": [
+     24,
+     36
+    ],
+    "finish": [
+     36,
+     54
+    ],
+    "recover": [
+     54,
+     84
+    ]
+   },
+   "side": "right hand posted, left foot planted",
+   "cameraFront": "rest",
+   "phaseMethod": "제작 시 정의한 키 구간 — 측정이 아니라 설계값",
+   "cameraElevationDeg": 14,
+   "version": "1.0.0",
+   "source": {
+    "motion": "MARTIALDEX 자체 제작 (Phase 7): Blender 3.4에서 키 포즈 + 이징을 매 키 풀어(2-본 IK, 고정된 발·들린 다리, 가슴 기준 가드 손, 시선) 회전 키프레임으로 기록. 모션 캡처·외부 애니메이션 미사용, 공개된 기본 코칭 원리만 참고.",
+    "authoringScript": "scripts/motion3d/techniques/bjj_technical_stand_up.py + scripts/motion3d/author_duo.py (grapple_kit.py, rig_kit.py, solo_kit.py)",
+    "blendSource": "assets/3d/motion-library/bjj/bjj-technical-stand-up-m2m-v1.blend",
+    "glbSha256": "959100d1066a23cb8ec68290e00691ef32b19605ea2473290ba9da7f9c8871cf",
+    "review": "data/audit/motion3d-bjj-technical-stand-up-m2m-v1-duo-review.json (scripts/motion3d/duo_review.py)",
+    "reviewImage": "data/audit/motion3d-phase7/bjj-technical-stand-up-m2m-v1.png",
+    "reviewStats": {
+     "lowestSkinM": -0.0062,
+     "plantedSlideMaxM": 0.011,
+     "plantedSlideTotalM": 0.031,
+     "pelvisStepMaxM": 0.0852,
+     "selfContactMax": {
+      "A": 43
+     },
+     "bodyPenetrationMax": 0,
+     "gripContactMax": 0
+    }
+   },
+   "license": {
+    "motion": "MARTIALDEX 자체 제작 (외부 라이선스 없음)",
+    "character": "CC0-1.0 (Mesh2Motion / Quaternius)",
+    "note": "동작·캐릭터 모두 공개 배포에 라이선스 제약 없음"
+   },
+   "pipeline": {
+    "name": "martialdex-keyframe",
+    "version": "4 (Phase 7)",
+    "steps": [
+     "technique states(key) (grapple_kit 상태)",
+     "author_duo.py: 몸 → 다리 → 머리 → 팔 순서로 IK",
+     "회전 키 + 골반 위치 → 애니메이션 전용 GLB"
+    ],
+    "report": "data/audit/motion3d-phase7.json"
+   },
+   "quality": {
+    "status": "review",
+    "verified": false,
+    "knownIssues": [
+     "캐릭터가 분절형 마네킹이라 관절 링(어깨·팔꿈치·무릎 이음매)은 레스트에서도 겹침 — 자기 몸 교차 검사는 인접하지 않은 부위끼리만 셈",
+     "사람(코치·사용자)의 시각적 검수 전 — 자동 검사(관통·바닥·발 미끄러짐·순간이동·안전 간격)와 렌더 확인만 됨",
+     "피부가 바닥 아래로 최대 6 mm 내려가는 순간 있음",
+     "발이 딛거나 떼는 순간 발볼 이동 키당 최대 1.1 cm (클립 전체 3.1 cm)",
+     "자기 몸 부위 접촉(인접하지 않은 부위) 최대 A 43 삼각형 쌍 — 대부분 전환 중 손·팔이 스치는 순간 (data/audit 검수 JSON 키별 기록)"
     ]
    }
   }
@@ -2775,6 +4025,119 @@
     "at": "2026-11-02",
     "reason": "Phase 6 시각 검수: 팔이 서로 겹치고(A 팔끼리 117–190 삼각형 쌍) 손 위치·팔 역할이 알아보기 어려움 — 파일 보존",
     "replacedBy": "bjj-rear-naked-choke-m2m-v2"
+   }
+  },
+  {
+   "clipId": "bjj-rear-naked-choke-m2m-v2",
+   "variant": "2인 시연",
+   "techniqueIds": [
+    "bjj__rear-naked-choke"
+   ],
+   "title": "리어 네이키드 초크 (2인 안전 시연 · 팔 맞잡기)",
+   "actors": [
+    {
+     "id": "A",
+     "role": "performer",
+     "label": "흰색 · 시연자 (기술을 거는 사람)",
+     "rig": "m2m-human-v1",
+     "character": "m2m-human-base-v1",
+     "nodePrefix": "A_",
+     "color": "#dcd8d0"
+    },
+    {
+     "id": "B",
+     "role": "partner",
+     "label": "빨간색 · 상대 (기술을 받는 사람)",
+     "rig": "m2m-human-v1",
+     "character": "m2m-human-base-v1",
+     "nodePrefix": "B_",
+     "color": "#9e2a24"
+    }
+   ],
+   "file": "motion3d/anims/bjj-rear-naked-choke-m2m-v2.glb",
+   "embedsCharacter": false,
+   "animation": "bjj-rear-naked-choke-m2m-v2",
+   "fps": 30,
+   "durationSec": 3,
+   "frameCount": 90,
+   "phases": [
+    {
+     "name": "prepare",
+     "label": "준비·시트벨트",
+     "startSec": 0,
+     "endSec": 0.6667
+    },
+    {
+     "name": "execute",
+     "label": "자세 만들기·유지 (압박 없음)",
+     "startSec": 0.6667,
+     "endSec": 2.3333
+    },
+    {
+     "name": "finish",
+     "label": "풀기",
+     "startSec": 2.3333,
+     "endSec": 3
+    }
+   ],
+   "phaseKeys": {
+    "prepare": [
+     0,
+     20
+    ],
+    "execute": [
+     20,
+     70
+    ],
+    "finish": [
+     70,
+     90
+    ]
+   },
+   "cameraFront": "rest",
+   "phaseMethod": "제작 시 정의한 키 구간 — 측정이 아니라 설계값",
+   "version": "2.0.0",
+   "source": {
+    "motion": "MARTIALDEX 자체 제작 (Phase 5): 같은 캐릭터를 두 번 불러 각자 자기 기준 좌표계에 배치(rig_kit placement), 매 키 B 몸 → A 몸 → A 팔 → B 팔 순서로 IK를 풀어(손이 상대의 뼈 위치를 잡음) 회전 키 + 골반 위치 + 배치(root)를 기록, 뼈 이름에 A_/B_ 접두사를 붙여 한 애니메이션(한 타임라인)으로 내보냄. 모션 캡처·외부 애니메이션 미사용.",
+    "authoringScript": "scripts/motion3d/techniques/bjj_rear_naked_choke.py + scripts/motion3d/author_duo.py (grapple_kit.py, rig_kit.py)",
+    "blendSource": "assets/3d/motion-library/bjj/bjj-rear-naked-choke-m2m-v2.blend",
+    "glbSha256": "b125c71ffe623a885db11aa602591f5d1a42b0f36375526096e8cfbced6fa13a",
+    "review": "data/audit/motion3d-bjj-rear-naked-choke-m2m-v2-duo-review.json (scripts/motion3d/duo_review.py)",
+    "safety": "안전 시범: 조르는 팔(상완·전완 뼈)과 B의 목·머리 뼈 사이 거리 ≥ 0.111 m를 모든 키에서 측정·유지(피부 기준 약 1 cm 이상 간격), 조이는 움직임 없음, 뒤 손은 머리에 닿지 않음(≥ 0.165 m), B는 저항·강제 움직임 없음",
+    "replaces": "bjj-rear-naked-choke-m2m-v1 — 파일 유지, retiredClips",
+    "phase6": "상체만 재작업(하체·훅·골반·타임라인·색 유지): 팔 맞잡기(palm-to-palm) — 조르는 팔은 목 앞, 반대 팔은 B의 왼어깨 위로, 손은 목 옆에서 맞잡음; B의 손은 A의 팔 양 끝을 잡음(교차 없음); 안전 간격 유지(목 ≥ 0.118 m)"
+   },
+   "license": {
+    "motion": "MARTIALDEX 자체 제작 (외부 라이선스 없음)",
+    "character": "CC0-1.0 (Mesh2Motion / Quaternius)",
+    "note": "동작·캐릭터 모두 공개 배포에 라이선스 제약 없음"
+   },
+   "pipeline": {
+    "name": "martialdex-keyframe",
+    "version": "3 + Phase 6",
+    "steps": [
+     "rig_kit placement (A/B)",
+     "technique states(key)",
+     "grapple_kit pose (body → legs → head → arms, partner references)",
+     "prefix A_/B_ → one glTF animation"
+    ],
+    "report": "data/audit/motion3d-phase6.json"
+   },
+   "quality": {
+    "status": "review",
+    "verified": false,
+    "knownIssues": [
+     "뒤에서 가슴을 붙인 자세라 몸통·훅·머리 옆 밀착이 겹침으로 잡힘 (약 1,000–1,250 삼각형 쌍) — 분절형 마네킹 한계",
+     "손을 맞잡는 순간(약 4키) A의 손목·전완 접촉 최대 약 300 삼각형 쌍, 유지 중 35",
+     "B의 팔이 잡는 위치를 옮기는 동안 잠깐 서로 스침 (최대 114 삼각형 쌍)",
+     "그립은 \"반대 팔 이두 잡기\" 대신 팔 맞잡기 변형 — 이 캐릭터 팔 길이에서 닿는 모양",
+     "사람의 시각적 검수 전"
+    ]
+   },
+   "retired": {
+    "at": "2026-11-25",
+    "reason": "Phase 7 재제작: 손을 맞잡는 변형이라 리어 네이키드 초크의 형태(턱 아래 팔꿈치·이두 잡기·머리 뒤 손)가 보이지 않고, 맞잡은 손이 B의 귀 옆에 떠 있음; 팔끼리 겹침 최대 616 삼각형 쌍 — 파일 보존",
+    "replacedBy": "bjj-rear-naked-choke-m2m-v3"
    }
   }
  ]

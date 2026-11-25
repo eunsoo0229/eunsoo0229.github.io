@@ -13,6 +13,7 @@ import bpy
 from mathutils import Matrix, Quaternion, Vector
 
 FINGERS = ("index", "middle", "ring", "pinky")
+MAX_BEND_TURN = 35.0  # Phase 7 continuity: degrees per key
 
 
 def smoothstep(t):
@@ -45,6 +46,13 @@ class Rig:
         placed skeleton, so a technique module still writes poses in "this character's own" frame."""
         self.arm = arm
         self.pb = arm.pose.bones
+        # Phase 7 (opt-in, author_duo.py): keys are solved in order, and the solver remembers the previous key's elbow /
+        # knee bend direction and forearm roll, so a pole that lines up with the limb or a palm roll crossing 180 deg
+        # cannot flip the joint between two keys. `memo` is switched off for trial solves (blends solve twice).
+        self.continuity = False
+        self.memo = True
+        self._bend = {}
+        self._roll = {}
         self.MW = arm.matrix_world.copy()
         self.M3 = self.MW.to_3x3()
         self.M3i = self.M3.inverted()
@@ -62,6 +70,14 @@ class Rig:
         self.palm_local = {s: self.world_rot(f"hand_{s}").transposed() @ (-self.U) for s in ("l", "r")}  # T-pose palms face down
         self.ball_to_ankle = {s: self.head(f"foot_{s}") - self.head(f"ball_{s}") for s in ("l", "r")}
         self.ball_height = self.head("ball_l").z
+        # Phase 7 hinge (continuity mode): the elbow / knee bends about ONE axis fixed in the upper bone — elbows fold
+        # towards the front of the rest pose (biceps side), knees fold the shin backwards
+        self._hinge_local = {}
+        for up, sign in (("upperarm_l", 1.0), ("upperarm_r", 1.0), ("thigh_l", -1.0), ("thigh_r", -1.0)):
+            h, t, R = self.rest[up]
+            u0 = (t - h).normalized()
+            n0 = u0.cross(self.F * sign).normalized()
+            self._hinge_local[up] = R.transposed() @ n0
 
     def _measure_frame(self):
         self.U = Vector((0, 0, 1))
@@ -156,12 +172,47 @@ class Rig:
         dv = target - S
         d = min(max(dv.length, abs(L1 - L2) + 1e-4), L1 + L2 - 1e-4)
         u = dv.normalized()
-        p = Vector(pole) - u * Vector(pole).dot(u)
+        pv = Vector(pole).normalized() if Vector(pole).length > 1e-9 else self.U
+        p = pv - u * pv.dot(u)
+        prev = self._bend.get(upper) if self.continuity else None
+        if prev is not None:
+            # near-singular pole (lined up with the limb): lean on the previous key's bend direction
+            q = prev - u * prev.dot(u)
+            if p.length < 0.5 and q.length > 1e-6:
+                p = p + q.normalized() * (0.5 - p.length)
+            p = p.normalized() if p.length > 1e-6 else self.U
+            if q.length > 1e-6:
+                # the bend plane turns at most MAX_BEND_TURN degrees between two keys (no elbow / knee flip)
+                q = q.normalized()
+                ang = math.degrees(q.angle(p)) if q.dot(p) < 0.999999 else 0.0
+                if ang > MAX_BEND_TURN:
+                    k = q.cross(p)
+                    k = k.normalized() if k.length > 1e-6 else u
+                    p = Matrix.Rotation(math.radians(MAX_BEND_TURN), 3, k) @ q
         p = p.normalized() if p.length > 1e-6 else self.U
+        if self.continuity and self.memo:
+            self._bend[upper] = p.copy()
         ca = (L1 * L1 + d * d - L2 * L2) / (2 * L1 * d)
         E = S + L1 * (ca * u + math.sqrt(max(0.0, 1 - ca * ca)) * p)
         self.aim(upper, E - S)
-        self.aim(lower, (S + u * d) - self.head(lower))
+        if self.continuity and upper in self._hinge_local:
+            # hinge solve: roll the upper bone so its elbow / knee axis is the bend-plane normal, then swing the lower
+            # bone about that axis only. Aiming the lower bone by the shortest rotation is ill-defined when the joint is
+            # folded (the guard fist next to the chin): its roll could jump by up to 180 deg between two keys.
+            ua = self.axis(upper)
+            w = ((S + u * d) - self.head(lower)).normalized()
+            nd = ua.cross(w)
+            if nd.length < 1e-3:
+                nd = ua.cross(-p)
+            nd.normalize()
+            ncur = self.world_rot(upper) @ self._hinge_local[upper]
+            ncur = (ncur - ua * ncur.dot(ua)).normalized()
+            self.rotate(upper, self.about(ua, math.degrees(math.atan2(ncur.cross(nd).dot(ua), ncur.dot(nd)))))
+            c = self.axis(lower)
+            self.rotate(lower, self.about(nd, math.degrees(math.atan2(c.cross(w).dot(nd), c.dot(w)))))
+            self.aim(lower, w)  # removes the last fraction of a degree (rest pose not exactly straight)
+        else:
+            self.aim(lower, (S + u * d) - self.head(lower))
         return E
 
     def palm(self, s, normal, forearm_share=0.5):
@@ -169,8 +220,28 @@ class Rig:
         ax = self.axis(f"lowerarm_{s}")
         cur = self.world_rot(f"hand_{s}") @ self.palm_local[s]
         a = (cur - ax * cur.dot(ax)).normalized()
-        b = (Vector(normal) - ax * Vector(normal).dot(ax)).normalized()
+        b_raw = Vector(normal) - ax * Vector(normal).dot(ax)
+        b = b_raw.normalized()
         ang = math.degrees(math.atan2(a.cross(b).dot(ax), a.dot(b)))
+        # a palm direction (almost) along the forearm leaves the roll undefined: fade towards the previous key's roll
+        weight = min(1.0, b_raw.length / 0.4)
+        if self.continuity and weight < 1.0 and s in self._roll:
+            prev = self._roll[s]
+            while ang - prev > 180.0:
+                ang -= 360.0
+            while ang - prev < -180.0:
+                ang += 360.0
+            ang = prev + (ang - prev) * weight
+        if self.continuity:
+            # unwrap against the previous key's roll: a target palm crossing +-180 deg keeps turning the same way
+            prev = self._roll.get(s)
+            if prev is not None:
+                while ang - prev > 180.0:
+                    ang -= 360.0
+                while ang - prev < -180.0:
+                    ang += 360.0
+            if self.memo:
+                self._roll[s] = ang
         self.twist(f"lowerarm_{s}", ang * forearm_share)
         self.rotate(f"hand_{s}", self.about(ax, ang * (1 - forearm_share)))
 

@@ -34,6 +34,23 @@ class Ref:
         return p + rigs[self.frame].cv(*self.off)
 
 
+class Chest:
+    """A point in the CHEST frame of actor `who` (Phase 7, solo strikes / kicks): `off` = (x, y, z) from the spine_03
+    head, along that actor's own axes turned with the chest — a guard hand that rides a body turn."""
+
+    def __init__(self, who, off):
+        self.who, self.off = who, off
+
+    def resolve(self, rigs, me):
+        r = rigs[self.who]
+        R = r.world_rot("spine_03") @ r.rest["spine_03"][2].transposed()
+        return r.head("spine_03") + R @ r.cv(*self.off)
+
+
+def chest_rot(rig):
+    return rig.world_rot("spine_03") @ rig.rest["spine_03"][2].transposed()
+
+
 class _Lerp:
     def __init__(self, a, b, t):
         self.a, self.b, self.t = a, b, t
@@ -58,9 +75,16 @@ def blend(a, b, t):
     if isinstance(a, dict) and isinstance(b, dict) and (("plant" in a) != ("plant" in b)) and ({"plant", "ankle"} & set(a)) and ({"plant", "ankle"} & set(b)):
         # a foot leaving / reaching the floor: both legs are solved and the ankle + foot are interpolated in world
         return a if t <= 0 else b if t >= 1 else {"mix": (a, b, t)}
+    if isinstance(a, dict) and isinstance(b, dict) and "target" in a and "target" in b and ((a.get("elbow") is None) != (b.get("elbow") is None)):
+        return a if t <= 0 else b if t >= 1 else {"mixarm": (a, b, t)}
     if isinstance(a, dict):
         keys = set(a) | set(b)
-        return {k: (blend(a[k], b[k], t) if k in a and k in b else (a.get(k) if t < 0.5 else b.get(k))) for k in keys}
+        out = {k: (blend(a[k], b[k], t) if k in a and k in b else (a.get(k) if t < 0.5 else b.get(k))) for k in keys}
+        if ("handAim" in a) != ("handAim" in b):
+            # Phase 7: a flat hand fades in / out (weight on the aim) instead of snapping at the half-way key
+            out["handAim"] = a.get("handAim") or b.get("handAim")
+            out["handAimW"] = a.get("handAimW", 1.0) * (1 - t) if "handAim" in a else b.get("handAimW", 1.0) * t
+        return out
     if isinstance(a, (int, float)) and isinstance(b, (int, float)):
         return a + (b - a) * t
     if isinstance(a, tuple) and isinstance(b, tuple) and len(a) == len(b) and all(isinstance(x, (int, float)) for x in a + b):
@@ -104,15 +128,23 @@ def pose_body(rig, st):
         turned = rig.world_rot(n) @ rig.rest[n][2].transposed()
         rig.rotate(n, rig.about(turned @ rig.L, sp.get("pitch", 0.0) * w))
         rig.rotate(n, rig.about(turned @ rig.F, sp.get("roll", 0.0) * w))
+    # Phase 7: optional clavicles (protraction, elevation) in degrees, as boxing_stance.solve
+    for s, (pro, ele) in (st.get("clavicle") or {}).items():
+        if pro or ele:
+            Rc = chest_rot(rig)
+            d = rig.axis(f"clavicle_{s}")
+            rig.aim(f"clavicle_{s}", (d + (Rc @ rig.F) * math.tan(math.radians(pro)) + (Rc @ rig.U) * math.tan(math.radians(ele))).normalized())
 
 
 def _leg(rig, s, leg, rigs, me):
     if "mix" in leg:
         a, b, t = leg["mix"]
+        rig.memo = False  # trial solves (see rig_kit continuity)
         _leg(rig, s, a, rigs, me)
         pa, fa, ba, pole_a = rig.head(f"foot_{s}"), rig.world_rot(f"foot_{s}").to_quaternion(), rig.world_rot(f"ball_{s}").to_quaternion(), rig.head(f"calf_{s}") - rig.head(f"thigh_{s}")
         _leg(rig, s, b, rigs, me)
         pb_, fb, bb, pole_b = rig.head(f"foot_{s}"), rig.world_rot(f"foot_{s}").to_quaternion(), rig.world_rot(f"ball_{s}").to_quaternion(), rig.head(f"calf_{s}") - rig.head(f"thigh_{s}")
+        rig.memo = True
         rig.ik2(f"thigh_{s}", f"calf_{s}", pa.lerp(pb_, t), pole_a.lerp(pole_b, t))
         rig.set_world_rot(f"foot_{s}", fa.slerp(fb, t).to_matrix())
         rig.set_world_rot(f"ball_{s}", ba.slerp(bb, t).to_matrix())
@@ -148,13 +180,61 @@ def pose_head(rig, st, rigs, me):
     rig.rotate("head", rig.about(side_h, -h.get("tuck", 0.0)))
 
 
+_ARM_BONES = ("upperarm", "lowerarm", "hand") + tuple(f"{f}_0{j}" for f in ("thumb", "index", "middle", "ring", "pinky") for j in (1, 2, 3))
+
+
+def _reset_arm(rig, s):
+    from mathutils import Matrix
+
+    for n in _ARM_BONES:
+        rig.pb[f"{n}_{s}"].matrix_basis = Matrix.Identity(4)
+    rig.update()
+
+
+def _arm_chain(rig, s, a, rigs, me, vec):
+    """Place upper arm + forearm; returns (elbow, target) in world space."""
+    T = point(a["target"], rigs, me)
+    if a.get("elbow") is not None:
+        # Phase 7: an elbow POINT for shapes where the elbow position is the technique (the RNC elbow under the chin,
+        # the figure-four, an elbow strike): two-bone IK with the bend plane through that point — the hand still lands
+        # exactly on the target (aiming the bones at the point instead let the hand overshoot the target)
+        S = rig.head(f"upperarm_{s}")
+        rig.ik2(f"upperarm_{s}", f"lowerarm_{s}", T, point(a["elbow"], rigs, me) - (S + T) / 2)
+    else:
+        rig.ik2(f"upperarm_{s}", f"lowerarm_{s}", T, vec(a["pole"]))
+    return rig.head(f"lowerarm_{s}").copy(), T
+
+
 def pose_arms(rig, st, rigs, me):
     for s in ("l", "r"):
         a = st["arms"][s]
-        rig.ik2(f"upperarm_{s}", f"lowerarm_{s}", point(a["target"], rigs, me), rig.cv(*a["pole"]))
+        if "mixarm" in a:
+            # Phase 7: blending an IK arm with an explicit-elbow arm — both are solved, then the elbow and the hand
+            # target are interpolated in world space (no jump when one key places the elbow and the next does not)
+            a0, a1, t = a["mixarm"]
+            R0 = chest_rot(rig) if a0.get("space") == "chest" else None
+            rig.memo = False  # trial solves: do not overwrite the continuity memory (rig_kit)
+            Ea, Ta = _arm_chain(rig, s, a0, rigs, me, (lambda v: R0 @ rig.cv(*v)) if R0 is not None else (lambda v: rig.cv(*v)))
+            _reset_arm(rig, s)
+            Eb, Tb = _arm_chain(rig, s, a1, rigs, me, (lambda v: R0 @ rig.cv(*v)) if R0 is not None else (lambda v: rig.cv(*v)))
+            _reset_arm(rig, s)
+            rig.memo = True
+            a = {k: v for k, v in blend({k: v for k, v in a0.items() if k not in ("elbow", "target", "pole")}, {k: v for k, v in a1.items() if k not in ("elbow", "target", "pole")}, t).items()}
+            a["target"] = tuple(rig.to_char(Ta.lerp(Tb, t)))
+            a["elbow"] = tuple(rig.to_char(Ea.lerp(Eb, t)))
+        # Phase 7: space "chest" = pole / palm along the chest axes (they turn with the body, like the target Chest)
+        R = chest_rot(rig) if a.get("space") == "chest" else None
+        vec = (lambda v: R @ rig.cv(*v)) if R is not None else (lambda v: rig.cv(*v))  # noqa: E731
+        _arm_chain(rig, s, a, rigs, me, vec)
         rig.hand_follow(s)
+        if a.get("handAim"):
+            # Phase 7: a hand flat on the mat / a partner — the hand points along handAim (actor frame) instead of
+            # continuing the forearm, so the fingers lie on the surface rather than going through it
+            w = a.get("handAimW", 1.0)
+            f = rig.axis(f"lowerarm_{s}")
+            rig.aim(f"hand_{s}", f.lerp(rig.cv(*a["handAim"]).normalized(), w))
         if a.get("palm"):
-            rig.palm(s, rig.cv(*a["palm"]).normalized())
+            rig.palm(s, vec(a["palm"]).normalized())
         if a.get("flex"):
             rig.hand_follow(s, a["flex"])  # wrist bent (a flat posted palm), after the palm roll
         if a.get("fist"):
@@ -192,6 +272,8 @@ def mirror(st):
     relative placement (B stands on A's centre line) reflects with them."""
     if isinstance(st, Ref):
         return Ref(st.who, _side(st.bone), st.at, _mx(st.off), st.frame)
+    if isinstance(st, Chest):
+        return Chest(st.who, _mx(st.off))
     if isinstance(st, _Lerp):
         # the ends of a point blend are points: a plain (x, y, z) end must be reflected too, not passed through
         pt = lambda v: _mx(v) if isinstance(v, tuple) else mirror(v)  # noqa: E731
@@ -201,14 +283,16 @@ def mirror(st):
             return {"l": mirror(st["r"]), "r": mirror(st["l"])}
         out = {}
         for k, v in st.items():
-            if k == "mix":
+            if k in ("mix", "mixarm"):
                 a, b, t = v
                 out[k] = (mirror(a), mirror(b), t)
             elif k in ("yaw", "roll"):
                 out[k] = -v
             elif k == "ball":
                 out[k] = (-v[0], v[1])
-            elif k in ("pos", "target", "pole", "palm", "toes", "ankle", "gaze") and isinstance(v, tuple):
+            elif k == "clavicle" and isinstance(v, dict):
+                out[k] = {"l": v.get("r", (0.0, 0.0)), "r": v.get("l", (0.0, 0.0))}
+            elif k in ("pos", "target", "pole", "palm", "toes", "ankle", "gaze", "elbow", "handAim") and isinstance(v, tuple):
                 out[k] = _mx(v)
             else:
                 out[k] = mirror(v)
@@ -216,4 +300,4 @@ def mirror(st):
     return st
 
 
-__all__ = ["mirror", "Ref", "blend", "deep", "keyed", "point", "pose_body", "pose_legs", "pose_head", "pose_arms", "clearance", "ease_in_out", "smoothstep", "math", "Vector"]
+__all__ = ["mirror", "Ref", "Chest", "chest_rot", "blend", "deep", "keyed", "point", "pose_body", "pose_legs", "pose_head", "pose_arms", "clearance", "ease_in_out", "smoothstep", "math", "Vector"]

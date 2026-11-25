@@ -142,6 +142,8 @@ export class MotionEngine {
   private joints: InstancedMesh | null = null;
   private target = new Vector3(0, 0.9, 0);
   private baseDistance = 3.4;
+  /** Camera height above the target, degrees (clip.cameraElevationDeg; floor techniques look down a little more). */
+  private elevationDeg = 8;
   private raf = 0;
   private suspended = { hidden: false, offscreen: false };
   private dirty = true;
@@ -299,8 +301,10 @@ export class MotionEngine {
     const size = box.getSize(new Vector3());
     this.target.set((box.min.x + box.max.x) / 2, box.min.y + size.y * 0.52, (box.min.z + box.max.z) / 2);
     const vFov = (this.camera.fov * Math.PI) / 180;
-    // two people side by side / on the floor: frame the wider of the height and the floor extent
-    const extent = multi ? Math.max(size.y * 0.62, Math.hypot(size.x, size.z) * 0.42) : size.y * 0.62;
+    // two people side by side / one person lying or sprawled on the floor: frame the wider of the height and the
+    // floor extent (a standing person is always taller than wide, so standing clips frame exactly as before)
+    const extent = Math.max(size.y * 0.62, Math.hypot(size.x, size.z) * 0.42);
+    this.elevationDeg = clip.cameraElevationDeg ?? 8;
     this.baseDistance = Math.min(7, Math.max(2, extent / Math.tan(vFov / 2)));
     // 정면 = the rig's rest forward for authored clips (their forward IS the opponent), else the chest at frame 0
     this.frontAzimuth = clip.cameraFront === 'rest' ? restFacing : facingAzimuth(this.bones, front);
@@ -429,7 +433,7 @@ export class MotionEngine {
   }
   private orbitTo(azimuthDeg: number, distance: number) {
     const d = Math.min(this.controls.maxDistance, Math.max(this.controls.minDistance, distance));
-    const s = new Spherical(d, Math.PI / 2 - (8 * Math.PI) / 180, (azimuthDeg * Math.PI) / 180);
+    const s = new Spherical(d, Math.PI / 2 - (this.elevationDeg * Math.PI) / 180, (azimuthDeg * Math.PI) / 180);
     this.camera.position.copy(this.target).add(new Vector3().setFromSpherical(s));
     this.camera.lookAt(this.target);
     this.controls.update();

@@ -37,11 +37,12 @@ try {
   // several versions of one technique are allowed only as different stances / variants of the SAME technique
   const versions = new Map();
   for (const c of data.clips) versions.set(c.techniqueIds[0], [...(versions.get(c.techniqueIds[0]) ?? []), c]);
-  check('[데이터] 클립마다 기술 1개, 한 기술의 여러 클립은 스탠스·버전이 서로 다름 (잽·크로스·훅)', data.clips.length === 10 && data.clips.every((c) => c.techniqueIds.length === 1) && [...versions.values()].every((cs) => new Set(cs.map((c) => `${c.stance}|${c.variant}`)).size === cs.length) && versions.size === 5, ids);
+  check('[데이터] 클립마다 기술 1개, 한 기술의 여러 클립은 스탠스·버전이 서로 다름 (잽·크로스·훅 + Phase 7 신규 10종)', data.clips.length === 20 && data.clips.every((c) => c.techniqueIds.length === 1) && [...versions.values()].every((cs) => new Set(cs.map((c) => `${c.stance}|${c.variant}`)).size === cs.length) && versions.size === 15, ids);
   const sp = data.clips.filter((c) => c.stance === 'southpaw' && c.actors.length === 1);
   check('[스탠스] 사우스포 클립 3개: 앞손 = 오른손, 같은 기술의 오소독스 클립이 있음, 별도 GLB', sp.length === 3 && sp.every((c) => c.leadHand === 'right' && c.rearHand === 'left' && data.clips.some((o) => o.stance === 'orthodox' && o.techniqueIds[0] === c.techniqueIds[0] && o.file !== c.file && o.frameCount === c.frameCount)));
-  const solo = data.clips.filter((c) => c.actors.length === 1);
-  check('[데이터] 1인 클립: 측정·스탠스 필드 (stance, leadHand, rearHand, captureAngles, measure, version)', solo.length === 7 && solo.every((c) => ['stance', 'leadHand', 'rearHand', 'captureAngles', 'measure', 'version'].every((k) => k in c)));
+  // Phase 7 clips are demonstrations only (no `measure`: not used as a pose-measurement reference)
+  const solo = data.clips.filter((c) => c.actors.length === 1 && c.pipeline.version !== '4 (Phase 7)');
+  check('[데이터] 1인 측정 기준 클립: 측정·스탠스 필드 (stance, leadHand, rearHand, captureAngles, measure, version)', solo.length === 7 && solo.every((c) => ['stance', 'leadHand', 'rearHand', 'captureAngles', 'measure', 'version'].every((k) => k in c)));
   const duo = data.clips.filter((c) => c.actors.length === 2);
   check('[2인] 더블렉·리어 네이키드 초크: 배우 2명(A_/B_ 접두사, 흰색 시연자 / 빨간색 상대), 측정 기준 아님(measure 없음)', duo.map((c) => c.techniqueIds[0]).sort().join() === 'bjj__rear-naked-choke,wrestling__basic-double-leg,wrestling__basic-double-leg' && duo.every((c) => c.actors[0].nodePrefix === 'A_' && c.actors[1].nodePrefix === 'B_' && c.actors[0].role === 'performer' && c.actors[1].role === 'partner' && /흰색/.test(c.actors[0].label) && /빨간색/.test(c.actors[1].label) && c.actors[0].color && c.actors[1].color && !c.measure && cat.validateClip(c, data).clip));
   const base = data.clips.find((c) => c.clipId === 'boxing-jab-nw-v2'); // the mocap clip: embedded character, Mixamo rig
@@ -361,6 +362,109 @@ try {
   const rnc = JSON.parse(fs.readFileSync(path.join(APP, 'assets/3d/motion-library/bjj/bjj-rear-naked-choke-m2m-v2.json'), 'utf8'));
   check('[RNC 안전] 모든 키에서 조르는 팔 뼈 ↔ 목·머리 뼈 ≥ 0.11 m, 뒤 손 ↔ 머리 ≥ 0.15 m (압박·접촉 없음)', rnc.keys.length === 91 && rnc.keys.every((k) => k.chokeArmToNeckM >= 0.11 && k.backHandToHeadM >= 0.15), { minArm: Math.min(...rnc.keys.map((k) => k.chokeArmToNeckM)), minHand: Math.min(...rnc.keys.map((k) => k.backHandToHeadM)) });
   check('[사우스포] 사우스포 = 오소독스의 좌우 대칭 (무게중심 비율 동일, 측면 오프셋 반대)', ['boxing-jab-m2m-v1', 'boxing-cross-m2m-v2', 'boxing-hook-m2m-v2'].every((id) => com.perKey[id].every((k, i) => { const s = com.perKey[`${id}-southpaw`][i]; return Math.abs(k.leadFraction - s.leadFraction) < 0.005 && Math.abs(k.lateralCm + s.lateralCm) < 0.5; })));
+
+  // ---- Phase 7: RNC rebuilt (v3) + 10 new technique clips (one GLB each, played on the shared character)
+  const P7 = {
+    'bjj-rear-naked-choke-m2m-v3': ['bjj__rear-naked-choke'],
+    'boxing-rear-uppercut-m2m-v1': ['boxing__rear-uppercut', 'kickboxing__rear-uppercut'],
+    'boxing-slip-m2m-v1': ['boxing__slip', 'kickboxing__slip'],
+    'kickboxing-body-kick-m2m-v1': ['kickboxing__body-kick'],
+    'kickboxing-straight-knee-m2m-v1': ['kickboxing__straight-knee'],
+    'kickboxing-horizontal-elbow-m2m-v1': ['kickboxing__horizontal-elbow'],
+    'muaythai-push-teep-m2m-v1': ['muay-thai__push-teep'],
+    'mma-overhand-m2m-v1': ['mixed-martial-arts__overhand'],
+    'wrestling-sprawl-m2m-v1': ['wrestling__sprawl'],
+    'bjj-hip-escape-m2m-v1': ['bjj__hip-escape', 'judo__shrimp'],
+    'bjj-technical-stand-up-m2m-v1': ['bjj__technical-stand-up'],
+  };
+  const processed = new Set(fs.readdirSync(path.join(APP, 'data/processed')).filter((f) => !f.startsWith('_')).flatMap((f) => JSON.parse(fs.readFileSync(path.join(APP, 'data/processed', f), 'utf8')).techniques.map((t) => t.id)));
+  check('[Phase 7] 11개 클립 등록, 연결 기술 ID는 모두 기술 DB(data/processed)에 있는 기술', Object.keys(P7).every((id) => data.clips.some((c) => c.clipId === id)) && Object.keys(P7).every((id) => data.clips.find((c) => c.clipId === id).techniqueIds.every((t) => processed.has(t))));
+  check('[Phase 7] 이전 RNC v2는 retiredClips로 이동, 파일 보존 (기술 상세는 v3만)', data.retiredClips.some((r) => r.clipId === 'bjj-rear-naked-choke-m2m-v2' && r.retired?.replacedBy === 'bjj-rear-naked-choke-m2m-v3') && fs.existsSync(path.join(APP, 'public/motion3d/anims/bjj-rear-naked-choke-m2m-v2.glb')) && cat.motionClipsFor('bjj__rear-naked-choke').map((c) => c.clipId).join() === 'bjj-rear-naked-choke-m2m-v3');
+  for (const [id, techs] of Object.entries(P7)) {
+    const c = data.clips.find((x) => x.clipId === id);
+    const f = path.join(APP, 'public', c.file);
+    check(`[${id}] 기술 상세 연결: ${techs.join(' / ')} (정규 병합 포함)`, techs.every((t) => cat.motionClipsFor(t).some((x) => x.clipId === id)), techs.map((t) => cat.motionClipsFor(t).map((x) => x.clipId)));
+    check(`[${id}] 카탈로그 검증 통과, GLB 존재·해시 = 카탈로그`, !!cat.validateClip(c, data).clip && fs.existsSync(f) && crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex') === c.source.glbSha256);
+    const g = A.readGlb(f);
+    const an = g.json.animations[0];
+    const names = g.json.nodes.map((n) => n.name);
+    const chans = an.channels.map((ch) => ({ node: names[ch.target.node], path: ch.target.path, s: an.samplers[ch.sampler] }));
+    const duoClip = c.actors.length > 1;
+    const bare = (n) => (duoClip ? n.replace(/^[AB]_/, '') : n);
+    check(`[${id}] 애니메이션 하나(이름 = clipId), 메시 없음, 모든 트랙 본이 캐릭터에 있음${duoClip ? ' (A_/B_ 접두사)' : ''}`, g.json.animations.length === 1 && an.name === c.animation && !(g.json.meshes || []).length && chans.every((x) => charJoints.has(bare(x.node))) && (!duoClip || ['A_', 'B_'].every((pre) => chans.some((x) => x.node.startsWith(pre)))));
+    check(`[${id}] 회전 키 + 골반 위치만${duoClip ? ' (+ 배치 root)' : ', 루트 이동 없음'}`, chans.filter((x) => x.path !== 'rotation').every((x) => bare(x.node) === 'pelvis' || (duoClip && bare(x.node) === 'root')) && !chans.some((x) => x.path === 'scale'));
+    const tIn = g.accessor(an.samplers[0].input);
+    check(`[${id}] 키 0 = 0초, 길이·키 수 = 카탈로그, 학습용 속도 (1.5초 이상)`, Math.abs(tIn[0]) < 1e-6 && Math.abs(tIn.at(-1) - c.durationSec) < 1e-3 && tIn.length === c.frameCount + 1 && c.durationSec >= 1.5, { last: tIn.at(-1), keys: tIn.length });
+    let bad = 0;
+    let seamRot = 0;
+    let seamPos = 0;
+    let maxStepDeg = 0;
+    for (const x of chans) {
+      const out = g.accessor(x.s.output);
+      for (const v of out) { const a = [].concat(v); if (a.some((y) => !Number.isFinite(y)) || (x.path === 'rotation' && Math.abs(Math.hypot(...a) - 1) > 1e-3)) bad++; }
+      if (x.path === 'rotation') {
+        seamRot = Math.max(seamRot, A.qangle(out[0], out.at(-1)));
+        if (!/thumb|index|middle|ring|pinky/.test(x.node)) for (let i = 1; i < out.length; i++) maxStepDeg = Math.max(maxStepDeg, A.qangle(out[i - 1], out[i]));
+      } else seamPos = Math.max(seamPos, Math.hypot(...[0, 1, 2].map((k) => out[0][k] - out.at(-1)[k])));
+    }
+    check(`[${id}] 쿼터니언 단위 길이·NaN 없음`, bad === 0, bad);
+    check(`[${id}] 반복 재생: 마지막 키 = 첫 키 (회전 < 0.5°, 골반 < 1 mm) — 끝에서 처음으로 끊김 없이 이어짐`, seamRot < 0.5 && seamPos < 0.001, { deg: +seamRot.toFixed(3), mm: +(seamPos * 1000).toFixed(2) });
+    // the solver keeps elbow / knee bend planes and forearm roll continuous (rig_kit continuity + hinge); the largest remaining
+    // steps are fast but continuous moves (a kick swing, a hand leaving the mat) — a flip would be 90-180 deg
+    check(`[${id}] 관절 회전이 키마다 튀지 않음 (손가락 제외 키당 ≤ 70°, 뒤집힘 없음)`, maxStepDeg <= 70, +maxStepDeg.toFixed(1));
+    // the app's binding (engine.ts): one character copy per actor, renamed with the actor's prefix
+    const { GLTFLoader: Loader } = await import('three/examples/jsm/loaders/GLTFLoader.js');
+    const { Group, Box3, Vector3 } = await import('three');
+    const group = new Group();
+    for (const a of c.actors) {
+      const ch = await new Loader().parseAsync(charBuf.buffer.slice(charBuf.byteOffset, charBuf.byteOffset + charBuf.byteLength), '');
+      if (duoClip) ch.scene.traverse((o) => (o.name = `${a.nodePrefix}${o.name}`));
+      group.add(ch.scene);
+    }
+    const ab = fs.readFileSync(f);
+    const am = await new Loader().parseAsync(ab.buffer.slice(ab.byteOffset, ab.byteOffset + ab.byteLength), '');
+    const clipObj = am.animations[0];
+    const unbound = clipObj.tracks.filter((t) => !group.getObjectByName(PropertyBinding.parseTrackName(t.name).nodeName));
+    const mixer = new Mixer(group);
+    mixer.clipAction(clipObj).play();
+    const pels = c.actors.map((a) => group.getObjectByName(`${duoClip ? a.nodePrefix : ''}pelvis`));
+    let jump = 0;
+    let prev = null;
+    let minY = Infinity;
+    for (let i = 0; i <= c.frameCount * 2; i++) {
+      mixer.setTime(Math.min(i / (c.fps * 2), c.durationSec - 1e-4));
+      group.updateMatrixWorld(true);
+      const pts = pels.map((p) => p.getWorldPosition(new Vector3()));
+      if (prev) jump = Math.max(jump, ...pts.map((p, k) => p.distanceTo(prev[k])));
+      minY = Math.min(minY, ...pts.map((p) => p.y));
+      prev = pts;
+    }
+    mixer.setTime(0);
+    group.updateMatrixWorld(true);
+    const box = new Box3().setFromObject(group);
+    check(`[${id}] three.js: 분리 로드·모든 트랙 바인딩, 골반 1/60초 이동 < 6 cm (순간이동 없음), 골반이 바닥 위`, unbound.length === 0 && jump < 0.06 && minY > 0.05, { unbound: unbound.length, jumpCm: +(jump * 100).toFixed(1), minPelvisY: +minY.toFixed(3) });
+    const rv = JSON.parse(fs.readFileSync(path.join(APP, c.source.review.split(' ')[0]), 'utf8'));
+    const lowest = Math.min(...rv.keys.map((k) => Math.min(...Object.values(k.lowestSkin))));
+    const slide = Math.max(0, ...rv.keys.slice(1).flatMap((k) => Object.values(k.plantedSlideM || {})));
+    check(`[${id}] 메시 검수 (Blender, 매 키): 바닥 아래 피부 ≤ 15 mm, 디딘 발 미끄러짐 키당 < 6 cm, 골반 키당 < 12 cm — 수치는 knownIssues에 기록`, rv.keys.length === c.frameCount + 1 && lowest >= -0.015 && slide < 0.06 && Math.max(...rv.keys.map((k) => Math.max(...Object.values(k.pelvisStepM)))) < 0.12 && JSON.stringify(c.source.reviewStats.lowestSkinM) === JSON.stringify(+lowest.toFixed(4)), { lowest, slide });
+    check(`[${id}] 검수 이미지(정면·45°·측면·후면) 존재`, fs.existsSync(path.join(APP, c.source.reviewImage)));
+    if (!duoClip) check(`[${id}] 1인: 자기 몸 관통(인접하지 않은 부위) 최대 ≤ 150 삼각형 쌍`, Math.max(...rv.keys.map((k) => Object.values(k.selfContact?.A ?? {}).reduce((s, v) => s + v, 0))) <= 150);
+  }
+  // RNC v3 safety + shape, from the authoring log (bone distances measured every key on the solved skeletons)
+  const rnc3 = JSON.parse(fs.readFileSync(path.join(APP, 'assets/3d/motion-library/bjj/bjj-rear-naked-choke-m2m-v3.json'), 'utf8'));
+  const hold = rnc3.keys.filter((k) => k.key >= 72 && k.key <= 102);
+  check('[RNC v3 안전] 모든 키: 조르는 팔 뼈 ↔ B 목·머리 뼈 ≥ 0.11 m, 뒤 손 ↔ 머리 ≥ 0.15 m (압박·접촉 없음)', rnc3.keys.length === 133 && rnc3.keys.every((k) => k.chokeArmToNeckM >= 0.11 && k.backHandToHeadM >= 0.15), { arm: Math.min(...rnc3.keys.map((k) => k.chokeArmToNeckM)), hand: Math.min(...rnc3.keys.map((k) => k.backHandToHeadM)) });
+  check('[RNC v3 형태] 유지 구간: 팔꿈치가 B 목 앞(≥ 15 cm), 오른손이 왼쪽 이두 근처(≤ 8 cm), 왼손이 B 머리 뒤, 머리끼리 떨어짐(≥ 14 cm)', hold.length === 31 && hold.every((k) => k.joints['A.elbow_r'][1] - k.joints['B.neck'][1] >= 0.15 && k.gripGapM <= 0.08 && k.joints['A.hand_l'][1] < k.joints['B.head'][1] - 0.1 && k.headToHeadM >= 0.14));
+  check('[RNC v3 구간] 5단계: 시작 자세 → 위치 관계 전환 → 형태 → 유지(1초) → 복귀, 마지막 키 = 첫 키', data.clips.find((c) => c.clipId === 'bjj-rear-naked-choke-m2m-v3').phases.map((p) => p.name).join() === 'prepare,transition,execute,hold,recover' && JSON.stringify(rnc3.keys[0].joints) === JSON.stringify(rnc3.keys.at(-1).joints));
+  // B's neck and head keep their own neutral posture: their rotation relative to B's chest never changes
+  {
+    const g3 = A.readGlb(path.join(APP, 'public/motion3d/anims/bjj-rear-naked-choke-m2m-v3.glb'));
+    const an3 = g3.json.animations[0];
+    const names3 = g3.json.nodes.map((n) => n.name);
+    const rotOf = (n) => g3.accessor(an3.samplers[an3.channels.find((ch) => names3[ch.target.node] === n && ch.target.path === 'rotation').sampler].output);
+    const neckDev = Math.max(...['B_neck_01', 'B_head'].map((n) => { const q = rotOf(n); return Math.max(...q.map((x) => A.qangle(q[0], x))); }));
+    check('[RNC v3 안전] B의 목·머리 관절 회전 변화 ≤ 3° (머리를 당기거나 꺾지 않음, 중립 유지)', neckDev <= 3, +neckDev.toFixed(2));
+  }
 } finally {
   await server.close();
 }

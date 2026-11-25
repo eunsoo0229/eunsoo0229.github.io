@@ -1,4 +1,4 @@
-"""Author a two-person MARTIALDEX demo on the Mesh2Motion human rig (Phase 5) — keyframes, no capture.
+"""Author a two-person (or, Phase 7, one-person) MARTIALDEX demo on the Mesh2Motion human rig — keyframes, no capture.
 
     blender -b --factory-startup -P scripts/motion3d/author_duo.py -- <technique module> <character.glb> <out_dir> [southpaw]
 
@@ -11,6 +11,9 @@ Outputs:
   <id>.glb    animation only (two armatures, prefixed bones, one animation named <id>, no mesh)
   <id>.blend  Blender 3.4 source with both character meshes (white / red materials), for editing and review
   <id>.json   per-key log: phases and the contact clearances the module asks for
+Phase 7: a module whose META["placement"] has only "A" is a one-person clip — the bones keep the character's own
+names (no prefix: the app plays a single actor on the character as it is), the same grapple_kit states (free legs,
+partner-free Refs, Chest points) are used, so kicks / knees / ground movement get the same solver.
 """
 import importlib
 import json
@@ -39,7 +42,8 @@ if SOUTHPAW:
     states_of = lambda key: {w: mirror(s) for w, s in mod.states(key).items()}  # noqa: E731
 else:
     META.setdefault("stance", "orthodox")
-ACTORS = ("A", "B")
+ACTORS = tuple(w for w in ("A", "B") if w in META["placement"])
+SOLO = len(ACTORS) == 1
 TINT = {"A": (0.86, 0.85, 0.82, 1.0), "B": (0.62, 0.13, 0.12, 1.0)}  # white-ish / red-ish (viewer tints match)
 
 bpy.ops.wm.read_factory_settings(use_empty=True)
@@ -61,18 +65,38 @@ for who in ACTORS:
         m.data = m.data.copy()
         m.data.materials.clear()
         m.data.materials.append(mat)
-rigs = {who: Rig(arms[who], META["placement"][who]) for who in ACTORS}
+rigs = {who: Rig(arms[who], None if SOLO else META["placement"][who]) for who in ACTORS}
+if META.get("continuity", True):
+    for r in rigs.values():
+        r.continuity = True  # Phase 7: no elbow / knee / forearm-roll flips between keys (rig_kit)
 
 frames = list(range(0, META["lastKey"] + 1))
 rec = {who: [] for who in ACTORS}
 log = []
-for key in frames:
+
+
+def solve_key(key):
     st = states_of(key)
-    for who in ("B", "A"):
+    for who in ("B", "A")[2 - len(ACTORS):] if not SOLO else ACTORS:
         pose_body(rigs[who], st[who])
         pose_legs(rigs[who], st[who], rigs, who)
         pose_head(rigs[who], st[who], rigs, who)
-    for who in ("A", "B"):
+    for who in ACTORS:
+        pose_arms(rigs[who], st[who], rigs, who)
+
+
+if META.get("continuity", True):
+    # warm-up lap (Phase 7): the continuity memory is filled by one pass over the clip, so key 0 is solved with the
+    # memory of the last key — a looping clip (last key = first key) then starts and ends on the same solution
+    for key in frames:
+        solve_key(key)
+for key in frames:
+    st = states_of(key)
+    for who in ("B", "A")[2 - len(ACTORS):] if not SOLO else ACTORS:
+        pose_body(rigs[who], st[who])
+        pose_legs(rigs[who], st[who], rigs, who)
+        pose_head(rigs[who], st[who], rigs, who)
+    for who in ACTORS:
         pose_arms(rigs[who], st[who], rigs, who)
     entry = {"key": key}
     if hasattr(mod, "measure"):
@@ -101,7 +125,8 @@ for who in ACTORS:
     names[who] = {}
     for bone in list(arm.data.bones):
         old = bone.name
-        bone.name = f"{who}_{old}"
+        if not SOLO:
+            bone.name = f"{who}_{old}"
         names[who][old] = bone.name
     for m in meshes[who]:
         for vg in m.vertex_groups:
@@ -128,7 +153,7 @@ for who in ACTORS:
     for old, new in names[who].items():
         for i in range(4):
             put(act, f'pose.bones["{new}"].rotation_quaternion', i, [r[old][0][i] for r in rec[who]], new)
-    for bone in ("pelvis", "root"):
+    for bone in ("pelvis",) if SOLO else ("pelvis", "root"):  # one person: no root track (Mesh2Motion rule, as author_strike)
         for i in range(3):
             put(act, f'pose.bones["{names[who][bone]}"].location', i, [r[bone][1][i] for r in rec[who]], names[who][bone])
 

@@ -119,7 +119,7 @@ try {
     const r05 = await rate(0.5);
     const r2 = await rate(2);
     const readout = await page.getByTestId('motion3d-readout').innerText();
-    check(`[${label}] 4 속도 2x는 0.5x의 약 4배로 진행 (실측 비율)`, r2 / r05 > 3 && r2 / r05 < 5.5, { r05: r05.toFixed(3), r2: r2.toFixed(3), ratio: (r2 / r05).toFixed(2) });
+    check(`[${label}] 4 속도 2x는 0.5x의 약 4배로 진행 (실측 비율)`, r2 / r05 > 3 && r2 / r05 < 5.5, { r05: r05.toFixed(3), r2: r2.toFixed(3), ratio: (r2 / r05).toFixed(2), rendering: (await ds(page)).rendering });
     check(`[${label}] 4 속도를 바꿔도 클립 전체 시간 1.83s 유지, 실제 재생 시간 별도 표시`, /\/ 1\.83s/.test(readout) && /2x 재생 시 0\.92초/.test(readout), readout);
     const speeds = await page.getByTestId('motion3d-speed').locator('option').allInnerTexts();
     check(`[${label}] 4 속도 7단계 0.25x~2x`, speeds.join(',') === '0.25x,0.5x,0.75x,1x,1.25x,1.5x,2x', speeds);
@@ -343,7 +343,7 @@ try {
       void hand;
     }
     // ---- Phase 5: two-person demos (performer white / partner red, one timeline)
-    for (const [hash, clip] of [['#/arts/wrestling/techniques/wrestling__basic-double-leg', 'wrestling-double-leg-m2m-v2'], ['#/arts/bjj/techniques/bjj__rear-naked-choke', 'bjj-rear-naked-choke-m2m-v2']]) {
+    for (const [hash, clip] of [['#/arts/wrestling/techniques/wrestling__basic-double-leg', 'wrestling-double-leg-m2m-v2'], ['#/arts/bjj/techniques/bjj__rear-naked-choke', 'bjj-rear-naked-choke-m2m-v3']]) {
       await page.goto(`${BASE}/${hash}`);
       await page.locator('.detail-hero h1').waitFor();
       const card = page.locator(`[data-testid="motion3d-card"][data-clip="${clip}"]`);
@@ -354,6 +354,8 @@ try {
       }
       await card.getByTestId('motion3d-open').click();
       await page.locator('[data-testid="motion3d-stage"][data-loaded="true"], [data-testid="motion3d-error"]').first().waitFor({ timeout: 30000 });
+      // the engine pauses while the stage is off screen (by design) — keep it in view for the timing checks
+      await page.getByTestId('motion3d-stage').evaluate((el) => el.scrollIntoView({ block: 'center' }));
       const err = await page.getByTestId('motion3d-error').count();
       const roles = await page.locator('[data-testid="motion3d-roles"] li').allInnerTexts();
       check(`[${label}] ${clip}: 두 캐릭터 로딩, 역할 표시 (흰색 시연자 / 빨간색 상대)`, err === 0 && roles.length === 2 && /흰색.*시연자/.test(roles[0]) && /빨간색.*상대/.test(roles[1]), { err, roles });
@@ -363,9 +365,12 @@ try {
       await page.waitForFunction(() => document.querySelector('[data-testid="motion3d-stage"]')?.dataset.playing === 'false', null, { timeout: 15000 });
       const end = await ds(page);
       check(`[${label}] ${clip}: 끝까지 재생 후 마지막 프레임에서 멈춤`, end.playing === 'false' && Number(end.time) > 2.9, end.time);
+      // back to 1x for the timing checks below (at 2x, click latency on a loaded machine alone covers ~1 s of clip time)
+      await page.getByTestId('motion3d-speed').selectOption('1');
       await page.getByTestId('motion3d-play').click();
       await page.waitForTimeout(300);
-      check(`[${label}] ${clip}: 끝에서 재생 → 처음부터 다시`, Number((await ds(page)).time) < 1.5 && (await ds(page)).playing === 'true');
+      const dsEnd = await ds(page);
+      check(`[${label}] ${clip}: 끝에서 재생 → 처음부터 다시`, Number(dsEnd.time) < 1.5 && dsEnd.playing === 'true', { time: dsEnd.time, playing: dsEnd.playing, rendering: dsEnd.rendering, inView: await page.getByTestId('motion3d-stage').evaluate((el) => { const r = el.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; }) });
       await page.getByTestId('motion3d-loop').click();
       check(`[${label}] ${clip}: 반복 재생 켜기`, (await ds(page)).loop === 'true');
       await page.waitForFunction(() => Number(document.querySelector('[data-testid="motion3d-stage"]')?.dataset.time) > 2.6, null, { timeout: 15000 });

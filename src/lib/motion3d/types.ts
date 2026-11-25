@@ -2,7 +2,8 @@
 // technique schema is untouched. One clip = one GLB + one animation, played by 1..n actors (2 for grappling).
 
 // prepare / execute / finish (mocap jab); authored clips split the end into recover + guard_return
-export type MotionPhaseName = 'prepare' | 'execute' | 'finish' | 'recover' | 'guard_return' | 'drive';
+// Phase 7: 'transition' (position change before the shape) and 'hold' (the shape held still to look at)
+export type MotionPhaseName = 'prepare' | 'execute' | 'finish' | 'recover' | 'guard_return' | 'drive' | 'transition' | 'hold';
 
 export interface MotionPhase {
   name: MotionPhaseName;
@@ -54,6 +55,8 @@ export interface MotionClip {
   phases: MotionPhase[];
   /** 정면 camera preset: 'rest' = the rig's forward (authored clips: towards the opponent); default = chest at frame 0. */
   cameraFront?: 'rest' | 'pose';
+  /** Camera height above the subject in degrees (default 8): floor techniques (hip escape, sprawl) look down more. */
+  cameraElevationDeg?: number;
   phaseMethod?: string;
   /** The stance the clip is performed in; a southpaw learner gets the mirrored version (lead hand = right). */
   stance?: 'orthodox' | 'southpaw';

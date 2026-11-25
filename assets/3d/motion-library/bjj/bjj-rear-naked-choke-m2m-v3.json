@@ -1,0 +1,7512 @@
+{
+ "meta": {
+  "id": "bjj-rear-naked-choke-m2m-v3",
+  "techniqueIds": [
+   "bjj__rear-naked-choke"
+  ],
+  "title": "\ub9ac\uc5b4 \ub124\uc774\ud0a4\ub4dc \ucd08\ud06c (2\uc778 \uc548\uc804 \uc2dc\uc5f0)",
+  "fps": 30,
+  "lastKey": 132,
+  "phases": [
+   [
+    "prepare",
+    "1 \uc2dc\uc791 \uc790\uc138: \ubc31 \ucee8\ud2b8\ub864\u00b7\uc2dc\ud2b8\ubca8\ud2b8",
+    0,
+    24
+   ],
+   [
+    "transition",
+    "2 \uc704\uce58 \uad00\uacc4: \uba38\ub9ac \uc606\u00b7\ud314 \uc62c\ub9ac\uae30",
+    24,
+    48
+   ],
+   [
+    "execute",
+    "3 \ud615\ud0dc \ub9cc\ub4e4\uae30: \uc774\ub450 \uc7a1\uae30\u00b7\ub4a4 \uc190",
+    48,
+    72
+   ],
+   [
+    "hold",
+    "4 \uc720\uc9c0 (\uc555\ubc15 \uc5c6\uc74c)",
+    72,
+    102
+   ],
+   [
+    "recover",
+    "5 \uc2dc\uc791 \uc790\uc138\ub85c \ubcf5\uadc0",
+    102,
+    132
+   ]
+  ],
+  "placement": {
+   "A": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "B": [
+    0.0,
+    0.28,
+    0.0
+   ]
+  },
+  "actors": {
+   "A": "performer",
+   "B": "partner"
+  },
+  "stance": "orthodox"
+ },
+ "mergedAnimations": 2,
+ "channels": 136,
+ "keys": [
+  {
+   "key": 0,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 1,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 2,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 3,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 4,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 5,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 6,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 7,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 8,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 9,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 10,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 11,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 12,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 13,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 14,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 15,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 16,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 17,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 18,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 19,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 20,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 21,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 22,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 23,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 24,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 25,
+   "chokeArmToNeckM": 0.165,
+   "backHandToHeadM": 0.408,
+   "supportArmToNeckM": 0.278,
+   "armsApartM": 0.09,
+   "headToHeadM": 0.166,
+   "gripGapM": 0.305,
+   "joints": {
+    "A.shoulder_r": [
+     -0.302,
+     -0.245,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.009,
+     0.622
+    ],
+    "A.hand_r": [
+     0.101,
+     0.104,
+     0.499
+    ],
+    "A.shoulder_l": [
+     0.042,
+     -0.243,
+     0.662
+    ],
+    "A.elbow_l": [
+     0.204,
+     -0.16,
+     0.428
+    ],
+    "A.hand_l": [
+     0.124,
+     0.108,
+     0.413
+    ],
+    "A.head": [
+     -0.147,
+     -0.159,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 26,
+   "chokeArmToNeckM": 0.175,
+   "backHandToHeadM": 0.399,
+   "supportArmToNeckM": 0.279,
+   "armsApartM": 0.085,
+   "headToHeadM": 0.164,
+   "gripGapM": 0.315,
+   "joints": {
+    "A.shoulder_r": [
+     -0.305,
+     -0.233,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.124,
+     0.002,
+     0.617
+    ],
+    "A.hand_r": [
+     0.105,
+     0.11,
+     0.499
+    ],
+    "A.shoulder_l": [
+     0.039,
+     -0.237,
+     0.664
+    ],
+    "A.elbow_l": [
+     0.217,
+     -0.171,
+     0.436
+    ],
+    "A.hand_l": [
+     0.137,
+     0.096,
+     0.421
+    ],
+    "A.head": [
+     -0.149,
+     -0.149,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 27,
+   "chokeArmToNeckM": 0.19,
+   "backHandToHeadM": 0.388,
+   "supportArmToNeckM": 0.279,
+   "armsApartM": 0.089,
+   "headToHeadM": 0.161,
+   "gripGapM": 0.332,
+   "joints": {
+    "A.shoulder_r": [
+     -0.308,
+     -0.216,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.126,
+     0.019,
+     0.608
+    ],
+    "A.hand_r": [
+     0.11,
+     0.119,
+     0.498
+    ],
+    "A.shoulder_l": [
+     0.035,
+     -0.227,
+     0.667
+    ],
+    "A.elbow_l": [
+     0.236,
+     -0.191,
+     0.452
+    ],
+    "A.hand_l": [
+     0.157,
+     0.077,
+     0.434
+    ],
+    "A.head": [
+     -0.152,
+     -0.134,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 28,
+   "chokeArmToNeckM": 0.208,
+   "backHandToHeadM": 0.376,
+   "supportArmToNeckM": 0.279,
+   "armsApartM": 0.11,
+   "headToHeadM": 0.159,
+   "gripGapM": 0.354,
+   "joints": {
+    "A.shoulder_r": [
+     -0.312,
+     -0.193,
+     0.612
+    ],
+    "A.elbow_r": [
+     -0.129,
+     0.039,
+     0.594
+    ],
+    "A.hand_r": [
+     0.117,
+     0.13,
+     0.496
+    ],
+    "A.shoulder_l": [
+     0.03,
+     -0.215,
+     0.67
+    ],
+    "A.elbow_l": [
+     0.254,
+     -0.216,
+     0.475
+    ],
+    "A.hand_l": [
+     0.182,
+     0.054,
+     0.451
+    ],
+    "A.head": [
+     -0.155,
+     -0.114,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 29,
+   "chokeArmToNeckM": 0.226,
+   "backHandToHeadM": 0.368,
+   "supportArmToNeckM": 0.278,
+   "armsApartM": 0.145,
+   "headToHeadM": 0.158,
+   "gripGapM": 0.379,
+   "joints": {
+    "A.shoulder_r": [
+     -0.315,
+     -0.168,
+     0.611
+    ],
+    "A.elbow_r": [
+     -0.13,
+     0.061,
+     0.576
+    ],
+    "A.hand_r": [
+     0.125,
+     0.142,
+     0.495
+    ],
+    "A.shoulder_l": [
+     0.025,
+     -0.201,
+     0.674
+    ],
+    "A.elbow_l": [
+     0.266,
+     -0.244,
+     0.505
+    ],
+    "A.hand_l": [
+     0.21,
+     0.027,
+     0.47
+    ],
+    "A.head": [
+     -0.158,
+     -0.092,
+     0.751
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 30,
+   "chokeArmToNeckM": 0.243,
+   "backHandToHeadM": 0.364,
+   "supportArmToNeckM": 0.279,
+   "armsApartM": 0.186,
+   "headToHeadM": 0.16,
+   "gripGapM": 0.404,
+   "joints": {
+    "A.shoulder_r": [
+     -0.317,
+     -0.144,
+     0.61
+    ],
+    "A.elbow_r": [
+     -0.129,
+     0.08,
+     0.557
+    ],
+    "A.hand_r": [
+     0.133,
+     0.155,
+     0.493
+    ],
+    "A.shoulder_l": [
+     0.021,
+     -0.187,
+     0.676
+    ],
+    "A.elbow_l": [
+     0.268,
+     -0.273,
+     0.537
+    ],
+    "A.hand_l": [
+     0.238,
+     0.001,
+     0.488
+    ],
+    "A.head": [
+     -0.16,
+     -0.07,
+     0.75
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 31,
+   "chokeArmToNeckM": 0.253,
+   "backHandToHeadM": 0.365,
+   "supportArmToNeckM": 0.281,
+   "armsApartM": 0.226,
+   "headToHeadM": 0.163,
+   "gripGapM": 0.425,
+   "joints": {
+    "A.shoulder_r": [
+     -0.318,
+     -0.121,
+     0.608
+    ],
+    "A.elbow_r": [
+     -0.126,
+     0.095,
+     0.54
+    ],
+    "A.hand_r": [
+     0.14,
+     0.166,
+     0.492
+    ],
+    "A.shoulder_l": [
+     0.018,
+     -0.174,
+     0.679
+    ],
+    "A.elbow_l": [
+     0.263,
+     -0.296,
+     0.564
+    ],
+    "A.hand_l": [
+     0.263,
+     -0.023,
+     0.505
+    ],
+    "A.head": [
+     -0.16,
+     -0.051,
+     0.748
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 32,
+   "chokeArmToNeckM": 0.261,
+   "backHandToHeadM": 0.369,
+   "supportArmToNeckM": 0.284,
+   "armsApartM": 0.258,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.441,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.104,
+     0.606
+    ],
+    "A.elbow_r": [
+     -0.123,
+     0.106,
+     0.529
+    ],
+    "A.hand_r": [
+     0.145,
+     0.175,
+     0.491
+    ],
+    "A.shoulder_l": [
+     0.016,
+     -0.163,
+     0.68
+    ],
+    "A.elbow_l": [
+     0.254,
+     -0.312,
+     0.584
+    ],
+    "A.hand_l": [
+     0.283,
+     -0.041,
+     0.518
+    ],
+    "A.head": [
+     -0.16,
+     -0.035,
+     0.746
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 33,
+   "chokeArmToNeckM": 0.267,
+   "backHandToHeadM": 0.372,
+   "supportArmToNeckM": 0.285,
+   "armsApartM": 0.279,
+   "headToHeadM": 0.17,
+   "gripGapM": 0.45,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.092,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.121,
+     0.112,
+     0.523
+    ],
+    "A.hand_r": [
+     0.149,
+     0.18,
+     0.49
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.156,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.246,
+     -0.32,
+     0.594
+    ],
+    "A.hand_l": [
+     0.296,
+     -0.053,
+     0.527
+    ],
+    "A.head": [
+     -0.16,
+     -0.025,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 34,
+   "chokeArmToNeckM": 0.268,
+   "backHandToHeadM": 0.374,
+   "supportArmToNeckM": 0.286,
+   "armsApartM": 0.286,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.453,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.12,
+     0.115,
+     0.521
+    ],
+    "A.hand_r": [
+     0.15,
+     0.182,
+     0.49
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.243,
+     -0.323,
+     0.597
+    ],
+    "A.hand_l": [
+     0.3,
+     -0.058,
+     0.53
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 35,
+   "chokeArmToNeckM": 0.268,
+   "backHandToHeadM": 0.366,
+   "supportArmToNeckM": 0.283,
+   "armsApartM": 0.289,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.456,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.12,
+     0.115,
+     0.521
+    ],
+    "A.hand_r": [
+     0.15,
+     0.182,
+     0.49
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.239,
+     -0.328,
+     0.598
+    ],
+    "A.hand_l": [
+     0.298,
+     -0.061,
+     0.54
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 36,
+   "chokeArmToNeckM": 0.268,
+   "backHandToHeadM": 0.346,
+   "supportArmToNeckM": 0.276,
+   "armsApartM": 0.301,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.464,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.12,
+     0.115,
+     0.521
+    ],
+    "A.hand_r": [
+     0.15,
+     0.182,
+     0.49
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.229,
+     -0.342,
+     0.6
+    ],
+    "A.hand_l": [
+     0.293,
+     -0.071,
+     0.568
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 37,
+   "chokeArmToNeckM": 0.268,
+   "backHandToHeadM": 0.318,
+   "supportArmToNeckM": 0.265,
+   "armsApartM": 0.311,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.471,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.12,
+     0.115,
+     0.521
+    ],
+    "A.hand_r": [
+     0.15,
+     0.182,
+     0.49
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.213,
+     -0.356,
+     0.594
+    ],
+    "A.hand_l": [
+     0.285,
+     -0.087,
+     0.61
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 38,
+   "chokeArmToNeckM": 0.268,
+   "backHandToHeadM": 0.291,
+   "supportArmToNeckM": 0.256,
+   "armsApartM": 0.311,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.469,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.12,
+     0.115,
+     0.521
+    ],
+    "A.hand_r": [
+     0.15,
+     0.182,
+     0.49
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.359,
+     0.572
+    ],
+    "A.hand_l": [
+     0.275,
+     -0.105,
+     0.661
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 39,
+   "chokeArmToNeckM": 0.268,
+   "backHandToHeadM": 0.272,
+   "supportArmToNeckM": 0.252,
+   "armsApartM": 0.311,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.447,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.12,
+     0.115,
+     0.521
+    ],
+    "A.hand_r": [
+     0.15,
+     0.182,
+     0.49
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.202,
+     -0.329,
+     0.532
+    ],
+    "A.hand_l": [
+     0.265,
+     -0.123,
+     0.711
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 40,
+   "chokeArmToNeckM": 0.268,
+   "backHandToHeadM": 0.263,
+   "supportArmToNeckM": 0.251,
+   "armsApartM": 0.311,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.396,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.12,
+     0.115,
+     0.521
+    ],
+    "A.hand_r": [
+     0.15,
+     0.182,
+     0.49
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.228,
+     -0.242,
+     0.495
+    ],
+    "A.hand_l": [
+     0.257,
+     -0.138,
+     0.753
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 41,
+   "chokeArmToNeckM": 0.268,
+   "backHandToHeadM": 0.261,
+   "supportArmToNeckM": 0.25,
+   "armsApartM": 0.302,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.323,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.12,
+     0.115,
+     0.521
+    ],
+    "A.hand_r": [
+     0.15,
+     0.182,
+     0.49
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.248,
+     -0.103,
+     0.505
+    ],
+    "A.hand_l": [
+     0.252,
+     -0.148,
+     0.782
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 42,
+   "chokeArmToNeckM": 0.268,
+   "backHandToHeadM": 0.26,
+   "supportArmToNeckM": 0.243,
+   "armsApartM": 0.203,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.277,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.12,
+     0.115,
+     0.521
+    ],
+    "A.hand_r": [
+     0.15,
+     0.182,
+     0.49
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.231,
+     0.013,
+     0.566
+    ],
+    "A.hand_l": [
+     0.25,
+     -0.152,
+     0.791
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 43,
+   "chokeArmToNeckM": 0.273,
+   "backHandToHeadM": 0.26,
+   "supportArmToNeckM": 0.243,
+   "armsApartM": 0.196,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.268,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.126,
+     0.12,
+     0.52
+    ],
+    "A.hand_r": [
+     0.148,
+     0.174,
+     0.493
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.231,
+     0.013,
+     0.566
+    ],
+    "A.hand_l": [
+     0.25,
+     -0.152,
+     0.791
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 44,
+   "chokeArmToNeckM": 0.282,
+   "backHandToHeadM": 0.26,
+   "supportArmToNeckM": 0.243,
+   "armsApartM": 0.178,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.244,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.138,
+     0.132,
+     0.523
+    ],
+    "A.hand_r": [
+     0.141,
+     0.152,
+     0.501
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.231,
+     0.013,
+     0.566
+    ],
+    "A.hand_l": [
+     0.25,
+     -0.152,
+     0.791
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 45,
+   "chokeArmToNeckM": 0.281,
+   "backHandToHeadM": 0.26,
+   "supportArmToNeckM": 0.243,
+   "armsApartM": 0.155,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.21,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.148,
+     0.143,
+     0.532
+    ],
+    "A.hand_r": [
+     0.131,
+     0.119,
+     0.513
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.231,
+     0.013,
+     0.566
+    ],
+    "A.hand_l": [
+     0.25,
+     -0.152,
+     0.791
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 46,
+   "chokeArmToNeckM": 0.256,
+   "backHandToHeadM": 0.26,
+   "supportArmToNeckM": 0.243,
+   "armsApartM": 0.137,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.172,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.151,
+     0.15,
+     0.548
+    ],
+    "A.hand_r": [
+     0.119,
+     0.083,
+     0.526
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.231,
+     0.013,
+     0.566
+    ],
+    "A.hand_l": [
+     0.25,
+     -0.152,
+     0.791
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 47,
+   "chokeArmToNeckM": 0.226,
+   "backHandToHeadM": 0.26,
+   "supportArmToNeckM": 0.243,
+   "armsApartM": 0.117,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.14,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.15,
+     0.152,
+     0.564
+    ],
+    "A.hand_r": [
+     0.109,
+     0.05,
+     0.538
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.231,
+     0.013,
+     0.566
+    ],
+    "A.hand_l": [
+     0.25,
+     -0.152,
+     0.791
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 48,
+   "chokeArmToNeckM": 0.205,
+   "backHandToHeadM": 0.26,
+   "supportArmToNeckM": 0.243,
+   "armsApartM": 0.107,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.119,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.147,
+     0.151,
+     0.577
+    ],
+    "A.hand_r": [
+     0.102,
+     0.028,
+     0.546
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.231,
+     0.013,
+     0.566
+    ],
+    "A.hand_l": [
+     0.25,
+     -0.152,
+     0.791
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 49,
+   "chokeArmToNeckM": 0.197,
+   "backHandToHeadM": 0.26,
+   "supportArmToNeckM": 0.243,
+   "armsApartM": 0.104,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.112,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.145,
+     0.151,
+     0.581
+    ],
+    "A.hand_r": [
+     0.1,
+     0.02,
+     0.549
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.231,
+     0.013,
+     0.566
+    ],
+    "A.hand_l": [
+     0.25,
+     -0.152,
+     0.791
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 50,
+   "chokeArmToNeckM": 0.197,
+   "backHandToHeadM": 0.252,
+   "supportArmToNeckM": 0.236,
+   "armsApartM": 0.103,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.111,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.145,
+     0.151,
+     0.581
+    ],
+    "A.hand_r": [
+     0.1,
+     0.02,
+     0.549
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.227,
+     0.026,
+     0.579
+    ],
+    "A.hand_l": [
+     0.241,
+     -0.157,
+     0.791
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 51,
+   "chokeArmToNeckM": 0.197,
+   "backHandToHeadM": 0.232,
+   "supportArmToNeckM": 0.218,
+   "armsApartM": 0.113,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.118,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.145,
+     0.151,
+     0.581
+    ],
+    "A.hand_r": [
+     0.1,
+     0.02,
+     0.549
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.222,
+     0.046,
+     0.613
+    ],
+    "A.hand_l": [
+     0.214,
+     -0.17,
+     0.79
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 52,
+   "chokeArmToNeckM": 0.197,
+   "backHandToHeadM": 0.208,
+   "supportArmToNeckM": 0.196,
+   "armsApartM": 0.135,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.137,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.145,
+     0.151,
+     0.581
+    ],
+    "A.hand_r": [
+     0.1,
+     0.02,
+     0.549
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.227,
+     0.051,
+     0.656
+    ],
+    "A.hand_l": [
+     0.176,
+     -0.19,
+     0.788
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 53,
+   "chokeArmToNeckM": 0.197,
+   "backHandToHeadM": 0.188,
+   "supportArmToNeckM": 0.176,
+   "armsApartM": 0.169,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.168,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.145,
+     0.151,
+     0.581
+    ],
+    "A.hand_r": [
+     0.1,
+     0.02,
+     0.549
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.242,
+     0.033,
+     0.708
+    ],
+    "A.hand_l": [
+     0.134,
+     -0.213,
+     0.785
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 54,
+   "chokeArmToNeckM": 0.197,
+   "backHandToHeadM": 0.18,
+   "supportArmToNeckM": 0.166,
+   "armsApartM": 0.201,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.206,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.145,
+     0.151,
+     0.581
+    ],
+    "A.hand_r": [
+     0.1,
+     0.02,
+     0.549
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.255,
+     -0.004,
+     0.765
+    ],
+    "A.hand_l": [
+     0.096,
+     -0.233,
+     0.783
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 55,
+   "chokeArmToNeckM": 0.197,
+   "backHandToHeadM": 0.18,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.222,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.236,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.145,
+     0.151,
+     0.581
+    ],
+    "A.hand_r": [
+     0.1,
+     0.02,
+     0.549
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.255,
+     -0.039,
+     0.81
+    ],
+    "A.hand_l": [
+     0.069,
+     -0.247,
+     0.782
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 56,
+   "chokeArmToNeckM": 0.197,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.226,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.247,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.145,
+     0.151,
+     0.581
+    ],
+    "A.hand_r": [
+     0.1,
+     0.02,
+     0.549
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 57,
+   "chokeArmToNeckM": 0.194,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.22,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.24,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.142,
+     0.149,
+     0.585
+    ],
+    "A.hand_r": [
+     0.103,
+     0.017,
+     0.556
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 58,
+   "chokeArmToNeckM": 0.185,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.204,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.218,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.134,
+     0.144,
+     0.596
+    ],
+    "A.hand_r": [
+     0.111,
+     0.01,
+     0.575
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 59,
+   "chokeArmToNeckM": 0.171,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.177,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.186,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.122,
+     0.134,
+     0.613
+    ],
+    "A.hand_r": [
+     0.123,
+     -0.0,
+     0.604
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 60,
+   "chokeArmToNeckM": 0.158,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.145,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.15,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.109,
+     0.119,
+     0.633
+    ],
+    "A.hand_r": [
+     0.138,
+     -0.013,
+     0.639
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 61,
+   "chokeArmToNeckM": 0.142,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.117,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.115,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.097,
+     0.102,
+     0.653
+    ],
+    "A.hand_r": [
+     0.152,
+     -0.025,
+     0.673
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 62,
+   "chokeArmToNeckM": 0.128,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.088,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.088,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.086,
+     0.085,
+     0.669
+    ],
+    "A.hand_r": [
+     0.164,
+     -0.036,
+     0.702
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 63,
+   "chokeArmToNeckM": 0.12,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.07,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.073,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.08,
+     0.071,
+     0.679
+    ],
+    "A.hand_r": [
+     0.172,
+     -0.043,
+     0.722
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 64,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 65,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 66,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 67,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 68,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 69,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 70,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 71,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 72,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 73,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 74,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 75,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 76,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 77,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 78,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 79,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 80,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 81,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 82,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 83,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 84,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 85,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 86,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 87,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 88,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 89,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 90,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 91,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 92,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 93,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 94,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 95,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 96,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 97,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 98,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 99,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 100,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 101,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 102,
+   "chokeArmToNeckM": 0.117,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.065,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.069,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.078,
+     0.066,
+     0.683
+    ],
+    "A.hand_r": [
+     0.175,
+     -0.045,
+     0.729
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 103,
+   "chokeArmToNeckM": 0.122,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.075,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.077,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.082,
+     0.075,
+     0.677
+    ],
+    "A.hand_r": [
+     0.17,
+     -0.041,
+     0.717
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 104,
+   "chokeArmToNeckM": 0.137,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.106,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.105,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.093,
+     0.096,
+     0.659
+    ],
+    "A.hand_r": [
+     0.156,
+     -0.029,
+     0.684
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 105,
+   "chokeArmToNeckM": 0.158,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.145,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.15,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.109,
+     0.119,
+     0.633
+    ],
+    "A.hand_r": [
+     0.138,
+     -0.013,
+     0.639
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 106,
+   "chokeArmToNeckM": 0.176,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.187,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.198,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.127,
+     0.137,
+     0.607
+    ],
+    "A.hand_r": [
+     0.119,
+     0.004,
+     0.594
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 107,
+   "chokeArmToNeckM": 0.191,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.216,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.234,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.14,
+     0.148,
+     0.588
+    ],
+    "A.hand_r": [
+     0.105,
+     0.016,
+     0.561
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 108,
+   "chokeArmToNeckM": 0.197,
+   "backHandToHeadM": 0.181,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.226,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.247,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.145,
+     0.151,
+     0.581
+    ],
+    "A.hand_r": [
+     0.1,
+     0.02,
+     0.549
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.252,
+     -0.053,
+     0.826
+    ],
+    "A.hand_l": [
+     0.06,
+     -0.252,
+     0.781
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 109,
+   "chokeArmToNeckM": 0.197,
+   "backHandToHeadM": 0.179,
+   "supportArmToNeckM": 0.164,
+   "armsApartM": 0.216,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.226,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.145,
+     0.151,
+     0.581
+    ],
+    "A.hand_r": [
+     0.1,
+     0.02,
+     0.549
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.257,
+     -0.027,
+     0.795
+    ],
+    "A.hand_l": [
+     0.078,
+     -0.242,
+     0.782
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 110,
+   "chokeArmToNeckM": 0.197,
+   "backHandToHeadM": 0.185,
+   "supportArmToNeckM": 0.173,
+   "armsApartM": 0.177,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.176,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.145,
+     0.151,
+     0.581
+    ],
+    "A.hand_r": [
+     0.1,
+     0.02,
+     0.549
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.246,
+     0.027,
+     0.72
+    ],
+    "A.hand_l": [
+     0.126,
+     -0.217,
+     0.785
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 111,
+   "chokeArmToNeckM": 0.197,
+   "backHandToHeadM": 0.213,
+   "supportArmToNeckM": 0.201,
+   "armsApartM": 0.129,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.132,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.145,
+     0.151,
+     0.581
+    ],
+    "A.hand_r": [
+     0.1,
+     0.02,
+     0.549
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.225,
+     0.052,
+     0.647
+    ],
+    "A.hand_l": [
+     0.184,
+     -0.186,
+     0.788
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 112,
+   "chokeArmToNeckM": 0.197,
+   "backHandToHeadM": 0.246,
+   "supportArmToNeckM": 0.23,
+   "armsApartM": 0.105,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.112,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.145,
+     0.151,
+     0.581
+    ],
+    "A.hand_r": [
+     0.1,
+     0.02,
+     0.549
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.225,
+     0.034,
+     0.591
+    ],
+    "A.hand_l": [
+     0.232,
+     -0.161,
+     0.791
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 113,
+   "chokeArmToNeckM": 0.197,
+   "backHandToHeadM": 0.26,
+   "supportArmToNeckM": 0.243,
+   "armsApartM": 0.104,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.112,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.145,
+     0.151,
+     0.581
+    ],
+    "A.hand_r": [
+     0.1,
+     0.02,
+     0.549
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.231,
+     0.013,
+     0.566
+    ],
+    "A.hand_l": [
+     0.25,
+     -0.152,
+     0.791
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 114,
+   "chokeArmToNeckM": 0.212,
+   "backHandToHeadM": 0.26,
+   "supportArmToNeckM": 0.243,
+   "armsApartM": 0.11,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.126,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.148,
+     0.152,
+     0.573
+    ],
+    "A.hand_r": [
+     0.105,
+     0.035,
+     0.543
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.231,
+     0.013,
+     0.566
+    ],
+    "A.hand_l": [
+     0.25,
+     -0.152,
+     0.791
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 115,
+   "chokeArmToNeckM": 0.249,
+   "backHandToHeadM": 0.26,
+   "supportArmToNeckM": 0.243,
+   "armsApartM": 0.134,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.165,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.151,
+     0.151,
+     0.551
+    ],
+    "A.hand_r": [
+     0.117,
+     0.076,
+     0.528
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.231,
+     0.013,
+     0.566
+    ],
+    "A.hand_l": [
+     0.25,
+     -0.152,
+     0.791
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 116,
+   "chokeArmToNeckM": 0.285,
+   "backHandToHeadM": 0.26,
+   "supportArmToNeckM": 0.243,
+   "armsApartM": 0.16,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.217,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.146,
+     0.141,
+     0.53
+    ],
+    "A.hand_r": [
+     0.133,
+     0.126,
+     0.51
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.231,
+     0.013,
+     0.566
+    ],
+    "A.hand_l": [
+     0.25,
+     -0.152,
+     0.791
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 117,
+   "chokeArmToNeckM": 0.277,
+   "backHandToHeadM": 0.26,
+   "supportArmToNeckM": 0.243,
+   "armsApartM": 0.19,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.26,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.13,
+     0.125,
+     0.521
+    ],
+    "A.hand_r": [
+     0.145,
+     0.167,
+     0.495
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.231,
+     0.013,
+     0.566
+    ],
+    "A.hand_l": [
+     0.25,
+     -0.152,
+     0.791
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 118,
+   "chokeArmToNeckM": 0.268,
+   "backHandToHeadM": 0.26,
+   "supportArmToNeckM": 0.243,
+   "armsApartM": 0.203,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.277,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.12,
+     0.115,
+     0.521
+    ],
+    "A.hand_r": [
+     0.15,
+     0.182,
+     0.49
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.231,
+     0.013,
+     0.566
+    ],
+    "A.hand_l": [
+     0.25,
+     -0.152,
+     0.791
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 119,
+   "chokeArmToNeckM": 0.268,
+   "backHandToHeadM": 0.261,
+   "supportArmToNeckM": 0.241,
+   "armsApartM": 0.193,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.273,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.12,
+     0.115,
+     0.521
+    ],
+    "A.hand_r": [
+     0.15,
+     0.182,
+     0.49
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.222,
+     0.014,
+     0.552
+    ],
+    "A.hand_l": [
+     0.252,
+     -0.147,
+     0.779
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 120,
+   "chokeArmToNeckM": 0.268,
+   "backHandToHeadM": 0.265,
+   "supportArmToNeckM": 0.236,
+   "armsApartM": 0.179,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.267,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.12,
+     0.115,
+     0.521
+    ],
+    "A.hand_r": [
+     0.15,
+     0.182,
+     0.49
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.194,
+     0.011,
+     0.512
+    ],
+    "A.hand_l": [
+     0.259,
+     -0.134,
+     0.742
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 121,
+   "chokeArmToNeckM": 0.268,
+   "backHandToHeadM": 0.278,
+   "supportArmToNeckM": 0.226,
+   "armsApartM": 0.195,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.275,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.12,
+     0.115,
+     0.521
+    ],
+    "A.hand_r": [
+     0.15,
+     0.182,
+     0.49
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.15,
+     -0.014,
+     0.458
+    ],
+    "A.hand_l": [
+     0.269,
+     -0.115,
+     0.69
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 122,
+   "chokeArmToNeckM": 0.268,
+   "backHandToHeadM": 0.305,
+   "supportArmToNeckM": 0.225,
+   "armsApartM": 0.259,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.311,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.12,
+     0.115,
+     0.521
+    ],
+    "A.hand_r": [
+     0.15,
+     0.182,
+     0.49
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.11,
+     -0.082,
+     0.41
+    ],
+    "A.hand_l": [
+     0.281,
+     -0.094,
+     0.631
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 123,
+   "chokeArmToNeckM": 0.268,
+   "backHandToHeadM": 0.338,
+   "supportArmToNeckM": 0.239,
+   "armsApartM": 0.304,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.368,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.12,
+     0.115,
+     0.521
+    ],
+    "A.hand_r": [
+     0.15,
+     0.182,
+     0.49
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.107,
+     -0.19,
+     0.402
+    ],
+    "A.hand_l": [
+     0.291,
+     -0.075,
+     0.579
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 124,
+   "chokeArmToNeckM": 0.268,
+   "backHandToHeadM": 0.364,
+   "supportArmToNeckM": 0.262,
+   "armsApartM": 0.291,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.421,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.12,
+     0.115,
+     0.521
+    ],
+    "A.hand_r": [
+     0.15,
+     0.182,
+     0.49
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.158,
+     -0.29,
+     0.46
+    ],
+    "A.hand_l": [
+     0.298,
+     -0.062,
+     0.543
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 125,
+   "chokeArmToNeckM": 0.268,
+   "backHandToHeadM": 0.374,
+   "supportArmToNeckM": 0.282,
+   "armsApartM": 0.286,
+   "headToHeadM": 0.171,
+   "gripGapM": 0.45,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.089,
+     0.605
+    ],
+    "A.elbow_r": [
+     -0.12,
+     0.115,
+     0.521
+    ],
+    "A.hand_r": [
+     0.15,
+     0.182,
+     0.49
+    ],
+    "A.shoulder_l": [
+     0.014,
+     -0.154,
+     0.681
+    ],
+    "A.elbow_l": [
+     0.229,
+     -0.325,
+     0.57
+    ],
+    "A.hand_l": [
+     0.3,
+     -0.058,
+     0.53
+    ],
+    "A.head": [
+     -0.16,
+     -0.022,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 126,
+   "chokeArmToNeckM": 0.265,
+   "backHandToHeadM": 0.371,
+   "supportArmToNeckM": 0.285,
+   "armsApartM": 0.271,
+   "headToHeadM": 0.169,
+   "gripGapM": 0.447,
+   "joints": {
+    "A.shoulder_r": [
+     -0.319,
+     -0.096,
+     0.606
+    ],
+    "A.elbow_r": [
+     -0.122,
+     0.11,
+     0.525
+    ],
+    "A.hand_r": [
+     0.148,
+     0.178,
+     0.49
+    ],
+    "A.shoulder_l": [
+     0.015,
+     -0.159,
+     0.68
+    ],
+    "A.elbow_l": [
+     0.249,
+     -0.317,
+     0.591
+    ],
+    "A.hand_l": [
+     0.291,
+     -0.049,
+     0.524
+    ],
+    "A.head": [
+     -0.16,
+     -0.029,
+     0.745
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 127,
+   "chokeArmToNeckM": 0.255,
+   "backHandToHeadM": 0.366,
+   "supportArmToNeckM": 0.282,
+   "armsApartM": 0.231,
+   "headToHeadM": 0.164,
+   "gripGapM": 0.428,
+   "joints": {
+    "A.shoulder_r": [
+     -0.318,
+     -0.118,
+     0.608
+    ],
+    "A.elbow_r": [
+     -0.126,
+     0.096,
+     0.538
+    ],
+    "A.hand_r": [
+     0.141,
+     0.167,
+     0.492
+    ],
+    "A.shoulder_l": [
+     0.017,
+     -0.172,
+     0.679
+    ],
+    "A.elbow_l": [
+     0.261,
+     -0.299,
+     0.568
+    ],
+    "A.hand_l": [
+     0.266,
+     -0.026,
+     0.507
+    ],
+    "A.head": [
+     -0.161,
+     -0.048,
+     0.748
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 128,
+   "chokeArmToNeckM": 0.238,
+   "backHandToHeadM": 0.365,
+   "supportArmToNeckM": 0.278,
+   "armsApartM": 0.174,
+   "headToHeadM": 0.16,
+   "gripGapM": 0.397,
+   "joints": {
+    "A.shoulder_r": [
+     -0.317,
+     -0.15,
+     0.61
+    ],
+    "A.elbow_r": [
+     -0.13,
+     0.075,
+     0.562
+    ],
+    "A.hand_r": [
+     0.131,
+     0.151,
+     0.494
+    ],
+    "A.shoulder_l": [
+     0.022,
+     -0.191,
+     0.676
+    ],
+    "A.elbow_l": [
+     0.268,
+     -0.265,
+     0.528
+    ],
+    "A.hand_l": [
+     0.23,
+     0.009,
+     0.483
+    ],
+    "A.head": [
+     -0.159,
+     -0.076,
+     0.75
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 129,
+   "chokeArmToNeckM": 0.213,
+   "backHandToHeadM": 0.374,
+   "supportArmToNeckM": 0.279,
+   "armsApartM": 0.119,
+   "headToHeadM": 0.158,
+   "gripGapM": 0.361,
+   "joints": {
+    "A.shoulder_r": [
+     -0.313,
+     -0.186,
+     0.612
+    ],
+    "A.elbow_r": [
+     -0.129,
+     0.045,
+     0.589
+    ],
+    "A.hand_r": [
+     0.119,
+     0.134,
+     0.496
+    ],
+    "A.shoulder_l": [
+     0.029,
+     -0.211,
+     0.671
+    ],
+    "A.elbow_l": [
+     0.258,
+     -0.224,
+     0.483
+    ],
+    "A.hand_l": [
+     0.19,
+     0.046,
+     0.456
+    ],
+    "A.head": [
+     -0.156,
+     -0.108,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 130,
+   "chokeArmToNeckM": 0.187,
+   "backHandToHeadM": 0.39,
+   "supportArmToNeckM": 0.279,
+   "armsApartM": 0.087,
+   "headToHeadM": 0.161,
+   "gripGapM": 0.329,
+   "joints": {
+    "A.shoulder_r": [
+     -0.308,
+     -0.219,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.126,
+     0.016,
+     0.61
+    ],
+    "A.hand_r": [
+     0.109,
+     0.118,
+     0.498
+    ],
+    "A.shoulder_l": [
+     0.035,
+     -0.229,
+     0.666
+    ],
+    "A.elbow_l": [
+     0.233,
+     -0.187,
+     0.449
+    ],
+    "A.hand_l": [
+     0.154,
+     0.08,
+     0.432
+    ],
+    "A.head": [
+     -0.152,
+     -0.136,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 131,
+   "chokeArmToNeckM": 0.169,
+   "backHandToHeadM": 0.405,
+   "supportArmToNeckM": 0.279,
+   "armsApartM": 0.088,
+   "headToHeadM": 0.165,
+   "gripGapM": 0.309,
+   "joints": {
+    "A.shoulder_r": [
+     -0.303,
+     -0.241,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.124,
+     -0.005,
+     0.621
+    ],
+    "A.hand_r": [
+     0.102,
+     0.106,
+     0.499
+    ],
+    "A.shoulder_l": [
+     0.041,
+     -0.241,
+     0.662
+    ],
+    "A.elbow_l": [
+     0.209,
+     -0.164,
+     0.43
+    ],
+    "A.hand_l": [
+     0.129,
+     0.104,
+     0.416
+    ],
+    "A.head": [
+     -0.148,
+     -0.156,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  },
+  {
+   "key": 132,
+   "chokeArmToNeckM": 0.162,
+   "backHandToHeadM": 0.411,
+   "supportArmToNeckM": 0.277,
+   "armsApartM": 0.093,
+   "headToHeadM": 0.167,
+   "gripGapM": 0.301,
+   "joints": {
+    "A.shoulder_r": [
+     -0.301,
+     -0.249,
+     0.613
+    ],
+    "A.elbow_r": [
+     -0.123,
+     -0.012,
+     0.624
+    ],
+    "A.hand_r": [
+     0.1,
+     0.102,
+     0.5
+    ],
+    "A.shoulder_l": [
+     0.043,
+     -0.245,
+     0.661
+    ],
+    "A.elbow_l": [
+     0.199,
+     -0.156,
+     0.425
+    ],
+    "A.hand_l": [
+     0.12,
+     0.112,
+     0.41
+    ],
+    "A.head": [
+     -0.146,
+     -0.163,
+     0.752
+    ],
+    "B.neck": [
+     0.0,
+     -0.13,
+     0.629
+    ],
+    "B.head": [
+     -0.0,
+     -0.082,
+     0.751
+    ]
+   }
+  }
+ ]
+}
