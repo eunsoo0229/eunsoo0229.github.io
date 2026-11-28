@@ -1,0 +1,314 @@
+{
+ "at": "2026-11-28T12:14:51.003Z",
+ "passed": 24,
+ "total": 25,
+ "holdout": [
+  {
+   "query": "더블렉 들어가기 전에 쓸 셋업",
+   "ok": true,
+   "mySetups": [
+    "S1:t1",
+    "S2:t2"
+   ],
+   "myCombos": [
+    "C6:t1",
+    "C8:t2"
+   ],
+   "errors": []
+  },
+  {
+   "query": "잽으로 시작해서 훅으로 끝나는 콤보",
+   "ok": true,
+   "mySetups": [
+    "S4:t1",
+    "S6:t1",
+    "S5:t1",
+    "S1:t1",
+    "S2:t1"
+   ],
+   "myCombos": [
+    "C1:t1",
+    "C9:t1",
+    "C5:t1",
+    "C3:t1",
+    "C6:t1",
+    "C2:t1",
+    "C4:t1"
+   ],
+   "errors": []
+  },
+  {
+   "query": "원투 다음에 로우킥",
+   "ok": true,
+   "mySetups": [
+    "S6:t1",
+    "S2:t1",
+    "S4:t1",
+    "S1:t1",
+    "S5:t1",
+    "S7:t1"
+   ],
+   "myCombos": [
+    "C5:t1",
+    "C1:t1",
+    "C9:t1",
+    "C6:t1",
+    "C2:t1"
+   ],
+   "errors": []
+  },
+  {
+   "query": "상대 가드를 내리게 하는 바디 공격 셋업",
+   "ok": true,
+   "mySetups": [
+    "S4:t1"
+   ],
+   "myCombos": [
+    "C9:t1",
+    "C4:t1",
+    "C3:t2"
+   ],
+   "errors": []
+  },
+  {
+   "query": "몸통 치고 얼굴 치는 콤보",
+   "ok": true,
+   "mySetups": [
+    "S4:t1"
+   ],
+   "myCombos": [
+    "C3:t1",
+    "C9:t1",
+    "C4:t1"
+   ],
+   "errors": []
+  },
+  {
+   "query": "클린치 잡고 무릎",
+   "ok": true,
+   "mySetups": [
+    "S5:t1"
+   ],
+   "myCombos": [],
+   "errors": []
+  },
+  {
+   "query": "상대를 코너로 모는 셋업",
+   "ok": false,
+   "mySetups": [],
+   "myCombos": [],
+   "errors": [
+    "missing S6"
+   ]
+  },
+  {
+   "query": "feint into low kick",
+   "ok": true,
+   "mySetups": [
+    "S7:t1",
+    "S1:t1",
+    "S6:t2"
+   ],
+   "myCombos": [
+    "C5:t1"
+   ],
+   "errors": []
+  },
+  {
+   "query": "level change double leg setup",
+   "ok": true,
+   "mySetups": [
+    "S2:t1",
+    "S1:t2"
+   ],
+   "myCombos": [
+    "C8:t2",
+    "C6:t2"
+   ],
+   "errors": []
+  },
+  {
+   "query": "태클 셋업 추천",
+   "ok": true,
+   "mySetups": [
+    "S3:t2",
+    "S2:t2",
+    "S1:t2"
+   ],
+   "myCombos": [
+    "C8:t2",
+    "C6:t2"
+   ],
+   "errors": []
+  },
+  {
+   "query": "싱글렉 들어가는 셋업",
+   "ok": true,
+   "mySetups": [
+    "S3:t1",
+    "S2:t2",
+    "S1:t2"
+   ],
+   "myCombos": [],
+   "errors": []
+  },
+  {
+   "query": "트라이앵글 초크로 마무리",
+   "ok": true,
+   "mySetups": [],
+   "myCombos": [
+    "C7:t1"
+   ],
+   "errors": []
+  },
+  {
+   "query": "프론트 헤드락 잡는 콤보",
+   "ok": true,
+   "mySetups": [],
+   "myCombos": [
+    "C8:t1"
+   ],
+   "errors": []
+  },
+  {
+   "query": "바디킥 넣는 콤보",
+   "ok": true,
+   "mySetups": [
+    "S4:t2"
+   ],
+   "myCombos": [
+    "C9:t1",
+    "C3:t2",
+    "C4:t2"
+   ],
+   "errors": []
+  },
+  {
+   "query": "훅으로 끝나는 콤보",
+   "ok": true,
+   "mySetups": [
+    "S4:t1"
+   ],
+   "myCombos": [
+    "C3:t1",
+    "C1:t1",
+    "C2:t1",
+    "C4:t1"
+   ],
+   "errors": []
+  },
+  {
+   "query": "오버핸드 이후 테이크다운",
+   "ok": true,
+   "mySetups": [
+    "S3:t1",
+    "S2:t2",
+    "S1:t2"
+   ],
+   "myCombos": [
+    "C8:t2",
+    "C6:t2"
+   ],
+   "errors": []
+  },
+  {
+   "query": "기무라를 위한 셋업",
+   "ok": true,
+   "mySetups": [],
+   "myCombos": [],
+   "errors": []
+  },
+  {
+   "query": "스피닝 엘보 셋업",
+   "ok": true,
+   "mySetups": [],
+   "myCombos": [],
+   "errors": []
+  },
+  {
+   "query": "잽 후 더블렉 셋업",
+   "ok": true,
+   "mySetups": [
+    "S2:t1",
+    "S1:t1",
+    "S6:t1",
+    "S5:t1",
+    "S4:t1"
+   ],
+   "myCombos": [
+    "C6:t1",
+    "C9:t1",
+    "C5:t1",
+    "C1:t1",
+    "C8:t2"
+   ],
+   "errors": []
+  },
+  {
+   "query": "압박해서 후퇴시키는 셋업",
+   "ok": true,
+   "mySetups": [
+    "S6:t1"
+   ],
+   "myCombos": [],
+   "errors": []
+  },
+  {
+   "query": "clinch knee setup",
+   "ok": true,
+   "mySetups": [
+    "S5:t1"
+   ],
+   "myCombos": [],
+   "errors": []
+  },
+  {
+   "query": "가드 여는 콤보",
+   "ok": true,
+   "mySetups": [
+    "S4:t1"
+   ],
+   "myCombos": [],
+   "errors": []
+  },
+  {
+   "query": "하이로우 콤보 바디에서 헤드",
+   "ok": true,
+   "mySetups": [
+    "S4:t1"
+   ],
+   "myCombos": [
+    "C3:t1",
+    "C9:t1",
+    "C4:t1"
+   ],
+   "errors": []
+  },
+  {
+   "query": "크로스 이후 연결 콤보",
+   "ok": true,
+   "mySetups": [
+    "S6:t2",
+    "S2:t2"
+   ],
+   "myCombos": [
+    "C2:t1",
+    "C5:t2",
+    "C1:t2"
+   ],
+   "errors": []
+  },
+  {
+   "query": "로우킥 셋업",
+   "ok": true,
+   "mySetups": [
+    "S7:t1",
+    "S6:t2"
+   ],
+   "myCombos": [
+    "C5:t1"
+   ],
+   "errors": []
+  }
+ ]
+}

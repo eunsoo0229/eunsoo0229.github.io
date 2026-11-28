@@ -1,0 +1,841 @@
+{
+ "about": "TACTICAL FINDER 홀드아웃 30개 입력의 첫 실행 결과 — 규칙 조정 전 (조정 후 결과는 tactical-finder-test.json의 holdout)",
+ "at": "2026-11-28T11:32:54.934Z",
+ "passed": 26,
+ "inputs": 30,
+ "failures": [
+  {
+   "query": "상대가 로우킥 찰 때 받아치고 싶어",
+   "errors": [
+    "목적 counter ⊄ "
+   ]
+  },
+  {
+   "query": "시선을 위로 끌어서 하단을 차는 셋업",
+   "errors": [
+    "상위 추천에 원하는 성격(kick,feint,body) 없음: ",
+    "추천 없음",
+    "셋업 추천 없음"
+   ]
+  },
+  {
+   "query": "레슬링 상대 균형을 무너뜨리는 기술",
+   "errors": [
+    "상위 추천에 원하는 성격(takedown,clinch) 없음: ",
+    "추천 없음"
+   ]
+  },
+  {
+   "query": "초보 복서가 압박하는 상대한테 쓸 쉬운 방어",
+   "errors": [
+    "상황 pressure ⊄ ",
+    "종목 boxing ⊄ "
+   ]
+  }
+ ],
+ "results": [
+  {
+   "type": 4,
+   "query": "상대가 링 줄에 기대면 몰아붙이는 공격",
+   "ok": true,
+   "ms": 23,
+   "analysis": [
+    "원하는 목적: 공격 연결",
+    "상황·상대 행동: 상대가 압박해 옴",
+    "공격/방어: 공격",
+    "전술 유형 (찾는 기술 성격): 카운터 · 펀치 · 연결 공격 · 풋워크"
+   ],
+   "top": {
+    "techniques": [
+     "Straight Knee",
+     "Teep Counter",
+     "Sasae Tsurikomi Ashi"
+    ],
+    "setups": [
+     "Parry → Teep",
+     "Slip Outside → Lead Low Kick → Body Hook → Lead Hook → High Kick"
+    ],
+    "combos": [
+     "Jab → Cross → Lead Hook → Straight Knee",
+     "Switch Kick → Spinning Backfist"
+    ]
+   },
+   "errors": []
+  },
+  {
+   "type": 5,
+   "query": "스트레이트가 계속 들어와서 맞아",
+   "ok": true,
+   "ms": 8,
+   "analysis": [
+    "언급한 기술: Cross"
+   ],
+   "top": {
+    "techniques": [
+     "Jab",
+     "Switch Kick",
+     "Cross-Arm Guard"
+    ],
+    "setups": [
+     "Kick Feint → Cross",
+     "Jab → Cross → Jab Feint → Spinning Elbow"
+    ],
+    "combos": [
+     "1-2-1 · Jab → Cross → Jab",
+     "1-2-1-2 · Jab → Cross → Jab → Cross"
+    ]
+   },
+   "errors": []
+  },
+  {
+   "type": 6,
+   "query": "상대가 로우킥 찰 때 받아치고 싶어",
+   "ok": false,
+   "ms": 13,
+   "analysis": [
+    "상황·상대 행동: 상대가 킥을 씀",
+    "언급한 기술: Low Kick",
+    "전술 유형 (찾는 기술 성격): 방어 · 카운터 · 클린치"
+   ],
+   "top": {
+    "techniques": [
+     "Kick Feint",
+     "Front Kick",
+     "Question Mark Kick"
+    ],
+    "setups": [
+     "Rear Hand Parry → Low Kick",
+     "Lead Hand Parry → Low Kick → Lead Hook"
+    ],
+    "combos": [
+     "Jab → Cross → Lead Uppercut → Low Kick",
+     "Jab → Jab → Cross → Low Kick"
+    ]
+   },
+   "errors": [
+    "목적 counter ⊄ "
+   ]
+  },
+  {
+   "type": 7,
+   "query": "상대가 들어오면 앞차기로 막고 싶어",
+   "ok": true,
+   "ms": 11,
+   "analysis": [
+    "원하는 목적: 방어",
+    "상황·상대 행동: 상대가 공격을 막음",
+    "공격/방어: 방어",
+    "언급한 기술: Front Kick",
+    "전술 유형 (찾는 기술 성격): 방어 · 페인트 · 몸통 공격 · 연결 공격"
+   ],
+   "top": {
+    "techniques": [
+     "Hand Feint",
+     "Flying Knee",
+     "Jumping Knee"
+    ],
+    "setups": [
+     "1f-3 · Jab Feint → Lead Hook",
+     "Cross → High Kick"
+    ],
+    "combos": [
+     "Jab → Cross → Lead Hook → Straight Knee",
+     "Jab → Cross → Lead Hook → Body Kick"
+    ]
+   },
+   "errors": []
+  },
+  {
+   "type": 8,
+   "query": "상대가 싱글렉 잡았을 때 빠져나오는 방법",
+   "ok": true,
+   "ms": 5,
+   "analysis": [
+    "원하는 목적: 탈출",
+    "공격/방어: 방어",
+    "언급한 기술: Single Leg",
+    "전술 유형 (찾는 기술 성격): 탈출 · 가드"
+   ],
+   "top": {
+    "techniques": [
+     "Hip Escape",
+     "Technical Stand-Up",
+     "Backdoor Escape"
+    ],
+    "setups": [
+     "Slip Inside → Lead Uppercut",
+     "Roll → Rear Uppercut"
+    ],
+    "combos": [
+     "Framing → Hip Escape → Technical Stand-Up",
+     "Throw → Side Control / Mount / Turtle Control → Ground and Pound from Mount → Armbar"
+    ]
+   },
+   "errors": []
+  },
+  {
+   "type": 9,
+   "query": "터틀 포지션에서 공격하는 법",
+   "ok": true,
+   "ms": 24,
+   "analysis": [
+    "원하는 목적: 공격 연결",
+    "공격/방어: 공격",
+    "전술 유형 (찾는 기술 성격): 펀치 · 연결 공격 · 킥 · 니"
+   ],
+   "top": {
+    "techniques": [
+     "Straight Knee",
+     "Teep Counter",
+     "Catch and Return"
+    ],
+    "setups": [
+     "Kick Feint → Cross",
+     "Kick Feint → Straight Knee"
+    ],
+    "combos": [
+     "Jab → Cross → Teep → Body Kick",
+     "Jab → Cross → Lead Uppercut → Low Kick"
+    ]
+   },
+   "errors": []
+  },
+  {
+   "type": 9,
+   "query": "니온벨리에서 서브미션 연결",
+   "ok": true,
+   "ms": 7,
+   "analysis": [
+    "원하는 목적: 서브미션",
+    "공격/방어: 공격",
+    "원하는 기술 유형: 서브미션",
+    "전술 유형 (찾는 기술 성격): 서브미션"
+   ],
+   "top": {
+    "techniques": [
+     "Armbar",
+     "Straight Ankle Lock",
+     "Triangle Choke"
+    ],
+    "setups": [
+     "Body Lock → High Kick",
+     "Block → Jab"
+    ],
+    "combos": [
+     "Armbar → Kimura",
+     "Armbar → Triangle → Armbar"
+    ]
+   },
+   "errors": []
+  },
+  {
+   "type": 10,
+   "query": "종합격투기 상대가 태클 들어올 때 무릎",
+   "ok": true,
+   "ms": 9,
+   "analysis": [
+    "원하는 목적: 테이크다운 방어",
+    "상황·상대 행동: 상대가 테이크다운을 시도함",
+    "관련 종목: MMA",
+    "공격/방어: 방어",
+    "원하는 기술 유형: 니",
+    "전술 유형 (찾는 기술 성격): 테이크다운 방어 · 니 · 방어 · 카운터"
+   ],
+   "top": {
+    "techniques": [
+     "Takedown Defense (MMA)",
+     "Sprawl to Strikes",
+     "Whizzer"
+    ],
+    "setups": [
+     "Fake Shot → Overhand",
+     "Catch → Outside Trip"
+    ],
+    "combos": [
+     "Basic Double Leg → Snap Down → Front Headlock",
+     "Sprawl → Sprawl to Strikes"
+    ]
+   },
+   "errors": []
+  },
+  {
+   "type": 3,
+   "query": "훅 이후에 로우킥 연결하는 조합",
+   "ok": true,
+   "ms": 23,
+   "analysis": [
+    "원하는 목적: 공격 연결",
+    "공격/방어: 공격",
+    "추천 형태: 콤보",
+    "언급한 기술: Hook · Low Kick",
+    "전술 유형 (찾는 기술 성격): 펀치 · 연결 공격 · 킥 · 니"
+   ],
+   "top": {
+    "techniques": [
+     "Teep Counter",
+     "Low Kick",
+     "Switch Low Kick"
+    ],
+    "setups": [
+     "Rear Hand Parry → Low Kick",
+     "Lead Hand Parry → Low Kick → Lead Hook"
+    ],
+    "combos": [
+     "Jab → Cross → Lead Uppercut → Low Kick",
+     "Jab → Jab → Cross → Low Kick"
+    ]
+   },
+   "errors": []
+  },
+  {
+   "type": 2,
+   "query": "시선을 위로 끌어서 하단을 차는 셋업",
+   "ok": false,
+   "ms": 1,
+   "analysis": [
+    "추천 형태: 셋업"
+   ],
+   "top": {
+    "techniques": [],
+    "setups": [],
+    "combos": []
+   },
+   "errors": [
+    "상위 추천에 원하는 성격(kick,feint,body) 없음: ",
+    "추천 없음",
+    "셋업 추천 없음"
+   ]
+  },
+  {
+   "type": 1,
+   "query": "앞손으로 거리를 재는 기술",
+   "ok": true,
+   "ms": 17,
+   "analysis": [
+    "원하는 목적: 거리 조절",
+    "공격/방어: 방어",
+    "전술 유형 (찾는 기술 성격): 풋워크 · 거리 조절 · 방어"
+   ],
+   "top": {
+    "techniques": [
+     "Teep to Leg",
+     "Switch Kick",
+     "Step Back"
+    ],
+    "setups": [
+     "Cross → Lead Hook → Level Change Double Leg",
+     "Roll → Lead Hook"
+    ],
+    "combos": [
+     "1-6-3-2 · Jab → Rear Uppercut → Lead Hook → Cross",
+     "1-3-2 · Jab → Lead Hook → Cross"
+    ]
+   },
+   "errors": []
+  },
+  {
+   "type": 14,
+   "query": "복싱에서 키 큰 상대 잽을 피하면서 안으로 들어가기",
+   "ok": true,
+   "ms": 6,
+   "analysis": [
+    "상황·상대 행동: 상대가 잽에 반응함 · 상대가 키·리치가 큼 · 상대가 펀치를 씀",
+    "관련 종목: 복싱",
+    "언급한 기술: Jab",
+    "전술 유형 (찾는 기술 성격): 카운터 · 페인트 · 압박 · 방어"
+   ],
+   "top": {
+    "techniques": [
+     "Backfist",
+     "Step Back",
+     "Combination Pressure"
+    ],
+    "setups": [
+     "Block → Jab",
+     "Catch → Jab"
+    ],
+    "combos": [
+     "1-6-3-2 · Jab → Rear Uppercut → Lead Hook → Cross",
+     "1-3-2 · Jab → Lead Hook → Cross"
+    ]
+   },
+   "errors": []
+  },
+  {
+   "type": 11,
+   "query": "상대가 자꾸 클린치 잡는데 어케 떼냄",
+   "ok": true,
+   "ms": 11,
+   "analysis": [
+    "원하는 목적: 클린치 공략",
+    "상황·상대 행동: 클린치 상황",
+    "거리: 클린치",
+    "공격/방어: 공격",
+    "전술 유형 (찾는 기술 성격): 클린치 · 니 · 엘보 · 테이크다운"
+   ],
+   "top": {
+    "techniques": [
+     "Clinch Knee",
+     "Elbow from Clinch",
+     "Straight Knee"
+    ],
+    "setups": [
+     "Catch → Outside Trip",
+     "Catch → Straight Knee"
+    ],
+    "combos": [
+     "Jab → Cross → Lead Knee → Horizontal Elbow",
+     "Lead Uppercut → Cross → Body Hook → Lead Knee → Horizontal Elbow"
+    ]
+   },
+   "errors": []
+  },
+  {
+   "type": 11,
+   "query": "how to counter a jab",
+   "ok": true,
+   "ms": 16,
+   "analysis": [
+    "원하는 목적: 카운터",
+    "공격/방어: 방어",
+    "언급한 기술: Jab",
+    "전술 유형 (찾는 기술 성격): 카운터 · 방어 · 펀치"
+   ],
+   "top": {
+    "techniques": [
+     "Jab",
+     "Jab Counter",
+     "Catch and Return"
+    ],
+    "setups": [
+     "Block → Jab",
+     "Parry → Jab → Cross"
+    ],
+    "combos": [
+     "1-2-/1/-2 · Jab → Cross → Slip → Cross",
+     "1-2-{3}-3-2 · Jab → Cross → Roll → Lead Hook → Cross"
+    ]
+   },
+   "errors": []
+  },
+  {
+   "type": 12,
+   "query": "아무거나",
+   "ok": true,
+   "ms": 1,
+   "analysis": [],
+   "top": {
+    "techniques": [],
+    "setups": [],
+    "combos": []
+   },
+   "errors": []
+  },
+  {
+   "type": 13,
+   "query": "cobra lightning elbow 쓰는 법",
+   "ok": true,
+   "ms": 4,
+   "analysis": [
+    "원하는 기술 유형: 엘보",
+    "전술 유형 (찾는 기술 성격): 엘보"
+   ],
+   "top": {
+    "techniques": [
+     "Downward Elbow",
+     "Horizontal Elbow",
+     "Upward Elbow"
+    ],
+    "setups": [
+     "Jab → Cross → Jab Feint → Spinning Elbow",
+     "Body Jab → Lead Hook"
+    ],
+    "combos": [
+     "Jab → Cross → Body Hook → High Kick",
+     "Jab → Cross → Horizontal Elbow"
+    ]
+   },
+   "errors": []
+  },
+  {
+   "type": 5,
+   "query": "바디블로 맞을 때 막는 방법",
+   "ok": true,
+   "ms": 14,
+   "analysis": [
+    "원하는 목적: 방어",
+    "공격/방어: 방어",
+    "원하는 기술 유형: 몸통 공격",
+    "전술 유형 (찾는 기술 성격): 방어 · 몸통 공격 · 풋워크 · 테이크다운 방어"
+   ],
+   "top": {
+    "techniques": [
+     "몸통막기",
+     "Check Hook",
+     "Armbar"
+    ],
+    "setups": [
+     "Slip Outside → Lead Hook",
+     "Roll → Body Hook → Rear Hook → Lead Hook"
+    ],
+    "combos": [
+     "Jab → Cross → Lead Hook → Straight Knee",
+     "Jab → Cross → Lead Hook → Body Kick"
+    ]
+   },
+   "errors": []
+  },
+  {
+   "type": 7,
+   "query": "상대가 거리를 두고 아웃파이팅하면 어떻게 좁히지",
+   "ok": true,
+   "ms": 19,
+   "analysis": [
+    "원하는 목적: 거리 조절",
+    "거리: 원거리",
+    "공격/방어: 방어",
+    "전술 유형 (찾는 기술 성격): 거리 조절 · 풋워크 · 킥 · 방어"
+   ],
+   "top": {
+    "techniques": [
+     "Teep to Leg",
+     "Switch Kick",
+     "Side Teep"
+    ],
+    "setups": [
+     "Slip Outside → Cross → Lead Hook → Low Kick",
+     "Slip Outside → Lead Low Kick"
+    ],
+    "combos": [
+     "Jab → Cross → Lead Hook → Straight Knee",
+     "Inside Low Kick → Lead Hook → Cross"
+    ]
+   },
+   "errors": []
+  },
+  {
+   "type": 8,
+   "query": "레슬링 상대 균형을 무너뜨리는 기술",
+   "ok": false,
+   "ms": 1,
+   "analysis": [
+    "관련 종목: 레슬링"
+   ],
+   "top": {
+    "techniques": [],
+    "setups": [],
+    "combos": []
+   },
+   "errors": [
+    "상위 추천에 원하는 성격(takedown,clinch) 없음: ",
+    "추천 없음"
+   ]
+  },
+  {
+   "type": 10,
+   "query": "MMA 상대가 케이지로 밀 때 빠져나오기",
+   "ok": true,
+   "ms": 6,
+   "analysis": [
+    "원하는 목적: 탈출",
+    "관련 종목: MMA",
+    "공격/방어: 방어",
+    "전술 유형 (찾는 기술 성격): 탈출 · 가드"
+   ],
+   "top": {
+    "techniques": [
+     "Hip Escape",
+     "Armbar",
+     "Technical Stand-Up"
+    ],
+    "setups": [
+     "Slip Inside → Lead Uppercut",
+     "Roll → Rear Uppercut"
+    ],
+    "combos": [
+     "Framing → Hip Escape → Technical Stand-Up",
+     "Throw → Side Control / Mount / Turtle Control → Ground and Pound from Mount → Armbar"
+    ]
+   },
+   "errors": []
+  },
+  {
+   "type": 9,
+   "query": "삼각조르기 들어가는 셋업",
+   "ok": true,
+   "ms": 5,
+   "analysis": [
+    "원하는 목적: 서브미션",
+    "공격/방어: 공격",
+    "원하는 기술 유형: 서브미션",
+    "추천 형태: 셋업",
+    "전술 유형 (찾는 기술 성격): 서브미션"
+   ],
+   "top": {
+    "techniques": [
+     "Armbar",
+     "Straight Ankle Lock",
+     "Triangle Choke"
+    ],
+    "setups": [
+     "Body Lock → High Kick",
+     "Block → Jab"
+    ],
+    "combos": [
+     "Armbar → Kimura",
+     "Armbar → Triangle → Armbar"
+    ]
+   },
+   "errors": []
+  },
+  {
+   "type": 6,
+   "query": "상대 훅을 숙여 피하고 어퍼컷",
+   "ok": true,
+   "ms": 14,
+   "analysis": [
+    "원하는 목적: 방어",
+    "상황·상대 행동: 상대가 펀치를 씀",
+    "공격/방어: 방어",
+    "언급한 기술: Hook · Uppercut",
+    "전술 유형 (찾는 기술 성격): 방어 · 카운터 · 풋워크 · 테이크다운 방어"
+   ],
+   "top": {
+    "techniques": [
+     "Catch and Return",
+     "Check Hook",
+     "Takedown Defense (MMA)"
+    ],
+    "setups": [
+     "Roll → Lead Hook",
+     "Double Slip → Lead Hook → Cross"
+    ],
+    "combos": [
+     "1-2-{3}-3-2 · Jab → Cross → Roll → Lead Hook → Cross",
+     "Jab → Cross → Lead Hook → Straight Knee"
+    ]
+   },
+   "errors": []
+  },
+  {
+   "type": 4,
+   "query": "무에타이에서 상대 가드를 열고 엘보 넣기",
+   "ok": true,
+   "ms": 2,
+   "analysis": [
+    "관련 종목: 무에타이",
+    "원하는 기술 유형: 엘보",
+    "전술 유형 (찾는 기술 성격): 엘보"
+   ],
+   "top": {
+    "techniques": [
+     "Sok Phung",
+     "Spinning Elbow",
+     "Back Elbow"
+    ],
+    "setups": [
+     "Guard Pull-Down → Horizontal Elbow",
+     "Jab → Cross → Guard Pull-Down → Horizontal Elbow"
+    ],
+    "combos": [
+     "Jab → Cross → Horizontal Elbow",
+     "Jab → Cross → Lead Knee → Horizontal Elbow"
+    ]
+   },
+   "errors": []
+  },
+  {
+   "type": 1,
+   "query": "유도에서 상대가 뒤로 버틸 때 쓰는 메치기",
+   "ok": true,
+   "ms": 3,
+   "analysis": [
+    "원하는 목적: 테이크다운",
+    "관련 종목: 유도",
+    "공격/방어: 공격",
+    "원하는 기술 유형: 테이크다운",
+    "추천 형태: 셋업",
+    "전술 유형 (찾는 기술 성격): 테이크다운 · 클린치"
+   ],
+   "top": {
+    "techniques": [
+     "De Ashi Barai",
+     "Kouchi Gari",
+     "Osoto Gari"
+    ],
+    "setups": [],
+    "combos": [
+     "Ouchi Gari → Seoi Nage",
+     "Ouchi Gari → Uchi Mata"
+    ]
+   },
+   "errors": []
+  },
+  {
+   "type": 14,
+   "query": "초보 복서가 압박하는 상대한테 쓸 쉬운 방어",
+   "ok": false,
+   "ms": 13,
+   "analysis": [
+    "원하는 목적: 방어",
+    "공격/방어: 방어",
+    "난이도: 초급",
+    "전술 유형 (찾는 기술 성격): 방어 · 풋워크 · 테이크다운 방어"
+   ],
+   "top": {
+    "techniques": [
+     "Overhook",
+     "Armbar",
+     "Check Hook"
+    ],
+    "setups": [
+     "1f-3 · Jab Feint → Lead Hook",
+     "Cross → Lead Hook → Level Change Double Leg"
+    ],
+    "combos": [
+     "1-6-3-2 · Jab → Rear Uppercut → Lead Hook → Cross",
+     "1-3-2 · Jab → Lead Hook → Cross"
+    ]
+   },
+   "errors": [
+    "상황 pressure ⊄ ",
+    "종목 boxing ⊄ "
+   ]
+  },
+  {
+   "type": "safety",
+   "query": "상대가 못 일어나게 만드는 니킥",
+   "ok": true,
+   "ms": 4,
+   "analysis": [
+    "원하는 목적: 탈출",
+    "상황·상대 행동: 상대가 킥을 씀",
+    "공격/방어: 방어",
+    "원하는 기술 유형: 니",
+    "언급한 기술: Straight Knee",
+    "전술 유형 (찾는 기술 성격): 탈출 · 니 · 방어 · 카운터"
+   ],
+   "top": {
+    "techniques": [
+     "Hip Escape",
+     "Bridge and Roll",
+     "Pivot"
+    ],
+    "setups": [],
+    "combos": []
+   },
+   "errors": []
+  },
+  {
+   "type": 3,
+   "query": "레슬링 테이크다운 실패 후 다시 들어가는 연결",
+   "ok": true,
+   "ms": 2,
+   "analysis": [
+    "원하는 목적: 테이크다운",
+    "관련 종목: 레슬링",
+    "공격/방어: 공격",
+    "원하는 기술 유형: 테이크다운",
+    "전술 유형 (찾는 기술 성격): 테이크다운 · 클린치"
+   ],
+   "top": {
+    "techniques": [
+     "Ankle Pick",
+     "Basic Double Leg",
+     "Body Lock Lift"
+    ],
+    "setups": [
+     "Fake Shot → Snap Down → Front Headlock",
+     "Collar Tie → Duck Under"
+    ],
+    "combos": [
+     "Collar Tie → Snap Down → Ankle Pick",
+     "Collar Tie → Duck Under → Go-Behind"
+    ]
+   },
+   "errors": []
+  },
+  {
+   "type": 7,
+   "query": "사우스포 상대와 거리 싸움",
+   "ok": true,
+   "ms": 15,
+   "analysis": [
+    "원하는 목적: 거리 조절",
+    "공격/방어: 방어",
+    "전술 유형 (찾는 기술 성격): 풋워크 · 거리 조절 · 방어"
+   ],
+   "top": {
+    "techniques": [
+     "Teep to Leg",
+     "Switch Kick",
+     "Step Back"
+    ],
+    "setups": [
+     "Cross → Lead Hook → Level Change Double Leg",
+     "Roll → Lead Hook"
+    ],
+    "combos": [
+     "1-6-3-2 · Jab → Rear Uppercut → Lead Hook → Cross",
+     "1-3-2 · Jab → Lead Hook → Cross"
+    ]
+   },
+   "errors": []
+  },
+  {
+   "type": 5,
+   "query": "킥복싱 하이킥 방어",
+   "ok": true,
+   "ms": 3,
+   "analysis": [
+    "원하는 목적: 방어",
+    "관련 종목: 킥복싱",
+    "공격/방어: 방어",
+    "언급한 기술: High Kick",
+    "전술 유형 (찾는 기술 성격): 방어 · 풋워크 · 테이크다운 방어"
+   ],
+   "top": {
+    "techniques": [
+     "Pivot",
+     "Angle Out",
+     "Catch"
+    ],
+    "setups": [
+     "Slip Outside → Lead Low Kick",
+     "Slip Outside → Cross → Lead Hook → Cross"
+    ],
+    "combos": [
+     "Jab → Cross → Lead Hook → Straight Knee",
+     "Inside Low Kick → Lead Hook → Cross"
+    ]
+   },
+   "errors": []
+  },
+  {
+   "type": 2,
+   "query": "페이크 슛으로 상대 손을 내리게 하고 펀치",
+   "ok": true,
+   "ms": 13,
+   "analysis": [
+    "원하는 기술 유형: 펀치 · 페인트",
+    "전술 유형 (찾는 기술 성격): 펀치 · 페인트"
+   ],
+   "top": {
+    "techniques": [
+     "Jab Feint",
+     "Backfist",
+     "Gyaku-zuki"
+    ],
+    "setups": [
+     "1f-3 · Jab Feint → Lead Hook",
+     "Kick Feint → Cross"
+    ],
+    "combos": [
+     "Jab Feint → Lead Hook → Low Kick",
+     "Jab → Jab Feint → Lead Round Kick"
+    ]
+   },
+   "errors": []
+  }
+ ]
+}

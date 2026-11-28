@@ -130,6 +130,15 @@ export const CHAPTERS: Chapter[] = [
       { to: '/admin/platform', label: '플랫폼 관리 (운영자)' },
     ],
   },
+  {
+    no: '08', key: 'tactical', title: 'TACTICAL FINDER', label: '전술 파인더', to: '/tactical-finder', icon: 'target',
+    match: ['/tactical-finder'],
+    items: [
+      { to: '/tactical-finder', label: '목적으로 기술·셋업·콤보 찾기', highlight: true },
+      { to: '/tactical-finder?view=saved', label: '저장한 추천' },
+      { to: '/tactical-finder?view=history', label: '검색 기록' },
+    ],
+  },
 ];
 
 // AI-only screens (situation, ai-combo, my-style …) live behind the AI Coach hub, not in other menus

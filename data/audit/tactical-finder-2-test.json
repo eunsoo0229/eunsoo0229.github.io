@@ -1,0 +1,2359 @@
+{
+ "generatedBy": ".devtools/test-tactical-finder-2.mjs",
+ "at": "2026-11-28T12:30:53.546Z",
+ "fixture": {
+  "combos": 14,
+  "tactics": 5,
+  "otherAccount": 2,
+  "note": "[TEST] in-memory fixture only — never written to real storage"
+ },
+ "libraryInputs": 102,
+ "libraryPassed": 102,
+ "recall": "158/158",
+ "falsePositives": 0,
+ "timing": {
+  "medianMs": 6.7,
+  "p95Ms": 11.7,
+  "maxMs": 183
+ },
+ "special": [
+  {
+   "name": "목적 없는 입력 → 안내, 결과 없음",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "의미 없는 입력 → 결과 없음",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "위해 목적 → 차단",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "다른 계정 항목은 검색 대상에서 제외(개수 표시)",
+   "ok": true,
+   "detail": "{\"combos\":13,\"tactics\":4,\"library\":270,\"otherAccount\":2}"
+  },
+  {
+   "name": "개수 제한 없음 (해당 항목 모두 반환)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "MY SETUPS에는 셋업만 / MY COMBOS에는 콤보만",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "MARTIALDEX 라이브러리는 별도 섹션",
+   "ok": true,
+   "detail": "library 35"
+  },
+  {
+   "name": "검색은 저장 데이터를 바꾸지 않음",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "로그아웃 상태 → 계정 표시 항목 검색 안 함",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "계정 전환 → 그 계정 항목만(이 계정 표시 항목 제외)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "저장 데이터 없음 → 안내 + 라이브러리만",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "손상된 저장 데이터 → 오류 없이 빈 목록",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "대량 데이터(콤보 2,000 + 셋업 500) 검색 시간",
+   "ok": true,
+   "detail": "62/71/69 ms"
+  },
+  {
+   "name": "대량 데이터에서 더블렉 포함 콤보를 빠짐없이 반환",
+   "ok": true,
+   "detail": "553/553"
+  },
+  {
+   "name": "계정 전환(A→B) → A의 콤보·셋업이 B의 검색에 나오지 않음",
+   "ok": true,
+   "detail": "{\"combos\":0,\"tactics\":0,\"library\":270,\"otherAccount\":0}"
+  },
+  {
+   "name": "A로 복귀 → A의 기록·파인더 설정(mode/tab) 복원 후 다시 검색됨",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "앱 DB 캐시와 웹 캐시 분리 (웹 캐시 초기화 후에도 앱 결과는 캐시)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "웹 검색은 저장 데이터를 바꾸지 않음 (자동 저장 없음)",
+   "ok": true,
+   "detail": ""
+  }
+ ],
+ "web": [
+  {
+   "name": "웹: 성공 → status ok, 실제 검색어·출처 보존",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "웹: Gemini 요청에 Google 검색 그라운딩 + gemini 엔진 지정",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "웹: 같은 구성(잽→더블렉) 중복 제거 + 출처 병합",
+   "ok": true,
+   "detail": "[{\"title\":\"evolve-mma.com\",\"url\":\"https://vertexaisearch.cloud.google.com/grounding-api-redirect/BBB\",\"grounded\":true},{\"title\":\"bjjfanatics.com\",\"url\":\"https://vertexaisearch.cloud.google.com/grounding-api-redirect/AAA\",\"grounded\":true}]"
+  },
+  {
+   "name": "웹: 인용 URL의 사이트가 검색 출처와 일치 → verified + web-confirmed",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "웹: 검색 출처에 없는 URL → 표시 안 함, AI 조합(출처 미확인)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "웹: DB에 없는 기술 이름은 techniqueId 없음 (지어내지 않음)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "웹: composed:true → AI GENERATED",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "웹: 같은 검색 반복 → 캐시, Gemini 재호출 없음",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "웹: 탭별 캐시 분리 (TECHNIQUE 탭은 새로 검색)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "웹: 동시에 두 번 눌러도 Gemini 1회",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "웹: 그라운딩 출처 없음 → no-grounding, 결과 표시 안 함",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "웹: 사용 한도 초과 → error + 안내 문구",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "웹: API 키 없음 → error",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "웹: 그라운딩 미지원 응답 → error, 원문 메시지",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "웹: 예외 → error (앱 결과로 대체 안 함)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "웹: 실패한 검색은 캐시하지 않음 (다시 시도 가능)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "웹: JSON 아님 → PARSE_ERROR",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "웹: 검색은 됐지만 항목 없음 → empty",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "웹: SETUP & COMBO 탭은 단일 기술을 넣지 않음",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "웹: 그라운딩 URL 그대로 인용 → verified, TECHNIQUE 탭은 단일 기술 허용",
+   "ok": true,
+   "detail": ""
+  }
+ ],
+ "holdout": {
+  "passed": 25,
+  "total": 25,
+  "results": [
+   {
+    "query": "더블렉 들어가기 전에 쓸 셋업",
+    "ok": true,
+    "mySetups": [
+     "S1:t1",
+     "S2:t2"
+    ],
+    "myCombos": [
+     "C6:t1",
+     "C8:t2"
+    ],
+    "errors": []
+   },
+   {
+    "query": "잽으로 시작해서 훅으로 끝나는 콤보",
+    "ok": true,
+    "mySetups": [
+     "S4:t1",
+     "S6:t1",
+     "S5:t1",
+     "S1:t1",
+     "S2:t1"
+    ],
+    "myCombos": [
+     "C1:t1",
+     "C9:t1",
+     "C5:t1",
+     "C3:t1",
+     "C6:t1",
+     "C2:t1",
+     "C4:t1"
+    ],
+    "errors": []
+   },
+   {
+    "query": "원투 다음에 로우킥",
+    "ok": true,
+    "mySetups": [
+     "S6:t1",
+     "S2:t1",
+     "S4:t1",
+     "S1:t1",
+     "S5:t1",
+     "S7:t1"
+    ],
+    "myCombos": [
+     "C5:t1",
+     "C1:t1",
+     "C9:t1",
+     "C6:t1",
+     "C2:t1"
+    ],
+    "errors": []
+   },
+   {
+    "query": "상대 가드를 내리게 하는 바디 공격 셋업",
+    "ok": true,
+    "mySetups": [
+     "S4:t1"
+    ],
+    "myCombos": [
+     "C9:t1",
+     "C4:t1",
+     "C3:t2"
+    ],
+    "errors": []
+   },
+   {
+    "query": "몸통 치고 얼굴 치는 콤보",
+    "ok": true,
+    "mySetups": [
+     "S4:t1"
+    ],
+    "myCombos": [
+     "C3:t1",
+     "C9:t1",
+     "C4:t1"
+    ],
+    "errors": []
+   },
+   {
+    "query": "클린치 잡고 무릎",
+    "ok": true,
+    "mySetups": [
+     "S5:t1"
+    ],
+    "myCombos": [],
+    "errors": []
+   },
+   {
+    "query": "상대를 코너로 모는 셋업",
+    "ok": true,
+    "mySetups": [
+     "S6:t1"
+    ],
+    "myCombos": [],
+    "errors": []
+   },
+   {
+    "query": "feint into low kick",
+    "ok": true,
+    "mySetups": [
+     "S7:t1",
+     "S1:t1",
+     "S6:t2"
+    ],
+    "myCombos": [
+     "C5:t1"
+    ],
+    "errors": []
+   },
+   {
+    "query": "level change double leg setup",
+    "ok": true,
+    "mySetups": [
+     "S2:t1",
+     "S1:t2"
+    ],
+    "myCombos": [
+     "C8:t2",
+     "C6:t2"
+    ],
+    "errors": []
+   },
+   {
+    "query": "태클 셋업 추천",
+    "ok": true,
+    "mySetups": [
+     "S3:t2",
+     "S2:t2",
+     "S1:t2"
+    ],
+    "myCombos": [
+     "C8:t2",
+     "C6:t2"
+    ],
+    "errors": []
+   },
+   {
+    "query": "싱글렉 들어가는 셋업",
+    "ok": true,
+    "mySetups": [
+     "S3:t1",
+     "S2:t2",
+     "S1:t2"
+    ],
+    "myCombos": [],
+    "errors": []
+   },
+   {
+    "query": "트라이앵글 초크로 마무리",
+    "ok": true,
+    "mySetups": [],
+    "myCombos": [
+     "C7:t1"
+    ],
+    "errors": []
+   },
+   {
+    "query": "프론트 헤드락 잡는 콤보",
+    "ok": true,
+    "mySetups": [],
+    "myCombos": [
+     "C8:t1"
+    ],
+    "errors": []
+   },
+   {
+    "query": "바디킥 넣는 콤보",
+    "ok": true,
+    "mySetups": [
+     "S4:t2"
+    ],
+    "myCombos": [
+     "C9:t1",
+     "C3:t2",
+     "C4:t2"
+    ],
+    "errors": []
+   },
+   {
+    "query": "훅으로 끝나는 콤보",
+    "ok": true,
+    "mySetups": [
+     "S4:t1"
+    ],
+    "myCombos": [
+     "C3:t1",
+     "C1:t1",
+     "C2:t1",
+     "C4:t1"
+    ],
+    "errors": []
+   },
+   {
+    "query": "오버핸드 이후 테이크다운",
+    "ok": true,
+    "mySetups": [
+     "S3:t1",
+     "S2:t2",
+     "S1:t2"
+    ],
+    "myCombos": [
+     "C8:t2",
+     "C6:t2"
+    ],
+    "errors": []
+   },
+   {
+    "query": "기무라를 위한 셋업",
+    "ok": true,
+    "mySetups": [],
+    "myCombos": [],
+    "errors": []
+   },
+   {
+    "query": "스피닝 엘보 셋업",
+    "ok": true,
+    "mySetups": [],
+    "myCombos": [],
+    "errors": []
+   },
+   {
+    "query": "잽 후 더블렉 셋업",
+    "ok": true,
+    "mySetups": [
+     "S2:t1",
+     "S1:t1",
+     "S6:t1",
+     "S5:t1",
+     "S4:t1"
+    ],
+    "myCombos": [
+     "C6:t1",
+     "C9:t1",
+     "C5:t1",
+     "C1:t1",
+     "C8:t2"
+    ],
+    "errors": []
+   },
+   {
+    "query": "압박해서 후퇴시키는 셋업",
+    "ok": true,
+    "mySetups": [
+     "S6:t1"
+    ],
+    "myCombos": [],
+    "errors": []
+   },
+   {
+    "query": "clinch knee setup",
+    "ok": true,
+    "mySetups": [
+     "S5:t1"
+    ],
+    "myCombos": [],
+    "errors": []
+   },
+   {
+    "query": "가드 여는 콤보",
+    "ok": true,
+    "mySetups": [
+     "S4:t1"
+    ],
+    "myCombos": [],
+    "errors": []
+   },
+   {
+    "query": "하이로우 콤보 바디에서 헤드",
+    "ok": true,
+    "mySetups": [
+     "S4:t1"
+    ],
+    "myCombos": [
+     "C3:t1",
+     "C9:t1",
+     "C4:t1"
+    ],
+    "errors": []
+   },
+   {
+    "query": "크로스 이후 연결 콤보",
+    "ok": true,
+    "mySetups": [
+     "S6:t2",
+     "S2:t2"
+    ],
+    "myCombos": [
+     "C2:t1",
+     "C5:t2",
+     "C1:t2"
+    ],
+    "errors": []
+   },
+   {
+    "query": "로우킥 셋업",
+    "ok": true,
+    "mySetups": [
+     "S7:t1",
+     "S6:t2"
+    ],
+    "myCombos": [
+     "C5:t1"
+    ],
+    "errors": []
+   }
+  ]
+ },
+ "results": [
+  {
+   "group": "더블렉 셋업",
+   "query": "더블렉을 위한 셋업",
+   "ok": true,
+   "ms": 183,
+   "mySetups": [
+    "S1:t1:80",
+    "S2:t2:56"
+   ],
+   "myCombos": [
+    "C6:t1:80",
+    "C8:t2:56"
+   ],
+   "related": [
+    "C9:t4",
+    "S6:t4",
+    "S3:t4",
+    "C5:t4",
+    "C1:t4",
+    "S5:t4"
+   ],
+   "library": 35,
+   "errors": []
+  },
+  {
+   "group": "더블렉 셋업",
+   "query": "더블렉 셋업",
+   "ok": true,
+   "ms": 22.3,
+   "mySetups": [
+    "S1:t1:80",
+    "S2:t2:56"
+   ],
+   "myCombos": [
+    "C6:t1:80",
+    "C8:t2:56"
+   ],
+   "related": [
+    "C9:t4",
+    "S6:t4",
+    "S3:t4",
+    "C5:t4",
+    "C1:t4",
+    "S5:t4"
+   ],
+   "library": 35,
+   "errors": []
+  },
+  {
+   "group": "더블렉 셋업",
+   "query": "더블 렉 들어가는 셋업",
+   "ok": true,
+   "ms": 8.6,
+   "mySetups": [
+    "S1:t1:80",
+    "S2:t2:56"
+   ],
+   "myCombos": [
+    "C6:t1:80",
+    "C8:t2:56"
+   ],
+   "related": [
+    "C9:t4",
+    "S6:t4",
+    "S3:t4",
+    "C5:t4",
+    "C1:t4",
+    "S5:t4"
+   ],
+   "library": 35,
+   "errors": []
+  },
+  {
+   "group": "더블렉 셋업",
+   "query": "Double Leg setup",
+   "ok": true,
+   "ms": 27.3,
+   "mySetups": [
+    "S1:t1:80",
+    "S2:t2:56"
+   ],
+   "myCombos": [
+    "C6:t1:80",
+    "C8:t2:56"
+   ],
+   "related": [
+    "C9:t4",
+    "S6:t4",
+    "S3:t4",
+    "C5:t4",
+    "C1:t4",
+    "S5:t4"
+   ],
+   "library": 35,
+   "errors": []
+  },
+  {
+   "group": "더블렉 셋업",
+   "query": "double leg 셋업",
+   "ok": true,
+   "ms": 7.9,
+   "mySetups": [
+    "S1:t1:80",
+    "S2:t2:56"
+   ],
+   "myCombos": [
+    "C6:t1:80",
+    "C8:t2:56"
+   ],
+   "related": [
+    "C9:t4",
+    "S6:t4",
+    "S3:t4",
+    "C5:t4",
+    "C1:t4",
+    "S5:t4"
+   ],
+   "library": 35,
+   "errors": []
+  },
+  {
+   "group": "더블렉 셋업",
+   "query": "더블랙 셋업",
+   "ok": true,
+   "ms": 7.7,
+   "mySetups": [
+    "S1:t1:50",
+    "S2:t2:26"
+   ],
+   "myCombos": [
+    "C6:t1:50",
+    "C8:t2:26"
+   ],
+   "related": [],
+   "library": 35,
+   "errors": []
+  },
+  {
+   "group": "더블렉 셋업",
+   "query": "더블렉 진입을 위한 셋업",
+   "ok": true,
+   "ms": 8.8,
+   "mySetups": [
+    "S1:t1:80",
+    "S2:t2:56"
+   ],
+   "myCombos": [
+    "C6:t1:80",
+    "C8:t2:56"
+   ],
+   "related": [
+    "C9:t4",
+    "S6:t4",
+    "S3:t4",
+    "C5:t4",
+    "C1:t4",
+    "S5:t4"
+   ],
+   "library": 35,
+   "errors": []
+  },
+  {
+   "group": "더블렉 셋업",
+   "query": "레벨 체인지로 더블렉 들어가기",
+   "ok": true,
+   "ms": 11.4,
+   "mySetups": [
+    "S1:t1:80",
+    "S2:t2:41"
+   ],
+   "myCombos": [
+    "C6:t1:65",
+    "C8:t2:41"
+   ],
+   "related": [],
+   "library": 35,
+   "errors": []
+  },
+  {
+   "group": "더블렉 셋업",
+   "query": "더블렉 테이크다운 셋업 알려줘",
+   "ok": true,
+   "ms": 11.7,
+   "mySetups": [
+    "S1:t1:100",
+    "S2:t2:78",
+    "S3:t2:52"
+   ],
+   "myCombos": [
+    "C6:t1:100",
+    "C8:t2:82"
+   ],
+   "related": [
+    "S5:t4"
+   ],
+   "library": 43,
+   "errors": []
+  },
+  {
+   "group": "더블렉 셋업",
+   "query": "setup for double leg",
+   "ok": true,
+   "ms": 10.5,
+   "mySetups": [
+    "S1:t1:80",
+    "S2:t2:56"
+   ],
+   "myCombos": [
+    "C6:t1:80",
+    "C8:t2:56"
+   ],
+   "related": [
+    "C9:t4",
+    "S6:t4",
+    "S3:t4",
+    "C5:t4",
+    "C1:t4",
+    "S5:t4"
+   ],
+   "library": 35,
+   "errors": []
+  },
+  {
+   "group": "더블렉 셋업",
+   "query": "더블렉 넣기 위한 셋업",
+   "ok": true,
+   "ms": 10.8,
+   "mySetups": [
+    "S1:t1:80",
+    "S2:t2:56"
+   ],
+   "myCombos": [
+    "C6:t1:80",
+    "C8:t2:56"
+   ],
+   "related": [
+    "C9:t4",
+    "S6:t4",
+    "S3:t4",
+    "C5:t4",
+    "C1:t4",
+    "S5:t4"
+   ],
+   "library": 35,
+   "errors": []
+  },
+  {
+   "group": "더블렉 셋업",
+   "query": "더블렉으로 끝나는 셋업",
+   "ok": true,
+   "ms": 8,
+   "mySetups": [
+    "S1:t1:80",
+    "S2:t2:56"
+   ],
+   "myCombos": [
+    "C6:t1:80",
+    "C8:t2:56"
+   ],
+   "related": [
+    "C9:t4",
+    "S6:t4",
+    "S3:t4",
+    "C5:t4",
+    "C1:t4",
+    "S5:t4"
+   ],
+   "library": 35,
+   "errors": []
+  },
+  {
+   "group": "잽 이후 콤보",
+   "query": "잽 이후 연결할 수 있는 콤보",
+   "ok": true,
+   "ms": 11.7,
+   "mySetups": [
+    "S6:t1:80",
+    "S5:t1:80",
+    "S1:t1:77",
+    "S4:t1:72",
+    "S2:t1:72"
+   ],
+   "myCombos": [
+    "C9:t1:80",
+    "C5:t1:80",
+    "C1:t1:72",
+    "C6:t1:72"
+   ],
+   "related": [
+    "S7:t4"
+   ],
+   "library": 102,
+   "errors": []
+  },
+  {
+   "group": "잽 이후 콤보",
+   "query": "잽 다음 콤보",
+   "ok": true,
+   "ms": 9.7,
+   "mySetups": [
+    "S6:t1:80",
+    "S5:t1:80",
+    "S1:t1:77",
+    "S4:t1:72",
+    "S2:t1:72"
+   ],
+   "myCombos": [
+    "C9:t1:80",
+    "C5:t1:80",
+    "C1:t1:72",
+    "C6:t1:72"
+   ],
+   "related": [
+    "S7:t4"
+   ],
+   "library": 102,
+   "errors": []
+  },
+  {
+   "group": "잽 이후 콤보",
+   "query": "잽 후에 이어지는 콤비네이션",
+   "ok": true,
+   "ms": 8.3,
+   "mySetups": [
+    "S4:t1:50",
+    "S6:t1:50",
+    "S2:t1:50",
+    "S1:t1:50",
+    "S5:t1:50"
+   ],
+   "myCombos": [
+    "C9:t1:50",
+    "C5:t1:50",
+    "C1:t1:50",
+    "C6:t1:50"
+   ],
+   "related": [],
+   "library": 102,
+   "errors": []
+  },
+  {
+   "group": "잽 이후 콤보",
+   "query": "jab 이후 콤보",
+   "ok": true,
+   "ms": 11,
+   "mySetups": [
+    "S6:t1:80",
+    "S5:t1:80",
+    "S1:t1:77",
+    "S4:t1:72",
+    "S2:t1:72"
+   ],
+   "myCombos": [
+    "C9:t1:80",
+    "C5:t1:80",
+    "C1:t1:72",
+    "C6:t1:72"
+   ],
+   "related": [
+    "S7:t4"
+   ],
+   "library": 102,
+   "errors": []
+  },
+  {
+   "group": "잽 이후 콤보",
+   "query": "combo after the jab",
+   "ok": true,
+   "ms": 9.7,
+   "mySetups": [
+    "S6:t1:80",
+    "S5:t1:80",
+    "S1:t1:77",
+    "S4:t1:72",
+    "S2:t1:72"
+   ],
+   "myCombos": [
+    "C9:t1:80",
+    "C5:t1:80",
+    "C1:t1:72",
+    "C6:t1:72"
+   ],
+   "related": [
+    "S7:t4"
+   ],
+   "library": 102,
+   "errors": []
+  },
+  {
+   "group": "잽 이후 콤보",
+   "query": "잽으로 시작하는 콤보",
+   "ok": true,
+   "ms": 12.2,
+   "mySetups": [
+    "S6:t1:80",
+    "S5:t1:80",
+    "S1:t1:77",
+    "S4:t1:72",
+    "S2:t1:72"
+   ],
+   "myCombos": [
+    "C9:t1:80",
+    "C5:t1:80",
+    "C1:t1:72",
+    "C6:t1:72"
+   ],
+   "related": [
+    "S7:t4"
+   ],
+   "library": 102,
+   "errors": []
+  },
+  {
+   "group": "잽 이후 콤보",
+   "query": "잽 뒤에 연결 콤보",
+   "ok": true,
+   "ms": 6.3,
+   "mySetups": [
+    "S6:t1:80",
+    "S5:t1:80",
+    "S1:t1:77",
+    "S4:t1:72",
+    "S2:t1:72"
+   ],
+   "myCombos": [
+    "C9:t1:80",
+    "C5:t1:80",
+    "C1:t1:72",
+    "C6:t1:72"
+   ],
+   "related": [
+    "S7:t4"
+   ],
+   "library": 102,
+   "errors": []
+  },
+  {
+   "group": "잽 이후 콤보",
+   "query": "잽이후 콤보",
+   "ok": true,
+   "ms": 7.9,
+   "mySetups": [
+    "S6:t1:80",
+    "S5:t1:80",
+    "S1:t1:77",
+    "S4:t1:72",
+    "S2:t1:72"
+   ],
+   "myCombos": [
+    "C9:t1:80",
+    "C5:t1:80",
+    "C1:t1:72",
+    "C6:t1:72"
+   ],
+   "related": [
+    "S7:t4"
+   ],
+   "library": 102,
+   "errors": []
+  },
+  {
+   "group": "잽 이후 콤보",
+   "query": "쨉 이후 콤보",
+   "ok": true,
+   "ms": 5.9,
+   "mySetups": [
+    "S6:t1:80",
+    "S5:t1:80",
+    "S1:t1:77",
+    "S4:t1:72",
+    "S2:t1:72"
+   ],
+   "myCombos": [
+    "C9:t1:80",
+    "C5:t1:80",
+    "C1:t1:72",
+    "C6:t1:72"
+   ],
+   "related": [
+    "S7:t4"
+   ],
+   "library": 102,
+   "errors": []
+  },
+  {
+   "group": "잽 이후 콤보",
+   "query": "잽 부터 시작하는 연타",
+   "ok": true,
+   "ms": 6,
+   "mySetups": [
+    "S6:t1:80",
+    "S5:t1:80",
+    "S1:t1:77",
+    "S4:t1:72",
+    "S2:t1:72"
+   ],
+   "myCombos": [
+    "C9:t1:80",
+    "C5:t1:80",
+    "C1:t1:72",
+    "C6:t1:72"
+   ],
+   "related": [
+    "S7:t4"
+   ],
+   "library": 102,
+   "errors": []
+  },
+  {
+   "group": "잽 이후 콤보",
+   "query": "jab then combo",
+   "ok": true,
+   "ms": 7,
+   "mySetups": [
+    "S6:t1:80",
+    "S5:t1:80",
+    "S1:t1:77",
+    "S4:t1:72",
+    "S2:t1:72"
+   ],
+   "myCombos": [
+    "C9:t1:80",
+    "C5:t1:80",
+    "C1:t1:72",
+    "C6:t1:72"
+   ],
+   "related": [
+    "S7:t4"
+   ],
+   "library": 102,
+   "errors": []
+  },
+  {
+   "group": "잽 이후 콤보",
+   "query": "잽 다음에 뭐 이어",
+   "ok": true,
+   "ms": 4.9,
+   "mySetups": [
+    "S4:t1:50",
+    "S6:t1:50",
+    "S2:t1:50",
+    "S1:t1:50",
+    "S5:t1:50"
+   ],
+   "myCombos": [
+    "C9:t1:50",
+    "C5:t1:50",
+    "C1:t1:50",
+    "C6:t1:50"
+   ],
+   "related": [],
+   "library": 102,
+   "errors": []
+  },
+  {
+   "group": "가드 여는 셋업",
+   "query": "상대 가드를 여는 셋업",
+   "ok": true,
+   "ms": 4.5,
+   "mySetups": [
+    "S4:t1:45"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 6,
+   "errors": []
+  },
+  {
+   "group": "가드 여는 셋업",
+   "query": "가드를 깨는 셋업",
+   "ok": true,
+   "ms": 7.5,
+   "mySetups": [
+    "S4:t1:63"
+   ],
+   "myCombos": [],
+   "related": [
+    "S1:t4",
+    "S7:t4"
+   ],
+   "library": 6,
+   "errors": []
+  },
+  {
+   "group": "가드 여는 셋업",
+   "query": "가드 브레이크 셋업",
+   "ok": true,
+   "ms": 5.6,
+   "mySetups": [
+    "S4:t1:63"
+   ],
+   "myCombos": [],
+   "related": [
+    "S1:t4",
+    "S7:t4"
+   ],
+   "library": 6,
+   "errors": []
+  },
+  {
+   "group": "가드 여는 셋업",
+   "query": "하이가드 상대 가드 열기",
+   "ok": true,
+   "ms": 7.4,
+   "mySetups": [
+    "S4:t1:65"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 6,
+   "errors": []
+  },
+  {
+   "group": "가드 여는 셋업",
+   "query": "가드 무너뜨리는 셋업",
+   "ok": true,
+   "ms": 4.3,
+   "mySetups": [
+    "S4:t1:45"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 6,
+   "errors": []
+  },
+  {
+   "group": "가드 여는 셋업",
+   "query": "가드 뚫는 셋업",
+   "ok": true,
+   "ms": 4.8,
+   "mySetups": [
+    "S4:t1:63"
+   ],
+   "myCombos": [],
+   "related": [
+    "S1:t4",
+    "S7:t4"
+   ],
+   "library": 6,
+   "errors": []
+  },
+  {
+   "group": "가드 여는 셋업",
+   "query": "가드를 내리게 만드는 셋업",
+   "ok": true,
+   "ms": 5.1,
+   "mySetups": [
+    "S4:t1:45"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 6,
+   "errors": []
+  },
+  {
+   "group": "가드 여는 셋업",
+   "query": "단단한 가드를 여는 셋업",
+   "ok": true,
+   "ms": 4.1,
+   "mySetups": [
+    "S4:t1:45"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 6,
+   "errors": []
+  },
+  {
+   "group": "바디→헤드",
+   "query": "바디 공격 이후 헤드 공격으로 이어지는 콤보",
+   "ok": true,
+   "ms": 8.5,
+   "mySetups": [
+    "S4:t1:70"
+   ],
+   "myCombos": [
+    "C3:t1:70"
+   ],
+   "related": [
+    "C9:t4",
+    "C4:t4"
+   ],
+   "library": 18,
+   "errors": []
+  },
+  {
+   "group": "바디→헤드",
+   "query": "몸통 공격 후 얼굴 공격 콤보",
+   "ok": true,
+   "ms": 8.6,
+   "mySetups": [
+    "S4:t1:70"
+   ],
+   "myCombos": [
+    "C3:t1:70"
+   ],
+   "related": [
+    "C9:t4",
+    "C4:t4"
+   ],
+   "library": 18,
+   "errors": []
+  },
+  {
+   "group": "바디→헤드",
+   "query": "바디 다음 헤드 콤보",
+   "ok": true,
+   "ms": 7.3,
+   "mySetups": [
+    "S4:t1:70"
+   ],
+   "myCombos": [
+    "C3:t1:70"
+   ],
+   "related": [
+    "C9:t4",
+    "C4:t4"
+   ],
+   "library": 18,
+   "errors": []
+  },
+  {
+   "group": "바디→헤드",
+   "query": "바디 후 머리 공격",
+   "ok": true,
+   "ms": 9,
+   "mySetups": [
+    "S4:t1:70"
+   ],
+   "myCombos": [
+    "C3:t1:70"
+   ],
+   "related": [
+    "C9:t4",
+    "C4:t4"
+   ],
+   "library": 18,
+   "errors": []
+  },
+  {
+   "group": "바디→헤드",
+   "query": "body then head combo",
+   "ok": true,
+   "ms": 7.2,
+   "mySetups": [
+    "S4:t1:62"
+   ],
+   "myCombos": [
+    "C3:t1:62"
+   ],
+   "related": [
+    "C9:t4",
+    "S6:t4",
+    "C5:t4",
+    "S5:t4",
+    "S7:t4"
+   ],
+   "library": 18,
+   "errors": []
+  },
+  {
+   "group": "바디→헤드",
+   "query": "바디 치고 다음 헤드 콤보",
+   "ok": true,
+   "ms": 7.7,
+   "mySetups": [
+    "S4:t1:70"
+   ],
+   "myCombos": [
+    "C3:t1:70"
+   ],
+   "related": [
+    "C9:t4",
+    "C4:t4"
+   ],
+   "library": 18,
+   "errors": []
+  },
+  {
+   "group": "바디→헤드",
+   "query": "몸통 이후 턱 공격",
+   "ok": true,
+   "ms": 6.4,
+   "mySetups": [
+    "S4:t1:70"
+   ],
+   "myCombos": [
+    "C3:t1:70"
+   ],
+   "related": [
+    "C9:t4",
+    "C4:t4"
+   ],
+   "library": 18,
+   "errors": []
+  },
+  {
+   "group": "바디→헤드",
+   "query": "body to head combination",
+   "ok": true,
+   "ms": 6.6,
+   "mySetups": [
+    "S4:t1:40"
+   ],
+   "myCombos": [
+    "C3:t1:40"
+   ],
+   "related": [],
+   "library": 18,
+   "errors": []
+  },
+  {
+   "group": "헤드→바디",
+   "query": "헤드 공격 이후 바디로 이어지는 콤보",
+   "ok": true,
+   "ms": 7.9,
+   "mySetups": [],
+   "myCombos": [
+    "C9:t1:70",
+    "C4:t1:70"
+   ],
+   "related": [
+    "S4:t4",
+    "C3:t4"
+   ],
+   "library": 33,
+   "errors": []
+  },
+  {
+   "group": "헤드→바디",
+   "query": "얼굴 공격 후 몸통 공격 콤보",
+   "ok": true,
+   "ms": 6.9,
+   "mySetups": [],
+   "myCombos": [
+    "C9:t1:70",
+    "C4:t1:70"
+   ],
+   "related": [
+    "S4:t4",
+    "C3:t4"
+   ],
+   "library": 33,
+   "errors": []
+  },
+  {
+   "group": "헤드→바디",
+   "query": "head then body combo",
+   "ok": true,
+   "ms": 8.2,
+   "mySetups": [],
+   "myCombos": [
+    "C9:t1:70",
+    "C4:t1:62"
+   ],
+   "related": [
+    "S6:t4",
+    "C5:t4",
+    "S5:t4",
+    "S7:t4"
+   ],
+   "library": 33,
+   "errors": []
+  },
+  {
+   "group": "클린치 진입",
+   "query": "클린치 진입을 위한 셋업",
+   "ok": true,
+   "ms": 8.3,
+   "mySetups": [
+    "S5:t1:100"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 18,
+   "errors": []
+  },
+  {
+   "group": "클린치 진입",
+   "query": "클린치로 들어가는 셋업",
+   "ok": true,
+   "ms": 7.1,
+   "mySetups": [
+    "S5:t1:100"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 18,
+   "errors": []
+  },
+  {
+   "group": "클린치 진입",
+   "query": "칼라 타이 잡는 셋업",
+   "ok": true,
+   "ms": 6.4,
+   "mySetups": [
+    "S5:t1:95"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 18,
+   "errors": []
+  },
+  {
+   "group": "클린치 진입",
+   "query": "clinch entry setup",
+   "ok": true,
+   "ms": 9,
+   "mySetups": [
+    "S5:t1:100"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 18,
+   "errors": []
+  },
+  {
+   "group": "클린치 진입",
+   "query": "클린치 셋업",
+   "ok": true,
+   "ms": 5.7,
+   "mySetups": [
+    "S5:t1:100"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 18,
+   "errors": []
+  },
+  {
+   "group": "클린치 진입",
+   "query": "클린치 잡기 위한 셋업",
+   "ok": true,
+   "ms": 5.8,
+   "mySetups": [
+    "S5:t1:100"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 18,
+   "errors": []
+  },
+  {
+   "group": "클린치 진입",
+   "query": "클린치 들어가기",
+   "ok": true,
+   "ms": 6.7,
+   "mySetups": [
+    "S5:t1:100"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 18,
+   "errors": []
+  },
+  {
+   "group": "클린치 진입",
+   "query": "클린치 진입 방법",
+   "ok": true,
+   "ms": 5.2,
+   "mySetups": [
+    "S5:t1:100"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 18,
+   "errors": []
+  },
+  {
+   "group": "후퇴 유도",
+   "query": "상대의 후퇴를 유도하는 셋업",
+   "ok": true,
+   "ms": 6,
+   "mySetups": [
+    "S6:t1:84"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 5,
+   "errors": []
+  },
+  {
+   "group": "후퇴 유도",
+   "query": "상대를 뒤로 물러나게 만드는 셋업",
+   "ok": true,
+   "ms": 6.1,
+   "mySetups": [
+    "S6:t1:84"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 5,
+   "errors": []
+  },
+  {
+   "group": "후퇴 유도",
+   "query": "압박해서 뒤로 빠지게 만들기",
+   "ok": true,
+   "ms": 6.6,
+   "mySetups": [
+    "S6:t1:84"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 5,
+   "errors": []
+  },
+  {
+   "group": "후퇴 유도",
+   "query": "후퇴 유도 셋업",
+   "ok": true,
+   "ms": 7.1,
+   "mySetups": [
+    "S6:t1:84"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 5,
+   "errors": []
+  },
+  {
+   "group": "후퇴 유도",
+   "query": "상대를 뒤로 물러나게 하는 압박",
+   "ok": true,
+   "ms": 5.6,
+   "mySetups": [
+    "S6:t1:84"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 5,
+   "errors": []
+  },
+  {
+   "group": "테이크다운",
+   "query": "테이크다운을 위한 셋업",
+   "ok": true,
+   "ms": 5.9,
+   "mySetups": [
+    "S3:t2:52",
+    "S2:t2:52",
+    "S1:t2:52"
+   ],
+   "myCombos": [
+    "C8:t2:56",
+    "C6:t2:52"
+   ],
+   "related": [
+    "S5:t4"
+   ],
+   "library": 42,
+   "errors": []
+  },
+  {
+   "group": "테이크다운",
+   "query": "테이크다운 진입 셋업",
+   "ok": true,
+   "ms": 8.1,
+   "mySetups": [
+    "S3:t2:52",
+    "S2:t2:52",
+    "S1:t2:52"
+   ],
+   "myCombos": [
+    "C8:t2:56",
+    "C6:t2:52"
+   ],
+   "related": [
+    "S5:t4"
+   ],
+   "library": 42,
+   "errors": []
+  },
+  {
+   "group": "테이크다운",
+   "query": "takedown setup",
+   "ok": true,
+   "ms": 5.4,
+   "mySetups": [
+    "S3:t2:52",
+    "S2:t2:52",
+    "S1:t2:52"
+   ],
+   "myCombos": [
+    "C8:t2:56",
+    "C6:t2:52"
+   ],
+   "related": [
+    "S5:t4"
+   ],
+   "library": 42,
+   "errors": []
+  },
+  {
+   "group": "테이크다운",
+   "query": "테이크다운 들어가는 셋업",
+   "ok": true,
+   "ms": 6.6,
+   "mySetups": [
+    "S3:t2:52",
+    "S2:t2:52",
+    "S1:t2:52"
+   ],
+   "myCombos": [
+    "C8:t2:56",
+    "C6:t2:52"
+   ],
+   "related": [
+    "S5:t4"
+   ],
+   "library": 42,
+   "errors": []
+  },
+  {
+   "group": "테이크다운",
+   "query": "테이크 다운 셋업",
+   "ok": true,
+   "ms": 5.7,
+   "mySetups": [
+    "S3:t2:52",
+    "S2:t2:52",
+    "S1:t2:52"
+   ],
+   "myCombos": [
+    "C8:t2:56",
+    "C6:t2:52"
+   ],
+   "related": [
+    "S5:t4"
+   ],
+   "library": 42,
+   "errors": []
+  },
+  {
+   "group": "테이크다운",
+   "query": "태클 들어가는 셋업",
+   "ok": true,
+   "ms": 6.5,
+   "mySetups": [
+    "S2:t2:32",
+    "S3:t2:29",
+    "S1:t2:26"
+   ],
+   "myCombos": [
+    "C8:t2:70",
+    "C6:t2:26"
+   ],
+   "related": [],
+   "library": 42,
+   "errors": []
+  },
+  {
+   "group": "싱글렉",
+   "query": "싱글렉을 위한 셋업",
+   "ok": true,
+   "ms": 6.6,
+   "mySetups": [
+    "S3:t1:80",
+    "S2:t2:56",
+    "S1:t2:56"
+   ],
+   "myCombos": [],
+   "related": [
+    "C9:t4",
+    "C8:t4",
+    "S6:t4",
+    "C5:t4",
+    "C1:t4",
+    "C6:t4"
+   ],
+   "library": 23,
+   "errors": []
+  },
+  {
+   "group": "싱글렉",
+   "query": "single leg setup",
+   "ok": true,
+   "ms": 5,
+   "mySetups": [
+    "S3:t1:80",
+    "S2:t2:56",
+    "S1:t2:56"
+   ],
+   "myCombos": [],
+   "related": [
+    "C9:t4",
+    "C8:t4",
+    "S6:t4",
+    "C5:t4",
+    "C1:t4",
+    "C6:t4"
+   ],
+   "library": 23,
+   "errors": []
+  },
+  {
+   "group": "싱글렉",
+   "query": "싱글 렉 셋업",
+   "ok": true,
+   "ms": 5.4,
+   "mySetups": [
+    "S3:t1:80",
+    "S2:t2:56",
+    "S1:t2:56"
+   ],
+   "myCombos": [],
+   "related": [
+    "C9:t4",
+    "C8:t4",
+    "S6:t4",
+    "C5:t4",
+    "C1:t4",
+    "C6:t4"
+   ],
+   "library": 23,
+   "errors": []
+  },
+  {
+   "group": "싱글렉",
+   "query": "싱글렉으로 끝나는 셋업",
+   "ok": true,
+   "ms": 7.9,
+   "mySetups": [
+    "S3:t1:80",
+    "S2:t2:56",
+    "S1:t2:56"
+   ],
+   "myCombos": [],
+   "related": [
+    "C9:t4",
+    "C8:t4",
+    "S6:t4",
+    "C5:t4",
+    "C1:t4",
+    "C6:t4"
+   ],
+   "library": 23,
+   "errors": []
+  },
+  {
+   "group": "로우킥 마무리",
+   "query": "로우킥으로 끝나는 콤보",
+   "ok": true,
+   "ms": 7,
+   "mySetups": [
+    "S7:t1:80",
+    "S6:t2:62"
+   ],
+   "myCombos": [
+    "C5:t1:80"
+   ],
+   "related": [
+    "C9:t4",
+    "S5:t4"
+   ],
+   "library": 37,
+   "errors": []
+  },
+  {
+   "group": "로우킥 마무리",
+   "query": "로우킥 마무리 콤보",
+   "ok": true,
+   "ms": 7.6,
+   "mySetups": [
+    "S7:t1:80",
+    "S6:t2:62"
+   ],
+   "myCombos": [
+    "C5:t1:80"
+   ],
+   "related": [
+    "C9:t4",
+    "S5:t4"
+   ],
+   "library": 37,
+   "errors": []
+  },
+  {
+   "group": "로우킥 마무리",
+   "query": "low kick finish combo",
+   "ok": true,
+   "ms": 7.4,
+   "mySetups": [
+    "S7:t1:98",
+    "S6:t2:80"
+   ],
+   "myCombos": [
+    "C5:t1:98"
+   ],
+   "related": [
+    "C9:t4"
+   ],
+   "library": 33,
+   "errors": []
+  },
+  {
+   "group": "로우킥 마무리",
+   "query": "로우킥으로 마무리하는 연타",
+   "ok": true,
+   "ms": 8,
+   "mySetups": [
+    "S7:t1:80",
+    "S6:t2:62"
+   ],
+   "myCombos": [
+    "C5:t1:80"
+   ],
+   "related": [
+    "C9:t4",
+    "S5:t4"
+   ],
+   "library": 37,
+   "errors": []
+  },
+  {
+   "group": "로우킥 마무리",
+   "query": "로우킥 넣기 위한 셋업",
+   "ok": true,
+   "ms": 4.8,
+   "mySetups": [
+    "S6:t1:50",
+    "S7:t1:50"
+   ],
+   "myCombos": [
+    "C5:t1:50"
+   ],
+   "related": [],
+   "library": 37,
+   "errors": []
+  },
+  {
+   "group": "바디킥",
+   "query": "바디킥으로 끝나는 콤보",
+   "ok": true,
+   "ms": 6.4,
+   "mySetups": [
+    "S4:t2:56"
+   ],
+   "myCombos": [
+    "C9:t1:80",
+    "C3:t2:56",
+    "C4:t2:56"
+   ],
+   "related": [],
+   "library": 59,
+   "errors": []
+  },
+  {
+   "group": "바디킥",
+   "query": "바디킥을 위한 셋업",
+   "ok": true,
+   "ms": 6.9,
+   "mySetups": [
+    "S4:t2:56"
+   ],
+   "myCombos": [
+    "C9:t1:80",
+    "C3:t2:56",
+    "C4:t2:56"
+   ],
+   "related": [],
+   "library": 59,
+   "errors": []
+  },
+  {
+   "group": "바디킥",
+   "query": "body kick setup",
+   "ok": true,
+   "ms": 6,
+   "mySetups": [
+    "S4:t2:26"
+   ],
+   "myCombos": [
+    "C9:t1:81",
+    "C3:t2:26",
+    "C4:t2:26"
+   ],
+   "related": [],
+   "library": 59,
+   "errors": []
+  },
+  {
+   "group": "서브미션 마무리·시작",
+   "query": "트라이앵글로 끝나는 콤보",
+   "ok": true,
+   "ms": 8.8,
+   "mySetups": [],
+   "myCombos": [
+    "C7:t1:77"
+   ],
+   "related": [],
+   "library": 0,
+   "errors": []
+  },
+  {
+   "group": "서브미션 마무리·시작",
+   "query": "암바 이후 연결",
+   "ok": true,
+   "ms": 5.6,
+   "mySetups": [],
+   "myCombos": [
+    "C7:t1:80"
+   ],
+   "related": [
+    "C8:t4"
+   ],
+   "library": 1,
+   "errors": []
+  },
+  {
+   "group": "서브미션 마무리·시작",
+   "query": "트라이앵글 초크 셋업",
+   "ok": true,
+   "ms": 5.3,
+   "mySetups": [],
+   "myCombos": [
+    "C7:t1:80"
+   ],
+   "related": [
+    "C8:t4"
+   ],
+   "library": 0,
+   "errors": []
+  },
+  {
+   "group": "서브미션 마무리·시작",
+   "query": "암바로 시작하는 콤보",
+   "ok": true,
+   "ms": 8.3,
+   "mySetups": [],
+   "myCombos": [
+    "C7:t1:77"
+   ],
+   "related": [],
+   "library": 1,
+   "errors": []
+  },
+  {
+   "group": "서브미션 위치 불일치",
+   "query": "암바를 위한 셋업",
+   "ok": true,
+   "ms": 4.8,
+   "mySetups": [],
+   "myCombos": [
+    "C7:t2:62"
+   ],
+   "related": [
+    "C8:t4"
+   ],
+   "library": 1,
+   "errors": []
+  },
+  {
+   "group": "서브미션 위치 불일치",
+   "query": "armbar setup",
+   "ok": true,
+   "ms": 4.6,
+   "mySetups": [],
+   "myCombos": [
+    "C7:t2:62"
+   ],
+   "related": [
+    "C8:t4"
+   ],
+   "library": 1,
+   "errors": []
+  },
+  {
+   "group": "서브미션 위치 불일치",
+   "query": "암바로 끝나는 셋업",
+   "ok": true,
+   "ms": 5.9,
+   "mySetups": [],
+   "myCombos": [
+    "C7:t2:62"
+   ],
+   "related": [
+    "C8:t4"
+   ],
+   "library": 1,
+   "errors": []
+  },
+  {
+   "group": "스프롤",
+   "query": "스프롤 이후 연결할 콤보",
+   "ok": true,
+   "ms": 6.1,
+   "mySetups": [],
+   "myCombos": [
+    "C8:t1:74"
+   ],
+   "related": [
+    "S6:t4",
+    "C5:t4"
+   ],
+   "library": 15,
+   "errors": []
+  },
+  {
+   "group": "스프롤",
+   "query": "스프롤 다음 연결",
+   "ok": true,
+   "ms": 5,
+   "mySetups": [],
+   "myCombos": [
+    "C8:t1:74"
+   ],
+   "related": [],
+   "library": 15,
+   "errors": []
+  },
+  {
+   "group": "스프롤",
+   "query": "프론트 헤드락으로 끝나는 콤보",
+   "ok": true,
+   "ms": 7.4,
+   "mySetups": [],
+   "myCombos": [
+    "C8:t1:61"
+   ],
+   "related": [
+    "C9:t4",
+    "S6:t4",
+    "C5:t4",
+    "S5:t4",
+    "S7:t4"
+   ],
+   "library": 3,
+   "errors": []
+  },
+  {
+   "group": "스프롤",
+   "query": "프론트 헤드락 셋업",
+   "ok": true,
+   "ms": 4.3,
+   "mySetups": [],
+   "myCombos": [
+    "C8:t1:50"
+   ],
+   "related": [],
+   "library": 3,
+   "errors": []
+  },
+  {
+   "group": "페인트",
+   "query": "페인트로 반응을 끌어내는 셋업",
+   "ok": true,
+   "ms": 4.8,
+   "mySetups": [
+    "S1:t1:100",
+    "S7:t1:100"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 23,
+   "errors": []
+  },
+  {
+   "group": "페인트",
+   "query": "페인트 셋업",
+   "ok": true,
+   "ms": 6.7,
+   "mySetups": [
+    "S1:t1:100",
+    "S7:t1:100"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 23,
+   "errors": []
+  },
+  {
+   "group": "페인트",
+   "query": "feint setup",
+   "ok": true,
+   "ms": 6.3,
+   "mySetups": [
+    "S7:t1:100",
+    "S1:t1:75"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 23,
+   "errors": []
+  },
+  {
+   "group": "페인트",
+   "query": "속임 동작으로 들어가는 셋업",
+   "ok": true,
+   "ms": 4.5,
+   "mySetups": [
+    "S1:t1:75",
+    "S7:t1:75"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 23,
+   "errors": []
+  },
+  {
+   "group": "클린치 니",
+   "query": "클린치에서 니킥으로 이어지는 셋업",
+   "ok": true,
+   "ms": 7.9,
+   "mySetups": [
+    "S5:t1:100"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 32,
+   "errors": []
+  },
+  {
+   "group": "클린치 니",
+   "query": "칼라 타이 이후 니킥",
+   "ok": true,
+   "ms": 6.1,
+   "mySetups": [
+    "S5:t1:100"
+   ],
+   "myCombos": [],
+   "related": [
+    "C7:t4"
+   ],
+   "library": 32,
+   "errors": []
+  },
+  {
+   "group": "클린치 니",
+   "query": "목 잡고 니킥 셋업",
+   "ok": true,
+   "ms": 9,
+   "mySetups": [
+    "S5:t1:100"
+   ],
+   "myCombos": [],
+   "related": [],
+   "library": 32,
+   "errors": []
+  },
+  {
+   "group": "저장 안 된 목적",
+   "query": "힐훅을 위한 셋업",
+   "ok": true,
+   "ms": 4.8,
+   "mySetups": [],
+   "myCombos": [],
+   "related": [],
+   "library": 0,
+   "errors": []
+  },
+  {
+   "group": "저장 안 된 목적",
+   "query": "리어 네이키드 초크로 끝나는 콤보",
+   "ok": true,
+   "ms": 6.3,
+   "mySetups": [],
+   "myCombos": [],
+   "related": [],
+   "library": 2,
+   "errors": []
+  },
+  {
+   "group": "저장 안 된 목적",
+   "query": "앵클 픽을 위한 셋업",
+   "ok": true,
+   "ms": 5.6,
+   "mySetups": [],
+   "myCombos": [],
+   "related": [],
+   "library": 2,
+   "errors": []
+  },
+  {
+   "group": "저장 안 된 목적",
+   "query": "heel hook setup",
+   "ok": true,
+   "ms": 4.6,
+   "mySetups": [],
+   "myCombos": [],
+   "related": [],
+   "library": 0,
+   "errors": []
+  },
+  {
+   "group": "영어·한글 혼합",
+   "query": "double leg를 위한 셋업",
+   "ok": true,
+   "ms": 5.1,
+   "mySetups": [
+    "S1:t1:80",
+    "S2:t2:56"
+   ],
+   "myCombos": [
+    "C6:t1:80",
+    "C8:t2:56"
+   ],
+   "related": [
+    "C9:t4",
+    "S6:t4",
+    "S3:t4",
+    "C5:t4",
+    "C1:t4",
+    "S5:t4"
+   ],
+   "library": 35,
+   "errors": []
+  },
+  {
+   "group": "영어·한글 혼합",
+   "query": "Double Leg 진입 셋업",
+   "ok": true,
+   "ms": 7.8,
+   "mySetups": [
+    "S1:t1:80",
+    "S2:t2:56"
+   ],
+   "myCombos": [
+    "C6:t1:80",
+    "C8:t2:56"
+   ],
+   "related": [
+    "C9:t4",
+    "S6:t4",
+    "S3:t4",
+    "C5:t4",
+    "C1:t4",
+    "S5:t4"
+   ],
+   "library": 35,
+   "errors": []
+  },
+  {
+   "group": "영어·한글 혼합",
+   "query": "더블렉 setup",
+   "ok": true,
+   "ms": 5.9,
+   "mySetups": [
+    "S1:t1:80",
+    "S2:t2:56"
+   ],
+   "myCombos": [
+    "C6:t1:80",
+    "C8:t2:56"
+   ],
+   "related": [
+    "C9:t4",
+    "S6:t4",
+    "S3:t4",
+    "C5:t4",
+    "C1:t4",
+    "S5:t4"
+   ],
+   "library": 35,
+   "errors": []
+  },
+  {
+   "group": "잽+더블렉 복합",
+   "query": "잽 이후 더블렉으로 끝나는 셋업",
+   "ok": true,
+   "ms": 7.1,
+   "mySetups": [
+    "S2:t1:100",
+    "S1:t1:100",
+    "S6:t1:80",
+    "S5:t1:80",
+    "S4:t1:50"
+   ],
+   "myCombos": [
+    "C6:t1:100",
+    "C9:t1:80",
+    "C5:t1:80",
+    "C1:t1:80",
+    "C8:t2:56"
+   ],
+   "related": [
+    "S3:t4"
+   ],
+   "library": 131,
+   "errors": []
+  },
+  {
+   "group": "잽+더블렉 복합",
+   "query": "잽 다음 더블렉",
+   "ok": true,
+   "ms": 5.8,
+   "mySetups": [
+    "S2:t1:100",
+    "S1:t1:100",
+    "S6:t1:80",
+    "S5:t1:80",
+    "S4:t1:50"
+   ],
+   "myCombos": [
+    "C6:t1:100",
+    "C9:t1:80",
+    "C5:t1:80",
+    "C1:t1:80",
+    "C8:t2:56"
+   ],
+   "related": [
+    "S3:t4"
+   ],
+   "library": 131,
+   "errors": []
+  },
+  {
+   "group": "잽+더블렉 복합",
+   "query": "jab then double leg",
+   "ok": true,
+   "ms": 6.1,
+   "mySetups": [
+    "S2:t1:100",
+    "S1:t1:100",
+    "S6:t1:80",
+    "S5:t1:80",
+    "S4:t1:50"
+   ],
+   "myCombos": [
+    "C6:t1:100",
+    "C9:t1:80",
+    "C5:t1:80",
+    "C1:t1:80",
+    "C8:t2:56"
+   ],
+   "related": [
+    "S3:t4"
+   ],
+   "library": 131,
+   "errors": []
+  }
+ ]
+}

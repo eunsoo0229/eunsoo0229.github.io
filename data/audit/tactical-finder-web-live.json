@@ -1,0 +1,158 @@
+{
+ "generatedBy": ".devtools/live-tactical-web.mjs",
+ "at": "2026-11-28T12:29:39.272Z",
+ "geminiHttpCallsSent": 3,
+ "refused": 1,
+ "calls": [
+  {
+   "n": 1,
+   "model": "gemini-3.6-flash",
+   "refused": false,
+   "sentAt": "2026-11-28T12:29:38.565Z",
+   "httpStatus": 429,
+   "ms": 366,
+   "finishReason": null,
+   "usageMetadata": null,
+   "apiError": {
+    "code": 429,
+    "status": "RESOURCE_EXHAUSTED",
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. "
+   }
+  },
+  {
+   "n": 2,
+   "model": "gemini-3.1-flash-lite",
+   "refused": false,
+   "sentAt": "2026-11-28T12:29:38.938Z",
+   "httpStatus": 429,
+   "ms": 150,
+   "finishReason": null,
+   "usageMetadata": null,
+   "apiError": {
+    "code": 429,
+    "status": "RESOURCE_EXHAUSTED",
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. "
+   }
+  },
+  {
+   "n": 3,
+   "model": "gemini-3.6-flash",
+   "refused": false,
+   "sentAt": "2026-11-28T12:29:39.112Z",
+   "httpStatus": 429,
+   "ms": 148,
+   "finishReason": null,
+   "usageMetadata": null,
+   "apiError": {
+    "code": 429,
+    "status": "RESOURCE_EXHAUSTED",
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. "
+   }
+  },
+  {
+   "n": 4,
+   "model": "gemini-3.1-flash-lite",
+   "refused": true
+  }
+ ],
+ "runs": [
+  {
+   "query": "더블렉 테이크다운을 위한 셋업",
+   "tab": "combo",
+   "wallMs": 549,
+   "httpCalls": [
+    {
+     "n": 1,
+     "model": "gemini-3.6-flash",
+     "refused": false,
+     "sentAt": "2026-11-28T12:29:38.565Z",
+     "httpStatus": 429,
+     "ms": 366,
+     "finishReason": null,
+     "usageMetadata": null,
+     "apiError": {
+      "code": 429,
+      "status": "RESOURCE_EXHAUSTED",
+      "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. "
+     }
+    },
+    {
+     "n": 2,
+     "model": "gemini-3.1-flash-lite",
+     "refused": false,
+     "sentAt": "2026-11-28T12:29:38.938Z",
+     "httpStatus": 429,
+     "ms": 150,
+     "finishReason": null,
+     "usageMetadata": null,
+     "apiError": {
+      "code": 429,
+      "status": "RESOURCE_EXHAUSTED",
+      "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. "
+     }
+    }
+   ],
+   "rawText": null,
+   "groundingMetadata": null,
+   "result": {
+    "tab": "combo",
+    "query": "더블렉 테이크다운을 위한 셋업",
+    "items": [],
+    "groundingSources": [],
+    "searchQueries": [],
+    "error": {
+     "code": "RATE_LIMIT",
+     "message": "Gemini 요청이 너무 많습니다. 잠시 후 다시 시도해 주세요."
+    },
+    "cached": false,
+    "at": 1795868978564,
+    "status": "error",
+    "elapsedMs": 548
+   }
+  },
+  {
+   "query": "잽 이후 연결할 수 있는 콤보",
+   "tab": "combo",
+   "wallMs": 157,
+   "httpCalls": [
+    {
+     "n": 3,
+     "model": "gemini-3.6-flash",
+     "refused": false,
+     "sentAt": "2026-11-28T12:29:39.112Z",
+     "httpStatus": 429,
+     "ms": 148,
+     "finishReason": null,
+     "usageMetadata": null,
+     "apiError": {
+      "code": 429,
+      "status": "RESOURCE_EXHAUSTED",
+      "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. "
+     }
+    },
+    {
+     "n": 4,
+     "model": "gemini-3.1-flash-lite",
+     "refused": true
+    }
+   ],
+   "rawText": null,
+   "groundingMetadata": null,
+   "result": {
+    "tab": "combo",
+    "query": "잽 이후 연결할 수 있는 콤보",
+    "items": [],
+    "groundingSources": [],
+    "searchQueries": [],
+    "error": {
+     "code": "NETWORK",
+     "message": "네트워크에 연결할 수 없어 웹 검색을 하지 못했습니다."
+    },
+    "cached": false,
+    "at": 1795868979112,
+    "status": "error",
+    "elapsedMs": 157
+   }
+  }
+ ]
+}

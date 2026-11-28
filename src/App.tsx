@@ -131,6 +131,7 @@ const SparringRecord = lazy(() => import('./pages/SparringRecord'));
 const SparringVideoList = lazy(() => import('./pages/SparringVideoList'));
 const TechniqueGraph = lazy(() => import('./pages/TechniqueGraph'));
 const SituationRecommend = lazy(() => import('./pages/SituationRecommend'));
+const TacticalFinder = lazy(() => import('./pages/TacticalFinder'));
 const MyStats = lazy(() => import('./pages/MyStats'));
 const TodayReview = lazy(() => import('./pages/TodayReview'));
 const ReviewHub = lazy(() => import('./pages/ReviewModes').then((m) => ({ default: m.ReviewHub })));
@@ -278,6 +279,7 @@ export default function App() {
             <Route path="/sparring/:sessionId" element={<SparringSessionDetail />} />
             <Route path="/graph" element={<TechniqueGraph />} />
             <Route path="/situation" element={<SituationRecommend />} />
+            <Route path="/tactical-finder" element={<TacticalFinder />} />
             <Route path="/stats" element={<MyStats />} />
             <Route path="/review" element={<ReviewHub />} />
             <Route path="/review/ai" element={<TodayReview />} />
